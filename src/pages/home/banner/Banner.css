@@ -1,0 +1,9 @@
+.banner{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: linear-gradient(0deg, rgb(10, 202, 250), rgba(8, 132, 248, 0.5), rgba(10, 202, 250, 0.5)), url('../../../assets/bannerImg.webp');
+}
