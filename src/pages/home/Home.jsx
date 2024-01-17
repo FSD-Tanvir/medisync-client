@@ -1,7 +1,11 @@
+import Footer from "../../components/shared/footer/Footer";
+
 const Home = () => {
     return (
         <div>
-            Home
+        
+        {/* footer section */}
+        <Footer/>
         </div>
     );
 };
