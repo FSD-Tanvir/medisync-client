@@ -1,4 +1,3 @@
-import Footer from "../../components/shared/footer/Footer";
 import Articles from "./articles/Articles";
 import Products from "./products/Products";
 import Categories from "./categories/Categories";
@@ -19,7 +18,6 @@ const Home = () => {
       <Articles></Articles>
       <Testimonials />
       <Faq />
-      <Footer />
     </div>
   );
 };
