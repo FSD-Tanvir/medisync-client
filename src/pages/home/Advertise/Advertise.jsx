@@ -17,7 +17,7 @@ const Advertise = () => {
     const doctor = doctors[currentIndex];
 
     return (
-      <div className="w-full p-3 sticky top-[100px]  ">
+      <div className="w-full p-3 sticky top-[100px] ">
         <h2>{doctor?.name}</h2>
         <p>{doctor?.specialization}</p>
         <img

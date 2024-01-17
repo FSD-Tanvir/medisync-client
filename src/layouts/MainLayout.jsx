@@ -7,8 +7,8 @@ const MainLayout = () => {
   return (
     <>
       <Navbar />
-      <div className="flex ">
-        <div >
+      <div className="flex">
+        <div>
           <Outlet />
         </div>
         <Advertise />
