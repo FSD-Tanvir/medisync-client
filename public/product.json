@@ -1,0 +1,97 @@
+[
+    {
+        "id": 1,
+        "image": "https://i.ibb.co/0r4NmrY/Entacyd-Plus.webp",
+        "name": "Entacyd Plus",
+        "company": "Square Pharmaceuticals Ltd.",
+        "price": 2.25
+    },
+    {
+        "id": 2,
+        "image": "https://i.ibb.co/StKJ3m1/Entacyd-Plus-lequid.webp",
+        "name": "Entacyd Plus",
+        "weight": "200ml",
+        "company": "Square Pharmaceuticals Ltd.",
+        "price": 72.21
+    },
+    {
+        "id": 3,
+        "image": "https://i.ibb.co/VVDFJ2Y/Alben-Ds.webp",
+        "name": "Alben DS",
+        "weight": "400mg",
+        "company": "Eskayef Bangladesh Ltd.",
+        "price": 4.50
+    },
+    {
+        "id": 4,
+        "image": "https://i.ibb.co/ryJhhKB/Nutrivit-C.webp",
+        "name": "Nutrivit-C",
+        "weight": "250mg",
+        "company": "ACI Limited",
+        "price": 1.71
+    },
+    {
+        "id": 5,
+        "image": "https://i.ibb.co/6JCZjDB/Joya-wings-Regular-Flow.webp",
+        "name": "Joya Wings  Flow",
+        "weight": "8 pads",
+        "company": "SMC Enterprise Limited",
+        "price": 66.50
+    },
+    {
+        "id": 6,
+        "image": "https://i.ibb.co/Fs6c8kd/Whisper-Maxi-Nights.webp",
+        "name": "WHISPER MAXI NIGHTS",
+        "weight": "15 pads",
+        "company": "Sun Pharmaceutical Ltd.",
+        "price": 327.25
+    },
+    {
+        "id": 7,
+        "image": "https://i.ibb.co/NNMTJMR/Senora-Ultrathin-Regular-Flow.webp",
+        "name": "Senora UltraThin  Flow",
+        "weight": "8 pads",
+        "company": "Square Pharmaceuticals Ltd.",
+        "price": 114.20
+    },
+    {
+        "id": 8,
+        "image": "https://i.ibb.co/1KRLtbd/Freedom-Heavy-Flow-Wings.webp",
+        "name": "Freedom Heavy  Wings",
+        "weight": "8 pads",
+        "company": "ACI Limited",
+        "price": 104.50
+    },
+    {
+        "id": 9,
+        "image": "https://i.ibb.co/FKGCRkD/Huggies-Dry-Belt-Diaper.webp",
+        "name": "Huggies Dry Belt Diaper",
+        "weight": "0-5 KG",
+        "company": "Baby Care",
+        "price": 1600.00
+    },
+    {
+        "id": 10,
+        "image": "https://i.ibb.co/0sqJcGf/Savlon-Baby-Wips.webp",
+        "name": "Savlon Baby Wipes",
+        "weight": "100",
+        "company": "ACI Limited",
+        "price": 209.30
+    },
+    {
+        "id": 11,
+        "image": "https://i.ibb.co/jvNCjVw/Baby-Cotton-Burds.webp",
+        "name": "Baby Cotton Buds",
+        "weight": "200 pc",
+        "company": "Mundipharma (BD) Pvt. Ltd.",
+        "price": 100.25
+    },
+    {
+        "id": 12,
+        "image": "https://i.ibb.co/vVJ0HMQ/Listacare-Gold.webp",
+        "name": "Listacare Gold",
+        "weight": "120 ml",
+        "company": "General Pharmaceuticals Ltd.",
+        "price": 72.35
+    }
+]
