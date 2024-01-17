@@ -31,14 +31,6 @@ const testimonialsData = [
     content:
       "Medisync has simplified the process of buying medicines online. The detailed product descriptions and reviews help me make informed decisions. Plus, the delivery is always on time. I'm a happy and satisfied customer.",
   },
-  {
-    id: 5,
-    name: "Chris Martinez",
-    occupation: "Graphic Designer",
-    image: "https://i.ibb.co/7k62qHT/300-5.jpg",
-    content:
-      "I'm impressed with the seamless experience provided by Medisync. The website's design is modern and intuitive, and the checkout process is straightforward. It's my preferred platform for ordering medicines with confidence.",
-  },
 ];
 
 export default testimonialsData;
