@@ -1,6 +1,3 @@
-
-
-
 const ProductsCard = ({ product }) => {
     // console.log(product)
     const { image, company, name, price, weight } = product || {}
