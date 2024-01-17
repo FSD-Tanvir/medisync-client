@@ -54,7 +54,7 @@ const Advertise = () => {
   }, [currentIndex, doctors, setCurrentIndex]);
 
   return (
-    <div className="shadow shadow-xl w-1/4 hidden lg:block">
+    <div className="shadow-xl w-1/4 hidden lg:block">
       {displayDoctor()}
     </div>
   );
