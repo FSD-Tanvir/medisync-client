@@ -3,7 +3,7 @@ import faqData from "./faqData";
 
 const Faq = () => {
   return (
-    <div className="w-full mt-20 p-8 bg-[#bde0fe]">
+    <div className="w-full mt-20 p-8 bg-[#bde0fe] rounded-md">
       <h1 className="text-2xl font-bold my-10">Your Guide to Using Medisync</h1>
       <div className="w-full md:w-[80%] mx-auto">
         {faqData.map((fData, index) => (
