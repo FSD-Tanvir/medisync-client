@@ -17,7 +17,7 @@ const menuItems = [
 
 const Navbar = () => {
   return (
-    <div className="bg-[#a2d2ff] px-2 ">
+    <div className="bg-[#a2d2ff] px-2 sticky top-0  z-50">
       {/* navbar with search bar */}
       <div className="flex justify-between py-2 items-center">
         <div>
