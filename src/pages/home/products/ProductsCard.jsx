@@ -3,23 +3,22 @@ const ProductsCard = ({ product }) => {
     const { image, company, name, price, weight } = product || {}
     return (
         <div>
-            <div className="bg-white shadow-md rounded-xl max-w-md mx-auto">
+            <div className="bg-white shadow-md rounded-xl  mx-auto h-[280px]">
                 <div className="text-center">
-                    <img src={image} alt="Product" className="mx-auto w-32 h-32 object-cover" />
-                </div>
-                <div className="px-4 py-5">
-                    <div className="flex justify-between">
-                        <span className="text-lg font-bold text-black truncate block capitalize">{name}</span>
-                        <h2>{weight}</h2>
+                    <div className="h-32">
+                        <img src={image} alt="Product" className="mx-auto w-full h-full object-cover" />
                     </div>
-                    <p className="text-[#de2f6f] mr-3 py-4  text-sm">{company}</p>
+                </div>
+                <div className="px-4 py-2">
+                    <div className="flex justify-between">
+                        <span className="text-base font-bold text-black capitalize">{name}</span>
+                        <h2 className="text-sm">{weight}</h2>
+                    </div>
+                    <p className="text-[#de2f6f]  py-4 text-sm">{company}</p>
                     <div className="flex items-center justify-between">
-                        <p className="text-lg font-semibold text-black cursor-auto my-3">Price: ${price}</p>
-                        {/* <del>
-                <p className="text-sm text-gray-600 cursor-auto ml-2">$199</p>
-            </del> */}
+                        <p className="text-sm font-semibold text-black">Price: ${price}</p>
                         <div className="">
-                            <button className="bg-blue-400 text-white px-4 py-2 rounded">Add To Cart</button>
+                            <button className="bg-blue-400 text-white  py-2 px-2 rounded">Add To Cart</button>
                         </div>
                     </div>
                 </div>
