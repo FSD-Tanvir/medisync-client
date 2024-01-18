@@ -5,19 +5,21 @@ import Advertise from "../pages/home/Advertise/Advertise";
 
 const MainLayout = () => {
   const location = useLocation();
-  const isHomePage = location.pathname === '/' || false;
+  const isHomePage = location.pathname === "/" || false;
   console.log(location);
   console.log(isHomePage);
   return (
     <>
       <Navbar />
       <div className="flex lg:w-full">
-        <div className={`w-full lg:w-3/4"`}>
+        <div className={`w-full ${isHomePage && "lg:w-3/4"}`}>
           <Outlet />
         </div>
-        {isHomePage && <div className="lg:pl-3 lg:w-1/4">
-          <Advertise />
-        </div>}
+        {isHomePage && (
+          <div className="lg:pl-3 lg:w-1/4">
+            <Advertise />
+          </div>
+        )}
       </div>
       <Footer />
     </>
