@@ -7,11 +7,13 @@ const MainLayout = () => {
   return (
     <>
       <Navbar />
-      <div className="flex">
-        <div>
+      <div className="flex lg:w-full">
+        <div className=" w-full lg:w-3/4">
           <Outlet />
         </div>
-        <Advertise />
+        <div className="lg:pl-3 lg:w-1/4">
+          <Advertise />
+        </div>
       </div>
       <Footer />
     </>
