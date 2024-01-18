@@ -17,7 +17,7 @@ const Advertise = () => {
     const doctor = doctors[currentIndex];
 
     return (
-      <div className="w-full p-3 sticky top-[100px] ">
+      <div className="w-full p-3 ">
         <h2>{doctor?.name}</h2>
         <p>{doctor?.specialization}</p>
         <img
@@ -54,7 +54,7 @@ const Advertise = () => {
   }, [currentIndex, doctors, setCurrentIndex]);
 
   return (
-    <div className="shadow-xl w-1/4 hidden lg:block">
+    <div className="shadow-xl border sticky top-[100px] hidden lg:block">
       {displayDoctor()}
     </div>
   );
