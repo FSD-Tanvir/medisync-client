@@ -54,7 +54,7 @@ const Advertise = () => {
   }, [currentIndex, doctors, setCurrentIndex]);
 
   return (
-    <div className="shadow-xl min-h-screen sticky top-[100px] hidden lg:block">
+    <div className="shadow-xl min-h-screen sticky top-[124px] hidden lg:block">
       {displayDoctor()}
     </div>
   );
