@@ -4,11 +4,13 @@ import Categories from "./categories/Categories";
 import Banner from "./banner/Banner";
 import Testimonials from "./testimonials/Testimonials";
 import Faq from "./faq/Faq";
+import ThreeCards from "./ThreeCards/ThreeCards";
 
 const Home = () => {
   return (
     <div>
       <Banner />
+      <ThreeCards></ThreeCards>
       <Categories />
       <Products />
       <Articles />
