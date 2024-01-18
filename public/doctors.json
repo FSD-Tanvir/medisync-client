@@ -1,0 +1,202 @@
+[
+  {
+    "id": 1,
+    "name": "Dr. Sarah Smith",
+    "specialization": "Pediatrician",
+    "image": "https://i.ibb.co/z5rJzBT/portrait-young-asian-male-doctor-600nw-2141952443.webp",
+    "qualification": "MD, Pediatrics",
+    "experience_years": 10,
+    "contact": {
+      "email": "sarah.smith@example.com",
+      "phone": "+1 (555) 234-5678"
+    },
+    "address": {
+      "street": "456 Oak Avenue",
+      "city": "Townsville",
+      "state": "State",
+      "zip_code": "56789"
+    },
+    "availability": {
+      "monday": "8:00 AM - 4:00 PM",
+      "tuesday": "8:00 AM - 4:00 PM",
+      "wednesday": "Not available",
+      "thursday": "8:00 AM - 12:00 PM",
+      "friday": "8:00 AM - 4:00 PM"
+    }
+  },
+  {
+    "id": 2,
+    "name": "Dr. Michael Johnson",
+    "specialization": "Orthopedic Surgeon",
+    "image": "https://i.ibb.co/72byYzB/healthcare-medical-staff-concept-portrait-600nw-2281024823-1.webp",
+    "qualification": "MD, Orthopedics",
+    "experience_years": 12,
+    "contact": {
+      "email": "michael.johnson@example.com",
+      "phone": "+1 (555) 345-6789"
+    },
+    "address": {
+      "street": "789 Maple Street",
+      "city": "Cityburg",
+      "state": "State",
+      "zip_code": "67890"
+    },
+    "availability": {
+      "monday": "10:00 AM - 6:00 PM",
+      "tuesday": "10:00 AM - 6:00 PM",
+      "wednesday": "10:00 AM - 2:00 PM",
+      "thursday": "Not available",
+      "friday": "10:00 AM - 6:00 PM"
+    }
+  },
+  {
+    "id": 3,
+    "name": "Dr. Shahriar Chowdhory",
+    "specialization": "Orthopedic Surgeon",
+    "image": "https://i.ibb.co/xMKVpXQ/kent-car-accident-doctor-1.webp",
+    "qualification": "MD, Orthopedics",
+    "experience_years": 12,
+    "contact": {
+      "email": "michael.johnson@example.com",
+      "phone": "+1 (555) 345-6789"
+    },
+    "address": {
+      "street": "789 Maple Street",
+      "city": "Cityburg",
+      "state": "State",
+      "zip_code": "67890"
+    },
+    "availability": {
+      "monday": "10:00 AM - 6:00 PM",
+      "tuesday": "10:00 AM - 6:00 PM",
+      "wednesday": "10:00 AM - 2:00 PM",
+      "thursday": "Not available",
+      "friday": "10:00 AM - 6:00 PM"
+    }
+  },
+  {
+    "id": 4,
+    "name": "Dr. Michael Jon",
+    "specialization": "Orthopedic Surgeon",
+    "image": "https://i.ibb.co/tmJNc2w/asian-man-doctor-uniform-hospital-1286-3508.jpg",
+    "qualification": "MD, Orthopedics",
+    "experience_years": 12,
+    "contact": {
+      "email": "michael.johnson@example.com",
+      "phone": "+1 (555) 345-6789"
+    },
+    "address": {
+      "street": "789 Maple Street",
+      "city": "Cityburg",
+      "state": "State",
+      "zip_code": "67890"
+    },
+    "availability": {
+      "monday": "10:00 AM - 6:00 PM",
+      "tuesday": "10:00 AM - 6:00 PM",
+      "wednesday": "10:00 AM - 2:00 PM",
+      "thursday": "Not available",
+      "friday": "10:00 AM - 6:00 PM"
+    }
+  },
+  {
+    "id": 5,
+    "name": "Dr. Ahmed Tarique",
+    "specialization": "Orthopedic Surgeon",
+    "image": "https://i.ibb.co/Y2mXrsL/1000-F-269989951-9-Gf7-PWa-Rtrpm2-Eoch-O3-D5-WVn22s-FZb-NZ.jpg",
+    "qualification": "MD, Orthopedics",
+    "experience_years": 12,
+    "contact": {
+      "email": "michael.johnson@example.com",
+      "phone": "+1 (555) 345-6789"
+    },
+    "address": {
+      "street": "789 Maple Street",
+      "city": "Cityburg",
+      "state": "State",
+      "zip_code": "67890"
+    },
+    "availability": {
+      "monday": "10:00 AM - 6:00 PM",
+      "tuesday": "10:00 AM - 6:00 PM",
+      "wednesday": "10:00 AM - 2:00 PM",
+      "thursday": "Not available",
+      "friday": "10:00 AM - 6:00 PM"
+    }
+  },
+  {
+    "id": 6,
+    "name": "Dr. Afchana Chowdhury",
+    "specialization": "Orthopedic Surgeon",
+    "image": "https://i.ibb.co/C1jkXwm/istockphoto-1292012984-612x612.jpg",
+    "qualification": "MD, Orthopedics",
+    "experience_years": 12,
+    "contact": {
+      "email": "michael.johnson@example.com",
+      "phone": "+1 (555) 345-6789"
+    },
+    "address": {
+      "street": "789 Maple Street",
+      "city": "Cityburg",
+      "state": "State",
+      "zip_code": "67890"
+    },
+    "availability": {
+      "monday": "10:00 AM - 6:00 PM",
+      "tuesday": "10:00 AM - 6:00 PM",
+      "wednesday": "10:00 AM - 2:00 PM",
+      "thursday": "Not available",
+      "friday": "10:00 AM - 6:00 PM"
+    }
+  },
+  {
+    "id": 7,
+    "name": "Dr. Rahima Khatun",
+    "specialization": "Orthopedic Surgeon",
+    "image": "https://i.ibb.co/xM1R63g/medical-concept-indian-beautiful-female-600nw-1635029716.webp",
+    "qualification": "MD, Orthopedics",
+    "experience_years": 12,
+    "contact": {
+      "email": "michael.johnson@example.com",
+      "phone": "+1 (555) 345-6789"
+    },
+    "address": {
+      "street": "789 Maple Street",
+      "city": "Cityburg",
+      "state": "State",
+      "zip_code": "67890"
+    },
+    "availability": {
+      "monday": "10:00 AM - 6:00 PM",
+      "tuesday": "10:00 AM - 6:00 PM",
+      "wednesday": "10:00 AM - 2:00 PM",
+      "thursday": "Not available",
+      "friday": "10:00 AM - 6:00 PM"
+    }
+  },
+  {
+    "id": 8,
+    "name": "Dr. Shahana Akhter",
+    "specialization": "Orthopedic Surgeon",
+    "image": "https://i.ibb.co/PGtJ8cm/young-female-doctor-front-view-wearing-coat-stethoscope-around-neck-indian-pakistani-model-561639-13.jpg",
+    "qualification": "MD, Orthopedics",
+    "experience_years": 12,
+    "contact": {
+      "email": "michael.johnson@example.com",
+      "phone": "+1 (555) 345-6789"
+    },
+    "address": {
+      "street": "789 Maple Street",
+      "city": "Cityburg",
+      "state": "State",
+      "zip_code": "67890"
+    },
+    "availability": {
+      "monday": "10:00 AM - 6:00 PM",
+      "tuesday": "10:00 AM - 6:00 PM",
+      "wednesday": "10:00 AM - 2:00 PM",
+      "thursday": "Not available",
+      "friday": "10:00 AM - 6:00 PM"
+    }
+  }
+]
