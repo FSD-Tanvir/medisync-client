@@ -11,7 +11,7 @@ const MainLayout = () => {
         <div className=" w-full lg:w-3/4">
           <Outlet />
         </div>
-        <div className="lg:w-1/4">
+        <div className="lg:pl-3 lg:w-1/4">
           <Advertise />
         </div>
       </div>
