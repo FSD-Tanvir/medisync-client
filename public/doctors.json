@@ -17,6 +17,7 @@
       "zip_code": "56789"
     },
     "availability": {
+      "Saturday": "10:00 AM - 5:00 PM",
       "monday": "8:00 AM - 4:00 PM",
       "tuesday": "8:00 AM - 4:00 PM",
       "wednesday": "Not available",
@@ -42,6 +43,7 @@
       "zip_code": "67890"
     },
     "availability": {
+      "Saturday": "10:00 AM - 5:00 PM",
       "monday": "10:00 AM - 6:00 PM",
       "tuesday": "10:00 AM - 6:00 PM",
       "wednesday": "10:00 AM - 2:00 PM",
@@ -67,6 +69,7 @@
       "zip_code": "67890"
     },
     "availability": {
+      "Saturday": "10:00 AM - 5:00 PM",
       "monday": "10:00 AM - 6:00 PM",
       "tuesday": "10:00 AM - 6:00 PM",
       "wednesday": "10:00 AM - 2:00 PM",
@@ -92,6 +95,7 @@
       "zip_code": "67890"
     },
     "availability": {
+      "Saturday": "10:00 AM - 5:00 PM",
       "monday": "10:00 AM - 6:00 PM",
       "tuesday": "10:00 AM - 6:00 PM",
       "wednesday": "10:00 AM - 2:00 PM",
@@ -117,7 +121,8 @@
       "zip_code": "67890"
     },
     "availability": {
-      "monday": "10:00 AM - 6:00 PM",
+      "Saturday": "10:00 AM - 5:00 PM",
+      "monday": "Not available",
       "tuesday": "10:00 AM - 6:00 PM",
       "wednesday": "10:00 AM - 2:00 PM",
       "thursday": "Not available",
@@ -142,6 +147,7 @@
       "zip_code": "67890"
     },
     "availability": {
+      "Saturday": "10:00 AM - 5:00 PM",
       "monday": "10:00 AM - 6:00 PM",
       "tuesday": "10:00 AM - 6:00 PM",
       "wednesday": "10:00 AM - 2:00 PM",
@@ -167,6 +173,7 @@
       "zip_code": "67890"
     },
     "availability": {
+      "Saturday": "Not available",
       "monday": "10:00 AM - 6:00 PM",
       "tuesday": "10:00 AM - 6:00 PM",
       "wednesday": "10:00 AM - 2:00 PM",
@@ -192,6 +199,7 @@
       "zip_code": "67890"
     },
     "availability": {
+      "Saturday": "10:00 AM - 5:00 PM",
       "monday": "10:00 AM - 6:00 PM",
       "tuesday": "10:00 AM - 6:00 PM",
       "wednesday": "10:00 AM - 2:00 PM",
