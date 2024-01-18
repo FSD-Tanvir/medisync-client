@@ -12,7 +12,7 @@
         "name": "Entacyd Plus",
         "weight": "200ml",
         "company": "Square Pharmaceuticals Ltd.",
-        "price": 72.21
+        "price": 72
     },
     {
         "id": 3,
@@ -41,34 +41,34 @@
     {
         "id": 6,
         "image": "https://i.ibb.co/Fs6c8kd/Whisper-Maxi-Nights.webp",
-        "name": "WHISPER MAXI NIGHTS",
-        "weight": "15 pads",
+        "name": "Whisper Nights",
+        "weight": "15 pc",
         "company": "Sun Pharmaceutical Ltd.",
-        "price": 327.25
+        "price": 90
     },
     {
         "id": 7,
         "image": "https://i.ibb.co/NNMTJMR/Senora-Ultrathin-Regular-Flow.webp",
-        "name": "Senora UltraThin  Flow",
-        "weight": "8 pads",
+        "name": "Senora Ultra Flow",
+        "weight": "8 pc",
         "company": "Square Pharmaceuticals Ltd.",
-        "price": 114.20
+        "price": 95.60
     },
     {
         "id": 8,
         "image": "https://i.ibb.co/1KRLtbd/Freedom-Heavy-Flow-Wings.webp",
-        "name": "Freedom Heavy  Wings",
-        "weight": "8 pads",
+        "name": "Freedom Wings",
+        "weight": "8 pc",
         "company": "ACI Limited",
-        "price": 104.50
+        "price": 80
     },
     {
         "id": 9,
         "image": "https://i.ibb.co/FKGCRkD/Huggies-Dry-Belt-Diaper.webp",
         "name": "Huggies Dry Belt Diaper",
-        "weight": "0-5 KG",
+        "weight": "",
         "company": "Baby Care",
-        "price": 1600.00
+        "price": 1600
     },
     {
         "id": 10,
@@ -76,7 +76,7 @@
         "name": "Savlon Baby Wipes",
         "weight": "100",
         "company": "ACI Limited",
-        "price": 209.30
+        "price": 200
     },
     {
         "id": 11,
@@ -84,14 +84,14 @@
         "name": "Baby Cotton Buds",
         "weight": "200 pc",
         "company": "Mundipharma (BD) Pvt. Ltd.",
-        "price": 100.25
+        "price": 10.20
     },
     {
         "id": 12,
         "image": "https://i.ibb.co/vVJ0HMQ/Listacare-Gold.webp",
         "name": "Listacare Gold",
         "weight": "120 ml",
-        "company": "General Pharmaceuticals Ltd.",
+        "company": "ACI Limited.",
         "price": 72.35
     }
 ]
