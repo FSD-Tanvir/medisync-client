@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import SectionItem from "./SectionItem";
 import {
   FaFacebookF,
@@ -8,51 +9,53 @@ import {
   FaYoutube,
 } from "react-icons/fa6";
 
-
 const Footer = () => {
   return (
     <div className="min-h-[80vh] max-w-7xl mx-auto bg-[#bde0fe] mt-2 py-24 px-10 space-y-10">
       <div>
-        <h2 className="text-4xl font-bold">Medi<span className="text-[#61a1de]">Sync</span></h2>
+        <h2 className="text-4xl font-bold">
+          Medi<span className="text-[#61a1de]">Sync</span>
+        </h2>
       </div>
       {/* footer content container  */}
       <div className="grid gap-3 lg:gap-0 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
         {/* Our services  */}
         <div>
           <h2 className="capitalize mb-3 text-[#0F0F0F] text-lg font-semibold">
-          Our services
+            Our services
           </h2>
           {/* services items  */}
           <ul className="space-y-2">
-            <SectionItem label="Order Medicines"  address="#"/>
-            <SectionItem label="Consult with doctor" address="#"/>
-            <SectionItem label="news & articles" address="#"/>
-            <SectionItem label="health suggestion" address="#"/>
+            <SectionItem label="Order Medicines" address="#" />
+            <SectionItem label="Consult with doctor" address="#" />
+            <SectionItem label="news & articles" address="#" />
+            <SectionItem label="health suggestion" address="#" />
           </ul>
         </div>
         {/* know Our policies  */}
         <div>
           <h2 className="capitalize mb-3 text-[#0F0F0F] text-lg font-semibold">
-          Know Our policies
+            Know Our policies
           </h2>
           {/* policies items  */}
           <ul className="space-y-2">
-            <SectionItem label="Privacy Policy" address="#"/>
-            <SectionItem label="Terms and Condition" address="#"/>
-            <SectionItem label="Return Policy" address="#"/>
-            <SectionItem label="Return Policy" address="#"/>
+            <SectionItem label="Privacy Policy" address="#" />
+            <SectionItem label="Terms and Condition" address="#" />
+            <SectionItem label="Return Policy" address="#" />
+            <SectionItem label="Return Policy" address="#" />
           </ul>
         </div>
         {/* useful links  */}
         <div>
           <h2 className="capitalize mb-3 text-[#0F0F0F] text-lg font-semibold">
-          useful links
+            useful links
           </h2>
           {/* services items  */}
           <ul className="space-y-2">
-            <SectionItem label="About Us" address="#"/>
-            <SectionItem label="Careers" address="#"/>
-            <SectionItem label="Become a Partner" address="#"/>
+            {/* <SectionItem label="About Us" address="" /> */}
+            <Link to="aboutUs">About us</Link>
+            <SectionItem label="Careers" address="#" />
+            <SectionItem label="Become a Partner" address="#" />
           </ul>
         </div>
         {/* contact us*/}
