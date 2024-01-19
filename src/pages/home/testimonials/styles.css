@@ -27,7 +27,7 @@
     height: 47rem;
   }
   .swiper-slide {
-    width: 15rem !important;
+    /* width: 15rem !important; */
     height: auto !important;
   }
   .swiper-slide .testimonial-image {
