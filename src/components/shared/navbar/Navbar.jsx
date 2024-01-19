@@ -58,9 +58,9 @@ const Navbar = () => {
             name="searchProducts"
             id="searchProducts"
             placeholder="here search your product "
-            className="w-64 md:w-96 border-2 p-1 pl-8 rounded-full  border-white"
+            className="w-64 md:w-96 border-2 p-1 pl-4 pr-8 rounded-full  border-white"
           />
-          <div className="absolute left-2  top-2">
+          <div className="absolute right-2  top-2">
             <div>
               <IoSearchOutline size={24} />
             </div>
@@ -93,9 +93,9 @@ const Navbar = () => {
               name="searchProducts"
               id="searchProducts"
               placeholder="here search your product "
-              className="w-64 md:w-96 border-2 p-1 pl-8 rounded-full  border-white"
+              className="w-64 md:w-96 border-2 p-1 pl-5 pr-8  rounded-full  border-white"
             />
-            <div className="absolute left-2  top-2">
+            <div className="absolute right-2  top-2">
               <div>
                 <IoSearchOutline size={24} />
               </div>

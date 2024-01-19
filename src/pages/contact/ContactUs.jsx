@@ -20,7 +20,7 @@ const ContactUs = () => {
         <div className="bg-black/25 text-white h-full flex justify-center items-center">
           <p className="drop-shadow-md">
             <Link to="/">
-              <span className="text-2xl font-semibold text-white border-r-4 border-white pr-2">
+              <span className="text-2xl font-semibold text-white border-r-4 border-cyan-100 pr-2">
                 Home
               </span>
             </Link>
@@ -38,14 +38,14 @@ const ContactUs = () => {
         </h2>
         <div className="w-full flex flex-col  md:flex-row gap-6 py-16">
           {/* left  */}
-          <div className="flex-1 ">
-            <h2 className="text-xl font-semibold">Contact</h2>
-            <p className="text-black/70 font-semibold mt-2 mb-4 w-3/4">
+          <div className="flex-1 lg:pl-5">
+            <h2 className="text-xl font-semibold text-center lg:text-start">Contact</h2>
+            <p className="text-black/70 font-semibold mt-2 mb-4 lg:w-3/4 pl-5 lg:pl-0 pr-1 lg:pr-0">
               Please share your thoughts with us about how we can make MediSync
               better. We welcome questions, bug reports, compliments,
               complaints, and feature requests.
             </p>
-            <div className="flex flex-col gap-2">
+            <div className="flex flex-col gap-2 pl-5 lg:pl-0">
               {/* <p className="flex gap-2 items-center text-lg font-medium">
               <FaUser size={20} className="text-cyan-400" /> Md Hasan Ali
             </p> */}
@@ -65,9 +65,9 @@ const ContactUs = () => {
           </div>
           {/* form  */}
           <div className="flex-1">
-            <h2 className="text-xl font-semibold ">Send Message</h2>
+            <h2 className="text-xl font-semibold text-center lg:text-start">Send Message</h2>
             <form onSubmit={handleSubmit}>
-              <div className="flex flex-col gap-2 mt-2">
+              <div className="flex flex-col justify-center items-center lg:justify-start lg:items-start gap-2 mt-2">
                 <input
                   type="text"
                   name="name"
@@ -96,10 +96,11 @@ const ContactUs = () => {
                   required
                   className="border border-cyan-400 w-3/4 focus:outline-cyan-400 focus:outline px-3 py-2 "
                 ></textarea>
-                <div className="w-3/4 mt-4">
+                <div className="w-full lg:w-3/4
+                mt-4">
                   <button
                     type="submit"
-                    className="px-20 bg-cyan-400 py-2 rounded-none uppercase hover:bg-cyan-500 hover:border-none transition ease-in duration-300"
+                    className="px-10 ml-32 lg:ml-0 lg:px-20 bg-cyan-400 py-2 rounded-none uppercase hover:bg-cyan-500 hover:border-none transition ease-in duration-300"
                   >
                     Submit
                   </button>
