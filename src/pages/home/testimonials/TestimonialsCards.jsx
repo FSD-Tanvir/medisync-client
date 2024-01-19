@@ -1,19 +1,32 @@
+import { FaQuoteLeft, FaQuoteRight } from "react-icons/fa";
+import "./styles.css";
 const TestimonialsCard = ({ testimonialData }) => {
   return (
     <>
-      <div className="w-[100%] p-4 bg-white rounded-md relative">
-        <div className="flex justify-center">
+      <div className="w-full bg-[#bde0fe] rounded-md p-8 border-4">
+        <div className="">
+          <p className=" text-sm">
+            <span>
+              <FaQuoteLeft className="text-3xl text-white" />
+            </span>
+            {testimonialData.content}
+            <span>
+              <FaQuoteRight className="text-3xl text-white" />
+            </span>
+          </p>
+        </div>
+        <div className="flex justify-start items-center gap-4 my-4">
           <img
-            className="w-32 h-32 rounded-full border-white border-4 absolute -top-12"
+            className="testimonial-image border-2"
             src={testimonialData.image}
             alt={testimonialData.name}
           />
-        </div>
-        <div className="mt-16">
-          <h1 className="text-left mt-20 mb-4 font-bold">
-            {testimonialData.name}
-          </h1>
-          <p className="text-justify">{testimonialData.content}</p>
+          <div className="flex flex-col justify-start items-start">
+            <h1 className="text-base">{testimonialData.name}</h1>
+            <p className="text-sm text-zinc-700">
+              {testimonialData.occupation}
+            </p>
+          </div>
         </div>
       </div>
     </>

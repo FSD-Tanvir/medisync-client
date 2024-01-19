@@ -31,6 +31,14 @@ const testimonialsData = [
     content:
       "Medisync has simplified the process of buying medicines online. The detailed product descriptions and reviews help me make informed decisions. Plus, the delivery is always on time. I'm a happy and satisfied customer.",
   },
+  {
+    id: 5,
+    name: "Emily Davis",
+    occupation: "Freelancer",
+    image: "https://i.ibb.co/VQ4kxWX/300-4.jpg",
+    content:
+      "Medisync has simplified the process of buying medicines online. The detailed product descriptions and reviews help me make informed decisions. Plus, the delivery is always on time. I'm a happy and satisfied customer.",
+  },
 ];
 
 export default testimonialsData;
