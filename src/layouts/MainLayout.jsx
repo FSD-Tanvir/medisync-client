@@ -6,8 +6,7 @@ import Advertise from "../pages/home/Advertise/Advertise";
 const MainLayout = () => {
   const location = useLocation();
   const isHomePage = location.pathname === "/" || false;
-  console.log(location);
-  console.log(isHomePage);
+
   return (
     <>
       <Navbar />
