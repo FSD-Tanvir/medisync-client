@@ -7,14 +7,15 @@ import { GrWorkshop } from "react-icons/gr";
 import { TiThMenu } from "react-icons/ti";
 import { IoCartOutline, IoSearchOutline, IoClose } from "react-icons/io5";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const menuItems = [
-  { id: 1, icon: <GoHome />, item: "Home" },
-  { id: 2, icon: <BiPurchaseTagAlt />, item: "Buy Products" },
-  { id: 3, icon: <CiCirclePlus />, item: "Free Advice" },
-  { id: 4, icon: <FiFilePlus />, item: "Articles" },
-  { id: 5, icon: <FaUserDoctor />, item: "Meet Doctors" },
-  { id: 6, icon: <GrWorkshop />, item: "Career" },
+  { id: 1, icon: <GoHome />, item: "Home", link: "/" },
+  { id: 2, icon: <BiPurchaseTagAlt />, item: "Buy Products", link: "/" },
+  { id: 3, icon: <CiCirclePlus />, item: "Free Advice", link: "/" },
+  { id: 4, icon: <FiFilePlus />, item: "Articles", link: "/" },
+  { id: 5, icon: <FaUserDoctor />, item: "Meet Doctors", link: "/" },
+  { id: 6, icon: <GrWorkshop />, item: "Career", link: "/" },
 ];
 
 const Navbar = () => {
@@ -126,13 +127,14 @@ const Navbar = () => {
             } `}
           >
             {menuItems.map((menuItem) => (
-              <li
+              <Link
                 key={menuItem.id}
-                className="flex items-center pr-4 gap-2 lg:border-r border-white"
+                to={menuItem.link}
+                className="flex items-center font-semibold hover:text-cyan-700  pr-4 gap-2 lg:border-r border-white"
               >
                 {menuItem.icon}
                 <span>{menuItem.item}</span>
-              </li>
+              </Link>
             ))}
           </ul>
         </div>
