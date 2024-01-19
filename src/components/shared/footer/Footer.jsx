@@ -13,13 +13,7 @@ const Footer = () => {
   return (
     <div className="min-h-[80vh]  bg-cyan-400 mt-2 py-24 px-5 sm:px-10 space-y-10">
       <div>
-
-        <h2 className="text-4xl font-bold">
-          Medi<span className="text-[#61a1de]">Sync</span>
-        </h2>
-
         <h2 className="text-4xl font-bold">Medi<span className="text-cyan-700">Sync</span></h2>
-
       </div>
       {/* footer content container  */}
       <div className="grid gap-3 lg:gap-0 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
@@ -46,7 +40,6 @@ const Footer = () => {
             <SectionItem label="Privacy Policy" address="#" />
             <SectionItem label="Terms and Condition" address="#" />
             <SectionItem label="Return Policy" address="#" />
-            <SectionItem label="Return Policy" address="#" />
           </ul>
         </div>
         {/* useful links  */}
@@ -58,11 +51,7 @@ const Footer = () => {
           <ul className="space-y-2">
 
             {/* <SectionItem label="About Us" address="" /> */}
-            <Link to="aboutUs">About us</Link>
-            <SectionItem label="Careers" address="#" />
-            <SectionItem label="Become a Partner" address="#" />
-
-            <SectionItem label="About Us" address="#"/>
+            <SectionItem label="About Us" address="/aboutUs"/>
             <SectionItem label="Contact Us" address="/contact-us"/>
             <SectionItem label="Careers" address="#"/>
             <SectionItem label="Become a Partner" address="#"/>
