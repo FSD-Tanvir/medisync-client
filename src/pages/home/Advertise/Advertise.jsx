@@ -24,7 +24,7 @@ const Advertise = () => {
             src={doctor?.image}
             alt={doctor?.name}
           />
-          <h2 className="font-semibold text-xl text-green-400 mt-2 mb-1 text-center">{doctor?.name}</h2>
+          <h2 className="font-semibold text-xl text-cyan-400 mt-2 mb-1 text-center">{doctor?.name}</h2>
           <p className="font-medium"><span className="font-semibold">Specialist: </span>{doctor?.specialization}</p>
           <p>
             <span className="font-semibold ">Email:</span> {doctor?.contact?.email}
@@ -34,7 +34,7 @@ const Advertise = () => {
           </p>
         </div>
         <div className="flex justify-center items-center mt-2">
-          <button className="btn bg-blue-400 px-4 py-1 font-semibold text-white">
+          <button className="btn bg-cyan-400 px-4 py-1 font-semibold">
             Appointment
           </button>
         </div>
@@ -52,7 +52,7 @@ const Advertise = () => {
   }, [currentIndex, doctors, setCurrentIndex]);
 
   return (
-    <div className="shadow-xl min-h-screen mt-5 bg-gray-100 sticky top-[124px] hidden lg:block">
+    <div className="shadow-xl min-h-screen mt-5 bg-gray-100 sticky top-[80px] hidden lg:block">
       {displayDoctor()}
     </div>
   );

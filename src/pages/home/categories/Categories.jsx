@@ -20,7 +20,7 @@ import 'swiper/css/pagination';
 const Categories = () => {
     return (
         <div className="">
-            <h1 className="text-3xl text-center font-bold ">Categories </h1>
+            <h1 className="text-2xl  font-bold ">Categories </h1>
             {/* <Swiper navigation={true} modules={[Navigation]} className="mySwiper"> */}
             <div className="hidden lg:block">
                 <Swiper

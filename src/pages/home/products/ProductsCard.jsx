@@ -14,11 +14,11 @@ const ProductsCard = ({ product }) => {
                         <span className="text-base font-bold text-black capitalize">{name}</span>
                         <h2 className="text-sm">{weight}</h2>
                     </div>
-                    <p className="text-[#de2f6f]  py-4 text-sm">{company}</p>
+                    <p className="text-gray-700  py-4 text-sm">{company}</p>
                     <div className="flex items-center justify-between">
                         <p className="text-sm font-semibold text-black">Price: ${price}</p>
                         <div className="">
-                            <button className="bg-blue-400 text-white  py-2 px-2 rounded">Add To Cart</button>
+                            <button className="bg-cyan-400 text-white  py-2 px-2 rounded">Add To Cart</button>
                         </div>
                     </div>
                 </div>

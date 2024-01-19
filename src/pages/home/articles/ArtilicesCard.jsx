@@ -18,7 +18,7 @@ const ArtilicesCard = ({ articlie }) => {
                     <img src={image} alt="" className="w-full h-full object-cover" />
                 </div>
                 <div className="px-3 py-5">
-                    <h2 className="text-sky-800 text-lg font-semibold">{title}</h2>
+                    <h2 className="text-cyan-600 text-lg font-semibold">{title}</h2>
                     <p className="text-slate-700 font-normal">
                         {showFullDescription ? description : truncatedDescription}
                     </p>
