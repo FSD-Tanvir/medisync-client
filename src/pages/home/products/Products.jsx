@@ -27,7 +27,7 @@ const Products = () => {
 
     return (
         <div>
-            <h2 className="text-center mt-8 mb-8 text-3xl font-bold">All Medicine Products Here</h2>
+            <h2 className="mt-8 mb-8 text-2xl font-bold">All Medicine Products Here</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
                 {
                     products?.map(product => <ProductsCard key={product.id} product={product}></ProductsCard>)

@@ -24,7 +24,7 @@ const Articles = () => {
     }, []);
     return (
         <div>
-            <h2 className="text-center mt-8 mb-8 text-3xl font-bold">Health Articlies</h2>
+            <h2 className=" mt-8 mb-8 text-2xl font-bold">Health Articlies</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
                 {
                     arrticles?.map(articlie => <ArtilicesCard key={articlie.id} articlie={articlie}></ArtilicesCard>)

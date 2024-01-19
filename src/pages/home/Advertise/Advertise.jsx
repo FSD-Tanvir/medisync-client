@@ -18,25 +18,15 @@ const Advertise = () => {
 
     return (
       <div className="w-full p-3">
-        <div className="h-[560px]">
-          <h2 className="font-semibold text-xl text-green-400">{doctor?.name}</h2>
-          <p className="font-medium mb-3">{doctor?.specialization}</p>
+        <div className="h-[320px]">
           <img
             className="w-full h-[200px] object-cover"
             src={doctor?.image}
             alt={doctor?.name}
           />
-          <div className="mt-5">
-            <h1 className="font-semibold text-center mt-2 text-xl">Availability</h1>
-            <h2><span className="font-semibold">Saturday:</span> {JSON.stringify(doctor?.availability?.Saturday)}</h2>
-            <h2><span className="font-semibold">Sunday:</span> {JSON.stringify(doctor?.availability?.sunday ? " " : "Not available")}</h2>
-            <h2><span className="font-semibold">Monday:</span> {JSON.stringify(doctor?.availability?.monday)}</h2>
-            <h2><span className="font-semibold">Tuesday:</span> {JSON.stringify(doctor?.availability?.tuesday)}</h2>
-            <h2><span className="font-semibold">Wednesday:</span> {JSON.stringify(doctor?.availability?.wednesday)}</h2>
-            <h2><span className="font-semibold">Thursday:</span> {JSON.stringify(doctor?.availability?.thursday)}</h2>
-            <h2><span className="font-semibold">Friday:</span> {JSON.stringify(doctor?.availability?.friday)}</h2>
-          </div>
-          <p className="mt-3">
+          <h2 className="font-semibold text-xl text-cyan-400 mt-2 mb-1 text-center">{doctor?.name}</h2>
+          <p className="font-medium"><span className="font-semibold">Specialist: </span>{doctor?.specialization}</p>
+          <p>
             <span className="font-semibold ">Email:</span> {doctor?.contact?.email}
           </p>
           <p className="mb-10">
@@ -44,7 +34,7 @@ const Advertise = () => {
           </p>
         </div>
         <div className="flex justify-center items-center mt-2">
-          <button className="btn bg-blue-400 px-4 py-1 font-semibold text-white">
+          <button className="btn bg-cyan-400 px-4 py-1 font-semibold">
             Appointment
           </button>
         </div>
@@ -62,7 +52,7 @@ const Advertise = () => {
   }, [currentIndex, doctors, setCurrentIndex]);
 
   return (
-    <div className="shadow-xl min-h-screen bg-gray-100 sticky top-[100px] hidden lg:block">
+    <div className="shadow-xl min-h-screen mt-5 bg-gray-100 sticky top-[80px] hidden lg:block">
       {displayDoctor()}
     </div>
   );

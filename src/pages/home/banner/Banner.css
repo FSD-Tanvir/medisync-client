@@ -1,4 +1,4 @@
-.banner{
+/* .banner{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -6,10 +6,12 @@
     background-size: cover;
     background-repeat: no-repeat;
     background-image: linear-gradient(0deg, rgb(10, 202, 250), rgba(8, 132, 248, 0.5), rgba(10, 202, 250, 0.5)), url('../../../assets/bannerImg.webp');
-}
+} */
 .swiper {
     width: 100%;
     height: 100%;
+    margin-top: 20px;
+    /* border: 1px solid red; */
   }
   
   .swiper-slide {
@@ -21,7 +23,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 400px;
+    height: 250px;
   }
   
   .swiper-slide img {
@@ -31,7 +33,7 @@
     object-fit: cover;
   }
   
-  .autoplay-progress {
+  /* .autoplay-progress {
     position: absolute;
     right: 16px;
     bottom: 16px;
@@ -59,5 +61,5 @@
     stroke-dashoffset: calc(125.6 * (1 - var(--progress)));
     stroke-dasharray: 125.6;
     transform: rotate(-90deg);
-  }
+  } */
   
