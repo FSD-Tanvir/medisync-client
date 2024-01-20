@@ -1,5 +1,4 @@
 import { FaQuoteLeft, FaQuoteRight } from "react-icons/fa";
-import "./styles.css";
 const TestimonialsCard = ({ testimonialData }) => {
   return (
     <>
