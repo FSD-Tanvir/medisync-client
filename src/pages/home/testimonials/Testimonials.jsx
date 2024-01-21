@@ -14,8 +14,8 @@ import { EffectCoverflow, Pagination, Navigation } from "swiper/modules";
 
 function App() {
   return (
-    <div className="container">
-      <h1 className="text-2xl font-bold my-4">Testimonials</h1>
+    <div className="container px-2 ">
+      <h1 className="text-2xl font-bold mt-5 mb-16">Testimonials</h1>
       <Swiper
         effect={"coverflow"}
         grabCursor={true}
@@ -35,16 +35,10 @@ function App() {
           clickable: true,
         }}
         modules={[EffectCoverflow, Pagination, Navigation]}
-        className="swiper_container"
+        className="swiper_container "
       >
         {testimonialsData.map((testimonialData) => (
-          <SwiperSlide
-            style={{
-              width: "20rem",
-              position: "relative",
-            }}
-            key={testimonialData.id}
-          >
+          <SwiperSlide key={testimonialData.id}>
             <TestimonialsCard testimonialData={testimonialData} />
           </SwiperSlide>
         ))}

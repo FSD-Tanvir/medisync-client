@@ -17,18 +17,14 @@
 }
 
 .swiper-slide {
-  width: 50rem;
+  width: 41%;
   height: auto;
   position: relative;
 }
 
 @media (max-width: 500px) {
-  .swiper_container {
-    height: 47rem;
-  }
   .swiper-slide {
-    width: 15rem !important;
-    height: auto !important;
+    width: 15rem;
   }
   .swiper-slide .testimonial-image {
     width: 2rem !important;
