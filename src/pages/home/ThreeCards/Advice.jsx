@@ -45,6 +45,9 @@ const Advice = () => {
             <div>
                 {
                     <div className="px-5 lg:px-20 lg:pb-10">
+                        <div className="border h-[400px] mb-10">
+                            <img src={disease?.image} className="h-full w-full object-cover" alt="" />
+                        </div>
                         <h1 className="font-semibold mb-3 text-xl">{disease?.title}</h1>
                         <p>{disease?.description}</p>
                         <p className="font-semibold mt-4">{disease?.tips_title_1}</p>
