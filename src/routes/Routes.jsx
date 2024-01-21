@@ -5,7 +5,12 @@ import Home from "../pages/home/Home";
 import AboutUs from "../pages/AboutUs/AboutUs";
 
 import ContactUs from "../pages/contact/ContactUs";
+
 import Advice from "../pages/home/ThreeCards/Advice";
+
+
+import NewsArticles from "../pages/News&Articles/NewsArticles";
+import NewsArticlesDetails from "../pages/News&Articles/NewsArticlesDetails";
 
 
 export const router = createBrowserRouter([
@@ -20,7 +25,7 @@ export const router = createBrowserRouter([
 
       {
         path: "/aboutUs",
-        element: <AboutUs />
+        element: <AboutUs />,
       },
 
       {
@@ -33,7 +38,11 @@ export const router = createBrowserRouter([
       },
       {
         path: "/articles",
-        element: <Home />,
+        element: <NewsArticles />,
+      },
+      {
+        path: "/articles/:id",
+        element: <NewsArticlesDetails />,
       },
       {
         path: "/doctors",
@@ -44,7 +53,6 @@ export const router = createBrowserRouter([
         element: <Home />,
       },
       { path: "contact-us", element: <ContactUs /> },
-
     ],
   },
 ]);
