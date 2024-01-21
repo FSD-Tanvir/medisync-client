@@ -5,18 +5,29 @@ import { FcGoogle } from "react-icons/fc";
 import { MdAttachEmail } from "react-icons/md";
 import { FaTwitter } from "react-icons/fa";
 import regImg from '../../../assets/LogIn/doctor-register.jpg'
-// import { useEffect } from "react";
+import { useEffect } from "react";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 
 
-const Register = ({setShowRegister}) => {
-    
+const Register = ({ setShowRegister }) => {
+
+    useEffect(() => {
+        AOS.init()
+    }, [])
+
     return (
         <div className="relative p-5 flex-auto ">
             <div className="flex flex-col lg:flex-row-reverse items-center justify-center gap-5">
-                <div className="w-[400px] flex flex-col items-center gap-4">
-                    <img src={regImg} alt="" className="rounded-3xl"/>
-                    <p>{`Already Have Account ?`} <button onClick={()=> setShowRegister(false)} className="font-bold">Log In</button></p>
+                <div className="w-[300px] flex flex-col items-center gap-4">
+                    <div data-aos="fade-left"
+                        data-aos-anchor="#example-anchor"
+                        data-aos-offset="500"
+                        data-aos-duration="3000">
+                        <img src={regImg} alt="" className="rounded-3xl" />
+                    </div>
+                    <p>{`Already Have Account ?`} <button onClick={() => setShowRegister(false)} className="font-bold">Log In</button></p>
                 </div>
                 <div className="flex flex-col gap-6">
                     <form className="flex flex-col items-center gap-5">
