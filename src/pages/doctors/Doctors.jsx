@@ -3,7 +3,7 @@ import DoctorCard from "./DoctorCard";
 
 const Doctors = () => {
   const [doctors, setDoctors] = useState([]);
-  const [selectedQualification, setSelectedQualification] = useState("All");
+  const [selectedSpecialization, setSelectedSpecialization] = useState("All");
   const [currentPage, setCurrentPage] = useState(1);
   const cardsPerPage = 6;
 
@@ -14,17 +14,17 @@ const Doctors = () => {
       .then((data) => setDoctors(data));
   }, []);
 
-  // Extract unique qualifications for dropdown options
-  const uniqueQualifications = Array.from(
-    new Set(doctors.map((doctor) => doctor.qualification))
+  // Extract unique specializations for dropdown options
+  const uniqueSpecializations = Array.from(
+    new Set(doctors.map((doctor) => doctor.specialization))
   );
 
-  // Filter doctors based on selected qualification
+  // Filter doctors based on selected specialization
   const filteredDoctors =
-    selectedQualification === "All"
+    selectedSpecialization === "All"
       ? doctors
       : doctors.filter(
-          (doctor) => doctor.qualification === selectedQualification
+          (doctor) => doctor.specialization === selectedSpecialization
         );
 
   // Paginate doctors based on the current page
@@ -41,22 +41,22 @@ const Doctors = () => {
         Meet Our Doctors
       </h1>
 
-      {/* Qualification Filter */}
+      {/* Specialization Filter */}
       <div className="flex justify-center items-center mb-4">
-        <label className="mr-2">Filter by Qualification:</label>
+        <label className="mr-2">Filter by Specialization:</label>
         <select
           className="border border-gray-300 p-2 rounded-md"
-          value={selectedQualification}
+          value={selectedSpecialization}
           onChange={(e) => {
             setCurrentPage(1);
-            setSelectedQualification(e.target.value);
+            setSelectedSpecialization(e.target.value);
           }}
         >
           <option value="All">All</option>
-          {/* Add options for each unique qualification */}
-          {uniqueQualifications.map((qualification) => (
-            <option key={qualification} value={qualification}>
-              {qualification}
+          {/* Add options for each specialization */}
+          {uniqueSpecializations.map((specialization) => (
+            <option key={specialization} value={specialization}>
+              {specialization}
             </option>
           ))}
         </select>
