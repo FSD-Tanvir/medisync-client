@@ -23,7 +23,8 @@
       "wednesday": "Not available",
       "thursday": "8:00 AM - 12:00 PM",
       "friday": "8:00 AM - 4:00 PM"
-    }
+    },
+    "university": "University Medical School"
   },
   {
     "id": 2,
@@ -49,7 +50,8 @@
       "wednesday": "10:00 AM - 2:00 PM",
       "thursday": "Not available",
       "friday": "10:00 AM - 6:00 PM"
-    }
+    },
+    "university": "City Medical College"
   },
   {
     "id": 3,
@@ -75,7 +77,8 @@
       "wednesday": "10:00 AM - 2:00 PM",
       "thursday": "Not available",
       "friday": "10:00 AM - 6:00 PM"
-    }
+    },
+    "university": "City Medical College"
   },
   {
     "id": 4,
@@ -101,7 +104,8 @@
       "wednesday": "10:00 AM - 2:00 PM",
       "thursday": "Not available",
       "friday": "10:00 AM - 6:00 PM"
-    }
+    },
+    "university": "City Medical College"
   },
   {
     "id": 5,
@@ -127,7 +131,8 @@
       "wednesday": "10:00 AM - 2:00 PM",
       "thursday": "Not available",
       "friday": "10:00 AM - 6:00 PM"
-    }
+    },
+    "university": "City Medical College"
   },
   {
     "id": 6,
@@ -153,7 +158,8 @@
       "wednesday": "10:00 AM - 2:00 PM",
       "thursday": "Not available",
       "friday": "10:00 AM - 6:00 PM"
-    }
+    },
+    "university": "City Medical College"
   },
   {
     "id": 7,
@@ -179,7 +185,8 @@
       "wednesday": "10:00 AM - 2:00 PM",
       "thursday": "Not available",
       "friday": "10:00 AM - 6:00 PM"
-    }
+    },
+    "university": "City Medical College"
   },
   {
     "id": 8,
@@ -205,6 +212,7 @@
       "wednesday": "10:00 AM - 2:00 PM",
       "thursday": "Not available",
       "friday": "10:00 AM - 6:00 PM"
-    }
+    },
+    "university": "City Medical College"
   }
 ]

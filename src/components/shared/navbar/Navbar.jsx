@@ -14,7 +14,7 @@ const menuItems = [
   { id: 2, icon: <BiPurchaseTagAlt />, item: "Buy Products", link: "/" },
   { id: 3, icon: <CiCirclePlus />, item: "Free Advice", link: "/" },
   { id: 4, icon: <FiFilePlus />, item: "Articles", link: "/" },
-  { id: 5, icon: <FaUserDoctor />, item: "Meet Doctors", link: "/" },
+  { id: 5, icon: <FaUserDoctor />, item: "Meet Doctors", link: "/doctors" },
   { id: 6, icon: <GrWorkshop />, item: "Career", link: "/" },
 ];
 
@@ -23,7 +23,7 @@ const Navbar = () => {
 
   return (
     <>
-      {/* logo navbar  for small device */}
+      {/* navbar  for small device */}
 
       <div className=" sticky top-0  lg:hidden  flex items-center justify-between bg-cyan-400 p-2 z-50 ">
         {/* logo */}
