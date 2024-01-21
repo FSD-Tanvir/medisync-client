@@ -40,7 +40,7 @@
     },
     {
         "id": 5,
-        "image": "https://example.com/napa-image.jpg",
+        "image": "https://i.ibb.co/wLqFDV0/napa.webp",
         "name": "Napa",
         "weight": "500mg",
         "company": "Beximco Pharmaceuticals Ltd.",
@@ -50,7 +50,7 @@
     },
     {
         "id": 6,
-        "image": "https://example.com/ceevit-image.jpg",
+        "image": "https://i.ibb.co/rvfzKDz/ceevit.webp",
         "name": "Ceevit",
         "weight": "250mg",
         "company": "Vitamin C [Ascorbic Acid]",
@@ -60,7 +60,7 @@
     },
     {
         "id": 7,
-        "image": "https://example.com/ceevit-ds-image.jpg",
+        "image": "https://i.ibb.co/4ZKqRvR/ceevit-ds.webp",
         "name": "Ceevit Ds",
         "weight": "500mg",
         "company": "Vitamin C [Ascorbic Acid]",
@@ -70,7 +70,7 @@
     },
     {
         "id": 8,
-        "image": "https://example.com/vasco-image.jpg",
+        "image": "https://i.ibb.co/WxFWWzS/vasco.webp",
         "name": "Vasco",
         "weight": "300mg",
         "company": "Vitamin C [Ascorbic Acid]",
@@ -80,7 +80,7 @@
     },
     {
         "id": 9,
-        "image": "https://example.com/ascobox-image.jpg",
+        "image": "https://i.ibb.co/sHDbNzK/Ascobex.webp",
         "name": "Ascobox",
         "weight": "400mg",
         "company": "Vitamin C [Ascorbic Acid]",
@@ -90,7 +90,7 @@
     },
     {
         "id": 10,
-        "image": "https://example.com/cecon-image.jpg",
+        "image": "https://i.ibb.co/jvNCjVw/Baby-Cotton-Burds.webp",
         "name": "Cecon",
         "weight": "200mg",
         "company": "Vitamin C [Ascorbic Acid]",
@@ -115,6 +115,7 @@
         "weight": "15 pc",
         "company": "Sun Pharmaceutical Ltd.",
         "price": 90,
+        "category": "women",
         "description": "Whisper Nights, with 15 pads per pack, is designed by Sun Pharmaceutical Ltd. for optimal overnight protection. The specially crafted pads provide a comfortable and secure feel, ensuring you wake up feeling fresh and confident. Whisper Nights is your ideal companion for a worry-free night."
     },
     {
@@ -124,6 +125,7 @@
         "weight": "8 pc",
         "company": "Square Pharmaceuticals Ltd.",
         "price": 95.60,
+        "category": "women",
         "description": "Senora Ultra Flow, with 8 ultrathin pads, is meticulously crafted by Square Pharmaceuticals Ltd. for regular flow days. The ultrathin design provides discreet protection and comfort, allowing you to stay active and confident throughout the day. Trust Senora for a superior feminine care experience."
     },
     {
@@ -133,6 +135,7 @@
         "weight": "8 pc",
         "company": "ACI Limited",
         "price": 80,
+        "category": "women",
         "description": "Experience superior protection with Freedom Wings by ACI Limited. This pack of 8 heavy-flow pads ensures maximum comfort and security. The wings provide extra coverage and prevent back leakage, allowing you to confidently carry on with your day. Choose Freedom for reliable feminine hygiene."
     },
     {
@@ -141,6 +144,7 @@
         "name": "Huggies Dry Belt Diaper",
         "weight": "",
         "company": "Baby Care",
+        "category": "women",
         "price": 1600,
         "description": "Ensure your baby's comfort with Huggies Dry Belt Diaper from Baby Care. This high-quality diaper provides long-lasting dryness and comfort. With an easy-to-use belt design, it ensures a secure fit. Choose Huggies for a happy and dry experience for your little one."
     },
@@ -151,11 +155,12 @@
         "weight": "100",
         "company": "ACI Limited",
         "price": 200,
+        "category": "women",
         "description": "Savlon Baby Wipes by ACI Limited are a gentle and effective solution for your baby's hygiene. With 100 wipes per pack, these wipes are enriched with aloe vera and chamomile, ensuring a soft and soothing experience. Keep your baby clean and happy with Savlon Baby Wipes."
     },
     {
         "id": 17,
-        "image": "https://example.com/whisper-ultra-comfort-xl-image.jpg",
+        "image": "https://i.ibb.co/n60KHSj/wisper-altra.webp",
         "name": "Whisper Ultra Comfort XL",
         "weight": "10 pads",
         "company": "SMC Enterprise Limited",
@@ -165,7 +170,7 @@
     },
     {
         "id": 18,
-        "image": "https://example.com/joya-sanitary-napkin-image.jpg",
+        "image": "https://i.ibb.co/yRsQs2R/joy.webp",
         "name": "Joya Sanitary Napkin",
         "weight": "6 pads",
         "company": "ACI Limited",
@@ -175,7 +180,7 @@
     },
     {
         "id": 19,
-        "image": "https://example.com/freedom-belt-system-image.jpg",
+        "image": "https://i.ibb.co/rG3KHB5/freedom.webp",
         "name": "Freedom Belt System",
         "weight": "1 belt",
         "company": "Sun Pharmaceutical Ltd.",
@@ -185,7 +190,7 @@
     },
     {
         "id": 20,
-        "image": "https://example.com/joya-all-night-wings-image.jpg",
+        "image": "https://i.ibb.co/85TrZy3/jpya-all-night.webp",
         "name": "Joya All Night Wings",
         "weight": "12 pads",
         "company": "SMC Enterprise Limited",
@@ -205,7 +210,7 @@
     },
     {
         "id": 22,
-        "image": "https://example.com/neocare-image.jpg",
+        "image": "https://i.ibb.co/Qr3vYrp/necore.webp",
         "name": "Neocare",
         "weight": "150 gm",
         "company": "ACI Limited",
@@ -215,12 +220,12 @@
     },
     {
         "id": 23,
-        "image": "https://example.com/freedom-belt-system-image.jpg",
-        "name": "Freedom Belt System",
-        "weight": "1 belt",
+        "image": "https://i.ibb.co/fHV0f8x/necore-baby.webp",
+        "name": "NeoCare Baby Wipes",
+        "weight": "120",
         "company": "Unimax Industries Ltd.",
         "category": "baby",
-        "price": 18.99,
+        "price": 223.00,
         "description": "Introducing Freedom Belt System by Unimax Industries Ltd. This innovative product brings comfort and security to your baby's hygiene routine. The adjustable belt and reliable attachment ensure a worry-free experience. Provide your baby with the best care using Freedom Belt System."
     },
     {
@@ -235,7 +240,7 @@
     },
     {
         "id": 25,
-        "image": "https://example.com/thai-wet-wipes-image.jpg",
+        "image": "https://i.ibb.co/RhrHc4Y/thai-wet.webp",
         "name": "Thai Wet Wipes",
         "weight": "120 pc",
         "company": "Unimax Industries Ltd.",
@@ -245,7 +250,7 @@
     },
     {
         "id": 26,
-        "image": "https://example.com/baby-wet-towel-image.jpg",
+        "image": "https://i.ibb.co/HndRmmX/baby-towel.webp",
         "name": "Baby Wet Towel",
         "weight": "80 gm",
         "company": "Nestle Bangladesh Limited",
@@ -255,7 +260,7 @@
     },
     {
         "id": 27,
-        "image": "https://example.com/avonee-mini-pant-image.jpg",
+        "image": "https://i.ibb.co/jvNCjVw/Baby-Cotton-Burds.webp",
         "name": "Avonee Mini Pant",
         "weight": "10 pcs",
         "company": "ACI Limited",
@@ -265,7 +270,7 @@
     },
     {
         "id": 28,
-        "image": "https://example.com/dettol-wet-wipes-image.jpg",
+        "image": "https://i.ibb.co/b5ZZtdx/dettol.webp",
         "name": "Dettol Anti Bacterial Wet Wipes",
         "weight": "50 pcs",
         "company": "Reckitt Benckiser (Bangladesh) Ltd.",
@@ -275,7 +280,7 @@
     },
     {
         "id": 29,
-        "image": "https://example.com/lactogen-1-image.jpg",
+        "image": "https://i.ibb.co/4828fNt/lectogen.webp",
         "name": "Lactogen 1",
         "weight": "400 gm",
         "company": "Nestle Bangladesh Limited",
@@ -285,7 +290,7 @@
     },
     {
         "id": 30,
-        "image": "https://example.com/supermom-mild-baby-wipes-image.jpg",
+        "image": "https://i.ibb.co/0hNYSBf/supermom.webp",
         "name": "Supermom Mild Baby Wipes",
         "weight": "150 pcs",
         "company": "Supermom Baby Care",
@@ -295,7 +300,7 @@
     },
     {
         "id": 31,
-        "image": "https://example.com/orostar-plus-image.jpg",
+        "image": "https://i.ibb.co/cFkgWrB/otar-plus.webp",
         "name": "Orostar Plus",
         "weight": "250ml",
         "company": "ACI Limited",
@@ -305,7 +310,7 @@
     },
     {
         "id": 32,
-        "image": "https://example.com/listacare-blue-mint-image.jpg",
+        "image": "https://i.ibb.co/JFMnyZT/Listacare-Blue-Mint.webp",
         "name": "Listacare Blue Mint",
         "weight": "120ml",
         "company": "GSK",
@@ -315,7 +320,7 @@
     },
     {
         "id": 33,
-        "image": "https://example.com/mediplus-image.jpg",
+        "image": "https://i.ibb.co/3ykYWDd/mediplus.webp",
         "name": "Mediplus",
         "weight": "140gm",
         "company": "Anfords",
@@ -325,7 +330,7 @@
     },
     {
         "id": 34,
-        "image": "https://example.com/listacare-gold-image.jpg",
+        "image": "https://i.ibb.co/VLD10mX/listacore-gold.webp",
         "name": "Listacare Gold",
         "weight": "220ml",
         "company": "Square Pharmaceuticals Ltd.",
@@ -335,7 +340,7 @@
     },
     {
         "id": 35,
-        "image": "https://example.com/mediplus-ds-image.jpg",
+        "image": "https://i.ibb.co/Fh1P5yM/mediplus-ds.webp",
         "name": "Mediplus DS",
         "weight": "140ml",
         "company": "Anfords",
@@ -345,7 +350,7 @@
     },
     {
         "id": 36,
-        "image": "https://example.com/orostar-plus-2-image.jpg",
+        "image": "https://i.ibb.co/NNQKGKM/orostar-plus.webp",
         "name": "Orostar Plus",
         "weight": "120ml",
         "company": "ACI Limited",
@@ -355,9 +360,8 @@
     },
     {
         "id": 37,
-        "image": "https://example.com/mediplus-toothbrush-image.jpg",
+        "image": "https://i.ibb.co/XYM2ZQX/toothbrush.webp",
         "name": "Mediplus Toothbrush",
-        "weight": "75 gm",
         "company": "Anfords",
         "category": "dental",
         "price": 70.00,
@@ -365,8 +369,8 @@
     },
     {
         "id": 38,
-        "image": "https://example.com/sensodyne-fresh-gel-image.jpg",
-        "name": "Sensodyne Fresh Gel",
+        "image": "https://i.ibb.co/Dth5zhN/fresg-gel.webp",
+        "name": "Sensodyne Fresh ",
         "weight": "70 gm",
         "company": "GSK",
         "category": "dental",
@@ -374,7 +378,7 @@
         "description": "Sensodyne Fresh Gel by GSK, in a 70 gm pack, is the ideal choice for sensitive teeth. The unique formula provides effective relief from sensitivity while offering a burst of fresh gel flavor. Say goodbye to tooth sensitivity with the soothing experience of Sensodyne Fresh Gel."
     },
     {
-        "image": "https://example.com/sensodyne-repair-image.jpg",
+        "image": "https://i.ibb.co/dfwVVKj/sensodyne-repaire-protect.webp",
         "name": "Sensodyne Repair",
         "weight": "180gm",
         "company": "GSK",
@@ -384,9 +388,9 @@
     },
     {
         "id": 40,
-        "image": "https://example.com/mediplus-fluoride-gel-image.jpg",
-        "name": "Mediplus Fluoride Gel",
-        "weight": "100ml",
+        "image": "https://i.ibb.co/mCn30rV/fluride-gel.webp",
+        "name": "Mediplus Fluoride ",
+        "weight": "100gm",
         "company": "Anfords",
         "category": "dental",
         "price": 40.00,
@@ -394,7 +398,7 @@
     },
     {
         "id": 41,
-        "image": "https://example.com/hexisol-image.jpg",
+        "image": "https://i.ibb.co/2yxfmH3/hexacol.webp",
         "name": "Hexisol",
         "weight": "250ml",
         "company": "ACI Limited",
@@ -404,9 +408,9 @@
     },
     {
         "id": 42,
-        "image": "https://example.com/savlon-cream-select-plus-image.jpg",
+        "image": "https://i.ibb.co/5KmjFk2/savlon-cream.webp",
         "name": "Savlon CreamSelect-Plus",
-        "weight": "120gm",
+        "weight": "20gm",
         "company": "Neoplast Co Ltd.",
         "category": "personal",
         "price": 35.25,
@@ -414,9 +418,9 @@
     },
     {
         "id": 43,
-        "image": "https://example.com/savlon-antiseptic-image.jpg",
+        "image": "https://i.ibb.co/KrkWvF7/savlon-anticptik.webp",
         "name": "Savlon Antiseptic",
-        "weight": "140gm",
+        "weight": "1 ltr",
         "company": "Mundipharma (BD) Pvt. Ltd.",
         "category": "personal",
         "price": 130.00,
@@ -424,9 +428,9 @@
     },
     {
         "id": 44,
-        "image": "https://example.com/one-time-bandage-image.jpg",
+        "image": "https://i.ibb.co/59QRqJZ/bange.webp",
         "name": "One Time Bandage",
-        "weight": "220ml",
+        "weight": "",
         "company": "Square Pharmaceuticals Ltd.",
         "category": "personal",
         "price": 2.00,
@@ -434,9 +438,9 @@
     },
     {
         "id": 45,
-        "image": "https://example.com/isabgul-plus-image.jpg",
+        "image": "https://i.ibb.co/zfvMprf/plus.webp",
         "name": "Isabgul Plus",
-        "weight": "140ml",
+        "weight": "100ml",
         "company": "ACI Limited",
         "category": "personal",
         "price": 40.00,
@@ -444,9 +448,9 @@
     },
     {
         "id": 46,
-        "image": "https://example.com/alcohol-pad-image.jpg",
+        "image": "https://i.ibb.co/cx5DCKv/alcol-pad.webp",
         "name": "Alcohol Pad",
-        "weight": "120ml",
+        "weight": "",
         "company": "Neoplast Co Ltd.",
         "category": "personal",
         "price": 6.99,
@@ -454,7 +458,7 @@
     },
     {
         "id": 47,
-        "image": "https://example.com/nizoder-image.jpg",
+        "image": "https://i.ibb.co/F6YxHrm/nizoder.webp",
         "name": "Nizoder",
         "weight": "75 gm",
         "company": "Mundipharma (BD) Pvt. Ltd.",
@@ -464,7 +468,7 @@
     },
     {
         "id": 48,
-        "image": "https://example.com/cotton-wool-image.jpg",
+        "image": "https://i.ibb.co/7GJWvvh/cotton-towel.webp",
         "name": "Cotton Wool",
         "weight": "70 gm",
         "company": "Square Pharmaceuticals Ltd.",
@@ -474,8 +478,8 @@
     },
     {
         "id": 49,
-        "image": "https://example.com/sensishield-hand-sanitizer-image.jpg",
-        "name": "SensiShield Hand Sanitizer",
+        "image": "https://i.ibb.co/m8LQt9c/hand-sanitizer.webp",
+        "name": "Hand Sanitizer",
         "weight": "200ml",
         "company": "ACI Limited",
         "category": "personal",
@@ -484,12 +488,213 @@
     },
     {
         "id": 50,
-        "image": "https://example.com/neoplus-pain-relief-balm-image.jpg",
+        "image": "https://i.ibb.co/9nSzwMJ/medeasy-moov.webp",
         "name": "Neoplus Pain Relief Balm",
         "weight": "50gm",
         "company": "Neoplast Co Ltd.",
         "category": "personal",
         "price": 25.00,
         "description": "Neoplus Pain Relief Balm, in a 50gm pack, is a soothing solution for relieving muscular and joint pain. The unique blend of ingredients provides a warming effect, promoting relaxation and comfort. Trust Neoplus for effective pain relief and enhanced well-being."
+    },
+    {
+        "id": 51,
+        "image": "https://i.ibb.co/b1CtT1b/novofine.webp",
+        "name": "NovoFine Needle",
+        "weight": "3ml",
+        "company": "ACI Limited",
+        "category": "diabetic",
+        "price": 12.00,
+        "description": "NovoFine Needle by ACI Limited is a precision-engineered insulin pen needle in a 3ml size. Designed for comfort and ease of use, it ensures a smooth and virtually pain-free injection experience. Trust NovoFine for accurate insulin delivery, making managing diabetes more convenient and reliable."
+    },
+    {
+        "id": 52,
+        "image": "https://i.ibb.co/CBFbMc4/disapoo.webp",
+        "name": "DispoVan Syringe",
+        "weight": "100ml",
+        "company": "Neoplast HMD BioMedical Inc.",
+        "category": "diabetic",
+        "price": 8.50,
+        "description": "DispoVan Syringe by Neoplast HMD BioMedical Inc. is a reliable and sterile syringe solution in a 100ml size. It ensures accurate medication administration and is suitable for various healthcare applications. Choose DispoVan for safe and precise syringe usage in medical settings."
+    },
+    {
+        "id": 53,
+        "image": "https://i.ibb.co/LrMdZMy/check-strip.webp",
+        "name": "Check Test Strip",
+        "weight": "140gm",
+        "company": "Square Pharmaceuticals Ltd.",
+        "category": "diabetic",
+        "price": 360.00,
+        "description": "Check Test Strip by Square Pharmaceuticals Ltd. is an essential component for accurate blood glucose monitoring. This 140gm pack of test strips is compatible with various glucose meters, providing reliable and quick results. Trust Check Test Strip for effective diabetes management and monitoring."
+    },
+    {
+        "id": 54,
+        "image": "https://i.ibb.co/bQJWPsr/glucoleader.webp",
+        "name": "GlucoLeader Enhance",
+        "weight": "220ml",
+        "company": "Technokit Healthcare Ltd.",
+        "category": "diabetic",
+        "price": 450.00,
+        "description": "GlucoLeader Enhance by Technokit Healthcare Ltd. is a premium glucose drink in a 220ml bottle, specially formulated for quick energy replenishment. With a balanced blend of carbohydrates, it provides a rapid energy boost, making it an ideal choice for athletes and those needing instant vitality."
+    },
+    {
+        "id": 55,
+        "image": "https://i.ibb.co/wcgHRPq/insulin.webp",
+        "name": "Insulin Syringe",
+        "weight": "100ml",
+        "company": "ACI Limited",
+        "category": "diabetic",
+        "price": 7.25,
+        "description": "Insulin Syringe by ACI Limited is a diabetic care essential, designed for accurate insulin dosage. The 140ml syringe provides precise measurements, ensuring effective diabetes management. Trust Insulin Syringe for a reliable and comfortable solution in administering insulin for diabetic patients."
+    },
+    {
+        "id": 56,
+        "image": "https://i.ibb.co/sV7HW81/blood-lancets.webp",
+        "name": "Blood Lancets",
+        "weight": "120ml",
+        "company": "Neoplast HMD BioMedical Inc.",
+        "category": "diabetic",
+        "price": 108.00,
+        "description": "Blood Lancets by Neoplast HMD BioMedical Inc. are essential for diabetic blood testing. The 120ml pack of lancets provides a sterile and convenient solution for obtaining blood samples. Trust Blood Lancets for accurate and hassle-free blood glucose monitoring in diabetic care."
+    },
+    {
+        "id": 57,
+        "image": "https://i.ibb.co/k6CkVTB/accu-active.webp",
+        "name": "Accu-Chek Active",
+        "weight": "50 strips",
+        "company": "Square Pharmaceuticals Ltd.",
+        "category": "diabetic",
+        "price": 136.00,
+        "description": "Accu-Chek Active by Square Pharmaceuticals Ltd. is a reliable glucometer for diabetic self-monitoring. The 75 gm device provides quick and accurate blood glucose readings. With its user-friendly design and advanced features, Accu-Chek Active is an essential tool for effective diabetes management."
+    },
+    {
+        "id": 58,
+        "image": "https://i.ibb.co/Sd4vycx/Accu-Chek-Instant-50.webp",
+        "name": "Accu-Chek Instant",
+        "weight": "50 strips",
+        "company": "ACI Limited",
+        "category": "diabetic",
+        "price": 133.00,
+        "description": "Accu-Chek Instant by ACI Limited is a state-of-the-art glucometer for diabetic individuals. The 70 gm device offers instant and accurate blood glucose readings. With its sleek design and user-friendly interface, Accu-Chek Instant is an essential companion for those managing diabetes effectively."
+    },
+    {
+        "id": 59,
+        "image": "https://i.ibb.co/S6f8GSf/medeasy-insulin-carry-bag.webp",
+        "name": "Insulin Carry Bag",
+        "weight": "",
+        "company": "Technokit Healthcare Ltd.",
+        "category": "diabetic",
+        "price": 250.00,
+        "description": "Insulin Carry Bag by Technokit Healthcare Ltd. is a convenient and stylish solution for carrying insulin and diabetic supplies. The 200ml bag features compartments for organized storage. With its compact design, the Insulin Carry Bag is perfect for maintaining the integrity of insulin while on the go."
+    },
+    {
+        "id": 60,
+        "image": "https://i.ibb.co/1QWDdkx/test-strip.webp",
+        "name": "Match Test Strip",
+        "weight": "100ml",
+        "company": "Neoplast HMD BioMedical Inc.",
+        "category": "diabetic",
+        "price": 1026.00,
+        "description": "Match Test Strip by Neoplast HMD BioMedical Inc. is a reliable choice for diabetic blood glucose monitoring. This 100ml pack of test strips is designed for compatibility with various glucose meters, providing accurate and quick results. Trust Match Test Strip for efficient and precise diabetes management."
+    },
+    {
+        "id": 61,
+        "image": "https://i.ibb.co/9bZrkbG/sergel.webp",
+        "name": "Sergel",
+        "weight": "5mg",
+        "company": "ACI Limited",
+        "category": "prescription",
+        "price": 15.99,
+        "description": "Sergel by ACI Limited is a prescription medicine in a 5mg strength. It is commonly prescribed for various medical conditions. With a proven track record of effectiveness, Sergel provides relief and management for patients under medical supervision. Trust Sergel for reliable and quality healthcare support."
+    },
+    {
+        "id": 62,
+        "image": "https://i.ibb.co/3zZk9Ht/linaglip.webp",
+        "name": "Linaglip",
+        "weight": "10mg",
+        "company": "Aristopharma Ltd.",
+        "category": "prescription",
+        "price": 19.75,
+        "description": "Linaglip by Aristopharma Ltd. is a prescription medication with a strength of 10mg. It is commonly used to manage certain medical conditions. With its well-established efficacy, Linaglip contributes to the overall well-being of patients under medical supervision. Rely on Linaglip for effective and targeted healthcare support."
+    },
+    {
+        "id": 63,
+        "image": "https://i.ibb.co/qn9RwLS/mona-10.webp",
+        "name": "Monas 10",
+        "weight": "500mg",
+        "company": "Square Pharmaceuticals Ltd.",
+        "category": "prescription",
+        "price": 22.99,
+        "description": "Monas 10 by Square Pharmaceuticals Ltd. is a prescription medicine with a strength of 500mg. It is recommended for various medical conditions under the guidance of healthcare professionals. Count on Monas 10 for effective and targeted relief, contributing to improved health outcomes for patients."
+    },
+    {
+        "id": 64,
+        "image": "https://i.ibb.co/PcmY48k/ecosprin.webp",
+        "name": "Ecosprin",
+        "weight": "40mg",
+        "company": "TACME Laboratories Ltd.",
+        "category": "prescription",
+        "price": 11.50,
+        "description": "Ecosprin by TACME Laboratories Ltd. is a prescription medication with a strength of 40mg. It is commonly prescribed to manage certain medical conditions. With its well-established benefits, Ecosprin plays a crucial role in supporting the health and well-being of patients under medical supervision."
+    },
+    {
+        "id": 65,
+        "image": "https://i.ibb.co/jkDXsLd/pantonix-20-mg.webp",
+        "name": "Pantonix",
+        "weight": "100mg",
+        "company": "Renata Limited",
+        "category": "prescription",
+        "price": 14.99,
+        "description": "Pantonix by Renata Limited is a prescription medicine with a strength of 100mg. It is commonly used to manage certain medical conditions under the supervision of healthcare professionals. Rely on Pantonix for its proven efficacy and contribution to overall patient well-being."
+    },
+    {
+        "id": 66,
+        "image": "https://i.ibb.co/0QLV17r/atova.webp",
+        "name": "Atova",
+        "weight": "500mg",
+        "company": "ACI Limited",
+        "category": "prescription",
+        "price": 17.25,
+        "description": "Atova by ACI Limited is a prescription medication with a strength of 500mg. It is recommended for specific medical conditions under the guidance of healthcare professionals. Trust Atova for its proven effectiveness in providing targeted relief and support for patients."
+    },
+    {
+        "id": 67,
+        "image": "https://i.ibb.co/1ZZLDYp/bizoran.webp",
+        "name": "BizoranFexo",
+        "weight": "75mg",
+        "company": "Aristopharma Ltd.",
+        "category": "prescription",
+        "price": 13.99,
+        "description": "BizoranFexo by Aristopharma Ltd. is a prescription medicine with a strength of 75mg. It is commonly prescribed to manage specific medical conditions. With its established efficacy, BizoranFexo contributes to the overall well-being of patients under medical supervision."
+    },
+    {
+        "id": 68,
+        "image": "https://i.ibb.co/f22cnqK/medeasy-thyrox-50.webp",
+        "name": "Thyrox",
+        "weight": "70mg",
+        "company": "Square Pharmaceuticals Ltd.",
+        "category": "prescription",
+        "price": 16.50,
+        "description": "Thyrox by Square Pharmaceuticals Ltd. is a prescription medication with a strength of 70mg. It is recommended for specific medical conditions under the guidance of healthcare professionals. Trust Thyrox for its established benefits in providing targeted relief and support for patients."
+    },
+    {
+        "id": 69,
+        "image": "https://i.ibb.co/xFpjXsJ/rosuva.webp",
+        "name": "Rosuva",
+        "weight": "100mg",
+        "company": "TACME Laboratories Ltd.",
+        "category": "prescription",
+        "price": 18.75,
+        "description": "Rosuva by TACME Laboratories Ltd. is a prescription medicine with a strength of 100mg. It is commonly prescribed to manage specific medical conditions under the supervision of healthcare professionals. Rely on Rosuva for its proven effectiveness in providing targeted relief and support for patients."
+    },
+    {
+        "id": 70,
+        "image": "https://i.ibb.co/nMJcbv0/fexo.webp",
+        "name": "Fexo",
+        "weight": "150mg",
+        "company": "Renata Limited",
+        "category": "prescription",
+        "price": 21.99,
+        "description": "Fexo by Renata Limited is a prescription medication with a strength of 150mg. It is recommended for specific medical conditions under the guidance of healthcare professionals. With its proven efficacy, Dexalin contributes to targeted relief and support for patients, ensuring their well-being under medical supervision."
     }
+        
 ]
