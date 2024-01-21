@@ -5,8 +5,13 @@ import Home from "../pages/home/Home";
 import AboutUs from "../pages/AboutUs/AboutUs";
 
 import ContactUs from "../pages/contact/ContactUs";
+
+import Advice from "../pages/home/ThreeCards/Advice";
+
+
 import NewsArticles from "../pages/News&Articles/NewsArticles";
 import NewsArticlesDetails from "../pages/News&Articles/NewsArticlesDetails";
+
 
 export const router = createBrowserRouter([
   {
@@ -29,7 +34,7 @@ export const router = createBrowserRouter([
       },
       {
         path: "/advice",
-        element: <Home />,
+        element: <Advice></Advice>,
       },
       {
         path: "/articles",
