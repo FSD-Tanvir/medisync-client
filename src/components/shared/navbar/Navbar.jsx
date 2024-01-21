@@ -13,7 +13,7 @@ const menuItems = [
   { id: 1, icon: <GoHome />, item: "Home", link: "/" },
   { id: 2, icon: <BiPurchaseTagAlt />, item: "Buy Products", link: "/" },
   { id: 3, icon: <CiCirclePlus />, item: "Free Advice", link: "/" },
-  { id: 4, icon: <FiFilePlus />, item: "Articles", link: "/" },
+  { id: 4, icon: <FiFilePlus />, item: "Articles", link: "/articles" },
   { id: 5, icon: <FaUserDoctor />, item: "Meet Doctors", link: "/" },
   { id: 6, icon: <GrWorkshop />, item: "Career", link: "/" },
 ];
