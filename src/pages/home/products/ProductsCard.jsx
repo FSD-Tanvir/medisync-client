@@ -3,7 +3,7 @@ const ProductsCard = ({ product }) => {
     const { image, company, name, price, weight } = product || {}
     return (
         <div>
-            <div className="bg-white shadow-md rounded-xl  mx-auto h-[280px]">
+            <div className="bg-white shadow-md rounded-xl  mx-auto h-[280px]" style={{ margin: "10px" }}>
                 <div className="text-center">
                     <div className="h-32">
                         <img src={image} alt="Product" className="mx-auto w-full h-full object-cover" />
