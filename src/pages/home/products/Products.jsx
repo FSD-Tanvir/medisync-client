@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import Slider from "react-slick";
 import ProductsCard from "./ProductsCard";
-
+// react slick slider css
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
@@ -28,21 +28,47 @@ const Products = () => {
         fetchData();
     }, []);
 
+    // filter for category
+
     const otcProducts = products?.filter(item => item?.category === 'otc') || [];
     const womenProducts = products?.filter(item => item?.category === 'women') || [];
-    const babyProducts = products?.filter (item => item.category === 'baby') || []
-    const dentaProducts = products?.filter (item => item.category === 'dental') || []
-    const personalProducts = products?.filter (item => item.category === 'personal') || []
-    const diabeticProducts = products?.filter (item => item.category === 'diabetic') || []
-    const prescriptionProducts = products?.filter (item => item.category === 'prescription') || []
+    const babyProducts = products?.filter(item => item.category === 'baby') || []
+    const dentaProducts = products?.filter(item => item.category === 'dental') || []
+    const personalProducts = products?.filter(item => item.category === 'personal') || []
+    const diabeticProducts = products?.filter(item => item.category === 'diabetic') || []
+    const prescriptionProducts = products?.filter(item => item.category === 'prescription') || []
 
     const sliderSettings = {
         infinite: true,
         speed: 500,
+        // autoplay: true,
+        // autoplaySpeed: 3000,
         slidesToShow: 4,
-        slidesToScroll: 1,
-        autoplay: true,
-        autoplaySpeed: 3000,
+        slidesToScroll: 4,
+        initialSlide: 0,
+        responsive: [
+            {
+                breakpoint: 1024, // for large devices like desktops
+                settings: {
+                    slidesToShow: 4,
+                    slidesToScroll: 1,
+                },
+            },
+            {
+                breakpoint: 768, // for tablets
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 1,
+                },
+            },
+            {
+                breakpoint: 480, // for mobile devices
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 1,
+                },
+            },
+        ],
 
     };
 

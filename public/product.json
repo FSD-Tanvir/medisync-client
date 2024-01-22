@@ -43,7 +43,7 @@
         "image": "https://i.ibb.co/wLqFDV0/napa.webp",
         "name": "Napa",
         "weight": "500mg",
-        "company": "ACI Limited.",
+        "company": "Beximco Pharmaceuticals Ltd.",
         "category": "otc",
         "price": 2.99,
         "description": "Napa provides a high-quality 500mg dose of Vitamin C, supporting the immune system, aiding collagen formation, and enhancing overall well-being. With its potent antioxidant properties, Napa is a valuable addition to your daily health routine."
@@ -145,7 +145,7 @@
         "weight": "",
         "company": "Baby Care",
         "category": "women",
-        "price": 80,
+        "price": 1600,
         "description": "Ensure your baby's comfort with Huggies Dry Belt Diaper from Baby Care. This high-quality diaper provides long-lasting dryness and comfort. With an easy-to-use belt design, it ensures a secure fit. Choose Huggies for a happy and dry experience for your little one."
     },
     {
@@ -161,17 +161,17 @@
     {
         "id": 17,
         "image": "https://i.ibb.co/n60KHSj/wisper-altra.webp",
-        "name": "Whisper Comfort ",
-        "weight": "9 pads",
+        "name": "Whisper Ultra Comfort XL",
+        "weight": "10 pads",
         "company": "SMC Enterprise Limited",
         "category": "women",
-        "price": 90,
+        "price": 89.99,
         "description": "Whisper Ultra Comfort XL offers superior protection with 10 pads for heavy flow days. Specially designed by SMC Enterprise Limited, it provides exceptional comfort and prevents back leakage, ensuring you stay confidently fresh and dry throughout the day."
     },
     {
         "id": 18,
         "image": "https://i.ibb.co/yRsQs2R/joy.webp",
-        "name": "Joya Napkin",
+        "name": "Joya Sanitary Napkin",
         "weight": "6 pads",
         "company": "ACI Limited",
         "category": "women",
@@ -181,21 +181,21 @@
     {
         "id": 19,
         "image": "https://i.ibb.co/rG3KHB5/freedom.webp",
-        "name": "Freedom Belt",
+        "name": "Freedom Belt System",
         "weight": "1 belt",
         "company": "Sun Pharmaceutical Ltd.",
         "category": "women",
-        "price": 95.00,
+        "price": 129.99,
         "description": "Introducing Freedom Belt System by Sun Pharmaceutical Ltd. This revolutionary product brings comfort and security to your feminine hygiene routine. The adjustable belt and reliable pad attachment ensure a worry-free experience. Stay confident and active with this innovative solution."
     },
     {
         "id": 20,
         "image": "https://i.ibb.co/85TrZy3/jpya-all-night.webp",
-        "name": "Joya Night Wings",
+        "name": "Joya All Night Wings",
         "weight": "12 pads",
         "company": "SMC Enterprise Limited",
         "category": "women",
-        "price": 90,
+        "price": 109.75,
         "description": "Joya All Night Wings by SMC Enterprise Limited is specially designed for overnight protection. With 12 pads per pack, it ensures a comfortable and worry-free night. The wings provide extra coverage and prevent back leakage, keeping you fresh and confident."
     },
     {
