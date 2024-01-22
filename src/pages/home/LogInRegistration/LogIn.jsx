@@ -1,13 +1,19 @@
+import { useEffect } from "react";
 import { FaTwitter } from "react-icons/fa6";
 import { FaUnlockKeyhole } from "react-icons/fa6";
 import { FaFacebookF } from "react-icons/fa6";
 import { FcGoogle } from "react-icons/fc";
 import { MdAttachEmail } from "react-icons/md";
 import { Typewriter } from 'react-simple-typewriter';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 
 const LogIn = ({ setShowRegister }) => {
 
+    useEffect(()=>{
+        AOS.init()
+    }, [])
 
     return (
         <div className="relative p-5 flex-auto ">
@@ -15,20 +21,33 @@ const LogIn = ({ setShowRegister }) => {
                 <div className="w-[400px] flex flex-col items-center">
                     <p className="p-4">
                         <h1 className="text-2xl font-semibold mb-2"><Typewriter
-                            cursor
-                            cursorBlinking
                             delaySpeed={1000}
                             deleteSpeed={25}
-                            loop={0}
-                            typeSpeed={100}
+                            typeSpeed={75}
                             words={[
                                 'Some Usefull Tips '
                             ]}
                         /></h1>
                         <ul className="list-disc flex flex-col gap-2 text-sm p-3">
-                            <li>Drink an adequate amount of water each day to stay hydrated.</li>
-                            <li>Consume a well-balanced diet rich in fruits, vegetables, whole grains, lean proteins, and healthy fats.</li>
-                            <li>Engage in regular physical activity to promote cardiovascular health, muscle strength, and overall well-being.</li>
+                            <div data-aos="fade-right"
+                                data-aos-offset="300"
+                                data-aos-easing="ease-in-sine"
+                                data-aos-duration="1000">
+                                <li>Drink an adequate amount of water each day to stay hydrated.</li>
+                            </div>
+                            <div data-aos="fade-right"
+                                data-aos-offset="300"
+                                data-aos-easing="ease-in-sine"
+                                data-aos-duration="2000">
+                                <li>Consume a well-balanced diet rich in fruits, vegetables, whole grains, lean proteins, and healthy fats.</li>
+                            </div>
+                            <li>
+                            <div data-aos="fade-right"
+                                data-aos-offset="200"
+                                data-aos-duration="3000">
+                                Engage in regular physical activity to promote cardiovascular health, muscle strength, and overall well-being.
+                            </div>
+                            </li>
                         </ul>
                     </p>
                     <p>{`Don't Have Account ?`} <button onClick={() => setShowRegister(true)} className="font-bold">Register</button></p>
@@ -37,7 +56,7 @@ const LogIn = ({ setShowRegister }) => {
                     <form className="flex flex-col items-center gap-5">
                         <div className="flex items-center border-b border-black gap-2">
                             <MdAttachEmail className="text-xl" />
-                            <input className="appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none" type="email" placeholder='Email eg:md@gamil.com'/>
+                            <input className="appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none" type="email" placeholder='Email ' />
                         </div>
                         <div className="flex items-center border-b border-black gap-2">
                             <FaUnlockKeyhole />
