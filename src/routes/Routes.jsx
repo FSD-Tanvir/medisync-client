@@ -1,17 +1,14 @@
 import { createBrowserRouter } from "react-router-dom";
 import MainLayout from "../layouts/MainLayout";
 import Home from "../pages/home/Home";
-
 import AboutUs from "../pages/AboutUs/AboutUs";
-
+import Career from "../pages/career/Career";
+import JobDetails from "../pages/career/jobDetails/JobDetails";
 import ContactUs from "../pages/contactUs/ContactUs";
 import Doctors from "../pages/doctors/Doctors";
 import Career from "../pages/career/Career";
-import JobDetails from "../pages/career/jobdetails/JobDetails";
-
+import JobDetails from "../pages/career/jobDetails/JobDetails";
 import Advice from "../pages/home/ThreeCards/Advice";
-
-
 import NewsArticles from "../pages/News&Articles/NewsArticles";
 import NewsArticlesDetails from "../pages/News&Articles/NewsArticlesDetails";
 

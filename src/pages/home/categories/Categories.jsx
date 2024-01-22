@@ -82,6 +82,7 @@ const Categories = () => {
                     navigation={true}
                     modules={[Grid, Pagination, Navigation]}
                     className="mySwiper"
+                    
                 >
                     <SwiperSlide style={{
                         height:'200px'
