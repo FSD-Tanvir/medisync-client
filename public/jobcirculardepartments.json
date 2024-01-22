@@ -1,0 +1,170 @@
+[
+  {
+    "id": 1,
+    "title": "Warehouse_Manager",
+    "job_type": "Full-time",
+    "department": "Warehouse",
+    "vacancy": 3,
+    "compensation_and_benefits": "Competitive_salary, health_insurance, retirement_plan",
+    "salary": "$50,000 - $60,000_per_year",
+    "job_context": "Fast-paced_warehouse_environment",
+    "job_responsibilities": [
+      "Manage_inventory_and_logistics",
+      "Coordinate_with_suppliers_and_vendors",
+      "Supervise_warehouse_staff"
+    ],
+    "educational_requirements": "Bachelor's_degree_in_Logistics_or_related_field",
+    "experience_requirements": "Minimum_3_years_of_warehouse_management_experience",
+    "additional_requirements": "Forklift_certification_is_a_plus",
+    "workplace": "On-site",
+    "job_location": "City_XYZ",
+    "address": "medisync - This is a dummy address -- Mirpur 1, Block-A - 1216."
+  },
+  {
+    "id": 2,
+    "title": "Customer_Care_Representative",
+    "job_type": "Full-time",
+    "department": "Customer_Care",
+    "vacancy": 5,
+    "compensation_and_benefits": "Competitive_salary, health_insurance, performance_bonuses",
+    "salary": "$40,000 - $50,000_per_year",
+    "job_context": "Customer_service_and_support",
+    "job_responsibilities": [
+      "Handle_customer_inquiries_and_complaints",
+      "Provide_information_about_products_and_services",
+      "Assist_in_resolving_customer_issues"
+    ],
+    "educational_requirements": "High_school_diploma_or_equivalent",
+    "experience_requirements": "Previous_customer_service_experience_is_a_plus",
+    "additional_requirements": "Excellent_communication_skills",
+    "workplace": "Office",
+    "job_location": "City_ABC",
+    "address": "medisync - This is a dummy address -- Mirpur 1, Block-A - 1216."
+  },
+  {
+    "id": 3,
+    "title": "Technology_Specialist",
+    "job_type": "Contract",
+    "department": "Technology",
+    "vacancy": 2,
+    "compensation_and_benefits": "Hourly_rate, project-based",
+    "salary": "$60 - $80_per_hour",
+    "job_context": "Innovative_technology_projects",
+    "job_responsibilities": [
+      "Develop_and_maintain_software_applications",
+      "Troubleshoot_technical_issues",
+      "Collaborate_with_cross-functional_teams"
+    ],
+    "educational_requirements": "Bachelor's_degree_in_Computer_Science_or_related_field",
+    "experience_requirements": "Minimum_5_years_of_relevant_experience",
+    "additional_requirements": "Experience_with_cloud_technologies_is_preferred",
+    "workplace": "Remote",
+    "job_location": "Anywhere",
+    "address": "medisync - This is a dummy address -- Mirpur 1, Block-A - 1216."
+  },
+  {
+    "id": 4,
+    "title": "Marketing_Specialist",
+    "job_type": "Full-time",
+    "department": "Marketing",
+    "vacancy": 4,
+    "compensation_and_benefits": "Competitive_salary, performance_bonuses, health_coverage",
+    "salary": "$45,000 - $55,000_per_year",
+    "job_context": "Dynamic_marketing_campaigns",
+    "job_responsibilities": [
+      "Develop_and_execute_marketing_strategies",
+      "Create_engaging_content_for_various_channels",
+      "Analyze_market_trends_and_competitors"
+    ],
+    "educational_requirements": "Bachelor's_degree_in_Marketing_or_related_field",
+    "experience_requirements": "Minimum_3_years_of_marketing_experience",
+    "additional_requirements": "Strong_analytical_and_creative_skills",
+    "workplace": "Office",
+    "job_location": "City_DEF",
+    "address": "medisync - This is a dummy address -- Mirpur 1, Block-A - 1216."
+  },
+  {
+    "id": 5,
+    "title": "Sales_and_Operation_Manager",
+    "job_type": "Full-time",
+    "department": "Sales_&_Operation",
+    "vacancy": 2,
+    "compensation_and_benefits": "Competitive_salary, commission, health_insurance",
+    "salary": "$60,000 - $70,000_per_year",
+    "job_context": "Manage_sales_and_operational_processes",
+    "job_responsibilities": [
+      "Develop_sales_strategies_and_targets",
+      "Coordinate_with_different_departments",
+      "Ensure_smooth_operational_workflows"
+    ],
+    "educational_requirements": "Bachelor's_degree_in_Business_Administration_or_related_field",
+    "experience_requirements": "Minimum_5_years_of_relevant_experience",
+    "additional_requirements": "Proven_track_record_in_sales_management",
+    "workplace": "On-site",
+    "job_location": "City_GHI",
+    "address": "medisync - This is a dummy address -- Mirpur 1, Block-A - 1216."
+  },
+  {
+    "id": 6,
+    "title": "Delivery_Driver",
+    "job_type": "Part-time",
+    "department": "Delivery",
+    "vacancy": 10,
+    "compensation_and_benefits": "Hourly_wage, mileage_reimbursement",
+    "salary": "$15 - $20_per_hour",
+    "job_context": "Ensure_timely_and_safe_deliveries",
+    "job_responsibilities": [
+      "Drive_company_vehicles_for_deliveries",
+      "Inspect_and_maintain_delivery_vehicles",
+      "Handle_customer_inquiries_during_deliveries"
+    ],
+    "educational_requirements": "High_school_diploma_or_equivalent",
+    "experience_requirements": "Valid_driver's_license_with_a_clean_driving_record",
+    "additional_requirements": "Good_knowledge_of_local_routes",
+    "workplace": "On_the_road",
+    "job_location": "City_JKL",
+    "address": "medisync - This is a dummy address -- Mirpur 1, Block-A - 1216."
+  },
+  {
+    "id": 7,
+    "title": "Health_and_Beauty_Specialist",
+    "job_type": "Full-time",
+    "department": "Health_&_Beauty",
+    "vacancy": 3,
+    "compensation_and_benefits": "Competitive_salary, health_insurance, wellness_programs",
+    "salary": "$55,000 - $65,000_per_year",
+    "job_context": "Promote_health_and_beauty_products",
+    "job_responsibilities": [
+      "Develop_marketing_strategies_for_beauty_products",
+      "Provide_expert_advice_on_health_and_wellness",
+      "Collaborate_with_vendors_and_suppliers"
+    ],
+    "educational_requirements": "Bachelor's_degree_in_Health_Sciences_or_related_field",
+    "experience_requirements": "Minimum_4_years_of_experience_in_health_and_beauty_industry",
+    "additional_requirements": "Certification_in_beauty_or_wellness_is_a_plus",
+    "workplace": "Office",
+    "job_location": "City_MNO",
+    "address": "medisync - This is a dummy address -- Mirpur 1, Block-A - 1216."
+  },
+  {
+    "id": 8,
+    "title": "Corporate_Affairs_Manager",
+    "job_type": "Full-time",
+    "department": "Corporate_Affairs",
+    "vacancy": 2,
+    "compensation_and_benefits": "Competitive_salary, benefits_package, stock_options",
+    "salary": "$70,000 - $80,000_per_year",
+    "job_context": "Manage_corporate_communications_and_public_relations",
+    "job_responsibilities": [
+      "Develop_and_implement_corporate_communication_strategies",
+      "Handle_media_relations_and_public_affairs",
+      "Coordinate_internal_and_external_events"
+    ],
+    "educational_requirements": "Bachelor's_degree_in_Public_Relations_or_related_field",
+    "experience_requirements": "Minimum_6_years_of_corporate_affairs_or_public_relations_experience",
+    "additional_requirements": "Excellent_written_and_verbal_communication_skills",
+    "workplace": "Office",
+    "job_location": "City_PQR",
+    "address": "medisync - This is a dummy address -- Mirpur 1, Block-A - 1216."
+  }
+]
