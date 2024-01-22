@@ -13,7 +13,7 @@ import Modal from "../../../pages/home/LogInRegistration/Modal";
 const menuItems = [
   { id: 1, icon: <GoHome />, item: "Home", link: "/" },
   { id: 2, icon: <BiPurchaseTagAlt />, item: "Buy Products", link: "/" },
-  { id: 3, icon: <CiCirclePlus />, item: "Free Advice", link: "/" },
+  { id: 3, icon: <CiCirclePlus />, item: "Free Advice", link: "/advice" },
   { id: 4, icon: <FiFilePlus />, item: "Articles", link: "/articles" },
   { id: 5, icon: <FaUserDoctor />, item: "Meet Doctors", link: "/doctors" },
   { id: 6, icon: <GrWorkshop />, item: "Career", link: "/career" },
