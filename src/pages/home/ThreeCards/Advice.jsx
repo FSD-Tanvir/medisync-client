@@ -22,14 +22,14 @@ const Advice = () => {
             .then(data => setAdvices(data))
     }, [])
     return (
-        <div className="min-h-[500px] my-10">
-            <div className="bg-cyan-300 p-12 mb-10">
+        <div className="mt-2 py-5 lg:py-7">
+            <div className="bg-cyan-300 p-12">
                 <h1 className="text-xl font-semibold lg:text-5xl text-center mt-10">আপনার রোগটি নির্বাচন করুন</h1>
                 <div className=" flex justify-center my-10">
                     <form className="border lg:w-1/4">
                         <select onChange={handleDiseaseChange}
                             value={selectedDisease}
-                            name="disease" id="diseaseSelect" className="w-full py-2 text-center">
+                            name="disease" id="diseaseSelect" className="w-full py-2 text-center px-7">
                             <option value="জ্বর">জ্বর</option>
                             <option value="সর্দি-কাশি">সর্দি-কাশি</option>
                             <option value="মাথা ঘামা">মাথা ঘামা</option>
@@ -44,7 +44,10 @@ const Advice = () => {
             </div>
             <div>
                 {
-                    <div className="px-5 lg:px-20 lg:pb-10">
+                    disease && <div className="px-5 lg:px-20 lg:pb-10 mt-10">
+                        <div className=" h-[400px] mb-10">
+                            <img src={disease?.image} className="h-full w-full object-cover" alt="" />
+                        </div>
                         <h1 className="font-semibold mb-3 text-xl">{disease?.title}</h1>
                         <p>{disease?.description}</p>
                         <p className="font-semibold mt-4">{disease?.tips_title_1}</p>
