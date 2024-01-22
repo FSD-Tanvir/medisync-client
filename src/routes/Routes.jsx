@@ -4,7 +4,8 @@ import Home from "../pages/home/Home";
 
 import AboutUs from "../pages/AboutUs/AboutUs";
 
-import ContactUs from "../pages/contact/ContactUs";
+import ContactUs from "../pages/contactUs/ContactUs";
+import Doctors from "../pages/doctors/Doctors";
 
 import Advice from "../pages/home/ThreeCards/Advice";
 
@@ -46,7 +47,7 @@ export const router = createBrowserRouter([
       },
       {
         path: "/doctors",
-        element: <Home />,
+        element: <Doctors />,
       },
       {
         path: "/career",
