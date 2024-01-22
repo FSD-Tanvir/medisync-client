@@ -15,7 +15,7 @@ import { EffectCoverflow, Pagination, Navigation } from "swiper/modules";
 function App() {
   return (
     <div className="container px-2 ">
-      <h1 className="text-2xl font-bold mt-5 mb-16">Testimonials</h1>
+      <h1 className="text-2xl font-bold">Testimonials</h1>
       <Swiper
         effect={"coverflow"}
         grabCursor={true}

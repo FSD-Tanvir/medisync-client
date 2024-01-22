@@ -9,6 +9,12 @@ import Doctors from "../pages/doctors/Doctors";
 import Career from "../pages/career/Career";
 import JobDetails from "../pages/career/jobdetails/JobDetails";
 
+import Advice from "../pages/home/ThreeCards/Advice";
+
+
+import NewsArticles from "../pages/News&Articles/NewsArticles";
+import NewsArticlesDetails from "../pages/News&Articles/NewsArticlesDetails";
+
 
 export const router = createBrowserRouter([
   {
@@ -22,7 +28,7 @@ export const router = createBrowserRouter([
 
       {
         path: "/aboutUs",
-        element: <AboutUs />
+        element: <AboutUs />,
       },
 
       {
@@ -31,11 +37,15 @@ export const router = createBrowserRouter([
       },
       {
         path: "/advice",
-        element: <Home />,
+        element: <Advice></Advice>,
       },
       {
         path: "/articles",
-        element: <Home />,
+        element: <NewsArticles />,
+      },
+      {
+        path: "/articles/:id",
+        element: <NewsArticlesDetails />,
       },
       {
         path: "/doctors",
@@ -50,7 +60,6 @@ export const router = createBrowserRouter([
         element: <JobDetails />
       },
       { path: "contact-us", element: <ContactUs /> },
-
     ],
   },
 ]);
