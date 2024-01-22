@@ -1,28 +1,32 @@
 import { useState } from "react";
 
-
 const ArtilicesCard = ({ articlie }) => {
-    const { title, image, description } = articlie || {};
-    const [showFullDescription, setShowFullDescription] = useState(false);
+  const { title, image, description } = articlie || {};
+  const [showFullDescription, setShowFullDescription] = useState(false);
 
-    // const toggleDescription = () => {
-    //     setShowFullDescription(!showFullDescription);
-    // };
+  // const toggleDescription = () => {
+  //     setShowFullDescription(!showFullDescription);
+  // };
 
-    const truncatedDescription = `${description.split(' ').slice(0, 15).join(' ')}...`;
+  const truncatedDescription = `${description
+    .split(" ")
+    .slice(0, 15)
+    .join(" ")}...`;
 
-    return (
-        <div className="max-w-md mx-auto mb-8">
-            <div className="border-2 h-[350px]">
-                <div className="h-32">
-                    <img src={image} alt="" className="w-full h-full object-cover" />
-                </div>
-                <div className="px-3 py-5">
-                    <h2 className="text-cyan-600 text-lg font-semibold">{title}</h2>
-                    <p className="text-slate-700 font-normal">
-                        {showFullDescription ? description : truncatedDescription}
-                    </p>
-                    {/* {description.split(' ').length > 50 && (
+  return (
+    <div className="max-w-md mx-auto mb-4">
+      <div className="border-2 h-[350px] relative">
+        <div className="h-32">
+          <img src={image} alt="" className="w-full h-full object-cover" />
+        </div>
+        <div className="px-3 py-3">
+          <h2 className="text-cyan-600 text-sm font-semibold my-2">{title}</h2>
+          <div className="h-auto">
+            <p className="text-slate-700 text-sm font-normal">
+              {showFullDescription ? description : truncatedDescription}
+            </p>
+          </div>
+          {/* {description.split(' ').length > 50 && (
                         <div className="text-right pt-1">
                             <button
                                 className="text-yellow-600 text-sm font-semibold content-end"
@@ -32,11 +36,15 @@ const ArtilicesCard = ({ articlie }) => {
                             </button>
                         </div>
                     )} */}
-                    <button>Read More</button>
-                </div>
-            </div>
         </div>
-    );
+        <div className="w-full flex justify-center items-center absolute bottom-2 right-0 left-0 m-auto">
+          <button className="bg-cyan-500 px-3 py-2 rounded-md text-sm text-white font-bold">
+            Read More
+          </button>
+        </div>
+      </div>
+    </div>
+  );
 };
 
 export default ArtilicesCard;
