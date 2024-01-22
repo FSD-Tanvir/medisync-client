@@ -6,15 +6,17 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 
+
 const Products = () => {
     const [products, setProducts] = useState();
+  
 
     // useEffect to fetch data when the component mounts
     useEffect(() => {
         const fetchData = async () => {
             try {
                 // Fetch data from an API endpoint (replace with your API URL)
-                const response = await fetch('product.json');
+                const response = await fetch('http://localhost:5000/allProducts');
                 const result = await response.json();
 
                 // Update the state with the fetched data
