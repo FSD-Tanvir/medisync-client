@@ -6,8 +6,6 @@ import Career from "../pages/career/Career";
 import JobDetails from "../pages/career/jobDetails/JobDetails";
 import ContactUs from "../pages/contactUs/ContactUs";
 import Doctors from "../pages/doctors/Doctors";
-import Career from "../pages/career/Career";
-import JobDetails from "../pages/career/jobDetails/JobDetails";
 import Advice from "../pages/home/ThreeCards/Advice";
 import NewsArticles from "../pages/News&Articles/NewsArticles";
 import NewsArticlesDetails from "../pages/News&Articles/NewsArticlesDetails";
