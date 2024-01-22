@@ -4,9 +4,16 @@ import Home from "../pages/home/Home";
 
 import AboutUs from "../pages/AboutUs/AboutUs";
 
-import ContactUs from "../pages/contact/ContactUs";
 import Career from "../pages/career/Career";
 import JobDetails from "../pages/career/jobdetails/JobDetails";
+import ContactUs from "../pages/contactUs/ContactUs";
+import Doctors from "../pages/doctors/Doctors";
+
+import Advice from "../pages/home/ThreeCards/Advice";
+
+
+import NewsArticles from "../pages/News&Articles/NewsArticles";
+import NewsArticlesDetails from "../pages/News&Articles/NewsArticlesDetails";
 
 
 export const router = createBrowserRouter([
@@ -21,7 +28,7 @@ export const router = createBrowserRouter([
 
       {
         path: "/aboutUs",
-        element: <AboutUs />
+        element: <AboutUs />,
       },
 
       {
@@ -30,15 +37,19 @@ export const router = createBrowserRouter([
       },
       {
         path: "/advice",
-        element: <Home />,
+        element: <Advice></Advice>,
       },
       {
         path: "/articles",
-        element: <Home />,
+        element: <NewsArticles />,
+      },
+      {
+        path: "/articles/:id",
+        element: <NewsArticlesDetails />,
       },
       {
         path: "/doctors",
-        element: <Home />,
+        element: <Doctors />,
       },
       {
         path: "career",
@@ -49,7 +60,6 @@ export const router = createBrowserRouter([
         element: <JobDetails />
       },
       { path: "contact-us", element: <ContactUs /> },
-
     ],
   },
 ]);

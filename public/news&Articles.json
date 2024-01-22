@@ -1,0 +1,38 @@
+[
+  {
+    "id": "HNU001",
+    "title": "Breakthrough Study: New Treatment for Chronic Migraines Discovered",
+    "description": "Researchers have unveiled a promising therapy for chronic migraines, offering hope for millions. The study, conducted at [Fictional University], demonstrates a significant reduction in migraine frequency.",
+    "image": "https://i.ibb.co/4T0KGLn/migranes.jpg"
+  },
+  {
+    "id": "HNU002",
+    "title": "Wellness Tips: Incorporating Mindfulness into Daily Life",
+    "description": "Discover the benefits of mindfulness in enhancing overall well-being. From stress reduction to improved focus, explore practical tips to incorporate mindfulness into your daily routine.",
+    "image": "https://i.ibb.co/NLkh9ch/wellness-Tips.jpg"
+  },
+  {
+    "id": "HNU003",
+    "title": "Latest Research: Diet's Impact on Mental Health Revealed",
+    "description": "A groundbreaking study at [Fictional Institute] links diet to mental health. Learn about the impact of nutrition on mood and cognitive function, paving the way for holistic mental well-being.",
+    "image": "https://i.ibb.co/z8dLX38/mental-Health.jpg"
+  },
+  {
+    "id": "HNU004",
+    "title": "Innovative Tech: Wearable Devices for Heart Health Monitoring",
+    "description": "Explore the latest in wearable technology designed to monitor heart health. From real-time ECG tracking to personalized health insights, these devices are revolutionizing cardiovascular care.",
+    "image": "https://i.ibb.co/61TNbPf/innovate-Tech.jpg"
+  },
+  {
+    "id": "HNU005",
+    "title": "Vaccine Update: Progress in Global Efforts Against Infectious Diseases",
+    "description": "Stay informed on the latest developments in global vaccination efforts. Promising results from clinical trials offer optimism in the ongoing fight against infectious diseases worldwide.",
+    "image": "https://i.ibb.co/HG3CHSY/vaccine-Update.jpg"
+  },
+  {
+    "id": "HNU006",
+    "title": "Fitness Trends 2023: Exciting Workouts Taking the World by Storm",
+    "description": "From virtual reality fitness experiences to eco-friendly workout gear, discover the hottest trends shaping the fitness landscape in 2023. Stay ahead of the curve for a healthier you!",
+    "image": "https://i.ibb.co/T8Rvgkc/fitness-Trends.jpg"
+  }
+]
