@@ -8,13 +8,14 @@ import DIABETIC from "../../assets/CategoryIcons/diabetic.png"
 import PERSONAL from "../../assets/CategoryIcons/personal.png"
 import PRESCRIPTION from "../../assets/CategoryIcons/prescription.png"
 import WOMEN from "../../assets/CategoryIcons/women.png"
-import { NavLink } from "react-router-dom";
+
 
 
 const ByProducts = () => {
     const pageSize = 10;
+    const [category, setCategory] = useState('')
     const [currentPage, setCurrentPage] = useState(1);
-    const [products] = useAllProducts([])
+    const [products] = useAllProducts({ category })
     //    console.log(products)
 
     // Calculate the index range for the current page
@@ -34,48 +35,34 @@ const ByProducts = () => {
             <div className="flex gap-5">
                 <div className="bg-gray-200 rounded-lg h-[560px]  lg:w-1/5">
                     <ul>
-                        <NavLink to='/'>
-                            <li className="flex gap-2 items-center px-4 py-4">
-                                <img className="w-8 h-8" src={OTC} alt="" />
-                                <h2 className="font-bold text-xl text-stone-600">OTC Medicine</h2>
-                            </li>
-                        </NavLink>
-                        <NavLink to='/'>
-                            <li className="flex gap-2 items-center px-4 py-4">
-                                <img className="w-8 h-8" src={WOMEN} alt="" />
-                                <h2 className="font-bold text-xl text-stone-600">For Women</h2>
-                            </li>
-                        </NavLink>
-                        <NavLink to='/'>
-                            <li className="flex gap-2 items-center px-4 py-4">
-                                <img className="w-8 h-8" src={BABY} alt="" />
-                                <h2 className="font-bold text-xl text-stone-600">Baby Care</h2>
-                            </li>
-                        </NavLink>
-                        <NavLink to='/'>
-                            <li className="flex gap-2 items-center px-4 py-4">
-                                <img className="w-8 h-8" src={DENTAL} alt="" />
-                                <h2 className="font-bold text-xl text-stone-600">Dental Care</h2>
-                            </li>
-                        </NavLink>
-                        <NavLink to='/'>
-                            <li className="flex gap-2 items-center px-4 py-4">
-                                <img className="w-8 h-8" src={DIABETIC} alt="" />
-                                <h2 className="font-bold text-xl text-stone-600">Diabetic Care</h2>
-                            </li>
-                        </NavLink>
-                        <NavLink to='/'>
-                            <li className="flex gap-2 items-center px-4 py-4">
-                                <img className="w-8 h-8" src={PERSONAL} alt="" />
-                                <h2 className="font-bold text-xl text-stone-600">Personal Care</h2>
-                            </li>
-                        </NavLink>
-                        <NavLink to='/'>
-                            <li className="flex gap-2 items-center px-4 py-4">
-                                <img className="w-8 h-8" src={PRESCRIPTION} alt="" />
-                                <h2 className="font-bold text-xl text-stone-600">Prescription Medicine</h2>
-                            </li>
-                        </NavLink>
+                        <li onClick={() => setCategory('otc')} className="flex gap-2 items-center px-4 py-4 cursor-pointer hover:bg-slate-300">
+                            <img className="w-8 h-8" src={OTC} alt="" />
+                            <h2 className="font-bold text-xl text-stone-600">OTC Medicine</h2>
+                        </li>
+                        <li onClick={() => setCategory('women')} className="flex gap-2 items-center px-4 py-4 cursor-pointer hover:bg-slate-300">
+                            <img className="w-8 h-8" src={WOMEN} alt="" />
+                            <h2 className="font-bold text-xl text-stone-600">For Women</h2>
+                        </li>
+                        <li onClick={() => setCategory('baby')} className="flex gap-2 items-center px-4 py-4 cursor-pointer hover:bg-slate-300">
+                            <img className="w-8 h-8" src={BABY} alt="" />
+                            <h2 className="font-bold text-xl text-stone-600">Baby Care</h2>
+                        </li>
+                        <li onClick={() => setCategory('dental')} className="flex gap-2 items-center px-4 py-4 cursor-pointer hover:bg-slate-300">
+                            <img className="w-8 h-8" src={DENTAL} alt="" />
+                            <h2 className="font-bold text-xl text-stone-600">Dental Care</h2>
+                        </li>
+                        <li onClick={() => setCategory('diabetic')} className="flex gap-2 items-center px-4 py-4 cursor-pointer hover:bg-slate-300">
+                            <img className="w-8 h-8" src={DIABETIC} alt="" />
+                            <h2 className="font-bold text-xl text-stone-600">Diabetic Care</h2>
+                        </li>
+                        <li onClick={() => setCategory('personal')} className="flex gap-2 items-center px-4 py-4 cursor-pointer hover:bg-slate-300">
+                            <img className="w-8 h-8" src={PERSONAL} alt="" />
+                            <h2 className="font-bold text-xl text-stone-600">Personal Care</h2>
+                        </li>
+                        <li onClick={() => setCategory('prescription')} className="flex gap-2 items-center px-4 py-4 cursor-pointer hover:bg-slate-300">
+                            <img className="w-8 h-8" src={PRESCRIPTION} alt="" />
+                            <h2 className="font-bold text-xl text-stone-600">Prescription Medicine</h2>
+                        </li>
 
 
                         {/* Add more routes as needed */}
