@@ -9,6 +9,7 @@ import Doctors from "../pages/doctors/Doctors";
 import Advice from "../pages/home/ThreeCards/Advice";
 import NewsArticles from "../pages/News&Articles/NewsArticles";
 import NewsArticlesDetails from "../pages/News&Articles/NewsArticlesDetails";
+import ByProducts from "../pages/byProducts/ByProducts";
 
 
 export const router = createBrowserRouter([
@@ -19,6 +20,10 @@ export const router = createBrowserRouter([
       {
         path: "/",
         element: <Home />,
+      },
+      {
+        path:"/all-products",
+        element:<ByProducts></ByProducts>
       },
 
       {
