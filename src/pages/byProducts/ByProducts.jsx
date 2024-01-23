@@ -1,6 +1,14 @@
 import { useState } from "react";
 import useAllProducts from "../../hooks/useAllProducts";
 import ProductsCard from "../home/products/ProductsCard";
+import OTC from "../../assets/CategoryIcons/OTC.png"
+import BABY from "../../assets/CategoryIcons/baby.webp"
+import DENTAL from "../../assets/CategoryIcons/dental.png"
+import DIABETIC from "../../assets/CategoryIcons/diabetic.png"
+import PERSONAL from "../../assets/CategoryIcons/personal.png"
+import PRESCRIPTION from "../../assets/CategoryIcons/prescription.png"
+import WOMEN from "../../assets/CategoryIcons/women.png"
+import { NavLink } from "react-router-dom";
 
 
 const ByProducts = () => {
@@ -22,16 +30,58 @@ const ByProducts = () => {
 
     return (
         <div className="">
-             <h2 className="text-center font-bold text-xl mt-2 mb-2">All Mediisync </h2>
+            <h2 className="text-center font-bold text-xl mt-2 mb-2">All Mediisync </h2>
             <div className="flex gap-5">
                 <div className="bg-gray-200 rounded-lg h-[560px]  lg:w-1/5">
                     <ul>
-                        <li><a href="/route1">Route 1</a></li>
-                        <li><a href="/route2">Route 2</a></li>
+                        <NavLink to='/'>
+                            <li className="flex gap-2 items-center px-4 py-4">
+                                <img className="w-8 h-8" src={OTC} alt="" />
+                                <h2 className="font-bold text-xl">OTC Medicine</h2>
+                            </li>
+                        </NavLink>
+                        <NavLink to='/'>
+                            <li className="flex gap-2 items-center px-4 py-4">
+                                <img className="w-8 h-8" src={WOMEN} alt="" />
+                                <h2 className="font-bold text-xl">For Women</h2>
+                            </li>
+                        </NavLink>
+                        <NavLink to='/'>
+                            <li className="flex gap-2 items-center px-4 py-4">
+                                <img className="w-8 h-8" src={BABY} alt="" />
+                                <h2 className="font-bold text-xl">Baby Care</h2>
+                            </li>
+                        </NavLink>
+                        <NavLink to='/'>
+                            <li className="flex gap-2 items-center px-4 py-4">
+                                <img className="w-8 h-8" src={DENTAL} alt="" />
+                                <h2 className="font-bold text-xl">Dental Care</h2>
+                            </li>
+                        </NavLink>
+                        <NavLink to='/'>
+                            <li className="flex gap-2 items-center px-4 py-4">
+                                <img className="w-8 h-8" src={DIABETIC} alt="" />
+                                <h2 className="font-bold text-xl">Diabetic Care</h2>
+                            </li>
+                        </NavLink>
+                        <NavLink to='/'>
+                            <li className="flex gap-2 items-center px-4 py-4">
+                                <img className="w-8 h-8" src={PERSONAL} alt="" />
+                                <h2 className="font-bold text-xl">Personal Care</h2>
+                            </li>
+                        </NavLink>
+                        <NavLink to='/'>
+                            <li className="flex gap-2 items-center px-4 py-4">
+                                <img className="w-8 h-8" src={PRESCRIPTION} alt="" />
+                                <h2 className="font-bold text-xl">Prescription Medicine</h2>
+                            </li>
+                        </NavLink>
+
+
                         {/* Add more routes as needed */}
                     </ul>
                 </div>
-               
+
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 lg:w-4/5">
                     {
                         currentProducts.map(product => (
