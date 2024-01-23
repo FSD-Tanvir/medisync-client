@@ -1,37 +1,17 @@
-import { useEffect, useState } from "react";
+// import { useEffect, useState } from "react";
 import Slider from "react-slick";
 import ProductsCard from "./ProductsCard";
 // react slick slider css
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import useAllProducts from "../../../hooks/useAllProducts";
 
 
 
 const Products = () => {
-    const [products, setProducts] = useState();
-  
-
-    // useEffect to fetch data when the component mounts
-    useEffect(() => {
-        const fetchData = async () => {
-            try {
-                // Fetch data from an API endpoint (replace with your API URL)
-                const response = await fetch('http://localhost:5000/allProducts');
-                const result = await response.json();
-
-                // Update the state with the fetched data
-                setProducts(result);
-            } catch (error) {
-                console.error('Error fetching data:', error);
-            }
-        };
-
-        // Call the fetchData function
-        fetchData();
-    }, []);
-
-    // filter for category
-
+    const [products] = useAllProducts([])
+    
+    // filter product as a category
     const otcProducts = products?.filter(item => item?.category === 'otc') || [];
     const womenProducts = products?.filter(item => item?.category === 'women') || [];
     const babyProducts = products?.filter(item => item.category === 'baby') || []
@@ -80,7 +60,7 @@ const Products = () => {
             <div className="">
                 <Slider {...sliderSettings}>
                     {otcProducts.map(product => (
-                        <ProductsCard key={product.id} product={product} />
+                        <ProductsCard key={product._id} product={product} />
                     ))}
                 </Slider>
             </div>
