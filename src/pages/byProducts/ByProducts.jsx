@@ -37,43 +37,43 @@ const ByProducts = () => {
                         <NavLink to='/'>
                             <li className="flex gap-2 items-center px-4 py-4">
                                 <img className="w-8 h-8" src={OTC} alt="" />
-                                <h2 className="font-bold text-xl">OTC Medicine</h2>
+                                <h2 className="font-bold text-xl text-stone-600">OTC Medicine</h2>
                             </li>
                         </NavLink>
                         <NavLink to='/'>
                             <li className="flex gap-2 items-center px-4 py-4">
                                 <img className="w-8 h-8" src={WOMEN} alt="" />
-                                <h2 className="font-bold text-xl">For Women</h2>
+                                <h2 className="font-bold text-xl text-stone-600">For Women</h2>
                             </li>
                         </NavLink>
                         <NavLink to='/'>
                             <li className="flex gap-2 items-center px-4 py-4">
                                 <img className="w-8 h-8" src={BABY} alt="" />
-                                <h2 className="font-bold text-xl">Baby Care</h2>
+                                <h2 className="font-bold text-xl text-stone-600">Baby Care</h2>
                             </li>
                         </NavLink>
                         <NavLink to='/'>
                             <li className="flex gap-2 items-center px-4 py-4">
                                 <img className="w-8 h-8" src={DENTAL} alt="" />
-                                <h2 className="font-bold text-xl">Dental Care</h2>
+                                <h2 className="font-bold text-xl text-stone-600">Dental Care</h2>
                             </li>
                         </NavLink>
                         <NavLink to='/'>
                             <li className="flex gap-2 items-center px-4 py-4">
                                 <img className="w-8 h-8" src={DIABETIC} alt="" />
-                                <h2 className="font-bold text-xl">Diabetic Care</h2>
+                                <h2 className="font-bold text-xl text-stone-600">Diabetic Care</h2>
                             </li>
                         </NavLink>
                         <NavLink to='/'>
                             <li className="flex gap-2 items-center px-4 py-4">
                                 <img className="w-8 h-8" src={PERSONAL} alt="" />
-                                <h2 className="font-bold text-xl">Personal Care</h2>
+                                <h2 className="font-bold text-xl text-stone-600">Personal Care</h2>
                             </li>
                         </NavLink>
                         <NavLink to='/'>
                             <li className="flex gap-2 items-center px-4 py-4">
                                 <img className="w-8 h-8" src={PRESCRIPTION} alt="" />
-                                <h2 className="font-bold text-xl">Prescription Medicine</h2>
+                                <h2 className="font-bold text-xl text-stone-600">Prescription Medicine</h2>
                             </li>
                         </NavLink>
 
