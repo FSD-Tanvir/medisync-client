@@ -25,9 +25,7 @@ const NewsArticles = () => {
     const fetchData = async () => {
       try {
         // Fetch data from an API endpoint (replace with your API URL)
-        const response = await fetch(
-          "http://localhost:5000/allNewsAndArticles"
-        );
+        const response = await fetch("http://localhost:5000/newAndArticles");
         const result = await response.json();
         console.log(result);
 
@@ -76,7 +74,7 @@ const NewsArticles = () => {
                   <Link
                     key={item.id}
                     className="text-white font-bold hover:underline px-4 border-r-2 last:border-none"
-                    onClick={() => handleArticlePage(item.id)}
+                    onClick={() => handleArticlePage(item._id)}
                   >
                     {item.title}
                   </Link>
