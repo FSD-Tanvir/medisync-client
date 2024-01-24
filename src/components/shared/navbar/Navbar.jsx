@@ -8,22 +8,24 @@ import { TiThMenu } from "react-icons/ti";
 import { IoCartOutline, IoSearchOutline, IoClose } from "react-icons/io5";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import Modal from "../../../pages/home/LogInRegistration/Modal";
 
 const menuItems = [
   { id: 1, icon: <GoHome />, item: "Home", link: "/" },
-  { id: 2, icon: <BiPurchaseTagAlt />, item: "Buy Products", link: "/" },
-  { id: 3, icon: <CiCirclePlus />, item: "Free Advice", link: "/" },
+  { id: 2, icon: <BiPurchaseTagAlt />, item: "Buy Products", link: "/all-products" },
+  { id: 3, icon: <CiCirclePlus />, item: "Free Advice", link: "/advice" },
   { id: 4, icon: <FiFilePlus />, item: "Articles", link: "/articles" },
-  { id: 5, icon: <FaUserDoctor />, item: "Meet Doctors", link: "/" },
-  { id: 6, icon: <GrWorkshop />, item: "Career", link: "/" },
+  { id: 5, icon: <FaUserDoctor />, item: "Meet Doctors", link: "/doctors" },
+  { id: 6, icon: <GrWorkshop />, item: "Career", link: "/career" },
 ];
 
 const Navbar = () => {
   let [openMenu, setOpenMenu] = useState(false);
+  const [showModal, setShowModal] = useState(false);
 
   return (
     <>
-      {/* logo navbar  for small device */}
+      {/* navbar  for small device */}
 
       <div className=" sticky top-0  lg:hidden  flex items-center justify-between bg-cyan-400 p-2 z-50 ">
         {/* logo */}
@@ -41,7 +43,7 @@ const Navbar = () => {
               <div>
                 <IoCartOutline size={36} />
               </div>
-              <div className="border border-black px-3 py-1 cursor-pointer">
+              <div onClick={() => setShowModal(true)} className="border border-black px-3 py-1 rounded-lg cursor-pointer">
                 Login
               </div>
             </div>
@@ -109,7 +111,7 @@ const Navbar = () => {
               <div>
                 <IoCartOutline size={36} />
               </div>
-              <div className="border border-black px-3 py-1 cursor-pointer">
+              <div onClick={() => setShowModal(true)} className="border border-black px-3 py-1 rounded-lg cursor-pointer">
                 Login
               </div>
             </div>
@@ -122,9 +124,8 @@ const Navbar = () => {
       <div className="sticky lg:top-0 top-[50px] z-10 ">
         <div className="relative ">
           <ul
-            className={`flex flex-col lg:flex-row gap-5 absolute lg:static  bg-cyan-400  p-5  transition-all duration-500 ease-in ${
-              openMenu ? "top-0 w-full" : "top-[-500px] w-full "
-            } `}
+            className={`flex flex-col lg:flex-row gap-5 absolute lg:static  bg-cyan-400  p-5  transition-all duration-500 ease-in ${openMenu ? "top-0 w-full" : "top-[-500px] w-full "
+              } `}
           >
             {menuItems.map((menuItem) => (
               <Link
@@ -139,6 +140,7 @@ const Navbar = () => {
           </ul>
         </div>
       </div>
+      <Modal showModal={showModal} setShowModal={setShowModal}/>
     </>
   );
 };

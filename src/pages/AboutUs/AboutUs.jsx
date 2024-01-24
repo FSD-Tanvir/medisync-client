@@ -1,40 +1,20 @@
-import Navbar from "../../components/shared/navbar/Navbar";
-import Footer from "../../components/shared/footer/Footer";
+import { useEffect } from "react";
+import BannerSimple from "../../components/shared/Banners/BannerSimple/BannerSimple";
 import Faq from "../../pages/home/faq/Faq";
 import TestimonialsCard from "../home/testimonials/Testimonials";
 
-import { Link, Outlet, useLocation } from "react-router-dom";
-
-import Advertise from "../../pages/home/Advertise/Advertise";
-
 const AboutUs = () => {
-  const location = useLocation();
-  const isHomePage = location.pathname === "/" || false;
+
+  useEffect(()=>{
+    window.scroll(0,0)
+  },[])
+
   return (
     <>
       <div className="flex flex-col lg:w-full">
-        <div
-          className="h-[55vh] w-full bg-bottom bg-cover bg-no-repeat"
-          style={{ backgroundImage: "url(https://i.ibb.co/JRMRpvD/3117.jpg)" }}
-        >
-          <div className="bg-black/25 text-white h-full flex justify-center items-center">
-            <p className="drop-shadow-md">
-              <Link to="/">
-                <span className="text-2xl font-semibold text-[#ffc8dd] border-r-4 border-[#ffc8dd] pr-2">
-                  Home
-                </span>
-              </Link>
-              <span className="text-2xl font-semibold text-[#ffc8dd]">
-                {" "}
-                AboutUs
-              </span>
-            </p>
-          </div>
-        </div>
-
-        <div>
-          <img src="" alt="" />
-        </div>
+        {/* about us banner  */}
+        <BannerSimple imgUrl="https://i.ibb.co/hLk27DB/close-up-glasses-with-employees-background.jpg" text1="Welcome to About Us" pageName="aboutUs"/>
+        
         <div>
           <div className="p-8">
             <h1 className="text-2xl font-bold">About Us</h1>
