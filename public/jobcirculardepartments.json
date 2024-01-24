@@ -1,6 +1,5 @@
 [
   {
-    "id": 1,
     "title": "Warehouse_Manager",
     "job_type": "Full-time",
     "department": "Warehouse",
@@ -21,7 +20,6 @@
     "address": "medisync - This is a dummy address -- Mirpur 1, Block-A - 1216."
   },
   {
-    "id": 2,
     "title": "Customer_Care_Representative",
     "job_type": "Full-time",
     "department": "Customer_Care",
@@ -42,7 +40,6 @@
     "address": "medisync - This is a dummy address -- Mirpur 1, Block-A - 1216."
   },
   {
-    "id": 3,
     "title": "Technology_Specialist",
     "job_type": "Contract",
     "department": "Technology",
@@ -63,7 +60,6 @@
     "address": "medisync - This is a dummy address -- Mirpur 1, Block-A - 1216."
   },
   {
-    "id": 4,
     "title": "Marketing_Specialist",
     "job_type": "Full-time",
     "department": "Marketing",
@@ -84,7 +80,6 @@
     "address": "medisync - This is a dummy address -- Mirpur 1, Block-A - 1216."
   },
   {
-    "id": 5,
     "title": "Sales_and_Operation_Manager",
     "job_type": "Full-time",
     "department": "Sales_&_Operation",
@@ -105,7 +100,6 @@
     "address": "medisync - This is a dummy address -- Mirpur 1, Block-A - 1216."
   },
   {
-    "id": 6,
     "title": "Delivery_Driver",
     "job_type": "Part-time",
     "department": "Delivery",
@@ -126,7 +120,6 @@
     "address": "medisync - This is a dummy address -- Mirpur 1, Block-A - 1216."
   },
   {
-    "id": 7,
     "title": "Health_and_Beauty_Specialist",
     "job_type": "Full-time",
     "department": "Health_&_Beauty",
@@ -147,7 +140,6 @@
     "address": "medisync - This is a dummy address -- Mirpur 1, Block-A - 1216."
   },
   {
-    "id": 8,
     "title": "Corporate_Affairs_Manager",
     "job_type": "Full-time",
     "department": "Corporate_Affairs",
