@@ -22,7 +22,7 @@ const ArtilicesCard = ({ articlie }) => {
         <div className="px-3 py-3">
           <h2 className="text-cyan-600 text-sm font-semibold my-2">{title}</h2>
           <div className="h-auto">
-            <p className="text-slate-700 text-sm font-normal">
+            <p className="text-slate-700 text-base font-normal sm:h-[5rem] lg:h-[3rem] lg:text-sm md:text-[11px] md:text-base">
               {showFullDescription ? description : truncatedDescription}
             </p>
           </div>

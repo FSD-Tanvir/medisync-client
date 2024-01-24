@@ -10,7 +10,7 @@ const NewsArticles = () => {
   const [articles, setArticlies] = useState();
   const navigate = useNavigate();
   const [currentPage, setCurrentPage] = useState(1);
-
+  console.log(articles);
   const articlesPerPage = 10;
   const lastIndex = currentPage * articlesPerPage;
   const firstIndex = lastIndex - articlesPerPage;
@@ -24,7 +24,9 @@ const NewsArticles = () => {
     const fetchData = async () => {
       try {
         // Fetch data from an API endpoint (replace with your API URL)
-        const response = await fetch("articlies.json");
+        const response = await fetch(
+          "http://localhost:5000/allNewsAndArticles"
+        );
         const result = await response.json();
         console.log(result);
 
@@ -69,9 +71,15 @@ const NewsArticles = () => {
           <div className="bg-cyan-500 p-2">
             <Marquee pauseOnHover>
               <div>
-                <Link className="text-white font-bold hover:underline">
-                  Hospital discharge funds: experiences in winter 2022–23
-                </Link>
+                {article?.map((item) => (
+                  <Link
+                    key={item.id}
+                    className="text-white font-bold hover:underline px-4 border-r-2 last:border-none"
+                    onClick={() => handleArticlePage(item.id)}
+                  >
+                    {item.title}
+                  </Link>
+                ))}
               </div>
             </Marquee>
           </div>
@@ -81,7 +89,7 @@ const NewsArticles = () => {
             <h1 className="text-2xl font-bold pl-4 md:pl-0">News & Articles</h1>
           </div>
 
-          <div className="my-3 grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div className="my-3 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {article?.map((articleData) => (
               <NewsArticlesCard
                 key={articleData.id}

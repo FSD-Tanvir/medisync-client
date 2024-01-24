@@ -12,7 +12,7 @@ const CategoriesList = [
 const Categories = () => {
   const [active, setActive] = useState(false);
   return (
-    <div className="w-full bg-zinc-900/80 mb-5">
+    <div className="w-full bg-zinc-900/95 mb-5">
       {/*for desktop*/}
       <div className="w-full hidden md:flex items-center justify-center p-2 text-white">
         {CategoriesList.map((item, index) => (
@@ -37,7 +37,7 @@ const Categories = () => {
           <div
             className={`flex flex-col p-2 ${
               active ? "" : "hidden"
-            } absolute z-10 bg-zinc-900/90 top-8`}
+            } absolute z-10 bg-zinc-900/95 top-8`}
           >
             {CategoriesList.map((item, index) => (
               <Link

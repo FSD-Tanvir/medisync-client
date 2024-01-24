@@ -8,10 +8,8 @@ import ContactUs from "../pages/contact/ContactUs";
 
 import Advice from "../pages/home/ThreeCards/Advice";
 
-
 import NewsArticles from "../pages/News&Articles/NewsArticles";
 import NewsArticlesDetails from "../pages/News&Articles/NewsArticlesDetails";
-
 
 export const router = createBrowserRouter([
   {
