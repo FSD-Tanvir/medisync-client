@@ -7,10 +7,10 @@ import JobDetails from "../pages/career/jobDetails/JobDetails";
 import ContactUs from "../pages/contactUs/ContactUs";
 import Doctors from "../pages/doctors/Doctors";
 import Advice from "../pages/home/ThreeCards/Advice";
+
 import NewsArticles from "../pages/News&Articles/NewsArticles";
 import NewsArticlesDetails from "../pages/News&Articles/NewsArticlesDetails";
 import ByProducts from "../pages/byProducts/ByProducts";
-
 
 export const router = createBrowserRouter([
   {
