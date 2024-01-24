@@ -1,8 +1,14 @@
 import toast from "react-hot-toast";
 import { FaEnvelope, FaLocationDot, FaPhone } from "react-icons/fa6";
-import { Link } from "react-router-dom";
+import BannerSimple from "../../components/shared/Banners/BannerSimple/BannerSimple";
+import { useEffect } from "react";
 
 const ContactUs = () => {
+
+  useEffect(()=>{
+    window.scroll(0,0)
+  },[])
+
   const handleSubmit = (e) => {
     e.preventDefault();
     // const form = e.target;
@@ -13,24 +19,8 @@ const ContactUs = () => {
   return (
     <div className="min-h-screen ">
       {/* contact banner section  */}
-      <div
-        className="h-[55vh] w-full bg-bottom bg-cover bg-no-repeat"
-        style={{ backgroundImage: "url(https://i.ibb.co/JRMRpvD/3117.jpg)" }}
-      >
-        <div className="bg-black/25 text-white h-full flex justify-center items-center">
-          <p className="drop-shadow-md">
-            <Link to="/">
-              <span className="text-2xl font-semibold text-white border-r-4 border-cyan-100 pr-2">
-                Home
-              </span>
-            </Link>
-            <span className="text-2xl font-semibold text-white">
-              {" "}
-              ContactUs
-            </span>
-          </p>
-        </div>
-      </div>
+      
+      <BannerSimple imgUrl="https://i.ibb.co/JRMRpvD/3117.jpg" text1="Welcome to Contact Us"/>
       {/* contact main content */}
       <div className="mt-16">
         <h2 className="text-2xl font-semibold text-center">
@@ -46,9 +36,6 @@ const ContactUs = () => {
               complaints, and feature requests.
             </p>
             <div className="flex flex-col gap-2 pl-5 lg:pl-0">
-              {/* <p className="flex gap-2 items-center text-lg font-medium">
-              <FaUser size={20} className="text-cyan-400" /> Md Hasan Ali
-            </p> */}
               <p className="flex gap-2 flex-wrap items-center text-black/70 text-lg font-medium">
                 <FaEnvelope size={20} className="text-cyan-400" />{" "}
                 mdhasanali9139@gmail.com

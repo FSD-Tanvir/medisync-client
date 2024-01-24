@@ -5,6 +5,7 @@ import { Link, useNavigate } from "react-router-dom";
 
 import Banner from "./banner/Banner";
 import Categories from "./Categories/Categories";
+import BannerSimple from "../../components/shared/Banners/BannerSimple/BannerSimple";
 
 const NewsArticles = () => {
   const [articles, setArticlies] = useState();
@@ -60,7 +61,7 @@ const NewsArticles = () => {
   return (
     <>
       <div>
-        <Banner />
+        <BannerSimple imgUrl="https://i.ibb.co/5vStm5N/newsbanner.png" text1="Welcome to news & articles" pageName="newsAndArticles"/>
         {/*Categories*/}
         <Categories />
 

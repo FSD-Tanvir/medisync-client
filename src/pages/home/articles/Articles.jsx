@@ -11,7 +11,7 @@ const Articles = () => {
                 // Fetch data from an API endpoint (replace with your API URL)
                 const response = await fetch('articlies.json');
                 const result = await response.json();
-                console.log(result)
+                // console.log(result)
 
                 // Update the state with the fetched data
                 setArticlies(result);
