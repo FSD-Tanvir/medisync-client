@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import DoctorCard from "./DoctorCard";
+import BannerSimple from "../../components/shared/Banners/BannerSimple/BannerSimple";
 
 const Doctors = () => {
   const [doctors, setDoctors] = useState([]);
@@ -37,13 +38,13 @@ const Doctors = () => {
 
   return (
     <div className="container mx-auto my-8">
-      <h1 className="text-3xl font-semibold text-center mb-6">
-        Meet Our Doctors
-      </h1>
-
+    
+      
+    <div className="relative">
+    <BannerSimple imgUrl="https://i.ibb.co/JRMRpvD/3117.jpg" text1="Welcome to meet our doctors"/>
       {/* Specialization Filter */}
-      <div className="flex justify-center items-center mb-4">
-        <label className="mr-2">Filter by Specialization:</label>
+      <div className="flex justify-center items-center mb-4 absolute left-1/2 top-[60%] -translate-x-1/2">
+        <label className="mr-2 text-2xl text-white">Filter by Specialization</label>
         <select
           className="border border-gray-300 p-2 rounded-md"
           value={selectedSpecialization}
@@ -61,6 +62,8 @@ const Doctors = () => {
           ))}
         </select>
       </div>
+    </div>
+      
 
       {/* Display Filtered Doctors */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3  gap-5 ">

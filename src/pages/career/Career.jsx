@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import BannerSimple from "../../components/shared/Banners/BannerSimple/BannerSimple";
 
 const Career = () => {
   const [jobsData, setJobsData] = useState([]);
@@ -34,31 +35,8 @@ const Career = () => {
   return (
     <div className="min-h-[90vh] mb-20">
       {/* Career banner section  */}
-      <div
-        className="h-[55vh] w-full bg-fixed bg-top bg-cover bg-no-repeat"
-        style={{
-          backgroundImage:
-            "url(https://i.ibb.co/hMNQW0v/ethnic-businessman-giving-hand-shake.jpg)",
-        }}
-      >
-        <div className="bg-black/25 text-white h-full flex justify-center items-center">
-          <Link to="/">
-            <span className="drop-shadow-md text-2xl pr-2 text-cyan-400">
-              Home
-            </span>
-          </Link>
-          <p className="drop-shadow-md border-l-4 rounded-t-full pl-2">
-            <span className="text-2xl font-semibold text-white">
-              {" "}
-              Join Us!
-              <span className="text-cyan-700 drop-shadow-md border-b-4 rounded-l-full rounded-r-full border-t-4 rounded-t-full ml-3 p-[6px]">
-                {" "}
-                We are Hiring
-              </span>
-            </span>
-          </p>
-        </div>
-      </div>
+      <BannerSimple imgUrl="https://i.ibb.co/hMNQW0v/ethnic-businessman-giving-hand-shake.jpg" text1="Join Us!" text2="We are Hiring" pageName="career"/>
+      
       {/* department cards  */}
       <div className="flex gap-6 w-4/5 mx-auto overflow-x-auto p-3 rounded-lg -mt-[30px] bg-cyan-400">
         {/* department card*/}

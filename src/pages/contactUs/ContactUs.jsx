@@ -1,7 +1,14 @@
 import toast from "react-hot-toast";
 import { FaEnvelope, FaLocationDot, FaPhone } from "react-icons/fa6";
+import BannerSimple from "../../components/shared/Banners/BannerSimple/BannerSimple";
+import { useEffect } from "react";
 
 const ContactUs = () => {
+
+  useEffect(()=>{
+    window.scroll(0,0)
+  },[])
+
   const handleSubmit = (e) => {
     e.preventDefault();
     // const form = e.target;
@@ -12,19 +19,8 @@ const ContactUs = () => {
   return (
     <div className="min-h-screen ">
       {/* contact banner section  */}
-      <div
-        className="h-[55vh] w-full bg-fixed bg-bottom bg-cover bg-no-repeat"
-        style={{ backgroundImage: "url(https://i.ibb.co/JRMRpvD/3117.jpg)" }}
-      >
-        <div className="bg-black/25 text-white h-full flex justify-center items-center">
-          <p className="drop-shadow-md">
-            <span className="text-3xl font-semibold text-[#ffc8dd]">
-                {" "}
-                Welcome to Contact Us
-              </span>
-          </p>
-        </div>
-      </div>
+      
+      <BannerSimple imgUrl="https://i.ibb.co/JRMRpvD/3117.jpg" text1="Welcome to Contact Us"/>
       {/* contact main content */}
       <div className="mt-16">
         <h2 className="text-2xl font-semibold text-center">
