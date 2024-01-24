@@ -43,7 +43,7 @@ const Navbar = () => {
               <div>
                 <IoCartOutline size={36} />
               </div>
-              <div onClick={() => setShowModal(true)} className="border border-black px-3 py-1 cursor-pointer">
+              <div onClick={() => setShowModal(true)} className="border border-black px-3 py-1 rounded-lg cursor-pointer">
                 Login
               </div>
             </div>
@@ -111,7 +111,7 @@ const Navbar = () => {
               <div>
                 <IoCartOutline size={36} />
               </div>
-              <div onClick={() => setShowModal(true)} className="border border-black px-3 py-1 cursor-pointer">
+              <div onClick={() => setShowModal(true)} className="border border-black px-3 py-1 rounded-lg cursor-pointer">
                 Login
               </div>
             </div>

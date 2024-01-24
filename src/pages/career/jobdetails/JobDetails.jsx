@@ -1,11 +1,9 @@
 import { useEffect, useState } from "react";
 import toast from "react-hot-toast";
-import { useParams } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 
 const JobDetails = () => {
-  const { id } = useParams();
-  const [jobsData, setJobsData] = useState([]);
-  const [singleJob, setSingleJob] = useState(null);
+  const {data: singleJob} = useLoaderData()
 
   {
     "id",
@@ -24,20 +22,8 @@ const JobDetails = () => {
       "job_location",
       "address";
   }
+  console.log(singleJob);
 
-  console.log(id);
-  useEffect(() => {
-    const fetchData = () => {
-      fetch("../../../../public/jobcirculardepartments.json")
-        .then((res) => res.json())
-        .then((data) => setJobsData(data));
-    };
-    fetchData();
-  }, []);
-  useEffect(() => {
-    const selectedJob = jobsData.find((job) => job.id === +id);
-    setSingleJob(selectedJob);
-  }, [id, jobsData]);
   return (
     <div className="min-h-[90vh] bg-white rounded-lg px-4 py-3">
       {/* job details banner  */}
@@ -45,14 +31,23 @@ const JobDetails = () => {
         className="h-[55vh] w-full bg-fixed bg-top bg-cover bg-no-repeat"
         style={{
           backgroundImage:
-            "url(https://i.ibb.co/jwRHNF3/we-are-hiring-digital-collage.jpg)",
+            "url(https://i.ibb.co/hMNQW0v/ethnic-businessman-giving-hand-shake.jpg)",
         }}
       >
         <div className="bg-black/25 text-white h-full flex justify-center items-center">
-          <p className="drop-shadow-md">
-            <span className="text-4xl font-semibold text-black/70">
+          <Link to="/">
+            <span className="drop-shadow-md text-2xl pr-2 text-cyan-400">
+              Home
+            </span>
+          </Link>
+          <p className="drop-shadow-md border-l-4 rounded-t-full pl-2">
+            <span className="text-2xl font-semibold text-white">
               {" "}
               Join Us!
+              <span className="text-cyan-700 drop-shadow-md border-b-4 rounded-l-full rounded-r-full border-t-4 rounded-t-full ml-3 p-[6px]">
+                {" "}
+                We are Hiring
+              </span>
             </span>
           </p>
         </div>
@@ -98,13 +93,13 @@ const JobDetails = () => {
             <h3 className="text-xl text-black/70 font-bold  cursor-pointer">
               Job Context
             </h3>
-            <h4 className="text-black/70">{singleJob?.job_context}</h4>
+            <h4 className="text-black/70">{singleJob?.jobContext}</h4>
           </div>
           <div>
             <h3 className="text-xl text-black/70 font-bold  cursor-pointer">
               Job Responsibilities
             </h3>
-            {singleJob?.job_responsibilities?.map((r, index) => (
+            {singleJob?.jobResponsibilities?.map((r, index) => (
               <span className="text-black/70" key={index}>
                 ({index + 1}){r}
                 <br />
@@ -115,25 +110,25 @@ const JobDetails = () => {
             <h3 className="text-xl text-black/70 font-bold  cursor-pointer">
               Employment Status
             </h3>
-            <h4 className="text-black/70">{singleJob?.job_type}</h4>
+            <h4 className="text-black/70">{singleJob?.jobType}</h4>
           </div>
           <div>
             <h3 className="text-xl text-black/70 font-bold  cursor-pointer">
               Educational Requirements
             </h3>
-            <h4 className="text-black/70">{singleJob?.educational_requirements}</h4>
+            <h4 className="text-black/70">{singleJob?.educationalRequirements}</h4>
           </div>
           <div>
             <h3 className="text-xl text-black/70 font-bold  cursor-pointer">
               Experience Requirements
             </h3>
-            <h4 className="text-black/70">{singleJob?.experience_requirements}</h4>
+            <h4 className="text-black/70">{singleJob?.experienceRequirements}</h4>
           </div>
           <div>
             <h3 className="text-xl text-black/70 font-bold  cursor-pointer">
               Additional Requirements
             </h3>
-            <h4 className="text-black/70">{singleJob?.additional_requirements}</h4>
+            <h4 className="text-black/70">{singleJob?.additionalRequirements}</h4>
           </div>
           <div>
             <h3 className="text-xl text-black/70 font-bold  cursor-pointer">
@@ -145,7 +140,7 @@ const JobDetails = () => {
             <h3 className="text-xl text-black/70 font-bold  cursor-pointer">
               Job Location
             </h3>
-            <h4 className="text-black/70">{singleJob?.job_location}</h4>
+            <h4 className="text-black/70">{singleJob?.jobLocation}</h4>
           </div>
           <div>
             <h3 className="text-xl text-black/70 font-bold  cursor-pointer">
@@ -157,7 +152,7 @@ const JobDetails = () => {
             <h3 className="text-xl text-black/70 font-bold  cursor-pointer">
               Compensation and Benefits
             </h3>
-            <h4 className="text-black/70">{singleJob?.compensation_and_benefits}</h4>
+            <h4 className="text-black/70">{singleJob?.compensationAndBenefits}</h4>
           </div>
           <div
             className="w-full lg:w-3/4

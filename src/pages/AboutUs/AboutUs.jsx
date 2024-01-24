@@ -1,27 +1,20 @@
+import { useEffect } from "react";
+import BannerSimple from "../../components/shared/Banners/BannerSimple/BannerSimple";
 import Faq from "../../pages/home/faq/Faq";
 import TestimonialsCard from "../home/testimonials/Testimonials";
 
 const AboutUs = () => {
+
+  useEffect(()=>{
+    window.scroll(0,0)
+  },[])
+
   return (
     <>
       <div className="flex flex-col lg:w-full">
-        <div
-          className="h-[55vh] w-full bg-fixed bg-bottom bg-cover bg-no-repeat"
-          style={{ backgroundImage: "url(https://i.ibb.co/JRMRpvD/3117.jpg)" }}
-        >
-          <div className="bg-black/25 text-white h-full flex justify-center items-center">
-            <p className="drop-shadow-md">
-              <span className="text-3xl font-semibold text-[#ffc8dd]">
-                {" "}
-                Welcome to About Us
-              </span>
-            </p>
-          </div>
-        </div>
-
-        <div>
-          <img src="" alt="" />
-        </div>
+        {/* about us banner  */}
+        <BannerSimple imgUrl="https://i.ibb.co/hLk27DB/close-up-glasses-with-employees-background.jpg" text1="Welcome to About Us" pageName="aboutUs"/>
+        
         <div>
           <div className="p-8">
             <h1 className="text-2xl font-bold">About Us</h1>
