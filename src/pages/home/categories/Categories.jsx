@@ -15,11 +15,12 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import './styles.css'
 import 'swiper/css/grid';
 import 'swiper/css/pagination';
-import { useState } from "react";
+
 
 
 const Categories = () => {
-    const [link , setLink]= useState('')
+
+    
     return (
         <div className="">
             <h1 className="text-2xl  font-bold ">Categories </h1>
@@ -45,28 +46,28 @@ const Categories = () => {
                 >
                     <SwiperSlide style={{
                         height:'200px'
-                    }}><CategoryCard icon={OTC} iconName={'OTC medicine'} link={'/otc'}/></SwiperSlide>
+                    }}><CategoryCard icon={OTC} iconName={'OTC medicine'} cat={'otc'}/></SwiperSlide>
                     <SwiperSlide style={{
                         height:'200px'
-                    }}><CategoryCard icon={women} iconName={'For Women'} link={'/women'}/></SwiperSlide>
+                    }}><CategoryCard icon={women} iconName={'For Women'} cat={'women'}/></SwiperSlide>
                     <SwiperSlide style={{
                         height:'200px'
-                    }}><CategoryCard icon={baby} iconName={'Baby Care'} link={'/baby'} /></SwiperSlide>
+                    }}><CategoryCard icon={baby} iconName={'Baby Care'} cat={'baby'}/></SwiperSlide>
                     <SwiperSlide style={{
                         height:'200px'
-                    }}><CategoryCard icon={dental} iconName={'Dental Care'} link={'/dental'}/></SwiperSlide>
+                    }}><CategoryCard icon={dental} iconName={'Dental Care'} cat={'dental'}/></SwiperSlide>
                     <SwiperSlide style={{
                         height:'200px'
-                    }}><CategoryCard icon={personal} iconName={'Personal Care'} link={'/personal'}/></SwiperSlide>
+                    }}><CategoryCard icon={personal} iconName={'Personal Care'} cat={'personal'} /></SwiperSlide>
                     <SwiperSlide style={{
                         height:'200px'
-                    }}><CategoryCard icon={prescription} iconName={'Prescription Medicine'}  link={'/prescription'}/></SwiperSlide>
+                    }}><CategoryCard icon={prescription} iconName={'Prescription Medicine'}  cat={'prescription'}/></SwiperSlide>
                     <SwiperSlide style={{
                         height:'200px'
-                    }}><CategoryCard icon={sexual} iconName={'Prescription Medicine'} link={'/sexual'}/></SwiperSlide>
+                    }}><CategoryCard icon={sexual} iconName={'Sexual Medicine'} cat={'sexual'}/></SwiperSlide>
                     <SwiperSlide style={{
                         height:'200px'
-                    }}><CategoryCard icon={diabatic} iconName={'Diabetic Care'} link={'/diabetic'}/></SwiperSlide>
+                    }}><CategoryCard icon={diabatic} iconName={'Diabetic Care'} cat={'diabetic'}/></SwiperSlide>
                 </Swiper>
             </div>
             {/* For phone  */}
@@ -88,28 +89,28 @@ const Categories = () => {
                 >
                     <SwiperSlide style={{
                         height:'200px'
-                    }}><CategoryCard icon={OTC} iconName={'OTC medicine'} link={'otc'} /></SwiperSlide>
+                    }}><CategoryCard icon={OTC} iconName={'OTC medicine'} cat={'otc'}/></SwiperSlide>
                     <SwiperSlide style={{
                         height:'200px'
-                    }}><CategoryCard icon={women} iconName={'For Women'} /></SwiperSlide>
+                    }}><CategoryCard icon={women} iconName={'For Women'} cat={'women'}/></SwiperSlide>
                     <SwiperSlide style={{
                         height:'200px'
-                    }}><CategoryCard icon={baby} iconName={'Baby Care'} /></SwiperSlide>
+                    }}><CategoryCard icon={baby} iconName={'Baby Care'} cat={'baby'}/></SwiperSlide>
                     <SwiperSlide style={{
                         height:'200px'
-                    }}><CategoryCard icon={dental} iconName={'Dental Care'} /></SwiperSlide>
+                    }}><CategoryCard icon={dental} iconName={'Dental Care'} cat={'dental'}/></SwiperSlide>
                     <SwiperSlide style={{
                         height:'200px'
-                    }}><CategoryCard icon={personal} iconName={'Personal Care'} /></SwiperSlide>
+                    }}><CategoryCard icon={personal} iconName={'Personal Care'} cat={'personal'}/></SwiperSlide>
                     <SwiperSlide style={{
                         height:'200px'
-                    }}><CategoryCard icon={prescription} iconName={'Prescription Medicine'} /></SwiperSlide>
+                    }}><CategoryCard icon={prescription} iconName={'Prescription Medicine'} cat={'prescription'}/></SwiperSlide>
                     <SwiperSlide style={{
                         height:'200px'
-                    }}><CategoryCard icon={sexual} iconName={'Prescription Medicine'} /></SwiperSlide>
+                    }}><CategoryCard icon={sexual} iconName={'Sexual Medicine'} cat={'sexual'}/></SwiperSlide>
                     <SwiperSlide style={{
                         height:'200px'
-                    }}><CategoryCard icon={diabatic} iconName={'Diabetic Care'} /></SwiperSlide>
+                    }}><CategoryCard icon={diabatic} iconName={'Diabetic Care'} cat={'diabetic'}/></SwiperSlide>
                 </Swiper>
             </div>
         </div>

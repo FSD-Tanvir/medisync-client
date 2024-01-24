@@ -12,7 +12,7 @@ import Modal from "../../../pages/home/LogInRegistration/Modal";
 
 const menuItems = [
   { id: 1, icon: <GoHome />, item: "Home", link: "/" },
-  { id: 2, icon: <BiPurchaseTagAlt />, item: "Buy Products", link: "/all-products" },
+  { id: 2, icon: <BiPurchaseTagAlt />, item: "Buy Products", link: "/all-products/all" },
   { id: 3, icon: <CiCirclePlus />, item: "Free Advice", link: "/advice" },
   { id: 4, icon: <FiFilePlus />, item: "Articles", link: "/articles" },
   { id: 5, icon: <FaUserDoctor />, item: "Meet Doctors", link: "/doctors" },

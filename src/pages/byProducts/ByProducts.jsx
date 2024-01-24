@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import useAllProducts from "../../hooks/useAllProducts";
 import ProductsCard from "../home/products/ProductsCard";
 import OTC from "../../assets/CategoryIcons/OTC.png"
@@ -8,12 +8,17 @@ import DIABETIC from "../../assets/CategoryIcons/diabetic.png"
 import PERSONAL from "../../assets/CategoryIcons/personal.png"
 import PRESCRIPTION from "../../assets/CategoryIcons/prescription.png"
 import WOMEN from "../../assets/CategoryIcons/women.png"
+import { useParams } from "react-router-dom";
 
 
 
 const ByProducts = () => {
     const pageSize = 10;
-    const [category, setCategory] = useState('')
+    const [category, setCategory] = useState('all')
+    const {cat} = useParams()
+    useEffect(()=>{
+        setCategory(cat)
+    },[cat])
     const [currentPage, setCurrentPage] = useState(1);
     const [products] = useAllProducts({ category })
     //    console.log(products)
