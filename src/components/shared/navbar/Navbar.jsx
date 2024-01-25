@@ -7,12 +7,17 @@ import { GrWorkshop } from "react-icons/gr";
 import { TiThMenu } from "react-icons/ti";
 import { IoCartOutline, IoSearchOutline, IoClose } from "react-icons/io5";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import Modal from "../../../pages/home/LogInRegistration/Modal";
 
 const menuItems = [
   { id: 1, icon: <GoHome />, item: "Home", link: "/" },
-  { id: 2, icon: <BiPurchaseTagAlt />, item: "Buy Products", link: "/all-products/all" },
+  {
+    id: 2,
+    icon: <BiPurchaseTagAlt />,
+    item: "Buy Products",
+    link: "/all-products",
+  },
   { id: 3, icon: <CiCirclePlus />, item: "Free Advice", link: "/advice" },
   { id: 4, icon: <FiFilePlus />, item: "Articles", link: "/articles" },
   { id: 5, icon: <FaUserDoctor />, item: "Meet Doctors", link: "/doctors" },
@@ -43,7 +48,10 @@ const Navbar = () => {
               <div>
                 <IoCartOutline size={36} />
               </div>
-              <div onClick={() => setShowModal(true)} className="border border-black px-3 py-1 rounded-lg cursor-pointer">
+              <div
+                onClick={() => setShowModal(true)}
+                className="border border-black px-3 py-1 rounded-lg cursor-pointer"
+              >
                 Login
               </div>
             </div>
@@ -111,7 +119,10 @@ const Navbar = () => {
               <div>
                 <IoCartOutline size={36} />
               </div>
-              <div onClick={() => setShowModal(true)} className="border border-black px-3 py-1 rounded-lg cursor-pointer">
+              <div
+                onClick={() => setShowModal(true)}
+                className="border border-black px-3 py-1 rounded-lg cursor-pointer"
+              >
                 Login
               </div>
             </div>
@@ -124,23 +135,31 @@ const Navbar = () => {
       <div className="sticky lg:top-0 top-[50px] z-10 ">
         <div className="relative ">
           <ul
-            className={`flex flex-col lg:flex-row gap-5 absolute lg:static  bg-cyan-400  p-5  transition-all duration-500 ease-in ${openMenu ? "top-0 w-full" : "top-[-500px] w-full "
-              } `}
+            className={`flex flex-col lg:flex-row gap-5 absolute lg:static  bg-cyan-400  p-5  transition-all duration-500 ease-in ${
+              openMenu ? "top-0 w-full" : "top-[-500px] w-full "
+            } `}
           >
             {menuItems.map((menuItem) => (
-              <Link
-                key={menuItem.id}
+              <li key={menuItem.id} className=" ">
+              <NavLink
                 to={menuItem.link}
-                className="flex items-center font-semibold hover:text-cyan-700  pr-4 gap-2 lg:border-r border-white"
+                onClick={() => setOpenMenu(!openMenu)}
+                className={({ isActive, isPending }) =>
+                  isActive
+                    ? "text-cyan-700 flex items-center font-semibold hover:text-cyan-700  pr-4 gap-2 lg:border-r border-white"
+                    : isPending
+                    ? ""
+                    : "flex items-center font-semibold hover:text-cyan-700  pr-4 gap-2 lg:border-r border-white"}
               >
                 {menuItem.icon}
                 <span>{menuItem.item}</span>
-              </Link>
+              </NavLink>
+              </li>
             ))}
           </ul>
         </div>
       </div>
-      <Modal showModal={showModal} setShowModal={setShowModal}/>
+      <Modal showModal={showModal} setShowModal={setShowModal} />
     </>
   );
 };

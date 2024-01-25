@@ -13,7 +13,7 @@ const AboutUs = () => {
     <>
       <div className="flex flex-col lg:w-full">
         {/* about us banner  */}
-        <BannerSimple imgUrl="https://i.ibb.co/hLk27DB/close-up-glasses-with-employees-background.jpg" text1="Welcome to About Us" pageName="aboutUs"/>
+        <BannerSimple imgUrl="https://i.ibb.co/hLk27DB/close-up-glasses-with-employees-background.jpg" text1="About Us" pageName="aboutUs"/>
         
         <div>
           <div className="p-8">

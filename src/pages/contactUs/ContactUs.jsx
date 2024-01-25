@@ -20,7 +20,7 @@ const ContactUs = () => {
     <div className="min-h-screen ">
       {/* contact banner section  */}
       
-      <BannerSimple imgUrl="https://i.ibb.co/JRMRpvD/3117.jpg" text1="Welcome to Contact Us"/>
+      <BannerSimple imgUrl="https://i.ibb.co/JRMRpvD/3117.jpg" text1="Contact Us"/>
       {/* contact main content */}
       <div className="mt-16">
         <h2 className="text-2xl font-semibold text-center">
