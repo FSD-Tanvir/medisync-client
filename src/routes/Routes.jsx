@@ -11,6 +11,7 @@ import Advice from "../pages/home/ThreeCards/Advice";
 import NewsArticles from "../pages/News&Articles/NewsArticles";
 import NewsArticlesDetails from "../pages/News&Articles/NewsArticlesDetails";
 import ByProducts from "../pages/byProducts/ByProducts";
+import Dashboard from "../layouts/Dashboard";
 
 export const router = createBrowserRouter([
   {
@@ -64,7 +65,14 @@ export const router = createBrowserRouter([
         element: <JobDetails />,
         loader: ({params}) => fetch(`http://localhost:5000/jobs/single/${params.id}`)
       },
-      { path: "contact-us", element: <ContactUs /> },
+      { path: "contact-us",
+       element: <ContactUs /> 
+      }
     ],
   },
+  {
+    path: "/dashboard",
+    element: <Dashboard></Dashboard>
+  }
+
 ]);
