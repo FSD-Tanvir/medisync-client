@@ -9,7 +9,8 @@ import useAllProducts from "../../../hooks/useAllProducts";
 
 
 const Products = () => {
-    const [products] = useAllProducts([])
+    const category = 'all'
+    const [products] = useAllProducts({category})
     
     // filter product as a category
     const otcProducts = products?.filter(item => item?.category === 'otc') || [];
