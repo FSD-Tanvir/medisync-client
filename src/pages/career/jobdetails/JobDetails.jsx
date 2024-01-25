@@ -1,6 +1,5 @@
-import { useEffect, useState } from "react";
 import toast from "react-hot-toast";
-import { Link, useLoaderData } from "react-router-dom";
+import { useLoaderData } from "react-router-dom";
 import BannerSimple from "../../../components/shared/Banners/BannerSimple/BannerSimple";
 
 const JobDetails = () => {
@@ -138,7 +137,7 @@ const JobDetails = () => {
             <button 
             onClick={()=>toast.success("Your Application Succeeded")}
               type="submit"
-              className="px-10 lg:ml-0 lg:px-20 bg-cyan-400 py-2 rounded-lg uppercase hover:bg-cyan-500 hover:border- transition ease-in duration-300"
+              className="px-10 lg:ml-0 lg:px-20 bg-[#003049] text-white py-2 rounded-lg uppercase hover:bg-[#003049] hover:border- transition ease-in duration-300"
             >
               Apply
             </button>

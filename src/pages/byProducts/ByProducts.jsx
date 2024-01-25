@@ -41,7 +41,14 @@ const ByProducts = () => {
 
     return (
         <div className="">
-            <h2 className="text-center font-bold text-xl mt-2 mb-2">All Mediisync </h2>
+            <h2 className="text-center font-bold text-2xl my-2 lg:mt-5">{category === "all" && "All Medicine"}</h2>
+            <h2 className="text-center font-bold text-2xl my-2 lg:mt-5">{category === "otc" && "OTC Medicine"}</h2>
+            <h2 className="text-center font-bold text-2xl my-2 lg:mt-5">{category === "women" && "For Women"}</h2>
+            <h2 className="text-center font-bold text-2xl my-2 lg:mt-5">{category === "baby" && "Baby Care"}</h2>
+            <h2 className="text-center font-bold text-2xl my-2 lg:mt-5">{category === "diabetic" && "Diabetic Care"}</h2>
+            <h2 className="text-center font-bold text-2xl my-2 lg:mt-5">{category === "prescription" && "Prescription Medicine"}</h2>
+            <h2 className="text-center font-bold text-2xl my-2 lg:mt-5">{category === "personal" && "Personal Care"}</h2>
+            <h2 className="text-center font-bold text-2xl my-2 lg:mt-5">{category === "dental" && "Dental Care"}</h2>
             <div className="flex flex-col lg:flex-row gap-5">
                 <div className="bg-gray-200 rounded-lg h-[560px] hidden lg:block  lg:w-1/5">
                     <ul>
@@ -143,7 +150,7 @@ const ByProducts = () => {
                                     <button
                                         key={index + 1}
                                         onClick={() => handlePageChange(index + 1)}
-                                        className={`mx-1 px-3 py-1 border ${currentPage === index + 1 ? 'bg-cyan-400' : 'bg-white'}`}
+                                        className={`mx-1 px-3 py-1 border ${currentPage === index + 1 ? 'bg-[#003049] text-white' : 'bg-white'}`}
                                     >
                                         {index + 1}
                                     </button>

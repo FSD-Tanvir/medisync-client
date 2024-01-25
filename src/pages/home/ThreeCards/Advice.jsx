@@ -29,7 +29,9 @@ const Advice = () => {
                     <form className="border lg:w-1/4">
                         <select onChange={handleDiseaseChange}
                             value={selectedDisease}
+                            defaultValue="রোগ নির্বাচন করুন"
                             name="disease" id="diseaseSelect" className="w-full py-2 text-center px-7">
+                            <option  selected>রোগ নির্বাচন করুন</option>
                             <option value="জ্বর">জ্বর</option>
                             <option value="সর্দি-কাশি">সর্দি-কাশি</option>
                             <option value="মাথা ঘামা">মাথা ঘামা</option>

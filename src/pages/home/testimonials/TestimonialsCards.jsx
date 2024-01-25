@@ -2,7 +2,7 @@ import { FaQuoteLeft, FaQuoteRight } from "react-icons/fa";
 const TestimonialsCard = ({ testimonialData }) => {
   return (
     <>
-      <div className="w-full bg-cyan-400 rounded-md p-8 border-4">
+      <div className="w-full bg-[#003049] rounded-md p-8 border-4">
         <div className="">
           <p className=" text-sm">
             <span>

@@ -43,7 +43,7 @@ const DoctorCard = ({ doctor }) => {
       {/* Action Buttons */}
       <div className="flex justify-between items-center mt-4">
         <button
-          className="bg-cyan-500 text-white text-sm sm:text-base px-3 sm:px-4 py-2 rounded-full focus:outline-none hover:bg-cyan-600"
+          className="bg-[#003049] text-white text-sm sm:text-base px-3 sm:px-4 py-2 rounded-full focus:outline-none hover:text-[#00ffff]"
           //   onClick={openModal}
         >
           Take Appointment
@@ -76,7 +76,7 @@ const DoctorCard = ({ doctor }) => {
             <h2 className="text-xl font-semibold mb-4">{name}'s Reviews</h2>
             <p>Review 1</p>
             <p>Review 2</p>
-            <button className="bg-cyan-500 text-white px-4 py-2 rounded-full focus:outline-none hover:bg-cyan-600" onClick={closeModal}>
+            <button className="bg-[#003049] text-white px-4 py-2 rounded-full focus:outline-none hover:bg-cyan-600" onClick={closeModal}>
               Close
             </button>
           </div>

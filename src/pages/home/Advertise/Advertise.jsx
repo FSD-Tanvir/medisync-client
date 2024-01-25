@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import StartInterval from "./StartInterval";
+import { Link } from "react-router-dom";
 
 const Advertise = () => {
   const [doctors, setDoctors] = useState([]);
@@ -34,9 +35,11 @@ const Advertise = () => {
           </p>
         </div>
         <div className="flex justify-center items-center mt-2">
-          <button className="btn bg-cyan-400 px-4 py-1 font-semibold">
-            Appointment
-          </button>
+          <Link to="/doctors">
+            <button className="btn bg-[#003049] text-white px-4 py-1 font-semibold rounded-md">
+              Appointment
+            </button>
+          </Link>
         </div>
       </div>
     );

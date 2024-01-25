@@ -2,6 +2,9 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
 const NewsArticlesDetails = () => {
+  useEffect(() => {
+    window.scroll(0, 0)
+  }, [])
   const [articles, setArticlies] = useState();
   const { id } = useParams();
 

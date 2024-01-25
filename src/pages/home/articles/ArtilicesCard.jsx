@@ -1,8 +1,8 @@
-import { useState } from "react";
 
-const ArtilicesCard = ({ articlie }) => {
-  const { title, image, description } = articlie || {};
-  const [showFullDescription, setShowFullDescription] = useState(false);
+
+
+const ArtilicesCard = ({ articlie, handleArticlePage }) => {
+  const { _id, title, image, description } = articlie || {};
 
   // const toggleDescription = () => {
   //     setShowFullDescription(!showFullDescription);
@@ -23,7 +23,7 @@ const ArtilicesCard = ({ articlie }) => {
           <h2 className="text-cyan-600 text-sm font-semibold my-2">{title}</h2>
           <div className="h-auto">
             <p className="text-slate-700 text-base font-normal sm:h-[5rem] lg:h-[3rem] lg:text-sm md:text-[11px] md:text-base">
-              {showFullDescription ? description : truncatedDescription}
+              {truncatedDescription}
             </p>
           </div>
           {/* {description.split(' ').length > 50 && (
@@ -38,7 +38,7 @@ const ArtilicesCard = ({ articlie }) => {
                     )} */}
         </div>
         <div className="w-full flex justify-center items-center absolute bottom-2 right-0 left-0 m-auto">
-          <button className="bg-cyan-500 px-3 py-2 rounded-md text-sm text-white font-bold">
+          <button onClick={() => handleArticlePage(_id)} className="bg-[#003049] px-3 py-2 rounded-md text-sm text-white font-bold">
             Read More
           </button>
         </div>

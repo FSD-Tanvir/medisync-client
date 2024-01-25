@@ -22,7 +22,7 @@ const ProductsCard = ({ product }) => {
         <div className="flex flex-col h-[60px] sm:flex-row sm:items-center justify-between gap-2">
           <p className="text-sm font-semibold text-black">Price: ${price}</p>
           <div className="">
-            <button className="bg-cyan-400 text-white py-2 px-2 rounded text-xs sm:text-sm md:text-xs lg:text-sm xl:text-xs">
+            <button className="bg-[#003049] text-white py-2 px-2 rounded-md text-xs sm:text-sm md:text-xs lg:text-sm xl:text-xs">
               Add To Cart
             </button>
           </div>

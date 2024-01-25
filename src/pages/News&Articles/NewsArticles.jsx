@@ -3,7 +3,7 @@ import Marquee from "react-fast-marquee";
 import NewsArticlesCard from "./News&ArticlesCard";
 import { Link, useNavigate } from "react-router-dom";
 
-import Banner from "./banner/Banner";
+
 import Categories from "./Categories/Categories";
 import BannerSimple from "../../components/shared/Banners/BannerSimple/BannerSimple";
 
@@ -67,7 +67,7 @@ const NewsArticles = () => {
 
         {/* marquee */}
         <div className="w-full">
-          <div className="bg-cyan-500 p-2">
+          <div className="bg-[#003049] p-2">
             <Marquee pauseOnHover>
               <div>
                 {article?.map((item) => (
@@ -106,7 +106,7 @@ const NewsArticles = () => {
                 <div
                   key={i}
                   className={`w-8 h-8 border-2 rounded-full flex justify-center items-center cursor-pointer ${
-                    currentPage === n ? "bg-cyan-500 text-white" : ""
+                    currentPage === n ? "bg-[#003049] text-white" : ""
                   }`}
                   onClick={() => changeCPage(n)}
                 >

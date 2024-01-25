@@ -57,7 +57,7 @@ const Products = () => {
     };
 
     return (
-        <div>
+        <div className="text-black">
             <h2 className="mt-8 mb-8 text-2xl font-bold pl-2">OTC Medicine</h2>
             <div className="">
                 <Slider {...sliderSettings}>
