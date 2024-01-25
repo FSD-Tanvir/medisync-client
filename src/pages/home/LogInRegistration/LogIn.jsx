@@ -71,22 +71,22 @@ const LogIn = ({ setShowRegister, setShowModal }) => {
                             ]}
                         /></h1>
                         <ul className="list-disc flex flex-col gap-2 text-sm p-3">
-                            <div data-aos="fade-right"
+                            <div data-aos="fade-up"
                                 data-aos-offset="300"
                                 data-aos-easing="ease-in-sine"
-                                data-aos-duration="1000">
+                                data-aos-duration="2000">
                                 <li>Drink an adequate amount of water each day to stay hydrated.</li>
                             </div>
-                            <div data-aos="fade-right"
+                            <div data-aos="fade-up"
                                 data-aos-offset="300"
                                 data-aos-easing="ease-in-sine"
                                 data-aos-duration="2000">
                                 <li>Consume a well-balanced diet rich in fruits, vegetables, whole grains, lean proteins, and healthy fats.</li>
                             </div>
                             <li>
-                                <div data-aos="fade-right"
+                                <div data-aos="fade-up"
                                     data-aos-offset="200"
-                                    data-aos-duration="3000">
+                                    data-aos-duration="2000">
                                     Engage in regular physical activity to promote cardiovascular health, muscle strength, and overall well-being.
                                 </div>
                             </li>

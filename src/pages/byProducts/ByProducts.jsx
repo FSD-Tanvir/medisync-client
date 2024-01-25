@@ -10,6 +10,9 @@ import PRESCRIPTION from "../../assets/CategoryIcons/prescription.png"
 import WOMEN from "../../assets/CategoryIcons/women.png"
 import { useParams } from "react-router-dom";
 import CardLoading from "../../assets/Loading/CardLoading";
+import { SwiperSlide, Swiper } from "swiper/react";
+import CategoryCard from "../home/categories/CategoryCard";
+import { Navigation, Pagination, Grid } from 'swiper/modules';
 
 
 
@@ -19,6 +22,7 @@ const ByProducts = () => {
     const { cat } = useParams()
     useEffect(() => {
         setCategory(cat)
+        window.scroll(0, 0)
     }, [cat])
     const [currentPage, setCurrentPage] = useState(1);
     const [products, isLoading] = useAllProducts({ category })
@@ -38,34 +42,34 @@ const ByProducts = () => {
     return (
         <div className="">
             <h2 className="text-center font-bold text-xl mt-2 mb-2">All Mediisync </h2>
-            <div className="flex gap-5">
-                <div className="bg-gray-200 rounded-lg h-[560px]  lg:w-1/5">
+            <div className="flex flex-col lg:flex-row gap-5">
+                <div className="bg-gray-200 rounded-lg h-[560px] hidden lg:block  lg:w-1/5">
                     <ul>
-                        <li onClick={() => setCategory('otc')} className="flex gap-2 items-center px-4 py-4 cursor-pointer hover:bg-slate-300">
+                        <li onClick={() => setCategory('otc')} className={`flex gap-2 items-center px-4 py-4 cursor-pointer hover:bg-slate-300 ${category === 'otc' && 'bg-slate-300'}`}>
                             <img className="w-8 h-8" src={OTC} alt="" />
                             <h2 className="font-bold text-xl text-stone-600">OTC Medicine</h2>
                         </li>
-                        <li onClick={() => setCategory('women')} className="flex gap-2 items-center px-4 py-4 cursor-pointer hover:bg-slate-300">
+                        <li onClick={() => setCategory('women')} className={`flex gap-2 items-center px-4 py-4 cursor-pointer hover:bg-slate-300 ${category === 'women' && 'bg-slate-300'}`}>
                             <img className="w-8 h-8" src={WOMEN} alt="" />
                             <h2 className="font-bold text-xl text-stone-600">For Women</h2>
                         </li>
-                        <li onClick={() => setCategory('baby')} className="flex gap-2 items-center px-4 py-4 cursor-pointer hover:bg-slate-300">
+                        <li onClick={() => setCategory('baby')} className={`flex gap-2 items-center px-4 py-4 cursor-pointer hover:bg-slate-300 ${category === 'baby' && 'bg-slate-300'}`}>
                             <img className="w-8 h-8" src={BABY} alt="" />
                             <h2 className="font-bold text-xl text-stone-600">Baby Care</h2>
                         </li>
-                        <li onClick={() => setCategory('dental')} className="flex gap-2 items-center px-4 py-4 cursor-pointer hover:bg-slate-300">
+                        <li onClick={() => setCategory('dental')} className={`flex gap-2 items-center px-4 py-4 cursor-pointer hover:bg-slate-300 ${category === 'dental' && 'bg-slate-300'}`}>
                             <img className="w-8 h-8" src={DENTAL} alt="" />
                             <h2 className="font-bold text-xl text-stone-600">Dental Care</h2>
                         </li>
-                        <li onClick={() => setCategory('diabetic')} className="flex gap-2 items-center px-4 py-4 cursor-pointer hover:bg-slate-300">
+                        <li onClick={() => setCategory('diabetic')} className={`flex gap-2 items-center px-4 py-4 cursor-pointer hover:bg-slate-300 ${category === 'diabetic' && 'bg-slate-300'}`}>
                             <img className="w-8 h-8" src={DIABETIC} alt="" />
                             <h2 className="font-bold text-xl text-stone-600">Diabetic Care</h2>
                         </li>
-                        <li onClick={() => setCategory('personal')} className="flex gap-2 items-center px-4 py-4 cursor-pointer hover:bg-slate-300">
+                        <li onClick={() => setCategory('personal')} className={`flex gap-2 items-center px-4 py-4 cursor-pointer hover:bg-slate-300 ${category === 'personal' && 'bg-slate-300'}`}>
                             <img className="w-8 h-8" src={PERSONAL} alt="" />
                             <h2 className="font-bold text-xl text-stone-600">Personal Care</h2>
                         </li>
-                        <li onClick={() => setCategory('prescription')} className="flex gap-2 items-center px-4 py-4 cursor-pointer hover:bg-slate-300">
+                        <li onClick={() => setCategory('prescription')} className={`flex gap-2 items-center px-4 py-4 cursor-pointer hover:bg-slate-300 ${category === 'prescription' && 'bg-slate-300'}`}>
                             <img className="w-8 h-8" src={PRESCRIPTION} alt="" />
                             <h2 className="font-bold text-xl text-stone-600">Prescription Medicine</h2>
                         </li>
@@ -75,9 +79,51 @@ const ByProducts = () => {
                     </ul>
                 </div>
 
+                {/* for mobile design */}
+
+                <div className="block lg:hidden">
+                    <Swiper
+                        slidesPerView={2}
+                        grid={{
+                            rows: 1,
+                        }}
+                        spaceBetween={0}
+                        pagination={{
+                            clickable: true,
+                            el: '.swiper-pagination'
+                        }}
+                        navigation={true}
+                        modules={[Grid, Pagination, Navigation]}
+                        className="mySwiper"
+
+                    >
+                        <SwiperSlide style={{
+                            height: '200px'
+                        }}><CategoryCard icon={OTC} iconName={'OTC medicine'} cat={'otc'} /></SwiperSlide>
+                        <SwiperSlide style={{
+                            height: '200px'
+                        }}><CategoryCard icon={WOMEN} iconName={'For Women'} cat={'women'} /></SwiperSlide>
+                        <SwiperSlide style={{
+                            height: '200px'
+                        }}><CategoryCard icon={BABY} iconName={'Baby Care'} cat={'baby'} /></SwiperSlide>
+                        <SwiperSlide style={{
+                            height: '200px'
+                        }}><CategoryCard icon={DENTAL} iconName={'Dental Care'} cat={'dental'} /></SwiperSlide>
+                        <SwiperSlide style={{
+                            height: '200px'
+                        }}><CategoryCard icon={PERSONAL} iconName={'Personal Care'} cat={'personal'} /></SwiperSlide>
+                        <SwiperSlide style={{
+                            height: '200px'
+                        }}><CategoryCard icon={PRESCRIPTION} iconName={'Prescription Medicine'} cat={'prescription'} /></SwiperSlide>
+                        <SwiperSlide style={{
+                            height: '200px'
+                        }}><CategoryCard icon={DIABETIC} iconName={'Diabetic Care'} cat={'diabetic'} /></SwiperSlide>
+                    </Swiper>
+                </div>
+
                 {
                     isLoading ? <CardLoading /> :
-                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 lg:w-4/5">
+                        <div className="grid grid-cols-2 lg:grid-cols-4  lg:w-4/5">
                             {
                                 currentProducts.map(product => (
                                     <ProductsCard key={product._id} product={product} />
@@ -90,15 +136,21 @@ const ByProducts = () => {
                 {/* Pagination controls */}
                 {
                     isLoading ? <p></p> :
-                        Array.from({ length: Math.ceil(products.length / pageSize) }, (_, index) => (
-                            <button
-                                key={index + 1}
-                                onClick={() => handlePageChange(index + 1)}
-                                className={`mx-1 px-3 py-1 border ${currentPage === index + 1 ? 'bg-cyan-400' : 'bg-white'}`}
-                            >
-                                {index + 1}
-                            </button>
-                        ))
+                        <div className="flex items-center gap-3 ">
+                            <button className="mx-1 px-3 py-1 border">Prev</button>
+                            {
+                                Array.from({ length: Math.ceil(products.length / pageSize) }, (_, index) => (
+                                    <button
+                                        key={index + 1}
+                                        onClick={() => handlePageChange(index + 1)}
+                                        className={`mx-1 px-3 py-1 border ${currentPage === index + 1 ? 'bg-cyan-400' : 'bg-white'}`}
+                                    >
+                                        {index + 1}
+                                    </button>
+                                ))
+                            }
+                            <button className="mx-1 px-3 py-1 border">Next</button>
+                        </div>
                 }
             </div>
         </div>

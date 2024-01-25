@@ -32,7 +32,7 @@ const Navbar = () => {
     <>
       {/* navbar  for small device */}
 
-      <div className=" sticky top-0  lg:hidden  flex items-center justify-between bg-cyan-400 p-2 z-50 ">
+      <div className=" sticky top-0  lg:hidden  flex items-center justify-between bg-cyan-500 p-2 z-50 ">
         {/* logo */}
 
         <div className="relative">
@@ -59,7 +59,7 @@ const Navbar = () => {
         </div>
       </div>
 
-      <div className=" sticky top-0  lg:hidden  flex items-center justify-between bg-cyan-400 p-2 z-50 ">
+      <div className=" sticky top-0  lg:hidden  flex items-center justify-between bg-cyan-500 p-2 z-50 ">
         {/* search bar */}
 
         <div className="relative">
@@ -88,7 +88,7 @@ const Navbar = () => {
       {/* navbar for desktop */}
 
       <div className="hidden lg:block z-50 ">
-        <div className="flex justify-between items-center bg-cyan-400 p-2">
+        <div className="flex justify-between items-center bg-cyan-500 p-2">
           {/* logo */}
 
           <h2 className="text-4xl font-bold">
@@ -135,7 +135,7 @@ const Navbar = () => {
       <div className="sticky lg:top-0 top-[50px] z-10 ">
         <div className="relative ">
           <ul
-            className={`flex flex-col lg:flex-row gap-5 absolute lg:static  bg-cyan-400  p-5  transition-all duration-500 ease-in ${
+            className={`flex flex-col lg:flex-row gap-5 absolute lg:static  bg-cyan-500  p-5  transition-all duration-500 ease-in ${
               openMenu ? "top-0 w-full" : "top-[-500px] w-full "
             } `}
           >
@@ -149,7 +149,7 @@ const Navbar = () => {
                     ? "text-cyan-700 flex items-center font-semibold hover:text-cyan-700  pr-4 gap-2 lg:border-r border-white"
                     : isPending
                     ? ""
-                    : "flex items-center font-semibold hover:text-cyan-700  pr-4 gap-2 lg:border-r border-white"}
+                    : "flex items-center font-semibold hover:text-cyan-700  pr-4 gap-2 lg:border-r border-white text-white"}
               >
                 {menuItem.icon}
                 <span>{menuItem.item}</span>

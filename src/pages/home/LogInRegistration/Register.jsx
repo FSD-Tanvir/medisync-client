@@ -71,7 +71,7 @@ const Register = ({ setShowRegister, setShowModal }) => {
         <div className="relative p-5 flex-auto ">
             <div className="flex flex-col lg:flex-row-reverse items-center justify-center gap-5">
                 <div className="w-[300px] flex flex-col items-center gap-4">
-                    <div data-aos="fade-left"
+                    <div data-aos="zoom-in"
                         data-aos-anchor="#example-anchor"
                         data-aos-offset="500"
                         data-aos-duration="3000">

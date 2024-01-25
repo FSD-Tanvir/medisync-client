@@ -18,7 +18,7 @@ const ProductsCard = ({ product }) => {
           </span>
           <h2 className="text-sm">{weight}</h2>
         </div>
-        <p className="text-gray-700 py-3 text-xs h-[40px] lg:h-[0px] sm:text-sm md:text-xs lg:text-sm xl:text-xs">{company}</p>
+        <p className="text-gray-700 py-3 text-xs h-[40px] lg:h-[0px] sm:text-sm md:text-xs lg:text-sm xl:text-xs mb-1">{company}</p>
         <div className="flex flex-col h-[60px] sm:flex-row sm:items-center justify-between gap-2">
           <p className="text-sm font-semibold text-black">Price: ${price}</p>
           <div className="">
