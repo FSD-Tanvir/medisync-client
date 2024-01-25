@@ -24,8 +24,8 @@ const Products = () => {
     const sliderSettings = {
         infinite: true,
         speed: 500,
-        // autoplay: true,
-        // autoplaySpeed: 3000,
+        autoplay: true,
+        autoplaySpeed: 3000,
         slidesToShow: 4,
         slidesToScroll: 4,
         initialSlide: 0,
@@ -57,7 +57,7 @@ const Products = () => {
 
     return (
         <div>
-            <h2 className="mt-8 mb-8 text-2xl font-bold">OTC Medicine</h2>
+            <h2 className="mt-8 mb-8 text-2xl font-bold pl-2">OTC Medicine</h2>
             <div className="">
                 <Slider {...sliderSettings}>
                     {otcProducts.map(product => (
@@ -66,7 +66,7 @@ const Products = () => {
                 </Slider>
             </div>
 
-            <h2 className="mt-8 mb-8 text-2xl font-bold">Women Choice</h2>
+            <h2 className="mt-8 mb-8 text-2xl font-bold pl-2">Women Choice</h2>
             <div className="">
                 <Slider {...sliderSettings}>
                     {womenProducts.map(product => (
@@ -74,7 +74,7 @@ const Products = () => {
                     ))}
                 </Slider>
             </div>
-            <h2 className="mt-8 mb-8 text-2xl font-bold">Baby Care</h2>
+            <h2 className="mt-8 mb-8 text-2xl font-bold pl-2">Baby Care</h2>
             <div className="">
                 <Slider {...sliderSettings}>
                     {babyProducts.map(product => (
@@ -82,7 +82,7 @@ const Products = () => {
                     ))}
                 </Slider>
             </div>
-            <h2 className="mt-8 mb-8 text-2xl font-bold">Dental Care</h2>
+            <h2 className="mt-8 mb-8 text-2xl font-bold pl-2">Dental Care</h2>
             <div className="">
                 <Slider {...sliderSettings}>
                     {dentaProducts.map(product => (
@@ -90,7 +90,7 @@ const Products = () => {
                     ))}
                 </Slider>
             </div>
-            <h2 className="mt-8 mb-8 text-2xl font-bold">Personal Care</h2>
+            <h2 className="mt-8 mb-8 text-2xl font-bold pl-2">Personal Care</h2>
             <div className="">
                 <Slider {...sliderSettings}>
                     {personalProducts.map(product => (
@@ -98,7 +98,7 @@ const Products = () => {
                     ))}
                 </Slider>
             </div>
-            <h2 className="mt-8 mb-8 text-2xl font-bold">Diabetic Products</h2>
+            <h2 className="mt-8 mb-8 text-2xl font-bold pl-2">Diabetic Products</h2>
             <div className="">
                 <Slider {...sliderSettings}>
                     {diabeticProducts.map(product => (
@@ -106,7 +106,7 @@ const Products = () => {
                     ))}
                 </Slider>
             </div>
-            <h2 className="mt-8 mb-8 text-2xl font-bold">Prescription Medisync</h2>
+            <h2 className="mt-8 mb-8 text-2xl font-bold pl-2">Prescription Medisync</h2>
             <div className="">
                 <Slider {...sliderSettings}>
                     {prescriptionProducts.map(product => (
