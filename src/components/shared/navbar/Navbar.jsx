@@ -32,7 +32,7 @@ const Navbar = () => {
     <>
       {/* navbar  for small device */}
 
-      <div className=" sticky top-0  lg:hidden  flex items-center justify-between bg-cyan-400 p-2 z-50 ">
+      <div className=" sticky top-0  lg:hidden  flex items-center justify-between bg-[#003049] p-2 z-50">
         {/* logo */}
 
         <div className="relative">
@@ -59,7 +59,7 @@ const Navbar = () => {
         </div>
       </div>
 
-      <div className=" sticky top-0  lg:hidden  flex items-center justify-between bg-cyan-400 p-2 z-50 ">
+      <div className=" sticky top-0  lg:hidden  flex items-center justify-between bg-[#003049] p-2 z-50 ">
         {/* search bar */}
 
         <div className="relative">
@@ -87,12 +87,12 @@ const Navbar = () => {
 
       {/* navbar for desktop */}
 
-      <div className="hidden lg:block z-50 ">
-        <div className="flex justify-between items-center bg-cyan-400 p-2">
+      <div className="hidden lg:block z-50 text-white">
+        <div className="flex justify-between items-center bg-[#003049] p-2">
           {/* logo */}
 
           <h2 className="text-4xl font-bold">
-            Medi<span className="text-cyan-700">Sync</span>
+            Medi<span className="text-[#0AFFFF] ">Sync</span>
           </h2>
 
           {/* search bar */}
@@ -102,7 +102,7 @@ const Navbar = () => {
               type="text"
               name="searchProducts"
               id="searchProducts"
-              placeholder="here search your product "
+              placeholder="Here search your product "
               className="w-64 md:w-96 border-2 p-1 pl-5 pr-8  rounded-full  border-white"
             />
             <div className="absolute right-2  top-2">
@@ -132,10 +132,10 @@ const Navbar = () => {
 
       {/* navbar with menu items */}
 
-      <div className="sticky lg:top-0 top-[50px] z-10 ">
+      <div className="sticky lg:top-0 top-[50px] z-10 text-white ">
         <div className="relative ">
           <ul
-            className={`flex flex-col lg:flex-row gap-5 absolute lg:static  bg-cyan-400  p-5  transition-all duration-500 ease-in ${
+            className={`flex flex-col lg:flex-row gap-5 absolute lg:static  bg-[#003049]  p-5  transition-all duration-500 ease-in ${
               openMenu ? "top-0 w-full" : "top-[-500px] w-full "
             } `}
           >
@@ -146,10 +146,10 @@ const Navbar = () => {
                 onClick={() => setOpenMenu(!openMenu)}
                 className={({ isActive, isPending }) =>
                   isActive
-                    ? "text-cyan-700 flex items-center font-semibold hover:text-cyan-700  pr-4 gap-2 lg:border-r border-white"
+                    ? "text-[#0AFFFF] flex items-center font-semibold hover:text-[#0AFFFF]  pr-4 gap-2 lg:border-r border-white"
                     : isPending
                     ? ""
-                    : "flex items-center font-semibold hover:text-cyan-700  pr-4 gap-2 lg:border-r border-white"}
+                    : "flex items-center font-semibold hover:text-[#0AFFFF]  pr-4 gap-2 lg:border-r border-white"}
               >
                 {menuItem.icon}
                 <span>{menuItem.item}</span>

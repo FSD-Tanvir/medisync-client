@@ -38,7 +38,7 @@ const ArtilicesCard = ({ articlie }) => {
                     )} */}
         </div>
         <div className="w-full flex justify-center items-center absolute bottom-2 right-0 left-0 m-auto">
-          <button className="bg-cyan-500 px-3 py-2 rounded-md text-sm text-white font-bold">
+          <button className="bg-[#003049] px-3 py-2 rounded-md text-sm text-white font-bold">
             Read More
           </button>
         </div>

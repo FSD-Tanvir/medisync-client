@@ -87,7 +87,7 @@ const ContactUs = () => {
                 mt-4">
                   <button
                     type="submit"
-                    className="px-10 ml-32 lg:ml-0 lg:px-20 bg-cyan-400 py-2 rounded-none uppercase hover:bg-cyan-500 hover:border-none transition ease-in duration-300"
+                    className="px-10 ml-32 lg:ml-0 lg:px-20 bg-cyan-400 py-2 rounded-none uppercase hover:bg-[#003049] hover:border-none transition ease-in duration-300"
                   >
                     Submit
                   </button>

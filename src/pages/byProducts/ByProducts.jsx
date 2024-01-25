@@ -37,7 +37,7 @@ const ByProducts = () => {
 
     return (
         <div className="">
-            <h2 className="text-center font-bold text-xl mt-2 mb-2">All Mediisync </h2>
+            <h2 className="text-center font-bold text-xl mt-2 mb-2">All MediSync </h2>
             <div className="flex gap-5">
                 <div className="bg-gray-200 rounded-lg h-[560px]  lg:w-1/5">
                     <ul>
