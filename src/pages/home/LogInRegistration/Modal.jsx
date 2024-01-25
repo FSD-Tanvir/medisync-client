@@ -31,9 +31,9 @@ export default function Modal({ showModal, setShowModal }) {
 
                                 {
                                     showRegister ? 
-                                    <Register setShowRegister={setShowRegister}/>
+                                    <Register setShowRegister={setShowRegister} setShowModal={setShowModal}/>
                                     :
-                                    <LogIn setShowRegister={setShowRegister}/>
+                                    <LogIn setShowRegister={setShowRegister} setShowModal={setShowModal}/>
                                 }
                             </div>
                         </div>
