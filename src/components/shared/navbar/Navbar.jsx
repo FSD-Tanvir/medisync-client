@@ -7,7 +7,7 @@ import { GrWorkshop } from "react-icons/gr";
 import { TiThMenu } from "react-icons/ti";
 import { IoCartOutline, IoSearchOutline, IoClose } from "react-icons/io5";
 import { useState } from "react";
-import { Link, NavLink } from "react-router-dom";
+import {  NavLink } from "react-router-dom";
 import Modal from "../../../pages/home/LogInRegistration/Modal";
 
 const menuItems = [
@@ -16,7 +16,7 @@ const menuItems = [
     id: 2,
     icon: <BiPurchaseTagAlt />,
     item: "Buy Products",
-    link: "/all-products",
+    link: "/all-products/all",
   },
   { id: 3, icon: <CiCirclePlus />, item: "Free Advice", link: "/advice" },
   { id: 4, icon: <FiFilePlus />, item: "Articles", link: "/articles" },
