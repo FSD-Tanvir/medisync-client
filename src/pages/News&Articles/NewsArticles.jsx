@@ -61,7 +61,7 @@ const NewsArticles = () => {
   return (
     <>
       <div>
-        <BannerSimple imgUrl="https://i.ibb.co/5vStm5N/newsbanner.png" text1="Welcome to news & articles" pageName="newsAndArticles"/>
+        <BannerSimple imgUrl="https://i.ibb.co/5vStm5N/newsbanner.png" text1="News & Articles" pageName="newsAndArticles"/>
         {/*Categories*/}
         <Categories />
 
