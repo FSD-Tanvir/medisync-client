@@ -8,6 +8,7 @@ import useAllProducts from "../../../hooks/useAllProducts";
 
 
 
+
 const Products = () => {
     const category = 'all'
     const [products] = useAllProducts({category})
