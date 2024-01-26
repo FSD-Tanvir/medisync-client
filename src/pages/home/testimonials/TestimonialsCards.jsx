@@ -22,7 +22,7 @@ const TestimonialsCard = ({ testimonialData }) => {
           />
           <div className="flex flex-col justify-start items-start">
             <h1 className="text-base">{testimonialData.name}</h1>
-            <p className="text-sm text-zinc-700">
+            <p className="text-sm text-slate-300">
               {testimonialData.occupation}
             </p>
           </div>

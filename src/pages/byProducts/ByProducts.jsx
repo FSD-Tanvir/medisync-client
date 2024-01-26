@@ -35,9 +35,9 @@ const ByProducts = () => {
     // Slice the products array to get the products for the current page
     const currentProducts = products.slice(startIndex, endIndex);
 
-    const handlePageChange = (newPage) => {
-        setCurrentPage(newPage);
-    };
+    // const handlePageChange = (newPage) => {
+    //     setCurrentPage(newPage);
+    // };
 
     return (
         <div className="">
@@ -141,7 +141,7 @@ const ByProducts = () => {
             </div>
             <div className="flex justify-center mt-5">
                 {/* Pagination controls */}
-                {
+                {/* {
                     isLoading ? <p></p> :
                         <div className="flex items-center gap-3 ">
                             <button className="mx-1 px-3 py-1 border">Prev</button>
@@ -158,7 +158,7 @@ const ByProducts = () => {
                             }
                             <button className="mx-1 px-3 py-1 border">Next</button>
                         </div>
-                }
+                } */}
             </div>
         </div>
     );

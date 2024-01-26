@@ -24,7 +24,7 @@ import smallB4 from "../../../assets/BannerImg/smallB4.png"
 const Banner = () => {
 
     return (
-            <div>
+            <div className='px-1'>
                 <Swiper
                     spaceBetween={30}
                     centeredSlides={true}

@@ -1,6 +1,3 @@
-
-
-
 const ArtilicesCard = ({ articlie, handleArticlePage }) => {
   const { _id, title, image, description } = articlie || {};
 
@@ -14,10 +11,14 @@ const ArtilicesCard = ({ articlie, handleArticlePage }) => {
     .join(" ")}...`;
 
   return (
-    <div className="max-w-md mx-auto mb-4">
-      <div className="border-2 h-[350px] relative">
+    <div className="max-w-md mx-auto mb-4 shadow-lg ">
+      <div className="border-2 h-[320px]  lg:h-[380px]   xl:h-[350px] relative  rounded-xl">
         <div className="h-32">
-          <img src={image} alt="" className="w-full h-full object-cover" />
+          <img
+            src={image}
+            alt=""
+            className="w-full h-full object-cover rounded-t-xl"
+          />
         </div>
         <div className="px-3 py-3">
           <h2 className="text-cyan-600 text-sm font-semibold my-2">{title}</h2>
@@ -38,7 +39,10 @@ const ArtilicesCard = ({ articlie, handleArticlePage }) => {
                     )} */}
         </div>
         <div className="w-full flex justify-center items-center absolute bottom-2 right-0 left-0 m-auto">
-          <button onClick={() => handleArticlePage(_id)} className="bg-[#003049] px-3 py-2 rounded-md text-sm text-white font-bold">
+          <button
+            onClick={() => handleArticlePage(_id)}
+            className="bg-[#003049] px-3 py-2 rounded-md text-sm text-white font-bold"
+          >
             Read More
           </button>
         </div>

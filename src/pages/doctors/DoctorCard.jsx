@@ -21,7 +21,7 @@ const DoctorCard = ({ doctor }) => {
   //   };
 
   return (
-    <div className="container mx-auto mt-5 p-4 max-w-md bg-white rounded-lg shadow-md overflow-hidden hover:bg-gray-100 hover:shadow-lg transition duration-300">
+    <div className="container mx-auto mt-5 p-4 max-w-md bg-white rounded-lg shadow-lg overflow-hidden hover:bg-gray-100 hover:shadow-lg transition duration-300">
       {/* Doctor Image */}
       <img
         src={image}

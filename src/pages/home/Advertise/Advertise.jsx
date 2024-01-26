@@ -19,7 +19,7 @@ const Advertise = () => {
 
     return (
       <div className="w-full p-3">
-        <div className="h-[320px]">
+        <div className="h-[380px] xl:h-[320px]">
           <img
             className="w-full h-[200px] object-cover"
             src={doctor?.image}
@@ -34,9 +34,9 @@ const Advertise = () => {
             <span className="font-semibold ">Phone:</span> {doctor?.contact?.phone}
           </p>
         </div>
-        <div className="flex justify-center items-center mt-2">
-          <Link to="/doctors">
-            <button className="btn bg-[#003049] text-white px-4 py-1 font-semibold rounded-md">
+        <div className="flex justify-center mt-2">
+          <Link to="/doctors" >
+            <button className="btn bg-[#003049] text-white px-4 py-1 font-semibold rounded-md ">
               Appointment
             </button>
           </Link>

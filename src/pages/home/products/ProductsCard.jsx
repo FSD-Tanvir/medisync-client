@@ -1,10 +1,12 @@
 const ProductsCard = ({ product }) => {
   // Destructure product properties
   const { image, company, name, price, weight } = product || {};
-  const isHomePage = location.pathname === "/" || false;
+  // const isHomePage = location.pathname === "/" || false;
 
   return (
-    <div className={`${isHomePage && " shadow-xl  h-[262px] mx-1 md:mx-5 md:h-[240px] lg:mx-2 lg:h-[320px] xl:h-[235px]"}   shadow-xl  `}>
+    <div 
+    // className={`${isHomePage && " shadow-xl  h-[262px] mx-1 md:mx-5 md:h-[240px] lg:mx-2 lg:h-[320px] xl:h-[235px]"}   shadow-xl  `}
+    >
       <div className="bg-white rounded-xl px-1  flex flex-col w-full h-full  ">
         <div>
           <img

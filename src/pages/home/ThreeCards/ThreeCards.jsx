@@ -6,7 +6,7 @@ import icon3 from "../../../assets/CardIcons/icon3.png"
 
 const ThreeCards = () => {
     return (
-        <div className="w-full grid grid-cols-1 md:grid-cols-3 gap-5 my-10">
+        <div className="w-full grid grid-cols-1 md:grid-cols-3 gap-5 my-10 px-1">
 
             {/* take advice card */}
             <Link to="/advice">

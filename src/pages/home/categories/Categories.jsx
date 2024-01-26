@@ -22,8 +22,8 @@ const Categories = () => {
 
     
     return (
-        <div className="">
-            <h1 className="text-2xl  font-bold ">Categories </h1>
+        <div className="px-1">
+            <h1 className="text-2xl  font-bold text-black">Categories </h1>
             {/* <Swiper navigation={true} modules={[Navigation]} className="mySwiper"> */}
             <div className="hidden lg:block">
                 <Swiper
