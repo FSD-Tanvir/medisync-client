@@ -22,8 +22,8 @@ const Advice = () => {
             .then(data => setAdvices(data))
     }, [])
     return (
-        <div className="mt-2 py-5 lg:py-7">
-            <div className="bg-cyan-300 p-12">
+        <div className="py-5 lg:py-7 bg-[#BFE2FF]">
+            <div className="p-12">
                 <h1 className="text-xl font-semibold lg:text-5xl text-center mt-10">আপনার রোগটি নির্বাচন করুন</h1>
                 <div className=" flex justify-center my-10">
                     <form className="border lg:w-1/4">

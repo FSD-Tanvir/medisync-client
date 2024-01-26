@@ -37,7 +37,7 @@ const Doctors = () => {
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
   return (
-    <div className=" ">
+    <div className=" pb-5">
       <div className="relative">
         <div>
           <BannerSimple

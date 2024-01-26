@@ -10,7 +10,7 @@ import {
 
 const Footer = () => {
   return (
-    <div className="min-h-[80vh]  bg-[#003049] mt-2 py-24 px-5 sm:px-10 space-y-10 text-white">
+    <div className="min-h-[80vh]  bg-[#003049] py-24 px-5 sm:px-10 space-y-10 text-white">
       <div>
         <h2 className="text-4xl font-bold text-white">
           Medi<span className="text-[#00FFFF]">Sync</span>
