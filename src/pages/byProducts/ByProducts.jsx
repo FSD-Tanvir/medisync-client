@@ -130,7 +130,7 @@ const ByProducts = () => {
 
                 {
                     isLoading ? <CardLoading /> :
-                        <div className="grid grid-cols-2 lg:grid-cols-4  lg:w-4/5">
+                        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 mx-2 md:mx-8 lg:mx-2  md:gap-6 lg:w-4/5">
                             {
                                 currentProducts.map(product => (
                                     <ProductsCard key={product._id} product={product} />

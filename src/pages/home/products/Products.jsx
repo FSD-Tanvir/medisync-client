@@ -109,9 +109,9 @@ const Products = () => {
             </div>
             <h2 className="mt-8 mb-8 text-2xl font-bold pl-2">Prescription Medisync</h2>
             <div className="">
-                <Slider {...sliderSettings}>
+                <Slider {...sliderSettings}  >
                     {prescriptionProducts.map(product => (
-                        <ProductsCard key={product.id} product={product} />
+                        <div key={product.id}  ><ProductsCard product={product} /></div>
                     ))}
                 </Slider>
             </div>

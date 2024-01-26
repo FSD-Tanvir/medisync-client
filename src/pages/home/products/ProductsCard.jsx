@@ -1,31 +1,32 @@
-
-
 const ProductsCard = ({ product }) => {
   // Destructure product properties
   const { image, company, name, price, weight } = product || {};
+  const isHomePage = location.pathname === "/" || false;
 
   return (
-    <div className="bg-white shadow-md rounded-xl mx-auto px-1 h-[290px]  md:h-[276px] lg:h-[260px] sm:px-2 "style={{ margin: "10px" }}>
-      <div className="text-center">
-        <div className="h-[120px]">
-          <img src={image} alt="Product" className="mx-auto w-full h-full py-1 object-cover" />
+    <div className={`${isHomePage && " shadow-xl  h-[262px] mx-1 md:mx-5 md:h-[240px] lg:mx-2 lg:h-[320px] xl:h-[235px]"}   shadow-xl  `}>
+      <div className="bg-white rounded-xl px-1  flex flex-col w-full h-full  ">
+        <div>
+          <img
+            src={image}
+            alt=""
+            className=" mx-auto w-full py-1 object-fill h-[85px] md:h-[130px] lg:h-[120px]"
+          />
         </div>
-      </div>
-      <div className=" py-2">
-        <div className="flex flex-col h-[50px] lg:h-[40px] sm:flex-row justify-between">
-          <span className="font-bold text-black capitalize text-sm sm:text-base md:text-sm lg:text-base xl:text-sm">
-            {name}
-          </span>
-          <h2 className="text-sm">{weight}</h2>
-        </div>
-        <p className="text-gray-700 py-3 text-xs h-[40px] lg:h-[0px] sm:text-sm md:text-xs lg:text-sm xl:text-xs mb-1">{company}</p>
-        <div className="flex flex-col h-[60px] sm:flex-row sm:items-center justify-between gap-2">
-          <p className="text-sm font-semibold text-black">Price: ${price}</p>
-          <div className="">
-            <button className="bg-[#003049] text-white py-2 px-2 rounded-md text-xs sm:text-sm md:text-xs lg:text-sm xl:text-xs">
-              Add To Cart
-            </button>
+        <div className="flex-grow flex flex-col ">
+          <div className="flex flex-col flex-grow sm:flex-row lg:flex-col xl:flex-row sm:justify-between lg:justify-normal xl:justify-between sm:gap-2 mb-1">
+            <h1 className="font-bold text-black capitalize text-sm sm:text-base md:text-sm lg:text-base xl:text-sm">
+              {name}
+            </h1>
+            <p className="text-sm">{weight}</p>
           </div>
+          <p className="text-gray-700 text-xs mb-1">{company}</p>
+        </div>
+        <div className="my-2 flex justify-between flex-col sm:flex-row lg:flex-col xl:flex-row sm:items-center lg:items-start xl:items-center  gap-2">
+          <p className="text-sm font-semibold text-black">Price: ${price}</p>
+          <button className="bg-[#003049] text-white py-2 px-2 rounded-md text-xs sm:text-sm md:text-xs lg:text-sm xl:text-xs lg:w-full xl:w-fit">
+            Add To Cart
+          </button>
         </div>
       </div>
     </div>
