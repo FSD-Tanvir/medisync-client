@@ -43,7 +43,10 @@ const DoctorCard = ({ doctor }) => {
       {/* Action Buttons */}
       <div className="flex justify-between items-center mt-4">
         <button
+
           className="bg-[#003049] text-white text-sm sm:text-base px-3 sm:px-4 py-2 rounded-full focus:outline-none hover:text-[#00ffff]"
+
+          className="bg-[#003049] text-white text-sm sm:text-base px-3 sm:px-4 py-2 rounded-full focus:outline-none hover:bg-cyan-600"
           //   onClick={openModal}
         >
           Take Appointment

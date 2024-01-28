@@ -80,7 +80,11 @@ const Doctors = () => {
       {/* Pagination */}
       <div className="flex justify-center items-center mt-20">
         <button
+
           className="bg-[#003049] text-white px-4 py-2 rounded-full focus:outline-none hover:bg-[#00ffff] hover:text-black"
+
+          className="bg-[#003049] text-white px-4 py-2 rounded-full focus:outline-none hover:bg-cyan-600"
+
           onClick={() => paginate(currentPage - 1)}
           disabled={currentPage === 1}
         >
@@ -88,7 +92,11 @@ const Doctors = () => {
         </button>
         <span className="mx-4">{currentPage}</span>
         <button
+
           className="bg-[#003049] text-white px-4 py-2 rounded-full focus:outline-none hover:bg-[#00ffff] hover:text-black"
+
+          className="bg-[#003049] text-white px-4 py-2 rounded-full focus:outline-none hover:bg-cyan-600"
+
           onClick={() => paginate(currentPage + 1)}
           disabled={indexOfLastCard >= filteredDoctors.length}
         >

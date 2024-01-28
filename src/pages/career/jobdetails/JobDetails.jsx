@@ -137,7 +137,10 @@ const JobDetails = () => {
             <button 
             onClick={()=>toast.success("Your Application Succeeded")}
               type="submit"
+
               className="px-10 lg:ml-0 lg:px-20 bg-[#003049] text-white py-2 rounded-lg uppercase hover:bg-[#003049] hover:border- transition ease-in duration-300"
+
+              className="px-10 lg:ml-0 lg:px-20 bg-cyan-400 py-2 rounded-lg uppercase hover:bg-[#003049] hover:border- transition ease-in duration-300"
             >
               Apply
             </button>

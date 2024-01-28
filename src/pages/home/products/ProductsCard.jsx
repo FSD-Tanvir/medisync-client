@@ -24,9 +24,17 @@ const ProductsCard = ({ product }) => {
         </div>
         <div className="my-2 flex justify-between flex-col sm:flex-row lg:flex-col xl:flex-row sm:items-center lg:items-start xl:items-center  gap-2">
           <p className="text-sm font-semibold text-black">Price: ${price}</p>
+
           <button className="bg-[#003049] text-white py-2 px-2 rounded-md text-xs sm:text-sm md:text-xs lg:text-sm xl:text-xs lg:w-full xl:w-fit">
             Add To Cart
           </button>
+
+          <div className="">
+            <button className="bg-[#003049] text-white py-2 px-2 rounded text-xs sm:text-sm md:text-xs lg:text-sm xl:text-xs">
+              Add To Cart
+            </button>
+          </div>
+
         </div>
       </div>
     </div>

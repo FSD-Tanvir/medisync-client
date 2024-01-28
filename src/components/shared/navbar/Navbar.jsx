@@ -32,7 +32,11 @@ const Navbar = () => {
     <>
       {/* navbar  for small device */}
 
+
       <div className=" sticky top-0  lg:hidden  flex items-center justify-between bg-[#003049] p-2 z-50 ">
+
+      <div className=" sticky top-0  lg:hidden  flex items-center justify-between bg-[#003049] p-2 z-50">
+
         {/* logo */}
 
         <div className="relative">
@@ -87,12 +91,21 @@ const Navbar = () => {
 
       {/* navbar for desktop */}
 
+
       <div className="hidden lg:block z-50 ">
         <div className="flex justify-between items-center bg-[#003049] p-2">
           {/* logo */}
 
           <h2 className="text-4xl font-bold text-white">
             Medi<span className="text-[#00FFFF]">Sync</span>
+
+      <div className="hidden lg:block z-50 text-white">
+        <div className="flex justify-between items-center bg-[#003049] p-2">
+          {/* logo */}
+
+          <h2 className="text-4xl font-bold">
+            Medi<span className="text-[#0AFFFF] ">Sync</span>
+
           </h2>
 
           {/* search bar */}
@@ -146,10 +159,16 @@ const Navbar = () => {
                 onClick={() => setOpenMenu(!openMenu)}
                 className={({ isActive, isPending }) =>
                   isActive
+
                     ? "text-[#00FFFF] flex items-center font-semibold hover:text-[#00FFFF]  pr-4 gap-2 lg:border-r border-white"
                     : isPending
                     ? ""
                     : "flex items-center font-semibold hover:text-[#00FFFF]  pr-4 gap-2 lg:border-r border-whit"}
+
+                    ? "text-[#0AFFFF] flex items-center font-semibold hover:text-[#0AFFFF]  pr-4 gap-2 lg:border-r border-white"
+                    : isPending
+                    ? ""
+                    : "flex items-center font-semibold hover:text-[#0AFFFF]  pr-4 gap-2 lg:border-r border-white"}
               >
                 {menuItem.icon}
                 <span>{menuItem.item}</span>

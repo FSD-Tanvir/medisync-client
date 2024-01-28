@@ -36,7 +36,11 @@ const Advertise = () => {
         </div>
         <div className="flex justify-center items-center mt-2">
           <Link to="/doctors">
+
             <button className="btn bg-[#003049] text-white px-4 py-1 font-semibold rounded-md">
+
+            <button className="btn bg-[#003049] text-white rounded-md px-4 py-1 font-semibold">
+
               Appointment
             </button>
           </Link>

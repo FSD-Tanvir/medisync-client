@@ -41,6 +41,7 @@ const ByProducts = () => {
 
     return (
         <div className="">
+
             <h2 className="text-center font-bold text-2xl my-2 lg:mt-5">{category === "all" && "All Medicine"}</h2>
             <h2 className="text-center font-bold text-2xl my-2 lg:mt-5">{category === "otc" && "OTC Medicine"}</h2>
             <h2 className="text-center font-bold text-2xl my-2 lg:mt-5">{category === "women" && "For Women"}</h2>
@@ -51,6 +52,10 @@ const ByProducts = () => {
             <h2 className="text-center font-bold text-2xl my-2 lg:mt-5">{category === "dental" && "Dental Care"}</h2>
             <div className="flex flex-col lg:flex-row gap-5">
                 <div className="bg-gray-200 rounded-lg h-[560px] hidden lg:block  lg:w-1/5">
+
+            <h2 className="text-center font-bold text-xl mt-2 mb-2">All MediSync </h2>
+            <div className="flex gap-5">
+                <div className="bg-gray-200 rounded-lg h-[560px]  lg:w-1/5">
                     <ul>
                         <li onClick={() => setCategory('otc')} className={`flex gap-2 items-center px-4 py-4 cursor-pointer hover:bg-slate-300 ${category === 'otc' && 'bg-slate-300'}`}>
                             <img className="w-8 h-8" src={OTC} alt="" />
