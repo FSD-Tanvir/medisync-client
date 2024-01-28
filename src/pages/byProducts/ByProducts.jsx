@@ -40,7 +40,7 @@ const ByProducts = () => {
     // };
 
     return (
-        <div className="">
+        <>
             <h2 className="text-center font-bold text-2xl my-2 lg:mt-5">{category === "all" && "All Medicine"}</h2>
             <h2 className="text-center font-bold text-2xl my-2 lg:mt-5">{category === "otc" && "OTC Medicine"}</h2>
             <h2 className="text-center font-bold text-2xl my-2 lg:mt-5">{category === "women" && "For Women"}</h2>
@@ -49,36 +49,36 @@ const ByProducts = () => {
             <h2 className="text-center font-bold text-2xl my-2 lg:mt-5">{category === "prescription" && "Prescription Medicine"}</h2>
             <h2 className="text-center font-bold text-2xl my-2 lg:mt-5">{category === "personal" && "Personal Care"}</h2>
             <h2 className="text-center font-bold text-2xl my-2 lg:mt-5">{category === "dental" && "Dental Care"}</h2>
-            <div className="flex flex-col lg:flex-row gap-5">
-                <div className="bg-gray-200 rounded-lg h-[560px] hidden lg:block  lg:w-1/5">
+            <div className="flex flex-col lg:flex-row gap-5 ">
+                <div className="bg-blue-100 rounded-lg  h-fit hidden lg:block  lg:w-1/5 shadow-[-10px_-10px_20px_4px_rgba(0,0,0,0.1),_10px_10px_20px_4px_rgba(0,0,0,0.1)]">
                     <ul>
-                        <li onClick={() => setCategory('otc')} className={`flex gap-2 items-center px-4 py-4 cursor-pointer hover:bg-slate-300 ${category === 'otc' && 'bg-slate-300'}`}>
+                        <li onClick={() => setCategory('otc')} className={`flex gap-2 items-center px-4 py-4 cursor-pointer hover:bg-blue-300 rounded-lg  ${category === 'otc' && 'bg-blue-300 '}`}>
                             <img className="w-8 h-8" src={OTC} alt="" />
-                            <h2 className="font-bold text-xl text-stone-600">OTC Medicine</h2>
+                            <h2 className="font-bold text-xl text-blue-500">OTC Medicine</h2>
                         </li>
-                        <li onClick={() => setCategory('women')} className={`flex gap-2 items-center px-4 py-4 cursor-pointer hover:bg-slate-300 ${category === 'women' && 'bg-slate-300'}`}>
+                        <li onClick={() => setCategory('women')} className={`flex gap-2 items-center px-4 py-4 cursor-pointer hover:bg-blue-300 rounded-lg  ${category === 'women' && 'bg-blue-300 rounded-lg'}`}>
                             <img className="w-8 h-8" src={WOMEN} alt="" />
-                            <h2 className="font-bold text-xl text-stone-600">For Women</h2>
+                            <h2 className="font-bold text-xl text-blue-500">For Women</h2>
                         </li>
-                        <li onClick={() => setCategory('baby')} className={`flex gap-2 items-center px-4 py-4 cursor-pointer hover:bg-slate-300 ${category === 'baby' && 'bg-slate-300'}`}>
+                        <li onClick={() => setCategory('baby')} className={`flex gap-2 items-center px-4 py-4 cursor-pointer hover:bg-blue-300 rounded-lg ${category === 'baby' && 'bg-blue-300'}`}>
                             <img className="w-8 h-8" src={BABY} alt="" />
-                            <h2 className="font-bold text-xl text-stone-600">Baby Care</h2>
+                            <h2 className="font-bold text-xl text-blue-500">Baby Care</h2>
                         </li>
-                        <li onClick={() => setCategory('dental')} className={`flex gap-2 items-center px-4 py-4 cursor-pointer hover:bg-slate-300 ${category === 'dental' && 'bg-slate-300'}`}>
+                        <li onClick={() => setCategory('dental')} className={`flex gap-2 items-center px-4 py-4 cursor-pointer hover:bg-blue-300 rounded-lg ${category === 'dental' && 'bg-blue-300'}`}>
                             <img className="w-8 h-8" src={DENTAL} alt="" />
-                            <h2 className="font-bold text-xl text-stone-600">Dental Care</h2>
+                            <h2 className="font-bold text-xl text-blue-500">Dental Care</h2>
                         </li>
-                        <li onClick={() => setCategory('diabetic')} className={`flex gap-2 items-center px-4 py-4 cursor-pointer hover:bg-slate-300 ${category === 'diabetic' && 'bg-slate-300'}`}>
+                        <li onClick={() => setCategory('diabetic')} className={`flex gap-2 items-center px-4 py-4 cursor-pointer hover:bg-blue-300 rounded-lg ${category === 'diabetic' && 'bg-blue-300'}`}>
                             <img className="w-8 h-8" src={DIABETIC} alt="" />
-                            <h2 className="font-bold text-xl text-stone-600">Diabetic Care</h2>
+                            <h2 className="font-bold text-xl text-blue-500">Diabetic Care</h2>
                         </li>
-                        <li onClick={() => setCategory('personal')} className={`flex gap-2 items-center px-4 py-4 cursor-pointer hover:bg-slate-300 ${category === 'personal' && 'bg-slate-300'}`}>
+                        <li onClick={() => setCategory('personal')} className={`flex gap-2 items-center px-4 py-4 cursor-pointer hover:bg-blue-300 rounded-lg ${category === 'personal' && 'bg-blue-300'}`}>
                             <img className="w-8 h-8" src={PERSONAL} alt="" />
-                            <h2 className="font-bold text-xl text-stone-600">Personal Care</h2>
+                            <h2 className="font-bold text-xl text-blue-500">Personal Care</h2>
                         </li>
-                        <li onClick={() => setCategory('prescription')} className={`flex gap-2 items-center px-4 py-4 cursor-pointer hover:bg-slate-300 ${category === 'prescription' && 'bg-slate-300'}`}>
+                        <li onClick={() => setCategory('prescription')} className={`flex gap-2 items-center px-4 py-4 cursor-pointer hover:bg-blue-300 rounded-lg ${category === 'prescription' && 'bg-blue-300'}`}>
                             <img className="w-8 h-8" src={PRESCRIPTION} alt="" />
-                            <h2 className="font-bold text-xl text-stone-600">Prescription Medicine</h2>
+                            <h2 className="font-bold text-xl text-blue-500">Prescription Medicine</h2>
                         </li>
 
 
@@ -139,7 +139,7 @@ const ByProducts = () => {
                         </div>
                 }
             </div>
-            <div className="flex justify-center mt-5">
+            <div className="flex justify-center mt-5 ">
                 {/* Pagination controls */}
                 {/* {
                     isLoading ? <p></p> :
@@ -160,7 +160,7 @@ const ByProducts = () => {
                         </div>
                 } */}
             </div>
-        </div>
+        </>
     );
 };
 

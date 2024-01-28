@@ -7,7 +7,6 @@ import JobDetails from "../pages/career/jobDetails/JobDetails";
 import ContactUs from "../pages/contactUs/ContactUs";
 import Doctors from "../pages/doctors/Doctors";
 import Advice from "../pages/home/ThreeCards/Advice";
-
 import NewsArticles from "../pages/News&Articles/NewsArticles";
 import NewsArticlesDetails from "../pages/News&Articles/NewsArticlesDetails";
 import ByProducts from "../pages/byProducts/ByProducts";
@@ -63,7 +62,7 @@ export const router = createBrowserRouter([
       {
         path: "career/job-details/:id",
         element: <JobDetails />,
-        loader: ({params}) => fetch(`http://localhost:5000/jobs/single/${params.id}`)
+        loader: ({params}) => fetch(`https://medisync-server.vercel.app/jobs/single/${params.id}`)
       },
       { path: "contact-us",
        element: <ContactUs /> 
@@ -74,5 +73,4 @@ export const router = createBrowserRouter([
     path: "/dashboard",
     element: <Dashboard></Dashboard>
   }
-
 ]);

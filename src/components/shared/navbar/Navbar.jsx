@@ -87,12 +87,12 @@ const Navbar = () => {
 
       {/* navbar for desktop */}
 
-      <div className="hidden lg:block z-50 ">
-        <div className="flex justify-between items-center bg-[#003049] p-2">
+      <div className="hidden lg:block z-10 bg-[#FFF7F4] shadow-xl ">
+        <div className="flex justify-between items-center text-black p-2">
           {/* logo */}
 
-          <h2 className="text-4xl font-bold text-white">
-            Medi<span className="text-[#00FFFF]">Sync</span>
+          <h2 className="text-4xl font-bold">
+            Medi<span className="text-blue-500 ">Sync</span>
           </h2>
 
           {/* search bar */}
@@ -103,7 +103,7 @@ const Navbar = () => {
               name="searchProducts"
               id="searchProducts"
               placeholder="Here search your product "
-              className="w-64 md:w-96 border-2 p-1 pl-5 pr-8  rounded-full  border-white"
+              className="w-64 md:w-96 border-2 p-1 pl-5 pr-8  rounded-full  "
             />
             <div className="absolute right-2  top-2">
               <div>
@@ -114,14 +114,14 @@ const Navbar = () => {
 
           {/* cart , login and profile division  */}
 
-          <div className="flex flex-col items-end gap-5 text-white">
+          <div className="flex flex-col items-end gap-5 ">
             <div className="flex items-center gap-2 lg:gap-8">
-              <div className="hover:text-[#00FFFF] cursor-pointer">
+              <div className="hover:text-blue-500 text-blue-500   cursor-pointer">
                 <IoCartOutline size={36} />
               </div>
               <div
                 onClick={() => setShowModal(true)}
-                className="border border-[#ffFFFF] hover:text-[#00FFFF] hover:border-[#00FFFF] font-semibold px-3 py-1 rounded-lg cursor-pointer"
+                className="border text-blue-500  border-blue-500  hover:text-white hover:bg-blue-500  font-semibold px-3 py-1 rounded-lg cursor-pointer "
               >
                 Login
               </div>
@@ -132,11 +132,11 @@ const Navbar = () => {
 
       {/* navbar with menu items */}
 
-      <div className="sticky lg:top-0 top-[50px] z-10 text-white ">
+      <div className="sticky lg:top-0 top-[50px] z-10 bg-[#FFF7F4]  lg:rounded-b-xl  shadow-lg ">
         <div className="relative ">
           <ul
-            className={`flex flex-col lg:flex-row gap-5 absolute lg:static  bg-[#003049]  p-5  transition-all duration-500 ease-in ${
-              openMenu ? "top-0 w-full" : "top-[-500px] w-full "
+            className={`flex flex-col lg:flex-row gap-5 absolute lg:static bg-[#FFF7F4]  rounded-b-xl  p-5  transition-all duration-500 ease-in ${
+              openMenu ? "top-0 w-full " : "top-[-500px] w-full "
             } `}
           >
             {menuItems.map((menuItem) => (
@@ -146,13 +146,13 @@ const Navbar = () => {
                 onClick={() => setOpenMenu(!openMenu)}
                 className={({ isActive, isPending }) =>
                   isActive
-                    ? "text-[#00FFFF] flex items-center font-semibold hover:text-[#00FFFF]  pr-4 gap-2 lg:border-r border-white"
+                    ? "text-blue-700  flex items-center font-semibold  pr-4 gap-2 lg:border-r border-black"
                     : isPending
                     ? ""
-                    : "flex items-center font-semibold hover:text-[#00FFFF]  pr-4 gap-2 lg:border-r border-whit"}
+                    : "flex items-center font-semibold text-blue-500  pr-4 gap-2 lg:border-r border-black  hover:text-blue-700 "}
               >
                 {menuItem.icon}
-                <span>{menuItem.item}</span>
+                <span >{menuItem.item}</span>
               </NavLink>
               </li>
             ))}
