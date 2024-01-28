@@ -5,14 +5,40 @@ import ProductsCard from "./ProductsCard";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import useAllProducts from "../../../hooks/useAllProducts";
+import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
 
+
+
+const SampleNextArrow = ({ onClick }) => (
+    <div
+        className="slick-arrow"
+        style={{ right: "-15px", zIndex: 1 }}
+        onClick={onClick}
+    >
+        <button className=" btn p-2 rounded-full ml-5">
+            <FaAngleLeft className=" h-8 w-8 p-1" />
+        </button>
+    </div>
+);
+
+const SamplePrevArrow = ({ onClick }) => (
+    <div
+        className="slick-arrow"
+        style={{ left: "-15px", zIndex: 1 }}
+        onClick={onClick}
+    >
+        <button className=" btn p-2 rounded-full ml-5">
+            <FaAngleRight className=" h-8 w-8 p-1" />
+        </button>
+    </div>
+)
 
 
 
 const Products = () => {
     const category = 'all'
-    const [products] = useAllProducts({category})
-    
+    const [products] = useAllProducts({ category })
+
     // filter product as a category
     const otcProducts = products?.filter(item => item?.category === 'otc') || [];
     const womenProducts = products?.filter(item => item?.category === 'women') || [];
@@ -25,7 +51,7 @@ const Products = () => {
     const sliderSettings = {
         infinite: true,
         speed: 500,
-        autoplay: true,
+        // autoplay: true,
         autoplaySpeed: 3000,
         slidesToShow: 4,
         slidesToScroll: 4,
@@ -54,6 +80,9 @@ const Products = () => {
             },
         ],
 
+        nextArrow: <SampleNextArrow />,
+        prevArrow: <SamplePrevArrow />,
+
     };
 
     return (
@@ -71,7 +100,7 @@ const Products = () => {
             <div className="">
                 <Slider {...sliderSettings}>
                     {womenProducts.map(product => (
-                        <ProductsCard key={product.id} product={product} />
+                        <ProductsCard key={product._id} product={product} />
                     ))}
                 </Slider>
             </div>
