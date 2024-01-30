@@ -14,8 +14,13 @@ import Dashboard from "../layouts/Dashboard";
 import Advices from "../pages/Dashboard/Advices/Advices";
 import AddAdvice from "../pages/Dashboard/Advices/AddAdvice";
 import AllAdvices from "../pages/Dashboard/Advices/AllAdvices";
+import JobPanel from "../pages/dashboard/jobPanel/JobPanel";
+import Overview from "../pages/dashboard/jobPanel/overview/Overview";
+import AddJob from "../pages/dashboard/jobPanel/addJob/AddJob";
+import AllJobs from "../pages/dashboard/jobPanel/allJobs/AllJobs";
 
 export const router = createBrowserRouter([
+  // Main Layout
   {
     path: "/",
     element: <MainLayout />,
@@ -72,11 +77,27 @@ export const router = createBrowserRouter([
       }
     ],
   },
+  // Dashboard Layout 
   {
     path: "/dashboard",
     element: <Dashboard></Dashboard>,
-    children: [
+    children:[
       {
+        path: "job-panel",
+        element: <JobPanel/>
+      },
+      {
+        path: "job-panel/overview",
+        element: <Overview/>
+      },
+      {
+        path: "job-panel/add-job",
+        element: <AddJob/>
+      },
+      {
+        path: "job-panel/all-jobs",
+        element: <AllJobs/>
+      },{
         path: "advices",
         element: <Advices></Advices>
       },
