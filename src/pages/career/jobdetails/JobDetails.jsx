@@ -5,25 +5,6 @@ import BannerSimple from "../../../components/shared/Banners/BannerSimple/Banner
 const JobDetails = () => {
   const {data: singleJob} = useLoaderData()
 
-  {
-    "id",
-      "title",
-      "job_type",
-      "department",
-      "vacancy",
-      "compensation_and_benefits",
-      "salary",
-      "job_context",
-      "job_responsibilities",
-      "educational_requirements",
-      "experience_requirements",
-      "additional_requirements",
-      "workplace",
-      "job_location",
-      "address";
-  }
-  console.log(singleJob);
-
   return (
     <div className="min-h-[90vh] bg-white rounded-lg px-4 py-3">
       {/* job details banner  */}
@@ -122,7 +103,7 @@ const JobDetails = () => {
             <h3 className="text-lg sm:text-xl text-black/70 font-bold  cursor-pointer">
               Salary
             </h3>
-            <h4 className="text-black/70">{singleJob?.salary}</h4>
+            <h4 className="text-black/70">{singleJob?.salary.replace(/_/ig," ")}</h4>
           </div>
           <div>
             <h3 className="text-lg sm:text-xl text-black/70 font-bold  cursor-pointer">
