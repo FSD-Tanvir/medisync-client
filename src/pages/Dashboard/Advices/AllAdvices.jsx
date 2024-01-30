@@ -1,14 +1,11 @@
-import { useEffect, useState } from "react";
 import Navbar from "./Navbar";
+import useAdvices from "../../../hooks/useAdvices";
 
 
 const AllAdvices = () => {
-    const [advices, setAdvices] = useState([])
-    useEffect(() => {
-        fetch("/advice.json")
-            .then(res => res.json())
-            .then(data => setAdvices(data))
-    }, [])
+    const [advices, , ] = useAdvices();
+    console.log(advices);
+    
     return (
         <div>
             <Navbar></Navbar>
