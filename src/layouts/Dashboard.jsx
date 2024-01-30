@@ -58,10 +58,7 @@ const Dashboard = () => {
                                 <NavLink to="/Dashboard/UpcomingMeals" className="font-semibold flex justify-start items-center gap-1 pl-5"><BiSolidFoodMenu /> All News & Articles</NavLink>
                             </li>
                             <li>
-                                <NavLink to="/Dashboard/UpcomingMeals" className="font-semibold flex justify-start items-center gap-1 pl-5"><BiSolidFoodMenu /> Add Advice</NavLink>
-                            </li>
-                            <li>
-                                <NavLink to="/Dashboard/UpcomingMeals" className="font-semibold flex justify-start items-center gap-1 pl-5"><BiSolidFoodMenu /> All Advices</NavLink>
+                                <NavLink to="/Dashboard/advices" className="font-semibold flex justify-start items-center gap-1 pl-5"><BiSolidFoodMenu />Advices</NavLink>
                             </li>
                             <li>
                                 <NavLink to="/Dashboard/UpcomingMeals" className="font-semibold flex justify-start items-center gap-1 pl-5"><BiSolidFoodMenu /> Add Job</NavLink>

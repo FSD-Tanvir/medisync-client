@@ -11,6 +11,9 @@ import NewsArticles from "../pages/News&Articles/NewsArticles";
 import NewsArticlesDetails from "../pages/News&Articles/NewsArticlesDetails";
 import ByProducts from "../pages/byProducts/ByProducts";
 import Dashboard from "../layouts/Dashboard";
+import Advices from "../pages/Dashboard/Advices/Advices";
+import AddAdvice from "../pages/Dashboard/Advices/AddAdvice";
+import AllAdvices from "../pages/Dashboard/Advices/AllAdvices";
 
 export const router = createBrowserRouter([
   {
@@ -71,6 +74,20 @@ export const router = createBrowserRouter([
   },
   {
     path: "/dashboard",
-    element: <Dashboard></Dashboard>
+    element: <Dashboard></Dashboard>,
+    children: [
+      {
+        path: "advices",
+        element: <Advices></Advices>
+      },
+      {
+        path: "advices/addAdvice",
+        element: <AddAdvice></AddAdvice>
+      },
+      {
+        path: "advices/allAdvices",
+        element: <AllAdvices></AllAdvices>
+      }
+    ]
   }
 ]);
