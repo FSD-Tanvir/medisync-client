@@ -11,6 +11,9 @@ import NewsArticles from "../pages/News&Articles/NewsArticles";
 import NewsArticlesDetails from "../pages/News&Articles/NewsArticlesDetails";
 import ByProducts from "../pages/byProducts/ByProducts";
 import Dashboard from "../layouts/Dashboard";
+import Advices from "../pages/Dashboard/Advices/Advices";
+import AddAdvice from "../pages/Dashboard/Advices/AddAdvice";
+import AllAdvices from "../pages/Dashboard/Advices/AllAdvices";
 import JobPanel from "../pages/dashboard/jobPanel/JobPanel";
 import Overview from "../pages/dashboard/jobPanel/overview/Overview";
 import AddJob from "../pages/dashboard/jobPanel/addJob/AddJob";
@@ -94,7 +97,18 @@ export const router = createBrowserRouter([
       {
         path: "job-panel/all-jobs",
         element: <AllJobs/>
+      },{
+        path: "advices",
+        element: <Advices></Advices>
       },
+      {
+        path: "advices/addAdvice",
+        element: <AddAdvice></AddAdvice>
+      },
+      {
+        path: "advices/allAdvices",
+        element: <AllAdvices></AllAdvices>
+      }
     ]
   }
 ]);
