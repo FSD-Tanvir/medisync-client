@@ -28,7 +28,7 @@ const ProductsCard = ({ product }) => {
         </div>
         <div className="my-2  px-2 flex justify-between flex-col sm:flex-row lg:flex-col xl:flex-row sm:items-center lg:items-start xl:items-center  gap-2">
           <p className="text-sm font-semibold text-black ">Price: ${price}</p>
-          <button className="border hover:border-blue-500 hover:text-blue-500 font-semibold py-2 px-2 rounded-md text-xs sm:text-sm md:text-xs lg:text-sm xl:text-xs lg:w-full xl:w-fit  shadow-[-2px_-2px_12px_2px_rgba(0,0,0,0.1),_2px_2px_12px_2px_rgba(0,0,0,0.1)]   bg-blue-500 text-white hover:bg-[#FFF7F4]">
+          <button className="border hover:border-blue-500 hover:text-blue-500 font-semibold py-2 px-2 rounded-md text-xs sm:text-sm md:text-xs lg:text-sm xl:text-xs lg:w-full xl:w-fit  shadow-[-2px_-2px_12px_2px_rgba(0,0,0,0.1),_2px_2px_12px_2px_rgba(0,0,0,0.1)] bg-blue-500 text-white hover:bg-[#FFF7F4]">
             Add To Cart
           </button>
         </div>
