@@ -20,6 +20,7 @@ import smallB1 from "../../../assets/BannerImg/smallB1.png";
 import smallB2 from "../../../assets/BannerImg/smallB2.png";
 import smallB3 from "../../../assets/BannerImg/smallB3.png";
 import smallB4 from "../../../assets/BannerImg/smallB4.png";
+// import banner5 from "../../../assets/BannerImg/banner5.png"
 
 const Banner = () => {
   return (
