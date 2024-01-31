@@ -61,7 +61,11 @@ const NewsArticles = () => {
   return (
     <>
       <div>
-        <BannerSimple imgUrl="https://i.ibb.co/5vStm5N/newsbanner.png" text1="Welcome to news & articles" pageName="newsAndArticles"/>
+        <BannerSimple
+          imgUrl="https://i.ibb.co/5vStm5N/newsbanner.png"
+          text1="Welcome to news & articles"
+          pageName="newsAndArticles"
+        />
         {/*Categories*/}
         <Categories />
 
@@ -98,14 +102,16 @@ const NewsArticles = () => {
             ))}
           </div>
           <div className="my-10 flex justify-center items-center gap-4">
-            <a href="#" onClick={handlePrev}>
-              Prev
-            </a>
+            <div className="w-11 h-9 border-2 bg-cyan-500 flex justify-center items-center text-white">
+              <a href="#" onClick={handlePrev}>
+                Prev
+              </a>
+            </div>
             <div className="flex gap-2">
               {numbers.map((n, i) => (
                 <div
                   key={i}
-                  className={`w-8 h-8 border-2 rounded-full flex justify-center items-center cursor-pointer ${
+                  className={`w-9 h-9 border-2 flex justify-center items-center cursor-pointer ${
                     currentPage === n ? "bg-cyan-500 text-white" : ""
                   }`}
                   onClick={() => changeCPage(n)}
@@ -114,9 +120,11 @@ const NewsArticles = () => {
                 </div>
               ))}
             </div>
-            <a href="#" onClick={handleNext}>
-              Next
-            </a>
+            <div className="w-11 h-9 border-2 bg-cyan-500 flex justify-center items-center text-white">
+              <a href="#" onClick={handleNext}>
+                Next
+              </a>
+            </div>
           </div>
         </div>
       </div>
