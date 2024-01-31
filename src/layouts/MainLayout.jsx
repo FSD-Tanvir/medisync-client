@@ -11,7 +11,7 @@ const MainLayout = () => {
     <>
       <Navbar />
       <div className="flex lg:w-full">
-        <div className={`w-full ${isHomePage && "lg:w-3/4"}`}>
+        <div className={`w-full ${isHomePage && "lg:w-3/4 text-white"}`}>
           <Outlet />
         </div>
         {isHomePage && (

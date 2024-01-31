@@ -37,36 +37,41 @@ const Doctors = () => {
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
   return (
-    <div className="container mx-auto my-8">
-    
-      
-    <div className="relative">
-    <BannerSimple imgUrl="https://i.ibb.co/JRMRpvD/3117.jpg" text1="Welcome to meet our doctors"/>
-      {/* Specialization Filter */}
-      <div className="flex justify-center items-center mb-4 absolute left-1/2 top-[60%] -translate-x-1/2">
-        <label className="mr-2 text-2xl text-white">Filter by Specialization</label>
-        <select
-          className="border border-gray-300 p-2 rounded-md"
-          value={selectedSpecialization}
-          onChange={(e) => {
-            setCurrentPage(1);
-            setSelectedSpecialization(e.target.value);
-          }}
-        >
-          <option value="All">All</option>
-          {/* Add options for each specialization */}
-          {uniqueSpecializations.map((specialization) => (
-            <option key={specialization} value={specialization}>
-              {specialization}
-            </option>
-          ))}
-        </select>
+    <div className=" pb-5">
+      <div className="relative">
+        <div>
+          <BannerSimple
+            imgUrl="https://i.ibb.co/JRMRpvD/3117.jpg"
+            text1="Meet with Our Doctors"
+            pageName="meetDoctors"
+          />
+        </div>
+        {/* Specialization Filter */}
+        <div className="flex flex-col lg:flex-row justify-center items-center mb-4 absolute left-1/2 top-[45%] sm:top-[50%] -translate-x-1/2">
+          <label className="sm:mr-2 text-lg sm:text-2xl text-white">
+            Filter by Specialization
+          </label>
+          <select
+            className="border border-gray-300 p-2 rounded-md"
+            value={selectedSpecialization}
+            onChange={(e) => {
+              setCurrentPage(1);
+              setSelectedSpecialization(e.target.value);
+            }}
+          >
+            <option value="All">All</option>
+            {/* Add options for each specialization */}
+            {uniqueSpecializations.map((specialization) => (
+              <option key={specialization} value={specialization}>
+                {specialization}
+              </option>
+            ))}
+          </select>
+        </div>
       </div>
-    </div>
-      
 
       {/* Display Filtered Doctors */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3  gap-5 ">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3  gap-5 px-1 ">
         {currentCards.map((doctor) => (
           <DoctorCard key={doctor.id} doctor={doctor}></DoctorCard>
         ))}
@@ -75,7 +80,7 @@ const Doctors = () => {
       {/* Pagination */}
       <div className="flex justify-center items-center mt-20">
         <button
-          className="bg-cyan-500 text-white px-4 py-2 rounded-full focus:outline-none hover:bg-cyan-600"
+          className="bg-[#003049] text-white px-4 py-2 rounded-full focus:outline-none hover:bg-[#00ffff] hover:text-black"
           onClick={() => paginate(currentPage - 1)}
           disabled={currentPage === 1}
         >
@@ -83,7 +88,7 @@ const Doctors = () => {
         </button>
         <span className="mx-4">{currentPage}</span>
         <button
-          className="bg-cyan-500 text-white px-4 py-2 rounded-full focus:outline-none hover:bg-cyan-600"
+          className="bg-[#003049] text-white px-4 py-2 rounded-full focus:outline-none hover:bg-[#00ffff] hover:text-black"
           onClick={() => paginate(currentPage + 1)}
           disabled={indexOfLastCard >= filteredDoctors.length}
         >

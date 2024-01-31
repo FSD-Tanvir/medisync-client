@@ -20,7 +20,7 @@ const ContactUs = () => {
     <div className="min-h-screen ">
       {/* contact banner section  */}
       
-      <BannerSimple imgUrl="https://i.ibb.co/JRMRpvD/3117.jpg" text1="Welcome to Contact Us"/>
+      <BannerSimple imgUrl="https://i.ibb.co/JRMRpvD/3117.jpg" text1="Contact Us"/>
       {/* contact main content */}
       <div className="mt-16">
         <h2 className="text-2xl font-semibold text-center">
@@ -87,7 +87,7 @@ const ContactUs = () => {
                 mt-4">
                   <button
                     type="submit"
-                    className="px-10 ml-32 lg:ml-0 lg:px-20 bg-cyan-400 py-2 rounded-none uppercase hover:bg-cyan-500 hover:border-none transition ease-in duration-300"
+                    className="px-10 ml-32 lg:ml-0 lg:px-20 bg-[#003049] py-2 rounded-none uppercase hover:bg-[#003049] hover:border-none transition ease-in duration-300"
                   >
                     Submit
                   </button>

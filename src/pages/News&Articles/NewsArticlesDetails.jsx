@@ -2,6 +2,9 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
 const NewsArticlesDetails = () => {
+  useEffect(() => {
+    window.scroll(0, 0)
+  }, [])
   const [articles, setArticlies] = useState();
   const { id } = useParams();
 
@@ -15,7 +18,7 @@ const NewsArticlesDetails = () => {
       try {
         // Fetch data from an API endpoint (replace with your API URL)
         const response = await fetch(
-          `http://localhost:5000/newAndArticles/single/${id}`
+          `https://medisync-server.vercel.app/newAndArticles/single/${id}`
         );
         const result = await response.json();
         console.log(result);

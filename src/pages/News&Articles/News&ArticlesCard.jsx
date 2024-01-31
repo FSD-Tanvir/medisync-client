@@ -24,7 +24,7 @@ const NewsArticlesCard = ({ articleData, handleArticlePage }) => {
           <div className="my-2 w-full flex flex-col justify-center items-center absolute bottom-0 left-0 right-0 m-auto">
             <button
               onClick={() => handleArticlePage(_id)}
-              className="bg-cyan-500 px-3 py-2 rounded-md text-white font-bold"
+              className="bg-[#003049] px-3 py-2 rounded-md text-white font-bold"
             >
               Read More
             </button>

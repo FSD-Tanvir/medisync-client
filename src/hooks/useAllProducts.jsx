@@ -4,18 +4,18 @@ import useAxiosPublic from "./useAxiosPublic";
 
 
 
-const useAllProducts = () => {
+const useAllProducts = ({category}) => {
   const axiosPublic = useAxiosPublic()
-    const {data: products = [], isPending: loading, refetch} = useQuery({
-        queryKey: ['products'], 
+    const {data: products = [], isLoading, refetch} = useQuery({
+        queryKey: ['products', category], 
         queryFn: async() =>{
-            const res = await axiosPublic.get('/allProducts');
+            const res = await axiosPublic.get(`/allProducts?category=${category}`);
             return res.data;
         }
     })
 
 
-    return [products, loading, refetch]
+    return [products, isLoading, refetch]
 };
 
 export default useAllProducts;

@@ -22,14 +22,16 @@ const Advice = () => {
             .then(data => setAdvices(data))
     }, [])
     return (
-        <div className="mt-2 py-5 lg:py-7">
-            <div className="bg-cyan-300 p-12">
+        <div className="py-5 lg:py-7 bg-[#BFE2FF]">
+            <div className="p-12">
                 <h1 className="text-xl font-semibold lg:text-5xl text-center mt-10">আপনার রোগটি নির্বাচন করুন</h1>
                 <div className=" flex justify-center my-10">
                     <form className="border lg:w-1/4">
                         <select onChange={handleDiseaseChange}
                             value={selectedDisease}
+                            defaultValue="রোগ নির্বাচন করুন"
                             name="disease" id="diseaseSelect" className="w-full py-2 text-center px-7">
+                            <option  selected>রোগ নির্বাচন করুন</option>
                             <option value="জ্বর">জ্বর</option>
                             <option value="সর্দি-কাশি">সর্দি-কাশি</option>
                             <option value="মাথা ঘামা">মাথা ঘামা</option>

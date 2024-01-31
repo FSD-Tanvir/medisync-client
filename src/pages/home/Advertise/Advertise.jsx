@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import StartInterval from "./StartInterval";
+import { Link } from "react-router-dom";
 
 const Advertise = () => {
   const [doctors, setDoctors] = useState([]);
@@ -18,7 +19,7 @@ const Advertise = () => {
 
     return (
       <div className="w-full p-3">
-        <div className="h-[320px]">
+        <div className="h-[380px] xl:h-[320px]">
           <img
             className="w-full h-[200px] object-cover"
             src={doctor?.image}
@@ -33,10 +34,12 @@ const Advertise = () => {
             <span className="font-semibold ">Phone:</span> {doctor?.contact?.phone}
           </p>
         </div>
-        <div className="flex justify-center items-center mt-2">
-          <button className="btn bg-cyan-400 px-4 py-1 font-semibold">
-            Appointment
-          </button>
+        <div className="flex justify-center mt-2">
+          <Link to="/doctors" >
+            <button className="btn bg-[#003049] text-white px-4 py-1 font-semibold rounded-md ">
+              Appointment
+            </button>
+          </Link>
         </div>
       </div>
     );
@@ -52,7 +55,7 @@ const Advertise = () => {
   }, [currentIndex, doctors, setCurrentIndex]);
 
   return (
-    <div className="shadow-xl min-h-screen mt-5 bg-gray-100 sticky top-[80px] hidden lg:block">
+    <div className="shadow-xl min-h-screen mt-5 bg-[#FFF7F4]  sticky top-[80px] hidden lg:block">
       {displayDoctor()}
     </div>
   );

@@ -10,20 +10,6 @@
       "email": "sarah@example.com",
       "phone": "+1 (555) 234-5678"
     },
-    "address": {
-      "street": "456 Oak Avenue",
-      "city": "Townsville",
-      "state": "State",
-      "zip_code": "56789"
-    },
-    "availability": {
-      "Saturday": "10:00 AM - 5:00 PM",
-      "monday": "8:00 AM - 4:00 PM",
-      "tuesday": "8:00 AM - 4:00 PM",
-      "wednesday": "Not available",
-      "thursday": "8:00 AM - 12:00 PM",
-      "friday": "8:00 AM - 4:00 PM"
-    },
     "university": "University Medical School"
   },
   {
@@ -36,20 +22,6 @@
     "contact": {
       "email": "michael@example.com",
       "phone": "+1 (555) 345-6789"
-    },
-    "address": {
-      "street": "789 Maple Street",
-      "city": "Cityburg",
-      "state": "State",
-      "zip_code": "67890"
-    },
-    "availability": {
-      "Saturday": "10:00 AM - 5:00 PM",
-      "monday": "10:00 AM - 6:00 PM",
-      "tuesday": "10:00 AM - 6:00 PM",
-      "wednesday": "10:00 AM - 2:00 PM",
-      "thursday": "Not available",
-      "friday": "10:00 AM - 6:00 PM"
     },
     "university": "City Medical College"
   },
@@ -64,20 +36,6 @@
       "email": "michael@example.com",
       "phone": "+1 (555) 345-6789"
     },
-    "address": {
-      "street": "789 Maple Street",
-      "city": "Cityburg",
-      "state": "State",
-      "zip_code": "67890"
-    },
-    "availability": {
-      "Saturday": "10:00 AM - 5:00 PM",
-      "monday": "10:00 AM - 6:00 PM",
-      "tuesday": "10:00 AM - 6:00 PM",
-      "wednesday": "10:00 AM - 2:00 PM",
-      "thursday": "Not available",
-      "friday": "10:00 AM - 6:00 PM"
-    },
     "university": "City Medical College"
   },
   {
@@ -90,20 +48,6 @@
     "contact": {
       "email": "michael@example.com",
       "phone": "+1 (555) 345-6789"
-    },
-    "address": {
-      "street": "789 Maple Street",
-      "city": "Cityburg",
-      "state": "State",
-      "zip_code": "67890"
-    },
-    "availability": {
-      "Saturday": "10:00 AM - 5:00 PM",
-      "monday": "10:00 AM - 6:00 PM",
-      "tuesday": "10:00 AM - 6:00 PM",
-      "wednesday": "10:00 AM - 2:00 PM",
-      "thursday": "Not available",
-      "friday": "10:00 AM - 6:00 PM"
     },
     "university": "City Medical College"
   },
@@ -118,20 +62,6 @@
       "email": "ahmed@example.com",
       "phone": "+1 (555) 345-6789"
     },
-    "address": {
-      "street": "789 Maple Street",
-      "city": "Cityburg",
-      "state": "State",
-      "zip_code": "67890"
-    },
-    "availability": {
-      "Saturday": "10:00 AM - 5:00 PM",
-      "monday": "Not available",
-      "tuesday": "10:00 AM - 6:00 PM",
-      "wednesday": "10:00 AM - 2:00 PM",
-      "thursday": "Not available",
-      "friday": "10:00 AM - 6:00 PM"
-    },
     "university": "City Medical College"
   },
   {
@@ -144,20 +74,6 @@
     "contact": {
       "email": "afchana@gmail.com",
       "phone": "+1 (555) 345-6789"
-    },
-    "address": {
-      "street": "789 Maple Street",
-      "city": "Cityburg",
-      "state": "State",
-      "zip_code": "67890"
-    },
-    "availability": {
-      "Saturday": "10:00 AM - 5:00 PM",
-      "monday": "10:00 AM - 6:00 PM",
-      "tuesday": "10:00 AM - 6:00 PM",
-      "wednesday": "10:00 AM - 2:00 PM",
-      "thursday": "Not available",
-      "friday": "10:00 AM - 6:00 PM"
     },
     "university": "City Medical College"
   },
@@ -172,20 +88,6 @@
       "email": "rahimakhatun@gmail.com",
       "phone": "+1 (555) 345-6789"
     },
-    "address": {
-      "street": "789 Maple Street",
-      "city": "Cityburg",
-      "state": "State",
-      "zip_code": "67890"
-    },
-    "availability": {
-      "Saturday": "Not available",
-      "monday": "10:00 AM - 6:00 PM",
-      "tuesday": "10:00 AM - 6:00 PM",
-      "wednesday": "10:00 AM - 2:00 PM",
-      "thursday": "Not available",
-      "friday": "10:00 AM - 6:00 PM"
-    },
     "university": "City Medical College"
   },
   {
@@ -198,20 +100,6 @@
     "contact": {
       "email": "shahanaakhter@gmail.com",
       "phone": "+1 (555) 345-6789"
-    },
-    "address": {
-      "street": "789 Maple Street",
-      "city": "Cityburg",
-      "state": "State",
-      "zip_code": "67890"
-    },
-    "availability": {
-      "Saturday": "10:00 AM - 5:00 PM",
-      "monday": "10:00 AM - 6:00 PM",
-      "tuesday": "10:00 AM - 6:00 PM",
-      "wednesday": "10:00 AM - 2:00 PM",
-      "thursday": "Not available",
-      "friday": "10:00 AM - 6:00 PM"
     },
     "university": "City Medical College"
   }

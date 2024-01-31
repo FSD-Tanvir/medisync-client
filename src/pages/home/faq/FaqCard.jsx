@@ -5,7 +5,7 @@ import { MdKeyboardArrowDown } from "react-icons/md";
 const FaqCard = ({ fData }) => {
   const [active, setActive] = useState(false);
   return (
-    <div className="w-full bg-cyan-400 my-3 p-3 rounded-md">
+    <div className="w-full bg-[#003049] my-3 p-3 rounded-md">
       <div
         onClick={() => setActive(!active)}
         className="flex justify-between items-center"
@@ -22,7 +22,7 @@ const FaqCard = ({ fData }) => {
         )}
       </div>
       <p
-        className="text-left text-gray-800"
+        className="text-left text-white"
         style={{ display: active ? "block" : "none" }}
       >
         {fData.answer}
