@@ -201,37 +201,6 @@ const ByProducts = () => {
                         </div>
                 }
             </div>
-            {/* <div className="flex justify-center mt-5">
-                Pagination controls
-                {!isLoading && (
-                    <div className="flex items-center gap-3">
-                        <button
-                            onClick={() => handlePageChange(currentPage - 1)}
-                            disabled={currentPage === 1}
-                            className="mx-1 px-3 py-1 border"
-                        >
-                            Prev
-                        </button>
-                        {Array.from({ length: totalPageCount }, (_, index) => (
-                            <button
-                                key={index + 1}
-                                onClick={() => handlePageChange(index + 1)}
-                                className={`mx-1 px-3 py-1 border ${currentPage === index + 1 ? 'bg-[#003049] text-white' : 'bg-white'
-                                    }`}
-                            >
-                                {index + 1}
-                            </button>
-                        ))}
-                        <button
-                            onClick={() => handlePageChange(currentPage + 1)}
-                            disabled={currentPage === totalPageCount}
-                            className="mx-1 px-3 py-1 border"
-                        >
-                            Next
-                        </button>
-                    </div>
-                )}
-            </div> */}
             <div className="flex justify-center mt-5">
                 {/* Pagination controls */}
                 {!isLoading && <div className="flex items-center gap-3">{renderPaginationButtons()}</div>}
