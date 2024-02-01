@@ -113,6 +113,6 @@ export const router = createBrowserRouter([
         path: "advices/allAdvices",
         element: <AllAdvices></AllAdvices>
       }
-    ]
-  }
+    ],
+  },
 ]);
