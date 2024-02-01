@@ -1,12 +1,27 @@
 import { useContext, useEffect } from "react";
-import { FaFacebookF, FaUnlockAlt } from "react-icons/fa";
-import { FcGoogle } from "react-icons/fc";
+
 import { MdEmail } from "react-icons/md";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { AuthContext } from "../../../Porviders/AuthProvider";
 import Swal from "sweetalert2";
+import { FaUnlockAlt } from "react-icons/fa";
 import { VscLoading } from "react-icons/vsc";
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
+import SocialLogin from "../../../components/sociallogin/SocialLogin";
+// Import Swiper React components
+import { Swiper, SwiperSlide } from 'swiper/react';
+
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/pagination';
+import 'swiper/css/navigation';
+
+// import required modules
+import { Autoplay, Pagination, Navigation } from 'swiper/modules';
+
+
 const LogIn = ({ setShowRegister, setShowModal }) => {
     const { logIn, loading, setLoading } = useContext(AuthContext);
 
@@ -55,13 +70,33 @@ const LogIn = ({ setShowRegister, setShowModal }) => {
         <div className="relative p-5 flex-auto">
             <div className="flex flex-col-reverse lg:flex-row items-center justify-center">
                 <div className="w-full lg:w-[50%] flex flex-col items-center">
-                    <div className="mx-4 py-4 text-center">
-                        <img className="w-[250px] rounded-lg shadow-md mb-4" src="https://i.ibb.co/rMgb1GB/download.jpg" alt="" />
-                        <p className="font-bold text-2xl py-2">Instant support & reply</p>
-                        <p className="text-blue-500 py-2">
-                            Medisync will receive your order and be able to <br /> reply to you once you place an order and ask for help.
-                        </p>
-                    </div>
+                    <Swiper
+                        spaceBetween={30}
+                        centeredSlides={true}
+                        autoplay={{
+                            delay: 2500,
+                            disableOnInteraction: false,
+                        }}
+                        pagination={{
+                            clickable: true,
+                        }}
+                        modules={[Autoplay, Pagination, Navigation]}
+                        className="mySwiper"
+                    >
+                        <SwiperSlide><div className="mx-4 py-4 text-center">
+                            <img className="w-[200px] rounded-lg shadow-md mb-4" src="https://i.ibb.co/rMgb1GB/download.jpg" alt="" />
+                            <p className="font-bold text-2xl py-2">Instant support & reply</p>
+                        </div></SwiperSlide>
+                        <SwiperSlide><div className="mx-4 py-4 text-center">
+                            <img className="w-[250px] rounded-lg shadow-md mb-4" src="https://i.ibb.co/rMgb1GB/download.jpg" alt="" />
+                            <p className="font-bold text-2xl py-2">Instant support & reply</p>
+                        </div></SwiperSlide>
+                        <SwiperSlide><div className="mx-4 py-4 text-center">
+                            <img className="w-[250px] rounded-lg shadow-md mb-4" src="https://i.ibb.co/rMgb1GB/download.jpg" alt="" />
+                            <p className="font-bold text-2xl py-2">Instant support & reply</p>
+                        </div></SwiperSlide>
+                    </Swiper>
+
                 </div>
                 <div className="flex flex-col gap-6 w-full lg:w-[50%]">
                     <h2 className="font-bold text-3xl text-center mb-2">Login</h2>
@@ -96,12 +131,8 @@ const LogIn = ({ setShowRegister, setShowModal }) => {
                             <p>{`Don't Have Account ?`} <button onClick={() => setShowRegister(true)} className="font-bold text-center">Register</button></p>
                         </div>
                     </form>
-                    <h1 className="text-lg font-bold text-center">Or Continue with</h1>
-                    <div className="flex justify-center items-center gap-4">
-                        <button className="text-white bg-[#3d5a9a] text-xl p-3 rounded-lg"><FaFacebookF /></button>
-                        <button className="text-white bg-slate-200 text-xl p-2 rounded-lg"><FcGoogle /></button>
-                    </div>
-
+                    {/* social login */}
+                    <SocialLogin></SocialLogin>
                 </div>
             </div>
         </div>
