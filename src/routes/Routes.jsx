@@ -88,6 +88,10 @@ export const router = createBrowserRouter([
         element: <JobPanel />,
       },
       {
+        path: "job-panel/all-jobs",
+        element: <AllJobs/>
+      },
+      {
         path: "job-panel/update-job/:id",
         element: <UpdateJob />,
         loader: async ({ params }) => {
