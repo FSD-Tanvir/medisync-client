@@ -1,9 +1,6 @@
 import { FaUser } from "react-icons/fa6";
 import { FaUnlockKeyhole } from "react-icons/fa6";
-import { FaFacebookF } from "react-icons/fa6";
-import { FcGoogle } from "react-icons/fc";
 import { MdAttachEmail } from "react-icons/md";
-import { FaTwitter } from "react-icons/fa";
 import regImg from '../../../assets/LogIn/doctor-register.jpg'
 import { useContext, useEffect } from "react";
 import AOS from 'aos';
@@ -13,6 +10,7 @@ import { updateProfile } from "@firebase/auth";
 import Swal from "sweetalert2";
 import { VscLoading } from "react-icons/vsc";
 import useAxiosPublic from "../../../hooks/useAxiosPublic";
+import SocialLogin from "../../../components/sociallogin/SocialLogin";
 
 
 
@@ -70,16 +68,17 @@ const Register = ({ setShowRegister, setShowModal }) => {
     return (
         <div className="relative p-5 flex-auto ">
             <div className="flex flex-col lg:flex-row-reverse items-center justify-center gap-5">
-                <div className="w-[300px] flex flex-col items-center gap-4">
+                <div className="w-full lg:w-50% flex flex-col items-center gap-4">
                     <div data-aos="zoom-in"
                         data-aos-anchor="#example-anchor"
                         data-aos-offset="500"
                         data-aos-duration="3000">
-                        <img src={regImg} alt="" className="rounded-3xl" />
+                        <img src={regImg} alt="" className="rounded-3xl w-[250px]" />
                     </div>
                     <p>{`Already Have Account ?`} <button onClick={() => setShowRegister(false)} className="font-bold">Log In</button></p>
                 </div>
-                <div className="flex flex-col gap-6">
+                <div className="flex w-full lg:w-50%  flex-col gap-6">
+                <h2 className="font-bold text-2xl py-2 text-center mb-2">Please Registation </h2>
                     <form onSubmit={handleRegister} className="flex flex-col items-center gap-5">
                         <div className="flex items-center border-b border-black gap-2">
                             <FaUser />
@@ -96,16 +95,11 @@ const Register = ({ setShowRegister, setShowModal }) => {
                         <div>
                             {
                                 loading ? <button className=" text-white px-12 py-3 rounded-lg bg-[#4D779F]" disabled><VscLoading className="animate-spin text-2xl"/></button> :
-                                    <button className="bg-[#6eabe4] text-white px-8 py-3 rounded-lg hover:bg-[#4D779F]">Register</button>
+                                    <button className="hover:border-blue-500 hover:text-blue-500 font-semibold py-2 px-2 w-full rounded-md text-xs sm:text-sm md:text-xs lg:text-sm xl:text-xs shadow-[-2px_-2px_12px_2px_rgba(0,0,0,0.1),_2px_2px_12px_2px_rgba(0,0,0,0.1)] bg-blue-500 text-white hover:bg-[#FFF7F4]">Register</button>
                             }
                         </div>
                     </form>
-                    <h1 className="text-lg font-bold text-center">Or Continue with</h1>
-                    <div className="flex justify-center  items-center gap-4">
-                        <button className="text-white bg-[#3d5a9a] text-3xl p-3 rounded-lg" ><FaFacebookF /></button>
-                        <button className="text-white bg-slate-200 text-4xl p-2 rounded-lg" ><FcGoogle /></button>
-                        <button className="text-white bg-[#1ba0f0] text-4xl p-2 rounded-lg" ><FaTwitter /></button>
-                    </div>
+                    <SocialLogin></SocialLogin>
                 </div>
             </div>
         </div>

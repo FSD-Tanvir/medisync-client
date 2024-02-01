@@ -67,75 +67,74 @@ const LogIn = ({ setShowRegister, setShowModal }) => {
     }, []);
 
     return (
-        <div className="relative p-5 flex-auto">
-            <div className="flex flex-col-reverse lg:flex-row items-center justify-center">
-                <div className="w-full lg:w-[50%] flex flex-col items-center">
-                    <Swiper
-                        spaceBetween={30}
-                        centeredSlides={true}
-                        autoplay={{
-                            delay: 2500,
-                            disableOnInteraction: false,
-                        }}
-                        pagination={{
-                            clickable: true,
-                        }}
-                        modules={[Autoplay, Pagination, Navigation]}
-                        className="mySwiper"
-                    >
-                        <SwiperSlide><div className="mx-4 py-4 text-center">
-                            <img className="w-[200px] rounded-lg shadow-md mb-4" src="https://i.ibb.co/rMgb1GB/download.jpg" alt="" />
-                            <p className="font-bold text-2xl py-2">Instant support & reply</p>
-                        </div></SwiperSlide>
-                        <SwiperSlide><div className="mx-4 py-4 text-center">
-                            <img className="w-[250px] rounded-lg shadow-md mb-4" src="https://i.ibb.co/rMgb1GB/download.jpg" alt="" />
-                            <p className="font-bold text-2xl py-2">Instant support & reply</p>
-                        </div></SwiperSlide>
-                        <SwiperSlide><div className="mx-4 py-4 text-center">
-                            <img className="w-[250px] rounded-lg shadow-md mb-4" src="https://i.ibb.co/rMgb1GB/download.jpg" alt="" />
-                            <p className="font-bold text-2xl py-2">Instant support & reply</p>
-                        </div></SwiperSlide>
-                    </Swiper>
-
-                </div>
-                <div className="flex flex-col gap-6 w-full lg:w-[50%]">
-                    <h2 className="font-bold text-3xl text-center mb-2">Login</h2>
-                    <p className="text-blue-500 text-center text-sm mb-4">Login to make an order, access your orders, and health tips!</p>
-                    <form onSubmit={handleLogIn} className="flex flex-col items-center gap-5">
-                        <div className="flex items-center border-b border-black gap-2">
-                            <MdEmail className="text-xl" />
-                            <input
-                                name="email"
-                                className="appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none"
-                                type="email"
-                                placeholder="Email"
-                            />
-                        </div>
-                        <div className="flex items-center border-b border-black gap-2">
-                            <FaUnlockAlt />
-                            <input
-                                name="password"
-                                className="appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none"
-                                type="password"
-                                placeholder="Password"
-                            />
-                        </div>
-                        <div className="mt-2">
-                            {loading ? (
-                                <button className="text-white px-4 py-3 rounded-lg bg-[#4D779F]" disabled>
-                                    <VscLoading className="animate-spin text-2xl" />
-                                </button>
-                            ) : (
-                                <button className="bg-[#6eabe4] w-full text-white px-4 py-2 mb-2 rounded-lg hover:bg-[#4D779F]">Log In</button>
-                            )}
-                            <p>{`Don't Have Account ?`} <button onClick={() => setShowRegister(true)} className="font-bold text-center">Register</button></p>
-                        </div>
-                    </form>
-                    {/* social login */}
-                    <SocialLogin></SocialLogin>
-                </div>
+        <div className="flex flex-col lg:flex-row items-center justify-center">
+            <div className="w-full hidden lg:w-[50%] sm:flex flex-col items-center mb-8 lg:mb-0">
+                <Swiper
+                    spaceBetween={30}
+                    centeredSlides={true}
+                    autoplay={{
+                        delay: 2500,
+                        disableOnInteraction: false,
+                    }}
+                    pagination={{
+                        clickable: true,
+                    }}
+                    modules={[Autoplay, Pagination, Navigation]}
+                    className="mySwiper"
+                >
+                    {/* SwiperSlides go here */}
+                    <SwiperSlide><div className="mx-4 py-4 text-center">
+                        <img className=" rounded-lg shadow-md mb-4" src="https://i.ibb.co/rMgb1GB/download.jpg" alt="" />
+                        <p className="font-bold text-2xl py-2">Instant support & reply</p>
+                    </div></SwiperSlide>
+                    <SwiperSlide><div className="mx-4 py-4 text-center">
+                        <img className=" rounded-lg shadow-md mb-4" src="https://i.ibb.co/jfsJTPr/resize-1.jpg" alt="" />
+                        <p className="font-bold text-2xl py-2">Easy & multi-payment solutions</p>
+                    </div></SwiperSlide>
+                    <SwiperSlide><div className="mx-4 py-4 text-center">
+                        <img className="rounded-lg shadow-md mb-4" src="https://i.ibb.co/HNqV1rb/resize-17.jpg" alt="" />
+                        <p className="font-bold text-2xl py-2">Quick & easy ordering process</p>
+                    </div></SwiperSlide>
+                </Swiper>
+            </div>
+            <div className="flex flex-col w-full lg:w-[50%]">
+                <h2 className="font-bold text-xl sm:text-3xl py-2 text-center mb-2">Please Login Here</h2>
+                <form onSubmit={handleLogIn} className="flex flex-col items-center gap-5">
+                    {/* Form fields go here */}
+                    <div className="flex items-center border-b border-black gap-2">
+                        <MdEmail className="text-xl" />
+                        <input
+                            name="email"
+                            className="appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none"
+                            type="email"
+                            placeholder="Email"
+                        />
+                    </div>
+                    <div className="flex items-center border-b border-black gap-2">
+                        <FaUnlockAlt />
+                        <input
+                            name="password"
+                            className="appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none"
+                            type="password"
+                            placeholder="Password"
+                        />
+                    </div>
+                    <div className="mt-2">
+                        {loading ? (
+                            <button className="text-white px-4 py-3 rounded-lg bg-[#4D779F]" disabled>
+                                <VscLoading className="animate-spin text-2xl" />
+                            </button>
+                        ) : (
+                            <button className="hover:border-blue-500 hover:text-blue-500 font-semibold py-2 px-2 w-full rounded-md text-xs sm:text-sm md:text-xs lg:text-sm xl:text-xs shadow-[-2px_-2px_12px_2px_rgba(0,0,0,0.1),_2px_2px_12px_2px_rgba(0,0,0,0.1)] bg-blue-500 text-white hover:bg-[#FFF7F4]">Log In</button>
+                        )}
+                        <p>{`Don't Have Account ?`} <button onClick={() => setShowRegister(true)} className="font-bold py-2 text-center">Register</button></p>
+                    </div>
+                </form>
+                {/* social login */}
+                <SocialLogin></SocialLogin>
             </div>
         </div>
+
     );
 };
 
