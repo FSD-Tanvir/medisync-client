@@ -1,5 +1,5 @@
 import { useForm } from "react-hook-form";
-import axios from "axios"
+import axios from "axios";
 import toast from "react-hot-toast";
 
 const AddJob = () => {
@@ -9,8 +9,7 @@ const AddJob = () => {
     formState: { errors },
   } = useForm();
 
-  const onSubmit = async(data) => {
-
+  const onSubmit = async (data) => {
     const jobData = {
       title: data?.job_title,
       jobType: data?.job_type,
@@ -25,31 +24,33 @@ const AddJob = () => {
       additionalRequirements: data?.additional_requirements,
       workplace: data?.workplace,
       jobLocation: data?.job_location,
-      address: data?.address
-    }
+      address: data?.address,
+    };
 
     try {
-      const result = await axios.post("http://localhost:5000/jobs/add-job",jobData)
-      if(result.data?.status === true){
-        toast.success("Your job added successfully")
+      const result = await axios.post(
+        "http://localhost:5000/jobs/add-job",
+        jobData
+      );
+      if (result.data?.status === true) {
+        toast.success("Your job added successfully");
       }
     } catch (err) {
       console.log(err);
     }
   };
 
-
   return (
-    <div className="w-80 md:w-96 lg:w-[800px] mx-auto bg-white flex items-center relative overflow-hidden shadow-xl">
+    <div className="w-full lg:w-3/4 mx-auto bg-white flex items-center relative overflow-hidden shadow-xl">
       {/* register form  */}
-      <form onSubmit={handleSubmit(onSubmit)} className={`p-8 w-full`}>
+      <form onSubmit={handleSubmit(onSubmit)} className={`p-4 lg:p-8 w-full`}>
         <h1 className="backdrop-blur-sm text-2xl lg:text-4xl whitespace-nowrap w-min mb-8 border-b-4 border-b-blue-500 capitalize">
           add job
         </h1>
-        <div className="space-y-5">
+        <div className="space-y-5 grid gap-5 grid-cols-1 sm:grid-cols-2 justify-center items-baseline">
           {/* job title  */}
-          <div className="space-y-5 drop-shadow-md">
-            <label htmlFor="job_title" className="block text-blue-500">
+          <div className="space-y-5 drop-shadow-md w-full">
+            <label htmlFor="job_title" className="block text-blue-500 border-l-2 font-semibold pl-2">
               Job Title
             </label>
             <input
@@ -67,8 +68,8 @@ const AddJob = () => {
             )}
           </div>
           {/* job type  */}
-          <div className="space-y-5 drop-shadow-md">
-            <label htmlFor="job_type" className="block text-blue-500">
+          <div className="space-y-5 drop-shadow-md w-full">
+            <label htmlFor="job_type" className="block text-blue-500 border-l-2 font-semibold pl-2">
               Job Type
             </label>
             <input
@@ -86,8 +87,8 @@ const AddJob = () => {
             )}
           </div>
           {/* job department  */}
-          <div className="space-y-5 drop-shadow-md">
-            <label htmlFor="job_department" className="block text-blue-500">
+          <div className="space-y-5 drop-shadow-md w-full">
+            <label htmlFor="job_department" className="block text-blue-500 border-l-2 font-semibold pl-2">
               Job Department
             </label>
             <input
@@ -105,14 +106,17 @@ const AddJob = () => {
             )}
           </div>
           {/* job vacancy  */}
-          <div className="space-y-5 drop-shadow-md">
-            <label htmlFor="job_vacancy" className="block text-blue-500">
+          <div className="space-y-5 drop-shadow-md w-full">
+            <label htmlFor="job_vacancy" className="block text-blue-500 border-l-2 font-semibold pl-2">
               Job vacancy
             </label>
             <input
               id="job_vacancy"
               type="number"
-              {...register("job_vacancy", { required: true, valueAsNumber:true})}
+              {...register("job_vacancy", {
+                required: true,
+                valueAsNumber: true,
+              })}
               placeholder="Enter job Vacancy"
               className="p-3 block w-full outline-1 border valid:outline-blue-500 rounded-md invalid:outline-red-600"
             />
@@ -122,13 +126,12 @@ const AddJob = () => {
                 This field is required
               </span>
             )}
-            
           </div>
           {/* compensation And Benefits  */}
-          <div className="space-y-5 drop-shadow-md">
+          <div className="space-y-5 drop-shadow-md w-full">
             <label
               htmlFor="compensation_and_benefits"
-              className="block text-blue-500"
+              className="block text-blue-500 border-l-2 font-semibold pl-2"
             >
               Job Compensation and Benefits
             </label>
@@ -147,8 +150,8 @@ const AddJob = () => {
             )}
           </div>
           {/* job Context  */}
-          <div className="space-y-5 drop-shadow-md">
-            <label htmlFor="job_salary" className="block text-blue-500">
+          <div className="space-y-5 drop-shadow-md w-full">
+            <label htmlFor="job_salary" className="block text-blue-500 border-l-2 font-semibold pl-2">
               Job Salary
             </label>
             <input
@@ -166,8 +169,8 @@ const AddJob = () => {
             )}
           </div>
           {/* job context  */}
-          <div className="space-y-5 drop-shadow-md">
-            <label htmlFor="job_context" className="block text-blue-500">
+          <div className="space-y-5 drop-shadow-md w-full">
+            <label htmlFor="job_context" className="block text-blue-500 border-l-2 font-semibold pl-2">
               Job Context
             </label>
             <input
@@ -185,8 +188,11 @@ const AddJob = () => {
             )}
           </div>
           {/* job Responsibilities  */}
-          <div className="space-y-5 drop-shadow-md">
-            <label htmlFor="job_responsibilities" className="block text-blue-500">
+          <div className="space-y-5 drop-shadow-md w-full">
+            <label
+              htmlFor="job_responsibilities"
+              className="block text-blue-500 border-l-2 font-semibold pl-2"
+            >
               Job Responsibilities
             </label>
             <input
@@ -204,8 +210,11 @@ const AddJob = () => {
             )}
           </div>
           {/* educational Requirements  */}
-          <div className="space-y-5 drop-shadow-md">
-            <label htmlFor="educational_requirements" className="block text-blue-500">
+          <div className="space-y-5 drop-shadow-md w-full">
+            <label
+              htmlFor="educational_requirements"
+              className="block text-blue-500 border-l-2 font-semibold pl-2"
+            >
               Educational Requirements
             </label>
             <input
@@ -223,8 +232,11 @@ const AddJob = () => {
             )}
           </div>
           {/* experience Requirements  */}
-          <div className="space-y-5 drop-shadow-md">
-            <label htmlFor="experience_requirements" className="block text-blue-500">
+          <div className="space-y-5 drop-shadow-md w-full">
+            <label
+              htmlFor="experience_requirements"
+              className="block text-blue-500 border-l-2 font-semibold pl-2"
+            >
               Experience Requirements
             </label>
             <input
@@ -242,9 +254,12 @@ const AddJob = () => {
             )}
           </div>
           {/* experience Requirements  */}
-          <div className="space-y-5 drop-shadow-md">
-            <label htmlFor="additional_requirements" className="block text-blue-500">
-            Additional Requirements
+          <div className="space-y-5 drop-shadow-md w-full">
+            <label
+              htmlFor="additional_requirements"
+              className="block text-blue-500 border-l-2 font-semibold pl-2"
+            >
+              Additional Requirements
             </label>
             <input
               id="additional_requirements"
@@ -261,9 +276,9 @@ const AddJob = () => {
             )}
           </div>
           {/* workplace  */}
-          <div className="space-y-5 drop-shadow-md">
-            <label htmlFor="workplace" className="block text-blue-500">
-            Workplace
+          <div className="space-y-5 drop-shadow-md w-full">
+            <label htmlFor="workplace" className="block text-blue-500 border-l-2 font-semibold pl-2">
+              Workplace
             </label>
             <input
               id="workplace"
@@ -280,9 +295,9 @@ const AddJob = () => {
             )}
           </div>
           {/* job Location  */}
-          <div className="space-y-5 drop-shadow-md">
-            <label htmlFor="job_location" className="block text-blue-500">
-            Job Location
+          <div className="space-y-5 drop-shadow-md w-full">
+            <label htmlFor="job_location" className="block text-blue-500 border-l-2 font-semibold pl-2">
+              Job Location
             </label>
             <input
               id="job_location"
@@ -299,9 +314,9 @@ const AddJob = () => {
             )}
           </div>
           {/* job address  */}
-          <div className="space-y-5 drop-shadow-md">
-            <label htmlFor="address" className="block text-blue-500">
-            Job Address
+          <div className="space-y-5 drop-shadow-md w-full">
+            <label htmlFor="address" className="block text-blue-500 border-l-2 font-semibold pl-2">
+              Job Address
             </label>
             <input
               id="address"
@@ -320,13 +335,10 @@ const AddJob = () => {
         </div>
         {/* add job button  */}
         <div className="text-center mt-8">
-        <button className="border hover:border-blue-500 hover:text-blue-500 font-semibold py-2 px-2 rounded-md w-1/3 shadow-[-2px_-2px_12px_2px_rgba(0,0,0,0.1),_2px_2px_12px_2px_rgba(0,0,0,0.1)] bg-blue-500 text-white hover:bg-[#FFF7F4] transition-colors duration-200 ease-linear">
+          <button className="border hover:border-blue-500 hover:text-blue-500 font-semibold py-2 px-2 rounded-md w-1/3 shadow-[-2px_-2px_12px_2px_rgba(0,0,0,0.1),_2px_2px_12px_2px_rgba(0,0,0,0.1)] bg-blue-500 text-white hover:bg-[#FFF7F4] transition-colors duration-200 ease-linear">
             Add Job
           </button>
-
         </div>
-          
-        {/* <p className="mb-3 text-center">Already have an account?<Link className="underline font-semibold">Login</Link></p> */}
       </form>
     </div>
   );
