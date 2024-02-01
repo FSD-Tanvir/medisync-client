@@ -192,7 +192,7 @@ const Dashboard = () => {
         <Outlet></Outlet>
       </div>
     </div>
-  );
+  );     
 };
 
 export default Dashboard;
