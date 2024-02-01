@@ -2,20 +2,52 @@ import Navbar from "./Navbar";
 import useAdvices from "../../../hooks/useAdvices";
 import { FaEdit } from "react-icons/fa";
 import { MdDeleteOutline } from "react-icons/md";
+import useAxiosPublic from "../../../hooks/useAxiosPublic";
+import Swal from "sweetalert2";
+import { useState } from "react";
+import AdviceUpdate from "./AdviceUpdate";
 
 const AllAdvices = () => {
-    const [advices, ,] = useAdvices();
+    const [advices, , refetch] = useAdvices();
+    const [showModal, setShowModal] = useState(false);
+    const [clickAbleId, setClickAbleId] = useState(" ")
+    const axiosPublic = useAxiosPublic()
     console.log(advices);
     const generalStyle = "text-left text-gray-700 text-center capitalize  px-2 py-2"
     const flexStyle = "flex justify-center items-center"
 
-    const handleUpdate = (id) => {
-        console.log(id);
-    }
     const handleDelete = (id) => {
-        console.log(id);
+        Swal.fire({
+            title: "Are you sure?",
+            text: "You won't be able to revert this!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Yes, delete it!"
+          }).then(async (result) => {
+            if (result.isConfirmed) {
+                await axiosPublic.delete(`/advices/deleteAdvice/${id}`)
+                .then(res => {
+                    console.log(res.data)
+                        if (res.data.deletedCount > 0 ) {
+                            Swal.fire({
+                                title: "Success!",
+                                text: "Deleted Successfully.",
+                                icon: "success"
+                            });
+                            refetch()
+                        }
+                })
+            }
+          });
+        
     }
-
+const handleModal = (_id) => {
+    setShowModal(!showModal)
+    setClickAbleId(_id)
+}
+console.log(clickAbleId);
     return (
         <div>
             <Navbar></Navbar>
@@ -46,7 +78,7 @@ const AllAdvices = () => {
                                         </th>
                                         <th className="">
                                             <div className={flexStyle}>
-                                                <FaEdit onClick={() => handleUpdate(advice._id)} className="text-xl "></FaEdit>
+                                                <FaEdit onClick={() => handleModal(advice._id)} className="text-xl "></FaEdit>
                                             </div>
                                         </th>
                                         <th className="">
@@ -67,6 +99,7 @@ const AllAdvices = () => {
                 </div>
 
             </div>
+            <AdviceUpdate clickAbleId={clickAbleId} showModal={showModal} setShowModal={setShowModal}></AdviceUpdate>
         </div >
     );
 };
