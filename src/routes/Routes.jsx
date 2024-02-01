@@ -118,6 +118,6 @@ export const router = createBrowserRouter([
         path: "doctors",
         element: <ManageDoctors/>
       }
-    ]
-  }
+    ],
+  },
 ]);
