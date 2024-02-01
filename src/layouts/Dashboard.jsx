@@ -1,27 +1,28 @@
 /* eslint-disable react/no-unescaped-entities */
 import { FaHome, FaUsers, FaUtensils } from "react-icons/fa";
-import { GiMeal } from "react-icons/gi"
+import { GiMeal } from "react-icons/gi";
 import { CgProfile } from "react-icons/cg";
-import { MdFoodBank, MdRateReview } from "react-icons/md"
+import { MdFoodBank, MdRateReview } from "react-icons/md";
 import { NavLink, Outlet, useLocation } from "react-router-dom";
 import { BiSolidFoodMenu } from "react-icons/bi";
 // import useAdmin from "../../hooks/useAdmin";
-import { useEffect } from "react"
-
+import { useEffect } from "react";
 
 const Dashboard = () => {
-    const isAdmin = " ";
-    const location = useLocation();
+  const isAdmin = " ";
+  const location = useLocation();
 
-    useEffect(() => {
-        console.log(location.pathname);
-        if (location.pathname == '/') {
-            document.title = 'MediSync | Home'
-        }
-        else {
-            document.title = `MediSync | Dashboard ${location.pathname.replace('/Dashboard/', '| ')}`
-        }
-    }, [location.pathname])
+  useEffect(() => {
+    console.log(location.pathname);
+    if (location.pathname == "/") {
+      document.title = "MediSync | Home";
+    } else {
+      document.title = `MediSync | Dashboard ${location.pathname.replace(
+        "/Dashboard/",
+        "| "
+      )}`;
+    }
+  }, [location.pathname]);
 
 
     return (
@@ -92,7 +93,7 @@ const Dashboard = () => {
                     </ul>
                 </>
             </div>
-            <div className="flex-1">
+            <div className="flex-1 overflow-auto">
                 <Outlet></Outlet>
             </div>
         </div>
