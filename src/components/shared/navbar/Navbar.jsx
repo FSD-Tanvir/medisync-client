@@ -22,6 +22,7 @@ const menuItems = [
   { id: 4, icon: <FiFilePlus />, item: "Articles", link: "/articles" },
   { id: 5, icon: <FaUserDoctor />, item: "Meet Doctors", link: "/doctors" },
   { id: 6, icon: <GrWorkshop />, item: "Career", link: "/career" },
+  { id: 6, icon: <GrWorkshop />, item: "Dashboard", link: "/dashboard" },
 ];
 
 const Navbar = () => {
