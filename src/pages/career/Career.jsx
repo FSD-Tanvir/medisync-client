@@ -8,7 +8,7 @@ const Career = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch("https://medisync-server.vercel.app/jobs")
+    fetch("http://localhost:5000/jobs")
       .then((res) => res.json())
       .then((data) => {
         setJobsData(data.data)

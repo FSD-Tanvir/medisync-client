@@ -20,6 +20,7 @@ import AddJob from "../pages/dashboard/jobPanel/addJob/AddJob";
 import AllJobs from "../pages/dashboard/jobPanel/allJobs/AllJobs";
 import UpdateJob from "../pages/dashboard/jobPanel/allJobs/UpdateJob";
 import axios from "axios";
+import ManageDoctors from "../pages/Dashboard/doctors/ManageDoctors";
 
 export const router = createBrowserRouter([
   // Main Layout
@@ -73,7 +74,7 @@ export const router = createBrowserRouter([
         path: "career/job-details/:id",
         element: <JobDetails />,
         loader: ({ params }) =>
-          fetch(`https://medisync-server.vercel.app/jobs/single/${params.id}`),
+          fetch(`http://localhost:5000/jobs/single/${params.id}`),
       },
       { path: "contact-us", element: <ContactUs /> },
     ],
@@ -112,6 +113,10 @@ export const router = createBrowserRouter([
       {
         path: "advices/allAdvices",
         element: <AllAdvices></AllAdvices>
+      },
+      {
+        path: "doctors",
+        element: <ManageDoctors/>
       }
     ]
   }

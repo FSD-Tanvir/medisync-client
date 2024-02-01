@@ -47,10 +47,7 @@ const Dashboard = () => {
                                 <NavLink to="/Dashboard/AllReviews" className="font-semibold flex justify-start items-center gap-1 pl-5"><MdRateReview /> All Reviews</NavLink>
                             </li>
                             <li>
-                                <NavLink to="/Dashboard/ServeMeals" className="font-semibold flex justify-start items-center gap-1 pl-5"><MdFoodBank />Add Doctor</NavLink>
-                            </li>
-                            <li>
-                                <NavLink to="/Dashboard/ServeMeals" className="font-semibold flex justify-start items-center gap-1 pl-5"><MdFoodBank />All Doctors</NavLink>
+                                <NavLink to="/dashboard/doctors" className="font-semibold flex justify-start items-center gap-1 pl-5"><MdFoodBank />Doctors</NavLink>
                             </li>
                             <li>
                                 <NavLink to="/Dashboard/UpcomingMeals" className="font-semibold flex justify-start items-center gap-1 pl-5"><BiSolidFoodMenu /> Add News & Articles</NavLink>
