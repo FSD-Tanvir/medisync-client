@@ -15,6 +15,8 @@ import JobPanel from "../pages/dashboard/jobPanel/JobPanel";
 import Overview from "../pages/dashboard/jobPanel/overview/Overview";
 import AddJob from "../pages/dashboard/jobPanel/addJob/AddJob";
 import AllJobs from "../pages/dashboard/jobPanel/allJobs/AllJobs";
+import UpdateJob from "../pages/dashboard/jobPanel/allJobs/UpdateJob";
+import axios from "axios";
 
 export const router = createBrowserRouter([
   // Main Layout
@@ -27,12 +29,12 @@ export const router = createBrowserRouter([
         element: <Home />,
       },
       {
-        path:"/all-products",
-        element:<ByProducts></ByProducts>
+        path: "/all-products",
+        element: <ByProducts></ByProducts>,
       },
       {
-        path:"/all-products/:cat",
-        element:<ByProducts></ByProducts>
+        path: "/all-products/:cat",
+        element: <ByProducts></ByProducts>,
       },
 
       {
@@ -62,39 +64,36 @@ export const router = createBrowserRouter([
       },
       {
         path: "career",
-        element: <Career/>,
+        element: <Career />,
       },
       {
         path: "career/job-details/:id",
         element: <JobDetails />,
-        loader: ({params}) => fetch(`https://medisync-server.vercel.app/jobs/single/${params.id}`)
+        loader: ({ params }) =>
+          fetch(`https://medisync-server.vercel.app/jobs/single/${params.id}`),
       },
-      { path: "contact-us",
-       element: <ContactUs /> 
-      }
+      { path: "contact-us", element: <ContactUs /> },
     ],
   },
-  // Dashboard Layout 
+  // Dashboard Layout
   {
     path: "/dashboard",
     element: <Dashboard></Dashboard>,
-    children:[
+    children: [
       {
         path: "job-panel",
-        element: <JobPanel/>
+        element: <JobPanel />,
       },
       {
-        path: "job-panel/overview",
-        element: <Overview/>
+        path: "job-panel/update-job/:id",
+        element: <UpdateJob />,
+        loader: async ({ params }) => {
+          return await axios.get(
+            `http://localhost:5000/jobs/single/${params.id}`
+            
+          )
+        },
       },
-      {
-        path: "job-panel/add-job",
-        element: <AddJob/>
-      },
-      {
-        path: "job-panel/all-jobs",
-        element: <AllJobs/>
-      },
-    ]
-  }
+    ],
+  },
 ]);
