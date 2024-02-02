@@ -11,7 +11,7 @@ const SocialLogin = () => {
     const handelGoogleLogin = (media) => {
         media()
             .then(result => {
-                console.log(result)
+                // console.log(result)
                 const userInfo = {
                     name: result.user?.displayName,
                     email: result.user?.email,
@@ -21,7 +21,7 @@ const SocialLogin = () => {
                 axiosPublic.post('/users', userInfo)
                     .then(res => {
                         if (res.data.insertedId) {
-                            console.log(res.data)
+                            // console.log(res.data)
                             Swal.fire({
                                 position: "center",
                                 icon: "success",
