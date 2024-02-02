@@ -53,7 +53,7 @@ const Navbar = () => {
                 <IoCartOutline size={36} />
               </div>
               {
-                user?.email ? <Link to="/dashboard/doctors">
+                user?.email ? <Link to="/dashboard">
                 <div >
                   <img className="w-8 h-8 sm:w-10 sm:h-10 rounded-full" src={user?.photoURL} />
                 </div>
@@ -132,7 +132,7 @@ const Navbar = () => {
                 <IoCartOutline size={36} />
               </div>
               {
-                user?.email ? <Link to="/dashboard/doctors">
+                user?.email ? <Link to="/dashboard">
                 <div>
                   <img className="w-10 h-10 rounded-full" src={user?.photoURL} />
                 </div>

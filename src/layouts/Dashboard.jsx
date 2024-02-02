@@ -11,6 +11,7 @@ import { useEffect } from "react";
 const Dashboard = () => {
   const isAdmin = " ";
   const location = useLocation();
+  const isDashboard =  location.pathname === "/dashboard" || false;
 
 
   useEffect(() => {
@@ -31,55 +32,6 @@ const Dashboard = () => {
         <ul className="menu space-y-2">
           {isAdmin ? (
             <>
-              {/* <li>
-                <NavLink
-                  to="/Dashboard/AdminProfile"
-                  className="font-semibold flex justify-start items-center gap-1 pl-5 pt-5"
-                >
-                  <CgProfile></CgProfile>Admin Profile
-                </NavLink>
-              </li>
-              <li>
-                <NavLink
-                  to="/Dashboard/ManageUsers"
-                  className="font-semibold flex justify-start items-center gap-1 pl-5"
-                >
-                  <FaUsers></FaUsers> Manage Users
-                </NavLink>
-              </li>
-              <li>
-                <NavLink
-                  to="/Dashboard/AddMeal"
-                  className="font-semibold flex justify-start items-center gap-1 pl-5"
-                >
-                  <GiMeal></GiMeal>Add Product
-                </NavLink>
-              </li>
-              <li>
-                <NavLink
-                  to="/Dashboard/AllMeals"
-                  className="font-semibold flex justify-start items-center gap-1 pl-5"
-                >
-                  <FaUtensils></FaUtensils> All Products
-                </NavLink>
-              </li>
-              <li>
-                <NavLink
-                  to="/Dashboard/AllReviews"
-                  className="font-semibold flex justify-start items-center gap-1 pl-5"
-                >
-                  <MdRateReview /> All Reviews
-                </NavLink>
-              </li>
-              <li>
-                <NavLink
-                  to="/Dashboard/ServeMeals"
-                  className="font-semibold flex justify-start items-center gap-1 pl-5"
-                >
-                  <MdFoodBank />
-                  Add Doctor
-                </NavLink>
-              </li> */}
               <li>
                 <NavLink
                   to="/Dashboard/doctors"
@@ -190,7 +142,7 @@ const Dashboard = () => {
       </div>
 
       <div className="flex-1 overflow-auto">
-        <Outlet></Outlet>
+        {isDashboard? <><div className="flex items-center justify-center bg-blue-300 text-2xl lg:text-6xl font-bold min-h-screen text-center ">Welcome <br /> To  <br /> Admin Dashboard</div></> : <Outlet></Outlet>}
       </div>
     </div>
   );     

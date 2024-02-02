@@ -6,7 +6,7 @@ const AllDoctors = () => {
   const { data: allDoctorsData = [], refetch } = useQuery({
     queryKey: ["allDoctors"],
     queryFn: async () => {
-      const res = await axios.get("http://localhost:5000/doctors");
+      const res = await axios.get("https://medisync-server.vercel.app/doctors");
       return res?.data;
     },
   });

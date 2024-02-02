@@ -32,7 +32,7 @@ const UpdateDoctor = () => {
 
     try {
       const res = await axios.put(
-        `http://localhost:5000/doctors/${doctor?._id}`,
+        `https://medisync-server.vercel.app/doctors/${doctor?._id}`,
         updatedDoctorData
       );
       if (res.data.status === true) {

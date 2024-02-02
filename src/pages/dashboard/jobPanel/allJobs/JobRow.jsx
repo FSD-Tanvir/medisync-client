@@ -26,7 +26,7 @@ const JobRow = ({ job, idx, refetch }) => {
       if (result.isConfirmed) {
         const deleteJob = async () => {
           const res = await axios.delete(
-            `http://localhost:5000/jobs/delete-job/${_id}`
+            `https://medisync-server.vercel.app/jobs/delete-job/${_id}`
           );
           if (res.data.status === true) {
             refetch();
