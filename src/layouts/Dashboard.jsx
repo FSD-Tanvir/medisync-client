@@ -12,6 +12,7 @@ const Dashboard = () => {
   const isAdmin = " ";
   const location = useLocation();
 
+
   useEffect(() => {
     console.log(location.pathname);
     if (location.pathname == "/") {
@@ -90,7 +91,9 @@ const Dashboard = () => {
               </li>
               <li>
                 <NavLink
+
                   to="/Dashboard/add-articles"
+
                   className="font-semibold flex justify-start items-center gap-1 pl-5"
                 >
                   <BiSolidFoodMenu /> Add News & Articles
@@ -98,7 +101,9 @@ const Dashboard = () => {
               </li>
               <li>
                 <NavLink
+
                   to="/Dashboard/all-articles"
+
                   className="font-semibold flex justify-start items-center gap-1 pl-5"
                 >
                   <BiSolidFoodMenu /> All News & Articles
@@ -106,11 +111,13 @@ const Dashboard = () => {
               </li>
               <li>
                 <NavLink
+
                   to="/Dashboard/advices"
                   className="font-semibold flex justify-start items-center gap-1 pl-5"
                 >
                   <BiSolidFoodMenu />
                   Advices
+
                 </NavLink>
               </li>
               <li>
@@ -181,11 +188,13 @@ const Dashboard = () => {
           </ul>
         </>
       </div>
-      <div className="flex-1">
+
+      <div className="flex-1 overflow-auto">
         <Outlet></Outlet>
       </div>
     </div>
-  );
+  );     
+
 };
 
 export default Dashboard;

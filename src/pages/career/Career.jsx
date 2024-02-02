@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import BannerSimple from "../../components/shared/Banners/BannerSimple/BannerSimple";
+import { Scrollbars } from "react-custom-scrollbars";
+
 
 const Career = () => {
   const [jobsData, setJobsData] = useState([]);
@@ -16,9 +18,13 @@ const Career = () => {
       });
   }, []);
 
-  const handleDepartment = (id) => {
-    if (id !== "all_jobs") {
-      const selectedDepartment = jobsData.filter((job) => job._id === id);
+
+  const handleDepartment = (department) => {
+    if (department !== "all_jobs") {
+      const selectedDepartment = jobsData.filter(
+        (job) => job?.department.toLowerCase() === department.toLowerCase()
+      );
+
       setDisplayJobs(selectedDepartment);
     } else {
       setDisplayJobs(jobsData);
@@ -29,6 +35,7 @@ const Career = () => {
   const handleJobClick = (id) => {
     navigate(`/career/job-details/${id}`);
   };
+
 
   return (
     <div className="min-h-[90vh] mb-20">
@@ -41,38 +48,65 @@ const Career = () => {
       />
 
       {/* department cards  */}
-      <div className="flex gap-6 w-11/12 sm:w-4/5 mx-auto overflow-x-auto p-3 rounded-lg -mt-[30px] bg-[#003049]">
-        {/* department card*/}
+
+      <div className="flex gap-6 w-11/12 sm:w-4/5 mx-auto overflow-auto p-3 rounded-lg -mt-[30px] bg-[#003049]">
+        {/* department cards*/}
         {/* see all jobs button */}
-        <div
-          onClick={() => handleDepartment("all_jobs")}
-          className="relative flex justify-center items-center bg-[#003049] rounded-lg shadow-lg border h-[40px] sm:h-[60px] w-min  whitespace-nowrap px-4 cursor-pointer"
-        >
-          <h3 className="flex justify-center items-center sm:text-xl text-white font-bold select-">
-            All Jobs
-            <span className="flex justify-center absolute -top-3 -right-3 bg-[#003049] items-center ml-2 border w-8 h-8 rounded-full">
-              {jobsData?.length}
-            </span>
-          </h3>
-        </div>
-        {/* showing departments  */}
-        {jobsData?.map((job) => (
           <div
-            onClick={() => handleDepartment(job._id)}
-            key={job._id}
+            onClick={() => handleDepartment("all_jobs")}
             className="relative flex justify-center items-center bg-[#003049] rounded-lg shadow-lg border h-[40px] sm:h-[60px] w-min  whitespace-nowrap px-4 cursor-pointer"
           >
             <h3 className="flex justify-center items-center sm:text-xl text-white font-bold select-">
-              {job.department.replace(/_/g, " ")}
+              All Jobs
               <span className="flex justify-center absolute -top-3 -right-3 bg-[#003049] items-center ml-2 border w-8 h-8 rounded-full">
-                {job.vacancy}
+                {jobsData?.length}
               </span>
             </h3>
           </div>
-        ))}
+          {/* showing departments  */}
+          {jobsData?.map((job) => (
+            <div
+              onClick={() => handleDepartment(job?.department)}
+              key={job._id}
+              className="relative flex justify-center items-center bg-[#003049] rounded-lg shadow-lg border h-[40px] sm:h-[60px] w-min  whitespace-nowrap px-4 cursor-pointer"
+            >
+              <h3 className="flex justify-center items-center sm:text-xl text-white font-bold select-">
+                {job.department.replace(/_/g, " ")}
+                <span className="flex justify-center absolute -top-3 -right-3 bg-[#003049] items-center ml-2 border w-8 h-8 rounded-full">
+                  {job.vacancy}
+                </span>
+              </h3>
+            </div>
+          ))}
       </div>
       {/* all jobs */}
       <div className="mt-14 px-2">
+        {/* <div className="border">
+          <Scrollbars
+            autoHide
+            autoHideTimeout={1000}
+            autoHideDuration={200}
+            style={scrollbarStyles}
+            renderThumbVertical={({ style, ...props }) => (
+              <div {...props} style={{ ...style, ...thumbStyles }} />
+            )}
+          >
+            Your scrollable content goes here
+            <div
+              style={{ height: 100, width: 300, border: "3px solid yellow" }}
+            >
+              <p>
+                this is dummpy text this is dummpy text this is dummpy text this
+                is dummpy text this is dummpy text this is dummpy text this is
+                dummpy text this is dummpy text this is dummpy text this is
+                dummpy text this is dummpy text this is dummpy text this is
+                dummpy text this is dummpy text this is dummpy text this is
+                dummpy text this is dummpy text this is dummpy text this is
+                dummpy text this is dummpy text{" "}
+              </p>
+            </div>
+          </Scrollbars>
+        </div> */}
         {/* heading  */}
         <h2 className="text-3xl text-black/70 font-semibold text-center">
           All Jobs

@@ -18,9 +18,15 @@ import JobPanel from "../pages/dashboard/jobPanel/JobPanel";
 import Overview from "../pages/dashboard/jobPanel/overview/Overview";
 import AddJob from "../pages/dashboard/jobPanel/addJob/AddJob";
 import AllJobs from "../pages/dashboard/jobPanel/allJobs/AllJobs";
+
 import AllArticles from "../pages/Dashboard/allArticles/AllArticles";
 import AddNewsAndArticles from "../pages/Dashboard/addNewsAndArticles/AddNewsAndArticles";
 import EditArticle from "../pages/Dashboard/allArticles/EditArticle";
+
+import UpdateJob from "../pages/dashboard/jobPanel/allJobs/UpdateJob";
+import axios from "axios";
+import ManageDoctors from "../pages/Dashboard/doctors/ManageDoctors";
+
 
 export const router = createBrowserRouter([
   // Main Layout
@@ -100,7 +106,19 @@ export const router = createBrowserRouter([
         path: "job-panel/all-jobs",
         element: <AllJobs />,
       },
+
       {
+        path: "job-panel/update-job/:id",
+        element: <UpdateJob />,
+        loader: async ({ params }) => {
+          return await axios.get(
+            `http://localhost:5000/jobs/single/${params.id}`
+            
+          )
+        },
+      },
+      {
+
         path: "advices",
         element: <Advices></Advices>,
       },
@@ -110,6 +128,7 @@ export const router = createBrowserRouter([
       },
       {
         path: "advices/allAdvices",
+
         element: <AllAdvices></AllAdvices>,
       },
       {
@@ -124,6 +143,11 @@ export const router = createBrowserRouter([
         path: "edit-article/:id",
         element: <EditArticle />,
       },
+      {
+        path: "doctors",
+        element: <ManageDoctors/>
+      }
+
     ],
   },
 ]);
