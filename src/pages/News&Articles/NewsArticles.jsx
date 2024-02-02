@@ -3,11 +3,13 @@ import Marquee from "react-fast-marquee";
 import NewsArticlesCard from "./News&ArticlesCard";
 import { Link, useNavigate } from "react-router-dom";
 
-
 import Categories from "./Categories/Categories";
 import BannerSimple from "../../components/shared/Banners/BannerSimple/BannerSimple";
 
 const NewsArticles = () => {
+  useEffect(() => {
+    window.scroll(0, 0);
+  }, []);
   const [articles, setArticlies] = useState();
   const navigate = useNavigate();
   const [currentPage, setCurrentPage] = useState(1);
@@ -61,7 +63,12 @@ const NewsArticles = () => {
   return (
     <>
       <div>
-        <BannerSimple imgUrl="https://i.ibb.co/5vStm5N/newsbanner.png" text1="News & Articles" pageName="newsAndArticles"/>
+        <BannerSimple
+          imgUrl="https://i.ibb.co/5vStm5N/newsbanner.png"
+          text1="Welcome to news & articles"
+          pageName="newsAndArticles"
+        />
+        {/* <BannerSimple imgUrl="https://i.ibb.co/5vStm5N/newsbanner.png" text1="News & Articles" pageName="newsAndArticles"/> */}
         {/*Categories*/}
         <Categories />
 
@@ -98,25 +105,23 @@ const NewsArticles = () => {
             ))}
           </div>
           <div className="my-10 flex justify-center items-center gap-4">
-            <a href="#" onClick={handlePrev}>
-              Prev
-            </a>
+            <div className="bg-[#003049] text-white px-4 py-2 rounded-full focus:outline-none hover:bg-[#00ffff] hover:text-black">
+              <a href="#" onClick={handlePrev}>
+                Prev
+              </a>
+            </div>
             <div className="flex gap-2">
               {numbers.map((n, i) => (
-                <div
-                  key={i}
-                  className={`w-8 h-8 border-2 rounded-full flex justify-center items-center cursor-pointer ${
-                    currentPage === n ? "bg-[#003049] text-white" : ""
-                  }`}
-                  onClick={() => changeCPage(n)}
-                >
+                <div key={i} onClick={() => changeCPage(n)}>
                   <a href="#">{n}</a>
                 </div>
               ))}
             </div>
-            <a href="#" onClick={handleNext}>
-              Next
-            </a>
+            <div className="bg-[#003049] text-white px-4 py-2 rounded-full focus:outline-none hover:bg-[#00ffff] hover:text-black">
+              <a href="#" onClick={handleNext}>
+                Next
+              </a>
+            </div>
           </div>
         </div>
       </div>

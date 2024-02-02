@@ -2,15 +2,15 @@ import { FaQuoteLeft, FaQuoteRight } from "react-icons/fa";
 const TestimonialsCard = ({ testimonialData }) => {
   return (
     <>
-      <div className="w-full bg-[#003049] rounded-md p-8 border-4">
+      <div className="w-full  border-blue-500 font-semibold  text-2xl md:text-xl lg:text-2xl gap-1  cursor-pointer shadow-[-2px_-2px_12px_2px_rgba(0,0,0,0.1),_2px_2px_12px_2px_rgba(0,0,0,0.1)] hover:shadow-[-5px_-5px_15px_4px_rgba(0,0,0,0.1),_5px_5px_15px_4px_rgba(0,0,0,0.1)] rounded-md p-8 border-4">
         <div className="">
-          <p className=" text-sm">
+          <p className=" text-sm text-blue-500">
             <span>
-              <FaQuoteLeft className="text-3xl text-white" />
+              <FaQuoteLeft className="text-3xl text-blue-500" />
             </span>
             {testimonialData.content}
             <span>
-              <FaQuoteRight className="text-3xl text-white" />
+              <FaQuoteRight className="text-3xl text-blue-500" />
             </span>
           </p>
         </div>
@@ -21,8 +21,8 @@ const TestimonialsCard = ({ testimonialData }) => {
             alt={testimonialData.name}
           />
           <div className="flex flex-col justify-start items-start">
-            <h1 className="text-base">{testimonialData.name}</h1>
-            <p className="text-sm text-slate-300">
+            <h1 className="text-base text-blue-500">{testimonialData.name}</h1>
+            <p className="text-sm text-blue-500">
               {testimonialData.occupation}
             </p>
           </div>

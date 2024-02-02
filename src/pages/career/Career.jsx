@@ -22,6 +22,7 @@ const Career = () => {
       const selectedDepartment = jobsData.filter(
         (job) => job?.department.toLowerCase() === department.toLowerCase()
       );
+
       setDisplayJobs(selectedDepartment);
     } else {
       setDisplayJobs(jobsData);

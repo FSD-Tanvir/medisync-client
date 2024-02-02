@@ -12,6 +12,7 @@ const Dashboard = () => {
   const isAdmin = " ";
   const location = useLocation();
 
+
   useEffect(() => {
     console.log(location.pathname);
     if (location.pathname == "/") {
@@ -23,7 +24,6 @@ const Dashboard = () => {
       )}`;
     }
   }, [location.pathname]);
-
 
   return (
     <div className="flex flex-col max-w-7xl mx-auto md:flex-row-reverse">
@@ -91,7 +91,9 @@ const Dashboard = () => {
               </li>
               <li>
                 <NavLink
-                  to="/Dashboard/UpcomingMeals"
+
+                  to="/Dashboard/add-articles"
+
                   className="font-semibold flex justify-start items-center gap-1 pl-5"
                 >
                   <BiSolidFoodMenu /> Add News & Articles
@@ -99,7 +101,9 @@ const Dashboard = () => {
               </li>
               <li>
                 <NavLink
-                  to="/Dashboard/UpcomingMeals"
+
+                  to="/Dashboard/all-articles"
+
                   className="font-semibold flex justify-start items-center gap-1 pl-5"
                 >
                   <BiSolidFoodMenu /> All News & Articles
@@ -107,18 +111,13 @@ const Dashboard = () => {
               </li>
               <li>
                 <NavLink
-                  to="/Dashboard/UpcomingMeals"
+
+                  to="/Dashboard/advices"
                   className="font-semibold flex justify-start items-center gap-1 pl-5"
                 >
-                  <BiSolidFoodMenu /> Add Advice
-                </NavLink>
-              </li>
-              <li>
-                <NavLink
-                  to="/Dashboard/UpcomingMeals"
-                  className="font-semibold flex justify-start items-center gap-1 pl-5"
-                >
-                  <BiSolidFoodMenu /> All Advices
+                  <BiSolidFoodMenu />
+                  Advices
+
                 </NavLink>
               </li>
               <li>
@@ -189,11 +188,13 @@ const Dashboard = () => {
           </ul>
         </>
       </div>
+
       <div className="flex-1 overflow-auto">
         <Outlet></Outlet>
       </div>
     </div>
   );     
+
 };
 
 export default Dashboard;

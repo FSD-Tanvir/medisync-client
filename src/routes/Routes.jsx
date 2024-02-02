@@ -18,10 +18,16 @@ import JobPanel from "../pages/dashboard/jobPanel/JobPanel";
 import Overview from "../pages/dashboard/jobPanel/overview/Overview";
 import AddJob from "../pages/dashboard/jobPanel/addJob/AddJob";
 import AllJobs from "../pages/dashboard/jobPanel/allJobs/AllJobs";
+
+import AllArticles from "../pages/Dashboard/allArticles/AllArticles";
+import AddNewsAndArticles from "../pages/Dashboard/addNewsAndArticles/AddNewsAndArticles";
+import EditArticle from "../pages/Dashboard/allArticles/EditArticle";
+
 import UpdateJob from "../pages/dashboard/jobPanel/allJobs/UpdateJob";
 import axios from "axios";
 import ManageDoctors from "../pages/Dashboard/doctors/ManageDoctors";
 import UpdateDoctor from "../pages/Dashboard/doctors/UpdateDoctor";
+
 
 export const router = createBrowserRouter([
   // Main Layout
@@ -90,9 +96,18 @@ export const router = createBrowserRouter([
         element: <JobPanel />,
       },
       {
-        path: "job-panel/all-jobs",
-        element: <AllJobs/>
+        path: "job-panel/overview",
+        element: <Overview />,
       },
+      {
+        path: "job-panel/add-job",
+        element: <AddJob />,
+      },
+      {
+        path: "job-panel/all-jobs",
+        element: <AllJobs />,
+      },
+
       {
         path: "job-panel/update-job/:id",
         element: <UpdateJob />,
@@ -104,16 +119,30 @@ export const router = createBrowserRouter([
         },
       },
       {
+
         path: "advices",
-        element: <Advices></Advices>
+        element: <Advices></Advices>,
       },
       {
         path: "advices/addAdvice",
-        element: <AddAdvice></AddAdvice>
+        element: <AddAdvice></AddAdvice>,
       },
       {
         path: "advices/allAdvices",
-        element: <AllAdvices></AllAdvices>
+
+        element: <AllAdvices></AllAdvices>,
+      },
+      {
+        path: "all-articles",
+        element: <AllArticles />,
+      },
+      {
+        path: "add-articles",
+        element: <AddNewsAndArticles />,
+      },
+      {
+        path: "edit-article/:id",
+        element: <EditArticle />,
       },
       {
         path: "doctors",

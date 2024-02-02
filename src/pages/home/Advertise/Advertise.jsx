@@ -36,7 +36,7 @@ const Advertise = () => {
         </div>
         <div className="flex justify-center mt-2">
           <Link to="/doctors" >
-            <button className="btn bg-[#003049] text-white px-4 py-1 font-semibold rounded-md ">
+            <button className="btn  px-4 py-2 border hover:border-blue-500 hover:text-blue-500 font-semibold  rounded-md text-xs sm:text-sm md:text-xs lg:text-sm xl:text-xs lg:w-full xl:w-fit  shadow-[-2px_-2px_12px_2px_rgba(0,0,0,0.1),_2px_2px_12px_2px_rgba(0,0,0,0.1)]   bg-blue-500 text-white hover:bg-[#FFF7F4] ">
               Appointment
             </button>
           </Link>
