@@ -98,7 +98,7 @@ const LogIn = ({ setShowRegister, setShowModal }) => {
                 </Swiper>
             </div>
             <div className="flex flex-col w-full lg:w-[50%]">
-                <h2 className="font-bold text-xl sm:text-3xl py-2 text-center mb-2">Please Login Here</h2>
+                <h2 className="font-bold text-xl sm:text-3xl py-2 text-center mb-6">Please Login Here</h2>
                 <form onSubmit={handleLogIn} className="flex flex-col items-center gap-5">
                     {/* Form fields go here */}
                     <div className="flex items-center border-b border-black gap-2">
