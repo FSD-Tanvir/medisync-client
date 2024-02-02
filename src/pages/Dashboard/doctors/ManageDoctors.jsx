@@ -8,8 +8,8 @@ const ManageDoctors = () => {
     <div>
       <Tabs>
         <TabList>
-          <Tab>All Doctors</Tab>
           <Tab>Add Doctor</Tab>
+          <Tab>All Doctors</Tab>
         </TabList>
 
         <TabPanel>

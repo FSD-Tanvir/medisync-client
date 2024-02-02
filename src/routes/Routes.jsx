@@ -26,6 +26,7 @@ import EditArticle from "../pages/Dashboard/allArticles/EditArticle";
 import UpdateJob from "../pages/dashboard/jobPanel/allJobs/UpdateJob";
 import axios from "axios";
 import ManageDoctors from "../pages/Dashboard/doctors/ManageDoctors";
+import UpdateDoctor from "../pages/Dashboard/doctors/UpdateDoctor";
 
 
 export const router = createBrowserRouter([
@@ -146,8 +147,17 @@ export const router = createBrowserRouter([
       {
         path: "doctors",
         element: <ManageDoctors/>
-      }
-
+      },
+      {
+        path: "doctors/update-doctor/:id",
+        element: <UpdateDoctor />,
+        loader: async ({ params }) => {
+          return await axios.get(
+            `http://localhost:5000/doctors/${params.id}`
+            
+          )
+        },
+      },
     ],
   },
 ]);
