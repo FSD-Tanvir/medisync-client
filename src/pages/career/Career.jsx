@@ -8,19 +8,17 @@ const Career = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch("https://medisync-server.vercel.app/jobs")
+    fetch("http://localhost:5000/jobs")
       .then((res) => res.json())
       .then((data) => {
-        setJobsData(data.data)
-        setDisplayJobs(data.data)
+        setJobsData(data.data);
+        setDisplayJobs(data.data);
       });
   }, []);
 
   const handleDepartment = (id) => {
     if (id !== "all_jobs") {
-      const selectedDepartment = jobsData.filter(
-        (job) => job._id === id
-        );
+      const selectedDepartment = jobsData.filter((job) => job._id === id);
       setDisplayJobs(selectedDepartment);
     } else {
       setDisplayJobs(jobsData);
@@ -35,8 +33,13 @@ const Career = () => {
   return (
     <div className="min-h-[90vh] mb-20">
       {/* Career banner section  */}
-      <BannerSimple imgUrl="https://i.ibb.co/hMNQW0v/ethnic-businessman-giving-hand-shake.jpg" text1="Join Us!" text2="We are Hiring" pageName="career"/>
-      
+      <BannerSimple
+        imgUrl="https://i.ibb.co/hMNQW0v/ethnic-businessman-giving-hand-shake.jpg"
+        text1="Join Us!"
+        text2="We are Hiring"
+        pageName="career"
+      />
+
       {/* department cards  */}
       <div className="flex gap-6 w-11/12 sm:w-4/5 mx-auto overflow-x-auto p-3 rounded-lg -mt-[30px] bg-[#003049]">
         {/* department card*/}
@@ -71,7 +74,9 @@ const Career = () => {
       {/* all jobs */}
       <div className="mt-14 px-2">
         {/* heading  */}
-        <h2 className="text-3xl text-black/70 font-semibold text-center">All Jobs</h2>
+        <h2 className="text-3xl text-black/70 font-semibold text-center">
+          All Jobs
+        </h2>
         {/* jobs  */}
         <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 mt-6">
           {displayJobs?.map((job) => (

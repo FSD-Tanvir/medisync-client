@@ -18,6 +18,9 @@ import JobPanel from "../pages/dashboard/jobPanel/JobPanel";
 import Overview from "../pages/dashboard/jobPanel/overview/Overview";
 import AddJob from "../pages/dashboard/jobPanel/addJob/AddJob";
 import AllJobs from "../pages/dashboard/jobPanel/allJobs/AllJobs";
+import AllArticles from "../pages/Dashboard/allArticles/AllArticles";
+import AddNewsAndArticles from "../pages/Dashboard/addNewsAndArticles/AddNewsAndArticles";
+import EditArticle from "../pages/Dashboard/allArticles/EditArticle";
 
 export const router = createBrowserRouter([
   // Main Layout
@@ -30,12 +33,12 @@ export const router = createBrowserRouter([
         element: <Home />,
       },
       {
-        path:"/all-products",
-        element:<ByProducts></ByProducts>
+        path: "/all-products",
+        element: <ByProducts></ByProducts>,
       },
       {
-        path:"/all-products/:cat",
-        element:<ByProducts></ByProducts>
+        path: "/all-products/:cat",
+        element: <ByProducts></ByProducts>,
       },
 
       {
@@ -65,50 +68,62 @@ export const router = createBrowserRouter([
       },
       {
         path: "career",
-        element: <Career/>,
+        element: <Career />,
       },
       {
         path: "career/job-details/:id",
         element: <JobDetails />,
-        loader: ({params}) => fetch(`https://medisync-server.vercel.app/jobs/single/${params.id}`)
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/jobs/single/${params.id}`),
       },
-      { path: "contact-us",
-       element: <ContactUs /> 
-      }
+      { path: "contact-us", element: <ContactUs /> },
     ],
   },
-  // Dashboard Layout 
+  // Dashboard Layout
   {
     path: "/dashboard",
     element: <Dashboard></Dashboard>,
-    children:[
+    children: [
       {
         path: "job-panel",
-        element: <JobPanel/>
+        element: <JobPanel />,
       },
       {
         path: "job-panel/overview",
-        element: <Overview/>
+        element: <Overview />,
       },
       {
         path: "job-panel/add-job",
-        element: <AddJob/>
+        element: <AddJob />,
       },
       {
         path: "job-panel/all-jobs",
-        element: <AllJobs/>
-      },{
+        element: <AllJobs />,
+      },
+      {
         path: "advices",
-        element: <Advices></Advices>
+        element: <Advices></Advices>,
       },
       {
         path: "advices/addAdvice",
-        element: <AddAdvice></AddAdvice>
+        element: <AddAdvice></AddAdvice>,
       },
       {
         path: "advices/allAdvices",
-        element: <AllAdvices></AllAdvices>
-      }
-    ]
-  }
+        element: <AllAdvices></AllAdvices>,
+      },
+      {
+        path: "all-articles",
+        element: <AllArticles />,
+      },
+      {
+        path: "add-articles",
+        element: <AddNewsAndArticles />,
+      },
+      {
+        path: "edit-article/:id",
+        element: <EditArticle />,
+      },
+    ],
+  },
 ]);

@@ -7,6 +7,9 @@ import Categories from "./Categories/Categories";
 import BannerSimple from "../../components/shared/Banners/BannerSimple/BannerSimple";
 
 const NewsArticles = () => {
+  useEffect(() => {
+    window.scroll(0, 0);
+  }, []);
   const [articles, setArticlies] = useState();
   const navigate = useNavigate();
   const [currentPage, setCurrentPage] = useState(1);
@@ -24,9 +27,7 @@ const NewsArticles = () => {
     const fetchData = async () => {
       try {
         // Fetch data from an API endpoint (replace with your API URL)
-        const response = await fetch(
-          "https://medisync-server.vercel.app/newAndArticles"
-        );
+        const response = await fetch("http://localhost:5000/newAndArticles");
         const result = await response.json();
         console.log(result);
 
@@ -104,27 +105,19 @@ const NewsArticles = () => {
             ))}
           </div>
           <div className="my-10 flex justify-center items-center gap-4">
-            <div className="w-11 h-9 border-2 bg-cyan-500 flex justify-center items-center text-white">
+            <div className="bg-[#003049] text-white px-4 py-2 rounded-full focus:outline-none hover:bg-[#00ffff] hover:text-black">
               <a href="#" onClick={handlePrev}>
                 Prev
               </a>
             </div>
             <div className="flex gap-2">
               {numbers.map((n, i) => (
-                <div
-                  key={i}
-                  className={`w-9 h-9 border-2 flex justify-center items-center cursor-pointer ${
-                    currentPage === n ? "bg-cyan-500 text-white" : ""
-                    // className={`w-8 h-8 border-2 rounded-full flex justify-center items-center cursor-pointer ${
-                    //   currentPage === n ? "bg-[#003049] text-white" : ""
-                  }`}
-                  onClick={() => changeCPage(n)}
-                >
+                <div key={i} onClick={() => changeCPage(n)}>
                   <a href="#">{n}</a>
                 </div>
               ))}
             </div>
-            <div className="w-11 h-9 border-2 bg-cyan-500 flex justify-center items-center text-white">
+            <div className="bg-[#003049] text-white px-4 py-2 rounded-full focus:outline-none hover:bg-[#00ffff] hover:text-black">
               <a href="#" onClick={handleNext}>
                 Next
               </a>
