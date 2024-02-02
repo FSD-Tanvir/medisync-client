@@ -1,23 +1,22 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import BannerSimple from "../../components/shared/Banners/BannerSimple/BannerSimple";
-import { Scrollbars } from "react-custom-scrollbars";
-
 
 const Career = () => {
   const [jobsData, setJobsData] = useState([]);
   const [displayJobs, setDisplayJobs] = useState([]);
+  // const [departments, setDepartments] = useState([]);
+
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch("http://localhost:5000/jobs")
+    fetch(`http://localhost:5000/jobs?departmentOnly=${true}`)
       .then((res) => res.json())
       .then((data) => {
         setJobsData(data.data);
         setDisplayJobs(data.data);
       });
   }, []);
-
   const handleDepartment = (department) => {
     if (department !== "all_jobs") {
       const selectedDepartment = jobsData.filter(
@@ -34,7 +33,6 @@ const Career = () => {
     navigate(`/career/job-details/${id}`);
   };
 
-
   return (
     <div className="min-h-[90vh] mb-20">
       {/* Career banner section  */}
@@ -47,35 +45,35 @@ const Career = () => {
 
       {/* department cards  */}
 
-      <div className="flex gap-6 w-11/12 sm:w-4/5 mx-auto overflow-auto p-3 rounded-lg -mt-[30px] bg-[#003049]">
+      <div className="flex gap-6 w-11/12 sm:w-4/5 mx-auto overflow-auto p-3 rounded-lg -mt-[30px] bg-blue-500">
         {/* department cards*/}
         {/* see all jobs button */}
+        <div
+          onClick={() => handleDepartment("all_jobs")}
+          className="relative flex justify-center items-center bg-blue-500 rounded-lg shadow-lg border h-[40px] sm:h-[60px] w-min  whitespace-nowrap px-4 cursor-pointer"
+        >
+          <h3 className="flex justify-center items-center sm:text-xl text-white font-bold select-">
+            All Jobs
+            <span className="flex justify-center absolute -top-3 -right-3 bg-blue-500 items-center ml-2 border w-8 h-8 rounded-full">
+              {jobsData?.length}
+            </span>
+          </h3>
+        </div>
+        {/* showing departments  */}
+        {jobsData?.map((job) => (
           <div
-            onClick={() => handleDepartment("all_jobs")}
-            className="relative flex justify-center items-center bg-[#003049] rounded-lg shadow-lg border h-[40px] sm:h-[60px] w-min  whitespace-nowrap px-4 cursor-pointer"
+            onClick={() => handleDepartment(job?.department)}
+            key={job._id}
+            className="relative flex justify-center items-center bg-blue-500 rounded-lg shadow-lg border h-[40px] sm:h-[60px] w-min  whitespace-nowrap px-4 cursor-pointer"
           >
             <h3 className="flex justify-center items-center sm:text-xl text-white font-bold select-">
-              All Jobs
-              <span className="flex justify-center absolute -top-3 -right-3 bg-[#003049] items-center ml-2 border w-8 h-8 rounded-full">
-                {jobsData?.length}
+              {job.department.replace(/_/g, " ")}
+              <span className="flex justify-center absolute -top-3 -right-3 bg-blue-500 items-center ml-2 border w-8 h-8 rounded-full">
+                {job.vacancy}
               </span>
             </h3>
           </div>
-          {/* showing departments  */}
-          {jobsData?.map((job) => (
-            <div
-              onClick={() => handleDepartment(job?.department)}
-              key={job._id}
-              className="relative flex justify-center items-center bg-[#003049] rounded-lg shadow-lg border h-[40px] sm:h-[60px] w-min  whitespace-nowrap px-4 cursor-pointer"
-            >
-              <h3 className="flex justify-center items-center sm:text-xl text-white font-bold select-">
-                {job.department.replace(/_/g, " ")}
-                <span className="flex justify-center absolute -top-3 -right-3 bg-[#003049] items-center ml-2 border w-8 h-8 rounded-full">
-                  {job.vacancy}
-                </span>
-              </h3>
-            </div>
-          ))}
+        ))}
       </div>
       {/* all jobs */}
       <div className="mt-14 px-2">
