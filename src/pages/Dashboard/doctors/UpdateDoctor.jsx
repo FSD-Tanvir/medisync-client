@@ -1,8 +1,13 @@
-import { useForm } from "react-hook-form";
 import axios from "axios";
+import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
+import { useLoaderData } from "react-router-dom";
 
-const AddDoctor = () => {
+const UpdateDoctor = () => {
+  const { data } = useLoaderData();
+  // actual doctor data
+  const { data: doctor } = data || {};
+  console.log(doctor);
   const {
     register,
     handleSubmit,
@@ -10,30 +15,31 @@ const AddDoctor = () => {
   } = useForm();
 
   const onSubmit = async (data) => {
-    const doctorData = {
-      name: data?.name,
-      specialization: data?.specialization,
-      image: data?.image,
-      qualification: data?.qualification,
+    // console.log(data);
+
+    const updatedDoctorData = {
+      contact: { 
+        email: data?.email, 
+        phone: data?.phone 
+    },
       experience_years: data?.experience_years,
-      contact: {
-        email: data?.email,
-        phone: data?.phone,
-      },
+      image: data?.image,
+      name: data?.name,
+      qualification: data?.qualification,
+      specialization: data?.specialization,
       university: data?.university,
     };
 
     try {
-      const result = await axios.post(
-        "http://localhost:5000/doctors",
-        doctorData
+      const res = await axios.put(
+        `http://localhost:5000/doctors/${doctor?._id}`,
+        updatedDoctorData
       );
-      console.log(result.data);
-      if (result.data?.status === true) {
-        toast.success("Doctor added successfully");
+      if (res.data.status === true) {
+        toast.success("Your Doctor Data has been updated successfully");
       }
     } catch (err) {
-      console.log(err);
+      console.log(err.message);
     }
   };
 
@@ -41,7 +47,7 @@ const AddDoctor = () => {
     <div className="max-w-screen-lg mx-auto mt-8">
       <form onSubmit={handleSubmit(onSubmit)} className="p-8 w-full">
         <h1 className="text-2xl lg:text-4xl whitespace-nowrap w-min mb-8 border-b-4 border-b-blue-500 capitalize">
-          Add Doctor
+          Update Doctor
         </h1>
         <div className="space-y-5">
           {/* Doctor Name */}
@@ -52,6 +58,7 @@ const AddDoctor = () => {
             <input
               id="name"
               type="text"
+              defaultValue={doctor?.name}
               {...register("name", { required: true, minLength: 3 })}
               placeholder="Enter Doctor Name"
               className="p-3 block w-full outline-1 border valid:outline-blue-500 rounded-md invalid:outline-red-600"
@@ -70,6 +77,7 @@ const AddDoctor = () => {
             <input
               id="specialization"
               type="text"
+              defaultValue={doctor?.specialization}
               {...register("specialization")}
               placeholder="Enter Specialization"
               className="p-3 block w-full outline-1 border valid:outline-blue-500 rounded-md"
@@ -83,6 +91,7 @@ const AddDoctor = () => {
             <input
               id="image"
               type="text"
+              defaultValue={doctor?.image}
               {...register("image")}
               placeholder="Enter Image URL"
               className="p-3 block w-full outline-1 border valid:outline-blue-500 rounded-md"
@@ -96,6 +105,7 @@ const AddDoctor = () => {
             <input
               id="qualification"
               type="text"
+              defaultValue={doctor?.qualification}
               {...register("qualification")}
               placeholder="Enter Qualification"
               className="p-3 block w-full outline-1 border valid:outline-blue-500 rounded-md"
@@ -109,6 +119,7 @@ const AddDoctor = () => {
             <input
               id="experience_years"
               type="number"
+              defaultValue={doctor?.experience_years}
               {...register("experience_years", { valueAsNumber: true })}
               placeholder="Enter Experience Years"
               className="p-3 block w-full outline-1 border valid:outline-blue-500 rounded-md"
@@ -122,6 +133,7 @@ const AddDoctor = () => {
             <input
               id="email"
               type="email"
+              defaultValue={doctor?.contact?.email}
               {...register("email", { required: true })}
               placeholder="Enter Contact Email"
               className="p-3 block w-full outline-1 border valid:outline-blue-500 rounded-md invalid:outline-red-600"
@@ -140,6 +152,7 @@ const AddDoctor = () => {
             <input
               id="phone"
               type="tel"
+              defaultValue={doctor?.contact?.phone}
               {...register("phone")}
               placeholder="Enter Contact Phone"
               className="p-3 block w-full outline-1 border valid:outline-blue-500 rounded-md"
@@ -153,6 +166,7 @@ const AddDoctor = () => {
             <input
               id="university"
               type="text"
+              defaultValue={doctor?.university}
               {...register("university")}
               placeholder="Enter University"
               className="p-3 block w-full outline-1 border valid:outline-blue-500 rounded-md"
@@ -161,8 +175,8 @@ const AddDoctor = () => {
         </div>
         {/* Add Doctor Button */}
         <div className="text-center mt-8">
-          <button className="border hover:border-blue-500 hover:text-blue-500 font-semibold py-2 px-2 rounded-md w-1/3 shadow-[-2px_-2px_12px_2px_rgba(0,0,0,0.1),_2px_2px_12px_2px_rgba(0,0,0,0.1)] bg-blue-500 text-white hover:bg-[#FFF7F4] transition-colors duration-200 ease-linear">
-            Add Doctor
+          <button type="submit" className="border hover:border-blue-500 hover:text-blue-500 font-semibold py-2 px-2 rounded-md w-1/3 shadow-[-2px_-2px_12px_2px_rgba(0,0,0,0.1),_2px_2px_12px_2px_rgba(0,0,0,0.1)] bg-blue-500 text-white hover:bg-[#FFF7F4] transition-colors duration-200 ease-linear">
+            Update Doctor
           </button>
         </div>
       </form>
@@ -170,4 +184,4 @@ const AddDoctor = () => {
   );
 };
 
-export default AddDoctor;
+export default UpdateDoctor;
