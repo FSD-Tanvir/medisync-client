@@ -10,17 +10,17 @@ import {
 
 const Footer = () => {
   return (
-    <div className="min-h-[80vh]  bg-[#003049] py-24 px-5 sm:px-10 space-y-10 text-white">
+    <div className="  bg-[#FFF7F4] py-24 px-5 sm:px-10 space-y-10 text-black">
       <div>
-        <h2 className="text-4xl font-bold text-white">
+        <h2 className="text-4xl font-bold text-black">
           Medi<span className="text-[#00FFFF]">Sync</span>
         </h2>
       </div>
       {/* footer content container  */}
       <div className="grid gap-3 lg:gap-0 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
         {/* Our services  */}
-        <div className="text-white">
-          <h2 className="capitalize mb-3 text-white text-lg font-semibold">
+        <div className="text-black">
+          <h2 className="capitalize mb-3 text-black text-lg font-semibold">
             Our services
           </h2>
           {/* services items  */}
@@ -33,7 +33,7 @@ const Footer = () => {
         </div>
         {/* know Our policies  */}
         <div>
-          <h2 className="capitalize mb-3 text-white text-lg font-semibold">
+          <h2 className="capitalize mb-3 text-black text-lg font-semibold">
             Know Our policies
           </h2>
           {/* policies items  */}
@@ -45,11 +45,11 @@ const Footer = () => {
         </div>
         {/* useful links  */}
         <div>
-          <h2 className="capitalize mb-3 text-[#ffFFFF] text-lg font-semibold">
+          <h2 className="capitalize mb-3 text-black text-lg font-semibold">
             useful links
           </h2>
           {/* services items  */}
-          <ul className="space-y-2 text-white">
+          <ul className="space-y-2 text-black">
             {/* <SectionItem label="About Us" address="" /> */}
             <SectionItem label="About Us" address="/aboutUs" />
             <SectionItem label="Contact Us" address="/contact-us" />
@@ -60,12 +60,12 @@ const Footer = () => {
         {/* contact us*/}
         <div>
           <div>
-            <h2 className="capitalize mb-3 text-[#ffFFFF] text-lg font-semibold">
+            <h2 className="capitalize mb-3 text-black text-lg font-semibold">
               Contact us
             </h2>
             {/* services items  */}
             <ul className="space-y-2 ">
-              <li className="flex items-center gap-2 font-medium text-white">
+              <li className="flex items-center gap-2 font-medium text-black">
                 <span>
                   <FaLocationDot />
                 </span>
@@ -73,7 +73,7 @@ const Footer = () => {
                   This is a dummy address -- Mirpur 1, Block-A - 1216.
                 </address>
               </li>
-              <li className="flex items-center gap-2 font-medium text-white">
+              <li className="flex items-center gap-2 font-medium text-black">
                 <span>
                   <FaPhone />
                 </span>
@@ -83,34 +83,34 @@ const Footer = () => {
           </div>
           {/* social links  */}
           <>
-            <h2 className="capitalize mb-3 mt-2 text-[#ffFFFF] font-semibold">
+            <h2 className="capitalize mb-3 mt-2 text-black font-semibold">
               Social Links:
             </h2>
             <div className="flex justify-between gap-2 py-2 lg:px-10">
-              <span className="w-[40px] h-[40px] cursor-pointer text-white border border-[#cdb4db] p-2 rounded-full hover:scale-110 transition duration-200 ease-linear">
+              <span className="w-[40px] h-[40px] cursor-pointer text-black border border-[#cdb4db] p-2 rounded-full hover:scale-110 transition duration-200 ease-linear">
                 <FaFacebookF size={22} />
               </span>
-              <span className="w-[40px] h-[40px] cursor-pointer text-white border border-[#cdb4db] p-2 rounded-full hover:scale-110 transition duration-200 ease-linear">
+              <span className="w-[40px] h-[40px] cursor-pointer text-black border border-[#cdb4db] p-2 rounded-full hover:scale-110 transition duration-200 ease-linear">
                 <FaTwitter size={22} />
               </span>
-              <span className="w-[40px] h-[40px] cursor-pointer text-white border border-[#cdb4db] p-2 rounded-full hover:scale-110 transition duration-200 ease-linear">
+              <span className="w-[40px] h-[40px] cursor-pointer text-black border border-[#cdb4db] p-2 rounded-full hover:scale-110 transition duration-200 ease-linear">
                 <FaLinkedin size={22} />
               </span>
-              <span className="w-[40px] h-[40px] cursor-pointer text-white border border-[#cdb4db] p-2 rounded-full hover:scale-110 transition duration-200 ease-linear">
+              <span className="w-[40px] h-[40px] cursor-pointer text-black border border-[#cdb4db] p-2 rounded-full hover:scale-110 transition duration-200 ease-linear">
                 <FaYoutube size={22} />
               </span>
             </div>
           </>
         </div>
       </div>
-      <div className="lg:px-32 sm:opacity-80">
+      {/* <div className="lg:px-32 sm:opacity-80">
         <div>
           <img 
             src="https://i.ibb.co/mSK9Syc/payment-options.png"
             alt="pay with ssl commerz image "
           />
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };

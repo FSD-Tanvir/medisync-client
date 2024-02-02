@@ -10,16 +10,6 @@ const DoctorCard = ({ doctor }) => {
     experience_years,
   } = doctor;
 
-  //   const [isModalOpen, setIsModalOpen] = useState(false);
-
-  //   const openModal = () => {
-  //     setIsModalOpen(true);
-  //   };
-
-  //   const closeModal = () => {
-  //     setIsModalOpen(false);
-  //   };
-
   return (
     <div className="container mx-auto mt-5 p-4 max-w-md bg-white rounded-lg shadow-lg overflow-hidden hover:bg-gray-100 hover:shadow-lg transition duration-300">
       {/* Doctor Image */}
@@ -43,14 +33,14 @@ const DoctorCard = ({ doctor }) => {
       {/* Action Buttons */}
       <div className="flex justify-between items-center mt-4">
         <button
-          className="bg-[#003049] text-white text-sm sm:text-base px-3 sm:px-4 py-2 rounded-full focus:outline-none hover:text-[#00ffff]"
-          //   onClick={openModal}
+          className="px-3 sm:px-4 py-2 focus:outline-none border hover:border-blue-500 hover:text-blue-500 font-semibold rounded-md text-xs sm:text-sm md:text-xs lg:text-sm xl:text-xs lg:w-full xl:w-fit  shadow-[-2px_-2px_12px_2px_rgba(0,0,0,0.1),_2px_2px_12px_2px_rgba(0,0,0,0.1)]  bg-blue-500 text-white hover:bg-[#FFF7F4]"
+        //   onClick={openModal}
         >
           Take Appointment
         </button>
         <div
           className="flex items-center cursor-pointer"
-          // onClick={openModal}
+        // onClick={openModal}
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
