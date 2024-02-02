@@ -46,14 +46,14 @@ const Navbar = () => {
 
         {/* cart , login and profile division  */}
         <div>
-          <div className="flex flex-col items-end gap-5 text-white">
+          <div className="flex flex-col items-end gap-5 text-blue-500">
             <div className="flex items-center gap-2 lg:gap-8">
               <div className="hover:text-[#00FFFF] cursor-pointer">
                 <IoCartOutline size={36} />
               </div>
               {
                 user?.email ? <div >
-                  <img className="w-10 h-10 rounded-full" src={user?.photoURL} />
+                  <img className="w-8 h-8 sm:w-10 sm:h-10 rounded-full" src={user?.photoURL} />
                 </div>
                   :
                   <div
