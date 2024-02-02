@@ -82,7 +82,7 @@ const Dashboard = () => {
               </li>
               <li>
                 <NavLink
-                  to="/Dashboard/ServeMeals"
+                  to="/Dashboard/doctors"
                   className="font-semibold flex justify-start items-center gap-1 pl-5"
                 >
                   <MdFoodBank />
