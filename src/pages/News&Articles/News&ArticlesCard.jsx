@@ -11,7 +11,7 @@ const NewsArticlesCard = ({ articleData, handleArticlePage }) => {
           />
         </div>
 
-        <div className="">
+        <div>
           <div className="my-2 w-full py-2 md:py-2 md:pb-8">
             <h1 className="py-2 font-bold">{title}</h1>
             <p className="text-justify h-[10rem] sm:h-[5rem] lg:h-[8rem] lg:text-base  md:text-[11px] md:text-base font-light text-zinc-700">
