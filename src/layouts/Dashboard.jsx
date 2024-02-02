@@ -24,6 +24,7 @@ const Dashboard = () => {
     }
   }, [location.pathname]);
 
+
   return (
     <div className="flex flex-col max-w-7xl mx-auto md:flex-row-reverse">
       <div className="w-full md:w-64 md:min-h-screen bg-[#478097] text-white">
