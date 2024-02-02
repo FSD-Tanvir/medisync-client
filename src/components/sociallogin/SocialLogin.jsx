@@ -8,6 +8,7 @@ import Swal from "sweetalert2";
 const SocialLogin = () => {
     const { googleLogin } = useAuth()
     const axiosPublic = useAxiosPublic()
+
     const handelGoogleLogin = (media) => {
         media()
             .then(result => {

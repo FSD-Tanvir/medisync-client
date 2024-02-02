@@ -1,5 +1,5 @@
 /* eslint-disable react/no-unescaped-entities */
-import { FaHome, FaUsers, FaUtensils } from "react-icons/fa";
+import { FaHome, } from "react-icons/fa";
 import { GiMeal } from "react-icons/gi";
 import { CgProfile } from "react-icons/cg";
 import { MdFoodBank, MdRateReview } from "react-icons/md";
@@ -31,7 +31,7 @@ const Dashboard = () => {
         <ul className="menu space-y-2">
           {isAdmin ? (
             <>
-              <li>
+              {/* <li>
                 <NavLink
                   to="/Dashboard/AdminProfile"
                   className="font-semibold flex justify-start items-center gap-1 pl-5 pt-5"
@@ -79,7 +79,7 @@ const Dashboard = () => {
                   <MdFoodBank />
                   Add Doctor
                 </NavLink>
-              </li>
+              </li> */}
               <li>
                 <NavLink
                   to="/Dashboard/doctors"
@@ -120,14 +120,14 @@ const Dashboard = () => {
 
                 </NavLink>
               </li>
-              <li>
+              {/* <li>
                 <NavLink
                   to="/Dashboard/UpcomingMeals"
                   className="font-semibold flex justify-start items-center gap-1 pl-5"
                 >
                   <BiSolidFoodMenu /> Add Job
                 </NavLink>
-              </li>
+              </li> */}
               <li>
                 <NavLink
                   to="/Dashboard/job-panel"

@@ -7,7 +7,7 @@ import { GrWorkshop } from "react-icons/gr";
 import { TiThMenu } from "react-icons/ti";
 import { IoCartOutline, IoSearchOutline, IoClose } from "react-icons/io5";
 import { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import Modal from "../../../pages/home/LogInRegistration/Modal";
 import useAuth from "../../../hooks/useAuth";
 
@@ -23,7 +23,7 @@ const menuItems = [
   { id: 4, icon: <FiFilePlus />, item: "Articles", link: "/articles" },
   { id: 5, icon: <FaUserDoctor />, item: "Meet Doctors", link: "/doctors" },
   { id: 6, icon: <GrWorkshop />, item: "Career", link: "/career" },
-  { id: 6, icon: <GrWorkshop />, item: "Dashboard", link: "/dashboard" },
+  // { id: 6, icon: <GrWorkshop />, item: "Dashboard", link: "/dashboard" },
 ];
 
 const Navbar = () => {
@@ -53,9 +53,11 @@ const Navbar = () => {
                 <IoCartOutline size={36} />
               </div>
               {
-                user?.email ? <div >
+                user?.email ? <Link to="/dashboard/doctors">
+                <div >
                   <img className="w-8 h-8 sm:w-10 sm:h-10 rounded-full" src={user?.photoURL} />
                 </div>
+                </Link>
                   :
                   <div
                     onClick={() => setShowModal(true)}
@@ -130,9 +132,11 @@ const Navbar = () => {
                 <IoCartOutline size={36} />
               </div>
               {
-                user?.email ? <div>
+                user?.email ? <Link to="/dashboard/doctors">
+                <div>
                   <img className="w-10 h-10 rounded-full" src={user?.photoURL} />
                 </div>
+                </Link>
                   :
                   <div
                     onClick={() => setShowModal(true)}
