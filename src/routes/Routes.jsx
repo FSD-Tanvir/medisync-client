@@ -27,6 +27,7 @@ import UpdateJob from "../pages/dashboard/jobPanel/allJobs/UpdateJob";
 import axios from "axios";
 import ManageDoctors from "../pages/Dashboard/doctors/ManageDoctors";
 import UpdateDoctor from "../pages/Dashboard/doctors/UpdateDoctor";
+import ProductDetails from "../pages/productDetails/productDetails";
 
  
 
@@ -57,6 +58,11 @@ export const router = createBrowserRouter([
       {
         path: "/products",
         element: <Home />,
+      },
+      {
+        path: "/product-details/:id",
+        element:<ProductDetails/>,
+        loader: ({ params }) => fetch(`http://localhost:5000/allProducts/${params.id}`)
       },
       {
         path: "/advice",

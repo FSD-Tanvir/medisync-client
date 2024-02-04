@@ -1,14 +1,13 @@
+import { Link } from "react-router-dom";
+
 const ProductsCard = ({ product }) => {
   // Destructure product properties
   const { image, company, name, price, weight } = product || {};
-  // const isHomePage = location.pathname === "/" || false;
+  // console.log(product)
 
   return (
-    <div 
-    // className={`${isHomePage && " shadow-xl  h-[262px] mx-1 md:mx-5 md:h-[240px] lg:mx-2 lg:h-[320px] xl:h-[235px]"}   shadow-xl  `}
-
-    className=""
-    >
+    <div>
+      <Link to={`/product-details/${product._id}`}>
       <div className="flex flex-col w-full h-full gap-2 bg-[#FFF7F4]  shadow-[0_8px_30px_rgb(0,0,0,0.12)] rounded-xl ">
         <div>
           <img
@@ -33,6 +32,7 @@ const ProductsCard = ({ product }) => {
           </button>
         </div>
       </div>
+      </Link>
     </div>
   );
 };

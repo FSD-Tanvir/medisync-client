@@ -28,7 +28,7 @@ const menuItems = [
 
 const Navbar = () => {
   const { user, logOut } = useAuth()
-  console.log(user)
+  // console.log(user)
   let [openMenu, setOpenMenu] = useState(false);
   const [showModal, setShowModal] = useState(false);
 
