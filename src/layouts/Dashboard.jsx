@@ -32,9 +32,9 @@ const Dashboard = () => {
   }, [location.pathname]);
 
   return (
-    <div className="flex flex-col  md:flex-row  border">
+    <div className="flex flex-col  md:flex-row ">
       <div className={`w-full ${open ? "md:w-[40%] lg:w-[20%]" : "md:w-[10%] lg:w-[5%]"} duration-300 md:min-h-screen bg-[#f5f5f5] text-white pt-20 relative`}>
-        <div onClick={() => setOpen(!open)} className="md:-right-[14px] top-9 cursor-pointer w-[28px] h-[28px] rounded-full bg-blue-600 flex justify-center items-center absolute hidden md:flex">
+        <div onClick={() => setOpen(!open)} className="md:-right-[13px] top-9 cursor-pointer w-[28px] h-[28px] rounded-full bg-blue-600 flex justify-center items-center absolute hidden md:flex">
           <IoMdArrowDropright className={`${open && "rotate-180"}`} ></IoMdArrowDropright>
         </div>
         <ul className="menu space-y-2 text-black">
@@ -45,10 +45,10 @@ const Dashboard = () => {
                   to="/Dashboard/doctors"
                   className={({ isActive, isPending }) =>
                     isActive
-                      ? "font-semibold flex justify-start items-center gap-1 pl-5 bg-[#3560fa] text-[#ffffff] w-[70%] mx-auto py-1"
+                      ? "font-semibold flex justify-start items-center gap-1 pl-2 bg-[#3560fa] text-[#ffffff] w-[70%] mx-auto py-1"
                       : isPending
                         ? ""
-                        : "font-semibold flex justify-start items-center gap-1 pl-5 w-[70%] mx-auto py-1"}
+                        : "font-semibold flex justify-start items-center gap-1 pl-2 w-[70%] mx-auto py-1"}
                 >
                   {open ? <span className="flex justify-center items-center gap-2"> <img src={doctorIcon} className="w-6 bg-white" alt="" />
                     All Doctors</span> : <img src={doctorIcon} className="w-6 bg-white" alt="" />}
@@ -59,10 +59,10 @@ const Dashboard = () => {
                   to="/Dashboard/add-articles"
                   className={({ isActive, isPending }) =>
                     isActive
-                      ? "font-semibold flex justify-start items-center gap-1 pl-5 bg-[#3560fa] text-[#ffffff] w-[70%] mx-auto py-1"
+                      ? "font-semibold flex justify-start items-center gap-1 pl-2 bg-[#3560fa] text-[#ffffff] w-[70%] mx-auto py-1"
                       : isPending
                         ? ""
-                        : "font-semibold flex justify-start items-center gap-1 pl-5 w-[70%] mx-auto py-1"}
+                        : "font-semibold flex justify-start items-center gap-1 pl-2 w-[70%] mx-auto py-1"}
                 >
                   {open ? <span className="flex justify-center items-center gap-2"> <img src={newsIcon} className="w-6 bg-white" alt="" />
                     Add News & Articles</span> : <img src={newsIcon} className="w-6 bg-white" alt="" />}
@@ -75,10 +75,10 @@ const Dashboard = () => {
 
                   className={({ isActive, isPending }) =>
                     isActive
-                      ? "font-semibold flex justify-start items-center gap-1 pl-5 bg-[#3560fa] text-[#ffffff] w-[70%] mx-auto py-1"
+                      ? "font-semibold flex justify-start items-center gap-1 pl-2 bg-[#3560fa] text-[#ffffff] w-[70%] mx-auto py-1"
                       : isPending
                         ? ""
-                        : "font-semibold flex justify-start items-center gap-1 pl-5 w-[70%] mx-auto py-1"}
+                        : "font-semibold flex justify-start items-center gap-1 pl-2 w-[70%] mx-auto py-1"}
                 >
                   {open ? <span className="flex justify-center items-center gap-2"> <img src={newsIcon} className="w-6 bg-white" alt="" />
                     All News & Articles</span> : <img src={newsIcon} className="w-6 bg-white" alt="" />}
@@ -90,10 +90,10 @@ const Dashboard = () => {
                   to="/dashboard/advices/allAdvices"
                   className={({ isActive, isPending }) =>
                     isActive
-                      ? "font-semibold flex justify-start items-center gap-1 pl-5 bg-[#3560fa] text-[#ffffff] w-[70%] mx-auto py-1"
+                      ? "font-semibold flex justify-start items-center gap-1 pl-2 bg-[#3560fa] text-[#ffffff] w-[70%] mx-auto py-1"
                       : isPending
                         ? ""
-                        : "font-semibold flex justify-start items-center gap-1 pl-5 w-[70%] mx-auto py-1"}
+                        : "font-semibold flex justify-start items-center gap-1 pl-2 w-[70%] mx-auto py-1"}
                 >
                   {open ? <span className="flex justify-center items-center gap-2"> <img src={adviceIcon} className="w-6 bg-white" alt="" />
                     Advices</span> : <img src={adviceIcon} className="w-6 bg-white" alt="" />}
@@ -104,10 +104,10 @@ const Dashboard = () => {
                   to="/Dashboard/job-panel"
                   className={({ isActive, isPending }) =>
                     isActive
-                      ? "font-semibold flex justify-start items-center gap-1 pl-5 bg-[#3560fa] text-[#ffffff] w-[70%] mx-auto py-1"
+                      ? "font-semibold flex justify-start items-center gap-1 pl-2 bg-[#3560fa] text-[#ffffff] w-[70%] mx-auto py-1"
                       : isPending
                         ? ""
-                        : "font-semibold flex justify-start items-center gap-1 pl-5 w-[70%] mx-auto py-1"}
+                        : "font-semibold flex justify-start items-center gap-1 pl-2 w-[70%] mx-auto py-1"}
                 >
                   {open ? <span className="flex justify-center items-center gap-2"> <img src={jobIcon} className="w-6 bg-white" alt="" />
                   All Jobs</span> : <img src={jobIcon} className="w-6 bg-white" alt="" />}
@@ -119,7 +119,7 @@ const Dashboard = () => {
               <li>
                 <NavLink
                   to="/Dashboard/MyProfile"
-                  className="font-semibold flex justify-start items-center gap-1 pl-5 mt-5"
+                  className="font-semibold flex justify-start items-center gap-1 pl-2 mt-5"
                 >
                   <CgProfile></CgProfile>My Profile
                 </NavLink>
@@ -127,7 +127,7 @@ const Dashboard = () => {
               <li>
                 <NavLink
                   to="/Dashboard/RequestedMeals"
-                  className="font-semibold flex justify-start items-center gap-1 pl-5"
+                  className="font-semibold flex justify-start items-center gap-1 pl-2"
                 >
                   <GiMeal></GiMeal>My Cart
                 </NavLink>
@@ -135,7 +135,7 @@ const Dashboard = () => {
               <li>
                 <NavLink
                   to="/Dashboard/RequestedMeals"
-                  className="font-semibold flex justify-start items-center gap-1 pl-5"
+                  className="font-semibold flex justify-start items-center gap-1 pl-2"
                 >
                   <GiMeal></GiMeal>My Doctor's
                 </NavLink>
@@ -143,7 +143,7 @@ const Dashboard = () => {
               <li>
                 <NavLink
                   to="/Dashboard/MyReviews"
-                  className="font-semibold flex justify-start items-center gap-1 pl-5"
+                  className="font-semibold flex justify-start items-center gap-1 pl-2"
                 >
                   <MdRateReview /> My Reviews
                 </NavLink>
@@ -157,7 +157,7 @@ const Dashboard = () => {
             <li>
               <NavLink
                 to="/"
-                className="font-semibold flex justify-start items-center gap-1 pl-5 mt-5 w-[70%] mx-auto pb-5"
+                className="font-semibold flex justify-start items-center gap-1 pl-2 mt-5 w-[70%] mx-auto pb-5"
               >
                 {open ? <span className="flex justify-center items-center gap-2"> <img src={homeIcon} className="w-6" alt="" />
                   Home</span> : <img src={homeIcon} className="w-6" alt="" />}

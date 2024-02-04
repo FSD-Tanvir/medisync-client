@@ -52,9 +52,9 @@ console.log(clickAbleId);
         <div>
             <Navbar></Navbar>
             <div id="app" className=" min-h-screen ">
-                <div className="max-w-6xl mx-auto px-4 sm:px-8 py-8">
+                <div className="max-w-6xl mx-auto px-4 sm:px-8 py-8 ">
                     <div className="overflow-x-auto md:overflow-x-auto">
-                        <table className="w-full">
+                        <table className="w-full  border border-blue-500">
                             <thead className="visible relative bg-gray-100 w-full ">
                                 <tr className=" ">
                                     <th className={generalStyle}>SL.NO.</th>
@@ -71,23 +71,23 @@ console.log(clickAbleId);
                                         <th className="text-left px-2 py-2 font-normal "><div className="flex justify-center items-center">{index + 1}</div></th>
                                         <th className=" "><div className="font-normal px-2">
                                             {advice?.title}</div></th>
-                                        <th className="">
+                                        <th className={`${flexStyle}`}>
                                             <div className={`${flexStyle} w-[150px] p-1`}>
                                                 <img src={advice?.image} alt="" className="w-full" />
                                             </div>
                                         </th>
                                         <th className="">
                                             <div className={flexStyle}>
-                                                <FaEdit onClick={() => handleModal(advice._id)} className="text-xl "></FaEdit>
+                                                <FaEdit onClick={() => handleModal(advice._id)} className="text-xl bg-green-500 text-white p-[2px] "></FaEdit>
                                             </div>
                                         </th>
                                         <th className="">
                                             <div className={flexStyle}>
-                                                <MdDeleteOutline onClick={() => handleDelete(advice._id)} className="text-2xl text-red-500"></MdDeleteOutline>
+                                                <MdDeleteOutline onClick={() => handleDelete(advice._id)} className="text-2xl text-white bg-red-500 p-[2px]"></MdDeleteOutline>
                                             </div>
                                         </th>
-                                        <th >
-                                            <div className={`${flexStyle} w-[150px]`}>
+                                        <th>
+                                            <div className={` w-[150px]`}>
                                                 Sayedul
                                             </div>
                                         </th>
