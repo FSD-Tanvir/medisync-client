@@ -51,7 +51,7 @@ console.log(clickAbleId);
     return (
         <div>
             <Navbar></Navbar>
-            <div id="app" className="bg-red-200 min-h-screen ">
+            <div id="app" className=" min-h-screen ">
                 <div className="max-w-6xl mx-auto px-4 sm:px-8 py-8">
                     <div className="overflow-x-auto md:overflow-x-auto">
                         <table className="w-full">

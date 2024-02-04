@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700;9..40,800&display=swap');
 
 #root {
-  max-width: 1280px;
   margin: 0 auto;
   padding: 0rem;
   font-family: 'DM Sans', sans-serif;
