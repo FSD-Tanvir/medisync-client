@@ -27,7 +27,7 @@ const menuItems = [
 ];
 
 const Navbar = () => {
-  const { user } = useAuth()
+  const { user, logOut } = useAuth()
   console.log(user)
   let [openMenu, setOpenMenu] = useState(false);
   const [showModal, setShowModal] = useState(false);
@@ -53,11 +53,16 @@ const Navbar = () => {
                 <IoCartOutline size={36} />
               </div>
               {
-                user?.email ? <Link to="/dashboard">
-                <div >
-                  <img className="w-8 h-8 sm:w-10 sm:h-10 rounded-full" src={user?.photoURL} />
+                user?.email ? <div className="flex gap-2 items-center">
+                  <div>
+                    <Link to="/dashboard">
+                      <img className="w-10 h-10 rounded-full" src={user?.photoURL} />
+                    </Link>
+                  </div>
+                  <div>
+                    <button className="border border-[#ffFFFF] hover:text-[#00FFFF] hover:border-[#00FFFF] px-3 py-1 rounded-lg cursor-pointer" onClick={logOut}>Logout</button>
+                  </div>
                 </div>
-                </Link>
                   :
                   <div
                     onClick={() => setShowModal(true)}
@@ -132,11 +137,17 @@ const Navbar = () => {
                 <IoCartOutline size={36} />
               </div>
               {
-                user?.email ? <Link to="/dashboard">
-                <div>
-                  <img className="w-10 h-10 rounded-full" src={user?.photoURL} />
-                </div>
-                </Link>
+                user?.email ?
+                  <div className="flex gap-2 items-center">
+                    <div>
+                      <Link to="/dashboard">
+                        <img className="w-10 h-10 rounded-full" src={user?.photoURL} />
+                      </Link>
+                    </div>
+                    <div>
+                      <button className="border border-[#ffFFFF] hover:text-[#00FFFF] hover:border-[#00FFFF] px-3 py-1 rounded-lg cursor-pointer" onClick={logOut}>Logout</button>
+                    </div>
+                  </div>
                   :
                   <div
                     onClick={() => setShowModal(true)}

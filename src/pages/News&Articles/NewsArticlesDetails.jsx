@@ -31,7 +31,7 @@ const NewsArticlesDetails = () => {
     };
     // Call the fetchData function
     fetchData();
-  }, []);
+  }, [id]);
 
   return (
     <>
