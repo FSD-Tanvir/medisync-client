@@ -33,7 +33,7 @@ const AdviceUpdate = ({ clickAbleId : _id ,showModal, setShowModal }) => {
     return (
         <div>
             {
-                showModal ? <div className="fixed bg- inset-0 pt-10 bg-black bg-opacity-90 z-50">
+                showModal ? <div className="fixed inset-0 pt-10 bg-black bg-opacity-90 z-50">
                     <div className="w-80 md:w-96 lg:w-[800px] mx-auto bg-white flex flex-col items-center relative overflow-hidden shadow-xl justify-center  overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none">
                         <div  className=" w-full flex justify-end pr-5 pt-5 "><span onClick={() => setShowModal(false)} className="cursor-pointer">close</span></div>
                         {/* update form  */}
