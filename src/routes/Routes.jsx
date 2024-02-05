@@ -27,6 +27,11 @@ import UpdateJob from "../pages/dashboard/jobPanel/allJobs/UpdateJob";
 import axios from "axios";
 import ManageDoctors from "../pages/Dashboard/doctors/ManageDoctors";
 import UpdateDoctor from "../pages/Dashboard/doctors/UpdateDoctor";
+import AdminProfile from "../pages/Dashboard/AdminProfile/AdminProfile";
+import UserProfile from "../pages/Dashboard/UserProfile/UserProfile";
+import MyCart from "../pages/Dashboard/MyCart/MyCart";
+import MyReviews from "../pages/Dashboard/MyReviews/MyReviews";
+import MyDoctors from "../pages/Dashboard/MyDoctors/MyDoctors";
 
  
 
@@ -93,6 +98,10 @@ export const router = createBrowserRouter([
     element: <Dashboard></Dashboard>,
     children: [
       {
+        path: "adminProfile",
+        element: <AdminProfile></AdminProfile>
+      },
+      {
         path: "job-panel",
         element: <JobPanel />,
       },
@@ -108,7 +117,6 @@ export const router = createBrowserRouter([
         path: "job-panel/all-jobs",
         element: <AllJobs />,
       },
-
       {
         path: "job-panel/update-job/:id",
         element: <UpdateJob />,
@@ -158,6 +166,22 @@ export const router = createBrowserRouter([
             
           )
         },
+      },
+      {
+        path: "myProfile",
+        element: <UserProfile></UserProfile>
+      },
+      {
+        path: "myCart",
+        element: <MyCart></MyCart>
+      },
+      {
+        path: "myReviews",
+        element: <MyReviews/>
+      },
+      {
+        path: "myDoctors",
+        element: <MyDoctors></MyDoctors>
       },
     ],
   },
