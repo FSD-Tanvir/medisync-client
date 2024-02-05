@@ -87,16 +87,16 @@ const Footer = () => {
               Social Links:
             </h2>
             <div className="flex justify-between gap-2 py-2 lg:px-10">
-              <span className="w-[40px] h-[40px] cursor-pointer text-black border border-[#cdb4db] p-2 rounded-full hover:scale-110 transition duration-200 ease-linear">
+              <span className="w-[40px] h-[40px] cursor-pointer text-black border border-[#cdb4db] p-2 rounded-full hover:scale-110 transition duration-[250] ease-linear">
                 <FaFacebookF size={22} />
               </span>
-              <span className="w-[40px] h-[40px] cursor-pointer text-black border border-[#cdb4db] p-2 rounded-full hover:scale-110 transition duration-200 ease-linear">
+              <span className="w-[40px] h-[40px] cursor-pointer text-black border border-[#cdb4db] p-2 rounded-full hover:scale-110 transition duration-[250] ease-linear">
                 <FaTwitter size={22} />
               </span>
-              <span className="w-[40px] h-[40px] cursor-pointer text-black border border-[#cdb4db] p-2 rounded-full hover:scale-110 transition duration-200 ease-linear">
+              <span className="w-[40px] h-[40px] cursor-pointer text-black border border-[#cdb4db] p-2 rounded-full hover:scale-110 transition duration-[250] ease-linear">
                 <FaLinkedin size={22} />
               </span>
-              <span className="w-[40px] h-[40px] cursor-pointer text-black border border-[#cdb4db] p-2 rounded-full hover:scale-110 transition duration-200 ease-linear">
+              <span className="w-[40px] h-[40px] cursor-pointer text-black border border-[#cdb4db] p-2 rounded-full hover:scale-110 transition duration-[250] ease-linear">
                 <FaYoutube size={22} />
               </span>
             </div>
