@@ -1,7 +1,4 @@
 /* eslint-disable react/no-unescaped-entities */
-import { GiMeal } from "react-icons/gi";
-import { CgProfile } from "react-icons/cg";
-import { MdRateReview } from "react-icons/md";
 import { NavLink, Outlet, useLocation } from "react-router-dom";
 import { IoMdArrowDropright } from "react-icons/io";
 // import useAdmin from "../../hooks/useAdmin";
@@ -11,10 +8,13 @@ import newsIcon from "../assets/DashboardIcons/news.png"
 import adviceIcon from "../assets/DashboardIcons/advice.png"
 import jobIcon from "../assets/DashboardIcons/jobs.png"
 import homeIcon from "../assets/DashboardIcons/home.webp"
+import adminIcon from "../assets/DashboardIcons/admin.png"
+import cartIcon from "../assets/DashboardIcons/cart.png"
+import reviewsIcon from "../assets/DashboardIcons/reviews.png"
 
 const Dashboard = () => {
   const [open, setOpen] = useState(false)
-  const isAdmin = " ";
+  const isAdmin = "";
   const location = useLocation();
   const isDashboard = location.pathname === "/dashboard" || false;
 
@@ -40,6 +40,20 @@ const Dashboard = () => {
         <ul className="menu space-y-2 text-black">
           {isAdmin ? (
             <>
+              <li>
+                <NavLink
+                  to="adminProfile"
+                  className={({ isActive, isPending }) =>
+                    isActive
+                      ? "font-semibold flex justify-start items-center gap-1 pl-2 bg-[#3560fa] text-[#ffffff] w-[70%] mx-auto py-1"
+                      : isPending
+                        ? ""
+                        : "font-semibold flex justify-start items-center gap-1 pl-2 w-[70%] mx-auto py-1"}
+                >
+                  {open ? <span className="flex justify-center items-center gap-2"> <img src={adminIcon} className="w-6 bg-white" alt="" />
+                    Admin Profile</span> : <img src={adminIcon} className="w-6 bg-white" alt="" />}
+                </NavLink>
+              </li>
               <li>
                 <NavLink
                   to="/Dashboard/doctors"
@@ -110,7 +124,7 @@ const Dashboard = () => {
                         : "font-semibold flex justify-start items-center gap-1 pl-2 w-[70%] mx-auto py-1"}
                 >
                   {open ? <span className="flex justify-center items-center gap-2"> <img src={jobIcon} className="w-6 bg-white" alt="" />
-                  All Jobs</span> : <img src={jobIcon} className="w-6 bg-white" alt="" />}
+                    All Jobs</span> : <img src={jobIcon} className="w-6 bg-white" alt="" />}
                 </NavLink>
               </li>
             </>
@@ -118,34 +132,58 @@ const Dashboard = () => {
             <>
               <li>
                 <NavLink
-                  to="/Dashboard/MyProfile"
-                  className="font-semibold flex justify-start items-center gap-1 pl-2 mt-5"
+                  to="myProfile"
+                  className={({ isActive, isPending }) =>
+                    isActive
+                      ? "font-semibold flex justify-start items-center gap-1 pl-2 bg-[#3560fa] text-[#ffffff] w-[70%] mx-auto py-1"
+                      : isPending
+                        ? ""
+                        : "font-semibold flex justify-start items-center gap-1 pl-2 w-[70%] mx-auto py-1"}
                 >
-                  <CgProfile></CgProfile>My Profile
+                  {open ? <span className="flex justify-center items-center gap-2"> <img src={adminIcon} className="w-6 bg-white" alt="" />
+                    My Profile</span> : <img src={adminIcon} className="w-6 bg-white" alt="" />}
                 </NavLink>
               </li>
               <li>
                 <NavLink
-                  to="/Dashboard/RequestedMeals"
-                  className="font-semibold flex justify-start items-center gap-1 pl-2"
+                  to="myCart"
+                  className={({ isActive, isPending }) =>
+                    isActive
+                      ? "font-semibold flex justify-start items-center gap-1 pl-2 bg-[#3560fa] text-[#ffffff] w-[70%] mx-auto py-1"
+                      : isPending
+                        ? ""
+                        : "font-semibold flex justify-start items-center gap-1 pl-2 w-[70%] mx-auto py-1"}
                 >
-                  <GiMeal></GiMeal>My Cart
+                  {open ? <span className="flex justify-center items-center gap-2"> <img src={cartIcon} className="w-6 bg-white" alt="" />
+                    My Cart</span> : <img src={cartIcon} className="w-6 bg-white" alt="" />}
                 </NavLink>
               </li>
               <li>
                 <NavLink
-                  to="/Dashboard/RequestedMeals"
-                  className="font-semibold flex justify-start items-center gap-1 pl-2"
+                  to="myReviews"
+                  className={({ isActive, isPending }) =>
+                    isActive
+                      ? "font-semibold flex justify-start items-center gap-1 pl-2 bg-[#3560fa] text-[#ffffff] w-[70%] mx-auto py-1"
+                      : isPending
+                        ? ""
+                        : "font-semibold flex justify-start items-center gap-1 pl-2 w-[70%] mx-auto py-1"}
                 >
-                  <GiMeal></GiMeal>My Doctor's
+                  {open ? <span className="flex justify-center items-center gap-2"> <img src={reviewsIcon} className="w-6 bg-white" alt="" />
+                    My Reviews</span> : <img src={reviewsIcon} className="w-6 bg-white" alt="" />}
                 </NavLink>
               </li>
               <li>
                 <NavLink
-                  to="/Dashboard/MyReviews"
-                  className="font-semibold flex justify-start items-center gap-1 pl-2"
+                  to="myDoctors"
+                  className={({ isActive, isPending }) =>
+                    isActive
+                      ? "font-semibold flex justify-start items-center gap-1 pl-2 bg-[#3560fa] text-[#ffffff] w-[70%] mx-auto py-1"
+                      : isPending
+                        ? ""
+                        : "font-semibold flex justify-start items-center gap-1 pl-2 w-[70%] mx-auto py-1"}
                 >
-                  <MdRateReview /> My Reviews
+                  {open ? <span className="flex justify-center items-center gap-2"> <img src={doctorIcon} className="w-6 bg-white" alt="" />
+                    My Doctor's</span> : <img src={doctorIcon} className="w-6 bg-white" alt="" />}
                 </NavLink>
               </li>
             </>
