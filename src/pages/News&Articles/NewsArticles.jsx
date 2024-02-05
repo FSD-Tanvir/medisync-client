@@ -27,7 +27,9 @@ const NewsArticles = () => {
     const fetchData = async () => {
       try {
         // Fetch data from an API endpoint (replace with your API URL)
-        const response = await fetch("https://medisync-server.vercel.app/newAndArticles");
+        const response = await fetch(
+          "https://medisync-server.vercel.app/newAndArticles"
+        );
         const result = await response.json();
         console.log(result);
 
@@ -63,12 +65,12 @@ const NewsArticles = () => {
   return (
     <>
       <div>
+        {/* banner  */}
         <BannerSimple
           imgUrl="https://i.ibb.co/5vStm5N/newsbanner.png"
-          text1="Welcome to news & articles"
+          text1="News & Articles"
           pageName="newsAndArticles"
         />
-        {/* <BannerSimple imgUrl="https://i.ibb.co/5vStm5N/newsbanner.png" text1="News & Articles" pageName="newsAndArticles"/> */}
         {/*Categories*/}
         <Categories />
 

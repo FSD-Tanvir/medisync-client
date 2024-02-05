@@ -1,21 +1,50 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import BannerSimple from "../../components/shared/Banners/BannerSimple/BannerSimple";
+// Import Swiper React components
+import { Swiper, SwiperSlide } from "swiper/react";
+
+// Import Swiper styles
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/scrollbar";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+
+// import './styles.css';
+
+// import required modules
+import { Keyboard, Scrollbar } from "swiper/modules";
 
 const Career = () => {
   const [jobsData, setJobsData] = useState([]);
   const [displayJobs, setDisplayJobs] = useState([]);
-  // const [departments, setDepartments] = useState([]);
+  const [departments, setDepartments] = useState([]);
+  // const [vacancies, setVacancies] = useState([]);
 
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch(`https://medisync-server.vercel.app/jobs?departmentOnly=${true}`)
+    const departmentsArr = [];
+    // const vacancyArr = []
+    fetch(`http://localhost:5000/jobs?departmentOnly=${true}`)
       .then((res) => res.json())
       .then((data) => {
         setJobsData(data.data);
         setDisplayJobs(data.data);
+        data?.data.forEach((job) => {
+          if (departmentsArr.includes(job.department.toLowerCase()) === false) {
+            departmentsArr.push(job.department.toLowerCase());
+            // console.log(testArr);
+          }
+          // if(departmentsArr.includes(job.department.toLowerCase()) === false){
+          //   vacancyArr.push(job.vacancy)
+          //   // console.log(vacancyArr);
+          // }
+        });
       });
+    setDepartments(departmentsArr);
+    // setVacancies(vacancyArr)
   }, []);
   const handleDepartment = (department) => {
     if (department !== "all_jobs") {
@@ -46,64 +75,55 @@ const Career = () => {
 
       {/* department cards  */}
 
-      <div className="flex gap-6 w-11/12 sm:w-4/5 mx-auto overflow-auto p-3 rounded-lg -mt-[30px] bg-blue-500">
+      <div className="flex gap-6 w-11/12 sm:w-4/5 mx-auto p-3 pt-0 rounded-lg -mt-[30px] bg-white drop-shadow-lg">
         {/* department cards*/}
-        {/* see all jobs button */}
-        <div
-          onClick={() => handleDepartment("all_jobs")}
-          className="relative flex justify-center items-center bg-blue-500 rounded-lg shadow-lg border h-[40px] sm:h-[60px] w-min  whitespace-nowrap px-4 cursor-pointer"
+        <Swiper
+          slidesPerView={"auto"}
+          spaceBetween={20}
+          centeredSlides={false}
+          grabCursor={true}
+          keyboard={{
+            enabled: true,
+          }}
+          scrollbar={true}
+          modules={[Keyboard, Scrollbar]}
+          className="mySwiper"
         >
-          <h3 className="flex justify-center items-center sm:text-xl text-white font-bold select-">
-            All Jobs
-            <span className="flex justify-center absolute -top-3 -right-3 bg-blue-500 items-center ml-2 border w-8 h-8 rounded-full">
-              {jobsData?.length}
-            </span>
-          </h3>
-        </div>
-        {/* showing departments  */}
-        {jobsData?.map((job) => (
-          <div
-            onClick={() => handleDepartment(job?.department)}
-            key={job._id}
-            className="relative flex justify-center items-center bg-blue-500 rounded-lg shadow-lg border h-[40px] sm:h-[60px] w-min  whitespace-nowrap px-4 cursor-pointer"
-          >
-            <h3 className="flex justify-center items-center sm:text-xl text-white font-bold select-">
-              {job.department.replace(/_/g, " ")}
-              <span className="flex justify-center absolute -top-3 -right-3 bg-blue-500 items-center ml-2 border w-8 h-8 rounded-full">
-                {job.vacancy}
+          {/* this is for all jobs  */}
+          <SwiperSlide style={{ backgroundColor: "transparent" }}>
+            <div
+              onClick={() => handleDepartment("all_jobs")}
+              className="relative flex justify-center items-center bg-blue-500 rounded-lg shadow-lg border h-[40px] sm:h-[60px] w-full cursor-pointer my-8"
+            >
+              <h3 className="flex justify-center items-center sm:text-xl text-white font-bold select-">
+                All Jobs
+                <span className="flex justify-center absolute z-[100_!important] -top-3 -right-3 bg-blue-500 items-center ml-2 border w-8 h-8 rounded-full">
+                  {jobsData?.length}
+                </span>
+              </h3>
+            </div>
+          </SwiperSlide>
+          {/* rest of departments card here  */}
+          {departments?.map((department, idx) => (
+            <SwiperSlide
+              style={{ backgroundColor: "transparent" }}
+              onClick={() => handleDepartment(department)}
+              key={idx}
+            >
+              <div className="relative flex justify-center items-center bg-blue-500 rounded-lg shadow-lg border h-[40px] sm:h-[60px] w-full cursor-pointer my-8">
+                <h3 className="flex justify-center items-center sm:text-xl text-white font-bold select-">
+                  {department.replace(/_/g, " ")}
+                  <span className="flex justify-center absolute -top-3 -right-3 bg-blue-500 items-center ml-2 border w-8 h-8 rounded-full">
+                {jobsData[idx].vacancy}
               </span>
-            </h3>
-          </div>
-        ))}
+                </h3>
+              </div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
       </div>
       {/* all jobs */}
       <div className="mt-14 px-2">
-        {/* <div className="border">
-          <Scrollbars
-            autoHide
-            autoHideTimeout={1000}
-            autoHideDuration={200}
-            style={scrollbarStyles}
-            renderThumbVertical={({ style, ...props }) => (
-              <div {...props} style={{ ...style, ...thumbStyles }} />
-            )}
-          >
-            Your scrollable content goes here
-            <div
-              style={{ height: 100, width: 300, border: "3px solid yellow" }}
-            >
-              <p>
-                this is dummpy text this is dummpy text this is dummpy text this
-                is dummpy text this is dummpy text this is dummpy text this is
-                dummpy text this is dummpy text this is dummpy text this is
-                dummpy text this is dummpy text this is dummpy text this is
-                dummpy text this is dummpy text this is dummpy text this is
-                dummpy text this is dummpy text this is dummpy text this is
-                dummpy text this is dummpy text{" "}
-              </p>
-            </div>
-          </Scrollbars>
-        </div> */}
         {/* heading  */}
         <h2 className="text-3xl text-black/70 font-semibold text-center">
           All Jobs
@@ -116,13 +136,13 @@ const Career = () => {
               key={job._id}
               className="bg-white rounded-lg shadow-lg border px-4 py-3"
             >
-              <h3 className="text-lg sm:text-xl text-black font-bold select- cursor-pointer">
+              <h3 className="text-lg sm:text-xl text-black font-bold cursor-pointer">
                 {job.title.split("_").join(" ")}
               </h3>
-              <h5 className="text-black/70 font-medium select- cursor-pointer">
-                {job.department} | {job.jobType}
+              <h5 className="text-black/70 font-medium cursor-pointer">
+                {job.department.replace(/_/g, " ")} | {job.jobType}
               </h5>
-              <p className="text-black/70 font-medium select- cursor-pointer">
+              <p className="text-black/70 font-medium cursor-pointer max-w-full">
                 {job.address}
               </p>
             </div>
