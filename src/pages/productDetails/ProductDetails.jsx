@@ -1,5 +1,6 @@
 import { useLoaderData } from "react-router-dom";
 import PRESCRIPTION from "../../assets/CategoryIcons/prescription.png"
+import { useState } from "react";
 
 
 
@@ -8,6 +9,17 @@ import PRESCRIPTION from "../../assets/CategoryIcons/prescription.png"
 const ProductDetails = () => {
     const productDetails = useLoaderData()
     // console.log(productDetails)
+    const [quantity, setQuantity] = useState(1);
+
+    const handleIncrement = () => {
+        setQuantity(prevQuantity => prevQuantity + 1);
+    };
+
+    const handleDecrement = () => {
+        setQuantity(prevQuantity => Math.max(1, prevQuantity - 1));
+    };
+
+    const totalAmount = productDetails.price * quantity;
 
     return (
         <>
@@ -27,8 +39,22 @@ const ProductDetails = () => {
                         <h2 className="font-medium text-blue-500 text-xl py-4 px-2">{productDetails?.company}</h2>
                         <span className="text-xl font-bold py-4 px-2">Best Price: ${productDetails?.price}</span>
                     </div>
-
-
+                </div>
+            </div>
+            <div className="mt-5">
+                <h2 className="font-bold text-2xl">Quantity</h2>
+                <div className="flex gap-2">
+                    <button className="bg-blue-500 text-white px-4 py-2" onClick={handleDecrement}>
+                        -
+                    </button>
+                    <span className="text-xl font-bold">{quantity}</span>
+                    <button className="bg-blue-500 text-white px-4 py-2" onClick={handleIncrement}>
+                        +
+                    </button>
+                </div>
+                <h2 className="font-bold text-2xl mt-3">Total Price</h2>
+                <div className="flex gap-2">
+                    <span className="text-xl font-bold">${totalAmount.toFixed(2)}</span>
                 </div>
             </div>
             <div className="flex gap-2 mt-5">
