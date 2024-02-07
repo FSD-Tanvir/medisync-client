@@ -2,7 +2,7 @@ import axios from "axios";
 
 
 const axiosPublic = axios.create({
-  baseURL: "https://medisync-server.vercel.app/",
+  baseURL: "https://medisync-server.vercel.app",
 });
 
 const useAxiosPublic = () => {

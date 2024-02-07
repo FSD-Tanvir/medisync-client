@@ -1,8 +1,9 @@
 import { useForm } from "react-hook-form";
-import axios from "axios";
 import toast from "react-hot-toast";
+import useAxiosPublic from "../../../hooks/useAxiosPublic";
 
 const AddDoctor = () => {
+  const axiosPublic = useAxiosPublic()
   const {
     register,
     handleSubmit,
@@ -24,8 +25,8 @@ const AddDoctor = () => {
     };
 
     try {
-      const result = await axios.post(
-        "https://medisync-server.vercel.app/doctors",
+      const result = await axiosPublic.post(
+        "/doctors",
         doctorData
       );
       console.log(result.data);

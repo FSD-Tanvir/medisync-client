@@ -1,10 +1,11 @@
 import { FaEdit, FaTrashAlt } from "react-icons/fa";
 import Swal from "sweetalert2/src/sweetalert2.js";
-import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import useAxiosPublic from "../../../../hooks/useAxiosPublic";
 
 const JobRow = ({ job, idx, refetch }) => {
   const navigate = useNavigate();
+  const axiosPublic = useAxiosPublic()
   // destructuring job
   const { _id, title, department, salary, jobType } = job || {};
 
@@ -25,8 +26,8 @@ const JobRow = ({ job, idx, refetch }) => {
     }).then((result) => {
       if (result.isConfirmed) {
         const deleteJob = async () => {
-          const res = await axios.delete(
-            `http://localhost:5000/jobs/delete-job/${_id}`
+          const res = await axiosPublic.delete(
+            `/jobs/delete-job/${_id}`
           );
           if (res.data.status === true) {
             refetch();

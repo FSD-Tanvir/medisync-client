@@ -1,10 +1,12 @@
-import axios from "axios";
 import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
 import { useLoaderData } from "react-router-dom";
+import useAxiosPublic from "../../../hooks/useAxiosPublic";
 
 const UpdateDoctor = () => {
   const { data } = useLoaderData();
+  const axiosPublic = useAxiosPublic()
+
   // actual doctor data
   const { data: doctor } = data || {};
   console.log(doctor);
@@ -31,8 +33,8 @@ const UpdateDoctor = () => {
     };
 
     try {
-      const res = await axios.put(
-        `https://medisync-server.vercel.app/doctors/${doctor?._id}`,
+      const res = await axiosPublic.put(
+        `/doctors/${doctor?._id}`,
         updatedDoctorData
       );
       if (res.data.status === true) {
