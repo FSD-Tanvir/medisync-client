@@ -6,10 +6,11 @@ import { FaUserDoctor } from "react-icons/fa6";
 import { GrWorkshop } from "react-icons/gr";
 import { TiThMenu } from "react-icons/ti";
 import { IoCartOutline, IoSearchOutline, IoClose } from "react-icons/io5";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import Modal from "../../../pages/home/LogInRegistration/Modal";
 import useAuth from "../../../hooks/useAuth";
+import useProductCart from "../../../hooks/useProductCart";
 
 const menuItems = [
   { id: 1, icon: <GoHome />, item: "Home", link: "/" },
@@ -28,9 +29,16 @@ const menuItems = [
 
 const Navbar = () => {
   const { user, logOut } = useAuth()
-  // console.log(user)
+  const [productCart, , ] = useProductCart()
+  const [cartLength, setCartLength] = useState(0);
+  
   let [openMenu, setOpenMenu] = useState(false);
   const [showModal, setShowModal] = useState(false);
+
+  useEffect(() => {
+    // Update cart length when cart data changes
+    setCartLength(productCart.length || 0);
+}, [productCart]);
 
   return (
     <>
@@ -49,8 +57,9 @@ const Navbar = () => {
         <div>
           <div className="flex flex-col items-end gap-5 text-blue-500">
             <div className="flex items-center gap-2 lg:gap-8">
-              <div className="hover:text-[#00FFFF] cursor-pointer">
+              <div className="hover:text-[#00FFFF] cursor-pointer flex relative">
                 <IoCartOutline size={36} />
+                <span className="absolute right-0 top-0 rounded-full bg-red-600 w-4 h-4 top right p-0 m-0 text-white font-mono text-sm  leading-tight text-center">{cartLength}</span>
               </div>
               {
                 user?.email ? <div className="flex gap-2 items-center">
@@ -133,8 +142,9 @@ const Navbar = () => {
 
           <div className="flex flex-col items-end gap-5 ">
             <div className="flex items-center gap-2 lg:gap-6">
-              <div className="hover:text-blue-500 text-blue-500   cursor-pointer">
+              <div className="hover:text-blue-500 text-blue-500 flex relative  cursor-pointer">
                 <IoCartOutline size={36} />
+                <span className="absolute right-0 top-0 rounded-full bg-red-600 w-4 h-4 top right p-0 m-0 text-white  text-sm  leading-tight text-center ">{cartLength}</span>
               </div>
               {
                 user?.email ?

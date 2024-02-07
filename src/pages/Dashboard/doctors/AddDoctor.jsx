@@ -25,7 +25,7 @@ const AddDoctor = () => {
 
     try {
       const result = await axios.post(
-        "https://medisync-server.vercel.app/doctors",
+        "http://localhost:5000/doctors",
         doctorData
       );
       console.log(result.data);

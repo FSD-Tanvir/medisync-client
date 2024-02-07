@@ -36,7 +36,7 @@ const UpdateJob = () => {
 
     try {
       const res = await axios.put(
-        `https://medisync-server.vercel.app/jobs/update-job/${job?._id}`,updatedJobData
+        `http://localhost:5000/jobs/update-job/${job?._id}`,updatedJobData
       );
       if (res.data.status === true) {
         toast.success("Your job has been updated successfully");
