@@ -11,6 +11,7 @@ import { Link, NavLink } from "react-router-dom";
 import Modal from "../../../pages/home/LogInRegistration/Modal";
 import useAuth from "../../../hooks/useAuth";
 import useProductCart from "../../../hooks/useProductCart";
+import Drawer from "../../drawer/Drawer";
 
 const menuItems = [
   { id: 1, icon: <GoHome />, item: "Home", link: "/" },
@@ -39,6 +40,16 @@ const Navbar = () => {
     // Update cart length when cart data changes
     setCartLength(productCart.length || 0);
 }, [productCart]);
+
+const [isDrawerOpen, setIsDrawerOpen] = useState(false);
+
+const openDrawer = () => {
+  setIsDrawerOpen(true);
+};
+
+const closeDrawer = () => {
+  setIsDrawerOpen(false);
+};
 
   return (
     <>
@@ -144,7 +155,8 @@ const Navbar = () => {
             <div className="flex items-center gap-2 lg:gap-6">
               <div className="hover:text-blue-500 text-blue-500 flex relative  cursor-pointer">
                 <IoCartOutline size={36} />
-                <span className="absolute right-0 top-0 rounded-full bg-red-600 w-4 h-4 top right p-0 m-0 text-white  text-sm  leading-tight text-center ">{cartLength}</span>
+                <span onClick={openDrawer} className="absolute right-0 top-0 rounded-full bg-red-600 w-4 h-4 top right p-0 m-0 text-white  text-sm  leading-tight text-center ">{cartLength}</span>
+                <Drawer isOpen={isDrawerOpen} onClose={closeDrawer} />
               </div>
               {
                 user?.email ?
