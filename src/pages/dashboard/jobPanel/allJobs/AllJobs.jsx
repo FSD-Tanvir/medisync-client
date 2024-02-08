@@ -1,13 +1,14 @@
 import { useQuery } from "@tanstack/react-query";
-import axios from "axios";
 import JobRow from "./JobRow";
+import useAxiosPublic from "../../../../hooks/useAxiosPublic";
 
 const AllJobs = () => {
+  const axiosPublic = useAxiosPublic()
   const { data: allJobsData = [], refetch } = useQuery({
     queryKey: ["allJobs"],
     queryFn: async () => {
-      const res = await axios.get("http://localhost:5000/jobs");
-      return res?.data?.data;
+      const {data} = await axiosPublic.get("/jobs");
+      return data?.data;
     },
   });
   // console.log(allJobsData);

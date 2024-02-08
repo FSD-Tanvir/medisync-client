@@ -1,10 +1,11 @@
 import { FaEdit, FaTrashAlt } from "react-icons/fa";
 import Swal from "sweetalert2/src/sweetalert2.js";
-import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import useAxiosPublic from "../../../hooks/useAxiosPublic";
 
 const DoctorRow = ({ doctor, idx, refetch }) => {
   const navigate = useNavigate();
+  const axiosPublic = useAxiosPublic()
   // destructuring job
   const { _id, name, contact, experience_years, specialization,qualification } = doctor || {};
 
@@ -25,8 +26,8 @@ const DoctorRow = ({ doctor, idx, refetch }) => {
     }).then((result) => {
       if (result.isConfirmed) {
         const deleteJob = async () => {
-          const res = await axios.delete(
-            `http://localhost:5000/doctors/${_id}`
+          const res = await axiosPublic.delete(
+            `/doctors/${_id}`
           );
           if (res.data.status === true) {
             refetch();
@@ -76,13 +77,13 @@ const DoctorRow = ({ doctor, idx, refetch }) => {
 
         <button
           onClick={handleUpdateDoctor}
-          className=" border hover:border-blue-500 hover:text-blue-500 font-semibold py-2 px-2 rounded-md w-min shadow-[-2px_-2px_12px_2px_rgba(0,0,0,0.1),_2px_2px_12px_2px_rgba(0,0,0,0.1)] bg-blue-500 text-white hover:bg-[#FFF7F4] transition-colors duration-200 ease-linear"
+          className=" border hover:border-hover-border-color hover:text-hover-text-color font-semibold py-2 px-2 rounded-md w-min shadow-[-2px_-2px_12px_2px_rgba(0,0,0,0.1),_2px_2px_12px_2px_rgba(0,0,0,0.1)] bg-primary-bg-color text-white hover:bg-[#FFF7F4] transition-colors duration-200 ease-linear"
         >
           <FaEdit size={13} />
         </button>
         <button
           onClick={handleDeleteDoctor}
-          className=" border hover:border-blue-500 hover:text-blue-500 font-semibold py-2 px-2 rounded-md w-min shadow-[-2px_-2px_12px_2px_rgba(0,0,0,0.1),_2px_2px_12px_2px_rgba(0,0,0,0.1)] bg-red-500 text-white hover:bg-[#FFF7F4] transition-colors duration-200 ease-linear"
+          className=" border hover:border-hover-border-color hover:text-hover-text-color font-semibold py-2 px-2 rounded-md w-min shadow-[-2px_-2px_12px_2px_rgba(0,0,0,0.1),_2px_2px_12px_2px_rgba(0,0,0,0.1)] bg-red-500 text-white hover:bg-[#FFF7F4] transition-colors duration-200 ease-linear"
         >
           <FaTrashAlt size={13} />
         </button>
