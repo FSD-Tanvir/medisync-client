@@ -1,17 +1,15 @@
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
-import AddJob from "./addJob/AddJob";
-import AllJobs from "./allJobs/AllJobs";
-
 import '../../../components/shared/react-tabs-border-remove.css'
+import AllArticles from "./AllArticles";
+import AddArticle from "./AddArticle";
 
 const jobTabName = [
-  // { id: 3, title: "overview" },
-  { id: 2, title: "all-jobs" },
-  { id: 1, title: "add-job" },
+  { id: 2, title: "all-articles" },
+  { id: 1, title: "add-articles" },
 ];
 
-const JobPanel = () => {
+const ArticlesPanel = () => {
 
   return (
     <div className="px-4">
@@ -19,7 +17,7 @@ const JobPanel = () => {
         {/* heading  */}
         <div className="">
           <h2 className="capitalize text-2xl lg:text-3xl font-bold text-center my-8">
-            job <span className="text-text-color-blue">panel</span>
+            Articles <span className="text-blue-600">panel</span>
           </h2>
         </div>
       </div>
@@ -31,8 +29,8 @@ const JobPanel = () => {
           <TabList style={{background: "blue", color:"white"}}>
             {jobTabName &&
               jobTabName.map((tab) => (
-                <Tab key={tab?.id}>
-                  <div className="rounded-lg w-full h-[40px]  flex justify-center items-center text-text-color-blue px-4 font-semibold text-2xl md:text-xl lg:text-2xl gap-1 p-1 cursor-pointer shadow-[-2px_-2px_12px_2px_rgba(0,0,0,0.1),_2px_2px_12px_2px_rgba(0,0,0,0.1)] hover:shadow-[-5px_-5px_15px_4px_rgba(0,0,0,0.1),_5px_5px_15px_4px_rgba(0,0,0,0.1)] duration-1000 hover:scale-105">
+                <Tab key={tab?.id} >
+                  <div className="rounded-sm w-full h-[40px]  flex justify-center items-center  px-4 font-semibold text-2xl md:text-xl lg:text-2xl gap-1 p-1 cursor-pointer duration-1000">
                     <h2 className="capitalize text-lg">{tab?.title}</h2>
                   </div>
                 </Tab>
@@ -40,10 +38,10 @@ const JobPanel = () => {
           </TabList>
           {/* tab panels  */}
           <TabPanel>
-            <AllJobs/>
+                <AllArticles></AllArticles>
           </TabPanel>
           <TabPanel>
-            <AddJob />
+                <AddArticle></AddArticle>
           </TabPanel>
         </Tabs>
       </div>
@@ -51,4 +49,4 @@ const JobPanel = () => {
   );
 };
 
-export default JobPanel;
+export default ArticlesPanel;

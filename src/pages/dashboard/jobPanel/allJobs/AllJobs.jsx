@@ -14,7 +14,7 @@ const AllJobs = () => {
   // console.log(allJobsData);
   return (
     <div className="overflow-x-auto">
-      <table className="table lg:w-full">
+      <table className="table  lg:w-full">
         <thead className="">
           <tr>
             <th className="text-lg capitalize text-left">

@@ -13,7 +13,7 @@ import cartIcon from "../assets/DashboardIcons/cart.png";
 import reviewsIcon from "../assets/DashboardIcons/reviews.png";
 
 const Dashboard = () => {
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(false)
   const isAdmin = " ";
   const location = useLocation();
   const isDashboard = location.pathname === "/dashboard" || false;
@@ -72,7 +72,7 @@ const Dashboard = () => {
               </li>
               <li>
                 <NavLink
-                  to="/Dashboard/doctors"
+                  to="doctors-panel"
                   className={({ isActive, isPending }) =>
                     isActive
                       ? "font-semibold flex justify-start items-center gap-1 pl-2 bg-[#3560fa] text-[#ffffff] w-[70%] mx-auto py-1"
@@ -94,7 +94,7 @@ const Dashboard = () => {
               </li>
               <li>
                 <NavLink
-                  to="/Dashboard/add-articles"
+                  to="articles-panel"
                   className={({ isActive, isPending }) =>
                     isActive
                       ? "font-semibold flex justify-start items-center gap-1 pl-2 bg-[#3560fa] text-[#ffffff] w-[70%] mx-auto py-1"
@@ -103,42 +103,14 @@ const Dashboard = () => {
                       : "font-semibold flex justify-start items-center gap-1 pl-2 w-[70%] mx-auto py-1"
                   }
                 >
-                  {open ? (
-                    <span className="flex justify-center items-center gap-2">
-                      {" "}
-                      <img src={newsIcon} className="w-6 bg-white" alt="" />
-                      Add News & Articles
-                    </span>
-                  ) : (
-                    <img src={newsIcon} className="w-6 bg-white" alt="" />
-                  )}
+                  {open ? <span className="flex justify-center items-center gap-2"> <img src={newsIcon} className="w-6 bg-white" alt="" />
+                    News & Articles</span> : <img src={newsIcon} className="w-6 bg-white" alt="" />}
                 </NavLink>
               </li>
               <li>
                 <NavLink
-                  to="/Dashboard/all-articles"
-                  className={({ isActive, isPending }) =>
-                    isActive
-                      ? "font-semibold flex justify-start items-center gap-1 pl-2 bg-[#3560fa] text-[#ffffff] w-[70%] mx-auto py-1"
-                      : isPending
-                      ? ""
-                      : "font-semibold flex justify-start items-center gap-1 pl-2 w-[70%] mx-auto py-1"
-                  }
-                >
-                  {open ? (
-                    <span className="flex justify-center items-center gap-2">
-                      {" "}
-                      <img src={newsIcon} className="w-6 bg-white" alt="" />
-                      All News & Articles
-                    </span>
-                  ) : (
-                    <img src={newsIcon} className="w-6 bg-white" alt="" />
-                  )}
-                </NavLink>
-              </li>
-              <li>
-                <NavLink
-                  to="/dashboard/advices/allAdvices"
+
+                  to="advice-panel"
                   className={({ isActive, isPending }) =>
                     isActive
                       ? "font-semibold flex justify-start items-center gap-1 pl-2 bg-[#3560fa] text-[#ffffff] w-[70%] mx-auto py-1"

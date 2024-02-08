@@ -54,7 +54,7 @@ const JobRow = ({ job, idx, refetch }) => {
   };
 
   return (
-    <tr>
+    <tr >
       <th className="text-left">{idx + 1}</th>
       <td className="capitalize text-left w-min whitespace-nowrap">
         <div className="px-3 xl:pl-3">{title.replace(/_/g, " ")}</div>

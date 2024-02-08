@@ -1,8 +1,8 @@
+/* eslint-disable react/no-unescaped-entities */
 import { FaCamera, FaUser } from "react-icons/fa6";
 import { FaUnlockKeyhole } from "react-icons/fa6";
 import { MdAttachEmail } from "react-icons/md";
 import { IoMdRefresh } from "react-icons/io";
-import regImg from "../../../assets/LogIn/doctor-register.jpg";
 import { useContext, useEffect, useState } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
