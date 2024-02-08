@@ -12,8 +12,8 @@ const Footer = () => {
   return (
     <div className="  bg-[#FFF7F4] py-24 px-5 sm:px-10 space-y-10 text-black">
       <div>
-        <h2 className="text-4xl font-bold text-black">
-          Medi<span className="text-[#00FFFF]">Sync</span>
+        <h2 className="text-4xl font-bold ">
+          Medi<span className="text-text-color-blue">Sync</span>
         </h2>
       </div>
       {/* footer content container  */}

@@ -146,7 +146,7 @@ const ByProducts = () => {
               }`}
             >
               <img className="w-8 h-8" src={OTC} alt="" />
-              <h2 className="font-bold text-xl text-blue-500">OTC Medicine</h2>
+              <h2 className="font-bold text-xl text-text-color-blue">OTC Medicine</h2>
             </li>
             <li
               onClick={() => setCategory("women")}
@@ -155,7 +155,7 @@ const ByProducts = () => {
               }`}
             >
               <img className="w-8 h-8" src={WOMEN} alt="" />
-              <h2 className="font-bold text-xl text-blue-500">For Women</h2>
+              <h2 className="font-bold text-xl text-text-color-blue">For Women</h2>
             </li>
             <li
               onClick={() => setCategory("baby")}
@@ -164,7 +164,7 @@ const ByProducts = () => {
               }`}
             >
               <img className="w-8 h-8" src={BABY} alt="" />
-              <h2 className="font-bold text-xl text-blue-500">Baby Care</h2>
+              <h2 className="font-bold text-xl text-text-color-blue">Baby Care</h2>
             </li>
             <li
               onClick={() => setCategory("dental")}
@@ -173,7 +173,7 @@ const ByProducts = () => {
               }`}
             >
               <img className="w-8 h-8" src={DENTAL} alt="" />
-              <h2 className="font-bold text-xl text-blue-500">Dental Care</h2>
+              <h2 className="font-bold text-xl text-text-color-blue">Dental Care</h2>
             </li>
             <li
               onClick={() => setCategory("diabetic")}
@@ -182,7 +182,7 @@ const ByProducts = () => {
               }`}
             >
               <img className="w-8 h-8" src={DIABETIC} alt="" />
-              <h2 className="font-bold text-xl text-blue-500">Diabetic Care</h2>
+              <h2 className="font-bold text-xl text-text-color-blue">Diabetic Care</h2>
             </li>
             <li
               onClick={() => setCategory("personal")}
@@ -191,7 +191,7 @@ const ByProducts = () => {
               }`}
             >
               <img className="w-8 h-8" src={PERSONAL} alt="" />
-              <h2 className="font-bold text-xl text-blue-500">Personal Care</h2>
+              <h2 className="font-bold text-xl text-text-color-blue">Personal Care</h2>
             </li>
             <li
               onClick={() => setCategory("prescription")}
@@ -200,7 +200,7 @@ const ByProducts = () => {
               }`}
             >
               <img className="w-8 h-8" src={PRESCRIPTION} alt="" />
-              <h2 className="font-bold text-xl text-blue-500">
+              <h2 className="font-bold text-xl text-text-color-blue">
                 Prescription Medicine
               </h2>
             </li>

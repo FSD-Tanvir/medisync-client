@@ -1,6 +1,7 @@
 import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
 import useAxiosPublic from "../../../hooks/useAxiosPublic";
+import Button from "../../../components/shared/button/Button";
 
 const AddDoctor = () => {
   const axiosPublic = useAxiosPublic()
@@ -47,7 +48,7 @@ const AddDoctor = () => {
         <div className="space-y-5">
           {/* Doctor Name */}
           <div className="space-y-5 drop-shadow-md">
-            <label htmlFor="name" className="block text-blue-500">
+            <label htmlFor="name" className="block text-text-color-blue">
               Doctor Name
             </label>
             <input
@@ -65,7 +66,7 @@ const AddDoctor = () => {
           </div>
           {/* Specialization */}
           <div className="space-y-5 drop-shadow-md">
-            <label htmlFor="specialization" className="block text-blue-500">
+            <label htmlFor="specialization" className="block text-text-color-blue">
               Specialization
             </label>
             <input
@@ -78,7 +79,7 @@ const AddDoctor = () => {
           </div>
           {/* Image URL */}
           <div className="space-y-5 drop-shadow-md">
-            <label htmlFor="image" className="block text-blue-500">
+            <label htmlFor="image" className="block text-text-color-blue">
               Image URL
             </label>
             <input
@@ -91,7 +92,7 @@ const AddDoctor = () => {
           </div>
           {/* Qualification */}
           <div className="space-y-5 drop-shadow-md">
-            <label htmlFor="qualification" className="block text-blue-500">
+            <label htmlFor="qualification" className="block text-text-color-blue">
               Qualification
             </label>
             <input
@@ -104,7 +105,7 @@ const AddDoctor = () => {
           </div>
           {/* Experience Years */}
           <div className="space-y-5 drop-shadow-md">
-            <label htmlFor="experience_years" className="block text-blue-500">
+            <label htmlFor="experience_years" className="block text-text-color-blue">
               Experience Years
             </label>
             <input
@@ -117,7 +118,7 @@ const AddDoctor = () => {
           </div>
           {/* Contact Email */}
           <div className="space-y-5 drop-shadow-md">
-            <label htmlFor="email" className="block text-blue-500">
+            <label htmlFor="email" className="block text-text-color-blue">
               Contact Email
             </label>
             <input
@@ -135,7 +136,7 @@ const AddDoctor = () => {
           </div>
           {/* Contact Phone */}
           <div className="space-y-5 drop-shadow-md">
-            <label htmlFor="phone" className="block text-blue-500">
+            <label htmlFor="phone" className="block text-text-color-blue">
               Contact Phone
             </label>
             <input
@@ -148,7 +149,7 @@ const AddDoctor = () => {
           </div>
           {/* University */}
           <div className="space-y-5 drop-shadow-md">
-            <label htmlFor="university" className="block text-blue-500">
+            <label htmlFor="university" className="block text-text-color-blue">
               University
             </label>
             <input
@@ -162,9 +163,7 @@ const AddDoctor = () => {
         </div>
         {/* Add Doctor Button */}
         <div className="text-center mt-8">
-          <button className="border hover:border-blue-500 hover:text-blue-500 font-semibold py-2 px-2 rounded-md w-1/3 shadow-[-2px_-2px_12px_2px_rgba(0,0,0,0.1),_2px_2px_12px_2px_rgba(0,0,0,0.1)] bg-blue-500 text-white hover:bg-[#FFF7F4] transition-colors duration-200 ease-linear">
-            Add Doctor
-          </button>
+        <Button btnName="add doctor" classForButton="px-2 w-1/3"/>
         </div>
       </form>
     </div>

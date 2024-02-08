@@ -48,19 +48,19 @@ const AllArticlesCard = ({
         <div className="w-full flex justify-end items-center gap-5 absolute bottom-1 left-0 right-0 m-auto">
           <button
             onClick={() => handleEditArticlePage(item._id)}
-            className="border hover:border-blue-500 hover:text-blue-500 font-semibold py-1 px-2 rounded-md text-sm sm:text-sm md:text-sm lg:text-sm xl:text-sm lg:w-full xl:w-fit  shadow-[-2px_-2px_12px_2px_rgba(0,0,0,0.1),_2px_2px_12px_2px_rgba(0,0,0,0.1)]   bg-blue-500 text-white hover:bg-[#FFF7F4]"
+            className="border hover:border-hover-border-color hover:text-hover-text-color font-semibold py-1 px-2 rounded-md text-sm sm:text-sm md:text-sm lg:text-sm xl:text-sm lg:w-full xl:w-fit  shadow-[-2px_-2px_12px_2px_rgba(0,0,0,0.1),_2px_2px_12px_2px_rgba(0,0,0,0.1)]   bg-primary-bg-color text-white hover:bg-[#FFF7F4]"
           >
             <CiEdit />
           </button>
           <button
             onClick={() => handleArticlePage(item._id)}
-            className="border hover:border-blue-500 hover:text-blue-500 font-semibold py-1 px-2 rounded-md text-sm sm:text-sm md:text-sm lg:text-sm xl:text-sm lg:w-full xl:w-fit  shadow-[-2px_-2px_12px_2px_rgba(0,0,0,0.1),_2px_2px_12px_2px_rgba(0,0,0,0.1)]   bg-blue-500 text-white hover:bg-[#FFF7F4]"
+            className="border hover:border-hover-border-color hover:text-hover-text-color font-semibold py-1 px-2 rounded-md text-sm sm:text-sm md:text-sm lg:text-sm xl:text-sm lg:w-full xl:w-fit  shadow-[-2px_-2px_12px_2px_rgba(0,0,0,0.1),_2px_2px_12px_2px_rgba(0,0,0,0.1)]   bg-primary-bg-color text-white hover:bg-[#FFF7F4]"
           >
             <MdReadMore />
           </button>
           <button
             onClick={() => handleDeleteArticle(item._id)}
-            className="border hover:border-blue-500 hover:text-blue-500 font-semibold py-1 px-2 rounded-md text-sm sm:text-sm md:text-sm lg:text-sm xl:text-sm lg:w-full xl:w-fit  shadow-[-2px_-2px_12px_2px_rgba(0,0,0,0.1),_2px_2px_12px_2px_rgba(0,0,0,0.1)]   bg-blue-500 text-white hover:bg-[#FFF7F4]"
+            className="border hover:border-hover-border-color hover:text-hover-text-color font-semibold py-1 px-2 rounded-md text-sm sm:text-sm md:text-sm lg:text-sm xl:text-sm lg:w-full xl:w-fit  shadow-[-2px_-2px_12px_2px_rgba(0,0,0,0.1),_2px_2px_12px_2px_rgba(0,0,0,0.1)]   bg-primary-bg-color text-white hover:bg-[#FFF7F4]"
           >
             <MdDeleteOutline />
           </button>

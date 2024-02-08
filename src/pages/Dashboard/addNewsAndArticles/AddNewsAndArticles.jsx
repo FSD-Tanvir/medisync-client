@@ -45,7 +45,7 @@ const AddNewsAndArticles = () => {
             className="space-y-5 drop-shadow-md"
           >
             <div className="space-y-5 drop-shadow-md">
-              <label className="block text-blue-500">Image URL</label>
+              <label className="block text-text-color-blue">Image URL</label>
               <input
                 type="text"
                 name="image"
@@ -62,7 +62,7 @@ const AddNewsAndArticles = () => {
             </div>
 
             <div className="space-y-5 drop-shadow-md">
-              <label className="block text-blue-500">Post title</label>
+              <label className="block text-text-color-blue">Post title</label>
               <input
                 type="text"
                 name="title"
@@ -78,7 +78,7 @@ const AddNewsAndArticles = () => {
               )}
             </div>
             <div className="space-y-5 drop-shadow-md">
-              <label className="block text-blue-500">Post description</label>
+              <label className="block text-text-color-blue">Post description</label>
               <input
                 type="text"
                 name="description"
@@ -94,7 +94,7 @@ const AddNewsAndArticles = () => {
               )}
             </div>
             <div className="space-y-5 drop-shadow-md">
-              <label className="block text-blue-500">Date of post</label>
+              <label className="block text-text-color-blue">Date of post</label>
               <input
                 type="date"
                 name="date"
@@ -110,7 +110,7 @@ const AddNewsAndArticles = () => {
               )}
             </div>
             <div className="text-center mt-8">
-              <button className="border hover:border-blue-500 hover:text-blue-500 font-semibold py-2 px-2 rounded-md w-1/3 shadow-[-2px_-2px_12px_2px_rgba(0,0,0,0.1),_2px_2px_12px_2px_rgba(0,0,0,0.1)] bg-blue-500 text-white hover:bg-[#FFF7F4] transition-colors duration-200 ease-linear">
+              <button className="border hover:border-hover-border-color hover:text-hover-text-color font-semibold py-2 px-2 rounded-md w-1/3 shadow-[-2px_-2px_12px_2px_rgba(0,0,0,0.1),_2px_2px_12px_2px_rgba(0,0,0,0.1)] bg-primary-bg-color text-white hover:bg-[#FFF7F4] transition-colors duration-200 ease-linear">
                 Submit
               </button>
             </div>
