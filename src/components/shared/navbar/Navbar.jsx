@@ -10,6 +10,7 @@ import { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import Modal from "../../../pages/home/LogInRegistration/Modal";
 import useAuth from "../../../hooks/useAuth";
+import Chatbot from "../chatbot/Chatbot";
 
 const menuItems = [
   { id: 1, icon: <GoHome />, item: "Home", link: "/" },
@@ -182,6 +183,7 @@ const Navbar = () => {
         <div className="relative ">
           <ul
             className={`flex flex-col lg:flex-row gap-5 absolute lg:static bg-navbar-bg-color  rounded-b-xl  p-5  transition-all duration-500 ease-in ${
+            
               openMenu ? "top-0 w-full " : "top-[-500px] w-full "
             } `}
           >
@@ -195,7 +197,9 @@ const Navbar = () => {
                       ? "text-blue-700  flex items-center font-semibold  pr-4 gap-2 lg:border-r border-black"
                       : isPending
                       ? ""
+
                       : "flex items-center font-semibold text-text-color-blue  pr-4 gap-2 lg:border-r border-black  hover:text-blue-700 "
+
                   }
                 >
                   {menuItem.icon}
@@ -207,6 +211,7 @@ const Navbar = () => {
         </div>
       </div>
       <Modal showModal={showModal} setShowModal={setShowModal} />
+      <Chatbot />
     </>
   );
 };
