@@ -1,17 +1,16 @@
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
-import AddJob from "./addJob/AddJob";
-import AllJobs from "./allJobs/AllJobs";
 
 import '../../../components/shared/react-tabs-border-remove.css'
+import AllDoctors from "./AllDoctors";
+import AddDoctor from "./AddDoctor";
 
 const jobTabName = [
-  // { id: 3, title: "overview" },
-  { id: 2, title: "all-jobs" },
-  { id: 1, title: "add-job" },
+  { id: 2, title: "all-doctors" },
+  { id: 1, title: "add-doctor" },
 ];
 
-const JobPanel = () => {
+const DoctorsPanel = () => {
 
   return (
     <div className="px-4">
@@ -19,16 +18,16 @@ const JobPanel = () => {
         {/* heading  */}
         <div className="">
           <h2 className="capitalize text-2xl lg:text-3xl font-bold text-center my-8">
-            job <span className="text-blue-600">panel</span>
+            Doctors <span className="text-blue-600">panel</span>
           </h2>
         </div>
       </div>
       <div className="">
         {/* grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 */}
         {/* job tabs here  */}
-        <Tabs style={{border:"none"}}>
+        <Tabs style={{ border: "none" }}>
           {/* tab lists  */}
-          <TabList style={{background: "blue", color:"white"}}>
+          <TabList style={{ background: "blue", color: "white" }}>
             {jobTabName &&
               jobTabName.map((tab) => (
                 <Tab key={tab?.id} >
@@ -40,10 +39,10 @@ const JobPanel = () => {
           </TabList>
           {/* tab panels  */}
           <TabPanel>
-            <AllJobs/>
+            <AllDoctors></AllDoctors>
           </TabPanel>
           <TabPanel>
-            <AddJob />
+            <AddDoctor></AddDoctor>
           </TabPanel>
         </Tabs>
       </div>
@@ -51,4 +50,4 @@ const JobPanel = () => {
   );
 };
 
-export default JobPanel;
+export default DoctorsPanel;

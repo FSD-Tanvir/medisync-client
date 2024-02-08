@@ -28,7 +28,7 @@ const NewsArticles = () => {
       try {
         // Fetch data from an API endpoint (replace with your API URL)
         const response = await fetch(
-          "https://medisync-server.vercel.app/newAndArticles"
+          "http://localhost:5000/newAndArticles"
         );
         const result = await response.json();
         console.log(result);

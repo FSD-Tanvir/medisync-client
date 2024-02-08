@@ -1,17 +1,16 @@
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
-import AddJob from "./addJob/AddJob";
-import AllJobs from "./allJobs/AllJobs";
 
 import '../../../components/shared/react-tabs-border-remove.css'
+import AllAdvices from "./AllAdvices";
+import AddAdvice from "./AddAdvice";
 
 const jobTabName = [
-  // { id: 3, title: "overview" },
-  { id: 2, title: "all-jobs" },
-  { id: 1, title: "add-job" },
+  { id: 2, title: "all-advices" },
+  { id: 1, title: "add-advice" },
 ];
 
-const JobPanel = () => {
+const AdvicePanel = () => {
 
   return (
     <div className="px-4">
@@ -19,7 +18,7 @@ const JobPanel = () => {
         {/* heading  */}
         <div className="">
           <h2 className="capitalize text-2xl lg:text-3xl font-bold text-center my-8">
-            job <span className="text-blue-600">panel</span>
+            Advice <span className="text-blue-600">panel</span>
           </h2>
         </div>
       </div>
@@ -40,10 +39,10 @@ const JobPanel = () => {
           </TabList>
           {/* tab panels  */}
           <TabPanel>
-            <AllJobs/>
+                <AllAdvices></AllAdvices>
           </TabPanel>
           <TabPanel>
-            <AddJob />
+                <AddAdvice></AddAdvice>
           </TabPanel>
         </Tabs>
       </div>
@@ -51,4 +50,4 @@ const JobPanel = () => {
   );
 };
 
-export default JobPanel;
+export default AdvicePanel;
