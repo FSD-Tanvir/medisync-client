@@ -28,14 +28,16 @@ const ProductDetails = () => {
 
     // add to product in productCart
     const handelAddToCart = async (productDetails) => {
-        // console.log(productDetails)
+
         if (user && user?.email) {
             const cartItem = {
                 productItemId:productDetails._id,
+                quintity:quantity,
                 name:productDetails.name,
                 weight:productDetails.weight,
                 image:productDetails.image,
                 price:productDetails.price,
+                totalPrice:totalAmount.toFixed(2),
                 company:productDetails.company,
                 email:user.email,              
             }

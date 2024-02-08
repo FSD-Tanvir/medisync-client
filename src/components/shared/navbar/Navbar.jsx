@@ -6,7 +6,7 @@ import { FaUserDoctor } from "react-icons/fa6";
 import { GrWorkshop } from "react-icons/gr";
 import { TiThMenu } from "react-icons/ti";
 import { IoCartOutline, IoSearchOutline, IoClose } from "react-icons/io5";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import Modal from "../../../pages/home/LogInRegistration/Modal";
 import useAuth from "../../../hooks/useAuth";
@@ -25,31 +25,28 @@ const menuItems = [
   { id: 4, icon: <FiFilePlus />, item: "Articles", link: "/articles" },
   { id: 5, icon: <FaUserDoctor />, item: "Meet Doctors", link: "/doctors" },
   { id: 6, icon: <GrWorkshop />, item: "Career", link: "/career" },
-  // { id: 6, icon: <GrWorkshop />, item: "Dashboard", link: "/dashboard" },
+ 
 ];
 
 const Navbar = () => {
   const { user, logOut } = useAuth()
-  const [productCart, , ] = useProductCart()
-  const [cartLength, setCartLength] = useState(0);
-  
+  const [productCart, ,] = useProductCart()
+
+
   let [openMenu, setOpenMenu] = useState(false);
   const [showModal, setShowModal] = useState(false);
 
-  useEffect(() => {
-    // Update cart length when cart data changes
-    setCartLength(productCart.length || 0);
-}, [productCart]);
 
-const [isDrawerOpen, setIsDrawerOpen] = useState(false);
 
-const openDrawer = () => {
-  setIsDrawerOpen(true);
-};
+  const [isDrawerOpen, setIsDrawerOpen] = useState(false);
 
-const closeDrawer = () => {
-  setIsDrawerOpen(false);
-};
+  const openDrawer = () => {
+    setIsDrawerOpen(true);
+  };
+
+  const closeDrawer = () => {
+    setIsDrawerOpen(false);
+  };
 
   return (
     <>
@@ -70,7 +67,8 @@ const closeDrawer = () => {
             <div className="flex items-center gap-2 lg:gap-8">
               <div className="hover:text-[#00FFFF] cursor-pointer flex relative">
                 <IoCartOutline size={36} />
-                <span className="absolute right-0 top-0 rounded-full bg-red-600 w-4 h-4 top right p-0 m-0 text-white font-mono text-sm  leading-tight text-center">{cartLength}</span>
+                <span className="absolute right-0 top-0 rounded-full bg-red-600 w-4 h-4 top right p-0 m-0 text-white font-mono text-sm  leading-tight text-center">{productCart.length}</span>
+                <Drawer isOpen={isDrawerOpen} onClose={closeDrawer} />
               </div>
               {
                 user?.email ? <div className="flex gap-2 items-center">
@@ -155,7 +153,7 @@ const closeDrawer = () => {
             <div className="flex items-center gap-2 lg:gap-6">
               <div className="hover:text-blue-500 text-blue-500 flex relative  cursor-pointer">
                 <IoCartOutline size={36} />
-                <span onClick={openDrawer} className="absolute right-0 top-0 rounded-full bg-red-600 w-4 h-4 top right p-0 m-0 text-white  text-sm  leading-tight text-center ">{cartLength}</span>
+                <span onClick={openDrawer} className="absolute right-0 top-0 rounded-full bg-red-600 w-4 h-4 top right p-0 m-0 text-white  text-sm  leading-tight text-center ">{productCart.length}</span>
                 <Drawer isOpen={isDrawerOpen} onClose={closeDrawer} />
               </div>
               {
