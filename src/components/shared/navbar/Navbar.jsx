@@ -10,6 +10,7 @@ import { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import Modal from "../../../pages/home/LogInRegistration/Modal";
 import useAuth from "../../../hooks/useAuth";
+import Chatbot from "../chatbot/Chatbot";
 
 const menuItems = [
   { id: 1, icon: <GoHome />, item: "Home", link: "/" },
@@ -27,8 +28,8 @@ const menuItems = [
 ];
 
 const Navbar = () => {
-  const { user, logOut } = useAuth()
-  console.log(user)
+  const { user, logOut } = useAuth();
+  console.log(user);
   let [openMenu, setOpenMenu] = useState(false);
   const [showModal, setShowModal] = useState(false);
 
@@ -52,25 +53,33 @@ const Navbar = () => {
               <div className="hover:text-[#00FFFF] cursor-pointer">
                 <IoCartOutline size={36} />
               </div>
-              {
-                user?.email ? <div className="flex gap-2 items-center">
+              {user?.email ? (
+                <div className="flex gap-2 items-center">
                   <div>
                     <Link to="/dashboard">
-                      <img className="w-10 h-10 rounded-full" src={user?.photoURL} />
+                      <img
+                        className="w-10 h-10 rounded-full"
+                        src={user?.photoURL}
+                      />
                     </Link>
                   </div>
                   <div>
-                    <button className="border border-[#ffFFFF] hover:text-[#00FFFF] hover:border-[#00FFFF] px-3 py-1 rounded-lg cursor-pointer" onClick={logOut}>Logout</button>
+                    <button
+                      className="border border-[#ffFFFF] hover:text-[#00FFFF] hover:border-[#00FFFF] px-3 py-1 rounded-lg cursor-pointer"
+                      onClick={logOut}
+                    >
+                      Logout
+                    </button>
                   </div>
                 </div>
-                  :
-                  <div
-                    onClick={() => setShowModal(true)}
-                    className="border border-[#ffFFFF] hover:text-[#00FFFF] hover:border-[#00FFFF] px-3 py-1 rounded-lg cursor-pointer"
-                  >
-                    Login
-                  </div>
-              }
+              ) : (
+                <div
+                  onClick={() => setShowModal(true)}
+                  className="border border-[#ffFFFF] hover:text-[#00FFFF] hover:border-[#00FFFF] px-3 py-1 rounded-lg cursor-pointer"
+                >
+                  Login
+                </div>
+              )}
             </div>
           </div>
         </div>
@@ -136,26 +145,33 @@ const Navbar = () => {
               <div className="hover:text-blue-500 text-blue-500   cursor-pointer">
                 <IoCartOutline size={36} />
               </div>
-              {
-                user?.email ?
-                  <div className="flex gap-2 items-center">
-                    <div>
-                      <Link to="/dashboard">
-                        <img className="w-10 h-10 rounded-full" src={user?.photoURL} />
-                      </Link>
-                    </div>
-                    <div>
-                      <button className="border border-[#ffFFFF] hover:text-[#00FFFF] hover:border-[#00FFFF] px-3 py-1 rounded-lg cursor-pointer" onClick={logOut}>Logout</button>
-                    </div>
+              {user?.email ? (
+                <div className="flex gap-2 items-center">
+                  <div>
+                    <Link to="/dashboard">
+                      <img
+                        className="w-10 h-10 rounded-full"
+                        src={user?.photoURL}
+                      />
+                    </Link>
                   </div>
-                  :
-                  <div
-                    onClick={() => setShowModal(true)}
-                    className="border border-[#ffFFFF] hover:text-[#00FFFF] hover:border-[#00FFFF] px-3 py-1 rounded-lg cursor-pointer"
-                  >
-                    Login
+                  <div>
+                    <button
+                      className="border border-[#ffFFFF] hover:text-[#00FFFF] hover:border-[#00FFFF] px-3 py-1 rounded-lg cursor-pointer"
+                      onClick={logOut}
+                    >
+                      Logout
+                    </button>
                   </div>
-              }
+                </div>
+              ) : (
+                <div
+                  onClick={() => setShowModal(true)}
+                  className="border border-[#ffFFFF] hover:text-[#00FFFF] hover:border-[#00FFFF] px-3 py-1 rounded-lg cursor-pointer"
+                >
+                  Login
+                </div>
+              )}
             </div>
           </div>
         </div>
@@ -166,8 +182,9 @@ const Navbar = () => {
       <div className="sticky lg:top-0 top-[50px] z-10 bg-[#FFF7F4]  lg:rounded-b-xl  shadow-lg ">
         <div className="relative ">
           <ul
-            className={`flex flex-col lg:flex-row gap-5 absolute lg:static bg-[#FFF7F4]  rounded-b-xl  p-5  transition-all duration-500 ease-in ${openMenu ? "top-0 w-full " : "top-[-500px] w-full "
-              } `}
+            className={`flex flex-col lg:flex-row gap-5 absolute lg:static bg-[#FFF7F4]  rounded-b-xl  p-5  transition-all duration-500 ease-in ${
+              openMenu ? "top-0 w-full " : "top-[-500px] w-full "
+            } `}
           >
             {menuItems.map((menuItem) => (
               <li key={menuItem.id} className=" ">
@@ -178,11 +195,12 @@ const Navbar = () => {
                     isActive
                       ? "text-blue-700  flex items-center font-semibold  pr-4 gap-2 lg:border-r border-black"
                       : isPending
-                        ? ""
-                        : "flex items-center font-semibold text-blue-500  pr-4 gap-2 lg:border-r border-black  hover:text-blue-700 "}
+                      ? ""
+                      : "flex items-center font-semibold text-blue-500  pr-4 gap-2 lg:border-r border-black  hover:text-blue-700 "
+                  }
                 >
                   {menuItem.icon}
-                  <span >{menuItem.item}</span>
+                  <span>{menuItem.item}</span>
                 </NavLink>
               </li>
             ))}
@@ -190,6 +208,7 @@ const Navbar = () => {
         </div>
       </div>
       <Modal showModal={showModal} setShowModal={setShowModal} />
+      <Chatbot />
     </>
   );
 };
