@@ -1,10 +1,11 @@
 import { FaEdit, FaTrashAlt } from "react-icons/fa";
 import Swal from "sweetalert2/src/sweetalert2.js";
-import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import useAxiosPublic from "../../../hooks/useAxiosPublic";
 
 const DoctorRow = ({ doctor, idx, refetch }) => {
   const navigate = useNavigate();
+  const axiosPublic = useAxiosPublic()
   // destructuring job
   const { _id, name, contact, experience_years, specialization,qualification } = doctor || {};
 
@@ -25,8 +26,8 @@ const DoctorRow = ({ doctor, idx, refetch }) => {
     }).then((result) => {
       if (result.isConfirmed) {
         const deleteJob = async () => {
-          const res = await axios.delete(
-            `https://medisync-server.vercel.app/doctors/${_id}`
+          const res = await axiosPublic.delete(
+            `/doctors/${_id}`
           );
           if (res.data.status === true) {
             refetch();

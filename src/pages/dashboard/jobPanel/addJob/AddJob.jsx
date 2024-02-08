@@ -1,8 +1,9 @@
 import { useForm } from "react-hook-form";
-import axios from "axios";
 import toast from "react-hot-toast";
+import useAxiosPublic from "../../../../hooks/useAxiosPublic";
 
 const AddJob = () => {
+  const axiosPublic = useAxiosPublic()
   const {
     register,
     handleSubmit,
@@ -28,8 +29,8 @@ const AddJob = () => {
     };
 
     try {
-      const result = await axios.post(
-        "https://medisync-server.vercel.app/jobs/add-job",
+      const result = await axiosPublic.post(
+        "/jobs/add-job",
         jobData
       );
       if (result.data?.status === true) {

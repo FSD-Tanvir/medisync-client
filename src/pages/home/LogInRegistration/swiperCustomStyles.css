@@ -1,0 +1,16 @@
+.swiper-scrollbar {
+    max-width: 100px;
+    /* position: absolute; */
+    /* overflow: hidden; */
+    margin: 0 auto;
+}
+.swiper-horizontal > .swiper-scrollbar, .swiper-scrollbar.swiper-scrollbar-horizontal {
+    position: relative;
+}
+.swiper-scrollbar-thumb {
+
+    background-color: #F00; /* Change thumb color */
+    border: 1px solid #ccc; /* Add border */
+    width: 20px;
+    /* Adjust height if necessary (use with caution) */
+  }

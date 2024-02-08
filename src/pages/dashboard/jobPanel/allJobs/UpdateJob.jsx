@@ -2,8 +2,10 @@ import axios from "axios";
 import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
 import { useLoaderData } from "react-router-dom";
+import useAxiosPublic from "../../../../hooks/useAxiosPublic";
 
 const UpdateJob = () => {
+  const axiosPublic = useAxiosPublic()
   const { data } = useLoaderData();
   const { data: job } = data || {};
   //   console.log(job);
@@ -35,8 +37,8 @@ const UpdateJob = () => {
     };
 
     try {
-      const res = await axios.put(
-        `https://medisync-server.vercel.app/jobs/update-job/${job?._id}`,updatedJobData
+      const res = await axiosPublic.put(
+        `/jobs/update-job/${job?._id}`,updatedJobData
       );
       if (res.data.status === true) {
         toast.success("Your job has been updated successfully");

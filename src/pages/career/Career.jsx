@@ -15,8 +15,10 @@ import "swiper/css/pagination";
 
 // import required modules
 import { Keyboard, Scrollbar } from "swiper/modules";
+import useAxiosPublic from "../../hooks/useAxiosPublic";
 
 const Career = () => {
+  const axiosPublic = useAxiosPublic()
   const [jobsData, setJobsData] = useState([]);
   const [displayJobs, setDisplayJobs] = useState([]);
   const [departments, setDepartments] = useState([]);
@@ -27,11 +29,11 @@ const Career = () => {
   useEffect(() => {
     const departmentsArr = [];
     // const vacancyArr = []
-    fetch(`http://localhost:5000/jobs?departmentOnly=${true}`)
-      .then((res) => res.json())
-      .then((data) => {
-        setJobsData(data.data);
-        setDisplayJobs(data.data);
+
+    const fetchData = async()=>{
+      const {data} = await axiosPublic.get(`/jobs`)
+      setJobsData(data.data);
+      setDisplayJobs(data.data);
         data?.data.forEach((job) => {
           if (departmentsArr.includes(job.department.toLowerCase()) === false) {
             departmentsArr.push(job.department.toLowerCase());
@@ -42,10 +44,13 @@ const Career = () => {
           //   // console.log(vacancyArr);
           // }
         });
-      });
+    }
+    // calling the fetchData func 
+    fetchData()
+    // set departments 
     setDepartments(departmentsArr);
     // setVacancies(vacancyArr)
-  }, []);
+  }, [axiosPublic]);
   const handleDepartment = (department) => {
     if (department !== "all_jobs") {
       const selectedDepartment = jobsData.filter(
@@ -123,9 +128,9 @@ const Career = () => {
         </Swiper>
       </div>
       {/* all jobs */}
-      <div className="mt-14 px-2">
+      <div className="mt-14 px-3">
         {/* heading  */}
-        <h2 className="text-3xl text-black/70 font-semibold text-center">
+        <h2 className="text-3xl text-black/70 whitespace-nowrap w-min font-semibold text-left border-b-4 border-b-blue-500 ">
           All Jobs
         </h2>
         {/* jobs  */}

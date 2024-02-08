@@ -5,11 +5,13 @@ import { Link, useNavigate } from "react-router-dom";
 
 import Categories from "./Categories/Categories";
 import BannerSimple from "../../components/shared/Banners/BannerSimple/BannerSimple";
+import useAxiosPublic from "../../hooks/useAxiosPublic";
 
 const NewsArticles = () => {
   useEffect(() => {
     window.scroll(0, 0);
   }, []);
+  const axiosPublic = useAxiosPublic()
   const [articles, setArticlies] = useState();
   const navigate = useNavigate();
   const [currentPage, setCurrentPage] = useState(1);
@@ -27,21 +29,18 @@ const NewsArticles = () => {
     const fetchData = async () => {
       try {
         // Fetch data from an API endpoint (replace with your API URL)
-        const response = await fetch(
-          "https://medisync-server.vercel.app/newAndArticles"
+        const {data:articlesData} = await axiosPublic.get(
+          "/newAndArticles"
         );
-        const result = await response.json();
-        console.log(result);
-
         // Update the state with the fetched data
-        setArticlies(result);
-      } catch (error) {
-        console.error("Error fetching data:", error);
+        setArticlies(articlesData);
+      } catch (err) {
+        console.error("Error fetching data:", err.message);
       }
     };
     // Call the fetchData function
     fetchData();
-  }, []);
+  }, [axiosPublic]);
 
   const handleArticlePage = (id) => {
     navigate(`/articles/${id}`);
