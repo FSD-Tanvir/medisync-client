@@ -80,7 +80,7 @@ const Career = () => {
 
       {/* department cards  */}
 
-      <div className="flex gap-6 w-11/12 sm:w-4/5 mx-auto p-3 pt-0 rounded-lg -mt-[30px] bg-white drop-shadow-lg">
+      <div className="flex gap-6 w-11/12 sm:w-4/5 mx-auto p-3 pt-0 rounded-lg -mt-[30px] bg-primary-color-bg drop-shadow-lg">
         {/* department cards*/}
         <Swiper
           slidesPerView={"auto"}
@@ -98,11 +98,11 @@ const Career = () => {
           <SwiperSlide style={{ backgroundColor: "transparent" }}>
             <div
               onClick={() => handleDepartment("all_jobs")}
-              className="relative flex justify-center items-center bg-blue-500 rounded-lg shadow-lg border h-[40px] sm:h-[60px] w-full cursor-pointer my-8"
+              className="relative flex justify-center items-center bg-primary-bg-color rounded-lg shadow-lg border h-[40px] sm:h-[60px] w-full cursor-pointer my-8"
             >
               <h3 className="flex justify-center items-center sm:text-xl text-white font-bold select-">
                 All Jobs
-                <span className="flex justify-center absolute z-[100_!important] -top-3 -right-3 bg-blue-500 items-center ml-2 border w-8 h-8 rounded-full">
+                <span className="flex justify-center absolute z-[100_!important] -top-3 -right-3 bg-primary-bg-color items-center ml-2 border w-8 h-8 rounded-full">
                   {jobsData?.length}
                 </span>
               </h3>
@@ -115,10 +115,10 @@ const Career = () => {
               onClick={() => handleDepartment(department)}
               key={idx}
             >
-              <div className="relative flex justify-center items-center bg-blue-500 rounded-lg shadow-lg border h-[40px] sm:h-[60px] w-full cursor-pointer my-8">
+              <div className="relative flex justify-center items-center bg-primary-bg-color rounded-lg shadow-lg border h-[40px] sm:h-[60px] w-full cursor-pointer my-8">
                 <h3 className="flex justify-center items-center sm:text-xl text-white font-bold select-">
                   {department.replace(/_/g, " ")}
-                  <span className="flex justify-center absolute -top-3 -right-3 bg-blue-500 items-center ml-2 border w-8 h-8 rounded-full">
+                  <span className="flex justify-center absolute -top-3 -right-3 bg-primary-bg-color items-center ml-2 border w-8 h-8 rounded-full">
                 {jobsData[idx].vacancy}
               </span>
                 </h3>

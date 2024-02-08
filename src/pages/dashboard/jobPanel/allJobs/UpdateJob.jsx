@@ -59,7 +59,7 @@ const UpdateJob = () => {
         <div className="space-y-5">
           {/* job title  */}
           <div className="space-y-5 drop-shadow-md">
-            <label htmlFor="job_title" className="block text-blue-500">
+            <label htmlFor="job_title" className="block text-text-color-blue">
               Job Title
             </label>
             <input
@@ -79,7 +79,7 @@ const UpdateJob = () => {
           </div>
           {/* job type  */}
           <div className="space-y-5 drop-shadow-md">
-            <label htmlFor="job_type" className="block text-blue-500">
+            <label htmlFor="job_type" className="block text-text-color-blue">
               Job Type
             </label>
             <input
@@ -99,7 +99,7 @@ const UpdateJob = () => {
           </div>
           {/* job department  */}
           <div className="space-y-5 drop-shadow-md">
-            <label htmlFor="job_department" className="block text-blue-500">
+            <label htmlFor="job_department" className="block text-text-color-blue">
               Job Department
             </label>
             <input
@@ -119,7 +119,7 @@ const UpdateJob = () => {
           </div>
           {/* job vacancy  */}
           <div className="space-y-5 drop-shadow-md">
-            <label htmlFor="job_vacancy" className="block text-blue-500">
+            <label htmlFor="job_vacancy" className="block text-text-color-blue">
               Job vacancy
             </label>
             <input
@@ -144,7 +144,7 @@ const UpdateJob = () => {
           <div className="space-y-5 drop-shadow-md">
             <label
               htmlFor="compensation_and_benefits"
-              className="block text-blue-500"
+              className="block text-text-color-blue"
             >
               Job Compensation and Benefits
             </label>
@@ -165,7 +165,7 @@ const UpdateJob = () => {
           </div>
           {/* job salary  */}
           <div className="space-y-5 drop-shadow-md">
-            <label htmlFor="job_salary" className="block text-blue-500">
+            <label htmlFor="job_salary" className="block text-text-color-blue">
               Job Salary
             </label>
             <input
@@ -185,7 +185,7 @@ const UpdateJob = () => {
           </div>
           {/* job context  */}
           <div className="space-y-5 drop-shadow-md">
-            <label htmlFor="job_context" className="block text-blue-500">
+            <label htmlFor="job_context" className="block text-text-color-blue">
               Job Context
             </label>
             <input
@@ -207,7 +207,7 @@ const UpdateJob = () => {
           <div className="space-y-5 drop-shadow-md">
             <label
               htmlFor="job_responsibilities"
-              className="block text-blue-500"
+              className="block text-text-color-blue"
             >
               Job Responsibilities
             </label>
@@ -230,7 +230,7 @@ const UpdateJob = () => {
           <div className="space-y-5 drop-shadow-md">
             <label
               htmlFor="educational_requirements"
-              className="block text-blue-500"
+              className="block text-text-color-blue"
             >
               Educational Requirements
             </label>
@@ -253,7 +253,7 @@ const UpdateJob = () => {
           <div className="space-y-5 drop-shadow-md">
             <label
               htmlFor="experience_requirements"
-              className="block text-blue-500"
+              className="block text-text-color-blue"
             >
               Experience Requirements
             </label>
@@ -276,7 +276,7 @@ const UpdateJob = () => {
           <div className="space-y-5 drop-shadow-md">
             <label
               htmlFor="additional_requirements"
-              className="block text-blue-500"
+              className="block text-text-color-blue"
             >
               Additional Requirements
             </label>
@@ -297,7 +297,7 @@ const UpdateJob = () => {
           </div>
           {/* workplace  */}
           <div className="space-y-5 drop-shadow-md">
-            <label htmlFor="workplace" className="block text-blue-500">
+            <label htmlFor="workplace" className="block text-text-color-blue">
               Workplace
             </label>
             <input
@@ -317,7 +317,7 @@ const UpdateJob = () => {
           </div>
           {/* job Location  */}
           <div className="space-y-5 drop-shadow-md">
-            <label htmlFor="job_location" className="block text-blue-500">
+            <label htmlFor="job_location" className="block text-text-color-blue">
               Job Location
             </label>
             <input
@@ -337,7 +337,7 @@ const UpdateJob = () => {
           </div>
           {/* job address  */}
           <div className="space-y-5 drop-shadow-md">
-            <label htmlFor="address" className="block text-blue-500">
+            <label htmlFor="address" className="block text-text-color-blue">
               Job Address
             </label>
             <input
@@ -360,7 +360,7 @@ const UpdateJob = () => {
         <div className="text-center mt-8">
           <button
             type="submit"
-            className="border hover:border-blue-500 hover:text-blue-500 font-semibold py-2 px-2 rounded-md w-1/3 shadow-[-2px_-2px_12px_2px_rgba(0,0,0,0.1),_2px_2px_12px_2px_rgba(0,0,0,0.1)] bg-blue-500 text-white hover:bg-[#FFF7F4] transition-colors duration-200 ease-linear"
+            className="border hover:border-hover-border-color hover:text-hover-text-color font-semibold py-2 px-2 rounded-md w-1/3 shadow-[-2px_-2px_12px_2px_rgba(0,0,0,0.1),_2px_2px_12px_2px_rgba(0,0,0,0.1)] bg-primary-bg-color text-white hover:bg-[#FFF7F4] transition-colors duration-200 ease-linear"
           >
             Update Job
           </button>

@@ -1,3 +1,5 @@
+import Button from "../../../components/shared/button/Button";
+
 const ArtilicesCard = ({ articlie, handleArticlePage }) => {
   const { _id, title, image, description } = articlie || {};
 
@@ -29,12 +31,7 @@ const ArtilicesCard = ({ articlie, handleArticlePage }) => {
           </div>
         </div>
         <div className="w-full flex justify-center items-center absolute bottom-2 right-0 left-0 m-auto">
-          <button
-            onClick={() => handleArticlePage(_id)}
-            className="border hover:border-blue-500 hover:text-blue-500 font-semibold py-2 px-2 rounded-md text-xs sm:text-sm md:text-xs lg:text-sm xl:text-xs lg:w-full xl:w-fit shadow-[-2px_-2px_12px_2px_rgba(0,0,0,0.1),_2px_2px_12px_2px_rgba(0,0,0,0.1)] bg-blue-500 text-white hover:bg-[#FFF7F4]"
-          >
-            Read More
-          </button>
+          <Button btnName="Read More" classForButton="px-2 text-xs sm:text-sm md:text-xs lg:text-sm xl:text-xs lg:w-full xl:w-fit"/>
         </div>
       </div>
     </div>

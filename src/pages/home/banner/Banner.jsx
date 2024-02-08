@@ -12,20 +12,13 @@ import "swiper/css/navigation";
 // import required modules
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
 import "./Banner.css";
-import banner1 from "../../../assets/BannerImg/1.png";
-import banner2 from "../../../assets/BannerImg/2.png";
-import banner3 from "../../../assets/BannerImg/3.png";
-import banner4 from "../../../assets/BannerImg/4.png";
-import smallB1 from "../../../assets/BannerImg/smallB1.png";
-import smallB2 from "../../../assets/BannerImg/smallB2.png";
-import smallB3 from "../../../assets/BannerImg/smallB3.png";
-import smallB4 from "../../../assets/BannerImg/smallB4.png";
-// import banner5 from "../../../assets/BannerImg/banner5.png"
+import { bannerImagesArray } from "./bannerImagesArray";
+
 
 const Banner = () => {
   return (
     <div
-      className="shadow-[-5px_-5px_15px_4px_rgba(0,0,0,0.1),_5px_5px_15px_4px_rgba(0,0,0,0.1)] "
+      className="shadow-[-5px_-5px_15px_4px_rgba(0,0,0,0.1),_5px_5px_15px_4px_rgba(0,0,0,0.1)]"
       style={{
         borderRadius: "10px",
       }}
@@ -40,54 +33,20 @@ const Banner = () => {
         modules={[Autoplay, Pagination, Navigation]}
         className="mySwiper"
       >
-        <SwiperSlide
-          style={{
+        {
+          bannerImagesArray && bannerImagesArray.map(bannerImage => (
+            <SwiperSlide key={bannerImage?.id} style={{
             borderRadius: "10px",
-          }}
-        >
-          <div className=" hidden lg:block ">
-            <img src={banner1} className="rounded-lg" alt="" />
+          }}>
+            <div className=" hidden lg:block ">
+            <img src={bannerImage?.big_banner} className="rounded-lg" alt={`big ${bannerImage?.altText}`} />
           </div>
           <div className="lg:hidden">
-            <img src={smallB1} className="rounded-lg" alt="" />
+            <img src={bannerImage?.small_banner} className="rounded-lg" alt={`small ${bannerImage?.altText}`} />
           </div>
-        </SwiperSlide>
-        <SwiperSlide
-          style={{
-            borderRadius: "10px",
-          }}
-        >
-          <div className=" hidden lg:block ">
-            <img src={banner2} className="rounded-lg" alt="" />
-          </div>
-          <div className=" lg:hidden ">
-            <img src={smallB2} className="rounded-lg" alt="" />
-          </div>
-        </SwiperSlide>
-        <SwiperSlide
-          style={{
-            borderRadius: "10px",
-          }}
-        >
-          <div className=" hidden lg:block ">
-            <img src={banner3} className="rounded-lg" alt="" />
-          </div>
-          <div className=" lg:hidden ">
-            <img src={smallB3} className="rounded-lg" alt="" />
-          </div>
-        </SwiperSlide>
-        <SwiperSlide
-          style={{
-            borderRadius: "10px",
-          }}
-        >
-          <div className=" hidden lg:block ">
-            <img src={banner4} className="rounded-lg" alt="" />
-          </div>
-          <div className=" lg:hidden">
-            <img src={smallB4} className="rounded-lg" alt="" />
-          </div>
-        </SwiperSlide>
+            </SwiperSlide>
+          ))
+        }
       </Swiper>
     </div>
   );

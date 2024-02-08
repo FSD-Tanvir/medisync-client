@@ -188,7 +188,7 @@ const LogIn = ({ setShowRegister, setShowModal }) => {
               {`Don't Have Account ?`}{" "}
               <button
                 onClick={() => setShowRegister(true)}
-                className="font-bold py-2 text-center"
+                className="font-bold py-2 text-center text-text-color-blue"
               >
                 Register
               </button>

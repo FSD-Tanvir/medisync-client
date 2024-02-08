@@ -31,7 +31,7 @@ import { saveImage } from "../../../utils/utils";
 
 const Register = ({ setShowRegister, setShowModal }) => {
   const { createUser, setLoading, loading } = useContext(AuthContext);
-  const [whichPhotoSelected,setWhichPhotoSelected] = useState(null)
+  const [whichPhotoSelected, setWhichPhotoSelected] = useState(null);
   const axiosPublic = useAxiosPublic();
 
   const handleRegister = async (e) => {
@@ -203,13 +203,29 @@ const Register = ({ setShowRegister, setShowModal }) => {
             />
           </div>
           <div className="flex gap-2 justify-center w-full">
-            <label title={whichPhotoSelected} htmlFor="photo" className="flex gap-2 justify-center items-center px-2 w-full border-dotted border-[3px] border-blue-500/25 py-1">
+            <label
+              title={whichPhotoSelected}
+              htmlFor="photo"
+              className="flex gap-2 justify-center items-center px-2 w-full border-dotted border-[3px] border-blue-500/25 py-1"
+            >
               {/* if photo selected then showing photo name or showing Profile Photo */}
-              <span className="font-semibold">{whichPhotoSelected ? whichPhotoSelected.length > 25 ? whichPhotoSelected.slice(0,25) : whichPhotoSelected : "Profile Photo"}</span>
+              <span className="font-semibold">
+                {whichPhotoSelected
+                  ? whichPhotoSelected.length > 25
+                    ? whichPhotoSelected.slice(0, 25)
+                    : whichPhotoSelected
+                  : "Profile Photo"}
+              </span>
               {/* if photo selected then showing refresh icon or showing camera icon  */}
-              {whichPhotoSelected ? <IoMdRefresh size={30} className="text-blue-500" /> : <FaCamera size={30} className="text-blue-500"/>}
+              {whichPhotoSelected ? (
+                <IoMdRefresh size={30} className="text-text-color-blue" />
+              ) : (
+                <FaCamera size={30} className="text-text-color-blue" />
+              )}
               <input
-              onChange={(e)=> setWhichPhotoSelected(e.target?.files[0]?.name)}
+                onChange={(e) =>
+                  setWhichPhotoSelected(e.target?.files[0]?.name)
+                }
                 name="photo"
                 id="photo"
                 className="appearance-none absolute -top-[1000px] bg-transparent border-none text-gray-700 mr-3 leading-tight focus:outline-none"
@@ -248,7 +264,7 @@ const Register = ({ setShowRegister, setShowModal }) => {
               {`Already Have Account ?`}{" "}
               <button
                 onClick={() => setShowRegister(false)}
-                className="font-bold py-2 text-center"
+                className="font-bold py-2 text-center text-text-color-blue"
               >
                 Log In
               </button>
