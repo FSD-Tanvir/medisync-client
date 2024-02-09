@@ -47,7 +47,7 @@ const Chatbot = () => {
       <div className="text-black fixed bottom-5 right-5 z-20">
         <div className="w-full">
           <div
-            className="w-10 h-10 bg-[#3B82F6] rounded-full flex justify-center items-center cursor-pointer"
+            className="w-10 h-10 bg-[3b82f6] rounded-full flex justify-center items-center cursor-pointer"
             onClick={() => setOpen(!isOpen)}
           >
             <IoChatbubbleEllipsesOutline size={25} className="text-white" />
@@ -102,7 +102,7 @@ const Chatbot = () => {
                   )}
                   <button
                     type="submit"
-                    className="w-8 h-8 bg-[#3B82F6] rounded-full flex justify-center items-center"
+                    className="w-8 h-8 bg-[3b82f6] rounded-full flex justify-center items-center"
                   >
                     <BsSend className="text-white" />
                   </button>
