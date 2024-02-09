@@ -15,7 +15,6 @@ import useProductCart from "../../../hooks/useProductCart";
 import Drawer from "../../drawer/Drawer";
 import Chatbot from "../chatbot/Chatbot";
 
-
 const menuItems = [
   { id: 1, icon: <GoHome />, item: "Home", link: "/" },
   {
@@ -28,18 +27,14 @@ const menuItems = [
   { id: 4, icon: <FiFilePlus />, item: "Articles", link: "/articles" },
   { id: 5, icon: <FaUserDoctor />, item: "Meet Doctors", link: "/doctors" },
   { id: 6, icon: <GrWorkshop />, item: "Career", link: "/career" },
-
 ];
 
 const Navbar = () => {
-
-  const { user, logOut } = useAuth()
-  const [productCart, ,] = useProductCart()
+  const { user, logOut } = useAuth();
+  const [productCart, ,] = useProductCart();
 
   let [openMenu, setOpenMenu] = useState(false);
   const [showModal, setShowModal] = useState(false);
-
-
 
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
 
@@ -69,8 +64,10 @@ const Navbar = () => {
           <div className="flex flex-col items-end gap-5 text-text-color-blue">
             <div className="flex items-center gap-2 lg:gap-8">
               <div className="hover:text-[#00FFFF] cursor-pointer flex relative">
-                <IoCartOutline onClick={openDrawer}  size={36} />
-                <span className="absolute right-0 top-0 rounded-full bg-red-600 w-4 h-4 top right p-0 m-0 text-white font-mono text-sm  leading-tight text-center">{productCart.length}</span>
+                <IoCartOutline onClick={openDrawer} size={36} />
+                <span className="absolute right-0 top-0 rounded-full bg-red-600 w-4 h-4 top right p-0 m-0 text-white font-mono text-sm  leading-tight text-center">
+                  {productCart.length}
+                </span>
                 <Drawer isOpen={isDrawerOpen} onClose={closeDrawer} />
               </div>
               {user?.email ? (
@@ -105,9 +102,11 @@ const Navbar = () => {
         </div>
       </div>
 
-
-      <div className={`sticky top-0  lg:hidden  flex items-center justify-between bg-[#FFF7F4] p-2 ${isDrawerOpen ? '' : 'z-50'} `}>
-
+      <div
+        className={`sticky top-0  lg:hidden  flex items-center justify-between bg-[#FFF7F4] p-2 ${
+          isDrawerOpen ? "" : "z-50"
+        } `}
+      >
         {/* search bar */}
 
         <div className="relative">
@@ -164,43 +163,44 @@ const Navbar = () => {
 
           <div className="flex flex-col items-end gap-5 ">
             <div className="flex items-center gap-2 lg:gap-6">
-
-              <div  className="hover:text-blue-500 text-blue-500 flex relative  cursor-pointer">
+              <div className="hover:text-blue-500 text-blue-500 flex relative  cursor-pointer">
                 <IoCartOutline onClick={openDrawer} size={36} />
-                <span className="absolute right-0 top-0 rounded-full bg-red-600 w-4 h-4 top right p-0 m-0 text-white  text-sm  leading-tight text-center ">{productCart.length}</span>
+                <span className="absolute rounded-full bg-red-600 w-4 h-4 p-0 m-0  mr-0 text-white text-sm leading-tight text-center ">
+                  {productCart.length}
+                </span>
                 <Drawer isOpen={isDrawerOpen} onClose={closeDrawer} />
 
-              <div className="hover:text-hover-text-color text-text-color-blue   cursor-pointer">
-                <IoCartOutline size={36} />
-
+                {/* <div className="hover:text-hover-text-color text-text-color-blue   cursor-pointer">
+                  <IoCartOutline size={36} />
+                </div> */}
+                {user?.email ? (
+                  <div className="flex gap-2 items-center">
+                    <div>
+                      <Link to="/dashboard">
+                        <img
+                          className="w-10 h-10 rounded-full"
+                          src={user?.photoURL}
+                        />
+                      </Link>
+                    </div>
+                    <div>
+                      <button
+                        className="border border-[#ffFFFF] hover:text-[#00FFFF] hover:border-[#00FFFF] px-3 py-1 rounded-lg cursor-pointer"
+                        onClick={logOut}
+                      >
+                        Logout
+                      </button>
+                    </div>
+                  </div>
+                ) : (
+                  <div
+                    onClick={() => setShowModal(true)}
+                    className="border border-[#ffFFFF] hover:text-[#00FFFF] hover:border-[#00FFFF] px-3 py-1 rounded-lg cursor-pointer"
+                  >
+                    Login
+                  </div>
+                )}
               </div>
-              {user?.email ? (
-                <div className="flex gap-2 items-center">
-                  <div>
-                    <Link to="/dashboard">
-                      <img
-                        className="w-10 h-10 rounded-full"
-                        src={user?.photoURL}
-                      />
-                    </Link>
-                  </div>
-                  <div>
-                    <button
-                      className="border border-[#ffFFFF] hover:text-[#00FFFF] hover:border-[#00FFFF] px-3 py-1 rounded-lg cursor-pointer"
-                      onClick={logOut}
-                    >
-                      Logout
-                    </button>
-                  </div>
-                </div>
-              ) : (
-                <div
-                  onClick={() => setShowModal(true)}
-                  className="border border-[#ffFFFF] hover:text-[#00FFFF] hover:border-[#00FFFF] px-3 py-1 rounded-lg cursor-pointer"
-                >
-                  Login
-                </div>
-              )}
             </div>
           </div>
         </div>
@@ -212,7 +212,6 @@ const Navbar = () => {
         <div className="relative max-w-7xl mx-auto">
           <ul
             className={`flex flex-col lg:flex-row gap-5 absolute lg:static bg-navbar-bg-color  rounded-b-xl  p-5  transition-all duration-500 ease-in ${
-            
               openMenu ? "top-0 w-full " : "top-[-500px] w-full "
             } `}
           >
@@ -226,9 +225,7 @@ const Navbar = () => {
                       ? "text-blue-700  flex items-center font-semibold  pr-4 gap-2 lg:border-r border-black"
                       : isPending
                       ? ""
-
                       : "flex items-center font-semibold text-text-color-blue  pr-4 gap-2 lg:border-r border-black  hover:text-blue-700 "
-
                   }
                 >
                   {menuItem.icon}

@@ -30,7 +30,7 @@ const AddJob = () => {
     };
 
     try {
-http://localhost:5000/jobs/add-job",
+// http://localhost:5000/jobs/add-job",
 
       const result = await axiosPublic.post(
         "/jobs/add-job",

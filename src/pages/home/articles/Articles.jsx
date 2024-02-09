@@ -14,18 +14,6 @@ const Articles = () => {
   }, []);
 
 
-  const [arrticles, setArticlies] = useState();
-  const navigate = useNavigate();
-  // useEffect to fetch data when the component mounts
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        // Fetch data from an API endpoint (replace with your API URL)
-        const response = await fetch("http://localhost:5000/newAndArticles");
-        const result = await response.json();
-        // console.log(result)
-
-
 
   const handleArticlePage = (id) => {
     navigate(`/articles/${id}`);
