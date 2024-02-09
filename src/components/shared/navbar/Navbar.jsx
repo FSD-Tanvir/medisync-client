@@ -10,7 +10,11 @@ import { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import Modal from "../../../pages/home/LogInRegistration/Modal";
 import useAuth from "../../../hooks/useAuth";
+
+import useProductCart from "../../../hooks/useProductCart";
+import Drawer from "../../drawer/Drawer";
 import Chatbot from "../chatbot/Chatbot";
+
 
 const menuItems = [
   { id: 1, icon: <GoHome />, item: "Home", link: "/" },
@@ -24,14 +28,28 @@ const menuItems = [
   { id: 4, icon: <FiFilePlus />, item: "Articles", link: "/articles" },
   { id: 5, icon: <FaUserDoctor />, item: "Meet Doctors", link: "/doctors" },
   { id: 6, icon: <GrWorkshop />, item: "Career", link: "/career" },
-  // { id: 6, icon: <GrWorkshop />, item: "Dashboard", link: "/dashboard" },
+
 ];
 
 const Navbar = () => {
-  const { user, logOut } = useAuth();
-  console.log(user);
+
+  const { user, logOut } = useAuth()
+  const [productCart, ,] = useProductCart()
+
   let [openMenu, setOpenMenu] = useState(false);
   const [showModal, setShowModal] = useState(false);
+
+
+
+  const [isDrawerOpen, setIsDrawerOpen] = useState(false);
+
+  const openDrawer = () => {
+    setIsDrawerOpen(true);
+  };
+
+  const closeDrawer = () => {
+    setIsDrawerOpen(false);
+  };
 
   return (
     <>
@@ -50,8 +68,10 @@ const Navbar = () => {
         <div>
           <div className="flex flex-col items-end gap-5 text-text-color-blue">
             <div className="flex items-center gap-2 lg:gap-8">
-              <div className="hover:text-[#00FFFF] cursor-pointer">
-                <IoCartOutline size={36} />
+              <div className="hover:text-[#00FFFF] cursor-pointer flex relative">
+                <IoCartOutline onClick={openDrawer}  size={36} />
+                <span className="absolute right-0 top-0 rounded-full bg-red-600 w-4 h-4 top right p-0 m-0 text-white font-mono text-sm  leading-tight text-center">{productCart.length}</span>
+                <Drawer isOpen={isDrawerOpen} onClose={closeDrawer} />
               </div>
               {user?.email ? (
                 <div className="flex gap-2 items-center">
@@ -85,7 +105,9 @@ const Navbar = () => {
         </div>
       </div>
 
-      <div className=" sticky top-0  lg:hidden  flex items-center justify-between bg-navbar-bg-color p-2 z-50 ">
+
+      <div className={`sticky top-0  lg:hidden  flex items-center justify-between bg-[#FFF7F4] p-2 ${isDrawerOpen ? '' : 'z-50'} `}>
+
         {/* search bar */}
 
         <div className="relative">
@@ -142,8 +164,15 @@ const Navbar = () => {
 
           <div className="flex flex-col items-end gap-5 ">
             <div className="flex items-center gap-2 lg:gap-6">
+
+              <div  className="hover:text-blue-500 text-blue-500 flex relative  cursor-pointer">
+                <IoCartOutline onClick={openDrawer} size={36} />
+                <span className="absolute right-0 top-0 rounded-full bg-red-600 w-4 h-4 top right p-0 m-0 text-white  text-sm  leading-tight text-center ">{productCart.length}</span>
+                <Drawer isOpen={isDrawerOpen} onClose={closeDrawer} />
+
               <div className="hover:text-hover-text-color text-text-color-blue   cursor-pointer">
                 <IoCartOutline size={36} />
+
               </div>
               {user?.email ? (
                 <div className="flex gap-2 items-center">

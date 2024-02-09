@@ -34,8 +34,10 @@ const UpdateDoctor = () => {
     };
 
     try {
+
       const res = await axiosPublic.put(
         `/doctors/${doctor?._id}`,
+
         updatedDoctorData
       );
       if (res.data.status === true) {
