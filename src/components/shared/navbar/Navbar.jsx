@@ -114,7 +114,7 @@ const Navbar = () => {
       {/* navbar for desktop */}
 
       <div className="hidden lg:block z-10 bg-navbar-bg-color shadow-xl ">
-        <div className="flex justify-between items-center text-black p-2">
+        <div className="flex justify-between items-center text-black p-2 max-w-7xl mx-auto">
           {/* logo */}
 
           <h2 className="text-4xl font-bold">
@@ -180,7 +180,7 @@ const Navbar = () => {
       {/* navbar with menu items */}
 
       <div className="sticky lg:top-0 top-[50px] z-10 bg-navbar-bg-color  lg:rounded-b-xl  shadow-lg ">
-        <div className="relative ">
+        <div className="relative max-w-7xl mx-auto">
           <ul
             className={`flex flex-col lg:flex-row gap-5 absolute lg:static bg-navbar-bg-color  rounded-b-xl  p-5  transition-all duration-500 ease-in ${
             
