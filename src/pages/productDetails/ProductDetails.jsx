@@ -43,7 +43,7 @@ const ProductDetails = () => {
             }
             // console.log(cartItem)
             try {
-                const allProductCart = await axios.post('http://localhost:5000/productCart', cartItem);
+                const allProductCart = await axios.post('https://medisync-server.vercel.app/productCart', cartItem);
                 console.log(allProductCart);
                 refetch()
                 // Handle success
