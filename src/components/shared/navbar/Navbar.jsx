@@ -80,9 +80,9 @@ const Navbar = () => {
                       />
                     </Link>
                   </div>
-                  <div>
+                  <div className="hidden sm:block">
                     <button
-                      className="border border-[#ffFFFF] hover:text-[#00FFFF] hover:border-[#00FFFF] px-3 py-1 rounded-lg cursor-pointer"
+                      className="border border-blue-500 hover:bg-blue-500  hover:text-white px-3 py-1 rounded-lg cursor-pointer"
                       onClick={logOut}
                     >
                       Logout
@@ -92,7 +92,7 @@ const Navbar = () => {
               ) : (
                 <div
                   onClick={() => setShowModal(true)}
-                  className="border border-[#ffFFFF] hover:text-[#00FFFF] hover:border-[#00FFFF] px-3 py-1 rounded-lg cursor-pointer"
+                  className="border border-blue-500 hover:bg-blue-500  hover:text-white px-3 py-1 rounded-lg cursor-pointer"
                 >
                   Login
                 </div>
@@ -163,18 +163,16 @@ const Navbar = () => {
 
           <div className="flex flex-col items-end gap-5 ">
             <div className="flex items-center gap-2 lg:gap-6">
-              <div className="hover:text-blue-500 text-blue-500 flex relative  cursor-pointer">
-                <IoCartOutline onClick={openDrawer} size={36} />
-                <span className="absolute rounded-full bg-red-600 w-4 h-4 p-0 m-0  mr-0 text-white text-sm leading-tight text-center ">
-                  {productCart.length}
-                </span>
-                <Drawer isOpen={isDrawerOpen} onClose={closeDrawer} />
-
-                {/* <div className="hover:text-hover-text-color text-text-color-blue   cursor-pointer">
-                  <IoCartOutline size={36} />
-                </div> */}
+              <div className=" text-blue-500 flex ">
+                <div className="hover:text-blue-700 cursor-pointer flex  relative">
+                  <IoCartOutline onClick={openDrawer} size={36} />
+                  <span className="absolute right-0 top-0 rounded-full bg-red-600 w-4 h-4 top right p-0 m-0 text-white font-mono text-sm  leading-tight text-center">
+                    {productCart.length}
+                  </span>
+                  <Drawer isOpen={isDrawerOpen} onClose={closeDrawer} />
+                </div>
                 {user?.email ? (
-                  <div className="flex gap-2 items-center">
+                  <div className="flex gap-2 items-center ml-2">
                     <div>
                       <Link to="/dashboard">
                         <img
@@ -185,7 +183,7 @@ const Navbar = () => {
                     </div>
                     <div>
                       <button
-                        className="border border-[#ffFFFF] hover:text-[#00FFFF] hover:border-[#00FFFF] px-3 py-1 rounded-lg cursor-pointer"
+                        className="border border-blue-500 hover:bg-blue-500  hover:text-white px-3 py-1 rounded-lg cursor-pointer"
                         onClick={logOut}
                       >
                         Logout
@@ -195,7 +193,7 @@ const Navbar = () => {
                 ) : (
                   <div
                     onClick={() => setShowModal(true)}
-                    className="border border-[#ffFFFF] hover:text-[#00FFFF] hover:border-[#00FFFF] px-3 py-1 rounded-lg cursor-pointer"
+                    className="border border-blue-500 hover:bg-blue-500  hover:text-white px-3 py-1 rounded-lg cursor-pointer ml-2"
                   >
                     Login
                   </div>

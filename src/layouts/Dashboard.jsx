@@ -13,7 +13,7 @@ import cartIcon from "../assets/DashboardIcons/cart.png";
 import reviewsIcon from "../assets/DashboardIcons/reviews.png";
 
 const Dashboard = () => {
-  const [open, setOpen] = useState(false)
+  const [open, setOpen] = useState(false);
   const isAdmin = " ";
   const location = useLocation();
   const isDashboard = location.pathname === "/dashboard" || false;
@@ -35,11 +35,11 @@ const Dashboard = () => {
       <div
         className={`w-full ${
           open ? "md:w-[40%] lg:w-[20%]" : "md:w-[10%] lg:w-[5%]"
-        } duration-300 md:min-h-screen bg-[#f5f5f5] text-white pt-20 relative`}
+        } duration-300 md:min-h-screen bg-[#f5f5f5] text-white py-5 sm:pt-20 relative`}
       >
         <div
           onClick={() => setOpen(!open)}
-          className="md:-right-[13px] top-9 cursor-pointer w-[28px] h-[28px] rounded-full bg-blue-600 flex justify-center items-center absolute hidden md:flex"
+          className="md:-right-[13px] top-9 cursor-pointer w-[28px] h-[28px] rounded-full bg-blue-600  justify-center items-center absolute hidden md:flex"
         >
           <IoMdArrowDropright
             className={`${open && "rotate-180"}`}
@@ -47,7 +47,7 @@ const Dashboard = () => {
         </div>
         <ul className="menu space-y-2 text-black">
           {isAdmin ? (
-            <>
+            <div className="flex justify-center sm:flex-col">
               <li>
                 <NavLink
                   to="adminProfile"
@@ -62,11 +62,19 @@ const Dashboard = () => {
                   {open ? (
                     <span className="flex justify-center items-center gap-2">
                       {" "}
-                      <img src={adminIcon} className="w-6 bg-white" alt="" />
+                      <img
+                        src={adminIcon}
+                        className="w-16 sm:w-6 bg-white"
+                        alt=""
+                      />
                       Admin Profile
                     </span>
                   ) : (
-                    <img src={adminIcon} className="w-6 bg-white" alt="" />
+                    <img
+                      src={adminIcon}
+                      className="w-16 sm:w-6 bg-white"
+                      alt=""
+                    />
                   )}
                 </NavLink>
               </li>
@@ -84,11 +92,19 @@ const Dashboard = () => {
                   {open ? (
                     <span className="flex justify-center items-center gap-2">
                       {" "}
-                      <img src={doctorIcon} className="w-6 bg-white" alt="" />
+                      <img
+                        src={doctorIcon}
+                        className="w-16 sm:w-6 bg-white"
+                        alt=""
+                      />
                       All Doctors
                     </span>
                   ) : (
-                    <img src={doctorIcon} className="w-6 bg-white" alt="" />
+                    <img
+                      src={doctorIcon}
+                      className="w-16 sm:w-6 bg-white"
+                      alt=""
+                    />
                   )}
                 </NavLink>
               </li>
@@ -103,13 +119,27 @@ const Dashboard = () => {
                       : "font-semibold flex justify-start items-center gap-1 pl-2 w-[70%] mx-auto py-1"
                   }
                 >
-                  {open ? <span className="flex justify-center items-center gap-2"> <img src={newsIcon} className="w-6 bg-white" alt="" />
-                    News & Articles</span> : <img src={newsIcon} className="w-6 bg-white" alt="" />}
+                  {open ? (
+                    <span className="flex justify-center items-center gap-2">
+                      {" "}
+                      <img
+                        src={newsIcon}
+                        className="w-16 sm:w-6 bg-white"
+                        alt=""
+                      />
+                      News & Articles
+                    </span>
+                  ) : (
+                    <img
+                      src={newsIcon}
+                      className="w-16 sm:w-6 bg-white"
+                      alt=""
+                    />
+                  )}
                 </NavLink>
               </li>
               <li>
                 <NavLink
-
                   to="advice-panel"
                   className={({ isActive, isPending }) =>
                     isActive
@@ -122,11 +152,19 @@ const Dashboard = () => {
                   {open ? (
                     <span className="flex justify-center items-center gap-2">
                       {" "}
-                      <img src={adviceIcon} className="w-6 bg-white" alt="" />
+                      <img
+                        src={adviceIcon}
+                        className="w-16 sm:w-6 bg-white"
+                        alt=""
+                      />
                       Advices
                     </span>
                   ) : (
-                    <img src={adviceIcon} className="w-6 bg-white" alt="" />
+                    <img
+                      src={adviceIcon}
+                      className="w-16 sm:w-6 bg-white"
+                      alt=""
+                    />
                   )}
                 </NavLink>
               </li>
@@ -144,17 +182,51 @@ const Dashboard = () => {
                   {open ? (
                     <span className="flex justify-center items-center gap-2">
                       {" "}
-                      <img src={jobIcon} className="w-6 bg-white" alt="" />
-                      All Jobs
+                      <img
+                        src={jobIcon}
+                        className="w-16 h-[30px]  sm:w-6 object-cover bg-white"
+                        alt=""
+                      />
+                      Advices
                     </span>
                   ) : (
-                    <img src={jobIcon} className="w-6 bg-white" alt="" />
+                    <img
+                      src={jobIcon}
+                      className="w-16 h-[30px] sm:w-6 object-cover bg-white"
+                      alt=""
+                    />
                   )}
                 </NavLink>
               </li>
-            </>
+              <li className="sm:hidden">
+                <NavLink
+                  to="/"
+                  className={
+                    "font-semibold flex justify-start items-center gap-1 pl-2 w-[70%] mx-auto py-1"
+                  }
+                >
+                  {open ? (
+                    <span className="flex justify-center items-center gap-2">
+                      {" "}
+                      <img
+                        src={homeIcon}
+                        className="w-16 h-[30px]  sm:w-6 object-fill bg-white"
+                        alt=""
+                      />
+                      Advices
+                    </span>
+                  ) : (
+                    <img
+                      src={homeIcon}
+                      className="w-16  sm:w-6 object-fill bg-white"
+                      alt=""
+                    />
+                  )}
+                </NavLink>
+              </li>
+            </div>
           ) : (
-            <>
+            <div className="flex justify-center sm:flex-col">
               <li>
                 <NavLink
                   to="myProfile"
@@ -169,11 +241,19 @@ const Dashboard = () => {
                   {open ? (
                     <span className="flex justify-center items-center gap-2">
                       {" "}
-                      <img src={adminIcon} className="w-6 bg-white" alt="" />
+                      <img
+                        src={adminIcon}
+                        className="w-16 sm:w-6 bg-white"
+                        alt=""
+                      />
                       My Profile
                     </span>
                   ) : (
-                    <img src={adminIcon} className="w-6 bg-white" alt="" />
+                    <img
+                      src={adminIcon}
+                      className="w-16 sm:w-6 bg-white"
+                      alt=""
+                    />
                   )}
                 </NavLink>
               </li>
@@ -191,11 +271,19 @@ const Dashboard = () => {
                   {open ? (
                     <span className="flex justify-center items-center gap-2">
                       {" "}
-                      <img src={cartIcon} className="w-6 bg-white" alt="" />
+                      <img
+                        src={cartIcon}
+                        className="w-16 sm:w-6 bg-white"
+                        alt=""
+                      />
                       My Cart
                     </span>
                   ) : (
-                    <img src={cartIcon} className="w-6 bg-white" alt="" />
+                    <img
+                      src={cartIcon}
+                      className="w-16 sm:w-6 bg-white"
+                      alt=""
+                    />
                   )}
                 </NavLink>
               </li>
@@ -213,11 +301,19 @@ const Dashboard = () => {
                   {open ? (
                     <span className="flex justify-center items-center gap-2">
                       {" "}
-                      <img src={reviewsIcon} className="w-6 bg-white" alt="" />
+                      <img
+                        src={reviewsIcon}
+                        className="w-16 sm:w-6 bg-white"
+                        alt=""
+                      />
                       My Reviews
                     </span>
                   ) : (
-                    <img src={reviewsIcon} className="w-6 bg-white" alt="" />
+                    <img
+                      src={reviewsIcon}
+                      className="w-16 sm:w-6 bg-white"
+                      alt=""
+                    />
                   )}
                 </NavLink>
               </li>
@@ -235,20 +331,54 @@ const Dashboard = () => {
                   {open ? (
                     <span className="flex justify-center items-center gap-2">
                       {" "}
-                      <img src={doctorIcon} className="w-6 bg-white" alt="" />
+                      <img
+                        src={doctorIcon}
+                        className="w-16 sm:w-6 bg-white"
+                        alt=""
+                      />
                       My Doctor's
                     </span>
                   ) : (
-                    <img src={doctorIcon} className="w-6 bg-white" alt="" />
+                    <img
+                      src={doctorIcon}
+                      className="w-16 sm:w-6 bg-white"
+                      alt=""
+                    />
                   )}
                 </NavLink>
               </li>
-            </>
+              <li className="sm:hidden">
+                <NavLink
+                  to="/"
+                  className={
+                    "font-semibold flex justify-start items-center gap-1 pl-2 w-[70%] mx-auto py-1"
+                  }
+                >
+                  {open ? (
+                    <span className="flex justify-center items-center gap-2">
+                      {" "}
+                      <img
+                        src={homeIcon}
+                        className="w-16  sm:w-6 object-fill bg-white"
+                        alt=""
+                      />
+                      Advices
+                    </span>
+                  ) : (
+                    <img
+                      src={homeIcon}
+                      className="w-16  sm:w-6 object-fill bg-white"
+                      alt=""
+                    />
+                  )}
+                </NavLink>
+              </li>
+            </div>
           )}
         </ul>
         <div className="divider"></div>
         <>
-          <ul className="menu text-black">
+          <ul className="menu text-black hidden sm:block">
             <li>
               <NavLink
                 to="/"
@@ -257,11 +387,11 @@ const Dashboard = () => {
                 {open ? (
                   <span className="flex justify-center items-center gap-2">
                     {" "}
-                    <img src={homeIcon} className="w-6" alt="" />
+                    <img src={homeIcon} className="w-16 sm:w-6" alt="" />
                     Home
                   </span>
                 ) : (
-                  <img src={homeIcon} className="w-6" alt="" />
+                  <img src={homeIcon} className="w-16 sm:w-6" alt="" />
                 )}
               </NavLink>
             </li>
