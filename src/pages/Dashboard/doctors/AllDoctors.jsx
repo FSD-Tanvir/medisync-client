@@ -7,6 +7,7 @@ const AllDoctors = () => {
   const { data: allDoctorsData = [], refetch } = useQuery({
     queryKey: ["allDoctors"],
     queryFn: async () => {
+
       const res = await axiosPublic.get("/doctors");
       return res?.data;
     },

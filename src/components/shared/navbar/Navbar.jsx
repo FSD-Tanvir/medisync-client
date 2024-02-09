@@ -10,6 +10,9 @@ import { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import Modal from "../../../pages/home/LogInRegistration/Modal";
 import useAuth from "../../../hooks/useAuth";
+
+import useProductCart from "../../../hooks/useProductCart";
+import Drawer from "../../drawer/Drawer";
 import Chatbot from "../chatbot/Chatbot";
 
 const menuItems = [
@@ -24,14 +27,24 @@ const menuItems = [
   { id: 4, icon: <FiFilePlus />, item: "Articles", link: "/articles" },
   { id: 5, icon: <FaUserDoctor />, item: "Meet Doctors", link: "/doctors" },
   { id: 6, icon: <GrWorkshop />, item: "Career", link: "/career" },
-  // { id: 6, icon: <GrWorkshop />, item: "Dashboard", link: "/dashboard" },
 ];
 
 const Navbar = () => {
   const { user, logOut } = useAuth();
-  console.log(user);
+  const [productCart, ,] = useProductCart();
+
   let [openMenu, setOpenMenu] = useState(false);
   const [showModal, setShowModal] = useState(false);
+
+  const [isDrawerOpen, setIsDrawerOpen] = useState(false);
+
+  const openDrawer = () => {
+    setIsDrawerOpen(true);
+  };
+
+  const closeDrawer = () => {
+    setIsDrawerOpen(false);
+  };
 
   return (
     <>
@@ -50,8 +63,12 @@ const Navbar = () => {
         <div>
           <div className="flex flex-col items-end gap-5 text-text-color-blue">
             <div className="flex items-center gap-2 lg:gap-8">
-              <div className="hover:text-[#00FFFF] cursor-pointer">
-                <IoCartOutline size={36} />
+              <div className="hover:text-[#00FFFF] cursor-pointer flex relative">
+                <IoCartOutline onClick={openDrawer} size={36} />
+                <span className="absolute right-0 top-0 rounded-full bg-red-600 w-4 h-4 top right p-0 m-0 text-white font-mono text-sm  leading-tight text-center">
+                  {productCart.length}
+                </span>
+                <Drawer isOpen={isDrawerOpen} onClose={closeDrawer} />
               </div>
               {user?.email ? (
                 <div className="flex gap-2 items-center">
@@ -63,9 +80,9 @@ const Navbar = () => {
                       />
                     </Link>
                   </div>
-                  <div>
+                  <div className="hidden sm:block">
                     <button
-                      className="border border-[#ffFFFF] hover:text-[#00FFFF] hover:border-[#00FFFF] px-3 py-1 rounded-lg cursor-pointer"
+                      className="border border-blue-500 hover:bg-blue-500  hover:text-white px-3 py-1 rounded-lg cursor-pointer"
                       onClick={logOut}
                     >
                       Logout
@@ -75,7 +92,7 @@ const Navbar = () => {
               ) : (
                 <div
                   onClick={() => setShowModal(true)}
-                  className="border border-[#ffFFFF] hover:text-[#00FFFF] hover:border-[#00FFFF] px-3 py-1 rounded-lg cursor-pointer"
+                  className="border border-blue-500 hover:bg-blue-500  hover:text-white px-3 py-1 rounded-lg cursor-pointer"
                 >
                   Login
                 </div>
@@ -85,7 +102,11 @@ const Navbar = () => {
         </div>
       </div>
 
-      <div className=" sticky top-0  lg:hidden  flex items-center justify-between bg-navbar-bg-color p-2 z-50 ">
+      <div
+        className={`sticky top-0  lg:hidden  flex items-center justify-between bg-[#FFF7F4] p-2 ${
+          isDrawerOpen ? "" : "z-50"
+        } `}
+      >
         {/* search bar */}
 
         <div className="relative">
@@ -114,7 +135,7 @@ const Navbar = () => {
       {/* navbar for desktop */}
 
       <div className="hidden lg:block z-10 bg-navbar-bg-color shadow-xl ">
-        <div className="flex justify-between items-center text-black p-2">
+        <div className="flex justify-between items-center text-black p-2 max-w-7xl mx-auto">
           {/* logo */}
 
           <h2 className="text-4xl font-bold">
@@ -142,36 +163,42 @@ const Navbar = () => {
 
           <div className="flex flex-col items-end gap-5 ">
             <div className="flex items-center gap-2 lg:gap-6">
-              <div className="hover:text-hover-text-color text-text-color-blue   cursor-pointer">
-                <IoCartOutline size={36} />
+              <div className=" text-blue-500 flex ">
+                <div className="hover:text-blue-700 cursor-pointer flex  relative">
+                  <IoCartOutline onClick={openDrawer} size={36} />
+                  <span className="absolute right-0 top-0 rounded-full bg-red-600 w-4 h-4 top right p-0 m-0 text-white font-mono text-sm  leading-tight text-center">
+                    {productCart.length}
+                  </span>
+                  <Drawer isOpen={isDrawerOpen} onClose={closeDrawer} />
+                </div>
+                {user?.email ? (
+                  <div className="flex gap-2 items-center ml-2">
+                    <div>
+                      <Link to="/dashboard">
+                        <img
+                          className="w-10 h-10 rounded-full"
+                          src={user?.photoURL}
+                        />
+                      </Link>
+                    </div>
+                    <div>
+                      <button
+                        className="border border-blue-500 hover:bg-blue-500  hover:text-white px-3 py-1 rounded-lg cursor-pointer"
+                        onClick={logOut}
+                      >
+                        Logout
+                      </button>
+                    </div>
+                  </div>
+                ) : (
+                  <div
+                    onClick={() => setShowModal(true)}
+                    className="border border-blue-500 hover:bg-blue-500  hover:text-white px-3 py-1 rounded-lg cursor-pointer ml-2"
+                  >
+                    Login
+                  </div>
+                )}
               </div>
-              {user?.email ? (
-                <div className="flex gap-2 items-center">
-                  <div>
-                    <Link to="/dashboard">
-                      <img
-                        className="w-10 h-10 rounded-full"
-                        src={user?.photoURL}
-                      />
-                    </Link>
-                  </div>
-                  <div>
-                    <button
-                      className="border border-[#ffFFFF] hover:text-[#00FFFF] hover:border-[#00FFFF] px-3 py-1 rounded-lg cursor-pointer"
-                      onClick={logOut}
-                    >
-                      Logout
-                    </button>
-                  </div>
-                </div>
-              ) : (
-                <div
-                  onClick={() => setShowModal(true)}
-                  className="border border-[#ffFFFF] hover:text-[#00FFFF] hover:border-[#00FFFF] px-3 py-1 rounded-lg cursor-pointer"
-                >
-                  Login
-                </div>
-              )}
             </div>
           </div>
         </div>
@@ -180,10 +207,9 @@ const Navbar = () => {
       {/* navbar with menu items */}
 
       <div className="sticky lg:top-0 top-[50px] z-10 bg-navbar-bg-color  lg:rounded-b-xl  shadow-lg ">
-        <div className="relative ">
+        <div className="relative max-w-7xl mx-auto">
           <ul
             className={`flex flex-col lg:flex-row gap-5 absolute lg:static bg-navbar-bg-color  rounded-b-xl  p-5  transition-all duration-500 ease-in ${
-            
               openMenu ? "top-0 w-full " : "top-[-500px] w-full "
             } `}
           >
@@ -197,9 +223,7 @@ const Navbar = () => {
                       ? "text-blue-700  flex items-center font-semibold  pr-4 gap-2 lg:border-r border-black"
                       : isPending
                       ? ""
-
                       : "flex items-center font-semibold text-text-color-blue  pr-4 gap-2 lg:border-r border-black  hover:text-blue-700 "
-
                   }
                 >
                   {menuItem.icon}

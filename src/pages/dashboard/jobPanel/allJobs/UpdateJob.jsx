@@ -36,8 +36,10 @@ const UpdateJob = () => {
     };
 
     try {
+
       const res = await axiosPublic.put(
         `/jobs/update-job/${job?._id}`,updatedJobData
+
       );
       if (res.data.status === true) {
         toast.success("Your job has been updated successfully");

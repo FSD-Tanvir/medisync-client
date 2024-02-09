@@ -26,8 +26,11 @@ const DoctorRow = ({ doctor, idx, refetch }) => {
     }).then((result) => {
       if (result.isConfirmed) {
         const deleteJob = async () => {
+
+
           const res = await axiosPublic.delete(
             `/doctors/${_id}`
+
           );
           if (res.data.status === true) {
             refetch();

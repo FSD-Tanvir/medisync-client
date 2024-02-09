@@ -24,7 +24,7 @@ const SocialLogin = ({ setShowModal }) => {
           Swal.fire({
             position: "center",
             icon: "success",
-            background: "#116977",
+            background: "#3b82f6",
             color: "white",
             title: "Registration with google Successful",
             showConfirmButton: false,
@@ -35,7 +35,7 @@ const SocialLogin = ({ setShowModal }) => {
           Swal.fire({
             position: "center",
             icon: "success",
-            background: "#116977",
+            background: "#3b82f6",
             color: "white",
             title: "Login with google successfully",
             showConfirmButton: false,

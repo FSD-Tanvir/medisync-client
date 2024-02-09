@@ -26,6 +26,8 @@ const AddDoctor = () => {
     };
 
     try {
+
+
       const result = await axiosPublic.post(
         "/doctors",
         doctorData

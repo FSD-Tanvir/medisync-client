@@ -30,8 +30,11 @@ const AddJob = () => {
     };
 
     try {
+// https://medisync-server.vercel.app/jobs/add-job",
+
       const result = await axiosPublic.post(
         "/jobs/add-job",
+
         jobData
       );
       if (result.data?.status === true) {

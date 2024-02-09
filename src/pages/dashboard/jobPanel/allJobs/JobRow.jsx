@@ -26,8 +26,10 @@ const JobRow = ({ job, idx, refetch }) => {
     }).then((result) => {
       if (result.isConfirmed) {
         const deleteJob = async () => {
+
           const res = await axiosPublic.delete(
             `/jobs/delete-job/${_id}`
+
           );
           if (res.data.status === true) {
             refetch();

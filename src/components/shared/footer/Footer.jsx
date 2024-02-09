@@ -11,99 +11,100 @@ import {
 const Footer = () => {
   return (
     <div className="  bg-[#FFF7F4] py-24 px-5 sm:px-10 space-y-10 text-black">
-      <div>
-        <h2 className="text-4xl font-bold ">
-          Medi<span className="text-text-color-blue">Sync</span>
-        </h2>
-      </div>
-      {/* footer content container  */}
-      <div className="grid gap-3 lg:gap-0 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
-        {/* Our services  */}
-        <div className="text-black">
-          <h2 className="capitalize mb-3 text-black text-lg font-semibold">
-            Our services
-          </h2>
-          {/* services items  */}
-          <ul className="space-y-2">
-            <SectionItem label="Order Medicines" address="#" />
-            <SectionItem label="Consult with doctor" address="#" />
-            <SectionItem label="news & articles" address="/articles" />
-            <SectionItem label="health suggestion" address="#" />
-          </ul>
-        </div>
-        {/* know Our policies  */}
+      <div className="max-w-7xl mx-auto">
         <div>
-          <h2 className="capitalize mb-3 text-black text-lg font-semibold">
-            Know Our policies
+          <h2 className="text-4xl font-bold ">
+            Medi<span className="text-text-color-blue">Sync</span>
           </h2>
-          {/* policies items  */}
-          <ul className="space-y-2">
-            <SectionItem label="Privacy Policy" address="#" />
-            <SectionItem label="Terms and Condition" address="#" />
-            <SectionItem label="Return Policy" address="#" />
-          </ul>
         </div>
-        {/* useful links  */}
-        <div>
-          <h2 className="capitalize mb-3 text-black text-lg font-semibold">
-            useful links
-          </h2>
-          {/* services items  */}
-          <ul className="space-y-2 text-black">
-            {/* <SectionItem label="About Us" address="" /> */}
-            <SectionItem label="About Us" address="/aboutUs" />
-            <SectionItem label="Contact Us" address="/contact-us" />
-            <SectionItem label="Careers" address="#" />
-            <SectionItem label="Become a Partner" address="#" />
-          </ul>
-        </div>
-        {/* contact us*/}
-        <div>
-          <div>
+        {/* footer content container  */}
+        <div className="grid gap-3 lg:gap-0 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
+          {/* Our services  */}
+          <div className="text-black">
             <h2 className="capitalize mb-3 text-black text-lg font-semibold">
-              Contact us
+              Our services
             </h2>
             {/* services items  */}
-            <ul className="space-y-2 ">
-              <li className="flex items-center gap-2 font-medium text-black">
-                <span>
-                  <FaLocationDot />
-                </span>
-                <address>
-                  This is a dummy address -- Mirpur 1, Block-A - 1216.
-                </address>
-              </li>
-              <li className="flex items-center gap-2 font-medium text-black">
-                <span>
-                  <FaPhone />
-                </span>
-                <address>+8801512345678, +8801512345678</address>
-              </li>
+            <ul className="space-y-2">
+              <SectionItem label="Order Medicines" address="#" />
+              <SectionItem label="Consult with doctor" address="#" />
+              <SectionItem label="news & articles" address="/articles" />
+              <SectionItem label="health suggestion" address="#" />
             </ul>
           </div>
-          {/* social links  */}
-          <>
-            <h2 className="capitalize mb-3 mt-2 text-black font-semibold">
-              Social Links:
+          {/* know Our policies  */}
+          <div>
+            <h2 className="capitalize mb-3 text-black text-lg font-semibold">
+              Know Our policies
             </h2>
-            <div className="flex justify-between gap-2 py-2 lg:px-10">
-              <span className="w-[40px] h-[40px] cursor-pointer text-black border border-[#cdb4db] p-2 rounded-full hover:scale-110 transition duration-[250] ease-linear">
-                <FaFacebookF size={22} />
-              </span>
-              <span className="w-[40px] h-[40px] cursor-pointer text-black border border-[#cdb4db] p-2 rounded-full hover:scale-110 transition duration-[250] ease-linear">
-                <FaTwitter size={22} />
-              </span>
-              <span className="w-[40px] h-[40px] cursor-pointer text-black border border-[#cdb4db] p-2 rounded-full hover:scale-110 transition duration-[250] ease-linear">
-                <FaLinkedin size={22} />
-              </span>
-              <span className="w-[40px] h-[40px] cursor-pointer text-black border border-[#cdb4db] p-2 rounded-full hover:scale-110 transition duration-[250] ease-linear">
-                <FaYoutube size={22} />
-              </span>
+            {/* policies items  */}
+            <ul className="space-y-2">
+              <SectionItem label="Privacy Policy" address="#" />
+              <SectionItem label="Terms and Condition" address="#" />
+              <SectionItem label="Return Policy" address="#" />
+            </ul>
+          </div>
+          {/* useful links  */}
+          <div>
+            <h2 className="capitalize mb-3 text-black text-lg font-semibold">
+              useful links
+            </h2>
+            {/* services items  */}
+            <ul className="space-y-2 text-black">
+              {/* <SectionItem label="About Us" address="" /> */}
+              <SectionItem label="About Us" address="/aboutUs" />
+              <SectionItem label="Contact Us" address="/contact-us" />
+              <SectionItem label="Careers" address="#" />
+              <SectionItem label="Become a Partner" address="#" />
+            </ul>
+          </div>
+          {/* contact us*/}
+          <div>
+            <div>
+              <h2 className="capitalize mb-3 text-black text-lg font-semibold">
+                Contact us
+              </h2>
+              {/* services items  */}
+              <ul className="space-y-2 ">
+                <li className="flex items-center gap-2 font-medium text-black">
+                  <span>
+                    <FaLocationDot />
+                  </span>
+                  <address>
+                    This is a dummy address -- Mirpur 1, Block-A - 1216.
+                  </address>
+                </li>
+                <li className="flex items-center gap-2 font-medium text-black">
+                  <span>
+                    <FaPhone />
+                  </span>
+                  <address>+8801512345678, +8801512345678</address>
+                </li>
+              </ul>
             </div>
-          </>
+            {/* social links  */}
+            <>
+              <h2 className="capitalize mb-3 mt-2 text-black font-semibold">
+                Social Links:
+              </h2>
+              <div className="flex justify-between gap-2 py-2 lg:px-10">
+                <span className="w-[40px] h-[40px] cursor-pointer text-black border border-[#cdb4db] p-2 rounded-full hover:scale-110 transition duration-[250] ease-linear">
+                  <FaFacebookF size={22} />
+                </span>
+                <span className="w-[40px] h-[40px] cursor-pointer text-black border border-[#cdb4db] p-2 rounded-full hover:scale-110 transition duration-[250] ease-linear">
+                  <FaTwitter size={22} />
+                </span>
+                <span className="w-[40px] h-[40px] cursor-pointer text-black border border-[#cdb4db] p-2 rounded-full hover:scale-110 transition duration-[250] ease-linear">
+                  <FaLinkedin size={22} />
+                </span>
+                <span className="w-[40px] h-[40px] cursor-pointer text-black border border-[#cdb4db] p-2 rounded-full hover:scale-110 transition duration-[250] ease-linear">
+                  <FaYoutube size={22} />
+                </span>
+              </div>
+            </>
+          </div>
         </div>
-      </div>
-      {/* <div className="lg:px-32 sm:opacity-80">
+        {/* <div className="lg:px-32 sm:opacity-80">
         <div>
           <img 
             src="https://i.ibb.co/mSK9Syc/payment-options.png"
@@ -111,6 +112,7 @@ const Footer = () => {
           />
         </div>
       </div> */}
+      </div>
     </div>
   );
 };

@@ -27,6 +27,7 @@ const Career = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
+
     const departmentsArr = [];
     // const vacancyArr = []
 
@@ -51,6 +52,7 @@ const Career = () => {
     setDepartments(departmentsArr);
     // setVacancies(vacancyArr)
   }, [axiosPublic]);
+
   const handleDepartment = (department) => {
     if (department !== "all_jobs") {
       const selectedDepartment = jobsData.filter(

@@ -1,3 +1,4 @@
+
 import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { IoChatbubbleEllipsesOutline } from "react-icons/io5";
@@ -116,4 +117,4 @@ const Chatbot = () => {
   );
 };
 
-export default Chatbot;
+export default Chatbot

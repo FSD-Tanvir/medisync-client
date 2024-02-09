@@ -29,9 +29,13 @@ const NewsArticles = () => {
     const fetchData = async () => {
       try {
         // Fetch data from an API endpoint (replace with your API URL)
+
+
+
         const {data:articlesData} = await axiosPublic.get(
           "/newAndArticles"
         );
+
         // Update the state with the fetched data
         setArticlies(articlesData);
       } catch (err) {

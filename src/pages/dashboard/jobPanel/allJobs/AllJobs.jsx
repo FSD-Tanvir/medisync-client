@@ -7,8 +7,10 @@ const AllJobs = () => {
   const { data: allJobsData = [], refetch } = useQuery({
     queryKey: ["allJobs"],
     queryFn: async () => {
+
       const {data} = await axiosPublic.get("/jobs");
       return data?.data;
+
     },
   });
   // console.log(allJobsData);
