@@ -1,14 +1,20 @@
-import toast from "react-hot-toast";
 import { useLoaderData } from "react-router-dom";
 import BannerSimple from "../../../components/shared/Banners/BannerSimple/BannerSimple";
+import Button from "../../../components/shared/button/Button";
+import toast from "react-hot-toast"
 
 const JobDetails = () => {
-  const {data: singleJob} = useLoaderData()
+  const { data: singleJob } = useLoaderData();
 
   return (
     <div className="min-h-[90vh] bg-white rounded-lg px-4 py-3">
       {/* job details banner  */}
-      <BannerSimple imgUrl="https://i.ibb.co/hMNQW0v/ethnic-businessman-giving-hand-shake.jpg" text1="Join Us!" text2="We are Hiring" pageName="career"/>
+      <BannerSimple
+        imgUrl="https://i.ibb.co/hMNQW0v/ethnic-businessman-giving-hand-shake.jpg"
+        text1="Join Us!"
+        text2="We are Hiring"
+        pageName="career"
+      />
       {/* job details main content  */}
       <div className="my-16">
         {/* heading  */}
@@ -73,19 +79,25 @@ const JobDetails = () => {
             <h3 className="text-lg sm:text-xl text-black/70 font-bold  cursor-pointer">
               Educational Requirements
             </h3>
-            <h4 className="text-black/70">{singleJob?.educationalRequirements}</h4>
+            <h4 className="text-black/70">
+              {singleJob?.educationalRequirements}
+            </h4>
           </div>
           <div>
             <h3 className="text-lg sm:text-xl text-black/70 font-bold  cursor-pointer">
               Experience Requirements
             </h3>
-            <h4 className="text-black/70">{singleJob?.experienceRequirements}</h4>
+            <h4 className="text-black/70">
+              {singleJob?.experienceRequirements}
+            </h4>
           </div>
           <div>
             <h3 className="text-lg sm:text-xl text-black/70 font-bold  cursor-pointer">
               Additional Requirements
             </h3>
-            <h4 className="text-black/70">{singleJob?.additionalRequirements}</h4>
+            <h4 className="text-black/70">
+              {singleJob?.additionalRequirements}
+            </h4>
           </div>
           <div>
             <h3 className="text-lg sm:text-xl text-black/70 font-bold  cursor-pointer">
@@ -103,25 +115,22 @@ const JobDetails = () => {
             <h3 className="text-lg sm:text-xl text-black/70 font-bold  cursor-pointer">
               Salary
             </h3>
-            <h4 className="text-black/70">{singleJob?.salary.replace(/_/ig," ")}</h4>
+            <h4 className="text-black/70">
+              {singleJob?.salary.replace(/_/gi, " ")}
+            </h4>
           </div>
           <div>
             <h3 className="text-lg sm:text-xl text-black/70 font-bold  cursor-pointer">
               Compensation and Benefits
             </h3>
-            <h4 className="text-black/70">{singleJob?.compensationAndBenefits}</h4>
+            <h4 className="text-black/70">
+              {singleJob?.compensationAndBenefits}
+            </h4>
           </div>
           <div
-            className="w-full lg:w-3/4
-                mt-4"
+          onClick={()=> toast.success("Your application succeeded")}
           >
-            <button 
-            onClick={()=>toast.success("Your Application Succeeded")}
-              type="submit"
-              className="px-10 lg:ml-0 lg:px-20 bg-[#003049] text-white py-2 rounded-lg uppercase hover:bg-[#003049] hover:border- transition ease-in duration-300"
-            >
-              Apply
-            </button>
+            <Button btnName="apply now" classForButton="px-5 text-sm md:text-md lg:text-lg xl:w-fit"/>
           </div>
         </div>
       </div>

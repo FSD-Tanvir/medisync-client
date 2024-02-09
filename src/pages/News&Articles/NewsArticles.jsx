@@ -5,11 +5,13 @@ import { Link, useNavigate } from "react-router-dom";
 
 import Categories from "./Categories/Categories";
 import BannerSimple from "../../components/shared/Banners/BannerSimple/BannerSimple";
+import useAxiosPublic from "../../hooks/useAxiosPublic";
 
 const NewsArticles = () => {
   useEffect(() => {
     window.scroll(0, 0);
   }, []);
+  const axiosPublic = useAxiosPublic()
   const [articles, setArticlies] = useState();
   const navigate = useNavigate();
   const [currentPage, setCurrentPage] = useState(1);
@@ -27,19 +29,22 @@ const NewsArticles = () => {
     const fetchData = async () => {
       try {
         // Fetch data from an API endpoint (replace with your API URL)
-        const response = await fetch("http://localhost:5000/newAndArticles");
-        const result = await response.json();
-        console.log(result);
+
+
+
+        const {data:articlesData} = await axiosPublic.get(
+          "/newAndArticles"
+        );
 
         // Update the state with the fetched data
-        setArticlies(result);
-      } catch (error) {
-        console.error("Error fetching data:", error);
+        setArticlies(articlesData);
+      } catch (err) {
+        console.error("Error fetching data:", err.message);
       }
     };
     // Call the fetchData function
     fetchData();
-  }, []);
+  }, [axiosPublic]);
 
   const handleArticlePage = (id) => {
     navigate(`/articles/${id}`);
@@ -63,12 +68,12 @@ const NewsArticles = () => {
   return (
     <>
       <div>
+        {/* banner  */}
         <BannerSimple
           imgUrl="https://i.ibb.co/5vStm5N/newsbanner.png"
-          text1="Welcome to news & articles"
+          text1="News & Articles"
           pageName="newsAndArticles"
         />
-        {/* <BannerSimple imgUrl="https://i.ibb.co/5vStm5N/newsbanner.png" text1="News & Articles" pageName="newsAndArticles"/> */}
         {/*Categories*/}
         <Categories />
 

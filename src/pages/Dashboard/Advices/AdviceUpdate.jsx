@@ -33,7 +33,7 @@ const AdviceUpdate = ({ clickAbleId : _id ,showModal, setShowModal }) => {
     return (
         <div>
             {
-                showModal ? <div className="fixed bg- inset-0 pt-10 bg-black bg-opacity-90 z-50">
+                showModal ? <div className="fixed inset-0 pt-10 bg-black bg-opacity-90 z-50">
                     <div className="w-80 md:w-96 lg:w-[800px] mx-auto bg-white flex flex-col items-center relative overflow-hidden shadow-xl justify-center  overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none">
                         <div  className=" w-full flex justify-end pr-5 pt-5 "><span onClick={() => setShowModal(false)} className="cursor-pointer">close</span></div>
                         {/* update form  */}
@@ -309,7 +309,7 @@ const AdviceUpdate = ({ clickAbleId : _id ,showModal, setShowModal }) => {
                             </div>
                             {/* add job button  */}
                             <div className="text-center mt-5">
-                                <button className="border hover:border-blue-500 hover:text-blue-500 font-semibold py-2 px-2 rounded-md w-1/3 shadow-[-2px_-2px_12px_2px_rgba(0,0,0,0.1),_2px_2px_12px_2px_rgba(0,0,0,0.1)] bg-blue-500 text-white hover:bg-[#FFF7F4] transition-colors duration-200 ease-linear">
+                                <button className="border hover:border-hover-border-color hover:text-hover-text-color font-semibold py-2 px-2 rounded-md w-1/3 shadow-[-2px_-2px_12px_2px_rgba(0,0,0,0.1),_2px_2px_12px_2px_rgba(0,0,0,0.1)] bg-primary-bg-color text-white hover:bg-[#FFF7F4] transition-colors duration-200 ease-linear">
                                     UPDATE
                                 </button>
                             </div>

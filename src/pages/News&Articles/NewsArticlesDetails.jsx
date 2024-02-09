@@ -1,10 +1,13 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import useAxiosPublic from "../../hooks/useAxiosPublic";
 
 const NewsArticlesDetails = () => {
+  const axiosPublic = useAxiosPublic()
   useEffect(() => {
     window.scroll(0, 0);
   }, []);
+
   const [articles, setArticlies] = useState();
   const { id } = useParams();
 
@@ -17,21 +20,21 @@ const NewsArticlesDetails = () => {
     const fetchData = async () => {
       try {
         // Fetch data from an API endpoint (replace with your API URL)
-        const response = await fetch(
-          `http://localhost:5000/newAndArticles/single/${id}`
+
+        const {data:article} = await axiosPublic.get(
+          `/newAndArticles/single/${id}`
+
         );
-        const result = await response.json();
-        console.log(result);
 
         // Update the state with the fetched data
-        setArticlies(result);
-      } catch (error) {
-        console.error("Error fetching data:", error);
+        setArticlies(article);
+      } catch (err) {
+        console.error("Error fetching data:", err.message);
       }
     };
     // Call the fetchData function
     fetchData();
-  }, [id]);
+  }, [id,axiosPublic]);
 
   return (
     <>

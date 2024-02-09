@@ -14,7 +14,7 @@
   /* height: 52rem; */
   padding: 1rem 0;
   position: relative;
-}
+} 
 
 .swiper-slide {
   width: 41%;
@@ -108,6 +108,7 @@
   position: relative;
   width: 15rem !important;
   bottom: 1rem;
+  /* display: block; */
 }
 
 .swiper-pagination .swiper-pagination-bullet {

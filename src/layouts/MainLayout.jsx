@@ -8,20 +8,23 @@ const MainLayout = () => {
   const isHomePage = location.pathname === "/" || false;
 
   return (
-    <>
+    <div className="bg-navbar-bg-color">
       <Navbar />
-      <div className="flex lg:w-full">
-        <div className={`w-full ${isHomePage && "lg:w-3/4 text-white"}`}>
-          <Outlet />
-        </div>
-        {isHomePage && (
-          <div className="lg:pl-3 lg:w-1/4">
-            <Advertise />
+      <div className="max-w-7xl mx-auto">
+        <div className="flex lg:w-full">
+          <div className={`w-full ${isHomePage && "lg:w-3/4 text-white"}`}>
+            <Outlet />
           </div>
-        )}
+          {isHomePage && (
+            <div className="lg:pl-3 lg:w-1/4">
+              <Advertise />
+            </div>
+          )}
+        </div>
       </div>
+
       <Footer />
-    </>
+    </div>
   );
 };
 
