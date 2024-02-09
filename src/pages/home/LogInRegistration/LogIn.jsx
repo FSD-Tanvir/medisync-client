@@ -40,7 +40,7 @@ const LogIn = ({ setShowRegister, setShowModal }) => {
         Swal.fire({
           position: "center",
           icon: "success",
-          background: "#116977",
+          background: "#3b82f6",
           color: "white",
           title: "Successfully Logged In!",
           showConfirmButton: false,
@@ -54,7 +54,7 @@ const LogIn = ({ setShowRegister, setShowModal }) => {
         Swal.fire({
           position: "center",
           icon: "error",
-          background: "#116977",
+          background: "#3b82f6",
           color: "white",
           title: `${err.message}`,
           showConfirmButton: false,

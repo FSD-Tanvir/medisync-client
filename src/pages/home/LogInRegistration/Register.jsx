@@ -69,7 +69,7 @@ const Register = ({ setShowRegister, setShowModal }) => {
           Swal.fire({
             position: "center",
             icon: "success",
-            background: "#116977",
+            background: "#3b82f6",
             color: "white",
             title: "Your Registration Successful",
             showConfirmButton: false,
@@ -84,7 +84,7 @@ const Register = ({ setShowRegister, setShowModal }) => {
         Swal.fire({
           position: "center",
           icon: "error",
-          background: "#116977",
+          background: "#3b82f6",
           color: "white",
           text: `${err.message}`,
           showConfirmButton: false,
