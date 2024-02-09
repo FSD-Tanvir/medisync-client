@@ -13,7 +13,7 @@ import cartIcon from "../assets/DashboardIcons/cart.png";
 import reviewsIcon from "../assets/DashboardIcons/reviews.png";
 
 const Dashboard = () => {
-  const [open, setOpen] = useState(false)
+  const [open, setOpen] = useState(false);
   const isAdmin = " ";
   const location = useLocation();
   const isDashboard = location.pathname === "/dashboard" || false;
