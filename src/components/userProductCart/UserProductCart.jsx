@@ -41,7 +41,7 @@ const UserProductCart = () => {
           </div>
           <div className="mt-2">
             <p className="text-gray-700">
-              <span className="font-bold">Total Price:</span> ${product.totalPrice} <span className="font-bold">Quantity: </span>{product.quintity}
+              <span className="font-bold">Total Price:</span> ${product.totalPrice} <span className="font-bold ml-4">Quantity: </span>{product.quintity}
             </p>
           </div>
         </div>
@@ -51,7 +51,7 @@ const UserProductCart = () => {
       {/* Sub-total and Checkout */}
       <div className="flex flex-col mt-4">
         <p className="text-gray-700 mb-2">
-          <span className="font-bold">Sub Total:</span> ${subTotal}
+          <span className="font-bold">Sub Total:</span> ${subTotal.toFixed(2)}
         </p>
         <button className="border hover:border-blue-500 text-white hover:text-blue-500 bg-blue-500 hover:bg-[#FFF7F4] font-semibold py-4 px-4 w-full  rounded-md text-xs sm:text-xl md:text-xs lg:text-sm xl:text-xs mt-4 shadow-[-2px_-2px_12px_2px_rgba(0,0,0,0.1),_2px_2px_12px_2px_rgba(0,0,0,0.1)]" onClick={() => console.log("Checkout clicked")}>
           Proceed To Checkout
