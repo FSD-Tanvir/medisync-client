@@ -1,4 +1,7 @@
 import { Tab, TabList, TabPanel, Tabs } from "react-tabs";
+import AllProducts from "./allProducts/allProducts";
+
+
 
 const productsTabName = [
     // { id: 3, title: "overview" },
@@ -35,7 +38,7 @@ const ProductsPanel = () => {
           </TabList>
           {/* tab panels  */}
           <TabPanel>
-            {/* <AllJobs/> */}
+            <AllProducts />
           </TabPanel>
           <TabPanel>
             {/* <AddJob /> */}
