@@ -80,6 +80,36 @@ const Dashboard = () => {
               </li>
               <li>
                 <NavLink
+                  to="products-panel"
+                  className={({ isActive, isPending }) =>
+                    isActive
+                      ? "font-semibold flex justify-start items-center gap-1 pl-2 bg-[#3560fa] text-[#ffffff] w-[70%] mx-auto py-1"
+                      : isPending
+                      ? ""
+                      : "font-semibold flex justify-start items-center gap-1 pl-2 w-[70%] mx-auto py-1"
+                  }
+                >
+                  {open ? (
+                    <span className="flex justify-center items-center gap-2">
+                      {" "}
+                      <img
+                        src={doctorIcon}
+                        className="w-16 sm:w-6 bg-white"
+                        alt=""
+                      />
+                      Product Maintenance
+                    </span>
+                  ) : (
+                    <img
+                      src={doctorIcon}
+                      className="w-16 sm:w-6 bg-white"
+                      alt=""
+                    />
+                  )}
+                </NavLink>
+              </li>
+              <li>
+                <NavLink
                   to="doctors-panel"
                   className={({ isActive, isPending }) =>
                     isActive
