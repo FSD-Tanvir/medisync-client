@@ -14,6 +14,7 @@ const AllProducts = () => {
                         <th className="text-lg capitalize text-left">
                             <div className="mr-4">S/N</div>
                         </th>
+                        <th className=" text-base sm:text-lg capitalize text-left px-3 xl:pl-3">Product Image</th>
                         <th className="text-lg capitalize text-left px-3 xl:pl-3">Product Name</th>
                         <th className="text-lg capitalize text-left px-3 xl:pl-3">Category</th>
                         <th className="text-lg capitalize text-left px-3 xl:pl-3">Company Name</th>
