@@ -187,7 +187,7 @@ const Dashboard = () => {
                         className="w-16 h-[30px]  sm:w-6 object-cover bg-white"
                         alt=""
                       />
-                      Advices
+                      Jobs
                     </span>
                   ) : (
                     <img
