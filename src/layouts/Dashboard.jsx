@@ -11,6 +11,7 @@ import homeIcon from "../assets/DashboardIcons/home.webp";
 import adminIcon from "../assets/DashboardIcons/admin.png";
 import cartIcon from "../assets/DashboardIcons/cart.png";
 import reviewsIcon from "../assets/DashboardIcons/reviews.png";
+import medisyncProduct from "../assets/DashboardIcons/medisyncProduct.webp"
 
 const Dashboard = () => {
   const [open, setOpen] = useState(false);
@@ -93,7 +94,7 @@ const Dashboard = () => {
                     <span className="flex justify-center items-center gap-2">
                       {" "}
                       <img
-                        src={doctorIcon}
+                        src={medisyncProduct}
                         className="w-16 sm:w-6 bg-white"
                         alt=""
                       />
@@ -101,7 +102,7 @@ const Dashboard = () => {
                     </span>
                   ) : (
                     <img
-                      src={doctorIcon}
+                      src={medisyncProduct}
                       className="w-16 sm:w-6 bg-white"
                       alt=""
                     />
