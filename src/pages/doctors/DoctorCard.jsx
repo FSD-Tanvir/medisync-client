@@ -1,5 +1,7 @@
 // import { useState } from "react";
 
+import Button from "../../components/shared/button/Button";
+
 const DoctorCard = ({ doctor }) => {
   const {
     name,
@@ -32,12 +34,8 @@ const DoctorCard = ({ doctor }) => {
 
       {/* Action Buttons */}
       <div className="flex justify-between items-center mt-4">
-        <button
-          className="px-3 sm:px-4 py-2 focus:outline-none border hover:border-blue-500 hover:text-blue-500 font-semibold rounded-md text-xs sm:text-sm md:text-xs lg:text-sm xl:text-xs lg:w-full xl:w-fit  shadow-[-2px_-2px_12px_2px_rgba(0,0,0,0.1),_2px_2px_12px_2px_rgba(0,0,0,0.1)]  bg-blue-500 text-white hover:bg-[#FFF7F4]"
-        //   onClick={openModal}
-        >
-          Take Appointment
-        </button>
+       
+        <Button btnName="Take Appointment" classForButton="px-2 text-xs sm:text-sm md:text-xs lg:text-sm xl:text-xs lg:w-full xl:w-fit"/>
         <div
           className="flex items-center cursor-pointer"
         // onClick={openModal}

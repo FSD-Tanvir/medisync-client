@@ -1,4 +1,3 @@
-import Navbar from "./Navbar";
 import useAdvices from "../../../hooks/useAdvices";
 import { FaEdit } from "react-icons/fa";
 import { MdDeleteOutline } from "react-icons/md";
@@ -50,11 +49,10 @@ const handleModal = (_id) => {
 console.log(clickAbleId);
     return (
         <div>
-            <Navbar></Navbar>
             <div id="app" className=" min-h-screen ">
-                <div className="max-w-6xl mx-auto px-4 sm:px-8 py-8 ">
+                <div className=" px-4 sm:px-8 py-8 ">
                     <div className="overflow-x-auto md:overflow-x-auto">
-                        <table className="w-full  border border-blue-500">
+                        <table className="w-full ">
                             <thead className="visible relative bg-gray-100 w-full ">
                                 <tr className=" ">
                                     <th className={generalStyle}>SL.NO.</th>
@@ -78,12 +76,12 @@ console.log(clickAbleId);
                                         </th>
                                         <th className="">
                                             <div className={flexStyle}>
-                                                <FaEdit onClick={() => handleModal(advice._id)} className="text-xl bg-green-500 text-white p-[2px] "></FaEdit>
+                                                <FaEdit onClick={() => handleModal(advice._id)} className="text-3xl bg-green-500 text-white p-1 rounded-md "></FaEdit>
                                             </div>
                                         </th>
                                         <th className="">
                                             <div className={flexStyle}>
-                                                <MdDeleteOutline onClick={() => handleDelete(advice._id)} className="text-2xl text-white bg-red-500 p-[2px]"></MdDeleteOutline>
+                                                <MdDeleteOutline onClick={() => handleDelete(advice._id)} className="text-3xl text-white bg-red-500 p-1 rounded-md"></MdDeleteOutline>
                                             </div>
                                         </th>
                                         <th>

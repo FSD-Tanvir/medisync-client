@@ -1,5 +1,3 @@
-import Container from "./contentContainer/Container";
-import { useState } from "react";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
 import AddJob from "./addJob/AddJob";
@@ -21,7 +19,7 @@ const JobPanel = () => {
         {/* heading  */}
         <div className="">
           <h2 className="capitalize text-2xl lg:text-3xl font-bold text-center my-8">
-            job <span className="text-blue-500">panel</span>
+            job <span className="text-text-color-blue">panel</span>
           </h2>
         </div>
       </div>
@@ -30,11 +28,11 @@ const JobPanel = () => {
         {/* job tabs here  */}
         <Tabs style={{border:"none"}}>
           {/* tab lists  */}
-          <TabList>
+          <TabList style={{background: "blue", color:"white"}}>
             {jobTabName &&
               jobTabName.map((tab) => (
                 <Tab key={tab?.id}>
-                  <div className="rounded-lg w-full h-[40px]  flex justify-center items-center text-blue-500 px-4 font-semibold text-2xl md:text-xl lg:text-2xl gap-1 p-1 cursor-pointer shadow-[-2px_-2px_12px_2px_rgba(0,0,0,0.1),_2px_2px_12px_2px_rgba(0,0,0,0.1)] hover:shadow-[-5px_-5px_15px_4px_rgba(0,0,0,0.1),_5px_5px_15px_4px_rgba(0,0,0,0.1)] duration-1000 hover:scale-105">
+                  <div className="rounded-lg w-full h-[40px]  flex justify-center items-center text-text-color-blue px-4 font-semibold text-2xl md:text-xl lg:text-2xl gap-1 p-1 cursor-pointer shadow-[-2px_-2px_12px_2px_rgba(0,0,0,0.1),_2px_2px_12px_2px_rgba(0,0,0,0.1)] hover:shadow-[-5px_-5px_15px_4px_rgba(0,0,0,0.1),_5px_5px_15px_4px_rgba(0,0,0,0.1)] duration-1000 hover:scale-105">
                     <h2 className="capitalize text-lg">{tab?.title}</h2>
                   </div>
                 </Tab>

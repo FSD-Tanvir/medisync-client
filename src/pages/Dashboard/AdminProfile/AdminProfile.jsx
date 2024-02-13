@@ -8,7 +8,7 @@ const AdminProfile = () => {
             </div>
             <div className="flex flex-col justify-center items-center">
                 <div>
-                    <p><span className="font-semibold">Nama:</span> <span>MD SAYEDUL HAQUE</span></p>
+                    <p><span className="font-semibold">Name:</span> <span>MD SAYEDUL HAQUE</span></p>
                     <p> <span className="font-semibold">Role: </span><span>Admin</span></p>
                 </div>
             </div>

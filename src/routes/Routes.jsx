@@ -11,29 +11,33 @@ import NewsArticles from "../pages/News&Articles/NewsArticles";
 import NewsArticlesDetails from "../pages/News&Articles/NewsArticlesDetails";
 import ByProducts from "../pages/byProducts/ByProducts";
 import Dashboard from "../layouts/Dashboard";
-import Advices from "../pages/Dashboard/Advices/Advices";
 import AddAdvice from "../pages/Dashboard/Advices/AddAdvice";
 import AllAdvices from "../pages/Dashboard/Advices/AllAdvices";
-import JobPanel from "../pages/dashboard/jobPanel/JobPanel";
-import Overview from "../pages/dashboard/jobPanel/overview/Overview";
-import AddJob from "../pages/dashboard/jobPanel/addJob/AddJob";
-import AllJobs from "../pages/dashboard/jobPanel/allJobs/AllJobs";
+import JobPanel from "../pages/Dashboard/jobPanel/JobPanel";
+import AddJob from "../pages/Dashboard/jobPanel/addJob/AddJob";
+import AllJobs from "../pages/Dashboard/jobPanel/allJobs/AllJobs";
 
 import AllArticles from "../pages/Dashboard/allArticles/AllArticles";
-import AddNewsAndArticles from "../pages/Dashboard/addNewsAndArticles/AddNewsAndArticles";
-import EditArticle from "../pages/Dashboard/allArticles/EditArticle";
 
 import UpdateJob from "../pages/dashboard/jobPanel/allJobs/UpdateJob";
 import axios from "axios";
-import ManageDoctors from "../pages/Dashboard/doctors/ManageDoctors";
 import UpdateDoctor from "../pages/Dashboard/doctors/UpdateDoctor";
+
+import ProductDetails from "../pages/productDetails/productDetails";
+
 import AdminProfile from "../pages/Dashboard/AdminProfile/AdminProfile";
 import UserProfile from "../pages/Dashboard/UserProfile/UserProfile";
 import MyCart from "../pages/Dashboard/MyCart/MyCart";
 import MyReviews from "../pages/Dashboard/MyReviews/MyReviews";
 import MyDoctors from "../pages/Dashboard/MyDoctors/MyDoctors";
+import AdvicePanel from "../pages/Dashboard/Advices/advicePanel";
+import DoctorsPanel from "../pages/Dashboard/doctors/doctorsPanel";
+import ArticlesPanel from "../pages/Dashboard/allArticles/articlesPanel";
+import Overview from "../pages/Dashboard/overview/Overview";
+import PrivateRoute from "./PrivateRoute";
 
- 
+
+
 
 export const router = createBrowserRouter([
   // Main Layout
@@ -64,6 +68,11 @@ export const router = createBrowserRouter([
         element: <Home />,
       },
       {
+        path: "/product-details/:id",
+        element:<ProductDetails/>,
+        loader: ({ params }) => fetch(`https://medisync-server.vercel.app/allProducts/${params.id}`)
+      },
+      {
         path: "/advice",
         element: <Advice></Advice>,
       },
@@ -77,7 +86,9 @@ export const router = createBrowserRouter([
       },
       {
         path: "/doctors",
-        element: <Doctors />,
+        element: <PrivateRoute>
+          <Doctors />
+        </PrivateRoute>,
       },
       {
         path: "career",
@@ -102,12 +113,34 @@ export const router = createBrowserRouter([
         element: <AdminProfile></AdminProfile>
       },
       {
-        path: "job-panel",
-        element: <JobPanel />,
+        path: "overview",
+        element: <Overview />,
       },
       {
-        path: "job-panel/overview",
-        element: <Overview />,
+        path: "doctors-panel",
+        element: <DoctorsPanel></DoctorsPanel>
+      },
+      {
+        path: "doctors/update-doctor/:id",
+        element: <UpdateDoctor />,
+        loader: async ({ params }) => {
+          return await axios.get(
+            `https://medisync-server.vercel.app/doctors/${params.id}`
+
+          )
+        },
+      },
+      {
+        path: "articles-panel",
+        element: <ArticlesPanel></ArticlesPanel>
+      },
+      {
+        path: "advice-panel",
+        element: <AdvicePanel></AdvicePanel>
+      },
+      {
+        path: "job-panel",
+        element: <JobPanel />,
       },
       {
         path: "job-panel/add-job",
@@ -123,14 +156,9 @@ export const router = createBrowserRouter([
         loader: async ({ params }) => {
           return await axios.get(
             `https://medisync-server.vercel.app/jobs/single/${params.id}`
-            
+
           )
         },
-      },
-      {
-
-        path: "advices",
-        element: <Advices></Advices>,
       },
       {
         path: "advices/addAdvice",
@@ -146,28 +174,6 @@ export const router = createBrowserRouter([
         element: <AllArticles />,
       },
       {
-        path: "add-articles",
-        element: <AddNewsAndArticles />,
-      },
-      {
-        path: "edit-article/:id",
-        element: <EditArticle />,
-      },
-      {
-        path: "doctors",
-        element: <ManageDoctors/>
-      },
-      {
-        path: "doctors/update-doctor/:id",
-        element: <UpdateDoctor />,
-        loader: async ({ params }) => {
-          return await axios.get(
-            `https://medisync-server.vercel.app/doctors/${params.id}`
-            
-          )
-        },
-      },
-      {
         path: "myProfile",
         element: <UserProfile></UserProfile>
       },
@@ -177,7 +183,7 @@ export const router = createBrowserRouter([
       },
       {
         path: "myReviews",
-        element: <MyReviews/>
+        element: <MyReviews />
       },
       {
         path: "myDoctors",

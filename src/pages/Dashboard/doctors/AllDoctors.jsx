@@ -1,12 +1,14 @@
 import { useQuery } from "@tanstack/react-query";
-import axios from "axios";
 import DoctorRow from "./DoctorRow";
+import useAxiosPublic from "../../../hooks/useAxiosPublic";
 
 const AllDoctors = () => {
+  const axiosPublic = useAxiosPublic()
   const { data: allDoctorsData = [], refetch } = useQuery({
     queryKey: ["allDoctors"],
     queryFn: async () => {
-      const res = await axios.get("https://medisync-server.vercel.app/doctors");
+
+      const res = await axiosPublic.get("/doctors");
       return res?.data;
     },
   });
