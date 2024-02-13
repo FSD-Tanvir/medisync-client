@@ -14,7 +14,6 @@ import Dashboard from "../layouts/Dashboard";
 import AddAdvice from "../pages/Dashboard/Advices/AddAdvice";
 import AllAdvices from "../pages/Dashboard/Advices/AllAdvices";
 import JobPanel from "../pages/Dashboard/jobPanel/JobPanel";
-import Overview from "../pages/dashboard/jobPanel/overview/Overview";
 import AddJob from "../pages/Dashboard/jobPanel/addJob/AddJob";
 import AllJobs from "../pages/Dashboard/jobPanel/allJobs/AllJobs";
 
@@ -34,7 +33,12 @@ import MyDoctors from "../pages/Dashboard/MyDoctors/MyDoctors";
 import AdvicePanel from "../pages/Dashboard/Advices/advicePanel";
 import DoctorsPanel from "../pages/Dashboard/doctors/doctorsPanel";
 import ArticlesPanel from "../pages/Dashboard/allArticles/articlesPanel";
+
 import ProductsPanel from "../pages/Dashboard/productsPanel/ProductsPanel";
+
+import Overview from "../pages/Dashboard/overview/Overview";
+import PrivateRoute from "./PrivateRoute";
+
 
 
 
@@ -86,7 +90,9 @@ export const router = createBrowserRouter([
       },
       {
         path: "/doctors",
-        element: <Doctors />,
+        element: <PrivateRoute>
+          <Doctors />
+        </PrivateRoute>,
       },
       {
         path: "career",
@@ -111,12 +117,26 @@ export const router = createBrowserRouter([
         element: <AdminProfile></AdminProfile>
       },
       {
+
         path: "products-panel",
         element: <ProductsPanel></ProductsPanel>
+
+        path: "overview",
+        element: <Overview />,
       },
       {
         path: "doctors-panel",
         element: <DoctorsPanel></DoctorsPanel>
+      },
+      {
+        path: "doctors/update-doctor/:id",
+        element: <UpdateDoctor />,
+        loader: async ({ params }) => {
+          return await axios.get(
+            `https://medisync-server.vercel.app/doctors/${params.id}`
+
+          )
+        },
       },
       {
         path: "articles-panel",
@@ -129,10 +149,6 @@ export const router = createBrowserRouter([
       {
         path: "job-panel",
         element: <JobPanel />,
-      },
-      {
-        path: "job-panel/overview",
-        element: <Overview />,
       },
       {
         path: "job-panel/add-job",
@@ -166,6 +182,7 @@ export const router = createBrowserRouter([
         element: <AllArticles />,
       },
       {
+
         path: "doctors/update-doctor/:id",
         element: <UpdateDoctor />,
         loader: async ({ params }) => {
@@ -176,6 +193,7 @@ export const router = createBrowserRouter([
         },
       },
       {
+
         path: "myProfile",
         element: <UserProfile></UserProfile>
       },

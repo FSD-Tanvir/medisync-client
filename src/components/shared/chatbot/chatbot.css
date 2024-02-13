@@ -3,6 +3,9 @@
 ::-webkit-scrollbar {
   width: 5px; /* Set the width of the scrollbar */
 }
+.custom-scrollbar-dashboard-nav::-webkit-scrollbar {
+  width: 0px; /* Set the width of the scrollbar */
+}
 
 /* Track styles */
 ::-webkit-scrollbar-track {
