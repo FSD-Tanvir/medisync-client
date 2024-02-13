@@ -39,10 +39,6 @@ import ProductsPanel from "../pages/Dashboard/productsPanel/ProductsPanel";
 import Overview from "../pages/Dashboard/overview/Overview";
 import PrivateRoute from "./PrivateRoute";
 
-
-
-
-
 export const router = createBrowserRouter([
   // Main Layout
   {
@@ -73,8 +69,9 @@ export const router = createBrowserRouter([
       },
       {
         path: "/product-details/:id",
-        element:<ProductDetails/>,
-        loader: ({ params }) => fetch(`http://localhost:5000/allProducts/${params.id}`)
+        element: <ProductDetails />,
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/allProducts/${params.id}`),
       },
       {
         path: "/advice",
@@ -90,9 +87,11 @@ export const router = createBrowserRouter([
       },
       {
         path: "/doctors",
-        element: <PrivateRoute>
-          <Doctors />
-        </PrivateRoute>,
+        element: (
+          <PrivateRoute>
+            <Doctors />
+          </PrivateRoute>
+        ),
       },
       {
         path: "career",
@@ -114,19 +113,19 @@ export const router = createBrowserRouter([
     children: [
       {
         path: "adminProfile",
-        element: <AdminProfile></AdminProfile>
+        element: <AdminProfile></AdminProfile>,
       },
       {
-
         path: "products-panel",
-        element: <ProductsPanel></ProductsPanel>
-
+        element: <ProductsPanel></ProductsPanel>,
+      },
+      {
         path: "overview",
         element: <Overview />,
       },
       {
         path: "doctors-panel",
-        element: <DoctorsPanel></DoctorsPanel>
+        element: <DoctorsPanel></DoctorsPanel>,
       },
       {
         path: "doctors/update-doctor/:id",
@@ -134,17 +133,16 @@ export const router = createBrowserRouter([
         loader: async ({ params }) => {
           return await axios.get(
             `https://medisync-server.vercel.app/doctors/${params.id}`
-
-          )
+          );
         },
       },
       {
         path: "articles-panel",
-        element: <ArticlesPanel></ArticlesPanel>
+        element: <ArticlesPanel></ArticlesPanel>,
       },
       {
         path: "advice-panel",
-        element: <AdvicePanel></AdvicePanel>
+        element: <AdvicePanel></AdvicePanel>,
       },
       {
         path: "job-panel",
@@ -164,8 +162,7 @@ export const router = createBrowserRouter([
         loader: async ({ params }) => {
           return await axios.get(
             `http://localhost:5000//jobs/single/${params.id}`
-
-          )
+          );
         },
       },
       {
@@ -182,32 +179,27 @@ export const router = createBrowserRouter([
         element: <AllArticles />,
       },
       {
-
         path: "doctors/update-doctor/:id",
         element: <UpdateDoctor />,
         loader: async ({ params }) => {
-          return await axios.get(
-            `http://localhost:5000//doctors/${params.id}`
-
-          )
+          return await axios.get(`http://localhost:5000//doctors/${params.id}`);
         },
       },
       {
-
         path: "myProfile",
-        element: <UserProfile></UserProfile>
+        element: <UserProfile></UserProfile>,
       },
       {
         path: "myCart",
-        element: <MyCart></MyCart>
+        element: <MyCart></MyCart>,
       },
       {
         path: "myReviews",
-        element: <MyReviews />
+        element: <MyReviews />,
       },
       {
         path: "myDoctors",
-        element: <MyDoctors></MyDoctors>
+        element: <MyDoctors></MyDoctors>,
       },
     ],
   },

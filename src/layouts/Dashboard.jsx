@@ -1,8 +1,6 @@
 /* eslint-disable react/no-unescaped-entities */
 import { NavLink, Outlet, useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
-
-import medisyncProduct from "../assets/DashboardIcons/medisyncProduct.webp"
 import { TbDeviceAnalytics } from "react-icons/tb";
 import { IoHomeOutline } from "react-icons/io5";
 import { RiLogoutCircleLine } from "react-icons/ri";
@@ -12,13 +10,17 @@ import { BiMessageRoundedDetail } from "react-icons/bi";
 import { MdOutlineWork, MdReviews } from "react-icons/md";
 import { CgProfile } from "react-icons/cg";
 import { IoCartOutline } from "react-icons/io5";
-import useUser from "../hooks/useUser";
+import { BsCapsule } from "react-icons/bs";
+// import useUser from "../hooks/useUser";
 import "./Dashboard.css";
+import useAuth from "../hooks/useAuth";
 
 const Dashboard = () => {
   const [open, setOpen] = useState(false);
-  const userData = useUser();
-  const isAdmin = userData?.role === "admin" ? true : false;
+  const { logOut } = useAuth()
+  // const userData = useUser();
+  // const isAdmin = userData?.role === "admin" ? true : false;
+  const isAdmin = "true"
   // console.log(isAdmin);
   const location = useLocation();
 
@@ -37,14 +39,13 @@ const Dashboard = () => {
   return (
     <div className={`flex ${open && "flex-col"} flex-row sm:flex-row`}>
       <div
-        className={`w-full ${
-          open
-            ? "max-[639.5px]:w-full sm:w-[35%] md:w-[40%] lg:w-[20%]"
-            : "max-[639.5px]:w-0  sm:w-[10%] md:w-[10%] lg:w-[5%]"
-        }  duration-300 md:min-h-screen bg-blue-600 text-white mt-0  sm:fixed sm:z-[300] sm:max-h-screen sm:overflow-y-auto custom-scrollbar-dashboard-nav`}
+        className={`w-full ${open
+          ? "max-[639.5px]:w-full sm:w-[35%] md:w-[40%] lg:w-[20%]"
+          : "max-[639.5px]:w-0  sm:w-[10%] md:w-[10%] lg:w-[5%]"
+          }  duration-300 md:min-h-screen bg-blue-600 text-white mt-0  sm:fixed sm:z-[300] sm:max-h-screen sm:overflow-y-auto custom-scrollbar-dashboard-nav`}
       >
         <div className="sticky top-0 z-[900]">
-          
+
           <div
             onClick={() => setOpen(!open)}
             className={`hidden sm:flex sm:right-[3px] top-4 cursor-pointer justify-center items-center absolute z-40 `}
@@ -79,9 +80,8 @@ const Dashboard = () => {
           </div>
           <div
             onClick={() => setOpen(!open)}
-            className={`sm:hidden ${
-              open ? "right-[13px]" : "left-[10px] "
-            }  top-2 cursor-pointer p-1 bg-blue-500 rounded-lg absolute z-40 border border-white/80`}
+            className={`sm:hidden ${open ? "right-[13px]" : "left-[10px] "
+              }  top-2 cursor-pointer p-1 bg-blue-500 rounded-lg absolute z-40 border border-white/80`}
           >
             {!open ? (
               <svg
@@ -112,360 +112,16 @@ const Dashboard = () => {
             )}
           </div>
         </div>
-
-        <ul className="menu space-y-2 text-black">
-          {isAdmin ? (
-            <div className="flex justify-center sm:flex-col">
-              <li>
-                <NavLink
-                  to="adminProfile"
-                  className={({ isActive, isPending }) =>
-                    isActive
-                      ? "font-semibold flex justify-start items-center gap-1 pl-2 bg-[#3560fa] text-[#ffffff] w-[70%] mx-auto py-1"
-                      : isPending
-                      ? ""
-                      : "font-semibold flex justify-start items-center gap-1 pl-2 w-[70%] mx-auto py-1"
-                  }
-                >
-                  {open ? (
-                    <span className="flex justify-center items-center gap-2">
-                      {" "}
-                      <img
-                        src={adminIcon}
-                        className="w-16 sm:w-6 bg-white"
-                        alt=""
-                      />
-                      Admin Profile
-                    </span>
-                  ) : (
-                    <img
-                      src={adminIcon}
-                      className="w-16 sm:w-6 bg-white"
-                      alt=""
-                    />
-                  )}
-                </NavLink>
-              </li>
-              <li>
-                <NavLink
-                  to="products-panel"
-                  className={({ isActive, isPending }) =>
-                    isActive
-                      ? "font-semibold flex justify-start items-center gap-1 pl-2 bg-[#3560fa] text-[#ffffff] w-[70%] mx-auto py-1"
-                      : isPending
-                      ? ""
-                      : "font-semibold flex justify-start items-center gap-1 pl-2 w-[70%] mx-auto py-1"
-                  }
-                >
-                  {open ? (
-                    <span className="flex justify-center items-center gap-2">
-                      {" "}
-                      <img
-                        src={medisyncProduct}
-                        className="w-16 sm:w-6 bg-white"
-                        alt=""
-                      />
-                      Product Maintenance
-                    </span>
-                  ) : (
-                    <img
-                      src={medisyncProduct}
-                      className="w-16 sm:w-6 bg-white"
-                      alt=""
-                    />
-                  )}
-                </NavLink>
-              </li>
-              <li>
-                <NavLink
-                  to="doctors-panel"
-                  className={({ isActive, isPending }) =>
-                    isActive
-                      ? "font-semibold flex justify-start items-center gap-1 pl-2 bg-[#3560fa] text-[#ffffff] w-[70%] mx-auto py-1"
-                      : isPending
-                      ? ""
-                      : "font-semibold flex justify-start items-center gap-1 pl-2 w-[70%] mx-auto py-1"
-                  }
-                >
-                  {open ? (
-                    <span className="flex justify-center items-center gap-2">
-                      {" "}
-                      <img
-                        src={doctorIcon}
-                        className="w-16 sm:w-6 bg-white"
-                        alt=""
-                      />
-                      All Doctors
-                    </span>
-                  ) : (
-                    <img
-                      src={doctorIcon}
-                      className="w-16 sm:w-6 bg-white"
-                      alt=""
-                    />
-                  )}
-                </NavLink>
-              </li>
-              <li>
-                <NavLink
-                  to="articles-panel"
-                  className={({ isActive, isPending }) =>
-                    isActive
-                      ? "font-semibold flex justify-start items-center gap-1 pl-2 bg-[#3560fa] text-[#ffffff] w-[70%] mx-auto py-1"
-                      : isPending
-                      ? ""
-                      : "font-semibold flex justify-start items-center gap-1 pl-2 w-[70%] mx-auto py-1"
-                  }
-                >
-                  {open ? (
-                    <span className="flex justify-center items-center gap-2">
-                      {" "}
-                      <img
-                        src={newsIcon}
-                        className="w-16 sm:w-6 bg-white"
-                        alt=""
-                      />
-                      News & Articles
-                    </span>
-                  ) : (
-                    <img
-                      src={newsIcon}
-                      className="w-16 sm:w-6 bg-white"
-                      alt=""
-                    />
-                  )}
-                </NavLink>
-              </li>
-              <li>
-                <NavLink
-                  to="advice-panel"
-                  className={({ isActive, isPending }) =>
-                    isActive
-                      ? "font-semibold flex justify-start items-center gap-1 pl-2 bg-[#3560fa] text-[#ffffff] w-[70%] mx-auto py-1"
-                      : isPending
-                      ? ""
-                      : "font-semibold flex justify-start items-center gap-1 pl-2 w-[70%] mx-auto py-1"
-                  }
-                >
-                  {open ? (
-                    <span className="flex justify-center items-center gap-2">
-                      {" "}
-                      <img
-                        src={adviceIcon}
-                        className="w-16 sm:w-6 bg-white"
-                        alt=""
-                      />
-                      Advices
-                    </span>
-                  ) : (
-                    <img
-                      src={adviceIcon}
-                      className="w-16 sm:w-6 bg-white"
-                      alt=""
-                    />
-                  )}
-                </NavLink>
-              </li>
-              <li>
-                <NavLink
-                  to="/Dashboard/job-panel"
-                  className={({ isActive, isPending }) =>
-                    isActive
-                      ? "font-semibold flex justify-start items-center gap-1 pl-2 bg-[#3560fa] text-[#ffffff] w-[70%] mx-auto py-1"
-                      : isPending
-                      ? ""
-                      : "font-semibold flex justify-start items-center gap-1 pl-2 w-[70%] mx-auto py-1"
-                  }
-                >
-                  {open ? (
-                    <span className="flex justify-center items-center gap-2">
-                      {" "}
-                      <img
-                        src={jobIcon}
-                        className="w-16 h-[30px]  sm:w-6 object-cover bg-white"
-                        alt=""
-                      />
-                      Jobs
-                    </span>
-                  ) : (
-                    <img
-                      src={jobIcon}
-                      className="w-16 h-[30px] sm:w-6 object-cover bg-white"
-                      alt=""
-                    />
-                  )}
-                </NavLink>
-              </li>
-              <li className="sm:hidden">
-                <NavLink
-                  to="/"
-                  className={
-                    "font-semibold flex justify-start items-center gap-1 pl-2 w-[70%] mx-auto py-1"
-                  }
-                >
-                  {open ? (
-                    <span className="flex justify-center items-center gap-2">
-                      {" "}
-                      <img
-                        src={homeIcon}
-                        className="w-16 h-[30px]  sm:w-6 object-fill bg-white"
-                        alt=""
-                      />
-                      Advices
-                    </span>
-                  ) : (
-                    <img
-                      src={homeIcon}
-                      className="w-16  sm:w-6 object-fill bg-white"
-                      alt=""
-                    />
-                  )}
-                </NavLink>
-              </li>
-            </div>
-          ) : (
-            <div className="flex justify-center sm:flex-col">
-              <li>
-                <NavLink
-                  to="myProfile"
-                  className={({ isActive, isPending }) =>
-                    isActive
-                      ? "font-semibold flex justify-start items-center gap-1 pl-2 bg-[#3560fa] text-[#ffffff] w-[70%] mx-auto py-1"
-                      : isPending
-                      ? ""
-                      : "font-semibold flex justify-start items-center gap-1 pl-2 w-[70%] mx-auto py-1"
-                  }
-                >
-                  {open ? (
-                    <span className="flex justify-center items-center gap-2">
-                      {" "}
-                      <img
-                        src={adminIcon}
-                        className="w-16 sm:w-6 bg-white"
-                        alt=""
-                      />
-                      My Profile
-                    </span>
-                  ) : (
-                    <img
-                      src={adminIcon}
-                      className="w-16 sm:w-6 bg-white"
-                      alt=""
-                    />
-                  )}
-                </NavLink>
-              </li>
-              <li>
-                <NavLink
-                  to="myCart"
-                  className={({ isActive, isPending }) =>
-                    isActive
-                      ? "font-semibold flex justify-start items-center gap-1 pl-2 bg-[#3560fa] text-[#ffffff] w-[70%] mx-auto py-1"
-                      : isPending
-                      ? ""
-                      : "font-semibold flex justify-start items-center gap-1 pl-2 w-[70%] mx-auto py-1"
-                  }
-                >
-                  {open ? (
-                    <span className="flex justify-center items-center gap-2">
-                      {" "}
-                      <img
-                        src={cartIcon}
-                        className="w-16 sm:w-6 bg-white"
-                        alt=""
-                      />
-                      My Cart
-                    </span>
-                  ) : (
-                    <img
-                      src={cartIcon}
-                      className="w-16 sm:w-6 bg-white"
-                      alt=""
-                    />
-                  )}
-                </NavLink>
-              </li>
-              <li>
-                <NavLink
-                  to="myReviews"
-                  className={({ isActive, isPending }) =>
-                    isActive
-                      ? "font-semibold flex justify-start items-center gap-1 pl-2 bg-[#3560fa] text-[#ffffff] w-[70%] mx-auto py-1"
-                      : isPending
-                      ? ""
-                      : "font-semibold flex justify-start items-center gap-1 pl-2 w-[70%] mx-auto py-1"
-                  }
-                >
-                  {open ? (
-                    <span className="flex justify-center items-center gap-2">
-                      {" "}
-                      <img
-                        src={reviewsIcon}
-                        className="w-16 sm:w-6 bg-white"
-                        alt=""
-                      />
-                      My Reviews
-                    </span>
-                  ) : (
-                    <img
-                      src={reviewsIcon}
-                      className="w-16 sm:w-6 bg-white"
-                      alt=""
-                    />
-                  )}
-                </NavLink>
-              </li>
-              <li>
-                <NavLink
-                  to="myDoctors"
-                  className={({ isActive, isPending }) =>
-                    isActive
-                      ? "font-semibold flex justify-start items-center gap-1 pl-2 bg-[#3560fa] text-[#ffffff] w-[70%] mx-auto py-1"
-                      : isPending
-                      ? ""
-                      : "font-semibold flex justify-start items-center gap-1 pl-2 w-[70%] mx-auto py-1"
-                  }
-                >
-                  {open ? (
-                    <span className="flex justify-center items-center gap-2">
-                      {" "}
-                      <img
-                        src={doctorIcon}
-                        className="w-16 sm:w-6 bg-white"
-                        alt=""
-                      />
-                      My Doctor's
-                    </span>
-                  ) : (
-                    <img
-                      src={doctorIcon}
-                      className="w-16 sm:w-6 bg-white"
-                      alt=""
-                    />
-                  )}
-                </NavLink>
-              </li>
-              <li className="sm:hidden">
-                <NavLink
-                  to="/"
-                  className={
-                    "font-semibold flex justify-start items-center gap-1 pl-2 w-[70%] mx-auto py-1"
-                  }
-                >
-                  {open ? (
-                    <span className="flex justify-center items-center gap-2">
-                      {" "}
-
         <div className="">
           <ul
-            className={`h-full text-black w-full ${
-              !open && "max-[639.5px]:-ml-24"
-            } mt-20 ${
-              !open && "w-0 sm:w-full h-0 mt-0"
-            } relative navItem-dashboard`}
+            className={`h-full text-black w-full ${!open && "max-[639.5px]:-ml-24"
+              } mt-20 ${!open && "w-0 sm:w-full h-0 mt-0"
+              } relative navItem-dashboard`}
           >
+            {/* admin panel */}
             {isAdmin ? (
               <div className="flex justify-center flex-col space-y-3 ">
+                {/* admin panel overview route */}
                 <li>
                   <NavLink
                     to="overview"
@@ -473,8 +129,8 @@ const Dashboard = () => {
                       isActive
                         ? "font-semibold flex justify-start items-center gap-1 pl-2 bg-white text-blue-500 w-[96%] max-[639.5px]:mx-auto sm:ml-[4%] py-1 max-[639.5px]:rounded-[30px] sm:rounded-l-[30px] relative custom h-[45px] activated"
                         : isPending
-                        ? ""
-                        : "font-semibold flex justify-start items-center gap-1 pl-2 w-[96%] ml-[4%] py-2 text-[#ffffff] rounded-l-[30px] h-[45px] initial-style hover:scale-110 transition duration-300 ease-linear"
+                          ? ""
+                          : "font-semibold flex justify-start items-center gap-1 pl-2 w-[96%] ml-[4%] py-2 text-[#ffffff] rounded-l-[30px] h-[45px] initial-style hover:scale-110 transition duration-300 ease-linear"
                     }
                   >
                     {open ? (
@@ -483,7 +139,7 @@ const Dashboard = () => {
                         <TbDeviceAnalytics
                           // src={overviewIcon}
                           className="w-16 sm:w-6 text-[40px] ml-2"
-                          // alt=""
+                        // alt=""
                         ></TbDeviceAnalytics>
                         Overview
                       </span>
@@ -491,11 +147,12 @@ const Dashboard = () => {
                       <TbDeviceAnalytics
                         // src={overviewIcon}
                         className="w-16 sm:w-6 text-[40px] ml-2 relative z-[90]"
-                        // alt=""
+                      // alt=""
                       ></TbDeviceAnalytics>
                     )}
                   </NavLink>
                 </li>
+                {/* admin-profile route */}
                 <li>
                   <NavLink
                     to="adminProfile"
@@ -503,8 +160,8 @@ const Dashboard = () => {
                       isActive
                         ? "font-semibold flex justify-start items-center gap-1 pl-2 bg-white text-blue-500 w-[96%] max-[639.5px]:mx-auto sm:ml-[4%] py-1 max-[639.5px]:rounded-[30px] sm:rounded-l-[30px] relative custom h-[45px] activated"
                         : isPending
-                        ? ""
-                        : "font-semibold flex justify-start items-center gap-1 pl-2 w-[96%] ml-[4%] py-2 text-[#ffffff] rounded-[30px] h-[45px] initial-style hover:scale-110 transition duration-300 ease-linear"
+                          ? ""
+                          : "font-semibold flex justify-start items-center gap-1 pl-2 w-[96%] ml-[4%] py-2 text-[#ffffff] rounded-[30px] h-[45px] initial-style hover:scale-110 transition duration-300 ease-linear"
                     }
                   >
                     {open ? (
@@ -513,7 +170,7 @@ const Dashboard = () => {
                         <CgProfile
                           // src={overviewIcon}
                           className="w-16 sm:w-6 text-[40px] ml-2"
-                          // alt=""
+                        // alt=""
                         ></CgProfile>
                         Admin Profile
                       </span>
@@ -521,11 +178,39 @@ const Dashboard = () => {
                       <CgProfile
                         // src={overviewIcon}
                         className="w-16 sm:w-6 text-[40px] ml-2 relative z-[90]"
-                        // alt=""
+                      // alt=""
                       ></CgProfile>
                     )}
                   </NavLink>
                 </li>
+                {/* production-panel route */}
+                <li>
+                  <NavLink
+                    to="products-panel"
+                    className={({ isActive, isPending }) =>
+                      isActive
+                        ? "font-semibold flex justify-start items-center gap-1 pl-2 bg-white text-blue-500 w-[96%] max-[639.5px]:mx-auto sm:ml-[4%] py-1 max-[639.5px]:rounded-[30px] sm:rounded-l-[30px] relative custom h-[45px] activated"
+                        : isPending
+                          ? ""
+                          : "font-semibold flex justify-start items-center gap-1 pl-2 w-[96%] ml-[4%] py-2 text-[#ffffff] rounded-[30px] h-[45px] initial-style hover:scale-110 transition duration-300 ease-linear"
+                    }
+                  >
+                    {open ? (
+                      <span className="flex justify-center items-center gap-2">
+                        {" "}
+                        <BsCapsule
+                          className="w-16 sm:w-6 text-[40px] ml-2"
+                        ></BsCapsule>
+                        Product Managment
+                      </span>
+                    ) : (
+                      <CgProfile
+                        className="w-16 sm:w-6 text-[40px] ml-2 relative z-[90]"
+                      ></CgProfile>
+                    )}
+                  </NavLink>
+                </li>
+                {/* doctors-panel route */}
                 <li>
                   <NavLink
                     to="doctors-panel"
@@ -533,8 +218,8 @@ const Dashboard = () => {
                       isActive
                         ? "font-semibold flex justify-start items-center gap-1 pl-2 bg-white text-blue-500 w-[96%] max-[639.5px]:mx-auto sm:ml-[4%] py-1 max-[639.5px]:rounded-[30px] sm:rounded-l-[30px] relative custom h-[45px] activated"
                         : isPending
-                        ? ""
-                        : "font-semibold flex justify-start items-center gap-1 pl-2 w-[96%] ml-[4%] py-2 text-[#ffffff] rounded-[30px] h-[45px] initial-style hover:scale-110 transition duration-300 ease-linear"
+                          ? ""
+                          : "font-semibold flex justify-start items-center gap-1 pl-2 w-[96%] ml-[4%] py-2 text-[#ffffff] rounded-[30px] h-[45px] initial-style hover:scale-110 transition duration-300 ease-linear"
                     }
                   >
                     {open ? (
@@ -543,7 +228,7 @@ const Dashboard = () => {
                         <FaUserDoctor
                           // src={overviewIcon}
                           className="w-16 sm:w-6 text-[40px] ml-2"
-                          // alt=""
+                        // alt=""
                         ></FaUserDoctor>
                         All Doctors
                       </span>
@@ -551,11 +236,12 @@ const Dashboard = () => {
                       <FaUserDoctor
                         // src={overviewIcon}
                         className="w-16 sm:w-6 text-[40px] ml-2 relative z-[90]"
-                        // alt=""
+                      // alt=""
                       ></FaUserDoctor>
                     )}
                   </NavLink>
                 </li>
+                {/* articles-panel route */}
                 <li>
                   <NavLink
                     to="articles-panel"
@@ -563,8 +249,8 @@ const Dashboard = () => {
                       isActive
                         ? "font-semibold flex justify-start items-center gap-1 pl-2 bg-white text-blue-500 w-[96%] max-[639.5px]:mx-auto sm:ml-[4%] py-1 max-[639.5px]:rounded-[30px] sm:rounded-l-[30px] relative custom h-[45px] activated"
                         : isPending
-                        ? ""
-                        : "font-semibold flex justify-start items-center gap-1 pl-2 w-[96%] ml-[4%] py-2 text-[#ffffff] rounded-[30px] h-[45px] initial-style hover:scale-110 transition duration-300 ease-linear"
+                          ? ""
+                          : "font-semibold flex justify-start items-center gap-1 pl-2 w-[96%] ml-[4%] py-2 text-[#ffffff] rounded-[30px] h-[45px] initial-style hover:scale-110 transition duration-300 ease-linear"
                     }
                   >
                     {open ? (
@@ -573,7 +259,7 @@ const Dashboard = () => {
                         <ImNewspaper
                           // src={overviewIcon}
                           className="w-16 sm:w-6 text-[40px] ml-2"
-                          // alt=""
+                        // alt=""
                         ></ImNewspaper>
                         News & Articles
                       </span>
@@ -581,11 +267,12 @@ const Dashboard = () => {
                       <ImNewspaper
                         // src={overviewIcon}
                         className="w-16 sm:w-6 text-[40px] ml-2 relative z-[90]"
-                        // alt=""
+                      // alt=""
                       ></ImNewspaper>
                     )}
                   </NavLink>
                 </li>
+                {/* advice-pane route */}
                 <li>
                   <NavLink
                     to="advice-panel"
@@ -593,8 +280,8 @@ const Dashboard = () => {
                       isActive
                         ? "font-semibold flex justify-start items-center gap-1 pl-2 bg-white text-blue-500 w-[96%] max-[639.5px]:mx-auto sm:ml-[4%] py-1 max-[639.5px]:rounded-[30px] sm:rounded-l-[30px] relative custom h-[45px] activated"
                         : isPending
-                        ? ""
-                        : "font-semibold flex justify-start items-center gap-1 pl-2 w-[96%] ml-[4%] py-2 text-[#ffffff] rounded-[30px] h-[45px] initial-style hover:scale-110 transition duration-300 ease-linear"
+                          ? ""
+                          : "font-semibold flex justify-start items-center gap-1 pl-2 w-[96%] ml-[4%] py-2 text-[#ffffff] rounded-[30px] h-[45px] initial-style hover:scale-110 transition duration-300 ease-linear"
                     }
                   >
                     {open ? (
@@ -603,7 +290,7 @@ const Dashboard = () => {
                         <BiMessageRoundedDetail
                           // src={overviewIcon}
                           className="w-16 sm:w-6 text-[40px] ml-2"
-                          // alt=""
+                        // alt=""
                         ></BiMessageRoundedDetail>
                         Advices
                       </span>
@@ -611,11 +298,12 @@ const Dashboard = () => {
                       <BiMessageRoundedDetail
                         // src={overviewIcon}
                         className="w-16 sm:w-6 text-[40px] ml-2 relative z-[90]"
-                        // alt=""
+                      // alt=""
                       ></BiMessageRoundedDetail>
                     )}
                   </NavLink>
                 </li>
+                {/* job-panel route */}
                 <li>
                   <NavLink
                     to="/Dashboard/job-panel"
@@ -623,8 +311,8 @@ const Dashboard = () => {
                       isActive
                         ? "font-semibold flex justify-start items-center gap-1 pl-2 bg-white text-blue-500 w-[96%] max-[639.5px]:mx-auto sm:ml-[4%] py-1 max-[639.5px]:rounded-[30px] sm:rounded-l-[30px] relative custom h-[45px] activated"
                         : isPending
-                        ? ""
-                        : "font-semibold flex justify-start items-center gap-1 pl-2 w-[96%] ml-[4%] py-2 text-[#ffffff] rounded-[30px] h-[45px] initial-style hover:scale-110 transition duration-300 ease-linear"
+                          ? ""
+                          : "font-semibold flex justify-start items-center gap-1 pl-2 w-[96%] ml-[4%] py-2 text-[#ffffff] rounded-[30px] h-[45px] initial-style hover:scale-110 transition duration-300 ease-linear"
                     }
                   >
                     {open ? (
@@ -633,7 +321,7 @@ const Dashboard = () => {
                         <MdOutlineWork
                           // src={overviewIcon}
                           className="w-16 sm:w-6 text-[40px] ml-2"
-                          // alt=""
+                        // alt=""
                         ></MdOutlineWork>
                         Jobs
                       </span>
@@ -641,14 +329,16 @@ const Dashboard = () => {
                       <MdOutlineWork
                         // src={overviewIcon}
                         className="w-16 sm:w-6 text-[40px] ml-2 relative z-[90]"
-                        // alt=""
+                      // alt=""
                       ></MdOutlineWork>
                     )}
                   </NavLink>
                 </li>
               </div>
             ) : (
+              // user panel
               <div className="flex justify-center flex-col space-y-3">
+                {/* user-panel-oveview */}
                 <li>
                   <NavLink
                     to="overview"
@@ -656,8 +346,8 @@ const Dashboard = () => {
                       isActive
                         ? "font-semibold flex justify-start items-center gap-1 pl-2 bg-white text-blue-500 w-[96%] max-[639.5px]:mx-auto sm:ml-[4%] py-1 max-[639.5px]:rounded-[30px] sm:rounded-l-[30px] relative custom h-[45px] activated"
                         : isPending
-                        ? ""
-                        : "font-semibold flex justify-start items-center gap-1 pl-2 w-[96%] ml-[4%] py-2 text-[#ffffff] rounded-[30px] h-[45px] initial-style hover:scale-110 transition duration-300 ease-linear"
+                          ? ""
+                          : "font-semibold flex justify-start items-center gap-1 pl-2 w-[96%] ml-[4%] py-2 text-[#ffffff] rounded-[30px] h-[45px] initial-style hover:scale-110 transition duration-300 ease-linear"
                     }
                   >
                     {open ? (
@@ -666,7 +356,7 @@ const Dashboard = () => {
                         <TbDeviceAnalytics
                           // src={overviewIcon}
                           className="w-16 sm:w-6 text-[40px] ml-2"
-                          // alt=""
+                        // alt=""
                         ></TbDeviceAnalytics>
                         Overview
                       </span>
@@ -674,11 +364,12 @@ const Dashboard = () => {
                       <TbDeviceAnalytics
                         // src={overviewIcon}
                         className="w-16 sm:w-6 text-[40px] ml-2 relative z-[90]"
-                        // alt=""
+                      // alt=""
                       ></TbDeviceAnalytics>
                     )}
                   </NavLink>
                 </li>
+                {/* myProfile route */}
                 <li>
                   <NavLink
                     to="myProfile"
@@ -686,8 +377,8 @@ const Dashboard = () => {
                       isActive
                         ? "font-semibold flex justify-start items-center gap-1 pl-2 bg-white text-blue-500 w-[96%] max-[639.5px]:mx-auto sm:ml-[4%] py-1 max-[639.5px]:rounded-[30px] sm:rounded-l-[30px] relative custom h-[45px] activated"
                         : isPending
-                        ? ""
-                        : "font-semibold flex justify-start items-center gap-1 pl-2 w-[96%] ml-[4%] py-2 text-[#ffffff] rounded-[30px] h-[45px] initial-style hover:scale-110 transition duration-300 ease-linear"
+                          ? ""
+                          : "font-semibold flex justify-start items-center gap-1 pl-2 w-[96%] ml-[4%] py-2 text-[#ffffff] rounded-[30px] h-[45px] initial-style hover:scale-110 transition duration-300 ease-linear"
                     }
                   >
                     {open ? (
@@ -696,7 +387,7 @@ const Dashboard = () => {
                         <CgProfile
                           // src={overviewIcon}
                           className="w-16 sm:w-6 text-[40px] ml-2"
-                          // alt=""
+                        // alt=""
                         ></CgProfile>
                         My Profile
                       </span>
@@ -704,11 +395,12 @@ const Dashboard = () => {
                       <CgProfile
                         // src={overviewIcon}
                         className="w-16 sm:w-6 text-[40px] ml-2 relative z-[90]"
-                        // alt=""
+                      // alt=""
                       ></CgProfile>
                     )}
                   </NavLink>
                 </li>
+                {/* myCart route */}
                 <li>
                   <NavLink
                     to="myCart"
@@ -716,8 +408,8 @@ const Dashboard = () => {
                       isActive
                         ? "font-semibold flex justify-start items-center gap-1 pl-2 bg-white text-blue-500 w-[96%] max-[639.5px]:mx-auto sm:ml-[4%] py-1 max-[639.5px]:rounded-[30px] sm:rounded-l-[30px] relative custom h-[45px] activated"
                         : isPending
-                        ? ""
-                        : "font-semibold flex justify-start items-center gap-1 pl-2 w-[96%] ml-[4%] py-2 text-[#ffffff] rounded-[30px] h-[45px] initial-style hover:scale-110 transition duration-300 ease-linear"
+                          ? ""
+                          : "font-semibold flex justify-start items-center gap-1 pl-2 w-[96%] ml-[4%] py-2 text-[#ffffff] rounded-[30px] h-[45px] initial-style hover:scale-110 transition duration-300 ease-linear"
                     }
                   >
                     {open ? (
@@ -726,7 +418,7 @@ const Dashboard = () => {
                         <IoCartOutline
                           // src={overviewIcon}
                           className="w-16 sm:w-6 text-[40px] ml-2"
-                          // alt=""
+                        // alt=""
                         ></IoCartOutline>
                         My Cart
                       </span>
@@ -734,11 +426,12 @@ const Dashboard = () => {
                       <IoCartOutline
                         // src={overviewIcon}
                         className="w-16 sm:w-6 text-[40px] ml-2 relative z-[90]"
-                        // alt=""
+                      // alt=""
                       ></IoCartOutline>
                     )}
                   </NavLink>
                 </li>
+                {/* myReview route */}
                 <li>
                   <NavLink
                     to="myReviews"
@@ -746,8 +439,8 @@ const Dashboard = () => {
                       isActive
                         ? "font-semibold flex justify-start items-center gap-1 pl-2 bg-white text-blue-500 w-[96%] max-[639.5px]:mx-auto sm:ml-[4%] py-1 max-[639.5px]:rounded-[30px] sm:rounded-l-[30px] relative custom h-[45px] activated"
                         : isPending
-                        ? ""
-                        : "font-semibold flex justify-start items-center gap-1 pl-2 w-[96%] ml-[4%] py-2 text-[#ffffff] rounded-[30px] h-[45px] initial-style hover:scale-110 transition duration-300 ease-linear"
+                          ? ""
+                          : "font-semibold flex justify-start items-center gap-1 pl-2 w-[96%] ml-[4%] py-2 text-[#ffffff] rounded-[30px] h-[45px] initial-style hover:scale-110 transition duration-300 ease-linear"
                     }
                   >
                     {open ? (
@@ -756,7 +449,7 @@ const Dashboard = () => {
                         <MdReviews
                           // src={overviewIcon}
                           className="w-16 sm:w-6 text-[40px] ml-2"
-                          // alt=""
+                        // alt=""
                         ></MdReviews>
                         My Reviews
                       </span>
@@ -764,11 +457,12 @@ const Dashboard = () => {
                       <MdReviews
                         // src={overviewIcon}
                         className="w-16 sm:w-6 text-[40px] ml-2 relative z-[90]"
-                        // alt=""
+                      // alt=""
                       ></MdReviews>
                     )}
                   </NavLink>
                 </li>
+                {/* myDoctor's route */}
                 <li>
                   <NavLink
                     to="myDoctors"
@@ -776,8 +470,8 @@ const Dashboard = () => {
                       isActive
                         ? "font-semibold flex justify-start items-center gap-1 pl-2 bg-white text-blue-500 w-[96%] max-[639.5px]:mx-auto sm:ml-[4%] py-1 max-[639.5px]:rounded-[30px] sm:rounded-l-[30px] relative custom h-[45px] activated"
                         : isPending
-                        ? ""
-                        : "font-semibold flex justify-start items-center gap-1 pl-2 w-[96%] ml-[4%] py-2 text-[#ffffff] rounded-[30px] h-[45px] initial-style hover:scale-110 transition duration-300 ease-linear"
+                          ? ""
+                          : "font-semibold flex justify-start items-center gap-1 pl-2 w-[96%] ml-[4%] py-2 text-[#ffffff] rounded-[30px] h-[45px] initial-style hover:scale-110 transition duration-300 ease-linear"
                     }
                   >
                     {open ? (
@@ -786,7 +480,7 @@ const Dashboard = () => {
                         <FaUserDoctor
                           // src={overviewIcon}
                           className="w-16 sm:w-6 text-[40px] ml-2"
-                          // alt=""
+                        // alt=""
                         ></FaUserDoctor>
                         My Doctor's
                       </span>
@@ -794,45 +488,18 @@ const Dashboard = () => {
                       <FaUserDoctor
                         // src={overviewIcon}
                         className="w-16 sm:w-6 text-[40px] ml-2 relative z-[90]"
-                        // alt=""
+                      // alt=""
                       ></FaUserDoctor>
                     )}
                   </NavLink>
                 </li>
-
-                {/* <li className="sm:hidden">
-                  <NavLink
-                    to="/"
-                    className={
-                      "font-semibold flex justify-start items-center gap-1 pl-2 w-[70%] mx-auto py-1"
-                    }
-                  >
-                    {open ? (
-                      <span className="flex justify-center items-center gap-2">
-                        {" "}
-                        <img
-                          src={homeIcon}
-                          className="w-16  sm:w-6 object-fill bg-white"
-                          alt=""
-                        />
-                        Advices
-                      </span>
-                    ) : (
-
-                      <img
-                        src={homeIcon}
-                        className="w-16  sm:w-6 object-fill bg-white"
-                        alt=""
-                      />
-                    )}
-                  </NavLink>
-                </li> */}
               </div>
             )}
             {/* devider  */}
             <div className="border border-white/20 my-4 h-1 bg-blue-500"></div>
             <>
               <ul className="text-black bg-blue-600 py-3 h-full space-y-3">
+                {/* home route */}
                 <li>
                   <NavLink
                     to="/"
@@ -840,8 +507,8 @@ const Dashboard = () => {
                       isActive
                         ? "font-semibold flex justify-start items-center gap-1 pl-2 bg-white text-blue-500 w-[96%] max-[639.5px]:mx-auto sm:ml-[4%] py-1 max-[639.5px]:rounded-[30px] sm:rounded-l-[30px] relative custom h-[45px] activated"
                         : isPending
-                        ? ""
-                        : "font-semibold flex justify-start items-center gap-1 pl-2 w-[96%] ml-[4%] py-2 text-[#ffffff] rounded-[30px] h-[45px] initial-style hover:scale-110 transition duration-300 ease-linear"
+                          ? ""
+                          : "font-semibold flex justify-start items-center gap-1 pl-2 w-[96%] ml-[4%] py-2 text-[#ffffff] rounded-[30px] h-[45px] initial-style hover:scale-110 transition duration-300 ease-linear"
                     }
                   >
                     {open ? (
@@ -850,7 +517,7 @@ const Dashboard = () => {
                         <IoHomeOutline
                           // src={overviewIcon}
                           className="w-16 sm:w-6 text-[40px] ml-2"
-                          // alt=""
+                        // alt=""
                         ></IoHomeOutline>
                         Home
                       </span>
@@ -858,20 +525,21 @@ const Dashboard = () => {
                       <IoHomeOutline
                         // src={overviewIcon}
                         className="w-16 sm:w-6 text-[40px] ml-2 relative z-[90]"
-                        // alt=""
+                      // alt=""
                       ></IoHomeOutline>
                     )}
                   </NavLink>
                 </li>
                 <li>
                   <NavLink
-                    to="/"
+                  to="/"
+                    onClick={logOut}
                     className={({ isActive, isPending }) =>
                       isActive
                         ? "font-semibold flex justify-start items-center gap-1 pl-2 bg-white text-blue-500 w-[96%] max-[639.5px]:mx-auto sm:ml-[4%] py-1 max-[639.5px]:rounded-[30px] sm:rounded-l-[30px] relative custom h-[45px] activated"
                         : isPending
-                        ? ""
-                        : "font-semibold flex justify-start items-center gap-1 pl-2 w-[96%] ml-[4%] py-2 text-[#ffffff] rounded-[30px] h-[45px] initial-style hover:scale-110 transition duration-300 ease-linear"
+                          ? ""
+                          : "font-semibold flex justify-start items-center gap-1 pl-2 w-[96%] ml-[4%] py-2 text-[#ffffff] rounded-[30px] h-[45px] initial-style hover:scale-110 transition duration-300 ease-linear"
                     }
                   >
                     {open ? (
@@ -880,7 +548,7 @@ const Dashboard = () => {
                         <RiLogoutCircleLine
                           // src={overviewIcon}
                           className="w-16 sm:w-6 text-[40px] ml-2"
-                          // alt=""
+                        // alt=""
                         ></RiLogoutCircleLine>
                         LogOut
                       </span>
@@ -888,7 +556,7 @@ const Dashboard = () => {
                       <RiLogoutCircleLine
                         // src={overviewIcon}
                         className="w-16 sm:w-6 text-[40px] ml-2 relative z-[90]"
-                        // alt=""
+                      // alt=""
                       ></RiLogoutCircleLine>
                     )}
                   </NavLink>
@@ -899,7 +567,7 @@ const Dashboard = () => {
         </div>
       </div>
 
-      <div className={`w-[100%] ${open ? "sm:pl-[35%] md:pl-[40%] lg:pl-[20%]":"sm:pl-[10%] lg:pl-[5%]"} mx-auto relative overflow-auto`}>
+      <div className={`w-[100%] ${open ? "sm:pl-[35%] md:pl-[40%] lg:pl-[20%]" : "sm:pl-[10%] lg:pl-[5%]"} mx-auto relative overflow-auto`}>
         <Outlet></Outlet>
       </div>
     </div>
