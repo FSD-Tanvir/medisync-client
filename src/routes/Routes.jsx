@@ -73,7 +73,7 @@ export const router = createBrowserRouter([
       },
       {
         path: "/product-details/:id",
-        element:<ProductDetails/>,
+        element: <ProductDetails />,
         loader: ({ params }) => fetch(`http://localhost:5000/allProducts/${params.id}`)
       },
       {
@@ -120,7 +120,8 @@ export const router = createBrowserRouter([
 
         path: "products-panel",
         element: <ProductsPanel></ProductsPanel>
-
+      },
+      {
         path: "overview",
         element: <Overview />,
       },
