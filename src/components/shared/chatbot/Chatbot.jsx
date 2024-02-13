@@ -28,7 +28,7 @@ const Chatbot = () => {
 
   useEffect(() => {
     if (socket) {
-      socket.on("message", (message) => {
+      socket.on("receive_message", (message) => {
         setMessages((prevMessages) => [...prevMessages, message]);
       });
     }
@@ -36,8 +36,17 @@ const Chatbot = () => {
 
   const sendMessage = (data) => {
     if (socket) {
-      socket.emit("chat message", data.chatText);
-      setMessages((prevMessages) => [...prevMessages, data.chatText]);
+      const messageData = {
+        room: 1,
+        author: " ",
+        message: data.chatText,
+        time:
+          new Date(Date.now()).getHours() +
+          ":" +
+          new Date(Date.now()).getMinutes(),
+      };
+      socket.emit("chat message", messageData);
+      setMessages((prevMessages) => [...prevMessages, messageData.message]);
       reset();
     }
   };
