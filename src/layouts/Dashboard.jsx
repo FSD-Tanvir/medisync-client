@@ -13,9 +13,11 @@ import { IoCartOutline } from "react-icons/io5";
 import { BsCapsule } from "react-icons/bs";
 // import useUser from "../hooks/useUser";
 import "./Dashboard.css";
+import useAuth from "../hooks/useAuth";
 
 const Dashboard = () => {
   const [open, setOpen] = useState(false);
+  const { logOut } = useAuth()
   // const userData = useUser();
   // const isAdmin = userData?.role === "admin" ? true : false;
   const isAdmin = "true"
@@ -38,8 +40,8 @@ const Dashboard = () => {
     <div className={`flex ${open && "flex-col"} flex-row sm:flex-row`}>
       <div
         className={`w-full ${open
-            ? "max-[639.5px]:w-full sm:w-[35%] md:w-[40%] lg:w-[20%]"
-            : "max-[639.5px]:w-0  sm:w-[10%] md:w-[10%] lg:w-[5%]"
+          ? "max-[639.5px]:w-full sm:w-[35%] md:w-[40%] lg:w-[20%]"
+          : "max-[639.5px]:w-0  sm:w-[10%] md:w-[10%] lg:w-[5%]"
           }  duration-300 md:min-h-screen bg-blue-600 text-white mt-0  sm:fixed sm:z-[300] sm:max-h-screen sm:overflow-y-auto custom-scrollbar-dashboard-nav`}
       >
         <div className="sticky top-0 z-[900]">
@@ -116,8 +118,10 @@ const Dashboard = () => {
               } mt-20 ${!open && "w-0 sm:w-full h-0 mt-0"
               } relative navItem-dashboard`}
           >
+            {/* admin panel */}
             {isAdmin ? (
               <div className="flex justify-center flex-col space-y-3 ">
+                {/* admin panel overview route */}
                 <li>
                   <NavLink
                     to="overview"
@@ -148,6 +152,7 @@ const Dashboard = () => {
                     )}
                   </NavLink>
                 </li>
+                {/* admin-profile route */}
                 <li>
                   <NavLink
                     to="adminProfile"
@@ -178,6 +183,7 @@ const Dashboard = () => {
                     )}
                   </NavLink>
                 </li>
+                {/* production-panel route */}
                 <li>
                   <NavLink
                     to="products-panel"
@@ -204,6 +210,7 @@ const Dashboard = () => {
                     )}
                   </NavLink>
                 </li>
+                {/* doctors-panel route */}
                 <li>
                   <NavLink
                     to="doctors-panel"
@@ -234,6 +241,7 @@ const Dashboard = () => {
                     )}
                   </NavLink>
                 </li>
+                {/* articles-panel route */}
                 <li>
                   <NavLink
                     to="articles-panel"
@@ -264,6 +272,7 @@ const Dashboard = () => {
                     )}
                   </NavLink>
                 </li>
+                {/* advice-pane route */}
                 <li>
                   <NavLink
                     to="advice-panel"
@@ -294,6 +303,7 @@ const Dashboard = () => {
                     )}
                   </NavLink>
                 </li>
+                {/* job-panel route */}
                 <li>
                   <NavLink
                     to="/Dashboard/job-panel"
@@ -326,7 +336,9 @@ const Dashboard = () => {
                 </li>
               </div>
             ) : (
+              // user panel
               <div className="flex justify-center flex-col space-y-3">
+                {/* user-panel-oveview */}
                 <li>
                   <NavLink
                     to="overview"
@@ -357,6 +369,7 @@ const Dashboard = () => {
                     )}
                   </NavLink>
                 </li>
+                {/* myProfile route */}
                 <li>
                   <NavLink
                     to="myProfile"
@@ -387,6 +400,7 @@ const Dashboard = () => {
                     )}
                   </NavLink>
                 </li>
+                {/* myCart route */}
                 <li>
                   <NavLink
                     to="myCart"
@@ -417,6 +431,7 @@ const Dashboard = () => {
                     )}
                   </NavLink>
                 </li>
+                {/* myReview route */}
                 <li>
                   <NavLink
                     to="myReviews"
@@ -447,6 +462,7 @@ const Dashboard = () => {
                     )}
                   </NavLink>
                 </li>
+                {/* myDoctor's route */}
                 <li>
                   <NavLink
                     to="myDoctors"
@@ -477,39 +493,13 @@ const Dashboard = () => {
                     )}
                   </NavLink>
                 </li>
-
-                {/* <li className="sm:hidden">
-                  <NavLink
-                    to="/"
-                    className={
-                      "font-semibold flex justify-start items-center gap-1 pl-2 w-[70%] mx-auto py-1"
-                    }
-                  >
-                    {open ? (
-                      <span className="flex justify-center items-center gap-2">
-                        {" "}
-                        <img
-                          src={homeIcon}
-                          className="w-16  sm:w-6 object-fill bg-white"
-                          alt=""
-                        />
-                        Advices
-                      </span>
-                    ) : (
-                      <img
-                        src={homeIcon}
-                        className="w-16  sm:w-6 object-fill bg-white"
-                        alt=""
-                      />
-                    )}
-                  </NavLink>
-                </li> */}
               </div>
             )}
             {/* devider  */}
             <div className="border border-white/20 my-4 h-1 bg-blue-500"></div>
             <>
               <ul className="text-black bg-blue-600 py-3 h-full space-y-3">
+                {/* home route */}
                 <li>
                   <NavLink
                     to="/"
@@ -542,7 +532,8 @@ const Dashboard = () => {
                 </li>
                 <li>
                   <NavLink
-                    to="/"
+                  to="/"
+                    onClick={logOut}
                     className={({ isActive, isPending }) =>
                       isActive
                         ? "font-semibold flex justify-start items-center gap-1 pl-2 bg-white text-blue-500 w-[96%] max-[639.5px]:mx-auto sm:ml-[4%] py-1 max-[639.5px]:rounded-[30px] sm:rounded-l-[30px] relative custom h-[45px] activated"
