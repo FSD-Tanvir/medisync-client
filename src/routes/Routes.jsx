@@ -33,8 +33,12 @@ import MyDoctors from "../pages/Dashboard/MyDoctors/MyDoctors";
 import AdvicePanel from "../pages/Dashboard/Advices/advicePanel";
 import DoctorsPanel from "../pages/Dashboard/doctors/doctorsPanel";
 import ArticlesPanel from "../pages/Dashboard/allArticles/articlesPanel";
+
+import ProductsPanel from "../pages/Dashboard/productsPanel/ProductsPanel";
+
 import Overview from "../pages/Dashboard/overview/Overview";
 import PrivateRoute from "./PrivateRoute";
+
 
 
 
@@ -70,7 +74,7 @@ export const router = createBrowserRouter([
       {
         path: "/product-details/:id",
         element:<ProductDetails/>,
-        loader: ({ params }) => fetch(`https://medisync-server.vercel.app/allProducts/${params.id}`)
+        loader: ({ params }) => fetch(`http://localhost:5000/allProducts/${params.id}`)
       },
       {
         path: "/advice",
@@ -98,7 +102,7 @@ export const router = createBrowserRouter([
         path: "career/job-details/:id",
         element: <JobDetails />,
         loader: ({ params }) =>
-          fetch(`https://medisync-server.vercel.app/jobs/single/${params.id}`),
+          fetch(`http://localhost:5000//jobs/single/${params.id}`),
       },
       { path: "contact-us", element: <ContactUs /> },
     ],
@@ -113,6 +117,10 @@ export const router = createBrowserRouter([
         element: <AdminProfile></AdminProfile>
       },
       {
+
+        path: "products-panel",
+        element: <ProductsPanel></ProductsPanel>
+
         path: "overview",
         element: <Overview />,
       },
@@ -155,7 +163,7 @@ export const router = createBrowserRouter([
         element: <UpdateJob />,
         loader: async ({ params }) => {
           return await axios.get(
-            `https://medisync-server.vercel.app/jobs/single/${params.id}`
+            `http://localhost:5000//jobs/single/${params.id}`
 
           )
         },
@@ -174,6 +182,18 @@ export const router = createBrowserRouter([
         element: <AllArticles />,
       },
       {
+
+        path: "doctors/update-doctor/:id",
+        element: <UpdateDoctor />,
+        loader: async ({ params }) => {
+          return await axios.get(
+            `http://localhost:5000//doctors/${params.id}`
+
+          )
+        },
+      },
+      {
+
         path: "myProfile",
         element: <UserProfile></UserProfile>
       },

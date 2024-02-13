@@ -6,6 +6,7 @@ import Testimonials from "./testimonials/Testimonials";
 import Faq from "./faq/Faq";
 import ThreeCards from "./ThreeCards/ThreeCards";
 
+
 const Home = () => {
   return (
     <div>
@@ -16,6 +17,7 @@ const Home = () => {
       <Articles />
       <Testimonials />
       <Faq />
+      
     </div>
   );
 };

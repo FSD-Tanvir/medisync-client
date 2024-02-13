@@ -1,6 +1,8 @@
 /* eslint-disable react/no-unescaped-entities */
 import { NavLink, Outlet, useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
+
+import medisyncProduct from "../assets/DashboardIcons/medisyncProduct.webp"
 import { TbDeviceAnalytics } from "react-icons/tb";
 import { IoHomeOutline } from "react-icons/io5";
 import { RiLogoutCircleLine } from "react-icons/ri";
@@ -110,6 +112,350 @@ const Dashboard = () => {
             )}
           </div>
         </div>
+
+        <ul className="menu space-y-2 text-black">
+          {isAdmin ? (
+            <div className="flex justify-center sm:flex-col">
+              <li>
+                <NavLink
+                  to="adminProfile"
+                  className={({ isActive, isPending }) =>
+                    isActive
+                      ? "font-semibold flex justify-start items-center gap-1 pl-2 bg-[#3560fa] text-[#ffffff] w-[70%] mx-auto py-1"
+                      : isPending
+                      ? ""
+                      : "font-semibold flex justify-start items-center gap-1 pl-2 w-[70%] mx-auto py-1"
+                  }
+                >
+                  {open ? (
+                    <span className="flex justify-center items-center gap-2">
+                      {" "}
+                      <img
+                        src={adminIcon}
+                        className="w-16 sm:w-6 bg-white"
+                        alt=""
+                      />
+                      Admin Profile
+                    </span>
+                  ) : (
+                    <img
+                      src={adminIcon}
+                      className="w-16 sm:w-6 bg-white"
+                      alt=""
+                    />
+                  )}
+                </NavLink>
+              </li>
+              <li>
+                <NavLink
+                  to="products-panel"
+                  className={({ isActive, isPending }) =>
+                    isActive
+                      ? "font-semibold flex justify-start items-center gap-1 pl-2 bg-[#3560fa] text-[#ffffff] w-[70%] mx-auto py-1"
+                      : isPending
+                      ? ""
+                      : "font-semibold flex justify-start items-center gap-1 pl-2 w-[70%] mx-auto py-1"
+                  }
+                >
+                  {open ? (
+                    <span className="flex justify-center items-center gap-2">
+                      {" "}
+                      <img
+                        src={medisyncProduct}
+                        className="w-16 sm:w-6 bg-white"
+                        alt=""
+                      />
+                      Product Maintenance
+                    </span>
+                  ) : (
+                    <img
+                      src={medisyncProduct}
+                      className="w-16 sm:w-6 bg-white"
+                      alt=""
+                    />
+                  )}
+                </NavLink>
+              </li>
+              <li>
+                <NavLink
+                  to="doctors-panel"
+                  className={({ isActive, isPending }) =>
+                    isActive
+                      ? "font-semibold flex justify-start items-center gap-1 pl-2 bg-[#3560fa] text-[#ffffff] w-[70%] mx-auto py-1"
+                      : isPending
+                      ? ""
+                      : "font-semibold flex justify-start items-center gap-1 pl-2 w-[70%] mx-auto py-1"
+                  }
+                >
+                  {open ? (
+                    <span className="flex justify-center items-center gap-2">
+                      {" "}
+                      <img
+                        src={doctorIcon}
+                        className="w-16 sm:w-6 bg-white"
+                        alt=""
+                      />
+                      All Doctors
+                    </span>
+                  ) : (
+                    <img
+                      src={doctorIcon}
+                      className="w-16 sm:w-6 bg-white"
+                      alt=""
+                    />
+                  )}
+                </NavLink>
+              </li>
+              <li>
+                <NavLink
+                  to="articles-panel"
+                  className={({ isActive, isPending }) =>
+                    isActive
+                      ? "font-semibold flex justify-start items-center gap-1 pl-2 bg-[#3560fa] text-[#ffffff] w-[70%] mx-auto py-1"
+                      : isPending
+                      ? ""
+                      : "font-semibold flex justify-start items-center gap-1 pl-2 w-[70%] mx-auto py-1"
+                  }
+                >
+                  {open ? (
+                    <span className="flex justify-center items-center gap-2">
+                      {" "}
+                      <img
+                        src={newsIcon}
+                        className="w-16 sm:w-6 bg-white"
+                        alt=""
+                      />
+                      News & Articles
+                    </span>
+                  ) : (
+                    <img
+                      src={newsIcon}
+                      className="w-16 sm:w-6 bg-white"
+                      alt=""
+                    />
+                  )}
+                </NavLink>
+              </li>
+              <li>
+                <NavLink
+                  to="advice-panel"
+                  className={({ isActive, isPending }) =>
+                    isActive
+                      ? "font-semibold flex justify-start items-center gap-1 pl-2 bg-[#3560fa] text-[#ffffff] w-[70%] mx-auto py-1"
+                      : isPending
+                      ? ""
+                      : "font-semibold flex justify-start items-center gap-1 pl-2 w-[70%] mx-auto py-1"
+                  }
+                >
+                  {open ? (
+                    <span className="flex justify-center items-center gap-2">
+                      {" "}
+                      <img
+                        src={adviceIcon}
+                        className="w-16 sm:w-6 bg-white"
+                        alt=""
+                      />
+                      Advices
+                    </span>
+                  ) : (
+                    <img
+                      src={adviceIcon}
+                      className="w-16 sm:w-6 bg-white"
+                      alt=""
+                    />
+                  )}
+                </NavLink>
+              </li>
+              <li>
+                <NavLink
+                  to="/Dashboard/job-panel"
+                  className={({ isActive, isPending }) =>
+                    isActive
+                      ? "font-semibold flex justify-start items-center gap-1 pl-2 bg-[#3560fa] text-[#ffffff] w-[70%] mx-auto py-1"
+                      : isPending
+                      ? ""
+                      : "font-semibold flex justify-start items-center gap-1 pl-2 w-[70%] mx-auto py-1"
+                  }
+                >
+                  {open ? (
+                    <span className="flex justify-center items-center gap-2">
+                      {" "}
+                      <img
+                        src={jobIcon}
+                        className="w-16 h-[30px]  sm:w-6 object-cover bg-white"
+                        alt=""
+                      />
+                      Jobs
+                    </span>
+                  ) : (
+                    <img
+                      src={jobIcon}
+                      className="w-16 h-[30px] sm:w-6 object-cover bg-white"
+                      alt=""
+                    />
+                  )}
+                </NavLink>
+              </li>
+              <li className="sm:hidden">
+                <NavLink
+                  to="/"
+                  className={
+                    "font-semibold flex justify-start items-center gap-1 pl-2 w-[70%] mx-auto py-1"
+                  }
+                >
+                  {open ? (
+                    <span className="flex justify-center items-center gap-2">
+                      {" "}
+                      <img
+                        src={homeIcon}
+                        className="w-16 h-[30px]  sm:w-6 object-fill bg-white"
+                        alt=""
+                      />
+                      Advices
+                    </span>
+                  ) : (
+                    <img
+                      src={homeIcon}
+                      className="w-16  sm:w-6 object-fill bg-white"
+                      alt=""
+                    />
+                  )}
+                </NavLink>
+              </li>
+            </div>
+          ) : (
+            <div className="flex justify-center sm:flex-col">
+              <li>
+                <NavLink
+                  to="myProfile"
+                  className={({ isActive, isPending }) =>
+                    isActive
+                      ? "font-semibold flex justify-start items-center gap-1 pl-2 bg-[#3560fa] text-[#ffffff] w-[70%] mx-auto py-1"
+                      : isPending
+                      ? ""
+                      : "font-semibold flex justify-start items-center gap-1 pl-2 w-[70%] mx-auto py-1"
+                  }
+                >
+                  {open ? (
+                    <span className="flex justify-center items-center gap-2">
+                      {" "}
+                      <img
+                        src={adminIcon}
+                        className="w-16 sm:w-6 bg-white"
+                        alt=""
+                      />
+                      My Profile
+                    </span>
+                  ) : (
+                    <img
+                      src={adminIcon}
+                      className="w-16 sm:w-6 bg-white"
+                      alt=""
+                    />
+                  )}
+                </NavLink>
+              </li>
+              <li>
+                <NavLink
+                  to="myCart"
+                  className={({ isActive, isPending }) =>
+                    isActive
+                      ? "font-semibold flex justify-start items-center gap-1 pl-2 bg-[#3560fa] text-[#ffffff] w-[70%] mx-auto py-1"
+                      : isPending
+                      ? ""
+                      : "font-semibold flex justify-start items-center gap-1 pl-2 w-[70%] mx-auto py-1"
+                  }
+                >
+                  {open ? (
+                    <span className="flex justify-center items-center gap-2">
+                      {" "}
+                      <img
+                        src={cartIcon}
+                        className="w-16 sm:w-6 bg-white"
+                        alt=""
+                      />
+                      My Cart
+                    </span>
+                  ) : (
+                    <img
+                      src={cartIcon}
+                      className="w-16 sm:w-6 bg-white"
+                      alt=""
+                    />
+                  )}
+                </NavLink>
+              </li>
+              <li>
+                <NavLink
+                  to="myReviews"
+                  className={({ isActive, isPending }) =>
+                    isActive
+                      ? "font-semibold flex justify-start items-center gap-1 pl-2 bg-[#3560fa] text-[#ffffff] w-[70%] mx-auto py-1"
+                      : isPending
+                      ? ""
+                      : "font-semibold flex justify-start items-center gap-1 pl-2 w-[70%] mx-auto py-1"
+                  }
+                >
+                  {open ? (
+                    <span className="flex justify-center items-center gap-2">
+                      {" "}
+                      <img
+                        src={reviewsIcon}
+                        className="w-16 sm:w-6 bg-white"
+                        alt=""
+                      />
+                      My Reviews
+                    </span>
+                  ) : (
+                    <img
+                      src={reviewsIcon}
+                      className="w-16 sm:w-6 bg-white"
+                      alt=""
+                    />
+                  )}
+                </NavLink>
+              </li>
+              <li>
+                <NavLink
+                  to="myDoctors"
+                  className={({ isActive, isPending }) =>
+                    isActive
+                      ? "font-semibold flex justify-start items-center gap-1 pl-2 bg-[#3560fa] text-[#ffffff] w-[70%] mx-auto py-1"
+                      : isPending
+                      ? ""
+                      : "font-semibold flex justify-start items-center gap-1 pl-2 w-[70%] mx-auto py-1"
+                  }
+                >
+                  {open ? (
+                    <span className="flex justify-center items-center gap-2">
+                      {" "}
+                      <img
+                        src={doctorIcon}
+                        className="w-16 sm:w-6 bg-white"
+                        alt=""
+                      />
+                      My Doctor's
+                    </span>
+                  ) : (
+                    <img
+                      src={doctorIcon}
+                      className="w-16 sm:w-6 bg-white"
+                      alt=""
+                    />
+                  )}
+                </NavLink>
+              </li>
+              <li className="sm:hidden">
+                <NavLink
+                  to="/"
+                  className={
+                    "font-semibold flex justify-start items-center gap-1 pl-2 w-[70%] mx-auto py-1"
+                  }
+                >
+                  {open ? (
+                    <span className="flex justify-center items-center gap-2">
+                      {" "}
+
         <div className="">
           <ul
             className={`h-full text-black w-full ${
@@ -472,6 +818,7 @@ const Dashboard = () => {
                         Advices
                       </span>
                     ) : (
+
                       <img
                         src={homeIcon}
                         className="w-16  sm:w-6 object-fill bg-white"
