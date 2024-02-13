@@ -26,20 +26,42 @@ const AddProduct = () => {
                     {/* Product Name  */}
                     <div className="space-y-5 drop-shadow-md w-full">
                         <label
-                            htmlFor="productName"
+                            htmlFor="name"
                             className="block text-blue-600 border-l-2 border-blue-400 font-semibold pl-2"
                         >
                             Product Name
                         </label>
                         <input
-                            id="productName"
+                            id="name"
                             type="text"
-                            {...register("productName", { required: true })}
+                            {...register("name", { required: true })}
                             placeholder="Enter Product Name"
                             className="p-3 block w-full outline-1 border valid:outline-blue-500 rounded-md invalid:outline-red-600"
                         />
                         {/* errors will return when field validation fails  */}
-                        {errors.productName && (
+                        {errors.name && (
+                            <span className="text-red-600 font-medium">
+                                This field is required
+                            </span>
+                        )}
+                    </div>
+                    {/* Product weight  */}
+                    <div className="space-y-5 drop-shadow-md w-full">
+                        <label
+                            htmlFor="weight"
+                            className="block text-blue-600 border-l-2 border-blue-400 font-semibold pl-2"
+                        >
+                            Weight/Piece
+                        </label>
+                        <input
+                            id="weight"
+                            type="text"
+                            {...register("weight", { required: true })}
+                            placeholder="Enter Product Weight"
+                            className="p-3 block w-full outline-1 border valid:outline-blue-500 rounded-md invalid:outline-red-600"
+                        />
+                        {/* errors will return when field validation fails  */}
+                        {errors.weight && (
                             <span className="text-red-600 font-medium">
                                 This field is required
                             </span>
@@ -48,20 +70,42 @@ const AddProduct = () => {
                     {/* Product Categorey  */}
                     <div className="space-y-5 drop-shadow-md w-full">
                         <label
-                            htmlFor="productCategorey"
+                            htmlFor="category"
                             className="block text-blue-600 border-l-2 border-blue-400 font-semibold pl-2"
                         >
                             Categorey
                         </label>
                         <input
-                            id="productCategorey"
+                            id="category"
                             type="text"
-                            {...register("job_type", { required: true })}
+                            {...register("category", { required: true })}
                             placeholder="Enter Product Categorey"
                             className="p-3 block w-full outline-1 border valid:outline-blue-500 rounded-md invalid:outline-red-600"
                         />
                         {/* errors will return when field validation fails  */}
-                        {errors.productCategorey && (
+                        {errors.category && (
+                            <span className="text-red-600 font-medium">
+                                This field is required
+                            </span>
+                        )}
+                    </div>
+                    {/* Product price  */}
+                    <div className="space-y-5 drop-shadow-md w-full">
+                        <label
+                            htmlFor="price"
+                            className="block text-blue-600 border-l-2 border-blue-400 font-semibold pl-2"
+                        >
+                            Product Price
+                        </label>
+                        <input
+                            id="price"
+                            type="number"
+                            {...register("price", { required: true })}
+                            placeholder="Enter Product Price"
+                            className="p-3 block w-full outline-1 border valid:outline-blue-500 rounded-md invalid:outline-red-600"
+                        />
+                        {/* errors will return when field validation fails  */}
+                        {errors.price && (
                             <span className="text-red-600 font-medium">
                                 This field is required
                             </span>
@@ -70,20 +114,20 @@ const AddProduct = () => {
                     {/* Company Name */}
                     <div className="space-y-5 drop-shadow-md w-full">
                         <label
-                            htmlFor="companyName"
+                            htmlFor="company"
                             className="block text-blue-600 border-l-2 border-blue-400 font-semibold pl-2"
                         >
                             Company Name
                         </label>
                         <input
-                            id="companyName"
+                            id="company"
                             type="text"
-                            {...register("companyName", { required: true })}
+                            {...register("company", { required: true })}
                             placeholder="Enter Company Name"
                             className="p-3 block w-full outline-1 border valid:outline-blue-500 rounded-md invalid:outline-red-600"
                         />
                         {/* errors will return when field validation fails  */}
-                        {errors.companyName && (
+                        {errors.company && (
                             <span className="text-red-600 font-medium">
                                 This field is required
                             </span>
@@ -92,15 +136,15 @@ const AddProduct = () => {
                     {/* product overview */}
                     <div className="space-y-5 drop-shadow-md w-full">
                         <label
-                            htmlFor="productOverview"
+                            htmlFor="description"
                             className="block text-blue-600 border-l-2 border-blue-400 font-semibold pl-2"
                         >
                             Product Overview
                         </label>
                         <input
-                            id="productOverview"
+                            id="description"
                             type="text"
-                            {...register("productOverview", {
+                            {...register("description", {
                                 required: true,
                                 valueAsNumber: true,
                             })}
@@ -108,7 +152,7 @@ const AddProduct = () => {
                             className="p-3 block w-full outline-1 border valid:outline-blue-500 rounded-md invalid:outline-red-600"
                         />
                         {/* errors will return when field validation fails  */}
-                        {errors.productOverview && (
+                        {errors.description && (
                             <span className="text-red-600 font-medium">
                                 This field is required
                             </span>
