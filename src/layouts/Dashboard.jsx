@@ -16,6 +16,7 @@ import "./Dashboard.css";
 const Dashboard = () => {
   const [open, setOpen] = useState(false);
   const userData = useUser();
+  console.log(userData);
   const isAdmin = userData?.role === "admin" ? true : false;
   // console.log(isAdmin);
   const location = useLocation();
