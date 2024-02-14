@@ -15,7 +15,7 @@ const AllDoctors = () => {
   console.log(allDoctorsData);
   return (
     <div className="overflow-x-auto">
-      <table className="w-full">
+      <table className="table w-full ml-4">
         <thead className="">
           <tr>
             <th className="text-lg capitalize text-left">

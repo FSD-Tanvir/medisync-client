@@ -33,16 +33,15 @@ const Dashboard = () => {
   }, [location.pathname]);
 
   return (
-    <div className={`flex ${open && "flex-col"} flex-row sm:flex-row`}>
+    <div className={`flex ${open && "flex-col"} flex-row sm:flex-row max-w-[1300px] mx-auto`}>
       <div
         className={`w-full ${
           open
             ? "max-[639.5px]:w-full sm:w-[35%] md:w-[40%] lg:w-[20%]"
             : "max-[639.5px]:w-0  sm:w-[10%] md:w-[10%] lg:w-[5%]"
-        }  duration-300 md:min-h-screen bg-blue-600 text-white mt-0  sm:fixed sm:z-[300] sm:max-h-screen sm:overflow-y-auto custom-scrollbar-dashboard-nav`}
+        }  duration-300 md:min-h-screen bg-blue-600 text-white mt-0  sm:fixed sm:z-[300] sm:min-h-screen sm:max-h-screen sm:overflow-hidden sm:overflow-y-auto custom-scrollbar-dashboard-nav`}
       >
         <div className="sticky top-0 z-[900]">
-          
           <div
             onClick={() => setOpen(!open)}
             className={`hidden sm:flex sm:right-[3px] top-4 cursor-pointer justify-center items-center absolute z-40 `}
@@ -136,7 +135,7 @@ const Dashboard = () => {
                         {" "}
                         <TbDeviceAnalytics
                           // src={overviewIcon}
-                          className="w-16 sm:w-6 text-[40px] ml-2"
+                          className="w-16 sm:w-6 text-[40px] ml-2 nav-icon transition-colors duration-[250] ease-linear"
                           // alt=""
                         ></TbDeviceAnalytics>
                         Overview
@@ -144,7 +143,7 @@ const Dashboard = () => {
                     ) : (
                       <TbDeviceAnalytics
                         // src={overviewIcon}
-                        className="w-16 sm:w-6 text-[40px] ml-2 relative z-[90]"
+                        className="w-16 sm:w-6 text-[40px] ml-2 nav-icon transition-colors duration-[250] ease-linear relative z-[90]"
                         // alt=""
                       ></TbDeviceAnalytics>
                     )}
@@ -166,7 +165,7 @@ const Dashboard = () => {
                         {" "}
                         <CgProfile
                           // src={overviewIcon}
-                          className="w-16 sm:w-6 text-[40px] ml-2"
+                          className="w-16 sm:w-6 text-[40px] ml-2 nav-icon transition-colors duration-[250] ease-linear"
                           // alt=""
                         ></CgProfile>
                         Admin Profile
@@ -174,7 +173,7 @@ const Dashboard = () => {
                     ) : (
                       <CgProfile
                         // src={overviewIcon}
-                        className="w-16 sm:w-6 text-[40px] ml-2 relative z-[90]"
+                        className="w-16 sm:w-6 text-[40px] ml-2 nav-icon transition-colors duration-[250] ease-linear relative z-[90]"
                         // alt=""
                       ></CgProfile>
                     )}
@@ -196,7 +195,7 @@ const Dashboard = () => {
                         {" "}
                         <FaUserDoctor
                           // src={overviewIcon}
-                          className="w-16 sm:w-6 text-[40px] ml-2"
+                          className="w-16 sm:w-6 text-[40px] ml-2 nav-icon transition-colors duration-[250] ease-linear"
                           // alt=""
                         ></FaUserDoctor>
                         All Doctors
@@ -204,7 +203,7 @@ const Dashboard = () => {
                     ) : (
                       <FaUserDoctor
                         // src={overviewIcon}
-                        className="w-16 sm:w-6 text-[40px] ml-2 relative z-[90]"
+                        className="w-16 sm:w-6 text-[40px] ml-2 nav-icon transition-colors duration-[250] ease-linear relative z-[90]"
                         // alt=""
                       ></FaUserDoctor>
                     )}
@@ -226,7 +225,7 @@ const Dashboard = () => {
                         {" "}
                         <ImNewspaper
                           // src={overviewIcon}
-                          className="w-16 sm:w-6 text-[40px] ml-2"
+                          className="w-16 sm:w-6 text-[40px] ml-2 nav-icon transition-colors duration-[250] ease-linear"
                           // alt=""
                         ></ImNewspaper>
                         News & Articles
@@ -234,7 +233,7 @@ const Dashboard = () => {
                     ) : (
                       <ImNewspaper
                         // src={overviewIcon}
-                        className="w-16 sm:w-6 text-[40px] ml-2 relative z-[90]"
+                        className="w-16 sm:w-6 text-[40px] ml-2 nav-icon transition-colors duration-[250] ease-linear relative z-[90]"
                         // alt=""
                       ></ImNewspaper>
                     )}
@@ -256,7 +255,7 @@ const Dashboard = () => {
                         {" "}
                         <BiMessageRoundedDetail
                           // src={overviewIcon}
-                          className="w-16 sm:w-6 text-[40px] ml-2"
+                          className="w-16 sm:w-6 text-[40px] ml-2 nav-icon transition-colors duration-[250] ease-linear"
                           // alt=""
                         ></BiMessageRoundedDetail>
                         Advices
@@ -264,7 +263,7 @@ const Dashboard = () => {
                     ) : (
                       <BiMessageRoundedDetail
                         // src={overviewIcon}
-                        className="w-16 sm:w-6 text-[40px] ml-2 relative z-[90]"
+                        className="w-16 sm:w-6 text-[40px] ml-2 nav-icon transition-colors duration-[250] ease-linear relative z-[90]"
                         // alt=""
                       ></BiMessageRoundedDetail>
                     )}
@@ -286,7 +285,7 @@ const Dashboard = () => {
                         {" "}
                         <MdOutlineWork
                           // src={overviewIcon}
-                          className="w-16 sm:w-6 text-[40px] ml-2"
+                          className="w-16 sm:w-6 text-[40px] ml-2 nav-icon transition-colors duration-[250] ease-linear"
                           // alt=""
                         ></MdOutlineWork>
                         Jobs
@@ -294,7 +293,7 @@ const Dashboard = () => {
                     ) : (
                       <MdOutlineWork
                         // src={overviewIcon}
-                        className="w-16 sm:w-6 text-[40px] ml-2 relative z-[90]"
+                        className="w-16 sm:w-6 text-[40px] ml-2 nav-icon transition-colors duration-[250] ease-linear relative z-[90]"
                         // alt=""
                       ></MdOutlineWork>
                     )}
@@ -319,7 +318,7 @@ const Dashboard = () => {
                         {" "}
                         <TbDeviceAnalytics
                           // src={overviewIcon}
-                          className="w-16 sm:w-6 text-[40px] ml-2"
+                          className="w-16 sm:w-6 text-[40px] ml-2 nav-icon transition-colors duration-[250] ease-linear"
                           // alt=""
                         ></TbDeviceAnalytics>
                         Overview
@@ -327,7 +326,7 @@ const Dashboard = () => {
                     ) : (
                       <TbDeviceAnalytics
                         // src={overviewIcon}
-                        className="w-16 sm:w-6 text-[40px] ml-2 relative z-[90]"
+                        className="w-16 sm:w-6 text-[40px] ml-2 nav-icon transition-colors duration-[250] ease-linear relative z-[90]"
                         // alt=""
                       ></TbDeviceAnalytics>
                     )}
@@ -349,7 +348,7 @@ const Dashboard = () => {
                         {" "}
                         <CgProfile
                           // src={overviewIcon}
-                          className="w-16 sm:w-6 text-[40px] ml-2"
+                          className="w-16 sm:w-6 text-[40px] ml-2 nav-icon transition-colors duration-[250] ease-linear"
                           // alt=""
                         ></CgProfile>
                         My Profile
@@ -357,7 +356,7 @@ const Dashboard = () => {
                     ) : (
                       <CgProfile
                         // src={overviewIcon}
-                        className="w-16 sm:w-6 text-[40px] ml-2 relative z-[90]"
+                        className="w-16 sm:w-6 text-[40px] ml-2 nav-icon transition-colors duration-[250] ease-linear relative z-[90]"
                         // alt=""
                       ></CgProfile>
                     )}
@@ -379,7 +378,7 @@ const Dashboard = () => {
                         {" "}
                         <IoCartOutline
                           // src={overviewIcon}
-                          className="w-16 sm:w-6 text-[40px] ml-2"
+                          className="w-16 sm:w-6 text-[40px] ml-2 nav-icon transition-colors duration-[250] ease-linear"
                           // alt=""
                         ></IoCartOutline>
                         My Cart
@@ -387,7 +386,7 @@ const Dashboard = () => {
                     ) : (
                       <IoCartOutline
                         // src={overviewIcon}
-                        className="w-16 sm:w-6 text-[40px] ml-2 relative z-[90]"
+                        className="w-16 sm:w-6 text-[40px] ml-2 nav-icon transition-colors duration-[250] ease-linear relative z-[90]"
                         // alt=""
                       ></IoCartOutline>
                     )}
@@ -409,7 +408,7 @@ const Dashboard = () => {
                         {" "}
                         <MdReviews
                           // src={overviewIcon}
-                          className="w-16 sm:w-6 text-[40px] ml-2"
+                          className="w-16 sm:w-6 text-[40px] ml-2 nav-icon transition-colors duration-[250] ease-linear"
                           // alt=""
                         ></MdReviews>
                         My Reviews
@@ -417,7 +416,7 @@ const Dashboard = () => {
                     ) : (
                       <MdReviews
                         // src={overviewIcon}
-                        className="w-16 sm:w-6 text-[40px] ml-2 relative z-[90]"
+                        className="w-16 sm:w-6 text-[40px] ml-2 nav-icon transition-colors duration-[250] ease-linear relative z-[90]"
                         // alt=""
                       ></MdReviews>
                     )}
@@ -439,7 +438,7 @@ const Dashboard = () => {
                         {" "}
                         <FaUserDoctor
                           // src={overviewIcon}
-                          className="w-16 sm:w-6 text-[40px] ml-2"
+                          className="w-16 sm:w-6 text-[40px] ml-2 nav-icon transition-colors duration-[250] ease-linear"
                           // alt=""
                         ></FaUserDoctor>
                         My Doctor's
@@ -447,7 +446,7 @@ const Dashboard = () => {
                     ) : (
                       <FaUserDoctor
                         // src={overviewIcon}
-                        className="w-16 sm:w-6 text-[40px] ml-2 relative z-[90]"
+                        className="w-16 sm:w-6 text-[40px] ml-2 nav-icon transition-colors duration-[250] ease-linear relative z-[90]"
                         // alt=""
                       ></FaUserDoctor>
                     )}
@@ -502,7 +501,7 @@ const Dashboard = () => {
                         {" "}
                         <IoHomeOutline
                           // src={overviewIcon}
-                          className="w-16 sm:w-6 text-[40px] ml-2"
+                          className="w-16 sm:w-6 text-[40px] ml-2 nav-icon transition-colors duration-[250] ease-linear"
                           // alt=""
                         ></IoHomeOutline>
                         Home
@@ -510,7 +509,7 @@ const Dashboard = () => {
                     ) : (
                       <IoHomeOutline
                         // src={overviewIcon}
-                        className="w-16 sm:w-6 text-[40px] ml-2 relative z-[90]"
+                        className="w-16 sm:w-6 text-[40px] ml-2 nav-icon transition-colors duration-[250] ease-linear relative z-[90]"
                         // alt=""
                       ></IoHomeOutline>
                     )}
@@ -532,7 +531,7 @@ const Dashboard = () => {
                         {" "}
                         <RiLogoutCircleLine
                           // src={overviewIcon}
-                          className="w-16 sm:w-6 text-[40px] ml-2"
+                          className="w-16 sm:w-6 text-[40px] ml-2 nav-icon transition-colors duration-[250] ease-linear"
                           // alt=""
                         ></RiLogoutCircleLine>
                         LogOut
@@ -540,7 +539,7 @@ const Dashboard = () => {
                     ) : (
                       <RiLogoutCircleLine
                         // src={overviewIcon}
-                        className="w-16 sm:w-6 text-[40px] ml-2 relative z-[90]"
+                        className="w-16 sm:w-6 text-[40px] ml-2 nav-icon transition-colors duration-[250] ease-linear relative z-[90]"
                         // alt=""
                       ></RiLogoutCircleLine>
                     )}
@@ -552,7 +551,13 @@ const Dashboard = () => {
         </div>
       </div>
 
-      <div className={`w-[100%] ${open ? "sm:pl-[35%] md:pl-[40%] lg:pl-[20%]":"sm:pl-[10%] lg:pl-[5%]"} mx-auto relative overflow-auto`}>
+      <div
+        className={`w-[100%] ${
+          open
+            ? "sm:pl-[35%] md:pl-[40%] lg:pl-[20%]"
+            : "sm:pl-[10%] lg:pl-[5%]"
+        } mx-auto relative overflow-hidden bg-blue-50`}
+      >
         <Outlet></Outlet>
       </div>
     </div>
