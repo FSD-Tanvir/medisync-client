@@ -10,13 +10,17 @@ import { BiMessageRoundedDetail } from "react-icons/bi";
 import { MdOutlineWork, MdReviews } from "react-icons/md";
 import { CgProfile } from "react-icons/cg";
 import { IoCartOutline } from "react-icons/io5";
-import useUser from "../hooks/useUser";
+import { BsCapsule } from "react-icons/bs";
+// import useUser from "../hooks/useUser";
 import "./Dashboard.css";
+import useAuth from "../hooks/useAuth";
 
 const Dashboard = () => {
   const [open, setOpen] = useState(false);
-  const userData = useUser();
-  const isAdmin = userData?.role === "admin" ? true : false;
+  const { logOut } = useAuth()
+  // const userData = useUser();
+  // const isAdmin = userData?.role === "admin" ? true : false;
+  const isAdmin = "true"
   // console.log(isAdmin);
   const location = useLocation();
 
@@ -42,6 +46,7 @@ const Dashboard = () => {
         }  duration-300 md:min-h-screen bg-blue-600 text-white mt-0  sm:fixed sm:z-[300] sm:min-h-screen sm:max-h-screen sm:overflow-hidden sm:overflow-y-auto custom-scrollbar-dashboard-nav`}
       >
         <div className="sticky top-0 z-[900]">
+
           <div
             onClick={() => setOpen(!open)}
             className={`hidden sm:flex sm:right-[3px] top-4 cursor-pointer justify-center items-center absolute z-40 `}
@@ -76,9 +81,8 @@ const Dashboard = () => {
           </div>
           <div
             onClick={() => setOpen(!open)}
-            className={`sm:hidden ${
-              open ? "right-[13px]" : "left-[10px] "
-            }  top-2 cursor-pointer p-1 bg-blue-500 rounded-lg absolute z-40 border border-white/80`}
+            className={`sm:hidden ${open ? "right-[13px]" : "left-[10px] "
+              }  top-2 cursor-pointer p-1 bg-blue-500 rounded-lg absolute z-40 border border-white/80`}
           >
             {!open ? (
               <svg
@@ -111,14 +115,14 @@ const Dashboard = () => {
         </div>
         <div className="">
           <ul
-            className={`h-full text-black w-full ${
-              !open && "max-[639.5px]:-ml-24"
-            } mt-20 ${
-              !open && "w-0 sm:w-full h-0 mt-0"
-            } relative navItem-dashboard`}
+            className={`h-full text-black w-full ${!open && "max-[639.5px]:-ml-24"
+              } mt-20 ${!open && "w-0 sm:w-full h-0 mt-0"
+              } relative navItem-dashboard`}
           >
+            {/* admin panel */}
             {isAdmin ? (
               <div className="flex justify-center flex-col space-y-3 ">
+                {/* admin panel overview route */}
                 <li>
                   <NavLink
                     to="overview"
@@ -126,8 +130,8 @@ const Dashboard = () => {
                       isActive
                         ? "font-semibold flex justify-start items-center gap-1 pl-2 bg-white text-blue-500 w-[96%] max-[639.5px]:mx-auto sm:ml-[4%] py-1 max-[639.5px]:rounded-[30px] sm:rounded-l-[30px] relative custom h-[45px] activated"
                         : isPending
-                        ? ""
-                        : "font-semibold flex justify-start items-center gap-1 pl-2 w-[96%] ml-[4%] py-2 text-[#ffffff] rounded-l-[30px] h-[45px] initial-style hover:scale-110 transition duration-300 ease-linear"
+                          ? ""
+                          : "font-semibold flex justify-start items-center gap-1 pl-2 w-[96%] ml-[4%] py-2 text-[#ffffff] rounded-l-[30px] h-[45px] initial-style hover:scale-110 transition duration-300 ease-linear"
                     }
                   >
                     {open ? (
@@ -137,6 +141,7 @@ const Dashboard = () => {
                           // src={overviewIcon}
                           className="w-16 sm:w-6 text-[40px] ml-2 nav-icon transition-colors duration-[250] ease-linear"
                           // alt=""
+
                         ></TbDeviceAnalytics>
                         Overview
                       </span>
@@ -145,10 +150,12 @@ const Dashboard = () => {
                         // src={overviewIcon}
                         className="w-16 sm:w-6 text-[40px] ml-2 nav-icon transition-colors duration-[250] ease-linear relative z-[90]"
                         // alt=""
+
                       ></TbDeviceAnalytics>
                     )}
                   </NavLink>
                 </li>
+                {/* admin-profile route */}
                 <li>
                   <NavLink
                     to="adminProfile"
@@ -156,8 +163,8 @@ const Dashboard = () => {
                       isActive
                         ? "font-semibold flex justify-start items-center gap-1 pl-2 bg-white text-blue-500 w-[96%] max-[639.5px]:mx-auto sm:ml-[4%] py-1 max-[639.5px]:rounded-[30px] sm:rounded-l-[30px] relative custom h-[45px] activated"
                         : isPending
-                        ? ""
-                        : "font-semibold flex justify-start items-center gap-1 pl-2 w-[96%] ml-[4%] py-2 text-[#ffffff] rounded-[30px] h-[45px] initial-style hover:scale-110 transition duration-300 ease-linear"
+                          ? ""
+                          : "font-semibold flex justify-start items-center gap-1 pl-2 w-[96%] ml-[4%] py-2 text-[#ffffff] rounded-[30px] h-[45px] initial-style hover:scale-110 transition duration-300 ease-linear"
                     }
                   >
                     {open ? (
@@ -175,10 +182,39 @@ const Dashboard = () => {
                         // src={overviewIcon}
                         className="w-16 sm:w-6 text-[40px] ml-2 nav-icon transition-colors duration-[250] ease-linear relative z-[90]"
                         // alt=""
+
                       ></CgProfile>
                     )}
                   </NavLink>
                 </li>
+                {/* production-panel route */}
+                <li>
+                  <NavLink
+                    to="products-panel"
+                    className={({ isActive, isPending }) =>
+                      isActive
+                        ? "font-semibold flex justify-start items-center gap-1 pl-2 bg-white text-blue-500 w-[96%] max-[639.5px]:mx-auto sm:ml-[4%] py-1 max-[639.5px]:rounded-[30px] sm:rounded-l-[30px] relative custom h-[45px] activated"
+                        : isPending
+                          ? ""
+                          : "font-semibold flex justify-start items-center gap-1 pl-2 w-[96%] ml-[4%] py-2 text-[#ffffff] rounded-[30px] h-[45px] initial-style hover:scale-110 transition duration-300 ease-linear"
+                    }
+                  >
+                    {open ? (
+                      <span className="flex justify-center items-center gap-2">
+                        {" "}
+                        <BsCapsule
+                          className="w-16 sm:w-6 text-[40px] ml-2"
+                        ></BsCapsule>
+                        Product Managment
+                      </span>
+                    ) : (
+                      <CgProfile
+                        className="w-16 sm:w-6 text-[40px] ml-2 relative z-[90]"
+                      ></CgProfile>
+                    )}
+                  </NavLink>
+                </li>
+                {/* doctors-panel route */}
                 <li>
                   <NavLink
                     to="doctors-panel"
@@ -186,8 +222,8 @@ const Dashboard = () => {
                       isActive
                         ? "font-semibold flex justify-start items-center gap-1 pl-2 bg-white text-blue-500 w-[96%] max-[639.5px]:mx-auto sm:ml-[4%] py-1 max-[639.5px]:rounded-[30px] sm:rounded-l-[30px] relative custom h-[45px] activated"
                         : isPending
-                        ? ""
-                        : "font-semibold flex justify-start items-center gap-1 pl-2 w-[96%] ml-[4%] py-2 text-[#ffffff] rounded-[30px] h-[45px] initial-style hover:scale-110 transition duration-300 ease-linear"
+                          ? ""
+                          : "font-semibold flex justify-start items-center gap-1 pl-2 w-[96%] ml-[4%] py-2 text-[#ffffff] rounded-[30px] h-[45px] initial-style hover:scale-110 transition duration-300 ease-linear"
                     }
                   >
                     {open ? (
@@ -205,10 +241,12 @@ const Dashboard = () => {
                         // src={overviewIcon}
                         className="w-16 sm:w-6 text-[40px] ml-2 nav-icon transition-colors duration-[250] ease-linear relative z-[90]"
                         // alt=""
+
                       ></FaUserDoctor>
                     )}
                   </NavLink>
                 </li>
+                {/* articles-panel route */}
                 <li>
                   <NavLink
                     to="articles-panel"
@@ -216,8 +254,8 @@ const Dashboard = () => {
                       isActive
                         ? "font-semibold flex justify-start items-center gap-1 pl-2 bg-white text-blue-500 w-[96%] max-[639.5px]:mx-auto sm:ml-[4%] py-1 max-[639.5px]:rounded-[30px] sm:rounded-l-[30px] relative custom h-[45px] activated"
                         : isPending
-                        ? ""
-                        : "font-semibold flex justify-start items-center gap-1 pl-2 w-[96%] ml-[4%] py-2 text-[#ffffff] rounded-[30px] h-[45px] initial-style hover:scale-110 transition duration-300 ease-linear"
+                          ? ""
+                          : "font-semibold flex justify-start items-center gap-1 pl-2 w-[96%] ml-[4%] py-2 text-[#ffffff] rounded-[30px] h-[45px] initial-style hover:scale-110 transition duration-300 ease-linear"
                     }
                   >
                     {open ? (
@@ -227,6 +265,7 @@ const Dashboard = () => {
                           // src={overviewIcon}
                           className="w-16 sm:w-6 text-[40px] ml-2 nav-icon transition-colors duration-[250] ease-linear"
                           // alt=""
+
                         ></ImNewspaper>
                         News & Articles
                       </span>
@@ -235,10 +274,12 @@ const Dashboard = () => {
                         // src={overviewIcon}
                         className="w-16 sm:w-6 text-[40px] ml-2 nav-icon transition-colors duration-[250] ease-linear relative z-[90]"
                         // alt=""
+
                       ></ImNewspaper>
                     )}
                   </NavLink>
                 </li>
+                {/* advice-pane route */}
                 <li>
                   <NavLink
                     to="advice-panel"
@@ -246,8 +287,8 @@ const Dashboard = () => {
                       isActive
                         ? "font-semibold flex justify-start items-center gap-1 pl-2 bg-white text-blue-500 w-[96%] max-[639.5px]:mx-auto sm:ml-[4%] py-1 max-[639.5px]:rounded-[30px] sm:rounded-l-[30px] relative custom h-[45px] activated"
                         : isPending
-                        ? ""
-                        : "font-semibold flex justify-start items-center gap-1 pl-2 w-[96%] ml-[4%] py-2 text-[#ffffff] rounded-[30px] h-[45px] initial-style hover:scale-110 transition duration-300 ease-linear"
+                          ? ""
+                          : "font-semibold flex justify-start items-center gap-1 pl-2 w-[96%] ml-[4%] py-2 text-[#ffffff] rounded-[30px] h-[45px] initial-style hover:scale-110 transition duration-300 ease-linear"
                     }
                   >
                     {open ? (
@@ -255,6 +296,7 @@ const Dashboard = () => {
                         {" "}
                         <BiMessageRoundedDetail
                           // src={overviewIcon}
+
                           className="w-16 sm:w-6 text-[40px] ml-2 nav-icon transition-colors duration-[250] ease-linear"
                           // alt=""
                         ></BiMessageRoundedDetail>
@@ -265,10 +307,12 @@ const Dashboard = () => {
                         // src={overviewIcon}
                         className="w-16 sm:w-6 text-[40px] ml-2 nav-icon transition-colors duration-[250] ease-linear relative z-[90]"
                         // alt=""
+
                       ></BiMessageRoundedDetail>
                     )}
                   </NavLink>
                 </li>
+                {/* job-panel route */}
                 <li>
                   <NavLink
                     to="/Dashboard/job-panel"
@@ -276,8 +320,8 @@ const Dashboard = () => {
                       isActive
                         ? "font-semibold flex justify-start items-center gap-1 pl-2 bg-white text-blue-500 w-[96%] max-[639.5px]:mx-auto sm:ml-[4%] py-1 max-[639.5px]:rounded-[30px] sm:rounded-l-[30px] relative custom h-[45px] activated"
                         : isPending
-                        ? ""
-                        : "font-semibold flex justify-start items-center gap-1 pl-2 w-[96%] ml-[4%] py-2 text-[#ffffff] rounded-[30px] h-[45px] initial-style hover:scale-110 transition duration-300 ease-linear"
+                          ? ""
+                          : "font-semibold flex justify-start items-center gap-1 pl-2 w-[96%] ml-[4%] py-2 text-[#ffffff] rounded-[30px] h-[45px] initial-style hover:scale-110 transition duration-300 ease-linear"
                     }
                   >
                     {open ? (
@@ -287,6 +331,7 @@ const Dashboard = () => {
                           // src={overviewIcon}
                           className="w-16 sm:w-6 text-[40px] ml-2 nav-icon transition-colors duration-[250] ease-linear"
                           // alt=""
+
                         ></MdOutlineWork>
                         Jobs
                       </span>
@@ -295,13 +340,16 @@ const Dashboard = () => {
                         // src={overviewIcon}
                         className="w-16 sm:w-6 text-[40px] ml-2 nav-icon transition-colors duration-[250] ease-linear relative z-[90]"
                         // alt=""
+
                       ></MdOutlineWork>
                     )}
                   </NavLink>
                 </li>
               </div>
             ) : (
+              // user panel
               <div className="flex justify-center flex-col space-y-3">
+                {/* user-panel-oveview */}
                 <li>
                   <NavLink
                     to="overview"
@@ -309,8 +357,8 @@ const Dashboard = () => {
                       isActive
                         ? "font-semibold flex justify-start items-center gap-1 pl-2 bg-white text-blue-500 w-[96%] max-[639.5px]:mx-auto sm:ml-[4%] py-1 max-[639.5px]:rounded-[30px] sm:rounded-l-[30px] relative custom h-[45px] activated"
                         : isPending
-                        ? ""
-                        : "font-semibold flex justify-start items-center gap-1 pl-2 w-[96%] ml-[4%] py-2 text-[#ffffff] rounded-[30px] h-[45px] initial-style hover:scale-110 transition duration-300 ease-linear"
+                          ? ""
+                          : "font-semibold flex justify-start items-center gap-1 pl-2 w-[96%] ml-[4%] py-2 text-[#ffffff] rounded-[30px] h-[45px] initial-style hover:scale-110 transition duration-300 ease-linear"
                     }
                   >
                     {open ? (
@@ -320,6 +368,7 @@ const Dashboard = () => {
                           // src={overviewIcon}
                           className="w-16 sm:w-6 text-[40px] ml-2 nav-icon transition-colors duration-[250] ease-linear"
                           // alt=""
+
                         ></TbDeviceAnalytics>
                         Overview
                       </span>
@@ -328,10 +377,12 @@ const Dashboard = () => {
                         // src={overviewIcon}
                         className="w-16 sm:w-6 text-[40px] ml-2 nav-icon transition-colors duration-[250] ease-linear relative z-[90]"
                         // alt=""
+
                       ></TbDeviceAnalytics>
                     )}
                   </NavLink>
                 </li>
+                {/* myProfile route */}
                 <li>
                   <NavLink
                     to="myProfile"
@@ -339,8 +390,8 @@ const Dashboard = () => {
                       isActive
                         ? "font-semibold flex justify-start items-center gap-1 pl-2 bg-white text-blue-500 w-[96%] max-[639.5px]:mx-auto sm:ml-[4%] py-1 max-[639.5px]:rounded-[30px] sm:rounded-l-[30px] relative custom h-[45px] activated"
                         : isPending
-                        ? ""
-                        : "font-semibold flex justify-start items-center gap-1 pl-2 w-[96%] ml-[4%] py-2 text-[#ffffff] rounded-[30px] h-[45px] initial-style hover:scale-110 transition duration-300 ease-linear"
+                          ? ""
+                          : "font-semibold flex justify-start items-center gap-1 pl-2 w-[96%] ml-[4%] py-2 text-[#ffffff] rounded-[30px] h-[45px] initial-style hover:scale-110 transition duration-300 ease-linear"
                     }
                   >
                     {open ? (
@@ -350,6 +401,7 @@ const Dashboard = () => {
                           // src={overviewIcon}
                           className="w-16 sm:w-6 text-[40px] ml-2 nav-icon transition-colors duration-[250] ease-linear"
                           // alt=""
+
                         ></CgProfile>
                         My Profile
                       </span>
@@ -358,10 +410,12 @@ const Dashboard = () => {
                         // src={overviewIcon}
                         className="w-16 sm:w-6 text-[40px] ml-2 nav-icon transition-colors duration-[250] ease-linear relative z-[90]"
                         // alt=""
+
                       ></CgProfile>
                     )}
                   </NavLink>
                 </li>
+                {/* myCart route */}
                 <li>
                   <NavLink
                     to="myCart"
@@ -369,8 +423,8 @@ const Dashboard = () => {
                       isActive
                         ? "font-semibold flex justify-start items-center gap-1 pl-2 bg-white text-blue-500 w-[96%] max-[639.5px]:mx-auto sm:ml-[4%] py-1 max-[639.5px]:rounded-[30px] sm:rounded-l-[30px] relative custom h-[45px] activated"
                         : isPending
-                        ? ""
-                        : "font-semibold flex justify-start items-center gap-1 pl-2 w-[96%] ml-[4%] py-2 text-[#ffffff] rounded-[30px] h-[45px] initial-style hover:scale-110 transition duration-300 ease-linear"
+                          ? ""
+                          : "font-semibold flex justify-start items-center gap-1 pl-2 w-[96%] ml-[4%] py-2 text-[#ffffff] rounded-[30px] h-[45px] initial-style hover:scale-110 transition duration-300 ease-linear"
                     }
                   >
                     {open ? (
@@ -380,6 +434,7 @@ const Dashboard = () => {
                           // src={overviewIcon}
                           className="w-16 sm:w-6 text-[40px] ml-2 nav-icon transition-colors duration-[250] ease-linear"
                           // alt=""
+
                         ></IoCartOutline>
                         My Cart
                       </span>
@@ -388,10 +443,12 @@ const Dashboard = () => {
                         // src={overviewIcon}
                         className="w-16 sm:w-6 text-[40px] ml-2 nav-icon transition-colors duration-[250] ease-linear relative z-[90]"
                         // alt=""
+
                       ></IoCartOutline>
                     )}
                   </NavLink>
                 </li>
+                {/* myReview route */}
                 <li>
                   <NavLink
                     to="myReviews"
@@ -399,8 +456,8 @@ const Dashboard = () => {
                       isActive
                         ? "font-semibold flex justify-start items-center gap-1 pl-2 bg-white text-blue-500 w-[96%] max-[639.5px]:mx-auto sm:ml-[4%] py-1 max-[639.5px]:rounded-[30px] sm:rounded-l-[30px] relative custom h-[45px] activated"
                         : isPending
-                        ? ""
-                        : "font-semibold flex justify-start items-center gap-1 pl-2 w-[96%] ml-[4%] py-2 text-[#ffffff] rounded-[30px] h-[45px] initial-style hover:scale-110 transition duration-300 ease-linear"
+                          ? ""
+                          : "font-semibold flex justify-start items-center gap-1 pl-2 w-[96%] ml-[4%] py-2 text-[#ffffff] rounded-[30px] h-[45px] initial-style hover:scale-110 transition duration-300 ease-linear"
                     }
                   >
                     {open ? (
@@ -410,6 +467,7 @@ const Dashboard = () => {
                           // src={overviewIcon}
                           className="w-16 sm:w-6 text-[40px] ml-2 nav-icon transition-colors duration-[250] ease-linear"
                           // alt=""
+
                         ></MdReviews>
                         My Reviews
                       </span>
@@ -418,10 +476,12 @@ const Dashboard = () => {
                         // src={overviewIcon}
                         className="w-16 sm:w-6 text-[40px] ml-2 nav-icon transition-colors duration-[250] ease-linear relative z-[90]"
                         // alt=""
+
                       ></MdReviews>
                     )}
                   </NavLink>
                 </li>
+                {/* myDoctor's route */}
                 <li>
                   <NavLink
                     to="myDoctors"
@@ -429,8 +489,8 @@ const Dashboard = () => {
                       isActive
                         ? "font-semibold flex justify-start items-center gap-1 pl-2 bg-white text-blue-500 w-[96%] max-[639.5px]:mx-auto sm:ml-[4%] py-1 max-[639.5px]:rounded-[30px] sm:rounded-l-[30px] relative custom h-[45px] activated"
                         : isPending
-                        ? ""
-                        : "font-semibold flex justify-start items-center gap-1 pl-2 w-[96%] ml-[4%] py-2 text-[#ffffff] rounded-[30px] h-[45px] initial-style hover:scale-110 transition duration-300 ease-linear"
+                          ? ""
+                          : "font-semibold flex justify-start items-center gap-1 pl-2 w-[96%] ml-[4%] py-2 text-[#ffffff] rounded-[30px] h-[45px] initial-style hover:scale-110 transition duration-300 ease-linear"
                     }
                   >
                     {open ? (
@@ -440,6 +500,7 @@ const Dashboard = () => {
                           // src={overviewIcon}
                           className="w-16 sm:w-6 text-[40px] ml-2 nav-icon transition-colors duration-[250] ease-linear"
                           // alt=""
+
                         ></FaUserDoctor>
                         My Doctor's
                       </span>
@@ -448,43 +509,18 @@ const Dashboard = () => {
                         // src={overviewIcon}
                         className="w-16 sm:w-6 text-[40px] ml-2 nav-icon transition-colors duration-[250] ease-linear relative z-[90]"
                         // alt=""
+
                       ></FaUserDoctor>
                     )}
                   </NavLink>
                 </li>
-
-                {/* <li className="sm:hidden">
-                  <NavLink
-                    to="/"
-                    className={
-                      "font-semibold flex justify-start items-center gap-1 pl-2 w-[70%] mx-auto py-1"
-                    }
-                  >
-                    {open ? (
-                      <span className="flex justify-center items-center gap-2">
-                        {" "}
-                        <img
-                          src={homeIcon}
-                          className="w-16  sm:w-6 object-fill bg-white"
-                          alt=""
-                        />
-                        Advices
-                      </span>
-                    ) : (
-                      <img
-                        src={homeIcon}
-                        className="w-16  sm:w-6 object-fill bg-white"
-                        alt=""
-                      />
-                    )}
-                  </NavLink>
-                </li> */}
               </div>
             )}
             {/* devider  */}
             <div className="border border-white/20 my-4 h-1 bg-blue-500"></div>
             <>
               <ul className="text-black bg-blue-600 py-3 h-full space-y-3">
+                {/* home route */}
                 <li>
                   <NavLink
                     to="/"
@@ -492,8 +528,8 @@ const Dashboard = () => {
                       isActive
                         ? "font-semibold flex justify-start items-center gap-1 pl-2 bg-white text-blue-500 w-[96%] max-[639.5px]:mx-auto sm:ml-[4%] py-1 max-[639.5px]:rounded-[30px] sm:rounded-l-[30px] relative custom h-[45px] activated"
                         : isPending
-                        ? ""
-                        : "font-semibold flex justify-start items-center gap-1 pl-2 w-[96%] ml-[4%] py-2 text-[#ffffff] rounded-[30px] h-[45px] initial-style hover:scale-110 transition duration-300 ease-linear"
+                          ? ""
+                          : "font-semibold flex justify-start items-center gap-1 pl-2 w-[96%] ml-[4%] py-2 text-[#ffffff] rounded-[30px] h-[45px] initial-style hover:scale-110 transition duration-300 ease-linear"
                     }
                   >
                     {open ? (
@@ -503,6 +539,7 @@ const Dashboard = () => {
                           // src={overviewIcon}
                           className="w-16 sm:w-6 text-[40px] ml-2 nav-icon transition-colors duration-[250] ease-linear"
                           // alt=""
+
                         ></IoHomeOutline>
                         Home
                       </span>
@@ -511,19 +548,21 @@ const Dashboard = () => {
                         // src={overviewIcon}
                         className="w-16 sm:w-6 text-[40px] ml-2 nav-icon transition-colors duration-[250] ease-linear relative z-[90]"
                         // alt=""
+
                       ></IoHomeOutline>
                     )}
                   </NavLink>
                 </li>
                 <li>
                   <NavLink
-                    to="/"
+                  to="/"
+                    onClick={logOut}
                     className={({ isActive, isPending }) =>
                       isActive
                         ? "font-semibold flex justify-start items-center gap-1 pl-2 bg-white text-blue-500 w-[96%] max-[639.5px]:mx-auto sm:ml-[4%] py-1 max-[639.5px]:rounded-[30px] sm:rounded-l-[30px] relative custom h-[45px] activated"
                         : isPending
-                        ? ""
-                        : "font-semibold flex justify-start items-center gap-1 pl-2 w-[96%] ml-[4%] py-2 text-[#ffffff] rounded-[30px] h-[45px] initial-style hover:scale-110 transition duration-300 ease-linear"
+                          ? ""
+                          : "font-semibold flex justify-start items-center gap-1 pl-2 w-[96%] ml-[4%] py-2 text-[#ffffff] rounded-[30px] h-[45px] initial-style hover:scale-110 transition duration-300 ease-linear"
                     }
                   >
                     {open ? (
@@ -533,6 +572,7 @@ const Dashboard = () => {
                           // src={overviewIcon}
                           className="w-16 sm:w-6 text-[40px] ml-2 nav-icon transition-colors duration-[250] ease-linear"
                           // alt=""
+
                         ></RiLogoutCircleLine>
                         LogOut
                       </span>
@@ -541,6 +581,7 @@ const Dashboard = () => {
                         // src={overviewIcon}
                         className="w-16 sm:w-6 text-[40px] ml-2 nav-icon transition-colors duration-[250] ease-linear relative z-[90]"
                         // alt=""
+
                       ></RiLogoutCircleLine>
                     )}
                   </NavLink>
@@ -550,7 +591,6 @@ const Dashboard = () => {
           </ul>
         </div>
       </div>
-
       <div
         className={`w-[100%] ${
           open
