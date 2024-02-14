@@ -31,9 +31,6 @@ const AddJob = () => {
 
     try {
 
-// http://localhost:5000//jobs/add-job",
-
-      // https://medisync-server.vercel.app/jobs/add-job",
 
 
       const result = await axiosPublic.post(

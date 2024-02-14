@@ -17,10 +17,15 @@ import useAuth from "../hooks/useAuth";
 
 const Dashboard = () => {
   const [open, setOpen] = useState(false);
+
+  const userData = useUser();
+  console.log(userData);
+  const isAdmin = userData?.role === "admin" ? true : false;
+
   const { logOut } = useAuth()
-  // const userData = useUser();
-  // const isAdmin = userData?.role === "admin" ? true : false;
-  const isAdmin = "true"
+
+
+
   // console.log(isAdmin);
   const location = useLocation();
 

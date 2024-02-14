@@ -3,7 +3,7 @@ import useAxiosPublic from "./useAxiosPublic";
 import useAuth from "./useAuth";
 
 const useUser = () => {
-    const {user,loading} = useAuth()
+    const {user,loading} = useAuth();
     const axiosPublic = useAxiosPublic();
     const {data:userData} = useQuery({
         enabled: !loading && !!user?.email,
@@ -13,7 +13,6 @@ const useUser = () => {
             return res.data?.data;
         }
     })
-    console.log(userData);
     return userData
 };
 
