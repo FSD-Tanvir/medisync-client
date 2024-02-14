@@ -12,6 +12,7 @@ import AuthProvider from "./Porviders/AuthProvider.jsx";
 // socket.io
 
 import io from "socket.io-client";
+import StateProvider from "./Porviders/StateProvider.jsx";
 
 const socket = io.connect("http://localhost:5000");
 console.log(socket);

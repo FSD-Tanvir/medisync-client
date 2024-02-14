@@ -1,6 +1,6 @@
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
-import '../../../components/shared/react-tabs-border-remove.css'
+import '../../../components/shared/react-tabs-customize.css'
 import AllArticles from "./AllArticles";
 import AddArticle from "./AddArticle";
 
@@ -26,7 +26,7 @@ const ArticlesPanel = () => {
         {/* job tabs here  */}
         <Tabs style={{border:"none"}}>
           {/* tab lists  */}
-          <TabList style={{background: "blue", color:"white"}}>
+          <TabList style={{borderBottom:"2px solid rgb(147 197 253)",marginBottom:"15px"}}>
             {jobTabName &&
               jobTabName.map((tab) => (
                 <Tab key={tab?.id} >
