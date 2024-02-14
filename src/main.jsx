@@ -11,6 +11,7 @@ import AuthProvider from "./Porviders/AuthProvider.jsx";
 // socket.io
 
 import io from "socket.io-client";
+import StateProvider from "./Porviders/StateProvider.jsx";
 
 const socket = io.connect("http://localhost:5001");
 
@@ -20,8 +21,10 @@ ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <QueryClientProvider client={queryClient}>
       <AuthProvider>
-        <RouterProvider router={router} />
-        <Toaster />
+        <StateProvider>
+          <RouterProvider router={router} />
+          <Toaster />
+        </StateProvider>
       </AuthProvider>
     </QueryClientProvider>
   </React.StrictMode>

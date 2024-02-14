@@ -109,7 +109,9 @@ export const router = createBrowserRouter([
   // Dashboard Layout
   {
     path: "/dashboard",
-    element: <Dashboard></Dashboard>,
+    element: <PrivateRoute>
+      <Dashboard></Dashboard>
+    </PrivateRoute>,
     children: [
       {
         path: "adminProfile",
@@ -128,7 +130,7 @@ export const router = createBrowserRouter([
         element: <DoctorsPanel></DoctorsPanel>,
       },
       {
-        path: "doctors/update-doctor/:id",
+        path: "doctors-panel/update-doctor/:id",
         element: <UpdateDoctor />,
         loader: async ({ params }) => {
           return await axios.get(

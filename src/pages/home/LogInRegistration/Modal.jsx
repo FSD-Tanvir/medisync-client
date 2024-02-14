@@ -1,10 +1,17 @@
 import LogIn from "./LogIn";
 import { ImCross } from "react-icons/im";
 import Register from "./Register";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { StateManager } from "../../../Porviders/StateProvider";
 
-export default function Modal({ showModal, setShowModal }) {
+export default function Modal() {
+    // { showModal, setShowModal }
+    const {showModal,setShowModal} = useContext(StateManager);
     const [showRegister, setShowRegister] = useState(false);
+
+    const handleShowModal = () =>{
+        setShowModal(false)
+    }
 
     return (
         <>
@@ -22,7 +29,7 @@ export default function Modal({ showModal, setShowModal }) {
                                         {showRegister ? 'Registration' : 'Log In'}
                                     </h3> */}
                                     <button className="flex justify-end mt-14 lg:-mr-4 lg:-mt-4"
-                                        onClick={() => setShowModal(false)}
+                                        onClick={handleShowModal}
                                     >
                                         <ImCross />
                                     </button>
@@ -32,12 +39,10 @@ export default function Modal({ showModal, setShowModal }) {
                                 {showRegister ? (
                                     <Register
                                         setShowRegister={setShowRegister}
-                                        setShowModal={setShowModal}
                                     />
                                 ) : (
                                     <LogIn
                                         setShowRegister={setShowRegister}
-                                        setShowModal={setShowModal}
                                     />
                                 )}
                             </div>

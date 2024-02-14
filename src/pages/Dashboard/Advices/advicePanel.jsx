@@ -1,7 +1,7 @@
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
 
-import '../../../components/shared/react-tabs-border-remove.css'
+import '../../../components/shared/react-tabs-customize.css'
 import AllAdvices from "./AllAdvices";
 import AddAdvice from "./AddAdvice";
 
@@ -27,11 +27,11 @@ const AdvicePanel = () => {
         {/* job tabs here  */}
         <Tabs style={{border:"none"}}>
           {/* tab lists  */}
-          <TabList style={{background: "blue", color:"white"}}>
+          <TabList style={{borderBottom:"2px solid rgb(147 197 253)",marginBottom:"15px"}}>
             {jobTabName &&
               jobTabName.map((tab) => (
                 <Tab key={tab?.id} >
-                  <div className="rounded-sm w-full h-[40px]  flex justify-center items-center  px-4 font-semibold text-2xl md:text-xl lg:text-2xl gap-1 p-1 cursor-pointer duration-1000">
+                  <div className="rounded-sm w-full h-[40px]  flex justify-center items-center  px-4 font-semibold text-2xl md:text-xl lg:text-2xl gap-1 p-1 cursor-pointer duration-300 border-t-2 border-t-blue-50 hover:text-blue-600">
                     <h2 className="capitalize text-lg">{tab?.title}</h2>
                   </div>
                 </Tab>

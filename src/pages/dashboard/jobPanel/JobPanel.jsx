@@ -3,7 +3,7 @@ import "react-tabs/style/react-tabs.css";
 import AddJob from "./addJob/AddJob";
 import AllJobs from "./allJobs/AllJobs";
 
-import '../../../components/shared/react-tabs-border-remove.css'
+import '../../../components/shared/react-tabs-customize.css'
 
 const jobTabName = [
   // { id: 3, title: "overview" },
@@ -28,11 +28,11 @@ const JobPanel = () => {
         {/* job tabs here  */}
         <Tabs style={{border:"none"}}>
           {/* tab lists  */}
-          <TabList style={{background: "blue", color:"white"}}>
+          <TabList style={{borderBottom:"2px solid rgb(147 197 253)",marginBottom:"15px"}}>
             {jobTabName &&
               jobTabName.map((tab) => (
                 <Tab key={tab?.id}>
-                  <div className="rounded-lg w-full h-[40px]  flex justify-center items-center text-text-color-blue px-4 font-semibold text-2xl md:text-xl lg:text-2xl gap-1 p-1 cursor-pointer shadow-[-2px_-2px_12px_2px_rgba(0,0,0,0.1),_2px_2px_12px_2px_rgba(0,0,0,0.1)] hover:shadow-[-5px_-5px_15px_4px_rgba(0,0,0,0.1),_5px_5px_15px_4px_rgba(0,0,0,0.1)] duration-1000 hover:scale-105">
+                  <div className="rounded-sm w-full h-[40px]  flex justify-center items-center  px-4 font-semibold text-2xl md:text-xl lg:text-2xl gap-1 p-1 cursor-pointer duration-300 border-t-2 border-t-blue-50 hover:text-blue-600">
                     <h2 className="capitalize text-lg">{tab?.title}</h2>
                   </div>
                 </Tab>

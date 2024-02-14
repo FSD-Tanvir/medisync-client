@@ -2,7 +2,7 @@ import adminImg from "../../../assets/DashboardIcons/admin.png"
 
 const AdminProfile = () => {
     return (
-        <div className="p-20 bg-slate-100 mt-20 mx-5">
+        <div className="p-20 mt-20 mx-5">
             <div className=" flex justify-center">
                 <img src={adminImg} alt="" />
             </div>
