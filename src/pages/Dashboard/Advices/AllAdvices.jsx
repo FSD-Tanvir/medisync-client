@@ -4,9 +4,12 @@ import useAxiosPublic from "../../../hooks/useAxiosPublic";
 import Swal from "sweetalert2";
 import { useState } from "react";
 import AdviceUpdate from "./AdviceUpdate";
+import useUsers from "../../../hooks/useUsers";
 
 const AllAdvices = () => {
   const [advices, , refetch] = useAdvices();
+  const [users] = useUsers();
+  console.log("all users ", users);
   const [showModal, setShowModal] = useState(false);
   const [clickAbleId, setClickAbleId] = useState(" ");
   const axiosPublic = useAxiosPublic();
