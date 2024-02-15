@@ -1,9 +1,11 @@
+import UserProductCart from "../../../components/userProductCart/UserProductCart";
 
 
 const MyCart = () => {
+
     return (
-        <div>
-            My Cart
+        <div className="p-4">
+            <UserProductCart/>
         </div>
     );
 };
