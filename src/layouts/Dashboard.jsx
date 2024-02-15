@@ -11,16 +11,16 @@ import { MdOutlineWork, MdReviews } from "react-icons/md";
 import { CgProfile } from "react-icons/cg";
 import { IoCartOutline } from "react-icons/io5";
 import { BsCapsule } from "react-icons/bs";
-// import useUser from "../hooks/useUser";
+import useUser from "../hooks/useUser";
 import "./Dashboard.css";
 import useAuth from "../hooks/useAuth";
+import toast from "react-hot-toast";
 
 const Dashboard = () => {
   const [open, setOpen] = useState(false);
   const { logOut } = useAuth()
-  // const userData = useUser();
-  // const isAdmin = userData?.role === "admin" ? true : false;
-  const isAdmin = "true"
+  const userData = useUser();
+  const isAdmin = userData?.role === "admin" ? true : false;
   // console.log(isAdmin);
   const location = useLocation();
 
@@ -35,6 +35,14 @@ const Dashboard = () => {
       )}`;
     }
   }, [location.pathname]);
+
+  const handleLogOut = () =>{
+    logOut().then(()=>{
+      toast.success("You successfully logged out")
+    }).catch((err)=>{
+      console.log(err.message)
+    })
+  }
 
   return (
     <div className={`flex ${open && "flex-col"} flex-row sm:flex-row max-w-[1300px] mx-auto`}>
@@ -554,16 +562,9 @@ const Dashboard = () => {
                   </NavLink>
                 </li>
                 <li>
-                  <NavLink
-                  to="/"
-                    onClick={logOut}
-                    className={({ isActive, isPending }) =>
-                      isActive
-                        ? "font-semibold flex justify-start items-center gap-1 pl-2 bg-white text-blue-500 w-[96%] max-[639.5px]:mx-auto sm:ml-[4%] py-1 max-[639.5px]:rounded-[30px] sm:rounded-l-[30px] relative custom h-[45px] activated"
-                        : isPending
-                          ? ""
-                          : "font-semibold flex justify-start items-center gap-1 pl-2 w-[96%] ml-[4%] py-2 text-[#ffffff] rounded-[30px] h-[45px] initial-style hover:scale-110 transition duration-300 ease-linear"
-                    }
+                  <button
+                    onClick={handleLogOut}
+                    className="font-semibold flex justify-start items-center gap-1 pl-2 w-[96%] ml-[4%] py-2 text-[#ffffff] rounded-[30px] h-[45px] initial-style hover:scale-110 transition duration-300 ease-linear"
                   >
                     {open ? (
                       <span className="flex justify-center items-center gap-2">
@@ -584,19 +585,20 @@ const Dashboard = () => {
 
                       ></RiLogoutCircleLine>
                     )}
-                  </NavLink>
+                  </button>
                 </li>
               </ul>
             </>
           </ul>
         </div>
       </div>
+      {/* Outlet here - showing all children */}
       <div
         className={`w-[100%] ${
           open
             ? "sm:pl-[35%] md:pl-[40%] lg:pl-[20%]"
             : "sm:pl-[10%] lg:pl-[5%]"
-        } mx-auto relative overflow-hidden bg-blue-50`}
+        } mx-auto relative overflow-hidden bg-blue-50 min-h-screen`}
       >
         <Outlet></Outlet>
       </div>
