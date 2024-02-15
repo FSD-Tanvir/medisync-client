@@ -1,18 +1,8 @@
-import { useQuery } from "@tanstack/react-query";
 import DoctorRow from "./DoctorRow";
-import useAxiosPublic from "../../../hooks/useAxiosPublic";
+import useAllDoctors from "../../../hooks/useAllDoctors";
 
 const AllDoctors = () => {
-  const axiosPublic = useAxiosPublic()
-  const { data: allDoctorsData = [], refetch } = useQuery({
-    queryKey: ["allDoctors"],
-    queryFn: async () => {
-
-      const res = await axiosPublic.get("/doctors");
-      return res?.data;
-    },
-  });
-  console.log(allDoctorsData);
+  const [allDoctorsData,refetch] = useAllDoctors()
   return (
     <div className="overflow-x-auto">
       <table className="table w-full ml-4">

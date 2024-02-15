@@ -1,5 +1,6 @@
 import { Tab, TabList, TabPanel, Tabs } from "react-tabs";
 import AllProducts from "./allProducts/allProducts";
+import AddProduct from "./addProduct/AddProduct";
 
 
 
@@ -41,7 +42,7 @@ const ProductsPanel = () => {
             <AllProducts />
           </TabPanel>
           <TabPanel>
-            {/* <AddJob /> */}
+            <AddProduct />
           </TabPanel>
         </Tabs>
       </div>

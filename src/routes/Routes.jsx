@@ -16,15 +16,11 @@ import AllAdvices from "../pages/Dashboard/Advices/AllAdvices";
 import JobPanel from "../pages/Dashboard/jobPanel/JobPanel";
 import AddJob from "../pages/Dashboard/jobPanel/addJob/AddJob";
 import AllJobs from "../pages/Dashboard/jobPanel/allJobs/AllJobs";
-
 import AllArticles from "../pages/Dashboard/allArticles/AllArticles";
-
 import UpdateJob from "../pages/dashboard/jobPanel/allJobs/UpdateJob";
 import axios from "axios";
 import UpdateDoctor from "../pages/Dashboard/doctors/UpdateDoctor";
-
 import ProductDetails from "../pages/productDetails/productDetails";
-
 import AdminProfile from "../pages/Dashboard/AdminProfile/AdminProfile";
 import UserProfile from "../pages/Dashboard/UserProfile/UserProfile";
 import MyCart from "../pages/Dashboard/MyCart/MyCart";
@@ -33,9 +29,7 @@ import MyDoctors from "../pages/Dashboard/MyDoctors/MyDoctors";
 import AdvicePanel from "../pages/Dashboard/Advices/advicePanel";
 import DoctorsPanel from "../pages/Dashboard/doctors/doctorsPanel";
 import ArticlesPanel from "../pages/Dashboard/allArticles/articlesPanel";
-
 import ProductsPanel from "../pages/Dashboard/productsPanel/ProductsPanel";
-
 import Overview from "../pages/Dashboard/overview/Overview";
 import PrivateRoute from "./PrivateRoute";
 
@@ -69,10 +63,8 @@ export const router = createBrowserRouter([
       },
       {
         path: "/product-details/:id",
-
         element:<ProductDetails/>,
         loader: ({ params }) => fetch(`http://localhost:5000/allProducts/${params.id}`)
-
       },
       {
         path: "/advice",

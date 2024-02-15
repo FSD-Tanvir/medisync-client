@@ -23,8 +23,10 @@ ReactDOM.createRoot(document.getElementById("root")).render(
     <React.Suspense fallback="loading...">
       <QueryClientProvider client={queryClient}>
         <AuthProvider>
-          <RouterProvider router={router} />
-          <Toaster />
+          <StateProvider>
+            <RouterProvider router={router} />
+            <Toaster />
+          </StateProvider>
         </AuthProvider>
       </QueryClientProvider>
     </React.Suspense>

@@ -30,9 +30,6 @@ const AddJob = () => {
     };
 
     try {
-
-
-
       const result = await axiosPublic.post(
         "/jobs/add-job",
 

@@ -14,23 +14,17 @@ import { BsCapsule } from "react-icons/bs";
 // import useUser from "../hooks/useUser";
 import "./Dashboard.css";
 import useAuth from "../hooks/useAuth";
+import useUser from "../hooks/useUser";
 
 const Dashboard = () => {
   const [open, setOpen] = useState(false);
-
   const userData = useUser();
-  console.log(userData);
-  const isAdmin = userData?.role === "admin" ? true : false;
-
+  // const isAdmin = userData?.role === "admin" ? true : false;
+  const isAdmin = "true"
   const { logOut } = useAuth()
-
-
-
-  // console.log(isAdmin);
   const location = useLocation();
 
   useEffect(() => {
-    // console.log(location.pathname);
     if (location.pathname == "/") {
       document.title = "MediSync | Home";
     } else {
@@ -213,9 +207,9 @@ const Dashboard = () => {
                         Product Managment
                       </span>
                     ) : (
-                      <CgProfile
+                      <BsCapsule
                         className="w-16 sm:w-6 text-[40px] ml-2 relative z-[90]"
-                      ></CgProfile>
+                      ></BsCapsule>
                     )}
                   </NavLink>
                 </li>
