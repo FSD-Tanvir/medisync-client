@@ -49,15 +49,15 @@ const UpdateDoctor = () => {
   };
 
   return (
-    <div className="max-w-screen-lg mx-auto mt-8">
+    <div className="w-full lg:w-[90%] mx-auto bg-white flex items-center relative overflow-hidden shadow-xl rounded-lg">
       <form onSubmit={handleSubmit(onSubmit)} className="p-8 w-full">
         <h1 className="text-2xl lg:text-4xl whitespace-nowrap w-min mb-8 border-b-4 border-b-blue-500 capitalize">
           Update Doctor
         </h1>
-        <div className="space-y-5">
+        <div className="space-y-5 grid gap-5 grid-cols-1 md:grid-cols-2 justify-center items-baseline">
           {/* Doctor Name */}
           <div className="space-y-5 drop-shadow-md">
-            <label htmlFor="name" className="block text-text-color-blue">
+            <label htmlFor="name" className="block text-blue-600 border-l-2 border-blue-400 font-semibold pl-2 w-min whitespace-nowrap">
               Doctor Name
             </label>
             <input
@@ -76,7 +76,7 @@ const UpdateDoctor = () => {
           </div>
           {/* Specialization */}
           <div className="space-y-5 drop-shadow-md">
-            <label htmlFor="specialization" className="block text-text-color-blue">
+            <label htmlFor="specialization" className="block text-blue-600 border-l-2 border-blue-400 font-semibold pl-2 w-min whitespace-nowrap">
               Specialization
             </label>
             <input
@@ -90,7 +90,7 @@ const UpdateDoctor = () => {
           </div>
           {/* Image URL */}
           <div className="space-y-5 drop-shadow-md">
-            <label htmlFor="image" className="block text-text-color-blue">
+            <label htmlFor="image" className="block text-blue-600 border-l-2 border-blue-400 font-semibold pl-2 w-min whitespace-nowrap">
               Image URL
             </label>
             <input
@@ -104,7 +104,7 @@ const UpdateDoctor = () => {
           </div>
           {/* Qualification */}
           <div className="space-y-5 drop-shadow-md">
-            <label htmlFor="qualification" className="block text-text-color-blue">
+            <label htmlFor="qualification" className="block text-blue-600 border-l-2 border-blue-400 font-semibold pl-2 w-min whitespace-nowrap">
               Qualification
             </label>
             <input
@@ -118,7 +118,7 @@ const UpdateDoctor = () => {
           </div>
           {/* Experience Years */}
           <div className="space-y-5 drop-shadow-md">
-            <label htmlFor="experience_years" className="block text-text-color-blue">
+            <label htmlFor="experience_years" className="block text-blue-600 border-l-2 border-blue-400 font-semibold pl-2 w-min whitespace-nowrap">
               Experience Years
             </label>
             <input
@@ -132,7 +132,7 @@ const UpdateDoctor = () => {
           </div>
           {/* Contact Email */}
           <div className="space-y-5 drop-shadow-md">
-            <label htmlFor="email" className="block text-text-color-blue">
+            <label htmlFor="email" className="block text-blue-600 border-l-2 border-blue-400 font-semibold pl-2 w-min whitespace-nowrap">
               Contact Email
             </label>
             <input
@@ -151,7 +151,7 @@ const UpdateDoctor = () => {
           </div>
           {/* Contact Phone */}
           <div className="space-y-5 drop-shadow-md">
-            <label htmlFor="phone" className="block text-text-color-blue">
+            <label htmlFor="phone" className="block text-blue-600 border-l-2 border-blue-400 font-semibold pl-2 w-min whitespace-nowrap">
               Contact Phone
             </label>
             <input
@@ -165,7 +165,7 @@ const UpdateDoctor = () => {
           </div>
           {/* University */}
           <div className="space-y-5 drop-shadow-md">
-            <label htmlFor="university" className="block text-text-color-blue">
+            <label htmlFor="university" className="block text-blue-600 border-l-2 border-blue-400 font-semibold pl-2 w-min whitespace-nowrap">
               University
             </label>
             <input

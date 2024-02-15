@@ -6,15 +6,15 @@ import { FaUserDoctor } from "react-icons/fa6";
 import { GrWorkshop } from "react-icons/gr";
 import { TiThMenu } from "react-icons/ti";
 import { IoCartOutline, IoSearchOutline, IoClose } from "react-icons/io5";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import Modal from "../../../pages/home/LogInRegistration/Modal";
 import useAuth from "../../../hooks/useAuth";
 
 import useProductCart from "../../../hooks/useProductCart";
 import Drawer from "../../drawer/Drawer";
-import Chatbot from "../chatbot/Chatbot";
 import useUser from "../../../hooks/useUser";
+import { StateManager } from "../../../Porviders/StateProvider";
 
 const menuItems = [
   { id: 1, icon: <GoHome />, item: "Home", link: "/" },
@@ -35,7 +35,8 @@ const Navbar = () => {
   const [productCart, ,] = useProductCart();
 
   let [openMenu, setOpenMenu] = useState(false);
-  const [showModal, setShowModal] = useState(false);
+  // const [showModal, setShowModal] = useState(false);
+  const {showModal,setShowModal} = useContext(StateManager);
 
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
   const userData = useUser();
@@ -250,8 +251,9 @@ const Navbar = () => {
           </ul>
         </div>
       </div>
-      <Modal showModal={showModal} setShowModal={setShowModal} />
-      <Chatbot />
+      {/* showModal={showModal} setShowModal={setShowModal} */}
+      <Modal />
+      {/* <Chatbot /> */}
     </>
   );
 };

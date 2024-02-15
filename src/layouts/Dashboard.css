@@ -24,3 +24,6 @@
         box-shadow:32px -32px 0 10px white ;
     }
 }
+.navItem-dashboard .initial-style:hover .nav-icon{
+    /* color: rgb(120, 98, 247); */
+}

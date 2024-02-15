@@ -44,13 +44,13 @@ const AddJob = () => {
   };
 
   return (
-    <div className="w-full lg:w-3/4 mx-auto bg-blue-500 bg-opacity-20 flex items-center relative overflow-hidden shadow-xl rounded-lg">
+    <div className="w-full lg:w-[90%] mx-auto bg-white flex items-center relative overflow-hidden shadow-xl rounded-lg">
       {/* register form  */}
       <form onSubmit={handleSubmit(onSubmit)} className={`p-4 lg:p-8 w-full`}>
         <h1 className="backdrop-blur-sm text-2xl lg:text-4xl whitespace-nowrap w-min mb-8 border-b-4 border-b-blue-500 capitalize">
           add job
         </h1>
-        <div className="space-y-5 grid gap-5 grid-cols-1 sm:grid-cols-2 justify-center items-baseline">
+        <div className="space-y-5 grid gap-5 grid-cols-1 md:grid-cols-2 justify-center items-baseline">
           {/* job title  */}
           <div className="space-y-5 drop-shadow-md w-full">
             <label

@@ -3,9 +3,12 @@ import { FcGoogle } from "react-icons/fc";
 import useAuth from "../../hooks/useAuth";
 import useAxiosPublic from "../../hooks/useAxiosPublic";
 import Swal from "sweetalert2";
+import { useContext } from "react";
+import { StateManager } from "../../Porviders/StateProvider";
 
-const SocialLogin = ({ setShowModal }) => {
+const SocialLogin = () => {
   const { googleLogin } = useAuth();
+  const {showModal,setShowModal} = useContext(StateManager);
   const axiosPublic = useAxiosPublic();
 
   const handelGoogleLogin = (media) => {

@@ -1,10 +1,15 @@
 import { useForm } from "react-hook-form";
 import Button from "../../../../components/shared/button/Button";
 import useAxiosPublic from "../../../../hooks/useAxiosPublic";
+import toast from "react-hot-toast";
+
+
+
 
 
 const AddProduct = () => {
     const axiosPublic = useAxiosPublic();
+
     const {
         register,
         handleSubmit,
@@ -13,6 +18,28 @@ const AddProduct = () => {
 
     const onSubmit = async (data) => {
         console.log(data);
+        const productData ={
+            name:data?.name,
+            company:data?.company,
+            category:data?.category,
+            price:data?.price,
+            description:data?.description,
+            image:data?.image,
+            weight:data?.weight
+        }
+        try {
+            const result = await axiosPublic.post(
+              "/allProducts",
+              productData
+              
+            );
+            if (result.data?.status === true) {
+              toast.success("Your job added successfully");
+              
+            }
+          } catch (err) {
+            console.log(err);
+          }
     }
 
     return (
@@ -146,7 +173,6 @@ const AddProduct = () => {
                             type="text"
                             {...register("description", {
                                 required: true,
-                                valueAsNumber: true,
                             })}
                             placeholder="Enter Product Overview"
                             className="p-3 block w-full outline-1 border valid:outline-blue-500 rounded-md invalid:outline-red-600"

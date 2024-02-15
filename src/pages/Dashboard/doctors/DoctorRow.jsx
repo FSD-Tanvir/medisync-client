@@ -12,7 +12,7 @@ const DoctorRow = ({ doctor, idx, refetch }) => {
   // handle update job
   const handleUpdateDoctor = () => {
     console.log(_id);
-    navigate(`/dashboard/doctors/update-doctor/${_id}`);
+    navigate(`/dashboard/doctors-panel/update-doctor/${_id}`);
   };
   const handleDeleteDoctor = () => {
     Swal.fire({
@@ -37,7 +37,7 @@ const DoctorRow = ({ doctor, idx, refetch }) => {
             Swal.fire({
               position: "center",
               icon: "success",
-              title: "Job deleted successfully",
+              title: "Doctor deleted successfully",
               showConfirmButton: false,
               timer: 1500,
             });
@@ -57,8 +57,10 @@ const DoctorRow = ({ doctor, idx, refetch }) => {
   };
 
   return (
-    <tr>
-      <th className="text-left">{idx + 1}</th>
+    <tr className="hover:bg-blue-100">
+      <th className="text-left">
+      <div className="pl-2">{idx + 1}</div>
+      </th>
       <td className="capitalize text-left w-min whitespace-nowrap">
         <div className="px-3 xl:pl-3">{name}</div>
       </td>
