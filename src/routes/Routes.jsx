@@ -169,11 +169,8 @@ export const router = createBrowserRouter([
         element: <UpdateJob />,
         loader: async ({ params }) => {
           return await axios.get(
-
             `http://localhost:5000/jobs/single/${params.id}`
-
-          )
-
+          );
         },
       },
       {
@@ -192,7 +189,7 @@ export const router = createBrowserRouter([
         path: "doctors/update-doctor/:id",
         element: <UpdateDoctor />,
         loader: async ({ params }) => {
-          return await axios.get(`http://localhost:5000//doctors/${params.id}`);
+          return await axios.get(`http://localhost:5000/doctors/${params.id}`);
         },
       },
       {

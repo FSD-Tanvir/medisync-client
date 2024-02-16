@@ -5,6 +5,7 @@ import useAuth from "../../hooks/useAuth";
 import axios from "axios";
 import Swal from "sweetalert2";
 import useProductCart from "../../hooks/useProductCart";
+import useStateManager from "../../hooks/useStateManager";
 
 
 
@@ -12,6 +13,7 @@ import useProductCart from "../../hooks/useProductCart";
 
 const ProductDetails = () => {
     const productDetails = useLoaderData()
+    const {setShowModal} = useStateManager()
     const [quantity, setQuantity] = useState(1);
     const { user } = useAuth()
     const [, , refetch] = useProductCart()
@@ -24,15 +26,17 @@ const ProductDetails = () => {
         setQuantity(prevQuantity => Math.max(1, prevQuantity - 1));
     };
 
-    const totalAmount = productDetails.price * quantity;
+    const totalAmount = productDetails?.price * quantity;
 
     // add to product in productCart
     const handelAddToCart = async (productDetails) => {
-
+        if(!user){
+           return setShowModal(true)
+        }
         if (user && user?.email) {
             const cartItem = {
                 productItemId:productDetails._id,
-                quintity:quantity,
+                quantity:quantity,
                 name:productDetails.name,
                 weight:productDetails.weight,
                 image:productDetails.image,
