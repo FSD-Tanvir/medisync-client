@@ -1,12 +1,22 @@
 import { FaEdit, FaTrashAlt } from "react-icons/fa";
 import useAxiosPublic from "../../../../hooks/useAxiosPublic";
 import Swal from "sweetalert2";
+import { useNavigate } from "react-router-dom";
 
 
 
 const ProductsRow = ({ refetch, product, idx }) => {
-    const { _id, name, image, company, category, price } = product || {}
+    const navigate = useNavigate()
     const axiosPublic = useAxiosPublic()
+    const { _id, name, image, company, category, price } = product || {}
+
+    // handle update product
+    const handleUpdateProduct = () => {
+        navigate(`/dashboard/products-panel/update-product/${_id}`);
+    };
+
+
+    // delte job
     const handeldeleteProduct = () => {
         Swal.fire({
             title: "Are you sure?",
@@ -64,9 +74,8 @@ const ProductsRow = ({ refetch, product, idx }) => {
             </td>
             <td className="capitalize flex gap-2 mt-[10px]">
                 {/* action buttons  */}
-
                 <button
-
+                    onClick={handleUpdateProduct}
                     className=" border hover:border-hover-border-color hover:text-hover-text-color font-semibold py-2 px-2 rounded-md w-min shadow-[-2px_-2px_12px_2px_rgba(0,0,0,0.1),_2px_2px_12px_2px_rgba(0,0,0,0.1)] bg-primary-bg-color text-white hover:bg-[#FFF7F4] transition-colors duration-200 ease-linear"
                 >
                     <FaEdit size={13} />

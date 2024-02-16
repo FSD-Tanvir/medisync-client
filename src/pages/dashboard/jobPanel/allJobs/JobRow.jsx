@@ -11,7 +11,6 @@ const JobRow = ({ job, idx, refetch }) => {
 
   // handle update job
   const handleUpdateJob = () => {
-    console.log(_id);
     navigate(`/dashboard/job-panel/update-job/${_id}`);
   };
   const handleDeleteJob = () => {
