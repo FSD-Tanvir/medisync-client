@@ -33,6 +33,9 @@ import ProductsPanel from "../pages/Dashboard/productsPanel/ProductsPanel";
 import Overview from "../pages/Dashboard/overview/Overview";
 import PrivateRoute from "./PrivateRoute";
 import UpdateProduct from "../pages/Dashboard/productsPanel/updateProduct/UpdateProduct";
+import ManageUsers from "../pages/Dashboard/manageUsers/ManageUsers";
+import AllUsers from "../pages/Dashboard/manageUsers/AllUsers";
+
 
 export const router = createBrowserRouter([
   // Main Layout
@@ -64,7 +67,7 @@ export const router = createBrowserRouter([
       },
       {
         path: "/product-details/:id",
-        element:<ProductDetails/>,
+        element: <ProductDetails />,
         loader: ({ params }) => fetch(`http://localhost:5000/allProducts/${params.id}`)
       },
       {
@@ -154,6 +157,14 @@ export const router = createBrowserRouter([
         element: <AdvicePanel></AdvicePanel>,
       },
       {
+        path: "manage-users",
+        element: <ManageUsers></ManageUsers>
+      },
+      {
+        path: "all-users",
+        element: <AllUsers></AllUsers>
+      },
+      {
         path: "job-panel",
         element: <JobPanel />,
       },
@@ -170,11 +181,8 @@ export const router = createBrowserRouter([
         element: <UpdateJob />,
         loader: async ({ params }) => {
           return await axios.get(
-
             `http://localhost:5000/jobs/single/${params.id}`
-
-          )
-
+          );
         },
       },
       {
@@ -183,7 +191,6 @@ export const router = createBrowserRouter([
       },
       {
         path: "advices/allAdvices",
-
         element: <AllAdvices></AllAdvices>,
       },
       {
@@ -194,7 +201,7 @@ export const router = createBrowserRouter([
         path: "doctors/update-doctor/:id",
         element: <UpdateDoctor />,
         loader: async ({ params }) => {
-          return await axios.get(`http://localhost:5000//doctors/${params.id}`);
+          return await axios.get(`http://localhost:5000/doctors/${params.id}`);
         },
       },
       {
