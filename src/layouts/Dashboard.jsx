@@ -15,17 +15,18 @@ import useUser from "../hooks/useUser";
 import "./Dashboard.css";
 import useAuth from "../hooks/useAuth";
 import toast from "react-hot-toast";
+import { FaUsers } from "react-icons/fa";
+
 
 const Dashboard = () => {
   const [open, setOpen] = useState(false);
-  const { logOut } = useAuth()
   const userData = useUser();
   const isAdmin = userData?.role === "admin" ? true : false;
-  // console.log(isAdmin);
+  // const isAdmin = "true"
+  const { logOut } = useAuth()
   const location = useLocation();
 
   useEffect(() => {
-    // console.log(location.pathname);
     if (location.pathname == "/") {
       document.title = "MediSync | Home";
     } else {
@@ -213,12 +214,12 @@ const Dashboard = () => {
                         <BsCapsule
                           className="w-16 sm:w-6 text-[40px] ml-2"
                         ></BsCapsule>
-                        Product Managment
+                        Product Management
                       </span>
                     ) : (
-                      <CgProfile
+                      <BsCapsule
                         className="w-16 sm:w-6 text-[40px] ml-2 relative z-[90]"
-                      ></CgProfile>
+                      ></BsCapsule>
                     )}
                   </NavLink>
                 </li>
@@ -317,6 +318,34 @@ const Dashboard = () => {
                         // alt=""
 
                       ></BiMessageRoundedDetail>
+                    )}
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink
+                    to="manage-users"
+                    className={({ isActive, isPending }) =>
+                      isActive
+                        ? "font-semibold flex justify-start items-center gap-1 pl-2 bg-white text-blue-500 w-[96%] max-[639.5px]:mx-auto sm:ml-[4%] py-1 max-[639.5px]:rounded-[30px] sm:rounded-l-[30px] relative custom h-[45px] activated"
+                        : isPending
+                          ? ""
+                          : "font-semibold flex justify-start items-center gap-1 pl-2 w-[96%] ml-[4%] py-2 text-[#ffffff] rounded-[30px] h-[45px] initial-style hover:scale-110 transition duration-300 ease-linear"
+                    }
+                  >
+                    {open ? (
+                      <span className="flex justify-center items-center gap-2">
+                        {" "}
+                        <FaUsers
+                          // src={overviewIcon}
+                          className="w-16 sm:w-6 text-[40px] ml-2 nav-icon transition-colors duration-[250] ease-linear"
+                          ></FaUsers>
+                        Manage Users
+                      </span>
+                    ) : (
+                      <FaUsers
+                        // src={overviewIcon}
+                        className="w-16 sm:w-6 text-[40px] ml-2 nav-icon transition-colors duration-[250] ease-linear relative z-[90]"
+                      ></FaUsers>
                     )}
                   </NavLink>
                 </li>

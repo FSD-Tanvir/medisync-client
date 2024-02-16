@@ -13,7 +13,6 @@ import useAuth from "../../../hooks/useAuth";
 
 import useProductCart from "../../../hooks/useProductCart";
 import Drawer from "../../drawer/Drawer";
-import Chatbot from "../chatbot/Chatbot";
 import useUser from "../../../hooks/useUser";
 import { StateManager } from "../../../Porviders/StateProvider";
 
@@ -254,7 +253,7 @@ const Navbar = () => {
       </div>
       {/* showModal={showModal} setShowModal={setShowModal} */}
       <Modal />
-      <Chatbot />
+      {/* <Chatbot /> */}
     </>
   );
 };

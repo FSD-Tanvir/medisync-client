@@ -16,15 +16,11 @@ import AllAdvices from "../pages/Dashboard/Advices/AllAdvices";
 import JobPanel from "../pages/Dashboard/jobPanel/JobPanel";
 import AddJob from "../pages/Dashboard/jobPanel/addJob/AddJob";
 import AllJobs from "../pages/Dashboard/jobPanel/allJobs/AllJobs";
-
 import AllArticles from "../pages/Dashboard/allArticles/AllArticles";
-
 import UpdateJob from "../pages/dashboard/jobPanel/allJobs/UpdateJob";
 import axios from "axios";
 import UpdateDoctor from "../pages/Dashboard/doctors/UpdateDoctor";
-
 import ProductDetails from "../pages/productDetails/productDetails";
-
 import AdminProfile from "../pages/Dashboard/AdminProfile/AdminProfile";
 import UserProfile from "../pages/Dashboard/UserProfile/UserProfile";
 import MyCart from "../pages/Dashboard/MyCart/MyCart";
@@ -33,11 +29,11 @@ import MyDoctors from "../pages/Dashboard/MyDoctors/MyDoctors";
 import AdvicePanel from "../pages/Dashboard/Advices/advicePanel";
 import DoctorsPanel from "../pages/Dashboard/doctors/doctorsPanel";
 import ArticlesPanel from "../pages/Dashboard/allArticles/articlesPanel";
-
 import ProductsPanel from "../pages/Dashboard/productsPanel/ProductsPanel";
-
 import Overview from "../pages/Dashboard/overview/Overview";
 import PrivateRoute from "./PrivateRoute";
+import ManageUsers from "../pages/Dashboard/manageUsers/ManageUsers";
+import AllUsers from "../pages/Dashboard/manageUsers/AllUsers";
 
 export const router = createBrowserRouter([
   // Main Layout
@@ -70,8 +66,7 @@ export const router = createBrowserRouter([
       {
         path: "/product-details/:id",
         element: <ProductDetails />,
-        loader: ({ params }) =>
-          fetch(`http://localhost:5000/allProducts/${params.id}`),
+        loader: ({ params }) => fetch(`http://localhost:5000/allProducts/${params.id}`)
       },
       {
         path: "/advice",
@@ -101,7 +96,9 @@ export const router = createBrowserRouter([
         path: "career/job-details/:id",
         element: <JobDetails />,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000//jobs/single/${params.id}`),
+
+          fetch(`http://localhost:5000/jobs/single/${params.id}`),
+
       },
       { path: "contact-us", element: <ContactUs /> },
     ],
@@ -134,8 +131,9 @@ export const router = createBrowserRouter([
         element: <UpdateDoctor />,
         loader: async ({ params }) => {
           return await axios.get(
-            `https://medisync-server.vercel.app/doctors/${params.id}`
-          );
+            `http://localhost:5000/doctors/${params.id}`
+          )
+
         },
       },
       {
@@ -145,6 +143,14 @@ export const router = createBrowserRouter([
       {
         path: "advice-panel",
         element: <AdvicePanel></AdvicePanel>,
+      },
+      {
+        path: "manage-users",
+        element: <ManageUsers></ManageUsers>
+      },
+      {
+        path: "all-users",
+        element: <AllUsers></AllUsers>
       },
       {
         path: "job-panel",
@@ -173,7 +179,6 @@ export const router = createBrowserRouter([
       },
       {
         path: "advices/allAdvices",
-
         element: <AllAdvices></AllAdvices>,
       },
       {
