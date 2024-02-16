@@ -2,7 +2,6 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import "./App.css";
-import "./i18n.js"
 import { RouterProvider } from "react-router-dom";
 import { router } from "./routes/Routes.jsx";
 import { Toaster } from "react-hot-toast";
@@ -20,7 +19,6 @@ const queryClient = new QueryClient();
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <React.Suspense fallback="loading...">
       <QueryClientProvider client={queryClient}>
         <AuthProvider>
           <StateProvider>
@@ -29,6 +27,5 @@ ReactDOM.createRoot(document.getElementById("root")).render(
           </StateProvider>
         </AuthProvider>
       </QueryClientProvider>
-    </React.Suspense>
   </React.StrictMode>
 );
