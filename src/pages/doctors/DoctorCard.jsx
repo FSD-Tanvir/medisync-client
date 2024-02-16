@@ -1,9 +1,11 @@
 // import { useState } from "react";
 
+import { Link } from "react-router-dom";
 import Button from "../../components/shared/button/Button";
 
 const DoctorCard = ({ doctor }) => {
   const {
+    _id,
     name,
     image,
     specialization,
@@ -34,11 +36,15 @@ const DoctorCard = ({ doctor }) => {
 
       {/* Action Buttons */}
       <div className="flex justify-between items-center mt-4">
-       
-        <Button btnName="Take Appointment" classForButton="px-2 text-xs sm:text-sm md:text-xs lg:text-sm xl:text-xs lg:w-full xl:w-fit"/>
+        <Link to={`appointment/${_id}`}>
+          <Button
+            btnName="Take Appointment"
+            classForButton="px-2 text-xs sm:text-sm md:text-xs lg:text-sm xl:text-xs lg:w-full xl:w-fit"
+          />
+        </Link>
         <div
           className="flex items-center cursor-pointer"
-        // onClick={openModal}
+          // onClick={openModal}
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -52,7 +58,9 @@ const DoctorCard = ({ doctor }) => {
               clipRule="evenodd"
             />
           </svg>
-          <p className="text-cyan-500 text-sm underline  hover:text-cyan-600">Reviews (25)</p>
+          <p className="text-cyan-500 text-sm underline  hover:text-cyan-600">
+            Reviews (25)
+          </p>
         </div>
       </div>
 

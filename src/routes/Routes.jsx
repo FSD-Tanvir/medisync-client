@@ -32,6 +32,7 @@ import ArticlesPanel from "../pages/Dashboard/allArticles/articlesPanel";
 import ProductsPanel from "../pages/Dashboard/productsPanel/ProductsPanel";
 import Overview from "../pages/Dashboard/overview/Overview";
 import PrivateRoute from "./PrivateRoute";
+import TakeAppointment from "../pages/takeAppointment/TakeAppointment";
 
 export const router = createBrowserRouter([
   // Main Layout
@@ -63,8 +64,9 @@ export const router = createBrowserRouter([
       },
       {
         path: "/product-details/:id",
-        element:<ProductDetails/>,
-        loader: ({ params }) => fetch(`http://localhost:5000/allProducts/${params.id}`)
+        element: <ProductDetails />,
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/allProducts/${params.id}`),
       },
       {
         path: "/advice",
@@ -80,9 +82,13 @@ export const router = createBrowserRouter([
       },
       {
         path: "/doctors",
+        element: <Doctors />,
+      },
+      {
+        path: "/doctors/appointment/:id",
         element: (
           <PrivateRoute>
-            <Doctors />
+            <TakeAppointment/>
           </PrivateRoute>
         ),
       },
@@ -94,9 +100,7 @@ export const router = createBrowserRouter([
         path: "career/job-details/:id",
         element: <JobDetails />,
         loader: ({ params }) =>
-
           fetch(`http://localhost:5000/jobs/single/${params.id}`),
-
       },
       { path: "contact-us", element: <ContactUs /> },
     ],
@@ -104,9 +108,11 @@ export const router = createBrowserRouter([
   // Dashboard Layout
   {
     path: "/dashboard",
-    element: <PrivateRoute>
-      <Dashboard></Dashboard>
-    </PrivateRoute>,
+    element: (
+      <PrivateRoute>
+        <Dashboard></Dashboard>
+      </PrivateRoute>
+    ),
     children: [
       {
         path: "adminProfile",
@@ -128,10 +134,7 @@ export const router = createBrowserRouter([
         path: "doctors-panel/update-doctor/:id",
         element: <UpdateDoctor />,
         loader: async ({ params }) => {
-          return await axios.get(
-            `http://localhost:5000/doctors/${params.id}`
-          )
-
+          return await axios.get(`http://localhost:5000/doctors/${params.id}`);
         },
       },
       {
@@ -159,11 +162,8 @@ export const router = createBrowserRouter([
         element: <UpdateJob />,
         loader: async ({ params }) => {
           return await axios.get(
-
             `http://localhost:5000/jobs/single/${params.id}`
-
-          )
-
+          );
         },
       },
       {
