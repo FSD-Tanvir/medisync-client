@@ -15,7 +15,7 @@ const UserProfile = () => {
         <div className="flex flex-col justify-center items-center">
           <div>
             <p>
-              <span className="font-semibold">Nama:</span>{" "}
+              <span className="font-semibold">Name:</span>{" "}
               <span>{userData?.name}</span>
             </p>
             <p>
