@@ -1,6 +1,4 @@
 import { useEffect, useState } from "react";
-import { useTranslation } from "react-i18next";
-import LanguageSelector from "../../../components/language-selector/language-selector";
 import useAdvices from "../../../hooks/useAdvices";
 
 
@@ -8,7 +6,6 @@ const Advice = () => {
     const [advices, , ] = useAdvices();
     const [selectedDisease, setSelectedDisease] = useState('');
     const [disease, setDisease] = useState([]);
-    const { t } = useTranslation();
     // Function to handle the change in the dropdown
     const handleDiseaseChange = (e) => {
         // Update the state with the selected disease
@@ -18,24 +15,17 @@ const Advice = () => {
         const [filteredDisease] = advices.filter(disease => disease.title === selectedDisease);
         setDisease(filteredDisease);
     }, [selectedDisease, advices])
-
-    // useEffect(() => {
-    //     fetch("/advice.json")
-    //         .then(res => res.json())
-    //         .then(data => setAdvices(data))
-    // }, [])
     return (
         <div className="py-5 lg:py-7 bg-[#FFF7F4]">
-            <LanguageSelector/>
             <div className="p-12">
-                <h1 className="text-xl font-semibold lg:text-5xl text-center mt-10">{t("greeting")}</h1>
+                <h1 className="text-xl font-semibold lg:text-5xl text-center mt-10">আপনার রোগটি নির্বাচন করুন</h1>
                 <div className=" flex justify-center my-10">
                     <form className="border lg:w-1/4">
                         <select onChange={handleDiseaseChange}
                             value={selectedDisease}
                             defaultValue="রোগ নির্বাচন করুন"
                             name="disease" id="diseaseSelect" className="w-full py-2 text-center px-7">
-                            <option selected>{t("selectHeading")}</option>
+                            <option selected>রোগ নির্বাচন করুন</option>
                             <option value="জ্বর">জ্বর</option>
                             <option value="সর্দি-কাশি">সর্দি-কাশি</option>
                             <option value="মাথা ঘামা">মাথা ঘামা</option>

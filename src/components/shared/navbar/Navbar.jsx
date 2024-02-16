@@ -91,14 +91,6 @@ const Navbar = () => {
                       />
                     </Link>}
                   </div>
-                  <div className="hidden sm:block">
-                    <button
-                      className="border border-blue-500 hover:bg-blue-500  hover:text-white px-3 py-1 rounded-lg cursor-pointer"
-                      onClick={logOut}
-                    >
-                      Logout
-                    </button>
-                  </div>
                 </div>
               ) : (
                 <div
@@ -197,14 +189,6 @@ const Navbar = () => {
                         src={user?.photoURL}
                       />
                     </Link>}
-                    </div>
-                    <div>
-                      <button
-                        className="border border-blue-500 hover:bg-blue-500  hover:text-white px-3 py-1 rounded-lg cursor-pointer"
-                        onClick={logOut}
-                      >
-                        Logout
-                      </button>
                     </div>
                   </div>
                 ) : (

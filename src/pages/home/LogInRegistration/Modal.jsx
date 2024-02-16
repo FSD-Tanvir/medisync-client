@@ -3,11 +3,13 @@ import { ImCross } from "react-icons/im";
 import Register from "./Register";
 import { useContext, useState } from "react";
 import { StateManager } from "../../../Porviders/StateProvider";
+import { useLocation } from "react-router-dom";
 
 export default function Modal() {
-    // { showModal, setShowModal }
     const {showModal,setShowModal} = useContext(StateManager);
     const [showRegister, setShowRegister] = useState(false);
+    const location = useLocation();
+    console.log(location)
 
     const handleShowModal = () =>{
         setShowModal(false)

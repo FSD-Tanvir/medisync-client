@@ -1,15 +1,14 @@
 import { useForm } from "react-hook-form";
+import { useLoaderData } from "react-router-dom";
 import Button from "../../../../components/shared/button/Button";
+import toast from "react-hot-toast";
 import useAxiosPublic from "../../../../hooks/useAxiosPublic";
-import Swal from "sweetalert2";
-import useAllProducts from "../../../../hooks/useAllProducts";
-import { useState } from "react";
 
 
-const AddProduct = () => {
-    const axiosPublic = useAxiosPublic();
-    const category = useState("all")
-    const [, , refetch] = useAllProducts({ category })
+const UpdateProduct = () => {
+    const { data } = useLoaderData()
+    console.log(data._id);
+    const axiosPublic = useAxiosPublic()
 
     const {
         register,
@@ -18,8 +17,7 @@ const AddProduct = () => {
     } = useForm();
 
     const onSubmit = async (data) => {
-        console.log(data);
-        const productData = {
+        const updateProductData = {
             name: data?.name,
             company: data?.company,
             category: data?.category,
@@ -28,32 +26,25 @@ const AddProduct = () => {
             image: data?.image,
             weight: data?.weight
         }
+        try {
 
-        await axiosPublic.post(
-            "/allProducts",
-            productData)
-            .then(res => {
-                console.log(res.data);
-                if (res.data) {
-                    Swal.fire({
-                        title: "Success!",
-                        text: "Product Added Successfully.",
-                        icon: "success"
-                    });
-                }
-                refetch()
-            })
-
-
-
+            const res = await axiosPublic.put(
+              `/allProducts/update-product/${data?._id}`,updateProductData      
+            );
+            if (res.data.status === true) {
+              toast.success("Your job has been updated successfully");
+            }
+            console.log(res.data);
+          } catch (err) {
+            console.log(err.message);
+          }
     }
-
     return (
         <div className="w-full lg:w-3/4 mx-auto bg-blue-500 bg-opacity-20 flex items-center relative overflow-hidden shadow-xl rounded-lg">
             {/* register form  */}
             <form onSubmit={handleSubmit(onSubmit)} className={`p-4 lg:p-8 w-full`}>
                 <h1 className="backdrop-blur-sm text-2xl lg:text-4xl whitespace-nowrap w-min mb-8 border-b-4 border-b-blue-500 capitalize">
-                    add product
+                    update product
                 </h1>
                 <div className="space-y-5 grid gap-5 grid-cols-1 sm:grid-cols-2 justify-center items-baseline">
                     {/* Product Name  */}
@@ -67,6 +58,7 @@ const AddProduct = () => {
                         <input
                             id="name"
                             type="text"
+                            defaultValue={data?.name}
                             {...register("name", { required: true })}
                             placeholder="Enter Product Name"
                             className="p-3 block w-full outline-1 border valid:outline-blue-500 rounded-md invalid:outline-red-600"
@@ -89,6 +81,7 @@ const AddProduct = () => {
                         <input
                             id="weight"
                             type="text"
+                            defaultValue={data?.weight}
                             {...register("weight", { required: true })}
                             placeholder="Enter Product Weight"
                             className="p-3 block w-full outline-1 border valid:outline-blue-500 rounded-md invalid:outline-red-600"
@@ -111,6 +104,7 @@ const AddProduct = () => {
                         <input
                             id="category"
                             type="text"
+                            defaultValue={data?.category}
                             {...register("category", { required: true })}
                             placeholder="Enter Product Categorey"
                             className="p-3 block w-full outline-1 border valid:outline-blue-500 rounded-md invalid:outline-red-600"
@@ -133,6 +127,7 @@ const AddProduct = () => {
                         <input
                             id="price"
                             type="number"
+                            defaultValue={data?.price}
                             {...register("price", { required: true })}
                             placeholder="Enter Product Price"
                             className="p-3 block w-full outline-1 border valid:outline-blue-500 rounded-md invalid:outline-red-600"
@@ -155,6 +150,7 @@ const AddProduct = () => {
                         <input
                             id="company"
                             type="text"
+                            defaultValue={data?.company}
                             {...register("company", { required: true })}
                             placeholder="Enter Company Name"
                             className="p-3 block w-full outline-1 border valid:outline-blue-500 rounded-md invalid:outline-red-600"
@@ -177,6 +173,7 @@ const AddProduct = () => {
                         <input
                             id="description"
                             type="text"
+                            defaultValue={data?.description}
                             {...register("description", {
                                 required: true,
                             })}
@@ -197,6 +194,7 @@ const AddProduct = () => {
                         <input
                             id="image"
                             type="text"
+                            defaultValue={data?.image}
                             {...register("image", { required: true })}
                             placeholder="image"
                             className="p-3 block w-full outline-1 border valid:outline-blue-500 rounded-md invalid:outline-red-600"
@@ -211,11 +209,11 @@ const AddProduct = () => {
                 </div>
                 {/* add job button  */}
                 <div className="text-center mt-8">
-                    <Button btnName="add job" classForButton="px-2 w-1/3" />
+                    <Button btnName="update job" classForButton="px-2 w-1/3" />
                 </div>
             </form>
         </div>
     );
 };
 
-export default AddProduct;
+export default UpdateProduct;

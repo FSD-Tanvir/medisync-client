@@ -33,6 +33,10 @@ import ProductsPanel from "../pages/Dashboard/productsPanel/ProductsPanel";
 import Overview from "../pages/Dashboard/overview/Overview";
 import PrivateRoute from "./PrivateRoute";
 import TakeAppointment from "../pages/takeAppointment/TakeAppointment";
+import UpdateProduct from "../pages/Dashboard/productsPanel/updateProduct/UpdateProduct";
+import ManageUsers from "../pages/Dashboard/manageUsers/ManageUsers";
+import AllUsers from "../pages/Dashboard/manageUsers/AllUsers";
+
 
 export const router = createBrowserRouter([
   // Main Layout
@@ -67,6 +71,7 @@ export const router = createBrowserRouter([
         element: <ProductDetails />,
         loader: ({ params }) =>
           fetch(`http://localhost:5000/allProducts/${params.id}`),
+
       },
       {
         path: "/advice",
@@ -123,6 +128,16 @@ export const router = createBrowserRouter([
         element: <ProductsPanel></ProductsPanel>,
       },
       {
+        path: "products-panel/update-product/:id",
+        element: <UpdateProduct></UpdateProduct>,
+        loader: async ({ params }) => {
+          return await axios.get(
+            `http://localhost:5000/allProducts/${params.id}`
+          )
+
+        },
+      },
+      {
         path: "overview",
         element: <Overview />,
       },
@@ -144,6 +159,14 @@ export const router = createBrowserRouter([
       {
         path: "advice-panel",
         element: <AdvicePanel></AdvicePanel>,
+      },
+      {
+        path: "manage-users",
+        element: <ManageUsers></ManageUsers>
+      },
+      {
+        path: "all-users",
+        element: <AllUsers></AllUsers>
       },
       {
         path: "job-panel",
@@ -172,7 +195,6 @@ export const router = createBrowserRouter([
       },
       {
         path: "advices/allAdvices",
-
         element: <AllAdvices></AllAdvices>,
       },
       {
@@ -183,7 +205,7 @@ export const router = createBrowserRouter([
         path: "doctors/update-doctor/:id",
         element: <UpdateDoctor />,
         loader: async ({ params }) => {
-          return await axios.get(`http://localhost:5000//doctors/${params.id}`);
+          return await axios.get(`http://localhost:5000/doctors/${params.id}`);
         },
       },
       {
