@@ -5,7 +5,7 @@ import useAllArticles from "../../../hooks/useAllArticles";
 
 
 const ArticleUpdate = ({ clickAbleId: _id, showModal, setShowModal }) => {
-    console.log('updated id', _id);
+    // console.log('updated id', _id);
     const axiosPublic = useAxiosPublic();
     const [, , refetch] = useAllArticles()
     const {
@@ -14,8 +14,6 @@ const ArticleUpdate = ({ clickAbleId: _id, showModal, setShowModal }) => {
         formState: { errors },
     } = useForm();
     const onSubmit = async (data) => {
-        console.log(data);
-        console.log(_id);
         await axiosPublic.patch(`/newsAndArticle/update/${_id}`, data)
             .then(res => {
                 console.log(res.data);

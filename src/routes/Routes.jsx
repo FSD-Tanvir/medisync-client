@@ -32,6 +32,7 @@ import ArticlesPanel from "../pages/Dashboard/allArticles/articlesPanel";
 import ProductsPanel from "../pages/Dashboard/productsPanel/ProductsPanel";
 import Overview from "../pages/Dashboard/overview/Overview";
 import PrivateRoute from "./PrivateRoute";
+import UpdateProduct from "../pages/Dashboard/productsPanel/updateProduct/UpdateProduct";
 
 export const router = createBrowserRouter([
   // Main Layout
@@ -115,6 +116,16 @@ export const router = createBrowserRouter([
       {
         path: "products-panel",
         element: <ProductsPanel></ProductsPanel>,
+      },
+      {
+        path: "products-panel/update-product/:id",
+        element: <UpdateProduct></UpdateProduct>,
+        loader: async ({ params }) => {
+          return await axios.get(
+            `http://localhost:5000/allProducts/${params.id}`
+          )
+
+        },
       },
       {
         path: "overview",

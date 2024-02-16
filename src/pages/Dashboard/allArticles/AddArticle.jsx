@@ -21,7 +21,6 @@ const AddArticle = () => {
                     text: "Article Added Successfully.",
                     icon: "success"
                 });
-                // reset()
             }
         })
     };
