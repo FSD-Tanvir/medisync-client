@@ -1,4 +1,3 @@
-import userIcon from "../../../assets/DashboardIcons/admin.png";
 import useUser from "../../../hooks/useUser";
 
 const UserProfile = () => {
