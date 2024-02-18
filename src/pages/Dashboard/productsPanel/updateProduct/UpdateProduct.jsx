@@ -1,20 +1,24 @@
 import { useForm } from "react-hook-form";
 import { useLoaderData } from "react-router-dom";
 import Button from "../../../../components/shared/button/Button";
-import toast from "react-hot-toast";
 import useAxiosPublic from "../../../../hooks/useAxiosPublic";
+import Swal from "sweetalert2";
 
 
 const UpdateProduct = () => {
     const { data } = useLoaderData()
-    console.log(data._id);
     const axiosPublic = useAxiosPublic()
-
     const {
         register,
         handleSubmit,
         formState: { errors },
     } = useForm();
+
+    const productId = data._id
+    if (!productId) {
+        console.error("undefine")
+        return
+    }
 
     const onSubmit = async (data) => {
         const updateProductData = {
@@ -29,15 +33,20 @@ const UpdateProduct = () => {
         try {
 
             const res = await axiosPublic.put(
-              `/allProducts/update-product/${data?._id}`,updateProductData      
+                `/allProducts/update-product/${productId}`, updateProductData
             );
             if (res.data.status === true) {
-              toast.success("Your job has been updated successfully");
+                    Swal.fire({
+                        title: "Success!",
+                        text: "Product Update Successfully.",
+                        icon: "success"
+                    });
+                
             }
             console.log(res.data);
-          } catch (err) {
+        } catch (err) {
             console.log(err.message);
-          }
+        }
     }
     return (
         <div className="w-full lg:w-3/4 mx-auto bg-blue-500 bg-opacity-20 flex items-center relative overflow-hidden shadow-xl rounded-lg">
@@ -209,7 +218,7 @@ const UpdateProduct = () => {
                 </div>
                 {/* add job button  */}
                 <div className="text-center mt-8">
-                    <Button btnName="update job" classForButton="px-2 w-1/3" />
+                    <Button btnName="update product" classForButton="px-2 w-1/3" />
                 </div>
             </form>
         </div>
