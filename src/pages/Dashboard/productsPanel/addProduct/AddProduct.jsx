@@ -210,9 +210,7 @@ const AddProduct = () => {
                     </div>
                 </div>
                 {/* add job button  */}
-                <div className="text-center mt-8">
-                    <Button btnName="add job" classForButton="px-2 w-1/3" />
-                </div>
+                    <Button btnName="add job" classForButton="px-2 w-1/3" classForDiv="text-center mt-8" />
             </form>
         </div>
     );

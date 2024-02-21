@@ -164,9 +164,7 @@ const AddDoctor = () => {
           </div>
         </div>
         {/* Add Doctor Button */}
-        <div className="text-center mt-8">
-        <Button btnName="add doctor" classForButton="px-2 w-1/3"/>
-        </div>
+        <Button btnName="add doctor" classForButton="px-2 w-1/3" classForDiv="text-center mt-8"/>
       </form>
     </div>
   );

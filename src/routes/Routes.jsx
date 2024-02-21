@@ -36,6 +36,8 @@ import TakeAppointment from "../pages/takeAppointment/TakeAppointment";
 import UpdateProduct from "../pages/Dashboard/productsPanel/updateProduct/UpdateProduct";
 import ManageUsers from "../pages/Dashboard/manageUsers/ManageUsers";
 import AllUsers from "../pages/Dashboard/manageUsers/AllUsers";
+import ApplyJob from "../pages/career/applyJob/ApplyJob";
+import ErrorPage from "../pages/errorPage/ErrorPage";
 
 
 export const router = createBrowserRouter([
@@ -43,6 +45,7 @@ export const router = createBrowserRouter([
   {
     path: "/",
     element: <MainLayout />,
+    errorElement: <ErrorPage />,
     children: [
       {
         path: "/",
@@ -106,6 +109,11 @@ export const router = createBrowserRouter([
         element: <JobDetails />,
         loader: ({ params }) =>
           fetch(`http://localhost:5000/jobs/single/${params.id}`),
+      },
+      {
+        path:"career/job-details/apply-job/:id",
+        element:<ApplyJob/>,
+        loader: ({params}) => fetch(`http://localhost:5000/jobs/single/${params.id}?title_Id=${true}`)
       },
       { path: "contact-us", element: <ContactUs /> },
     ],

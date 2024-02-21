@@ -15,6 +15,7 @@ import useProductCart from "../../../hooks/useProductCart";
 import Drawer from "../../drawer/Drawer";
 import useUser from "../../../hooks/useUser";
 import { StateManager } from "../../../Porviders/StateProvider";
+import SearchBar from "./searchBar/SearchBar";
 
 const menuItems = [
   { id: 1, icon: <GoHome />, item: "Home", link: "/" },
@@ -31,12 +32,12 @@ const menuItems = [
 ];
 
 const Navbar = () => {
-  const { user, logOut } = useAuth();
+  const { user } = useAuth();
   const [productCart, ,] = useProductCart();
 
   let [openMenu, setOpenMenu] = useState(false);
   // const [showModal, setShowModal] = useState(false);
-  const {showModal,setShowModal} = useContext(StateManager);
+  const {setShowModal} = useContext(StateManager);
 
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
   const userData = useUser();
@@ -112,20 +113,7 @@ const Navbar = () => {
       >
         {/* search bar */}
 
-        <div className="relative">
-          <input
-            type="text"
-            name="searchProducts"
-            id="searchProducts"
-            placeholder="Here search your product "
-            className="w-64 md:w-96 border-2 p-1 pl-4 pr-8 rounded-full  border-blue-500"
-          />
-          <div className="absolute right-2  top-2">
-            <div>
-              <IoSearchOutline size={24} />
-            </div>
-          </div>
-        </div>
+        <SearchBar/>
 
         {/* menu icon */}
         <div className="flex items-center gap-2 text-text-color-blue">
@@ -147,20 +135,7 @@ const Navbar = () => {
 
           {/* search bar */}
 
-          <div className="relative">
-            <input
-              type="text"
-              name="searchProducts"
-              id="searchProducts"
-              placeholder="Here search your product "
-              className="w-64 md:w-96 border-2 p-1 pl-5 pr-8  rounded-full  "
-            />
-            <div className="absolute right-2  top-2">
-              <div>
-                <IoSearchOutline size={24} />
-              </div>
-            </div>
-          </div>
+          <SearchBar/>
 
           {/* cart , login and profile division  */}
 
