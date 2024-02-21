@@ -1,12 +1,15 @@
 .swiper-slide {
   text-align: center;
   font-size: 18px;
-  /* background: #fff; */
+  background: transparent !important;
 
   /* Center slide text vertically */
   display: flex;
   justify-content: left;
   align-items: center;
+}
+.swiper-slide-active, .swiper-slide-next{
+  background: transparent !important;
 }
 
 .swiper-slide img {
@@ -25,4 +28,3 @@
 .swiper-pagination{
   display:  none;
 }
-
