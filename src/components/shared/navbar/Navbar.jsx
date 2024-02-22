@@ -31,7 +31,7 @@ const menuItems = [
 ];
 
 const Navbar = () => {
-  const { user, logOut } = useAuth();
+  const { user } = useAuth();
   const [productCart, ,] = useProductCart();
 
   let [openMenu, setOpenMenu] = useState(false);
@@ -41,7 +41,6 @@ const Navbar = () => {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
   const userData = useUser();
   const isAdmin = userData?.role === "admin" ? true : false;  
-  console.log(isAdmin);
 
   const openDrawer = () => {
     setIsDrawerOpen(true);

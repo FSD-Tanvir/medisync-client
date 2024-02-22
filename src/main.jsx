@@ -13,8 +13,8 @@ import AuthProvider from "./Porviders/AuthProvider.jsx";
 import io from "socket.io-client";
 import StateProvider from "./Porviders/StateProvider.jsx";
 
-const socket = io.connect("http://localhost:5000");
-console.log(socket);
+ io.connect("http://localhost:5000");
+
 const queryClient = new QueryClient();
 
 ReactDOM.createRoot(document.getElementById("root")).render(
