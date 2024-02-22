@@ -5,7 +5,7 @@ const MyCart = () => {
 
     return (
         <div className="p-4">
-            <UserProductCart/>
+            <UserProductCart/>   
         </div>
     );
 };

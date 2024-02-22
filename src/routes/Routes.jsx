@@ -20,7 +20,6 @@ import AllArticles from "../pages/Dashboard/allArticles/AllArticles";
 import UpdateJob from "../pages/dashboard/jobPanel/allJobs/UpdateJob";
 import axios from "axios";
 import UpdateDoctor from "../pages/Dashboard/doctors/UpdateDoctor";
-import ProductDetails from "../pages/productDetails/productDetails";
 import AdminProfile from "../pages/Dashboard/AdminProfile/AdminProfile";
 import UserProfile from "../pages/Dashboard/UserProfile/UserProfile";
 import MyCart from "../pages/Dashboard/MyCart/MyCart";
@@ -36,6 +35,8 @@ import TakeAppointment from "../pages/takeAppointment/TakeAppointment";
 import UpdateProduct from "../pages/Dashboard/productsPanel/updateProduct/UpdateProduct";
 import ManageUsers from "../pages/Dashboard/manageUsers/ManageUsers";
 import AllUsers from "../pages/Dashboard/manageUsers/AllUsers";
+import CheckOut from "../pages/checkOut/CheckOut";
+import ProductDetails from "../pages/productDetails/ProductDetails";
 
 
 export const router = createBrowserRouter([
@@ -70,7 +71,7 @@ export const router = createBrowserRouter([
         path: "/product-details/:id",
         element: <ProductDetails />,
         loader: ({ params }) =>
-          fetch(`https://medisync-server.vercel.app/allProducts/${params.id}`),
+          fetch(`http://localhost:5000/allProducts/${params.id}`),
 
       },
       {
@@ -93,7 +94,7 @@ export const router = createBrowserRouter([
         path: "/doctors/appointment/:id",
         element: (
           <PrivateRoute>
-            <TakeAppointment/>
+            <TakeAppointment />
           </PrivateRoute>
         ),
       },
@@ -105,9 +106,16 @@ export const router = createBrowserRouter([
         path: "career/job-details/:id",
         element: <JobDetails />,
         loader: ({ params }) =>
-          fetch(`https://medisync-server.vercel.app/jobs/single/${params.id}`),
+          fetch(`http://localhost:5000/jobs/single/${params.id}`),
       },
-      { path: "contact-us", element: <ContactUs /> },
+      {
+        path: "contact-us",
+        element: <ContactUs />
+      },
+      {
+        path: "checkout",
+        element:<CheckOut></CheckOut>
+      },
     ],
   },
   // Dashboard Layout
@@ -132,7 +140,7 @@ export const router = createBrowserRouter([
         element: <UpdateProduct></UpdateProduct>,
         loader: async ({ params }) => {
           return await axios.get(
-            `https://medisync-server.vercel.app/allProducts/${params.id}`
+            `http://localhost:5000/allProducts/${params.id}`
           )
 
         },
@@ -149,7 +157,7 @@ export const router = createBrowserRouter([
         path: "doctors-panel/update-doctor/:id",
         element: <UpdateDoctor />,
         loader: async ({ params }) => {
-          return await axios.get(`https://medisync-server.vercel.app/doctors/${params.id}`);
+          return await axios.get(`http://localhost:5000/doctors/${params.id}`);
         },
       },
       {
@@ -185,7 +193,7 @@ export const router = createBrowserRouter([
         element: <UpdateJob />,
         loader: async ({ params }) => {
           return await axios.get(
-            `https://medisync-server.vercel.app/jobs/single/${params.id}`
+            `http://localhost:5000/jobs/single/${params.id}`
           );
         },
       },
@@ -205,7 +213,7 @@ export const router = createBrowserRouter([
         path: "doctors/update-doctor/:id",
         element: <UpdateDoctor />,
         loader: async ({ params }) => {
-          return await axios.get(`https://medisync-server.vercel.app/doctors/${params.id}`);
+          return await axios.get(`http://localhost:5000/doctors/${params.id}`);
         },
       },
       {

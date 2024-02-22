@@ -12,7 +12,7 @@ const Drawer = ({ isOpen, onClose }) => {
           <button onClick={onClose}>Back to Home</button>
         </div>
         {/* Drawer content goes here */}
-        <UserProductCart />
+        <UserProductCart onClose={onClose} />
       </div>
     </div>
   );
