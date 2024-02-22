@@ -1,9 +1,10 @@
+import UserProductCart from "../../components/userProductCart/UserProductCart";
 
 
 const CheckOut = () => {
     return (
         <div>
-            hi
+            <UserProductCart></UserProductCart>
         </div>
     );
 };
