@@ -7,7 +7,6 @@ import { useContext, useEffect, useState } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { AuthContext } from "../../../Porviders/AuthProvider";
-import { updateProfile } from "@firebase/auth";
 import Swal from "sweetalert2";
 import { VscLoading } from "react-icons/vsc";
 import useAxiosPublic from "../../../hooks/useAxiosPublic";
@@ -55,7 +54,7 @@ const Register = ({ setShowRegister }) => {
       email: email,
       photoURL: data?.display_url,
     };
-    console.log(userInfo);
+
     createUser(email, password)
       .then(async (res) => {
         updateUserProfile(name,imgUrl)

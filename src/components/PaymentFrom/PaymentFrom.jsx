@@ -5,7 +5,6 @@ import useProductCart from "../../hooks/useProductCart";
 import axios from "axios";
 
 
-
 const PaymentFrom = ({ subTotal }) => {
     const [productCart] = useProductCart();
     const { user } = useAuth()
@@ -26,7 +25,8 @@ const PaymentFrom = ({ subTotal }) => {
         }
         try {
             const result = await axios.post("http://localhost:5000/allOrders/order",orderData);
-            console.log(result);
+            // console.log(result.data);
+            window.location.replace(result?.data?.url)
         } catch (err) {
             console.error(err);
         }
