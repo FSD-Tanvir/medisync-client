@@ -16,31 +16,36 @@ import AllAdvices from "../pages/Dashboard/Advices/AllAdvices";
 import JobPanel from "../pages/Dashboard/jobPanel/JobPanel";
 import AddJob from "../pages/Dashboard/jobPanel/addJob/AddJob";
 import AllJobs from "../pages/Dashboard/jobPanel/allJobs/AllJobs";
-
 import AllArticles from "../pages/Dashboard/allArticles/AllArticles";
-
 import UpdateJob from "../pages/dashboard/jobPanel/allJobs/UpdateJob";
 import axios from "axios";
 import UpdateDoctor from "../pages/Dashboard/doctors/UpdateDoctor";
-
 import ProductDetails from "../pages/productDetails/productDetails";
-
-import AdminProfile from "../pages/Dashboard/AdminProfile/AdminProfile";
-import UserProfile from "../pages/Dashboard/UserProfile/UserProfile";
 import MyCart from "../pages/Dashboard/MyCart/MyCart";
 import MyReviews from "../pages/Dashboard/MyReviews/MyReviews";
 import MyDoctors from "../pages/Dashboard/MyDoctors/MyDoctors";
 import AdvicePanel from "../pages/Dashboard/Advices/advicePanel";
 import DoctorsPanel from "../pages/Dashboard/doctors/doctorsPanel";
 import ArticlesPanel from "../pages/Dashboard/allArticles/articlesPanel";
+import ProductsPanel from "../pages/Dashboard/productsPanel/ProductsPanel";
 import Overview from "../pages/Dashboard/overview/Overview";
 import PrivateRoute from "./PrivateRoute";
+import TakeAppointment from "../pages/takeAppointment/TakeAppointment";
+import UpdateProduct from "../pages/Dashboard/productsPanel/updateProduct/UpdateProduct";
+import ManageUsers from "../pages/Dashboard/manageUsers/ManageUsers";
+import AllUsers from "../pages/Dashboard/manageUsers/AllUsers";
+import ApplyJob from "../pages/career/applyJob/ApplyJob";
+import ErrorPage from "../pages/errorPage/ErrorPage";
+import AdminOverview from "../pages/Dashboard/adminOverview/AdminOverview";
+import Profiles from "../pages/Dashboard/profiles/Profiles";
+
 
 export const router = createBrowserRouter([
   // Main Layout
   {
     path: "/",
     element: <MainLayout />,
+    errorElement: <ErrorPage />,
     children: [
       {
         path: "/",
@@ -84,9 +89,13 @@ export const router = createBrowserRouter([
       },
       {
         path: "/doctors",
+        element: <Doctors />,
+      },
+      {
+        path: "/doctors/appointment/:id",
         element: (
           <PrivateRoute>
-            <Doctors />
+            <TakeAppointment/>
           </PrivateRoute>
         ),
       },
@@ -100,28 +109,55 @@ export const router = createBrowserRouter([
         loader: ({ params }) =>
           fetch(`http://localhost:5000/jobs/single/${params.id}`),
       },
+      {
+        path:"career/job-details/apply-job/:id",
+        element:<ApplyJob/>,
+        loader: ({params}) => fetch(`http://localhost:5000/jobs/single/${params.id}?title_Id=${true}`)
+      },
       { path: "contact-us", element: <ContactUs /> },
     ],
   },
   // Dashboard Layout
   {
     path: "/dashboard",
-    element: <Dashboard></Dashboard>,
+    element: (
+      <PrivateRoute>
+        <Dashboard></Dashboard>
+      </PrivateRoute>
+    ),
     children: [
       {
         path: "adminProfile",
-        element: <AdminProfile></AdminProfile>,
+        element: <Profiles></Profiles>,
       },
       {
-        path: "overview",
+        path: "products-panel",
+        element: <ProductsPanel></ProductsPanel>,
+      },
+      {
+        path: "products-panel/update-product/:id",
+        element: <UpdateProduct></UpdateProduct>,
+        loader: async ({ params }) => {
+          return await axios.get(
+            `http://localhost:5000/allProducts/${params.id}`
+          )
+
+        },
+      },
+      {
+        path: "overview-user",
         element: <Overview />,
+      },
+      {
+        path: "overview-admin",
+        element: <AdminOverview/>
       },
       {
         path: "doctors-panel",
         element: <DoctorsPanel></DoctorsPanel>,
       },
       {
-        path: "doctors/update-doctor/:id",
+        path: "doctors-panel/update-doctor/:id",
         element: <UpdateDoctor />,
         loader: async ({ params }) => {
           return await axios.get(`http://localhost:5000/doctors/${params.id}`);
@@ -134,6 +170,14 @@ export const router = createBrowserRouter([
       {
         path: "advice-panel",
         element: <AdvicePanel></AdvicePanel>,
+      },
+      {
+        path: "manage-users",
+        element: <ManageUsers></ManageUsers>
+      },
+      {
+        path: "all-users",
+        element: <AllUsers></AllUsers>
       },
       {
         path: "job-panel",
@@ -162,7 +206,6 @@ export const router = createBrowserRouter([
       },
       {
         path: "advices/allAdvices",
-
         element: <AllAdvices></AllAdvices>,
       },
       {
@@ -170,8 +213,15 @@ export const router = createBrowserRouter([
         element: <AllArticles />,
       },
       {
+        path: "doctors/update-doctor/:id",
+        element: <UpdateDoctor />,
+        loader: async ({ params }) => {
+          return await axios.get(`http://localhost:5000/doctors/${params.id}`);
+        },
+      },
+      {
         path: "myProfile",
-        element: <UserProfile></UserProfile>,
+        element: <Profiles></Profiles>,
       },
       {
         path: "myCart",

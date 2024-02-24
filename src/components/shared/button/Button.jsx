@@ -1,4 +1,5 @@
-const Button = ({ btnName, classForButton, classForDiv, onClick }) => {
+const Button = ({ btnName, classForButton, classForDiv, btnType,isDisabled }) => {
+  // console.log(btnType);
   return (
     <div className={classForDiv}>
       <button

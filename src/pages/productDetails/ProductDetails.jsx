@@ -5,12 +5,21 @@ import useAuth from "../../hooks/useAuth";
 import axios from "axios";
 import Swal from "sweetalert2";
 import useProductCart from "../../hooks/useProductCart";
+import useStateManager from "../../hooks/useStateManager";
 
 const ProductDetails = () => {
+<<<<<<< HEAD
   const productDetails = useLoaderData();
   const [quantity, setQuantity] = useState(1);
   const { user } = useAuth();
   const [, , refetch] = useProductCart();
+=======
+    const productDetails = useLoaderData()
+    const {setShowModal} = useStateManager()
+    const [quantity, setQuantity] = useState(1);
+    const { user } = useAuth()
+    const [, , refetch] = useProductCart()
+>>>>>>> cdfaaf6889515a28fe1811ba22c8a2500e779154
 
   const handleIncrement = () => {
     setQuantity((prevQuantity) => prevQuantity + 1);
@@ -20,6 +29,7 @@ const ProductDetails = () => {
     setQuantity((prevQuantity) => Math.max(1, prevQuantity - 1));
   };
 
+<<<<<<< HEAD
   const totalAmount = productDetails.price * quantity;
 
   // add to product in productCart
@@ -64,6 +74,55 @@ const ProductDetails = () => {
           timer: 1500,
         });
       }
+=======
+    const totalAmount = productDetails?.price * quantity;
+
+    // add to product in productCart
+    const handelAddToCart = async (productDetails) => {
+        if(!user){
+           return setShowModal(true)
+        }
+        if (user && user?.email) {
+            const cartItem = {
+                productItemId:productDetails._id,
+                quantity:quantity,
+                name:productDetails.name,
+                weight:productDetails.weight,
+                image:productDetails.image,
+                price:productDetails.price,
+                totalPrice:totalAmount.toFixed(2),
+                company:productDetails.company,
+                email:user.email,              
+            }
+            // console.log(cartItem)
+            try {
+                const allProductCart = await axios.post('http://localhost:5000/productCart', cartItem);
+                console.log(allProductCart);
+                refetch()
+                // Handle success
+                Swal.fire({
+                    position: 'center',
+                    icon: 'success',
+                    title: `${productDetails.name} Added Successfully.`,
+                    showConfirmButton: false,
+                    timer: 1500
+                });
+        
+            } catch (error) {
+                // Handle errors
+                console.log(error.response.data.message);
+                const errorMessage = error.response.data.message;
+                Swal.fire({
+                    position: 'center',
+                    icon: 'warning',
+                    title: `${errorMessage}`,
+                    showConfirmButton: false,
+                    timer: 1500
+                });
+            }
+    
+        }
+>>>>>>> cdfaaf6889515a28fe1811ba22c8a2500e779154
     }
   };
   return (

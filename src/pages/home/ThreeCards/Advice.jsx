@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
+import useAdvices from "../../../hooks/useAdvices";
 
 
 const Advice = () => {
-    const [advices, setAdvices] = useState([])
+    const [advices, , ] = useAdvices();
     const [selectedDisease, setSelectedDisease] = useState('');
-    const [disease, setDisease] = useState([])
-
+    const [disease, setDisease] = useState([]);
     // Function to handle the change in the dropdown
     const handleDiseaseChange = (e) => {
         // Update the state with the selected disease
@@ -15,12 +15,6 @@ const Advice = () => {
         const [filteredDisease] = advices.filter(disease => disease.title === selectedDisease);
         setDisease(filteredDisease);
     }, [selectedDisease, advices])
-
-    useEffect(() => {
-        fetch("/advice.json")
-            .then(res => res.json())
-            .then(data => setAdvices(data))
-    }, [])
     return (
         <div className="py-5 lg:py-7 bg-[#FFF7F4]">
             <div className="p-12">
@@ -31,7 +25,7 @@ const Advice = () => {
                             value={selectedDisease}
                             defaultValue="রোগ নির্বাচন করুন"
                             name="disease" id="diseaseSelect" className="w-full py-2 text-center px-7">
-                            <option  selected>রোগ নির্বাচন করুন</option>
+                            <option selected>রোগ নির্বাচন করুন</option>
                             <option value="জ্বর">জ্বর</option>
                             <option value="সর্দি-কাশি">সর্দি-কাশি</option>
                             <option value="মাথা ঘামা">মাথা ঘামা</option>
@@ -50,7 +44,7 @@ const Advice = () => {
                         <div className=" h-[400px] mb-10">
                             <img src={disease?.image} className="h-full w-full object-cover" alt="" />
                         </div>
-                        <h1 className="font-semibold mb-3 text-xl">{disease?.title}</h1>
+                        <h1 className="font-semibold mb-3 text-xl">{disease.title}</h1>
                         <p>{disease?.description}</p>
                         <p className="font-semibold mt-4">{disease?.tips_title_1}</p>
                         <p className="font-semibold mt-3">{disease?.tips_title_2}</p>

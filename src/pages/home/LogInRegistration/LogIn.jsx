@@ -23,10 +23,11 @@ import "./swiperCustomStyles.css"
 // import required modules
 import { Autoplay, Pagination, Navigation, Scrollbar } from "swiper/modules";
 import Button from "../../../components/shared/button/Button";
+import { StateManager } from "../../../Porviders/StateProvider";
 
-const LogIn = ({ setShowRegister, setShowModal }) => {
+const LogIn = ({ setShowRegister }) => {
   const { logIn, loading, setLoading } = useContext(AuthContext);
-
+  const {showModal,setShowModal} = useContext(StateManager);
   const handleLogIn = (e) => {
     e.preventDefault();
     setLoading(true);
@@ -196,7 +197,7 @@ const LogIn = ({ setShowRegister, setShowModal }) => {
           </div>
         </form>
         {/* social login */}
-        <SocialLogin setShowModal={setShowModal}></SocialLogin>
+        <SocialLogin></SocialLogin>
       </div>
     </div>
   );

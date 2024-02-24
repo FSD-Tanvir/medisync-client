@@ -21,7 +21,6 @@ const AddArticle = () => {
                     text: "Article Added Successfully.",
                     icon: "success"
                 });
-                // reset()
             }
         })
     };
@@ -29,13 +28,13 @@ const AddArticle = () => {
 
     return (
         <div>
-            <div className="w-80 md:w-96 lg:w-[800px] mx-auto bg-white flex items-center relative overflow-hidden shadow-xl">
+            <div className="w-full lg:w-[90%] mx-auto bg-white flex items-center relative overflow-hidden shadow-xl rounded-lg">
                 {/* register form  */}
-                <form onSubmit={handleSubmit(onSubmit)} className="p-8 w-full">
-                    <h1 className="backdrop-blur-sm text-2xl lg:text-4xl whitespace-nowrap text-center mb-8  capitalize w-full">
+                <form onSubmit={handleSubmit(onSubmit)} className="p-4 lg:p-8 w-full">
+                    <h1 className="backdrop-blur-sm text-2xl lg:text-4xl whitespace-nowrap w-min mb-8 border-b-4 border-b-blue-500 capitalize">
                         Add An Article
                     </h1>
-                    <div className="space-y-5">
+                    <div className="space-y-5 grid gap-5 grid-cols-1 md:grid-cols-2 justify-center items-baseline">
                         {/* disease title  */}
                         <div className="space-y-5 drop-shadow-md">
                             <label htmlFor="title" className="block">

@@ -51,16 +51,16 @@ const UpdateJob = () => {
   };
 
   return (
-    <div className="w-80 md:w-96 lg:w-[800px] mx-auto bg-white flex items-center relative overflow-hidden shadow-xl">
+    <div className="w-full lg:w-[90%] mx-auto bg-white flex items-center relative overflow-hidden shadow-xl rounded-lg">
       {/* register form  */}
       <form onSubmit={handleSubmit(onSubmit)} className={`p-8 w-full`}>
         <h1 className="backdrop-blur-sm text-2xl lg:text-4xl whitespace-nowrap w-min mb-8 border-b-4 border-b-blue-500 capitalize">
           Update job
         </h1>
-        <div className="space-y-5">
+        <div className="space-y-5 grid gap-5 grid-cols-1 md:grid-cols-2 justify-center items-baseline">
           {/* job title  */}
           <div className="space-y-5 drop-shadow-md">
-            <label htmlFor="job_title" className="block text-text-color-blue">
+            <label htmlFor="job_title" className="block text-blue-600 border-l-2 border-blue-400 font-semibold pl-2 w-min whitespace-nowrap">
               Job Title
             </label>
             <input
@@ -80,7 +80,7 @@ const UpdateJob = () => {
           </div>
           {/* job type  */}
           <div className="space-y-5 drop-shadow-md">
-            <label htmlFor="job_type" className="block text-text-color-blue">
+            <label htmlFor="job_type" className="block text-blue-600 border-l-2 border-blue-400 font-semibold pl-2 w-min whitespace-nowrap">
               Job Type
             </label>
             <input
@@ -100,7 +100,7 @@ const UpdateJob = () => {
           </div>
           {/* job department  */}
           <div className="space-y-5 drop-shadow-md">
-            <label htmlFor="job_department" className="block text-text-color-blue">
+            <label htmlFor="job_department" className="block text-blue-600 border-l-2 border-blue-400 font-semibold pl-2 w-min whitespace-nowrap">
               Job Department
             </label>
             <input
@@ -120,7 +120,7 @@ const UpdateJob = () => {
           </div>
           {/* job vacancy  */}
           <div className="space-y-5 drop-shadow-md">
-            <label htmlFor="job_vacancy" className="block text-text-color-blue">
+            <label htmlFor="job_vacancy" className="block text-blue-600 border-l-2 border-blue-400 font-semibold pl-2 w-min whitespace-nowrap">
               Job vacancy
             </label>
             <input
@@ -145,7 +145,7 @@ const UpdateJob = () => {
           <div className="space-y-5 drop-shadow-md">
             <label
               htmlFor="compensation_and_benefits"
-              className="block text-text-color-blue"
+              className="block text-blue-600 border-l-2 border-blue-400 font-semibold pl-2 w-min whitespace-nowrap"
             >
               Job Compensation and Benefits
             </label>
@@ -166,7 +166,7 @@ const UpdateJob = () => {
           </div>
           {/* job salary  */}
           <div className="space-y-5 drop-shadow-md">
-            <label htmlFor="job_salary" className="block text-text-color-blue">
+            <label htmlFor="job_salary" className="block text-blue-600 border-l-2 border-blue-400 font-semibold pl-2 w-min whitespace-nowrap">
               Job Salary
             </label>
             <input
@@ -186,7 +186,7 @@ const UpdateJob = () => {
           </div>
           {/* job context  */}
           <div className="space-y-5 drop-shadow-md">
-            <label htmlFor="job_context" className="block text-text-color-blue">
+            <label htmlFor="job_context" className="block text-blue-600 border-l-2 border-blue-400 font-semibold pl-2 w-min whitespace-nowrap">
               Job Context
             </label>
             <input
@@ -208,7 +208,7 @@ const UpdateJob = () => {
           <div className="space-y-5 drop-shadow-md">
             <label
               htmlFor="job_responsibilities"
-              className="block text-text-color-blue"
+              className="block text-blue-600 border-l-2 border-blue-400 font-semibold pl-2 w-min whitespace-nowrap"
             >
               Job Responsibilities
             </label>
@@ -231,7 +231,7 @@ const UpdateJob = () => {
           <div className="space-y-5 drop-shadow-md">
             <label
               htmlFor="educational_requirements"
-              className="block text-text-color-blue"
+              className="block text-blue-600 border-l-2 border-blue-400 font-semibold pl-2 w-min whitespace-nowrap"
             >
               Educational Requirements
             </label>
@@ -254,7 +254,7 @@ const UpdateJob = () => {
           <div className="space-y-5 drop-shadow-md">
             <label
               htmlFor="experience_requirements"
-              className="block text-text-color-blue"
+              className="block text-blue-600 border-l-2 border-blue-400 font-semibold pl-2 w-min whitespace-nowrap"
             >
               Experience Requirements
             </label>
@@ -277,7 +277,7 @@ const UpdateJob = () => {
           <div className="space-y-5 drop-shadow-md">
             <label
               htmlFor="additional_requirements"
-              className="block text-text-color-blue"
+              className="block text-blue-600 border-l-2 border-blue-400 font-semibold pl-2 w-min whitespace-nowrap"
             >
               Additional Requirements
             </label>
@@ -298,7 +298,7 @@ const UpdateJob = () => {
           </div>
           {/* workplace  */}
           <div className="space-y-5 drop-shadow-md">
-            <label htmlFor="workplace" className="block text-text-color-blue">
+            <label htmlFor="workplace" className="block text-blue-600 border-l-2 border-blue-400 font-semibold pl-2 w-min whitespace-nowrap">
               Workplace
             </label>
             <input
@@ -318,7 +318,7 @@ const UpdateJob = () => {
           </div>
           {/* job Location  */}
           <div className="space-y-5 drop-shadow-md">
-            <label htmlFor="job_location" className="block text-text-color-blue">
+            <label htmlFor="job_location" className="block text-blue-600 border-l-2 border-blue-400 font-semibold pl-2 w-min whitespace-nowrap">
               Job Location
             </label>
             <input
@@ -338,7 +338,7 @@ const UpdateJob = () => {
           </div>
           {/* job address  */}
           <div className="space-y-5 drop-shadow-md">
-            <label htmlFor="address" className="block text-text-color-blue">
+            <label htmlFor="address" className="block text-blue-600 border-l-2 border-blue-400 font-semibold pl-2 w-min whitespace-nowrap">
               Job Address
             </label>
             <input

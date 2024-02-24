@@ -1,19 +1,17 @@
-import { useEffect, useState } from "react";
+/* eslint-disable no-unused-vars */
+import { useState } from "react";
 import DoctorCard from "./DoctorCard";
 import BannerSimple from "../../components/shared/Banners/BannerSimple/BannerSimple";
+import useAllDoctors from "../../hooks/useAllDoctors";
 
 const Doctors = () => {
-  const [doctors, setDoctors] = useState([]);
+  const [doctors, refetch] = useAllDoctors();
   const [selectedSpecialization, setSelectedSpecialization] = useState("All");
   const [currentPage, setCurrentPage] = useState(1);
   const cardsPerPage = 6;
 
-  // doctors data fetch here
-  useEffect(() => {
-    fetch("doctors.json")
-      .then((res) => res.json())
-      .then((data) => setDoctors(data));
-  }, []);
+  // Handle loading state
+  if (!doctors) return <div>Loading...</div>;
 
   // Extract unique specializations for dropdown options
   const uniqueSpecializations = Array.from(
@@ -37,7 +35,7 @@ const Doctors = () => {
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
   return (
-    <div className=" pb-5">
+    <div className="pb-5">
       <div className="relative">
         <div>
           <BannerSimple
@@ -71,7 +69,7 @@ const Doctors = () => {
       </div>
 
       {/* Display Filtered Doctors */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3  gap-5 px-1 ">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 px-1">
         {currentCards.map((doctor) => (
           <DoctorCard key={doctor.id} doctor={doctor}></DoctorCard>
         ))}

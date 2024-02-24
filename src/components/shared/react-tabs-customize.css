@@ -1,0 +1,27 @@
+.react-tabs__tab-list{
+    all: unset;
+    display: flex;
+}
+
+.react-tabs__tab {
+    all: unset;
+    
+}
+
+.react-tabs__tab--selected{
+    all: unset;
+    border-top: 2px solid blue;
+    color: blue;
+}
+/* [aria-selected="true"]{
+    all: unset;
+} */
+/* .react-tabs__tab--selected::before{
+    content: '';
+    width: 90%;
+    height: 2;
+    background-color: blue;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+} */

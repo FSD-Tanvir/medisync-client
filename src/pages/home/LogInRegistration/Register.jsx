@@ -28,10 +28,12 @@ import "./swiperCustomStyles.css";
 import { Autoplay, Pagination, Navigation, Scrollbar } from "swiper/modules";
 import Button from "../../../components/shared/button/Button";
 import { saveImage } from "../../../utils/utils";
+import { StateManager } from "../../../Porviders/StateProvider";
 
-const Register = ({ setShowRegister, setShowModal }) => {
-  const { createUser, setLoading, loading } = useContext(AuthContext);
+const Register = ({ setShowRegister }) => {
+  const { createUser, setLoading, loading, updateUserProfile } = useContext(AuthContext);
   const [whichPhotoSelected, setWhichPhotoSelected] = useState(null);
+  const {showModal,setShowModal} = useContext(StateManager);
   const axiosPublic = useAxiosPublic();
 
   const handleRegister = async (e) => {
@@ -47,7 +49,7 @@ const Register = ({ setShowRegister, setShowModal }) => {
 
     // save image on imgbb and get display_url
     const { data } = await saveImage(image);
-
+    const imgUrl = data?.display_url;
     const userInfo = {
       name: name,
       email: email,
@@ -56,10 +58,7 @@ const Register = ({ setShowRegister, setShowModal }) => {
     console.log(userInfo);
     createUser(email, password)
       .then(async (res) => {
-        updateProfile(res.user, {
-          displayName: name,
-          photoURL: data?.display_url,
-        });
+        updateUserProfile(name,imgUrl)
         const { data } = await axiosPublic.post(
           `/users/create-user/${res?.user?.email}`,
           userInfo
@@ -81,12 +80,13 @@ const Register = ({ setShowRegister, setShowModal }) => {
         }
       })
       .catch((err) => {
+        console.log(err)
         Swal.fire({
           position: "center",
           icon: "error",
           background: "#3b82f6",
           color: "white",
-          text: `${err.message}`,
+          text: `${err}`,
           showConfirmButton: false,
           timer: 2500,
         });
@@ -256,6 +256,7 @@ const Register = ({ setShowRegister, setShowModal }) => {
             ) : (
               <Button
                 btnName="register"
+                btnType={"submit"}
                 classForButton="px-2 w-full rounded-md text-xs sm:text-sm md:text-xs lg:text-sm"
               />
             )}
@@ -271,7 +272,7 @@ const Register = ({ setShowRegister, setShowModal }) => {
             </p>
           </div>
         </form>
-        <SocialLogin setShowModal={setShowModal}></SocialLogin>
+        <SocialLogin></SocialLogin>
       </div>
     </div>
   );

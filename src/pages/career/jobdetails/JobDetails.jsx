@@ -1,10 +1,15 @@
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useNavigate } from "react-router-dom";
 import BannerSimple from "../../../components/shared/Banners/BannerSimple/BannerSimple";
 import Button from "../../../components/shared/button/Button";
 import toast from "react-hot-toast"
 
 const JobDetails = () => {
   const { data: singleJob } = useLoaderData();
+  const navigate = useNavigate()
+
+  const handleApply = (id) =>{
+    navigate(`/career/job-details/apply-job/${id}`)
+  }
 
   return (
     <div className="min-h-[90vh] bg-white rounded-lg px-4 py-3">
@@ -128,7 +133,7 @@ const JobDetails = () => {
             </h4>
           </div>
           <div
-          onClick={()=> toast.success("Your application succeeded")}
+          onClick={()=> handleApply(singleJob?._id)}
           >
             <Button btnName="apply now" classForButton="px-5 text-sm md:text-md lg:text-lg xl:w-fit"/>
           </div>
