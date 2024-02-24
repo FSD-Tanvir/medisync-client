@@ -8,7 +8,6 @@ import axios from "axios";
 
 const PaymentFrom = ({ subTotal }) => {
     const [productCart] = useProductCart();
-
     const { user } = useAuth()
     const {
         register,
@@ -19,11 +18,11 @@ const PaymentFrom = ({ subTotal }) => {
     const onSubmit = async (data) => {
         const orderData = {
             products: productCart,
-            name:user?.displayName,
-            emai:user?.email,
+            user_name:user?.displayName,
+            user_email:user?.email,
             currency:data?.currency,
             location:data?.user_location,
-            subTotal:subTotal
+            subTotal:subTotal,
         }
         try {
             const result = await axios.post("http://localhost:5000/allOrders/order",orderData);
