@@ -2,12 +2,13 @@ import { useForm } from "react-hook-form";
 import Button from "../shared/button/Button";
 import useAuth from "../../hooks/useAuth";
 import useProductCart from "../../hooks/useProductCart";
+import axios from "axios";
 
 
 
 const PaymentFrom = ({ subTotal }) => {
     const [productCart] = useProductCart();
-    // console.log(productCart)
+
     const { user } = useAuth()
     const {
         register,
@@ -24,7 +25,12 @@ const PaymentFrom = ({ subTotal }) => {
             location:data?.user_location,
             subTotal:subTotal
         }
-        console.log(orderData);
+        try {
+            const result = await axios.post("http://localhost:5000/allOrders/order",orderData);
+            console.log(result);
+        } catch (err) {
+            console.error(err);
+        }
     }
 
     return (
