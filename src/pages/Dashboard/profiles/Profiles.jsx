@@ -1,11 +1,9 @@
 import { useState } from "react";
 import useUser from "../../../hooks/useUser";
-import { FaEdit } from "react-icons/fa";
-import UpdateUserProfile from "./UpdateUserProfile";
+import UpdateProfile from "./UpdateProfile";
 
-const UserProfile = () => {
-
-  const userData = useUser();
+const Profiles = () => {
+    const userData = useUser();
   const [isUpdateProfileClicked,setIsUpdateProfileClicked] = useState(false)
 
   return (
@@ -16,7 +14,7 @@ const UserProfile = () => {
       </h2>
       {isUpdateProfileClicked ? 
       <>
-        <UpdateUserProfile setIsUpdateProfileClicked={setIsUpdateProfileClicked}/>
+        <UpdateProfile setIsUpdateProfileClicked={setIsUpdateProfileClicked}/>
       </>
       :
       <div className="w-full  lg:w-3/5 relative py-12 shadow-[-2px_-2px_12px_2px_rgba(0,0,0,0.1),_2px_2px_12px_2px_rgba(0,0,0,0.1)]  px-3 md:p-8 rounded-lg">
@@ -24,7 +22,7 @@ const UserProfile = () => {
           <img
             src={userData?.photoURL}
             alt=""
-            className="object-fill rounded-full"
+            className="rounded-full w-full object-cover object-top"
           />
         </div>
         <div className="flex flex-col justify-center items-center">
@@ -56,4 +54,4 @@ const UserProfile = () => {
   );
 };
 
-export default UserProfile;
+export default Profiles;
