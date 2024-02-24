@@ -3,7 +3,6 @@ import Marquee from "react-fast-marquee";
 import NewsArticlesCard from "./News&ArticlesCard";
 import { Link, useNavigate } from "react-router-dom";
 
-import Categories from "./Categories/Categories";
 import BannerSimple from "../../components/shared/Banners/BannerSimple/BannerSimple";
 import useAxiosPublic from "../../hooks/useAxiosPublic";
 
@@ -11,7 +10,7 @@ const NewsArticles = () => {
   useEffect(() => {
     window.scroll(0, 0);
   }, []);
-  const axiosPublic = useAxiosPublic()
+  const axiosPublic = useAxiosPublic();
   const [articles, setArticlies] = useState();
   const navigate = useNavigate();
   const [currentPage, setCurrentPage] = useState(1);
@@ -30,11 +29,7 @@ const NewsArticles = () => {
       try {
         // Fetch data from an API endpoint (replace with your API URL)
 
-
-
-        const {data:articlesData} = await axiosPublic.get(
-          "/newAndArticles"
-        );
+        const { data: articlesData } = await axiosPublic.get("/newAndArticles");
 
         // Update the state with the fetched data
         setArticlies(articlesData);
@@ -47,6 +42,7 @@ const NewsArticles = () => {
   }, [axiosPublic]);
 
   const handleArticlePage = (id) => {
+    console.log(id);
     navigate(`/articles/${id}`);
   };
 
@@ -74,8 +70,6 @@ const NewsArticles = () => {
           text1="News & Articles"
           pageName="newsAndArticles"
         />
-        {/*Categories*/}
-        <Categories />
 
         {/* marquee */}
         <div className="w-full">

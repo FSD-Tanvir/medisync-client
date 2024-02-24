@@ -13,7 +13,7 @@ import useAuth from "../../../hooks/useAuth";
 
 import useProductCart from "../../../hooks/useProductCart";
 import Drawer from "../../drawer/Drawer";
-import Chatbot from "../chatbot/Chatbot";
+
 import useUser from "../../../hooks/useUser";
 
 const menuItems = [
@@ -39,8 +39,8 @@ const Navbar = () => {
 
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
   const userData = useUser();
-  const isAdmin = userData?.role === "admin" ? true : false;  
-  console.log(isAdmin);
+  const isAdmin = userData?.role === "admin" ? true : false;
+  // console.log(isAdmin);
 
   const openDrawer = () => {
     setIsDrawerOpen(true);
@@ -77,18 +77,21 @@ const Navbar = () => {
               {user?.email ? (
                 <div className="flex gap-2 items-center">
                   <div>
-                    {isAdmin ? <Link to="/dashboard/overview">
-                      <img
-                        className="w-10 h-10 rounded-full"
-                        src={user?.photoURL}
-                      />
-                    </Link>
-                    :<Link to="/dashboard/overview">
-                      <img
-                        className="w-10 h-10 rounded-full"
-                        src={user?.photoURL}
-                      />
-                    </Link>}
+                    {isAdmin ? (
+                      <Link to="/dashboard/overview">
+                        <img
+                          className="w-10 h-10 rounded-full"
+                          src={user?.photoURL}
+                        />
+                      </Link>
+                    ) : (
+                      <Link to="/dashboard/overview">
+                        <img
+                          className="w-10 h-10 rounded-full"
+                          src={user?.photoURL}
+                        />
+                      </Link>
+                    )}
                   </div>
                   <div className="hidden sm:block">
                     <button
@@ -184,18 +187,21 @@ const Navbar = () => {
                 {user?.email ? (
                   <div className="flex gap-2 items-center ml-2">
                     <div>
-                    {isAdmin ? <Link to="/dashboard/overview">
-                      <img
-                        className="w-10 h-10 rounded-full"
-                        src={user?.photoURL}
-                      />
-                    </Link>
-                    :<Link to="/dashboard/overview">
-                      <img
-                        className="w-10 h-10 rounded-full"
-                        src={user?.photoURL}
-                      />
-                    </Link>}
+                      {isAdmin ? (
+                        <Link to="/dashboard/overview">
+                          <img
+                            className="w-10 h-10 rounded-full"
+                            src={user?.photoURL}
+                          />
+                        </Link>
+                      ) : (
+                        <Link to="/dashboard/overview">
+                          <img
+                            className="w-10 h-10 rounded-full"
+                            src={user?.photoURL}
+                          />
+                        </Link>
+                      )}
                     </div>
                     <div>
                       <button
@@ -251,7 +257,6 @@ const Navbar = () => {
         </div>
       </div>
       <Modal showModal={showModal} setShowModal={setShowModal} />
-      <Chatbot />
     </>
   );
 };

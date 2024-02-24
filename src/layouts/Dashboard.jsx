@@ -7,6 +7,7 @@ import { RiLogoutCircleLine } from "react-icons/ri";
 import { ImNewspaper } from "react-icons/im";
 import { FaUserDoctor } from "react-icons/fa6";
 import { BiMessageRoundedDetail } from "react-icons/bi";
+import { RiCustomerService2Fill } from "react-icons/ri";
 import { MdOutlineWork, MdReviews } from "react-icons/md";
 import { CgProfile } from "react-icons/cg";
 import { IoCartOutline } from "react-icons/io5";
@@ -42,7 +43,6 @@ const Dashboard = () => {
         }  duration-300 md:min-h-screen bg-blue-600 text-white mt-0  sm:fixed sm:z-[300] sm:max-h-screen sm:overflow-y-auto custom-scrollbar-dashboard-nav`}
       >
         <div className="sticky top-0 z-[900]">
-          
           <div
             onClick={() => setOpen(!open)}
             className={`hidden sm:flex sm:right-[3px] top-4 cursor-pointer justify-center items-center absolute z-40 `}
@@ -454,6 +454,38 @@ const Dashboard = () => {
                   </NavLink>
                 </li>
 
+                {/* Customer services */}
+                <li>
+                  <NavLink
+                    to="customerCare"
+                    className={({ isActive, isPending }) =>
+                      isActive
+                        ? "font-semibold flex justify-start items-center gap-1 pl-2 bg-white text-blue-500 w-[96%] max-[639.5px]:mx-auto sm:ml-[4%] py-1 max-[639.5px]:rounded-[30px] sm:rounded-l-[30px] relative custom h-[45px] activated"
+                        : isPending
+                        ? ""
+                        : "font-semibold flex justify-start items-center gap-1 pl-2 w-[96%] ml-[4%] py-2 text-[#ffffff] rounded-[30px] h-[45px] initial-style hover:scale-110 transition duration-300 ease-linear"
+                    }
+                  >
+                    {open ? (
+                      <span className="flex justify-center items-center gap-2">
+                        {" "}
+                        <RiCustomerService2Fill
+                          // src={overviewIcon}
+                          className="w-16 sm:w-6 text-[40px] ml-2"
+                          // alt=""
+                        ></RiCustomerService2Fill>
+                        Customer Care
+                      </span>
+                    ) : (
+                      <RiCustomerService2Fill
+                        // src={overviewIcon}
+                        className="w-16 sm:w-6 text-[40px] ml-2 relative z-[90]"
+                        // alt=""
+                      ></RiCustomerService2Fill>
+                    )}
+                  </NavLink>
+                </li>
+
                 {/* <li className="sm:hidden">
                   <NavLink
                     to="/"
@@ -552,7 +584,13 @@ const Dashboard = () => {
         </div>
       </div>
 
-      <div className={`w-[100%] ${open ? "sm:pl-[35%] md:pl-[40%] lg:pl-[20%]":"sm:pl-[10%] lg:pl-[5%]"} mx-auto relative overflow-auto`}>
+      <div
+        className={`w-[100%] ${
+          open
+            ? "sm:pl-[35%] md:pl-[40%] lg:pl-[20%]"
+            : "sm:pl-[10%] lg:pl-[5%]"
+        } mx-auto relative overflow-auto`}
+      >
         <Outlet></Outlet>
       </div>
     </div>
