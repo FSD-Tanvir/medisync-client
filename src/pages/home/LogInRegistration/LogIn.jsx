@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import { useContext, useEffect } from "react";
 
 import { MdEmail } from "react-icons/md";
@@ -24,10 +25,13 @@ import "./swiperCustomStyles.css"
 import { Autoplay, Pagination, Navigation, Scrollbar } from "swiper/modules";
 import Button from "../../../components/shared/button/Button";
 import { StateManager } from "../../../Porviders/StateProvider";
+import useAxiosPublic from "../../../hooks/useAxiosPublic";
 
 const LogIn = ({ setShowRegister }) => {
   const { logIn, loading, setLoading } = useContext(AuthContext);
-  const {showModal,setShowModal} = useContext(StateManager);
+  const { showModal, setShowModal } = useContext(StateManager);
+  const axiosPublic = useAxiosPublic();
+
   const handleLogIn = (e) => {
     e.preventDefault();
     setLoading(true);
@@ -47,6 +51,11 @@ const LogIn = ({ setShowRegister }) => {
           showConfirmButton: false,
           timer: 2500,
         });
+        const user = { email }
+        axiosPublic.post("/jwt",user)
+        .then(res =>{
+          console.log(res.data);
+        })
         form.reset();
         setLoading(false);
         setShowModal(false);
@@ -159,6 +168,7 @@ const LogIn = ({ setShowRegister }) => {
               name="email"
               className="appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none"
               type="email"
+              required
               placeholder="Email"
             />
           </div>
@@ -168,6 +178,7 @@ const LogIn = ({ setShowRegister }) => {
               name="password"
               className="appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none"
               type="password"
+              required
               placeholder="Password"
             />
           </div>
@@ -182,6 +193,7 @@ const LogIn = ({ setShowRegister }) => {
             ) : (
               <Button
                 btnName="Log In"
+                btnType="submit"
                 classForButton="px-2 w-full rounded-md text-xs sm:text-sm md:text-xs lg:text-sm"
               />
             )}
