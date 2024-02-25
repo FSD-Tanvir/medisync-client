@@ -7,34 +7,38 @@ import useAxiosPublic from "../../hooks/useAxiosPublic";
 
 const Career = () => {
   const axiosPublic = useAxiosPublic();
+  const [searchText, setSearchText] = useState("");
   const [jobsData, setJobsData] = useState([]);
   const [displayJobs, setDisplayJobs] = useState([]);
   const [departments, setDepartments] = useState([]);
 
-  console.log(departments);
+  // console.log(departments);
 
   const navigate = useNavigate();
 
   useEffect(() => {
     const departmentsArr = [];
-    // const vacancyArr = []
 
     const fetchData = async () => {
-      const { data } = await axiosPublic.get(`/jobs`);
-      setJobsData(data.data);
-      setDisplayJobs(data.data);
-      data?.data.forEach((job) => {
-        if (departmentsArr.includes(job.department.toLowerCase()) === false) {
-          departmentsArr.push(job.department.toLowerCase());
-          // console.log(testArr);
-        }
-      });
+      try {
+        const { data } = await axiosPublic.get(`/jobs?search=${searchText}`);
+        setJobsData(data.data);
+        setDisplayJobs(data.data);
+        data?.data.forEach((job) => {
+          if (departmentsArr.includes(job.department.toLowerCase()) === false) {
+            departmentsArr.push(job.department.toLowerCase());
+            // console.log(testArr);
+          }
+        });
+      } catch (err) {
+        console.log(err);
+      }
     };
     // calling the fetchData func
     fetchData();
     // set departments
     setDepartments(departmentsArr);
-  }, [axiosPublic]);
+  }, [axiosPublic,searchText]);
 
   const handleDepartment = (department) => {
     if (department !== "all_jobs") {
@@ -63,25 +67,24 @@ const Career = () => {
         pageName="career"
       />
 
-      <div className="flex gap-6 w-11/12 sm:w-4/5 mx-auto p-3 py-6 rounded-lg -mt-[45px] bg-blue-500 drop-shadow-lg ">
+      <div className="flex flex-col sm:flex-row gap-6 w-11/12 sm:w-4/5 mx-auto p-3 py-6 rounded-lg -mt-[45px] bg-blue-500 drop-shadow-lg ">
         <div className="relative">
           <input
-            // onChange={(e) => setSearchText(e.target.value)}
-            // ref={searchFieldRef}
+            onChange={(e) => setSearchText(e.target.value)}
             type="text"
             name="searchProducts"
             id="searchProducts"
             placeholder="Search jobs"
-            className="w-64 md:w-96 border-2 py-2 px-3 rounded-full focus:outline-blue-500"
+            className="w-64 md:w-96 border-2 py-2 pl-10 pr-3 rounded-full focus:outline-blue-500 outline-none"
           />
-          <div className="absolute right-2  top-2">
+          <div className="absolute left-2  top-1/2 -translate-y-1/2">
             <div>
               <IoSearchOutline size={24} />
             </div>
           </div>
         </div>
         <div>
-          <select onChange={(e)=>handleDepartment(e?.target?.value?.replace(/ /g,"_"))} name="job_department" className="rounded-full pl-3 capitalize outline-none py-[10px]">
+          <select onChange={(e)=>handleDepartment(e?.target?.value?.replace(/ /g,"_"))} name="job_department" className="w-[170px] rounded-full pl-3 capitalize outline-none py-[10px]">
             <option value="all_jobs">all jobs</option>
             {
               departments && departments.map((department,idx)=>(

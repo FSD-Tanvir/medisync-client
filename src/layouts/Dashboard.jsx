@@ -59,7 +59,7 @@ const Dashboard = () => {
 
           <div
             onClick={() => setOpen(!open)}
-            className={`hidden sm:flex sm:right-[3px] top-4 cursor-pointer justify-center items-center absolute z-40 `}
+            className={`hidden sm:flex sm:right-[3px] top-4 cursor-pointer justify-center items-center absolute z-[900] `}
           >
             {!open ? (
               <svg
@@ -92,7 +92,7 @@ const Dashboard = () => {
           <div
             onClick={() => setOpen(!open)}
             className={`sm:hidden ${open ? "right-[13px]" : "left-[10px] "
-              }  top-2 cursor-pointer p-1 bg-blue-500 rounded-lg absolute z-40 border border-white/80`}
+              }  top-2 cursor-pointer p-1 bg-blue-500 rounded-lg absolute z-[900] border border-white/80`}
           >
             {!open ? (
               <svg
@@ -123,7 +123,7 @@ const Dashboard = () => {
             )}
           </div>
         </div>
-        <div className="">
+        <div>
           <ul
             className={`h-full text-black w-full ${!open && "max-[639.5px]:-ml-24"
               } mt-20 ${!open && "w-0 sm:w-full h-0 mt-0"
@@ -135,10 +135,11 @@ const Dashboard = () => {
                 {/* admin panel overview route */}
                 <li>
                   <NavLink
-                    to="overview"
+                  onClick={()=>setOpen(false)}
+                    to="overview-admin"
                     className={({ isActive, isPending }) =>
                       isActive
-                        ? "font-semibold flex justify-start items-center gap-1 pl-2 bg-white text-blue-500 w-[96%] max-[639.5px]:mx-auto sm:ml-[4%] py-1 max-[639.5px]:rounded-[30px] sm:rounded-l-[30px] relative custom h-[45px] activated"
+                        ? "font-semibold flex justify-start items-center gap-1 pl-2 bg-white text-blue-500 w-[96.2%] max-[639.5px]:mx-auto sm:ml-[4%] py-1 max-[639.5px]:rounded-[30px] sm:rounded-l-[30px] relative custom h-[45px] activated"
                         : isPending
                           ? ""
                           : "font-semibold flex justify-start items-center gap-1 pl-2 w-[96%] ml-[4%] py-2 text-[#ffffff] rounded-l-[30px] h-[45px] initial-style hover:scale-110 transition duration-300 ease-linear"
@@ -168,10 +169,11 @@ const Dashboard = () => {
                 {/* admin-profile route */}
                 <li>
                   <NavLink
+                  onClick={()=>setOpen(false)}
                     to="adminProfile"
                     className={({ isActive, isPending }) =>
                       isActive
-                        ? "font-semibold flex justify-start items-center gap-1 pl-2 bg-white text-blue-500 w-[96%] max-[639.5px]:mx-auto sm:ml-[4%] py-1 max-[639.5px]:rounded-[30px] sm:rounded-l-[30px] relative custom h-[45px] activated"
+                        ? "font-semibold flex justify-start items-center gap-1 pl-2 bg-white text-blue-500 w-[96.2%] max-[639.5px]:mx-auto sm:ml-[4%] py-1 max-[639.5px]:rounded-[30px] sm:rounded-l-[30px] relative custom h-[45px] activated"
                         : isPending
                           ? ""
                           : "font-semibold flex justify-start items-center gap-1 pl-2 w-[96%] ml-[4%] py-2 text-[#ffffff] rounded-[30px] h-[45px] initial-style hover:scale-110 transition duration-300 ease-linear"
@@ -200,10 +202,11 @@ const Dashboard = () => {
                 {/* production-panel route */}
                 <li>
                   <NavLink
+                  onClick={()=>setOpen(false)}
                     to="products-panel"
                     className={({ isActive, isPending }) =>
                       isActive
-                        ? "font-semibold flex justify-start items-center gap-1 pl-2 bg-white text-blue-500 w-[96%] max-[639.5px]:mx-auto sm:ml-[4%] py-1 max-[639.5px]:rounded-[30px] sm:rounded-l-[30px] relative custom h-[45px] activated"
+                        ? "font-semibold flex justify-start items-center gap-1 pl-2 bg-white text-blue-500 w-[96.2%] max-[639.5px]:mx-auto sm:ml-[4%] py-1 max-[639.5px]:rounded-[30px] sm:rounded-l-[30px] relative custom h-[45px] activated"
                         : isPending
                           ? ""
                           : "font-semibold flex justify-start items-center gap-1 pl-2 w-[96%] ml-[4%] py-2 text-[#ffffff] rounded-[30px] h-[45px] initial-style hover:scale-110 transition duration-300 ease-linear"
@@ -227,10 +230,11 @@ const Dashboard = () => {
                 {/* doctors-panel route */}
                 <li>
                   <NavLink
+                  onClick={()=>setOpen(false)}
                     to="doctors-panel"
                     className={({ isActive, isPending }) =>
                       isActive
-                        ? "font-semibold flex justify-start items-center gap-1 pl-2 bg-white text-blue-500 w-[96%] max-[639.5px]:mx-auto sm:ml-[4%] py-1 max-[639.5px]:rounded-[30px] sm:rounded-l-[30px] relative custom h-[45px] activated"
+                        ? "font-semibold flex justify-start items-center gap-1 pl-2 bg-white text-blue-500 w-[96.2%] max-[639.5px]:mx-auto sm:ml-[4%] py-1 max-[639.5px]:rounded-[30px] sm:rounded-l-[30px] relative custom h-[45px] activated"
                         : isPending
                           ? ""
                           : "font-semibold flex justify-start items-center gap-1 pl-2 w-[96%] ml-[4%] py-2 text-[#ffffff] rounded-[30px] h-[45px] initial-style hover:scale-110 transition duration-300 ease-linear"
@@ -259,10 +263,11 @@ const Dashboard = () => {
                 {/* articles-panel route */}
                 <li>
                   <NavLink
+                  onClick={()=>setOpen(false)}
                     to="articles-panel"
                     className={({ isActive, isPending }) =>
                       isActive
-                        ? "font-semibold flex justify-start items-center gap-1 pl-2 bg-white text-blue-500 w-[96%] max-[639.5px]:mx-auto sm:ml-[4%] py-1 max-[639.5px]:rounded-[30px] sm:rounded-l-[30px] relative custom h-[45px] activated"
+                        ? "font-semibold flex justify-start items-center gap-1 pl-2 bg-white text-blue-500 w-[96.2%] max-[639.5px]:mx-auto sm:ml-[4%] py-1 max-[639.5px]:rounded-[30px] sm:rounded-l-[30px] relative custom h-[45px] activated"
                         : isPending
                           ? ""
                           : "font-semibold flex justify-start items-center gap-1 pl-2 w-[96%] ml-[4%] py-2 text-[#ffffff] rounded-[30px] h-[45px] initial-style hover:scale-110 transition duration-300 ease-linear"
@@ -292,10 +297,11 @@ const Dashboard = () => {
                 {/* advice-pane route */}
                 <li>
                   <NavLink
+                  onClick={()=>setOpen(false)}
                     to="advice-panel"
                     className={({ isActive, isPending }) =>
                       isActive
-                        ? "font-semibold flex justify-start items-center gap-1 pl-2 bg-white text-blue-500 w-[96%] max-[639.5px]:mx-auto sm:ml-[4%] py-1 max-[639.5px]:rounded-[30px] sm:rounded-l-[30px] relative custom h-[45px] activated"
+                        ? "font-semibold flex justify-start items-center gap-1 pl-2 bg-white text-blue-500 w-[96.2%] max-[639.5px]:mx-auto sm:ml-[4%] py-1 max-[639.5px]:rounded-[30px] sm:rounded-l-[30px] relative custom h-[45px] activated"
                         : isPending
                           ? ""
                           : "font-semibold flex justify-start items-center gap-1 pl-2 w-[96%] ml-[4%] py-2 text-[#ffffff] rounded-[30px] h-[45px] initial-style hover:scale-110 transition duration-300 ease-linear"
@@ -324,10 +330,11 @@ const Dashboard = () => {
                 </li>
                 <li>
                   <NavLink
+                  onClick={()=>setOpen(false)}
                     to="manage-users"
                     className={({ isActive, isPending }) =>
                       isActive
-                        ? "font-semibold flex justify-start items-center gap-1 pl-2 bg-white text-blue-500 w-[96%] max-[639.5px]:mx-auto sm:ml-[4%] py-1 max-[639.5px]:rounded-[30px] sm:rounded-l-[30px] relative custom h-[45px] activated"
+                        ? "font-semibold flex justify-start items-center gap-1 pl-2 bg-white text-blue-500 w-[96.2%] max-[639.5px]:mx-auto sm:ml-[4%] py-1 max-[639.5px]:rounded-[30px] sm:rounded-l-[30px] relative custom h-[45px] activated"
                         : isPending
                           ? ""
                           : "font-semibold flex justify-start items-center gap-1 pl-2 w-[96%] ml-[4%] py-2 text-[#ffffff] rounded-[30px] h-[45px] initial-style hover:scale-110 transition duration-300 ease-linear"
@@ -353,10 +360,11 @@ const Dashboard = () => {
                 {/* job-panel route */}
                 <li>
                   <NavLink
+                  onClick={()=>setOpen(false)}
                     to="/Dashboard/job-panel"
                     className={({ isActive, isPending }) =>
                       isActive
-                        ? "font-semibold flex justify-start items-center gap-1 pl-2 bg-white text-blue-500 w-[96%] max-[639.5px]:mx-auto sm:ml-[4%] py-1 max-[639.5px]:rounded-[30px] sm:rounded-l-[30px] relative custom h-[45px] activated"
+                        ? "font-semibold flex justify-start items-center gap-1 pl-2 bg-white text-blue-500 w-[96.2%] max-[639.5px]:mx-auto sm:ml-[4%] py-1 max-[639.5px]:rounded-[30px] sm:rounded-l-[30px] relative custom h-[45px] activated"
                         : isPending
                           ? ""
                           : "font-semibold flex justify-start items-center gap-1 pl-2 w-[96%] ml-[4%] py-2 text-[#ffffff] rounded-[30px] h-[45px] initial-style hover:scale-110 transition duration-300 ease-linear"
@@ -390,10 +398,11 @@ const Dashboard = () => {
                 {/* user-panel-oveview */}
                 <li>
                   <NavLink
-                    to="overview"
+                  onClick={()=>setOpen(false)}
+                    to="overview-user"
                     className={({ isActive, isPending }) =>
                       isActive
-                        ? "font-semibold flex justify-start items-center gap-1 pl-2 bg-white text-blue-500 w-[96%] max-[639.5px]:mx-auto sm:ml-[4%] py-1 max-[639.5px]:rounded-[30px] sm:rounded-l-[30px] relative custom h-[45px] activated"
+                        ? "font-semibold flex justify-start items-center gap-1 pl-2 bg-white text-blue-500 w-[96.2%] max-[639.5px]:mx-auto sm:ml-[4%] py-1 max-[639.5px]:rounded-[30px] sm:rounded-l-[30px] relative custom h-[45px] activated"
                         : isPending
                           ? ""
                           : "font-semibold flex justify-start items-center gap-1 pl-2 w-[96%] ml-[4%] py-2 text-[#ffffff] rounded-[30px] h-[45px] initial-style hover:scale-110 transition duration-300 ease-linear"
@@ -423,10 +432,11 @@ const Dashboard = () => {
                 {/* myProfile route */}
                 <li>
                   <NavLink
+                  onClick={()=>setOpen(false)}
                     to="myProfile"
                     className={({ isActive, isPending }) =>
                       isActive
-                        ? "font-semibold flex justify-start items-center gap-1 pl-2 bg-white text-blue-500 w-[96%] max-[639.5px]:mx-auto sm:ml-[4%] py-1 max-[639.5px]:rounded-[30px] sm:rounded-l-[30px] relative custom h-[45px] activated"
+                        ? "font-semibold flex justify-start items-center gap-1 pl-2 bg-white text-blue-500 w-[96.2%] max-[639.5px]:mx-auto sm:ml-[4%] py-1 max-[639.5px]:rounded-[30px] sm:rounded-l-[30px] relative custom h-[45px] activated"
                         : isPending
                           ? ""
                           : "font-semibold flex justify-start items-center gap-1 pl-2 w-[96%] ml-[4%] py-2 text-[#ffffff] rounded-[30px] h-[45px] initial-style hover:scale-110 transition duration-300 ease-linear"
@@ -456,10 +466,11 @@ const Dashboard = () => {
                 {/* myCart route */}
                 <li>
                   <NavLink
+                  onClick={()=>setOpen(false)}
                     to="myCart"
                     className={({ isActive, isPending }) =>
                       isActive
-                        ? "font-semibold flex justify-start items-center gap-1 pl-2 bg-white text-blue-500 w-[96%] max-[639.5px]:mx-auto sm:ml-[4%] py-1 max-[639.5px]:rounded-[30px] sm:rounded-l-[30px] relative custom h-[45px] activated"
+                        ? "font-semibold flex justify-start items-center gap-1 pl-2 bg-white text-blue-500 w-[96.2%] max-[639.5px]:mx-auto sm:ml-[4%] py-1 max-[639.5px]:rounded-[30px] sm:rounded-l-[30px] relative custom h-[45px] activated"
                         : isPending
                           ? ""
                           : "font-semibold flex justify-start items-center gap-1 pl-2 w-[96%] ml-[4%] py-2 text-[#ffffff] rounded-[30px] h-[45px] initial-style hover:scale-110 transition duration-300 ease-linear"
@@ -489,10 +500,11 @@ const Dashboard = () => {
                 {/* myReview route */}
                 <li>
                   <NavLink
+                  onClick={()=>setOpen(false)}
                     to="myReviews"
                     className={({ isActive, isPending }) =>
                       isActive
-                        ? "font-semibold flex justify-start items-center gap-1 pl-2 bg-white text-blue-500 w-[96%] max-[639.5px]:mx-auto sm:ml-[4%] py-1 max-[639.5px]:rounded-[30px] sm:rounded-l-[30px] relative custom h-[45px] activated"
+                        ? "font-semibold flex justify-start items-center gap-1 pl-2 bg-white text-blue-500 w-[96.2%] max-[639.5px]:mx-auto sm:ml-[4%] py-1 max-[639.5px]:rounded-[30px] sm:rounded-l-[30px] relative custom h-[45px] activated"
                         : isPending
                           ? ""
                           : "font-semibold flex justify-start items-center gap-1 pl-2 w-[96%] ml-[4%] py-2 text-[#ffffff] rounded-[30px] h-[45px] initial-style hover:scale-110 transition duration-300 ease-linear"
@@ -522,10 +534,11 @@ const Dashboard = () => {
                 {/* myDoctor's route */}
                 <li>
                   <NavLink
+                  onClick={()=>setOpen(false)}
                     to="myDoctors"
                     className={({ isActive, isPending }) =>
                       isActive
-                        ? "font-semibold flex justify-start items-center gap-1 pl-2 bg-white text-blue-500 w-[96%] max-[639.5px]:mx-auto sm:ml-[4%] py-1 max-[639.5px]:rounded-[30px] sm:rounded-l-[30px] relative custom h-[45px] activated"
+                        ? "font-semibold flex justify-start items-center gap-1 pl-2 bg-white text-blue-500 w-[96.2%] max-[639.5px]:mx-auto sm:ml-[4%] py-1 max-[639.5px]:rounded-[30px] sm:rounded-l-[30px] relative custom h-[45px] activated"
                         : isPending
                           ? ""
                           : "font-semibold flex justify-start items-center gap-1 pl-2 w-[96%] ml-[4%] py-2 text-[#ffffff] rounded-[30px] h-[45px] initial-style hover:scale-110 transition duration-300 ease-linear"
@@ -564,7 +577,7 @@ const Dashboard = () => {
                     to="/"
                     className={({ isActive, isPending }) =>
                       isActive
-                        ? "font-semibold flex justify-start items-center gap-1 pl-2 bg-white text-blue-500 w-[96%] max-[639.5px]:mx-auto sm:ml-[4%] py-1 max-[639.5px]:rounded-[30px] sm:rounded-l-[30px] relative custom h-[45px] activated"
+                        ? "font-semibold flex justify-start items-center gap-1 pl-2 bg-white text-blue-500 w-[96.2%] max-[639.5px]:mx-auto sm:ml-[4%] py-1 max-[639.5px]:rounded-[30px] sm:rounded-l-[30px] relative custom h-[45px] activated"
                         : isPending
                           ? ""
                           : "font-semibold flex justify-start items-center gap-1 pl-2 w-[96%] ml-[4%] py-2 text-[#ffffff] rounded-[30px] h-[45px] initial-style hover:scale-110 transition duration-300 ease-linear"
@@ -626,7 +639,7 @@ const Dashboard = () => {
       <div
         className={`w-[100%] ${
           open
-            ? "sm:pl-[35%] md:pl-[40%] lg:pl-[20%]"
+            ? "sm:pl-[37%] md:pl-[42%] lg:pl-[20%] xl:pl-[22%] 2xl:pl-[22%]"
             : "sm:pl-[10%] lg:pl-[5%]"
         } mx-auto relative overflow-hidden bg-blue-50 min-h-screen`}
       >
