@@ -1,72 +1,114 @@
-import { createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, GoogleAuthProvider, signInWithPopup,signOut } from "@firebase/auth";
+import {
+  createUserWithEmailAndPassword,
+  onAuthStateChanged,
+  signInWithEmailAndPassword,
+  GoogleAuthProvider,
+  signInWithPopup,
+  signOut,
+} from "@firebase/auth";
 import { createContext, useEffect, useState } from "react";
 // import { auth } from "../Firebase/firebase";
-import { getAuth,updateProfile } from 'firebase/auth'
-import app from '../Firebase/firebase'
-const auth = getAuth(app)
 
-export const AuthContext = createContext(null)
-const googleProvider = new GoogleAuthProvider()
+import { getAuth, updateProfile } from "firebase/auth";
+import app from "../Firebase/firebase";
+const auth = getAuth(app);
+
+export const AuthContext = createContext(null);
+const googleProvider = new GoogleAuthProvider();
 const AuthProvider = ({ children }) => {
-    const [user, setUser] = useState(null)
-    const [loading, setLoading] = useState(true)
+  const [user, setUser] = useState(null);
+  const [loading, setLoading] = useState(false);
 
+  // google login
 
+  const googleLogin = () => {
+    setLoading(true);
+    return signInWithPopup(auth, googleProvider);
+  };
+  // sign in with email
+  const createUser = (email, password) => {
+    setLoading(true);
+    return createUserWithEmailAndPassword(auth, email, password);
+  };
 
-    // google login
+  // login
+  // const logIn = (email, password) => {
+  //   setLoading(true);
+  //   return signInWithEmailAndPassword(auth, email, password);
+  // };
 
-    const googleLogin = () => {
-        setLoading(true)
-        return signInWithPopup(auth, googleProvider)
-    }
-    // sign in with email
-    const createUser = (email, password) => {
-        setLoading(true)
-        return createUserWithEmailAndPassword(auth, email, password)
-    }
+  // // logout
+  // const logOut = () => {
+  //   return signOut(auth);
+  // };
 
-    //   update user profile
-    const updateUserProfile = (name, photo) => {
-        return updateProfile(auth.currentUser, {
-          displayName: name,
-          photoURL: photo,
-        });
-      };
+  // <<<<<<< HEAD
+  //   useEffect(() => {
+  //     const unSub = onAuthStateChanged(auth, (currenUser) => {
+  //       //   console.log(currenUser);
 
-    // login 
-    const logIn = (email, password) => {
-        setLoading(true)
-        return signInWithEmailAndPassword(auth, email, password)
-    }
+  //       setUser(currenUser);
+  //       setLoading(false);
+  //     });
+  //     return () => {
+  //       return unSub();
+  //     };
+  //   }, []);
 
-    // logout 
-    const logOut = () => {
-        setLoading(true)
-        return signOut(auth);
-    }
+  //   const info = {
+  //     user,
+  //     loading,
+  //     setLoading,
+  //     createUser,
+  //     logIn,
+  //     googleLogin,
+  //     logOut,
+  //   };
+  //   return <AuthContext.Provider value={info}>{children}</AuthContext.Provider>;
+  // =======
+  //   update user profile
+  const updateUserProfile = (name, photo) => {
+    return updateProfile(auth.currentUser, {
+      displayName: name,
+      photoURL: photo,
+    });
+  };
 
-    useEffect(() => {
-        const unSub = onAuthStateChanged(auth, currenUser => {
+  // login
+  const logIn = (email, password) => {
+    setLoading(true);
+    return signInWithEmailAndPassword(auth, email, password);
+  };
 
-            
-            console.log(currenUser)
+  // logout
+  const logOut = () => {
+    setLoading(true);
+    return signOut(auth);
+  };
 
-            setUser(currenUser)
-            setLoading(false)
-        })
-        return () => {
-            return unSub()
-        }
-    }, [])
+  useEffect(() => {
+    const unSub = onAuthStateChanged(auth, (currenUser) => {
+      console.log(currenUser);
 
-    const info = {
-        user, loading, setLoading, createUser,updateUserProfile, logIn, googleLogin,logOut
-    }
-    return (
-        <AuthContext.Provider value={info}>
-            {children}
-        </AuthContext.Provider>
-    );
+      setUser(currenUser);
+      setLoading(false);
+    });
+    return () => {
+      return unSub();
+    };
+  }, []);
+
+  const info = {
+    user,
+    loading,
+    setLoading,
+    createUser,
+    updateUserProfile,
+    logIn,
+    googleLogin,
+    logOut,
+  };
+  return <AuthContext.Provider value={info}>{children}</AuthContext.Provider>;
 };
 
 export default AuthProvider;

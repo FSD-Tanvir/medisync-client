@@ -13,6 +13,7 @@ import useAuth from "../../../hooks/useAuth";
 
 import useProductCart from "../../../hooks/useProductCart";
 import Drawer from "../../drawer/Drawer";
+
 import useUser from "../../../hooks/useUser";
 import { StateManager } from "../../../Porviders/StateProvider";
 import SearchBar from "./searchBar/SearchBar";
@@ -41,8 +42,8 @@ const Navbar = () => {
 
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
   const userData = useUser();
-  const isAdmin = userData?.role === "admin" ? true : false;  
-  console.log(isAdmin);
+  const isAdmin = userData?.role === "admin" ? true : false;
+  // console.log(isAdmin);
 
   const openDrawer = () => {
     setIsDrawerOpen(true);
@@ -212,7 +213,7 @@ const Navbar = () => {
       </div>
       {/* showModal={showModal} setShowModal={setShowModal} */}
       <Modal />
-      {/* <Chatbot /> */}
+    
     </>
   );
 };
