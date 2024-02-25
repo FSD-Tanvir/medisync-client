@@ -168,6 +168,7 @@ const LogIn = ({ setShowRegister }) => {
               name="email"
               className="appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none"
               type="email"
+              required
               placeholder="Email"
             />
           </div>
@@ -177,6 +178,7 @@ const LogIn = ({ setShowRegister }) => {
               name="password"
               className="appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none"
               type="password"
+              required
               placeholder="Password"
             />
           </div>
@@ -191,6 +193,7 @@ const LogIn = ({ setShowRegister }) => {
             ) : (
               <Button
                 btnName="Log In"
+                btnType="submit"
                 classForButton="px-2 w-full rounded-md text-xs sm:text-sm md:text-xs lg:text-sm"
               />
             )}
