@@ -79,13 +79,13 @@ const Navbar = () => {
               {user?.email ? (
                 <div className="flex gap-2 items-center">
                   <div>
-                    {isAdmin ? <Link to="/dashboard/overview">
+                    {isAdmin ? <Link to="/dashboard/overview-admin">
                       <img
                         className="w-10 h-10 rounded-full"
                         src={user?.photoURL}
                       />
                     </Link>
-                    :<Link to="/dashboard/overview">
+                    :<Link to="/dashboard/overview-user">
                       <img
                         className="w-10 h-10 rounded-full"
                         src={user?.photoURL}
@@ -152,13 +152,13 @@ const Navbar = () => {
                 {user?.email ? (
                   <div className="flex gap-2 items-center ml-2">
                     <div>
-                    {isAdmin ? <Link to="/dashboard/overview">
+                    {isAdmin ? <Link to="/dashboard/overview-admin">
                       <img
                         className="w-10 h-10 rounded-full"
                         src={user?.photoURL}
                       />
                     </Link>
-                    :<Link to="/dashboard/overview">
+                    :<Link to="/dashboard/overview-user">
                       <img
                         className="w-10 h-10 rounded-full"
                         src={user?.photoURL}

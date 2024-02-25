@@ -1,13 +1,13 @@
-import { useState } from "react";
-import useAuth from "../../../hooks/useAuth";
-import { saveImage } from "../../../utils/utils";
 import { FaEdit, FaTimes } from "react-icons/fa";
 import Button from "../../../components/shared/button/Button";
+import toast from "react-hot-toast";
+import { saveImage } from "../../../utils/utils";
+import { useState } from "react";
 import useAxiosSecure from "../../../hooks/useAxiosSecure";
-import toast from "react-hot-toast"
+import useAuth from "../../../hooks/useAuth";
 
-const UpdateUserProfile = ({ setIsUpdateProfileClicked }) => {
-  const { user, updateUserProfile } = useAuth();
+const UpdateProfile = ({setIsUpdateProfileClicked}) => {
+    const { user, updateUserProfile } = useAuth();
   const axiosSecure = useAxiosSecure()
   const [photoUrl, setPhotoUrl] = useState(undefined);
   const [activeUpdate, setActiveUpdate] = useState(false);
@@ -53,7 +53,7 @@ const UpdateUserProfile = ({ setIsUpdateProfileClicked }) => {
             <div className="flex flex-col items-center">
               <div className="w-[100px] h-[100px] p-1 bg-blue-500 rounded-full mb-4">
                 <img
-                  className="rounded-full w-full h-full object-cover"
+                  className="rounded-full w-full h-full object-cover object-top" 
                   src={photoUrl || user?.photoURL}
                   alt="user image"
                 />
@@ -170,4 +170,4 @@ const UpdateUserProfile = ({ setIsUpdateProfileClicked }) => {
   );
 };
 
-export default UpdateUserProfile;
+export default UpdateProfile;
