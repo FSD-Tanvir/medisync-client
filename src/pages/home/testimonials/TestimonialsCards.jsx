@@ -2,7 +2,7 @@ import { FaQuoteLeft, FaQuoteRight } from "react-icons/fa";
 const TestimonialsCard = ({ testimonialData }) => {
   return (
     <>
-      <div className="w-full  border-blue-500 font-semibold  text-2xl md:text-xl lg:text-2xl gap-1  cursor-pointer shadow-[-2px_-2px_12px_2px_rgba(0,0,0,0.1),_2px_2px_12px_2px_rgba(0,0,0,0.1)] hover:shadow-[-5px_-5px_15px_4px_rgba(0,0,0,0.1),_5px_5px_15px_4px_rgba(0,0,0,0.1)] rounded-md p-8 border-2">
+      <div className="w-full bg-white  border-blue-500 font-semibold  text-2xl md:text-xl lg:text-2xl gap-1  cursor-pointer shadow-[-2px_-2px_12px_2px_rgba(0,0,0,0.1),_2px_2px_12px_2px_rgba(0,0,0,0.1)] hover:shadow-[-5px_-5px_15px_4px_rgba(0,0,0,0.1),_5px_5px_15px_4px_rgba(0,0,0,0.1)] rounded-md p-8 border-2">
         <div>
           <p className="text-sm text-text-color-blue">
             <p>

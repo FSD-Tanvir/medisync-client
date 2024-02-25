@@ -30,9 +30,11 @@ const ArtilicesCard = ({ articlie, handleArticlePage }) => {
             </p>
           </div>
         </div>
-        <div className="w-full flex justify-center items-center absolute bottom-2 right-0 left-0 m-auto">
+        <div
+          onClick={() => handleArticlePage(_id)}
+          className="w-full flex justify-center items-center absolute bottom-2 right-0 left-0 m-auto"
+        >
           <Button
-            onClick={() => handleArticlePage(_id)}
             btnName="Read More"
             classForButton="px-2 text-xs sm:text-sm md:text-xs lg:text-sm xl:text-xs lg:w-full xl:w-fit"
           />

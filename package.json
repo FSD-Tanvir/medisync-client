@@ -16,11 +16,8 @@
     "aos": "^2.3.4",
     "axios": "^1.6.5",
     "firebase": "^10.8.0",
-<<<<<<< HEAD
     "moment": "^2.30.1",
-=======
     "lottie-react": "^2.4.0",
->>>>>>> cdfaaf6889515a28fe1811ba22c8a2500e779154
     "react": "^18.2.0",
     "react-calendar": "^4.8.0",
     "react-dom": "^18.2.0",
