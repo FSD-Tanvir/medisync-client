@@ -8,37 +8,27 @@ import {
   Legend,
   ResponsiveContainer,
 } from "recharts";
+import { BsGraphUpArrow, BsGraphDownArrow } from "react-icons/bs";
 import { useEffect } from "react";
-import { BsGraphDownArrow, BsGraphUpArrow } from "react-icons/bs";
-
-
-const AppointmentChart = ({setFilterTextAppointment,appointmentStatisticsData, setWhichChart}) => {
-
-  // setting chart name 
+const UsersAnalytics = ({ setFilterTextUser, userStatisticsData,setWhichChart }) => {
+  // destructuring user Statistics Data 
+  const { userStatistics,increase, decrease, percentageIncrease, percentageDecrease } = userStatisticsData || {};
+  // setting chart name  
   useEffect(()=>{
-    setWhichChart("AppointmentAnalytics")
+    setWhichChart("UserAnalytics")
   },[setWhichChart])
 
-  // destructuring appointment Statistics Data
-  const {increase,
-    decrease,
-    percentageIncrease,
-    percentageDecrease,
-    appointmentStatistics} = appointmentStatisticsData || {}
-
-    const handleSorting = (e) =>{
-      setWhichChart("AppointmentAnalytics")
-      setFilterTextAppointment(e?.target?.value?.toLowerCase().replace(" ", "_"))
-    }
+  const handleSorting = (e) =>{
+    setWhichChart("UserAnalytics")
+    setFilterTextUser(e?.target?.value?.toLowerCase().replace(" ", "_"))
+  }
 
   return (
-    <>
-      {/* appointments */}
-      <div className="border rounded-lg  p-4 shadow-lg">
+    <div className="border rounded-lg  p-4 shadow-lg">
       
         <div className="flex justify-between">
           {/* title  */}
-          <h3 className="text-lg font-semibold">Appointment Statistics ({appointmentStatistics && appointmentStatistics[appointmentStatistics?.length-1]?.totalAppointments})</h3>
+          <h3 className="text-lg font-semibold">Users Statistics ({userStatistics &&userStatistics[userStatistics?.length-1]?.totalUsers})</h3>
           {/* filtering section  */}
           <select
             defaultValue="week"
@@ -55,13 +45,13 @@ const AppointmentChart = ({setFilterTextAppointment,appointmentStatisticsData, s
           </select>
         </div>
         <ResponsiveContainer width={"100%"} height="70%">
-          <LineChart data={appointmentStatistics}>
+          <LineChart data={userStatistics}>
             <CartesianGrid strokeDasharray="3 3" />
-            <XAxis dataKey="totalAppointments" />
+            <XAxis dataKey="totalUsers" />
             <YAxis/>
             <Tooltip />
             <Legend/>
-            <Line type="Function" dataKey="totalAppointments" stroke="#8884d8" />
+            <Line type="Function" dataKey="totalUsers" stroke="#8884d8" />
           </LineChart>
         </ResponsiveContainer>
         <div className="flex gap-5 items-center">
@@ -78,8 +68,7 @@ const AppointmentChart = ({setFilterTextAppointment,appointmentStatisticsData, s
           </span>
         </div>
     </div>
-    </>
   );
 };
 
-export default AppointmentChart;
+export default UsersAnalytics;

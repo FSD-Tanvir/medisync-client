@@ -3,14 +3,59 @@ import useAxiosPublic from "../../hooks/useAxiosPublic";
 import { useEffect, useState } from "react";
 import Calendar from "react-calendar"; // Import the React calendar component
 import "react-calendar/dist/Calendar.css"; // Import the calendar styles
+import TakeAppointmentModal from "./TakeAppointmentModal";
+import useUser from "../../hooks/useUser";
+import useAxiosSecure from "../../hooks/useAxiosSecure";
+import toast from "react-hot-toast";
 
 const TakeAppointment = () => {
   const [doctor, setDoctor] = useState();
   const [selectedDate, setSelectedDate] = useState(null);
   const [selectedTimeSlot, setSelectedTimeSlot] = useState(null);
+  const [extraInfoOfUser, setExtraInfoOfUser] = useState(Number);
+  const [bookedDates, setBookedDates] = useState([]);
+  const [bookedDoctorIds, setBookedDoctorIds] = useState([]);
+  const [isModal, setIsModal] = useState(false);
+  const userData = useUser();
   const { id } = useParams();
   const axiosPublic = useAxiosPublic();
+  const axiosSecure = useAxiosSecure();
 
+  // console.log(userData)
+
+  // go to top when navigated
+  useEffect(() => {
+    window.scroll(0, 0);
+  }, []);
+
+  // set all appointment dates to setBookedDates if they are have booked any appointment
+  //  and set all doctors id to setBookedDoctorIds if their any id 
+  useEffect(() => {
+    setBookedDates(
+      userData?.appointments.map((appointment) => new Date(appointment?.date))
+    );
+    setBookedDoctorIds(
+      userData?.appointments.map((appointment) => appointment?.doctorId)
+    );
+  }, [userData?.appointments]);
+
+  // check if already booked
+
+  const handleCheckBookedDate = ({ date }) => {
+    const today = new Date();
+    today.setHours(0,0,0,0) // here  I have set today's time to midnight
+    // const isEqual = bookedDoctorIds?.some(bookedDoctorId => bookedDoctorId === id )
+    // console.log(isEqual);
+    const isDoctorAppointed = bookedDates?.some((bookedDate,idx) =>(
+      bookedDoctorIds[idx] === id && 
+      bookedDate.getDate() === date.getDate() &&
+          bookedDate.getMonth() === date.getMonth() &&
+          bookedDate.getFullYear() === date.getFullYear()
+    ))
+    return date < today || isDoctorAppointed
+  };
+
+  // fetching doctor data
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -23,9 +68,12 @@ const TakeAppointment = () => {
     fetchData();
   }, [id, axiosPublic]);
 
+  // show modal if date & time slot are selected
   useEffect(() => {
-    window.scroll(0, 0);
-  }, []);
+    if (selectedDate && selectedTimeSlot) {
+      setIsModal(true);
+    }
+  }, [selectedDate, selectedTimeSlot]);
 
   // Function to generate time slots from 7 pm to 10 pm with 15-minute intervals
   const generateTimeSlots = () => {
@@ -57,10 +105,42 @@ const TakeAppointment = () => {
   };
 
   // Function to handle form submission
-  const handleSubmit = (event) => {
-    event.preventDefault();
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
     // Here you can perform any actions like submitting the form data to a backend server
     // with the selected date and time slot
+
+    // created appointment info object
+    const appointmentInfo = {
+      date: selectedDate,
+      timeSlot: selectedTimeSlot,
+      mobileNumber: +extraInfoOfUser,
+      doctorId: id,
+    };
+    try {
+      const { data } = await axiosSecure.post(
+        `/doctorAppointments/save-appointment/${userData?._id}`,
+        appointmentInfo
+      );
+      if (data?.status === true) {
+        setIsModal(false);
+        setSelectedDate(null);
+        setSelectedTimeSlot(null);
+        toast.success("Your application succeeded");
+        // const gottenDate = new Date(data?.appointment?.date)
+        // console.log(gottenDate)
+      }
+      console.log(data);
+    } catch (err) {
+      if (
+        err?.response?.data?.message ===
+        "You have already booked this slot and date"
+      ) {
+        toast.error("You have already booked this slot and date");
+      }
+      console.log(err);
+    }
   };
 
   return (
@@ -71,7 +151,11 @@ const TakeAppointment = () => {
 
       {/* Calendar component for selecting date */}
       <div className="text-center  flex justify-center pb-10">
-        <Calendar onChange={handleDateChange} value={selectedDate} />
+        <Calendar
+          onChange={handleDateChange}
+          value={selectedDate}
+          tileDisabled={handleCheckBookedDate}
+        />
       </div>
 
       {/* Time slot selection */}
@@ -89,12 +173,19 @@ const TakeAppointment = () => {
           </button>
         ))}
       </div>
+      {/* modal showing here  */}
+      {isModal && (
+        <TakeAppointmentModal
+          setExtraInfoOfUser={setExtraInfoOfUser}
+          setIsModal={setIsModal}
+        />
+      )}
 
       {/* Form submission */}
       <form onSubmit={handleSubmit} className="text-center">
         <button
           type="submit"
-          className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+          className="bg-blue-500 hover:bg-blue-700 disabled:opacity-25 disabled:hover:bg-blue-500 text-white font-bold py-2 px-4 rounded"
           disabled={!selectedDate || !selectedTimeSlot} // Disable button if date or time slot is not selected
         >
           Book Appointment
