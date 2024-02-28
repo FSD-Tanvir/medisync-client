@@ -47,8 +47,9 @@ const ProductDetails = () => {
                 email: user.email,
             }
             try {
-                await axios.post('http://localhost:5000/productCart', cartItem);
-                refetch()
+               const result = await axios.post('http://localhost:5000/productCart', cartItem);
+                console.log(result);
+               refetch()
                 // Handle success
                 Swal.fire({
                     position: 'center',

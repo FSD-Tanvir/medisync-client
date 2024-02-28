@@ -37,6 +37,7 @@ import ManageUsers from "../pages/Dashboard/manageUsers/ManageUsers";
 import AllUsers from "../pages/Dashboard/manageUsers/AllUsers";
 import CheckOut from "../pages/checkOut/CheckOut";
 import ProductDetails from "../pages/productDetails/ProductDetails";
+import PaymentSuccess from "../pages/paymentSuccess/paymentSuccess";
 
 
 export const router = createBrowserRouter([
@@ -57,6 +58,11 @@ export const router = createBrowserRouter([
         path: "/all-products/:cat",
         element: <ByProducts></ByProducts>,
       },
+      {
+        path: "/payment/success/tranId",
+        element: <PaymentSuccess></PaymentSuccess>,
+      },
+
 
       {
         path: "/aboutUs",
