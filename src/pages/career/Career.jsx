@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { IoSearchOutline } from "react-icons/io5";
+import { IoIosRefresh } from "react-icons/io";
 import BannerSimple from "../../components/shared/Banners/BannerSimple/BannerSimple";
 
 import useAxiosPublic from "../../hooks/useAxiosPublic";
@@ -95,56 +96,6 @@ const Career = () => {
         </div>
       </div>
 
-      {/* department cards  */}
-
-      {/* <div className="flex gap-6 w-11/12 sm:w-4/5 mx-auto p-3 pt-0 rounded-lg -mt-[30px] bg-primary-color-bg drop-shadow-lg "> */}
-      {/* department cards*/}
-      {/* <Swiper
-          slidesPerView={"auto"}
-          spaceBetween={-40}
-          centeredSlides={false}
-          grabCursor={true}
-          keyboard={{
-            enabled: true,
-          }}
-          scrollbar={true}
-          modules={[Keyboard, Scrollbar]}
-          className=""
-        > */}
-      {/* this is for all jobs  */}
-      {/* <SwiperSlide style={{ backgroundColor: "transparent" }}>
-            <div
-              onClick={() => handleDepartment("all_jobs")}
-              className="relative flex justify-center items-center bg-primary-bg-color rounded-lg shadow-lg border h-[40px] sm:h-[60px] w-3/4 mr-[0px]  cursor-pointer my-8"
-            >
-              <h3 className="flex justify-center items-center sm:text-xl text-white font-bold select-none">
-                All Jobs
-                <span className="flex justify-center absolute z-[100_!important] -top-3 -right-3 bg-primary-bg-color items-center ml-2 border w-8 h-8 rounded-full">
-                  {jobsData?.length}
-                </span>
-              </h3>
-            </div>
-          </SwiperSlide> */}
-      {/* rest of departments card here  */}
-      {/* {departments?.map((department, idx) => (
-            <SwiperSlide
-              style={{ backgroundColor: "transparent" }}
-              onClick={() => handleDepartment(department)}
-              key={idx}
-            >
-              <div className="relative flex justify-center items-center bg-primary-bg-color rounded-lg shadow-lg border h-[40px] sm:h-[60px] w-3/4 cursor-pointer my-8 ">
-                <h3 className="flex justify-center items-center sm:text-xl text-white font-bold">
-                  {department.replace(/_/g, " ")}
-                  <span className="flex justify-center absolute -top-3 -right-3 bg-primary-bg-color items-center ml-2 border w-8 h-8 rounded-full">
-                {jobsData[idx].vacancy}
-              </span>
-                </h3>
-              </div>
-            </SwiperSlide>
-          ))} */}
-      {/* </Swiper> */}
-      {/* </div> */}
-
       {/* all jobs */}
       <div className="mt-14 px-3">
         {/* heading  */}
@@ -152,7 +103,7 @@ const Career = () => {
           All Jobs
         </h2>
         {/* jobs  */}
-        <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 mt-6">
+        {displayJobs.length >0 ? <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 mt-6">
           {displayJobs?.map((job) => (
             <div
               onClick={() => handleJobClick(job._id)}
@@ -171,6 +122,21 @@ const Career = () => {
             </div>
           ))}
         </div>
+        :<div className="flex justify-center mt-6"><div className="flex flex-col gap-0 justify-center items-center min-h-[60vh]">
+            <div className="w-[45%] sm:w-[25%] lg:w-[20%] xl:w-[16%] mx-auto border-none rounded-lg">
+                <img src="https://i.ibb.co/pwdt62g/9214814.jpg" className="opacity-90 rounded-lg" alt="Jobs not found image"/>
+            </div>
+            <div className="text-center mb-6 px-3 mt-2">
+                <p className="text-4xl font-bold text-gray-800">oOps<span className="text-red-600">!!!</span></p>
+                <p className="text-4xl font-bold text-gray-800">Jobs Not Found 😢</p>
+            </div>
+            <div className="flex gap-3 items-center">
+            {/* <Link to="/">
+            <Button btnName="go home" classForButton="px-3"/>
+            </Link> */}
+            <IoIosRefresh onClick={() => window.location.reload()} size={24} className="cursor-pointer"/>
+            </div>
+        </div></div>}
       </div>
     </div>
   );
