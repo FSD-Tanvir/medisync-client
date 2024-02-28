@@ -16,9 +16,9 @@ const AdminOverview = () => {
       {/* another charts cards */}
       <Charts/>
       <div className="grid gap-5 grid-cols-1 sm:grid-cols-2 my-6">
-      {/* satisfied users */}
+      {/* Recent Appointments */}
         <div className="border rounded-lg h-[20vh] p-4 shadow-lg">
-          <h3 className="text-lg font-semibold">Satisfied Users</h3>
+          <h3 className="text-lg font-semibold">Recent Appointments</h3>
         </div>
       {/* Orders Timeline */}
         <div className="border rounded-lg h-[20vh] p-4 shadow-lg">
