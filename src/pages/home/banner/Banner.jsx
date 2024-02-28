@@ -38,7 +38,7 @@ const Banner = () => {
             <SwiperSlide key={bannerImage?.id} style={{
             borderRadius: "10px",
           }}>
-            <div className=" hidden lg:block ">
+            <div className=" hidden lg:block">
             <img src={bannerImage?.big_banner} className="rounded-lg" alt={`big ${bannerImage?.altText}`} />
           </div>
           <div className="lg:hidden">
