@@ -1,13 +1,14 @@
+import { useState } from "react";
 import Button from "../../components/shared/button/Button";
 
 const TakeAppointmentModal = ({setExtraInfoOfUser, setIsModal}) => {
-
+  const [currency, setCurrency] = useState("BDT");
 
   const handleSubmit = (e) => {
     e.preventDefault();
     const mobile_number = e.target?.mobile_number?.value;
     if(mobile_number){
-      setExtraInfoOfUser(mobile_number)
+      setExtraInfoOfUser({mobile_number,currency})
       setIsModal(false)
     }
     // console.log(mobile_number);
@@ -37,6 +38,19 @@ const TakeAppointmentModal = ({setExtraInfoOfUser, setIsModal}) => {
                 placeholder="Enter Your Mobile Number"
                 className="p-3 block w-full outline-1 border valid:outline-blue-500 rounded-md invalid:outline-red-600"
               />
+            </div>
+            {/* user mobile number  */}
+            <div className="space-y-5 drop-shadow-md w-full">
+              <label
+                htmlFor="currency"
+                className="block text-white border-l-2 border-white font-semibold pl-2"
+              >
+                Select Currency
+              </label>
+              <select onChange={(e)=>setCurrency(e.target?.value)} id="currency" name="currency" defaultValue="BDT" className="outline-none rounded-lg px-3 border">
+                <option value="BDT">BDT</option>
+                <option value="USD">USD</option>
+              </select>
             </div>
           </div>
           {/* next button  */}

@@ -15,18 +15,47 @@ const TakeAppointment = () => {
   const [extraInfoOfUser, setExtraInfoOfUser] = useState(Number);
   const [bookedDates, setBookedDates] = useState([]);
   const [bookedDoctorIds, setBookedDoctorIds] = useState([]);
+  const [startTime, setStartTime] = useState(null)
+  const [endTime, setEndTime] = useState(null)
   const [isModal, setIsModal] = useState(false);
   const userData = useUser();
   const { id } = useParams();
   const axiosPublic = useAxiosPublic();
   const axiosSecure = useAxiosSecure();
 
-  // console.log(userData)
+
+  // console.log(selectedDate)
+  // console.log(selectedTimeSlot)
 
   // go to top when navigated
   useEffect(() => {
     window.scroll(0, 0);
   }, []);
+
+
+  // calculate the start & end time
+  useEffect(()=>{
+    if(selectedDate && selectedTimeSlot){
+  // converting the selectedDate to iso string 
+    const selectedDateIso = selectedDate.toISOString()
+    // split the timeSlot into hours & minutes
+    const [hours,minutes] = selectedTimeSlot.split(":");
+    // creating the new date object for start time 
+    const start = new Date(selectedDateIso);
+    start.setHours(hours,minutes,0,0);
+    // calculating the end time for 30 minutes 
+    const end = new Date(start);
+    end.setMinutes(end.getMinutes() +30);
+
+    setStartTime(start)
+    setEndTime(end)
+    // console.log( "start date time",start)
+    // console.log( "end date time",end)
+    }
+  },[selectedDate,selectedTimeSlot])
+
+console.log(startTime)
+console.log(endTime)
 
   // set all appointment dates to setBookedDates if they are have booked any appointment
   //  and set all doctors id to setBookedDoctorIds if their any id 
@@ -40,12 +69,9 @@ const TakeAppointment = () => {
   }, [userData?.appointments]);
 
   // check if already booked
-
   const handleCheckBookedDate = ({ date }) => {
     const today = new Date();
     today.setHours(0,0,0,0) // here  I have set today's time to midnight
-    // const isEqual = bookedDoctorIds?.some(bookedDoctorId => bookedDoctorId === id )
-    // console.log(isEqual);
     const isDoctorAppointed = bookedDates?.some((bookedDate,idx) =>(
       bookedDoctorIds[idx] === id && 
       bookedDate.getDate() === date.getDate() &&
@@ -68,6 +94,9 @@ const TakeAppointment = () => {
     fetchData();
   }, [id, axiosPublic]);
 
+
+
+
   // show modal if date & time slot are selected
   useEffect(() => {
     if (selectedDate && selectedTimeSlot) {
@@ -75,11 +104,11 @@ const TakeAppointment = () => {
     }
   }, [selectedDate, selectedTimeSlot]);
 
-  // Function to generate time slots from 7 pm to 10 pm with 15-minute intervals
+  // Function to generate time slots from 7 pm to 10 pm with 30 minutes intervals
   const generateTimeSlots = () => {
-    const startTime = 19 * 60; // 7 pm in minutes
-    const endTime = 22 * 60; // 10 pm in minutes
-    const interval = 15; // 15 minutes interval
+    const startTime = 17 * 60; // 05:00 pm in minutes
+    const endTime = 22 * 60; // 10:00 pm in minutes
+    const interval = 30; // 30 minutes interval
     const timeSlots = [];
     for (let time = startTime; time < endTime; time += interval) {
       const hours = Math.floor(time / 60);
@@ -115,22 +144,25 @@ const TakeAppointment = () => {
     const appointmentInfo = {
       date: selectedDate,
       timeSlot: selectedTimeSlot,
-      mobileNumber: +extraInfoOfUser,
+      mobileNumber: +extraInfoOfUser?.mobile_number,
+      userEmail:userData?.email,
+      currency:extraInfoOfUser?.currency,
       doctorId: id,
     };
+    console.log(appointmentInfo)
     try {
       const { data } = await axiosSecure.post(
         `/doctorAppointments/save-appointment/${userData?._id}`,
         appointmentInfo
       );
-      if (data?.status === true) {
-        setIsModal(false);
-        setSelectedDate(null);
-        setSelectedTimeSlot(null);
-        toast.success("Your application succeeded");
-        // const gottenDate = new Date(data?.appointment?.date)
-        // console.log(gottenDate)
-      }
+      // if (data?.status === true) {
+      //   setIsModal(false);
+      //   setSelectedDate(null);
+      //   setSelectedTimeSlot(null);
+      //   toast.success("Your application succeeded");
+      // }
+        window.location.replace(data?.url)
+
       console.log(data);
     } catch (err) {
       if (
