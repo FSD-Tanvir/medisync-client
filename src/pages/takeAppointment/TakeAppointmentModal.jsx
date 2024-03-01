@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Button from "../../components/shared/button/Button";
+import { IoClose } from "react-icons/io5";
 
 const TakeAppointmentModal = ({setExtraInfoOfUser, setIsModal}) => {
   const [currency, setCurrency] = useState("BDT");
@@ -17,10 +18,12 @@ const TakeAppointmentModal = ({setExtraInfoOfUser, setIsModal}) => {
   return (
     <div className="fixed inset-0 z-[100] bg-primary-bg-color/40 flex justify-center items-center">
       <div>
-        <form onSubmit={handleSubmit} className={`p-4 lg:p-8 relative w-full sm:w-auto my-6 mx-auto max-w-3xl shadow-lg border bg-blue-500/35 rounded-lg`}>
-          {/* <h1 className="backdrop-blur-sm text-2xl lg:text-4xl whitespace-nowrap w-min mb-8 border-b-4 border-b-white capitalize">
-            add job
-          </h1> */}
+        <form onSubmit={handleSubmit} className={`p-4 lg:p-8 relative w-full sm:w-auto my-6 mx-auto max-w-3xl shadow-lg  bg-blue-500/40 rounded-lg`}>
+          <button 
+          onClick={()=>setIsModal(false)}
+          className="backdrop-blur-sm absolute right-2 top-1 text-white hover:text-red-500 transition-colors duration-200 ease-linear">
+            <IoClose size={24}/>
+          </button>
           <div className="grid gap-5 grid-cols-1 md:grid-cols-2 justify-center items-baseline mb-3">
             {/* user mobile number  */}
             <div className="space-y-5 drop-shadow-md w-full">
