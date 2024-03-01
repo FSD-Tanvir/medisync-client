@@ -1,5 +1,4 @@
 import { useEffect } from "react";
-import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 
 const SearchModal = ({searchText, searchFieldRef,setSearchText,selectedTab,setSelectedTab,filteredData}) => {
@@ -10,7 +9,9 @@ const SearchModal = ({searchText, searchFieldRef,setSearchText,selectedTab,setSe
     navigate(`/product-details/${id}`)
   }
   const handleDoctor = (id)=>{
-    toast.success("Doctor id:", id)
+    searchFieldRef.current.value = ''
+    setSearchText("")
+    navigate(`doctors/appointment/${id}`)
   }
 
   useEffect(()=>{
