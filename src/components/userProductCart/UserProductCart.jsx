@@ -1,30 +1,22 @@
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { FaTrashAlt } from "react-icons/fa";
 import useProductCart from "../../hooks/useProductCart";
 import Button from "../shared/button/Button";
 import useAxiosSecure from "../../hooks/useAxiosSecure";
-import { useEffect, useState } from "react";
+import { useState } from "react";
+const UserProductCart = ({ onClose }) => {
 
-const UserProductCart = () => {
   const [productCart, isLoading, refetch] = useProductCart();
   const [initialQuantity, setInitialQuantity] = useState(1);
   const [isDisabled, setIsDisabled] = useState(false);
   const axiosSecure = useAxiosSecure();
   const location = useLocation();
-  // console.log(location);
 
-  // useEffect(()=>{
-  // checking for if quantity < 1, then it will be 1
-  //   if(isDisabled){
-  //     setIsDisabled(false)
-  //   }else{
-  //     setIsDisabled(true)
-  //   }
-  // },[isDisabled])
+
 
   const handleDeleteProduct = async (productId) => {
     try {
-      const res = await axiosSecure.delete(`/productCart/${productId}`);
+      await axiosSecure.delete(`/productCart/${productId}`);
       refetch();
     } catch (error) {
       console.error("Error deleting product:", error);
@@ -49,46 +41,41 @@ const UserProductCart = () => {
     // setQuantity(quantity)
     let updatedQuantity;
     let updatedTotalPrice;
-    
-    // if (quantity > initialQuantity) {
-    //   setIsDisabled(false)
-    // }
-      // checking if action are increment or decrement
-      if (action === "increment") {
-        setIsDisabled(false)
-        updatedQuantity = quantity + 1;
+
+    // checking if action are increment or decrement
+    if (action === "increment") {
+      setIsDisabled(false)
+      updatedQuantity = quantity + 1;
+      updatedTotalPrice = price * updatedQuantity;
+    } else {
+      if (quantity === initialQuantity) {
+        updatedQuantity = quantity;
         updatedTotalPrice = price * updatedQuantity;
-      } else {
-        if(quantity === initialQuantity){
-          updatedQuantity = quantity;
-          updatedTotalPrice = price * updatedQuantity;
-          return setIsDisabled(true)
-        }
-        setIsDisabled(false)
-        updatedQuantity = quantity - 1;
-        updatedTotalPrice = price * updatedQuantity;
+        return setIsDisabled(true)
       }
-      const { data } = await axiosSecure.patch(
-        `/productCart/update-product/${id}`,
-        { quantity: updatedQuantity, totalPrice: updatedTotalPrice }
-      );
-      if (data?.updateResult.modifiedCount > 0) {
-        refetch();
-        // console.log(data?.message);
-      }
-      // console.log(data);
-    
+      setIsDisabled(false)
+      updatedQuantity = quantity - 1;
+      updatedTotalPrice = price * updatedQuantity;
+    }
+    const { data } = await axiosSecure.patch(
+      `/productCart/update-product/${id}`,
+      { quantity: updatedQuantity, totalPrice: updatedTotalPrice }
+    );
+    if (data?.updateResult.modifiedCount > 0) {
+      refetch();
+    }
   };
+
+
 
   return (
     <div
-      className={`flex flex-col ${
-        location.pathname === "/dashboard/myCart" &&
+      className={`flex flex-col ${location.pathname === "/checkout" &&
         "md:flex-row sm:justify-between gap-5"
-      }`}
+        }`}
     >
       <div
-        className={`${location.pathname === "/dashboard/myCart" && "md:w-3/4"}`}
+        className={`${location.pathname === "/checkout" && "md:w-3/4"}`}
       >
         {productCart.map((product, index) => (
           <div key={index} className="p-4 mb-4 shadow-md rounded-md">
@@ -152,7 +139,7 @@ const UserProductCart = () => {
             <div className="mt-2">
               <div className="text-gray-700">
                 <p className="font-bold">
-                  Total Price: <span>${product?.totalPrice}</span>
+                  Total Price: <span>${product?.totalPrice.toFixed(2)}</span>
                 </p>
               </div>
             </div>
@@ -164,18 +151,19 @@ const UserProductCart = () => {
       {/* <div className="my-4"></div> */}
       {/* Sub-total and Checkout */}
       <div
-        className={`flex flex-col ${
-          location.pathname === "/dashboard/myCart" && "md:w-1/3"
-        } p-3 shadow-md rounded-md`}
+        className={`flex flex-col ${location.pathname === "/checkout" && "md:w-1/3"
+          } p-3 shadow-md rounded-md`}
       >
         <p className="text-gray-700 mb-2">
           <span className="font-bold">Sub Total:</span> ${subTotal.toFixed(2)}
         </p>
-        <div onClick={() => console.log("Checkout clicked")} className="">
-          <Button
-            btnName="Proceed To Checkout"
-            classForButton="px-4 py-3 w-full rounded-md text-xs sm:text-xs lg:text-sm xl:text-xs"
-          />
+        <div onClick={onClose}>
+          <Link to="checkout">
+            <Button
+              btnName="Proceed To Checkout"
+              classForButton="px-4 py-3 w-full rounded-md text-xs sm:text-xs lg:text-sm xl:text-xs"
+            />
+          </Link>
         </div>
       </div>
     </div>

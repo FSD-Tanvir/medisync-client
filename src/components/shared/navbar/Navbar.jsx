@@ -5,7 +5,7 @@ import { FiFilePlus } from "react-icons/fi";
 import { FaUserDoctor } from "react-icons/fa6";
 import { GrWorkshop } from "react-icons/gr";
 import { TiThMenu } from "react-icons/ti";
-import { IoCartOutline, IoSearchOutline, IoClose } from "react-icons/io5";
+import { IoCartOutline,  IoClose } from "react-icons/io5";
 import { useContext, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import Modal from "../../../pages/home/LogInRegistration/Modal";
@@ -42,8 +42,7 @@ const Navbar = () => {
 
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
   const userData = useUser();
-  const isAdmin = userData?.role === "admin" ? true : false;
-  // console.log(isAdmin);
+  const isAdmin = userData?.role === "admin" ? true : false;  
 
   const openDrawer = () => {
     setIsDrawerOpen(true);

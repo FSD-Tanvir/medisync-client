@@ -7,7 +7,6 @@ import { useContext, useEffect, useState } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { AuthContext } from "../../../Porviders/AuthProvider";
-import { updateProfile } from "@firebase/auth";
 import Swal from "sweetalert2";
 import { VscLoading } from "react-icons/vsc";
 import useAxiosPublic from "../../../hooks/useAxiosPublic";
@@ -33,7 +32,7 @@ import { StateManager } from "../../../Porviders/StateProvider";
 const Register = ({ setShowRegister }) => {
   const { createUser, setLoading, loading, updateUserProfile } = useContext(AuthContext);
   const [whichPhotoSelected, setWhichPhotoSelected] = useState(null);
-  const {showModal,setShowModal} = useContext(StateManager);
+  const { showModal, setShowModal } = useContext(StateManager);
   const axiosPublic = useAxiosPublic();
 
   const handleRegister = async (e) => {
@@ -55,10 +54,10 @@ const Register = ({ setShowRegister }) => {
       email: email,
       photoURL: data?.display_url,
     };
-    console.log(userInfo);
+
     createUser(email, password)
       .then(async (res) => {
-        updateUserProfile(name,imgUrl)
+        updateUserProfile(name, imgUrl)
         const { data } = await axiosPublic.post(
           `/users/create-user/${res?.user?.email}`,
           userInfo
@@ -255,6 +254,7 @@ const Register = ({ setShowRegister }) => {
               </button>
             ) : (
               <Button
+                btnType="submit"
                 btnName="register"
                 btnType={"submit"}
                 classForButton="px-2 w-full rounded-md text-xs sm:text-sm md:text-xs lg:text-sm"

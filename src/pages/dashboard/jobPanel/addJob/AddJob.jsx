@@ -32,9 +32,9 @@ const AddJob = () => {
     try {
       const result = await axiosPublic.post(
         "/jobs/add-job",
-
         jobData
       );
+console.log(result);
       if (result.data?.status === true) {
         toast.success("Your job added successfully");
       }
@@ -364,13 +364,9 @@ const AddJob = () => {
           </div>
         </div>
         {/* add job button  */}
-
-        <Button
-          btnName="add job"
-          classForButton="px-2 w-1/3"
-          btnType="submit"
-          classForDiv="text-center mt-8"
-        />
+        <div className="text-center mt-8">
+          <Button btnType="submit" btnName="add job" classForButton="px-2 w-1/3" />
+        </div>
       </form>
     </div>
   );

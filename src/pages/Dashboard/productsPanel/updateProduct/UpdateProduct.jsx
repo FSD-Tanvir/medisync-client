@@ -1,20 +1,24 @@
 import { useForm } from "react-hook-form";
 import { useLoaderData } from "react-router-dom";
 import Button from "../../../../components/shared/button/Button";
-import toast from "react-hot-toast";
 import useAxiosPublic from "../../../../hooks/useAxiosPublic";
+import Swal from "sweetalert2";
 
 
 const UpdateProduct = () => {
     const { data } = useLoaderData()
-    console.log(data._id);
     const axiosPublic = useAxiosPublic()
-
     const {
         register,
         handleSubmit,
         formState: { errors },
     } = useForm();
+
+    const productId = data._id
+    if (!productId) {
+        console.error("undefine")
+        return
+    }
 
     const onSubmit = async (data) => {
         const updateProductData = {
@@ -29,18 +33,23 @@ const UpdateProduct = () => {
         try {
 
             const res = await axiosPublic.put(
-              `/allProducts/update-product/${data?._id}`,updateProductData      
+                `/allProducts/update-product/${productId}`, updateProductData
             );
             if (res.data.status === true) {
-              toast.success("Your job has been updated successfully");
+                    Swal.fire({
+                        title: "Success!",
+                        text: "Product Update Successfully.",
+                        icon: "success"
+                    });
+                
             }
-            console.log(res.data);
-          } catch (err) {
-            console.log(err.message);
-          }
+            
+        } catch (err) {
+            err.message;
+        }
     }
     return (
-        <div className="w-full lg:w-3/4 mx-auto bg-blue-500 bg-opacity-20 flex items-center relative overflow-hidden shadow-xl rounded-lg">
+        <div className="w-full lg:w-3/4 mx-auto bg-white flex items-center relative overflow-hidden shadow-xl rounded-lg">
             {/* register form  */}
             <form onSubmit={handleSubmit(onSubmit)} className={`p-4 lg:p-8 w-full`}>
                 <h1 className="backdrop-blur-sm text-2xl lg:text-4xl whitespace-nowrap w-min mb-8 border-b-4 border-b-blue-500 capitalize">
@@ -208,7 +217,13 @@ const UpdateProduct = () => {
                     </div>
                 </div>
                 {/* add job button  */}
+<<<<<<< HEAD
+                <div className="text-center mt-8">
+                    <Button btnName="update product" classForButton="px-2 w-1/3" />
+                </div>
+=======
                     <Button btnName="update job" classForButton="px-2 w-1/3" classForDiv="text-center mt-8"/>
+>>>>>>> 71be794efc9eb95d0765ebb99b2de23a943193b5
             </form>
         </div>
     );

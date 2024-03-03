@@ -20,7 +20,7 @@ import AllArticles from "../pages/Dashboard/allArticles/AllArticles";
 import UpdateJob from "../pages/dashboard/jobPanel/allJobs/UpdateJob";
 import axios from "axios";
 import UpdateDoctor from "../pages/Dashboard/doctors/UpdateDoctor";
-import ProductDetails from "../pages/productDetails/productDetails";
+
 import MyCart from "../pages/Dashboard/MyCart/MyCart";
 import MyReviews from "../pages/Dashboard/MyReviews/MyReviews";
 import MyDoctors from "../pages/Dashboard/MyDoctors/MyDoctors";
@@ -34,10 +34,12 @@ import TakeAppointment from "../pages/takeAppointment/TakeAppointment";
 import UpdateProduct from "../pages/Dashboard/productsPanel/updateProduct/UpdateProduct";
 import ManageUsers from "../pages/Dashboard/manageUsers/ManageUsers";
 import AllUsers from "../pages/Dashboard/manageUsers/AllUsers";
-import ApplyJob from "../pages/career/applyJob/ApplyJob";
-import ErrorPage from "../pages/errorPage/ErrorPage";
+import CheckOut from "../pages/checkOut/CheckOut";
+import PaymentSuccess from "../pages/paymentSuccess/paymentSuccess";
 import AdminOverview from "../pages/Dashboard/adminOverview/AdminOverview";
 import Profiles from "../pages/Dashboard/profiles/Profiles";
+import ErrorPage from "../pages/errorPage/ErrorPage";
+import ProductDetails from "../pages/productDetails/ProductDetails";
 
 
 export const router = createBrowserRouter([
@@ -59,6 +61,11 @@ export const router = createBrowserRouter([
         path: "/all-products/:cat",
         element: <ByProducts></ByProducts>,
       },
+      {
+        path: "/payment/success/tranId",
+        element: <PaymentSuccess></PaymentSuccess>,
+      },
+
 
       {
         path: "/aboutUs",
@@ -95,7 +102,7 @@ export const router = createBrowserRouter([
         path: "/doctors/appointment/:id",
         element: (
           <PrivateRoute>
-            <TakeAppointment/>
+            <TakeAppointment />
           </PrivateRoute>
         ),
       },
@@ -110,11 +117,13 @@ export const router = createBrowserRouter([
           fetch(`http://localhost:5000/jobs/single/${params.id}`),
       },
       {
-        path:"career/job-details/apply-job/:id",
-        element:<ApplyJob/>,
-        loader: ({params}) => fetch(`http://localhost:5000/jobs/single/${params.id}?title_Id=${true}`)
+        path: "contact-us",
+        element: <ContactUs />
       },
-      { path: "contact-us", element: <ContactUs /> },
+      {
+        path: "checkout",
+        element:<CheckOut></CheckOut>
+      },
     ],
   },
   // Dashboard Layout
