@@ -256,6 +256,7 @@ const Register = ({ setShowRegister }) => {
               <Button
                 btnType="submit"
                 btnName="register"
+                btnType={"submit"}
                 classForButton="px-2 w-full rounded-md text-xs sm:text-sm md:text-xs lg:text-sm"
               />
             )}

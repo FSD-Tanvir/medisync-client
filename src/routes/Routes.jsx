@@ -20,8 +20,7 @@ import AllArticles from "../pages/Dashboard/allArticles/AllArticles";
 import UpdateJob from "../pages/dashboard/jobPanel/allJobs/UpdateJob";
 import axios from "axios";
 import UpdateDoctor from "../pages/Dashboard/doctors/UpdateDoctor";
-import AdminProfile from "../pages/Dashboard/AdminProfile/AdminProfile";
-import UserProfile from "../pages/Dashboard/UserProfile/UserProfile";
+
 import MyCart from "../pages/Dashboard/MyCart/MyCart";
 import MyReviews from "../pages/Dashboard/MyReviews/MyReviews";
 import MyDoctors from "../pages/Dashboard/MyDoctors/MyDoctors";
@@ -36,8 +35,11 @@ import UpdateProduct from "../pages/Dashboard/productsPanel/updateProduct/Update
 import ManageUsers from "../pages/Dashboard/manageUsers/ManageUsers";
 import AllUsers from "../pages/Dashboard/manageUsers/AllUsers";
 import CheckOut from "../pages/checkOut/CheckOut";
-import ProductDetails from "../pages/productDetails/ProductDetails";
 import PaymentSuccess from "../pages/paymentSuccess/paymentSuccess";
+import AdminOverview from "../pages/Dashboard/adminOverview/AdminOverview";
+import Profiles from "../pages/Dashboard/profiles/Profiles";
+import ErrorPage from "../pages/errorPage/ErrorPage";
+import ProductDetails from "../pages/productDetails/ProductDetails";
 
 
 export const router = createBrowserRouter([
@@ -45,6 +47,7 @@ export const router = createBrowserRouter([
   {
     path: "/",
     element: <MainLayout />,
+    errorElement: <ErrorPage />,
     children: [
       {
         path: "/",
@@ -78,7 +81,6 @@ export const router = createBrowserRouter([
         element: <ProductDetails />,
         loader: ({ params }) =>
           fetch(`http://localhost:5000/allProducts/${params.id}`),
-
       },
       {
         path: "/advice",
@@ -135,7 +137,7 @@ export const router = createBrowserRouter([
     children: [
       {
         path: "adminProfile",
-        element: <AdminProfile></AdminProfile>,
+        element: <Profiles></Profiles>,
       },
       {
         path: "products-panel",
@@ -152,8 +154,12 @@ export const router = createBrowserRouter([
         },
       },
       {
-        path: "overview",
+        path: "overview-user",
         element: <Overview />,
+      },
+      {
+        path: "overview-admin",
+        element: <AdminOverview/>
       },
       {
         path: "doctors-panel",
@@ -224,7 +230,7 @@ export const router = createBrowserRouter([
       },
       {
         path: "myProfile",
-        element: <UserProfile></UserProfile>,
+        element: <Profiles></Profiles>,
       },
       {
         path: "myCart",

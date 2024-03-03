@@ -2,7 +2,6 @@ import { Outlet, useLocation } from "react-router-dom";
 import Navbar from "../components/shared/navbar/Navbar";
 import Footer from "../components/shared/footer/Footer";
 import Advertise from "../pages/home/Advertise/Advertise";
-import Chatbot from "../components/shared/chatbot/Chatbot";
 
 const MainLayout = () => {
   const location = useLocation();
@@ -25,7 +24,6 @@ const MainLayout = () => {
       </div>
 
       <Footer />
-      <Chatbot></Chatbot>
     </div>
   );
 };

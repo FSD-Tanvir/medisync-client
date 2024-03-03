@@ -5,7 +5,7 @@ import { FiFilePlus } from "react-icons/fi";
 import { FaUserDoctor } from "react-icons/fa6";
 import { GrWorkshop } from "react-icons/gr";
 import { TiThMenu } from "react-icons/ti";
-import { IoCartOutline, IoSearchOutline, IoClose } from "react-icons/io5";
+import { IoCartOutline,  IoClose } from "react-icons/io5";
 import { useContext, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import Modal from "../../../pages/home/LogInRegistration/Modal";
@@ -13,8 +13,10 @@ import useAuth from "../../../hooks/useAuth";
 
 import useProductCart from "../../../hooks/useProductCart";
 import Drawer from "../../drawer/Drawer";
+
 import useUser from "../../../hooks/useUser";
 import { StateManager } from "../../../Porviders/StateProvider";
+import SearchBar from "./searchBar/SearchBar";
 
 const menuItems = [
   { id: 1, icon: <GoHome />, item: "Home", link: "/" },
@@ -36,7 +38,7 @@ const Navbar = () => {
 
   let [openMenu, setOpenMenu] = useState(false);
   // const [showModal, setShowModal] = useState(false);
-  const {showModal,setShowModal} = useContext(StateManager);
+  const {setShowModal} = useContext(StateManager);
 
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
   const userData = useUser();
@@ -77,13 +79,13 @@ const Navbar = () => {
               {user?.email ? (
                 <div className="flex gap-2 items-center">
                   <div>
-                    {isAdmin ? <Link to="/dashboard/overview">
+                    {isAdmin ? <Link to="/dashboard/overview-admin">
                       <img
                         className="w-10 h-10 rounded-full"
                         src={user?.photoURL}
                       />
                     </Link>
-                    :<Link to="/dashboard/overview">
+                    :<Link to="/dashboard/overview-user">
                       <img
                         className="w-10 h-10 rounded-full"
                         src={user?.photoURL}
@@ -111,20 +113,7 @@ const Navbar = () => {
       >
         {/* search bar */}
 
-        <div className="relative">
-          <input
-            type="text"
-            name="searchProducts"
-            id="searchProducts"
-            placeholder="Here search your product "
-            className="w-64 md:w-96 border-2 p-1 pl-4 pr-8 rounded-full  border-blue-500"
-          />
-          <div className="absolute right-2  top-2">
-            <div>
-              <IoSearchOutline size={24} />
-            </div>
-          </div>
-        </div>
+        <SearchBar/>
 
         {/* menu icon */}
         <div className="flex items-center gap-2 text-text-color-blue">
@@ -146,20 +135,7 @@ const Navbar = () => {
 
           {/* search bar */}
 
-          <div className="relative">
-            <input
-              type="text"
-              name="searchProducts"
-              id="searchProducts"
-              placeholder="Here search your product "
-              className="w-64 md:w-96 border-2 p-1 pl-5 pr-8  rounded-full  "
-            />
-            <div className="absolute right-2  top-2">
-              <div>
-                <IoSearchOutline size={24} />
-              </div>
-            </div>
-          </div>
+          <SearchBar/>
 
           {/* cart , login and profile division  */}
 
@@ -176,13 +152,13 @@ const Navbar = () => {
                 {user?.email ? (
                   <div className="flex gap-2 items-center ml-2">
                     <div>
-                    {isAdmin ? <Link to="/dashboard/overview">
+                    {isAdmin ? <Link to="/dashboard/overview-admin">
                       <img
                         className="w-10 h-10 rounded-full"
                         src={user?.photoURL}
                       />
                     </Link>
-                    :<Link to="/dashboard/overview">
+                    :<Link to="/dashboard/overview-user">
                       <img
                         className="w-10 h-10 rounded-full"
                         src={user?.photoURL}
@@ -236,7 +212,7 @@ const Navbar = () => {
       </div>
       {/* showModal={showModal} setShowModal={setShowModal} */}
       <Modal />
-      {/* <Chatbot /> */}
+    
     </>
   );
 };

@@ -141,7 +141,7 @@ const ByProducts = () => {
         {category === "dental" && "Dental Care"}
       </h2>
       <div className="flex flex-col lg:flex-row gap-5 ">
-        <div className="bg-blue-100 rounded-lg  h-fit hidden lg:block  lg:w-1/5 shadow-[-10px_-10px_20px_4px_rgba(0,0,0,0.1),_10px_10px_20px_4px_rgba(0,0,0,0.1)]">
+        <div className="bg-navbar-bg-color rounded-lg  h-fit hidden lg:block  lg:w-1/5 shadow-[-10px_-10px_20px_4px_rgba(0,0,0,0.1),_10px_10px_20px_4px_rgba(0,0,0,0.1)]">
           <ul>
             <li
               onClick={() => setCategory("otc")}

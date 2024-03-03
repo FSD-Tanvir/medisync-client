@@ -13,17 +13,20 @@ const SocialLogin = () => {
 
   const handelGoogleLogin = (media) => {
     media()
-      .then(async(result) => {
+      .then(async (result) => {
         // console.log(result)
         const userInfo = {
           name: result.user?.displayName,
           email: result.user?.email,
           photoURL: result.user?.photoURL,
         };
-        console.log(userInfo);
-        const {data} = await axiosPublic.post(`/users/create-user/${result?.user?.email}`, userInfo)
-        console.log(data?.message);
-        if(data?.status === true){
+        // console.log(userInfo);
+        const { data } = await axiosPublic.post(
+          `/users/create-user/${result?.user?.email}`,
+          userInfo
+        );
+        // console.log(data?.message);
+        if (data?.status === true) {
           Swal.fire({
             position: "center",
             icon: "success",
@@ -34,7 +37,7 @@ const SocialLogin = () => {
             timer: 2500,
           });
           setShowModal(false);
-        }else if(data?.message === "You are already registered"){
+        } else if (data?.message === "You are already registered") {
           Swal.fire({
             position: "center",
             icon: "success",
@@ -48,11 +51,11 @@ const SocialLogin = () => {
         }
       })
       .catch((error) => {
-        console.log(error.message)
+        console.log(error.message);
         // if(error === "Firebase: Error (auth/popup-closed-by-user)." || error === "Firebase: Error (auth/cancelled-popup-request)."){
 
         // }
-    });
+      });
   };
   return (
     <div>

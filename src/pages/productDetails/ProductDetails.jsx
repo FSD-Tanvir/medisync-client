@@ -12,12 +12,11 @@ import useStateManager from "../../hooks/useStateManager";
 
 
 const ProductDetails = () => {
-    const productDetails = useLoaderData()
-    const { setShowModal } = useStateManager()
-    const [quantity, setQuantity] = useState(1);
-    const { user } = useAuth()
-    const [, , refetch] = useProductCart()
-    
+  const productDetails = useLoaderData();
+  const { setShowModal } = useStateManager();
+  const [quantity, setQuantity] = useState(1);
+  const { user } = useAuth();
+  const [, , refetch] = useProductCart();
 
     const handleIncrement = () => {
         setQuantity(prevQuantity => prevQuantity + 1);
@@ -31,25 +30,26 @@ const ProductDetails = () => {
 
     // add to product in productCart
     const handelAddToCart = async (productDetails) => {
-        if (!user) {
-            return setShowModal(true)
+        if(!user){
+           return setShowModal(true)
         }
         if (user && user?.email) {
             const cartItem = {
-                productItemId: productDetails._id,
-                quantity: quantity,
-                name: productDetails.name,
-                weight: productDetails.weight,
-                image: productDetails.image,
-                price: productDetails.price,
-                totalPrice: totalAmount.toFixed(2),
-                company: productDetails.company,
-                email: user.email,
+                productItemId:productDetails._id,
+                quantity:quantity,
+                name:productDetails.name,
+                weight:productDetails.weight,
+                image:productDetails.image,
+                price:productDetails.price,
+                totalPrice:totalAmount.toFixed(2),
+                company:productDetails.company,
+                email:user.email,              
             }
+            // console.log(cartItem)
             try {
-               const result = await axios.post('http://localhost:5000/productCart', cartItem);
-                console.log(result);
-               refetch()
+                const allProductCart = await axios.post('http://localhost:5000/productCart', cartItem);
+                console.log(allProductCart);
+                refetch()
                 // Handle success
                 Swal.fire({
                     position: 'center',
@@ -58,9 +58,10 @@ const ProductDetails = () => {
                     showConfirmButton: false,
                     timer: 1500
                 });
-
+        
             } catch (error) {
                 // Handle errors
+                console.log(error.response.data.message);
                 const errorMessage = error.response.data.message;
                 Swal.fire({
                     position: 'center',
@@ -70,7 +71,7 @@ const ProductDetails = () => {
                     timer: 1500
                 });
             }
-
+    
         }
     }
     return (

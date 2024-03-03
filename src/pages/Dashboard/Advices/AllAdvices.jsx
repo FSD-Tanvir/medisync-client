@@ -60,7 +60,7 @@ const AllAdvices = () => {
                   <th className={generalStyle}>Title</th>
                   <th className={generalStyle}>Image</th>
                   <th className={generalStyle}>Action</th>
-                  <th className={generalStyle}>Action</th>
+                  {/* <th className={generalStyle}>Action</th> */}
                   <th className={generalStyle}>Admin</th>
                 </tr>
               </thead>
@@ -91,9 +91,15 @@ const AllAdvices = () => {
                         >
                           <FaEdit size={13} />
                         </button>
+                        <button
+                          onClick={() => handleDelete(advice._id)}
+                          className="ml-2 border hover:border-hover-border-color hover:text-hover-text-color font-semibold py-2 px-2 rounded-md w-min shadow-[-2px_-2px_12px_2px_rgba(0,0,0,0.1),_2px_2px_12px_2px_rgba(0,0,0,0.1)] bg-red-500 text-white hover:bg-[#FFF7F4] transition-colors duration-200 ease-linear"
+                        >
+                          <FaTrashAlt size={13} />
+                        </button>
                       </div>
                     </th>
-                    <th className="">
+                    {/* <th className="">
                       <div className={flexStyle}>
                         <button
                           onClick={() => handleDelete(advice._id)}
@@ -102,9 +108,9 @@ const AllAdvices = () => {
                           <FaTrashAlt size={13} />
                         </button>
                       </div>
-                    </th>
+                    </th> */}
                     <th>
-                      <div className={` w-[150px]`}>Sayedul</div>
+                      <div className={` w-[150px]`}>{advice?.admin}</div>
                     </th>
                   </tr>
                 ))}

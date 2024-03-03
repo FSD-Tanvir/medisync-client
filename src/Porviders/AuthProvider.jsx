@@ -45,24 +45,29 @@ const AuthProvider = ({ children }) => {
         return signOut(auth);
     }
 
-    useEffect(() => {
-        const unSub = onAuthStateChanged(auth, currenUser => {
-            setUser(currenUser)
-            setLoading(false)
-        })
-        return () => {
-            return unSub()
-        }
-    }, [])
+  useEffect(() => {
+    const unSub = onAuthStateChanged(auth, (currenUser) => {
+      console.log(currenUser);
 
-    const info = {
-        user, loading, setLoading, createUser,updateUserProfile, logIn, googleLogin,logOut
-    }
-    return (
-        <AuthContext.Provider value={info}>
-            {children}
-        </AuthContext.Provider>
-    );
+      setUser(currenUser);
+      setLoading(false);
+    });
+    return () => {
+      return unSub();
+    };
+  }, []);
+
+  const info = {
+    user,
+    loading,
+    setLoading,
+    createUser,
+    updateUserProfile,
+    logIn,
+    googleLogin,
+    logOut,
+  };
+  return <AuthContext.Provider value={info}>{children}</AuthContext.Provider>;
 };
 
 export default AuthProvider;
