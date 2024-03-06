@@ -28,7 +28,7 @@ const PaymentFrom = ({ subTotal }) => {
         try {
             const result = await axios.post('http://localhost:5000/allOrders',orderData)
             console.log(result);  // Log the result here
-            // window.location.replace(result?.data?.url)
+            window.location.replace(result?.data?.url)
         } catch (err) {
             console.error(err);
         }

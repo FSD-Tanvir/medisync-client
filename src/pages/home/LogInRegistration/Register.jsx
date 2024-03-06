@@ -32,7 +32,7 @@ import { StateManager } from "../../../Porviders/StateProvider";
 const Register = ({ setShowRegister }) => {
   const { createUser, setLoading, loading, updateUserProfile } = useContext(AuthContext);
   const [whichPhotoSelected, setWhichPhotoSelected] = useState(null);
-  const { showModal, setShowModal } = useContext(StateManager);
+  const { setShowModal } = useContext(StateManager);
   const axiosPublic = useAxiosPublic();
 
   const handleRegister = async (e) => {
@@ -256,7 +256,6 @@ const Register = ({ setShowRegister }) => {
               <Button
                 btnType="submit"
                 btnName="register"
-                btnType={"submit"}
                 classForButton="px-2 w-full rounded-md text-xs sm:text-sm md:text-xs lg:text-sm"
               />
             )}

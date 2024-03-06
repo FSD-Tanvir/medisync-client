@@ -147,8 +147,6 @@ const UserProductCart = ({ onClose }) => {
         ))}
       </div>
 
-      {/* Gap between cards and sub-total/checkout */}
-      {/* <div className="my-4"></div> */}
       {/* Sub-total and Checkout */}
       <div
         className={`flex flex-col ${location.pathname === "/checkout" && "md:w-1/3"
