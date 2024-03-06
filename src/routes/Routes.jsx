@@ -40,6 +40,8 @@ import AdminOverview from "../pages/Dashboard/adminOverview/AdminOverview";
 import Profiles from "../pages/Dashboard/profiles/Profiles";
 import ErrorPage from "../pages/errorPage/ErrorPage";
 import ProductDetails from "../pages/productDetails/ProductDetails";
+import Success from "../pages/takeAppointment/otherPages/Success";
+import ZegoMeeting from "../pages/takeAppointment/otherPages/zegoMeeting/ZegoMeeting";
 
 
 export const router = createBrowserRouter([
@@ -103,6 +105,22 @@ export const router = createBrowserRouter([
         element: (
           <PrivateRoute>
             <TakeAppointment />
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "payment/success/:tranId",
+        element: (
+          <PrivateRoute>
+            <Success />
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "room/id/:roomId",
+        element: (
+          <PrivateRoute>
+            <ZegoMeeting />
           </PrivateRoute>
         ),
       },

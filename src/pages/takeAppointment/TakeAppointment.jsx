@@ -16,7 +16,6 @@ const TakeAppointment = () => {
   const [bookedDates, setBookedDates] = useState([]);
   const [bookedDoctorIds, setBookedDoctorIds] = useState([]);
   const [startTime, setStartTime] = useState(null)
-  const [endTime, setEndTime] = useState(null)
   const [isModal, setIsModal] = useState(false);
   const userData = useUser();
   const { id } = useParams();
@@ -24,8 +23,6 @@ const TakeAppointment = () => {
   const axiosSecure = useAxiosSecure();
 
 
-  // console.log(selectedDate)
-  // console.log(selectedTimeSlot)
 
   // go to top when navigated
   useEffect(() => {
@@ -43,19 +40,11 @@ const TakeAppointment = () => {
     // creating the new date object for start time 
     const start = new Date(selectedDateIso);
     start.setHours(hours,minutes,0,0);
-    // calculating the end time for 30 minutes 
-    const end = new Date(start);
-    end.setMinutes(end.getMinutes() +30);
 
     setStartTime(start)
-    setEndTime(end)
-    // console.log( "start date time",start)
-    // console.log( "end date time",end)
     }
   },[selectedDate,selectedTimeSlot])
 
-console.log(startTime)
-console.log(endTime)
 
   // set all appointment dates to setBookedDates if they are have booked any appointment
   //  and set all doctors id to setBookedDoctorIds if their any id 
@@ -93,9 +82,6 @@ console.log(endTime)
     };
     fetchData();
   }, [id, axiosPublic]);
-
-
-
 
   // show modal if date & time slot are selected
   useEffect(() => {
@@ -152,15 +138,9 @@ console.log(endTime)
     console.log(appointmentInfo)
     try {
       const { data } = await axiosSecure.post(
-        `/doctorAppointments/save-appointment/${userData?._id}`,
+        `/doctorAppointments/save-appointment/${userData?._id}?startTime=${startTime}`,
         appointmentInfo
       );
-      // if (data?.status === true) {
-      //   setIsModal(false);
-      //   setSelectedDate(null);
-      //   setSelectedTimeSlot(null);
-      //   toast.success("Your application succeeded");
-      // }
         window.location.replace(data?.url)
 
       console.log(data);
@@ -176,13 +156,13 @@ console.log(endTime)
   };
 
   return (
-    <div className="py-10 px-5">
+    <div className="py-10 px-5 ">
       <h2 className="text-3xl font-medium text-center pb-10 ">
         Appointment of {doctor?.name}
       </h2>
 
-      {/* Calendar component for selecting date */}
-      <div className="text-center  flex justify-center pb-10">
+      {/* Calendar component for selecting date ---- flex */}
+      <div className="flex text-center  justify-center pb-10">
         <Calendar
           onChange={handleDateChange}
           value={selectedDate}
@@ -190,8 +170,8 @@ console.log(endTime)
         />
       </div>
 
-      {/* Time slot selection */}
-      <div className="flex justify-center pb-10 flex-wrap gap-5">
+      {/* Time slot selection ---- flex */}
+      <div className="flex justify-center pb-10 flex-wrap gap-5 ">
         {/* Displaying generated time slots */}
         {timeSlots.map((timeSlot, index) => (
           <button

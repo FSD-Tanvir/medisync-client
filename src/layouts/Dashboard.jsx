@@ -21,7 +21,6 @@ import { FaUsers } from "react-icons/fa";
 const Dashboard = () => {
   const [open, setOpen] = useState(false);
   const userData = useUser();
-  console.log(userData);
   const isAdmin = userData?.role === "admin" ? true : false;
   // const isAdmin = "true"
   const { logOut } = useAuth();
@@ -62,10 +61,6 @@ const Dashboard = () => {
         }  duration-300 md:min-h-screen bg-blue-600 text-white mt-0  sm:fixed sm:z-[300] sm:min-h-screen sm:max-h-screen sm:overflow-hidden sm:overflow-y-auto custom-scrollbar-dashboard-nav`}
       >
         <div className="sticky top-0 z-[900]">
-          {/* <<<<<<< HEAD
-=======
-
->>>>>>> cdfaaf6889515a28fe1811ba22c8a2500e779154
           <div
             onClick={() => setOpen(!open)}
             className={`hidden sm:flex sm:right-[3px] top-4 cursor-pointer justify-center items-center absolute z-[900] `}
@@ -130,7 +125,7 @@ const Dashboard = () => {
                 <path d="m289.94 256 95-95A24 24 0 0 0 351 127l-95 95-95-95a24 24 0 0 0-34 34l95 95-95 95a24 24 0 1 0 34 34l95-95 95 95a24 24 0 0 0 34-34z"></path>
               </svg>
             )}
-          </div> */}
+          </div>
         </div>
         <div>
           <ul
