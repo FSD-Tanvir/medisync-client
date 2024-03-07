@@ -7,10 +7,9 @@ import { RiLogoutCircleLine } from "react-icons/ri";
 import { ImNewspaper } from "react-icons/im";
 import { FaUserDoctor } from "react-icons/fa6";
 import { BiMessageRoundedDetail } from "react-icons/bi";
-import { RiCustomerService2Fill } from "react-icons/ri";
-import { MdOutlineWork, MdReviews } from "react-icons/md";
+import { MdOutlineWork } from "react-icons/md";
+import { BsCartCheck } from "react-icons/bs";
 import { CgProfile } from "react-icons/cg";
-import { IoCartOutline } from "react-icons/io5";
 import { BsCapsule } from "react-icons/bs";
 import useUser from "../hooks/useUser";
 import "./Dashboard.css";
@@ -388,38 +387,7 @@ const Dashboard = () => {
             ) : (
               // user panel
               <div className="flex justify-center flex-col space-y-3">
-                {/* user-panel-oveview */}
-                <li>
-                  <NavLink
-                    onClick={() => setOpen(false)}
-                    to="overview-user"
-                    className={({ isActive, isPending }) =>
-                      isActive
-                        ? "font-semibold flex justify-start items-center gap-1 pl-2 bg-white text-blue-500 w-[96.2%] max-[639.5px]:mx-auto sm:ml-[4%] py-1 max-[639.5px]:rounded-[30px] sm:rounded-l-[30px] relative custom h-[45px] activated"
-                        : isPending
-                        ? ""
-                        : "font-semibold flex justify-start items-center gap-1 pl-2 w-[96%] ml-[4%] py-2 text-[#ffffff] rounded-[30px] h-[45px] initial-style hover:scale-110 transition duration-300 ease-linear"
-                    }
-                  >
-                    {open ? (
-                      <span className="flex justify-center items-center gap-2">
-                        {" "}
-                        <TbDeviceAnalytics
-                          // src={overviewIcon}
-                          className="w-16 sm:w-6 text-[40px] ml-2 nav-icon transition-colors duration-[250] ease-linear"
-                          // alt=""
-                        ></TbDeviceAnalytics>
-                        Overview
-                      </span>
-                    ) : (
-                      <TbDeviceAnalytics
-                        // src={overviewIcon}
-                        className="w-16 sm:w-6 text-[40px] ml-2 nav-icon transition-colors duration-[250] ease-linear relative z-[90]"
-                        // alt=""
-                      ></TbDeviceAnalytics>
-                    )}
-                  </NavLink>
-                </li>
+                
                 {/* myProfile route */}
                 <li>
                   <NavLink
@@ -468,54 +436,23 @@ const Dashboard = () => {
                     {open ? (
                       <span className="flex justify-center items-center gap-2">
                         {" "}
-                        <IoCartOutline
+                        <BsCartCheck
                           // src={overviewIcon}
                           className="w-16 sm:w-6 text-[40px] ml-2 nav-icon transition-colors duration-[250] ease-linear"
                           // alt=""
-                        ></IoCartOutline>
+                        ></BsCartCheck>
                         My Cart
                       </span>
                     ) : (
-                      <IoCartOutline
+                      <BsCartCheck
                         // src={overviewIcon}
                         className="w-16 sm:w-6 text-[40px] ml-2 nav-icon transition-colors duration-[250] ease-linear relative z-[90]"
                         // alt=""
-                      ></IoCartOutline>
+                      ></BsCartCheck>
                     )}
                   </NavLink>
                 </li>
-                {/* myReview route */}
-                <li>
-                  <NavLink
-                    onClick={() => setOpen(false)}
-                    to="myReviews"
-                    className={({ isActive, isPending }) =>
-                      isActive
-                        ? "font-semibold flex justify-start items-center gap-1 pl-2 bg-white text-blue-500 w-[96.2%] max-[639.5px]:mx-auto sm:ml-[4%] py-1 max-[639.5px]:rounded-[30px] sm:rounded-l-[30px] relative custom h-[45px] activated"
-                        : isPending
-                        ? ""
-                        : "font-semibold flex justify-start items-center gap-1 pl-2 w-[96%] ml-[4%] py-2 text-[#ffffff] rounded-[30px] h-[45px] initial-style hover:scale-110 transition duration-300 ease-linear"
-                    }
-                  >
-                    {open ? (
-                      <span className="flex justify-center items-center gap-2">
-                        {" "}
-                        <MdReviews
-                          // src={overviewIcon}
-                          className="w-16 sm:w-6 text-[40px] ml-2 nav-icon transition-colors duration-[250] ease-linear"
-                          // alt=""
-                        ></MdReviews>
-                        My Reviews
-                      </span>
-                    ) : (
-                      <MdReviews
-                        // src={overviewIcon}
-                        className="w-16 sm:w-6 text-[40px] ml-2 nav-icon transition-colors duration-[250] ease-linear relative z-[90]"
-                        // alt=""
-                      ></MdReviews>
-                    )}
-                  </NavLink>
-                </li>
+                
                 {/* myDoctor's route */}
                 <li>
                   <NavLink

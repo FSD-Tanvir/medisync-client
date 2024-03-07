@@ -22,8 +22,6 @@ const TakeAppointment = () => {
   const axiosPublic = useAxiosPublic();
   const axiosSecure = useAxiosSecure();
 
-
-
   // go to top when navigated
   useEffect(() => {
     window.scroll(0, 0);

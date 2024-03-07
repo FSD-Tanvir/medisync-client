@@ -210,3 +210,27 @@
 .scrollBarHidden::-webkit-scrollbar{
   display: none;
 }
+/* Add this to your CSS file */
+/* Thin scrollbar styles */
+::-webkit-scrollbar {
+  width: 10px; /* Set the width of the scrollbar */
+}
+
+/* Track styles */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; /* Color of the scrollbar track */
+}
+
+/* Handle styles */
+::-webkit-scrollbar-thumb {
+  background: #527cf0; /* Color of the scrollbar handle */
+  border-radius: 5px; /* Radius of the scrollbar handle */
+}
+
+/* Handle hover styles */
+::-webkit-scrollbar-thumb:hover {
+  background: #3c6df3; /* Color of the scrollbar handle on hover */
+}
+.custom-scrollbar-dashboard-nav::-webkit-scrollbar{
+  width: 0;
+}
