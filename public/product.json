@@ -1,0 +1,632 @@
+[
+    {
+        "image": "https://i.ibb.co/0r4NmrY/Entacyd-Plus.webp",
+        "name": "Entacyd Plus",
+        "company": "Square Pharmaceuticals Ltd.",
+        "category": "otc",
+        "price": 2.25,
+        "description": "This is indicated for symptomatic relief of hyperacidity associated with the peptic ulcer, gastritis, peptic oesophagitis, gastric hyperacidity, heartburn, sour stomach or hiatus hernia. It is effective in the prevention of stress ulceration and GI bleeding. It acts as an antiflatulent to alleviate ... Read moreThis is indicated for symptomatic relief of hyperacidity associated with the peptic ulcer, gastritis, peptic oesophagitis, gastric hyperacidity, heartburn, sour stomach or hiatus hernia. It is effective in the prevention of stress ulceration and GI bleeding. It acts as an antiflatulent to alleviate the symptoms of gas including post operative gas pain. This rapidly relieves acid pain, disperses gastric foam and facilitates eructation of gas and air."
+    },
+    {
+        "image": "https://i.ibb.co/StKJ3m1/Entacyd-Plus-lequid.webp",
+        "name": "Entacyd Plus",
+        "weight": "200ml",
+        "company": "Square Pharmaceuticals Ltd.",
+        "category": "otc",
+        "price": 72,
+        "description": "This is indicated for symptomatic relief of hyperacidity associated with the peptic ulcer, gastritis, peptic oesophagitis, gastric hyperacidity, heartburn, sour stomach or hiatus hernia. It is effective in the prevention of stress ulceration and GI bleeding. It acts as an antiflatulent to alleviate ... Read moreThis is indicated for symptomatic relief of hyperacidity associated with the peptic ulcer, gastritis, peptic oesophagitis, gastric hyperacidity, heartburn, sour stomach or hiatus hernia. It is effective in the prevention of stress ulceration and GI bleeding. It acts as an antiflatulent to alleviate the symptoms of gas including post operative gas pain. This rapidly relieves acid pain, disperses gastric foam and facilitates eructation of gas and air."
+    },
+    {
+        "image": "https://i.ibb.co/VVDFJ2Y/Alben-Ds.webp",
+        "name": "Alben DS",
+        "weight": "400mg",
+        "company": "Eskayef Bangladesh Ltd.",
+        "category": "otc",
+        "price": 4.50,
+        "description": "Alben DS 400 mg is indicated in single and mixed infestations of- Hookworm (Ancylostoma, Necator) Roundworm (Ascaris) Threadworm (Enterobius) Whipworm (Trichuris) Strongyloides Tapeworm Opisthorchi Hydatid."
+    },
+    {
+
+        "image": "https://i.ibb.co/ryJhhKB/Nutrivit-C.webp",
+        "name": "Nutrivit-C",
+        "weight": "250mg",
+        "company": "ACI Limited",
+        "category": "otc",
+        "price": 1.71,
+        "description": "Ascorbic Acid (Vitamin C) is indicated in- Prevents & treats scurvy Helps in healing wounds & broken bones Helps to form collagen in connective tissues Aids in iron absorption & helps to treat anemia Contributes in production of hemoglobin & red blood cell in bone marrow ... Read moreAscorbic Acid (Vitamin C) is indicated in- Prevents & treats scurvy Helps in healing wounds & broken bones Helps to form collagen in connective tissues Aids in iron absorption & helps to treat anemia Contributes in production of hemoglobin & red blood cell in bone marrow Aids in preventing many types of viral and bacterial infections and potentiates the immune system Aids in the treatment & prevention of the common cold Promotes healthy capillaries, gums & teeth."
+    },
+    {
+        "image": "https://i.ibb.co/wLqFDV0/napa.webp",
+        "name": "Napa",
+        "weight": "500mg",
+        "company": "Beximco Pharmaceuticals Ltd.",
+        "category": "otc",
+        "price": 2.99,
+        "description": "Napa provides a high-quality 500mg dose of Vitamin C, supporting the immune system, aiding collagen formation, and enhancing overall well-being. With its potent antioxidant properties, Napa is a valuable addition to your daily health routine."
+    },
+    {
+        "image": "https://i.ibb.co/rvfzKDz/ceevit.webp",
+        "name": "Ceevit",
+        "weight": "250mg",
+        "company": "Vitamin C [Ascorbic Acid]",
+        "category": "otc",
+        "price": 1.99,
+        "description": "Ceevit delivers a reliable 250mg dose of Vitamin C, known for boosting the immune system, preventing deficiencies, and supporting various health conditions. Make Ceevit a cornerstone of your wellness journey."
+    },
+    {
+        "image": "https://i.ibb.co/4ZKqRvR/ceevit-ds.webp",
+        "name": "Ceevit Ds",
+        "weight": "500mg",
+        "company": "Vitamin C [Ascorbic Acid]",
+        "category": "otc",
+        "price": 3.49,
+        "description": "Ceevit Ds offers a potent 500mg Vitamin C dose, supporting overall health, preventing deficiencies, and contributing to a robust immune system. Elevate your well-being with the powerful benefits of Ceevit Ds."
+    },
+    {
+        "image": "https://i.ibb.co/WxFWWzS/vasco.webp",
+        "name": "Vasco",
+        "weight": "300mg",
+        "company": "Vitamin C [Ascorbic Acid]",
+        "category": "otc",
+        "price": 2.79,
+        "description": "Vasco provides 300mg of Vitamin C for cardiovascular health, supporting natural defense mechanisms. Make Vasco an essential daily addition to your routine for overall well-being."
+    },
+    {
+        "image": "https://i.ibb.co/sHDbNzK/Ascobex.webp",
+        "name": "Ascobox",
+        "weight": "400mg",
+        "company": "Vitamin C [Ascorbic Acid]",
+        "category": "otc",
+        "price": 2.59,
+        "description": "Ascobox offers a balanced 400mg Vitamin C dose, supporting skin health, immune function, and overall vitality. Make Ascobox a part of your daily wellness routine for sustained health benefits."
+    },
+    {
+        "image": "https://i.ibb.co/jvNCjVw/Baby-Cotton-Burds.webp",
+        "name": "Cecon",
+        "weight": "200mg",
+        "company": "Vitamin C [Ascorbic Acid]",
+        "category": "otc",
+        "price": 1.49,
+        "description": "Cecon is a trusted 200mg Vitamin C supplement, supporting the immune system, collagen formation, and overall health. Elevate your well-being with the proven benefits of Cecon."
+    },
+    {
+        "image": "https://i.ibb.co/6JCZjDB/Joya-wings-Regular-Flow.webp",
+        "name": "Joya Wings  Flow",
+        "weight": "8 pads",
+        "company": "SMC Enterprise Limited",
+        "category": "women",
+        "price": 66.50,
+        "description": "Stay confident and worry-free on your heavy flow days with Joya Wings Regular Flow 8 pads. Its advanced features keep you dry, fresh and comfortable. The pad’s interior instantly absorbs and evenly distributes fluid. Also, it has an extra layer of protection to prevent back leakage."
+    },
+    {
+        "image": "https://i.ibb.co/Fs6c8kd/Whisper-Maxi-Nights.webp",
+        "name": "Whisper Nights",
+        "weight": "15 pc",
+        "company": "Sun Pharmaceutical Ltd.",
+        "price": 90,
+        "category": "women",
+        "description": "Whisper Nights, with 15 pads per pack, is designed by Sun Pharmaceutical Ltd. for optimal overnight protection. The specially crafted pads provide a comfortable and secure feel, ensuring you wake up feeling fresh and confident. Whisper Nights is your ideal companion for a worry-free night."
+    },
+    {
+        "image": "https://i.ibb.co/NNMTJMR/Senora-Ultrathin-Regular-Flow.webp",
+        "name": "Senora Ultra Flow",
+        "weight": "8 pc",
+        "company": "Square Pharmaceuticals Ltd.",
+        "price": 95.60,
+        "category": "women",
+        "description": "Senora Ultra Flow, with 8 ultrathin pads, is meticulously crafted by Square Pharmaceuticals Ltd. for regular flow days. The ultrathin design provides discreet protection and comfort, allowing you to stay active and confident throughout the day. Trust Senora for a superior feminine care experience."
+    },
+    {
+        "image": "https://i.ibb.co/1KRLtbd/Freedom-Heavy-Flow-Wings.webp",
+        "name": "Freedom Wings",
+        "weight": "8 pc",
+        "company": "ACI Limited",
+        "price": 80,
+        "category": "women",
+        "description": "Experience superior protection with Freedom Wings by ACI Limited. This pack of 8 heavy-flow pads ensures maximum comfort and security. The wings provide extra coverage and prevent back leakage, allowing you to confidently carry on with your day. Choose Freedom for reliable feminine hygiene."
+    },
+    {
+        "image": "https://i.ibb.co/FKGCRkD/Huggies-Dry-Belt-Diaper.webp",
+        "name": "Huggies Dry Belt Diaper",
+        "weight": "",
+        "company": "Baby Care",
+        "category": "women",
+        "price": 1600,
+        "description": "Ensure your baby's comfort with Huggies Dry Belt Diaper from Baby Care. This high-quality diaper provides long-lasting dryness and comfort. With an easy-to-use belt design, it ensures a secure fit. Choose Huggies for a happy and dry experience for your little one."
+    },
+    {
+        "image": "https://i.ibb.co/0sqJcGf/Savlon-Baby-Wips.webp",
+        "name": "Savlon Baby Wipes",
+        "weight": "100",
+        "company": "ACI Limited",
+        "price": 200,
+        "category": "women",
+        "description": "Savlon Baby Wipes by ACI Limited are a gentle and effective solution for your baby's hygiene. With 100 wipes per pack, these wipes are enriched with aloe vera and chamomile, ensuring a soft and soothing experience. Keep your baby clean and happy with Savlon Baby Wipes."
+    },
+    {
+        "image": "https://i.ibb.co/n60KHSj/wisper-altra.webp",
+        "name": "Whisper Ultra Comfort XL",
+        "weight": "10 pads",
+        "company": "SMC Enterprise Limited",
+        "category": "women",
+        "price": 89.99,
+        "description": "Whisper Ultra Comfort XL offers superior protection with 10 pads for heavy flow days. Specially designed by SMC Enterprise Limited, it provides exceptional comfort and prevents back leakage, ensuring you stay confidently fresh and dry throughout the day."
+    },
+    {
+        "image": "https://i.ibb.co/yRsQs2R/joy.webp",
+        "name": "Joya Sanitary Napkin",
+        "weight": "6 pads",
+        "company": "ACI Limited",
+        "category": "women",
+        "price": 75.50,
+        "description": "Experience ultimate comfort with Joya Sanitary Napkin by ACI Limited. This pack of 6 pads provides reliable protection and freshness. The advanced design ensures quick absorption, even fluid distribution, and extra layers to prevent any back leakage for worry-free days."
+    },
+    {
+        "image": "https://i.ibb.co/rG3KHB5/freedom.webp",
+        "name": "Freedom Belt System",
+        "weight": "1 belt",
+        "company": "Sun Pharmaceutical Ltd.",
+        "category": "women",
+        "price": 129.99,
+        "description": "Introducing Freedom Belt System by Sun Pharmaceutical Ltd. This revolutionary product brings comfort and security to your feminine hygiene routine. The adjustable belt and reliable pad attachment ensure a worry-free experience. Stay confident and active with this innovative solution."
+    },
+    {
+        "image": "https://i.ibb.co/85TrZy3/jpya-all-night.webp",
+        "name": "Joya All Night Wings",
+        "weight": "12 pads",
+        "company": "SMC Enterprise Limited",
+        "category": "women",
+        "price": 109.75,
+        "description": "Joya All Night Wings by SMC Enterprise Limited is specially designed for overnight protection. With 12 pads per pack, it ensures a comfortable and worry-free night. The wings provide extra coverage and prevent back leakage, keeping you fresh and confident."
+    },
+    {
+        "image": "https://i.ibb.co/jvNCjVw/Baby-Cotton-Burds.webp",
+        "name": "NeoCare Baby Wipes",
+        "weight": "200 pc",
+        "company": "Nestle Bangladesh Limited",
+        "category": "baby",
+        "price": 10.20,
+        "description": "NeoCare Baby Wipes by Nestle Bangladesh Limited offer superior care for your baby. With 200 wipes per pack, these wipes are designed for gentle cleansing. The hypoallergenic formula ensures the delicate skin of your baby stays soft and fresh. Elevate your baby's hygiene routine with NeoCare."
+    },
+    {
+        "image": "https://i.ibb.co/Qr3vYrp/necore.webp",
+        "name": "Neocare",
+        "weight": "150 gm",
+        "company": "ACI Limited",
+        "category": "baby",
+        "price": 15.50,
+        "description": "Neocare by ACI Limited, weighing 150 gm, is a specially formulated baby care product. This gentle and nourishing solution ensures your baby's skin stays healthy and soft. With ACI's commitment to quality, Neocare is your trusted companion for providing the best care for your little one."
+    },
+    {
+        "image": "https://i.ibb.co/fHV0f8x/necore-baby.webp",
+        "name": "NeoCare Baby Wipes",
+        "weight": "120",
+        "company": "Unimax Industries Ltd.",
+        "category": "baby",
+        "price": 223.00,
+        "description": "Introducing Freedom Belt System by Unimax Industries Ltd. This innovative product brings comfort and security to your baby's hygiene routine. The adjustable belt and reliable attachment ensure a worry-free experience. Provide your baby with the best care using Freedom Belt System."
+    },
+    {
+        "image": "https://i.ibb.co/0sqJcGf/Savlon-Baby-Wips.webp",
+        "name": "Savlon Baby Wipes",
+        "weight": "100",
+        "company": "ACI Limited",
+        "category": "baby",
+        "price": 12.99,
+        "description": "Savlon Baby Wipes by ACI Limited are a gentle and effective solution for your baby's hygiene. With 100 wipes per pack, these wipes are enriched with aloe vera and chamomile, ensuring a soft and soothing experience. Keep your baby clean and happy with Savlon Baby Wipes."
+    },
+    {
+        "image": "https://i.ibb.co/RhrHc4Y/thai-wet.webp",
+        "name": "Thai Wet Wipes",
+        "weight": "120 pc",
+        "company": "Unimax Industries Ltd.",
+        "category": "baby",
+        "price": 8.50,
+        "description": "Experience the quality of Thai Wet Wipes by Unimax Industries Ltd. This pack of 120 wipes is designed for convenient and quick cleansing. The gentle formula ensures your baby's skin stays fresh and soft. Trust Thai Wet Wipes for efficient and reliable baby care."
+    },
+    {
+        "image": "https://i.ibb.co/HndRmmX/baby-towel.webp",
+        "name": "Baby Wet Towel",
+        "weight": "80 gm",
+        "company": "Nestle Bangladesh Limited",
+        "category": "baby",
+        "price": 6.75,
+        "description": "Nestle Bangladesh Limited presents Baby Wet Towel, weighing 80 gm. These moist towels are perfect for quick and gentle cleaning. The hypoallergenic formula ensures your baby's skin remains soft and moisturized. Embrace convenience with the reliable care of Baby Wet Towel."
+    },
+    {
+        "image": "https://i.ibb.co/jvNCjVw/Baby-Cotton-Burds.webp",
+        "name": "Avonee Mini Pant",
+        "weight": "10 pcs",
+        "company": "ACI Limited",
+        "category": "baby",
+        "price": 24.99,
+        "description": "ACI Limited introduces Avonee Mini Pant, a pack of 10 baby pants designed for comfort and ease. These mini pants provide secure and leak-proof coverage, allowing your baby to move freely. Ensure a happy and active day for your little one with Avonee Mini Pant."
+    },
+    {
+        "image": "https://i.ibb.co/b5ZZtdx/dettol.webp",
+        "name": "Dettol Anti Bacterial Wet Wipes",
+        "weight": "50 pcs",
+        "company": "Reckitt Benckiser (Bangladesh) Ltd.",
+        "category": "baby",
+        "price": 14.25,
+        "description": "Dettol Anti Bacterial Wet Wipes by Reckitt Benckiser (Bangladesh) Ltd. provide effective cleansing for your baby. With 50 wipes per pack, these wipes are enriched with Dettol's trusted anti-bacterial formula, ensuring a hygienic and safe experience. Keep your baby protected with Dettol."
+    },
+    {
+        "image": "https://i.ibb.co/4828fNt/lectogen.webp",
+        "name": "Lactogen 1",
+        "weight": "400 gm",
+        "company": "Nestle Bangladesh Limited",
+        "category": "baby",
+        "price": 18.99,
+        "description": "Nestle Bangladesh Limited presents Lactogen 1, a premium baby formula weighing 400 gm. Specially crafted to meet the nutritional needs of infants, Lactogen 1 provides essential nutrients for healthy growth and development. Choose Lactogen 1 for your baby's optimal nourishment."
+    },
+    {
+        "image": "https://i.ibb.co/0hNYSBf/supermom.webp",
+        "name": "Supermom Mild Baby Wipes",
+        "weight": "150 pcs",
+        "company": "Supermom Baby Care",
+        "category": "baby",
+        "price": 11.99,
+        "description": "Introducing Supermom Mild Baby Wipes by Supermom Baby Care, a pack of 150 wipes for gentle and effective baby care. These wipes are specially formulated with a mild and soothing formula, ensuring your baby's skin stays soft and clean. With Supermom, provide your baby with the care they deserve."
+    },
+    {
+        "image": "https://i.ibb.co/cFkgWrB/otar-plus.webp",
+        "name": "Orostar Plus",
+        "weight": "250ml",
+        "company": "ACI Limited",
+        "category": "dental",
+        "price": 135.00,
+        "description": "Orostar Plus by ACI Limited is a premium dental care solution in a 250ml pack. Specially formulated for complete oral hygiene, it ensures fresh breath and cavity protection. The advanced formula helps maintain healthy gums and teeth, providing you with a confident smile and optimal oral health."
+    },
+    {
+        "image": "https://i.ibb.co/JFMnyZT/Listacare-Blue-Mint.webp",
+        "name": "Listacare Blue Mint",
+        "weight": "120ml",
+        "company": "GSK",
+        "category": "dental",
+        "price": 72.00,
+        "description": "Experience the refreshing Listacare Blue Mint by GSK in a convenient 120ml size. This toothpaste combines effective cavity protection with a burst of blue mint freshness. The advanced formula ensures a thorough clean, leaving your mouth feeling revitalized and your breath fresh throughout the day."
+    },
+    {
+        "image": "https://i.ibb.co/3ykYWDd/mediplus.webp",
+        "name": "Mediplus",
+        "weight": "140gm",
+        "company": "Anfords",
+        "category": "dental",
+        "price": 80.00,
+        "description": "Mediplus by Anfords, in a 140gm pack, is your go-to dental care choice. This toothpaste offers a comprehensive solution for healthy teeth and gums. The unique formula tackles plaque, provides cavity protection, and leaves your mouth feeling clean and refreshed. Elevate your oral care routine with Mediplus."
+    },
+    {
+        "image": "https://i.ibb.co/VLD10mX/listacore-gold.webp",
+        "name": "Listacare Gold",
+        "weight": "220ml",
+        "company": "Square Pharmaceuticals Ltd.",
+        "category": "dental",
+        "price": 120.00,
+        "description": "Listacare Gold, brought to you by Square Pharmaceuticals Ltd., is a premium dental care choice in a generous 220ml size. This toothpaste offers superior cavity protection, fights germs, and provides lasting freshness. Make Listacare Gold an essential part of your daily oral care routine."
+    },
+    {
+        "image": "https://i.ibb.co/Fh1P5yM/mediplus-ds.webp",
+        "name": "Mediplus DS",
+        "weight": "140ml",
+        "company": "Anfords",
+        "category": "dental",
+        "price": 40.00,
+        "description": "Mediplus DS by Anfords is a dental care innovation in a 140ml pack. The Dual Strength formula ensures effective plaque removal, cavity protection, and lasting freshness. With Mediplus DS, enjoy a confident smile and optimal oral health every day."
+    },
+    {
+        "image": "https://i.ibb.co/NNQKGKM/orostar-plus.webp",
+        "name": "Orostar Plus",
+        "weight": "120ml",
+        "company": "ACI Limited",
+        "category": "dental",
+        "price": 150.00,
+        "description": "Orostar Plus by ACI Limited is a dental care solution in a convenient 120ml pack. Specially formulated for complete oral hygiene, it ensures fresh breath and cavity protection. The advanced formula helps maintain healthy gums and teeth, providing you with a confident smile and optimal oral health."
+    },
+    {
+        "image": "https://i.ibb.co/XYM2ZQX/toothbrush.webp",
+        "name": "Mediplus Toothbrush",
+        "company": "Anfords",
+        "category": "dental",
+        "price": 70.00,
+        "description": "Enhance your oral care routine with the Mediplus Toothbrush by Anfords. This premium toothbrush, weighing 75 gm, features advanced bristle technology for effective plaque removal and gentle gum care. Experience superior cleaning and comfort with the Mediplus Toothbrush."
+    },
+    {
+        "image": "https://i.ibb.co/Dth5zhN/fresg-gel.webp",
+        "name": "Sensodyne Fresh ",
+        "weight": "70 gm",
+        "company": "GSK",
+        "category": "dental",
+        "price": 65.00,
+        "description": "Sensodyne Fresh Gel by GSK, in a 70 gm pack, is the ideal choice for sensitive teeth. The unique formula provides effective relief from sensitivity while offering a burst of fresh gel flavor. Say goodbye to tooth sensitivity with the soothing experience of Sensodyne Fresh Gel."
+    },
+    {
+        "image": "https://i.ibb.co/dfwVVKj/sensodyne-repaire-protect.webp",
+        "name": "Sensodyne Repair",
+        "weight": "180gm",
+        "company": "GSK",
+        "category": "dental",
+        "price": 65.00,
+        "description": "Sensodyne Repair by GSK, in a 180gm pack, is the ultimate solution for sensitive teeth. This toothpaste provides advanced repair and relief for sensitive teeth. The clinically proven formula works to repair sensitive areas of your teeth, offering long-lasting protection and a soothing experience."
+    },
+    {
+        "image": "https://i.ibb.co/mCn30rV/fluride-gel.webp",
+        "name": "Mediplus Fluoride ",
+        "weight": "100gm",
+        "company": "Anfords",
+        "category": "dental",
+        "price": 40.00,
+        "description": "Mediplus Fluoride Gel by Anfords, in a 100ml pack, is a specialized dental gel for superior cavity protection. Enriched with fluoride, this gel strengthens tooth enamel and provides effective protection against cavities. Incorporate Mediplus Fluoride Gel into your daily oral care routine for optimal dental health."
+    },
+    {
+        "image": "https://i.ibb.co/2yxfmH3/hexacol.webp",
+        "name": "Hexisol",
+        "weight": "250ml",
+        "company": "ACI Limited",
+        "category": "personal",
+        "price": 135.00,
+        "description": "Hexisol by ACI Limited is a reliable hand sanitizer in a 250ml pack. It ensures effective germ protection and hygiene on the go. The quick-drying formula leaves your hands feeling clean and refreshed. Make Hexisol your trusted companion for maintaining cleanliness and health in your daily life."
+    },
+    {
+        "image": "https://i.ibb.co/5KmjFk2/savlon-cream.webp",
+        "name": "Savlon CreamSelect-Plus",
+        "weight": "20gm",
+        "company": "Neoplast Co Ltd.",
+        "category": "personal",
+        "price": 35.25,
+        "description": "Savlon CreamSelect-Plus by Neoplast Co Ltd. comes in a 120ml tube, providing effective relief for minor cuts, burns, and skin irritations. The advanced formula promotes faster healing and soothes the skin. Keep Savlon CreamSelect-Plus handy for immediate first aid and skin care."
+    },
+    {
+        "image": "https://i.ibb.co/KrkWvF7/savlon-anticptik.webp",
+        "name": "Savlon Antiseptic",
+        "weight": "1 ltr",
+        "company": "Mundipharma (BD) Pvt. Ltd.",
+        "category": "personal",
+        "price": 130.00,
+        "description": "Savlon Antiseptic by Mundipharma (BD) Pvt. Ltd. is a trusted antiseptic solution in a 140gm bottle. It provides effective protection against germs and helps prevent infection in cuts, scratches, and wounds. Make Savlon Antiseptic a staple in your first aid kit for overall family protection."
+    },
+    {
+        "image": "https://i.ibb.co/59QRqJZ/bange.webp",
+        "name": "One Time Bandage",
+        "weight": "",
+        "company": "Square Pharmaceuticals Ltd.",
+        "category": "personal",
+        "price": 2.00,
+        "description": "One Time Bandage by Square Pharmaceuticals Ltd. is a versatile and durable solution for wound care. This 220ml spray-on bandage provides a protective barrier for cuts and abrasions. Its quick-drying formula ensures convenience and comfort. Keep One Time Bandage for hassle-free wound protection."
+    },
+    {
+        "image": "https://i.ibb.co/zfvMprf/plus.webp",
+        "name": "Isabgul Plus",
+        "weight": "100ml",
+        "company": "ACI Limited",
+        "category": "personal",
+        "price": 40.00,
+        "description": "Isabgul Plus by ACI Limited, in a 140ml pack, is a natural laxative for effective digestive support. It contains isabgul husk, known for its gentle and natural relief from constipation. Experience digestive comfort with Isabgul Plus, a trusted choice for maintaining a healthy digestive system."
+    },
+    {
+        "image": "https://i.ibb.co/cx5DCKv/alcol-pad.webp",
+        "name": "Alcohol Pad",
+        "weight": "",
+        "company": "Neoplast Co Ltd.",
+        "category": "personal",
+        "price": 6.99,
+        "description": "Alcohol Pad by Neoplast Co Ltd. is an essential component of your first aid kit. This 120ml pack of alcohol pads provides effective antiseptic action for cleaning wounds and surfaces. It is a convenient and hygienic solution for on-the-go disinfection. Keep Alcohol Pad for immediate hygiene needs."
+    },
+    {
+        "image": "https://i.ibb.co/F6YxHrm/nizoder.webp",
+        "name": "Nizoder",
+        "weight": "75 gm",
+        "company": "Mundipharma (BD) Pvt. Ltd.",
+        "category": "personal",
+        "price": 270.00,
+        "description": "Nizoder by Mundipharma (BD) Pvt. Ltd. is a medicated powder in a 75 gm pack, providing effective relief from prickly heat and skin irritation. The soothing formula absorbs excess moisture, keeping your skin cool and comfortable. Stay refreshed with Nizoder, your go-to solution for skin care."
+    },
+    {
+        "image": "https://i.ibb.co/7GJWvvh/cotton-towel.webp",
+        "name": "Cotton Wool",
+        "weight": "70 gm",
+        "company": "Square Pharmaceuticals Ltd.",
+        "category": "personal",
+        "price": 35.00,
+        "description": "Cotton Wool by Square Pharmaceuticals Ltd. comes in a 70 gm pack, offering soft and absorbent cotton for various personal care needs. It is ideal for cleaning wounds, applying skincare products, and more. Choose Cotton Wool for gentle and hygienic personal care applications."
+    },
+    {
+        "image": "https://i.ibb.co/m8LQt9c/hand-sanitizer.webp",
+        "name": "Hand Sanitizer",
+        "weight": "200ml",
+        "company": "ACI Limited",
+        "category": "personal",
+        "price": 30.00,
+        "description": "SensiShield Hand Sanitizer by ACI Limited offers effective and convenient hand hygiene in a 200ml pack. The fast-acting formula kills germs and leaves your hands feeling refreshed. Make SensiShield your daily companion for maintaining cleanliness and protecting against harmful bacteria."
+    },
+    {
+        "image": "https://i.ibb.co/9nSzwMJ/medeasy-moov.webp",
+        "name": "Neoplus Pain Relief Balm",
+        "weight": "50gm",
+        "company": "Neoplast Co Ltd.",
+        "category": "personal",
+        "price": 25.00,
+        "description": "Neoplus Pain Relief Balm, in a 50gm pack, is a soothing solution for relieving muscular and joint pain. The unique blend of ingredients provides a warming effect, promoting relaxation and comfort. Trust Neoplus for effective pain relief and enhanced well-being."
+    },
+    {
+        "image": "https://i.ibb.co/b1CtT1b/novofine.webp",
+        "name": "NovoFine Needle",
+        "weight": "3ml",
+        "company": "ACI Limited",
+        "category": "diabetic",
+        "price": 12.00,
+        "description": "NovoFine Needle by ACI Limited is a precision-engineered insulin pen needle in a 3ml size. Designed for comfort and ease of use, it ensures a smooth and virtually pain-free injection experience. Trust NovoFine for accurate insulin delivery, making managing diabetes more convenient and reliable."
+    },
+    {
+        "image": "https://i.ibb.co/CBFbMc4/disapoo.webp",
+        "name": "DispoVan Syringe",
+        "weight": "100ml",
+        "company": "Neoplast HMD BioMedical Inc.",
+        "category": "diabetic",
+        "price": 8.50,
+        "description": "DispoVan Syringe by Neoplast HMD BioMedical Inc. is a reliable and sterile syringe solution in a 100ml size. It ensures accurate medication administration and is suitable for various healthcare applications. Choose DispoVan for safe and precise syringe usage in medical settings."
+    },
+    {
+        "image": "https://i.ibb.co/LrMdZMy/check-strip.webp",
+        "name": "Check Test Strip",
+        "weight": "140gm",
+        "company": "Square Pharmaceuticals Ltd.",
+        "category": "diabetic",
+        "price": 360.00,
+        "description": "Check Test Strip by Square Pharmaceuticals Ltd. is an essential component for accurate blood glucose monitoring. This 140gm pack of test strips is compatible with various glucose meters, providing reliable and quick results. Trust Check Test Strip for effective diabetes management and monitoring."
+    },
+    {
+        "image": "https://i.ibb.co/bQJWPsr/glucoleader.webp",
+        "name": "GlucoLeader Enhance",
+        "weight": "220ml",
+        "company": "Technokit Healthcare Ltd.",
+        "category": "diabetic",
+        "price": 450.00,
+        "description": "GlucoLeader Enhance by Technokit Healthcare Ltd. is a premium glucose drink in a 220ml bottle, specially formulated for quick energy replenishment. With a balanced blend of carbohydrates, it provides a rapid energy boost, making it an ideal choice for athletes and those needing instant vitality."
+    },
+    {
+        "image": "https://i.ibb.co/wcgHRPq/insulin.webp",
+        "name": "Insulin Syringe",
+        "weight": "100ml",
+        "company": "ACI Limited",
+        "category": "diabetic",
+        "price": 7.25,
+        "description": "Insulin Syringe by ACI Limited is a diabetic care essential, designed for accurate insulin dosage. The 140ml syringe provides precise measurements, ensuring effective diabetes management. Trust Insulin Syringe for a reliable and comfortable solution in administering insulin for diabetic patients."
+    },
+    {
+        "image": "https://i.ibb.co/sV7HW81/blood-lancets.webp",
+        "name": "Blood Lancets",
+        "weight": "120ml",
+        "company": "Neoplast HMD BioMedical Inc.",
+        "category": "diabetic",
+        "price": 108.00,
+        "description": "Blood Lancets by Neoplast HMD BioMedical Inc. are essential for diabetic blood testing. The 120ml pack of lancets provides a sterile and convenient solution for obtaining blood samples. Trust Blood Lancets for accurate and hassle-free blood glucose monitoring in diabetic care."
+    },
+    {
+        "image": "https://i.ibb.co/k6CkVTB/accu-active.webp",
+        "name": "Accu-Chek Active",
+        "weight": "50 strips",
+        "company": "Square Pharmaceuticals Ltd.",
+        "category": "diabetic",
+        "price": 136.00,
+        "description": "Accu-Chek Active by Square Pharmaceuticals Ltd. is a reliable glucometer for diabetic self-monitoring. The 75 gm device provides quick and accurate blood glucose readings. With its user-friendly design and advanced features, Accu-Chek Active is an essential tool for effective diabetes management."
+    },
+    {
+        "image": "https://i.ibb.co/Sd4vycx/Accu-Chek-Instant-50.webp",
+        "name": "Accu-Chek Instant",
+        "weight": "50 strips",
+        "company": "ACI Limited",
+        "category": "diabetic",
+        "price": 133.00,
+        "description": "Accu-Chek Instant by ACI Limited is a state-of-the-art glucometer for diabetic individuals. The 70 gm device offers instant and accurate blood glucose readings. With its sleek design and user-friendly interface, Accu-Chek Instant is an essential companion for those managing diabetes effectively."
+    },
+    {
+        "image": "https://i.ibb.co/S6f8GSf/medeasy-insulin-carry-bag.webp",
+        "name": "Insulin Carry Bag",
+        "weight": "",
+        "company": "Technokit Healthcare Ltd.",
+        "category": "diabetic",
+        "price": 250.00,
+        "description": "Insulin Carry Bag by Technokit Healthcare Ltd. is a convenient and stylish solution for carrying insulin and diabetic supplies. The 200ml bag features compartments for organized storage. With its compact design, the Insulin Carry Bag is perfect for maintaining the integrity of insulin while on the go."
+    },
+    {
+        "image": "https://i.ibb.co/1QWDdkx/test-strip.webp",
+        "name": "Match Test Strip",
+        "weight": "100ml",
+        "company": "Neoplast HMD BioMedical Inc.",
+        "category": "diabetic",
+        "price": 1026.00,
+        "description": "Match Test Strip by Neoplast HMD BioMedical Inc. is a reliable choice for diabetic blood glucose monitoring. This 100ml pack of test strips is designed for compatibility with various glucose meters, providing accurate and quick results. Trust Match Test Strip for efficient and precise diabetes management."
+    },
+    {
+        "image": "https://i.ibb.co/9bZrkbG/sergel.webp",
+        "name": "Sergel",
+        "weight": "5mg",
+        "company": "ACI Limited",
+        "category": "prescription",
+        "price": 15.99,
+        "description": "Sergel by ACI Limited is a prescription medicine in a 5mg strength. It is commonly prescribed for various medical conditions. With a proven track record of effectiveness, Sergel provides relief and management for patients under medical supervision. Trust Sergel for reliable and quality healthcare support."
+    },
+    {
+        "image": "https://i.ibb.co/3zZk9Ht/linaglip.webp",
+        "name": "Linaglip",
+        "weight": "10mg",
+        "company": "Aristopharma Ltd.",
+        "category": "prescription",
+        "price": 19.75,
+        "description": "Linaglip by Aristopharma Ltd. is a prescription medication with a strength of 10mg. It is commonly used to manage certain medical conditions. With its well-established efficacy, Linaglip contributes to the overall well-being of patients under medical supervision. Rely on Linaglip for effective and targeted healthcare support."
+    },
+    {
+        "image": "https://i.ibb.co/qn9RwLS/mona-10.webp",
+        "name": "Monas 10",
+        "weight": "500mg",
+        "company": "Square Pharmaceuticals Ltd.",
+        "category": "prescription",
+        "price": 22.99,
+        "description": "Monas 10 by Square Pharmaceuticals Ltd. is a prescription medicine with a strength of 500mg. It is recommended for various medical conditions under the guidance of healthcare professionals. Count on Monas 10 for effective and targeted relief, contributing to improved health outcomes for patients."
+    },
+    {
+        "image": "https://i.ibb.co/PcmY48k/ecosprin.webp",
+        "name": "Ecosprin",
+        "weight": "40mg",
+        "company": "TACME Laboratories Ltd.",
+        "category": "prescription",
+        "price": 11.50,
+        "description": "Ecosprin by TACME Laboratories Ltd. is a prescription medication with a strength of 40mg. It is commonly prescribed to manage certain medical conditions. With its well-established benefits, Ecosprin plays a crucial role in supporting the health and well-being of patients under medical supervision."
+    },
+    {
+        "image": "https://i.ibb.co/jkDXsLd/pantonix-20-mg.webp",
+        "name": "Pantonix",
+        "weight": "100mg",
+        "company": "Renata Limited",
+        "category": "prescription",
+        "price": 14.99,
+        "description": "Pantonix by Renata Limited is a prescription medicine with a strength of 100mg. It is commonly used to manage certain medical conditions under the supervision of healthcare professionals. Rely on Pantonix for its proven efficacy and contribution to overall patient well-being."
+    },
+    {
+        "image": "https://i.ibb.co/0QLV17r/atova.webp",
+        "name": "Atova",
+        "weight": "500mg",
+        "company": "ACI Limited",
+        "category": "prescription",
+        "price": 17.25,
+        "description": "Atova by ACI Limited is a prescription medication with a strength of 500mg. It is recommended for specific medical conditions under the guidance of healthcare professionals. Trust Atova for its proven effectiveness in providing targeted relief and support for patients."
+    },
+    {
+        "image": "https://i.ibb.co/1ZZLDYp/bizoran.webp",
+        "name": "BizoranFexo",
+        "weight": "75mg",
+        "company": "Aristopharma Ltd.",
+        "category": "prescription",
+        "price": 13.99,
+        "description": "BizoranFexo by Aristopharma Ltd. is a prescription medicine with a strength of 75mg. It is commonly prescribed to manage specific medical conditions. With its established efficacy, BizoranFexo contributes to the overall well-being of patients under medical supervision."
+    },
+    {
+        "image": "https://i.ibb.co/f22cnqK/medeasy-thyrox-50.webp",
+        "name": "Thyrox",
+        "weight": "70mg",
+        "company": "Square Pharmaceuticals Ltd.",
+        "category": "prescription",
+        "price": 16.50,
+        "description": "Thyrox by Square Pharmaceuticals Ltd. is a prescription medication with a strength of 70mg. It is recommended for specific medical conditions under the guidance of healthcare professionals. Trust Thyrox for its established benefits in providing targeted relief and support for patients."
+    },
+    {
+        "image": "https://i.ibb.co/xFpjXsJ/rosuva.webp",
+        "name": "Rosuva",
+        "weight": "100mg",
+        "company": "TACME Laboratories Ltd.",
+        "category": "prescription",
+        "price": 18.75,
+        "description": "Rosuva by TACME Laboratories Ltd. is a prescription medicine with a strength of 100mg. It is commonly prescribed to manage specific medical conditions under the supervision of healthcare professionals. Rely on Rosuva for its proven effectiveness in providing targeted relief and support for patients."
+    },
+    {
+        "image": "https://i.ibb.co/nMJcbv0/fexo.webp",
+        "name": "Fexo",
+        "weight": "150mg",
+        "company": "Renata Limited",
+        "category": "prescription",
+        "price": 21.99,
+        "description": "Fexo by Renata Limited is a prescription medication with a strength of 150mg. It is recommended for specific medical conditions under the guidance of healthcare professionals. With its proven efficacy, Dexalin contributes to targeted relief and support for patients, ensuring their well-being under medical supervision."
+    }
+        
+]
