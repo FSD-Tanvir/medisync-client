@@ -2,7 +2,6 @@ import { useQuery } from "@tanstack/react-query";
 import useAxiosPublic from "./useAxiosPublic";
 
 const useSingleArticle = ({ id }) => {
-  console.log(id);
   const axiosPublic = useAxiosPublic();
   const {
     data: article = [],

@@ -115,7 +115,7 @@ MediSync emerges as a pioneering health technology solution, breaking barriers i
   npm start
 
 ```
-4. Open your web browser and go to http://localhost:5000 to view the application locally.
+4. Open your web browser and go to https://medisync-server.vercel.app to view the application locally.
    
 ## Live Link: https://cosmic-stroopwafel-b283d3.netlify.app/
 ## colab ( Tanvir, Rasibul, Mohammad Ali, Sayedul, Hasan Ali, Shatab )

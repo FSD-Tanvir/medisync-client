@@ -4,10 +4,9 @@ import { useLoaderData } from "react-router-dom";
 import useAxiosPublic from "../../../../hooks/useAxiosPublic";
 
 const UpdateJob = () => {
-  const axiosPublic = useAxiosPublic()
+  const axiosPublic = useAxiosPublic();
   const { data } = useLoaderData();
   const { data: job } = data || {};
-  //   console.log(job);
 
   const {
     register,
@@ -16,8 +15,6 @@ const UpdateJob = () => {
   } = useForm();
 
   const onSubmit = async (data) => {
-    // console.log(data);
-
     const updatedJobData = {
       title: data?.job_title,
       jobType: data?.job_type,
@@ -36,15 +33,13 @@ const UpdateJob = () => {
     };
 
     try {
-
       const res = await axiosPublic.put(
-        `/jobs/update-job/${job?._id}`,updatedJobData
-
+        `/jobs/update-job/${job?._id}`,
+        updatedJobData
       );
       if (res.data.status === true) {
         toast.success("Your job has been updated successfully");
       }
-      console.log(res.data);
     } catch (err) {
       console.log(err.message);
     }
@@ -60,7 +55,10 @@ const UpdateJob = () => {
         <div className="space-y-5 grid gap-5 grid-cols-1 md:grid-cols-2 justify-center items-baseline">
           {/* job title  */}
           <div className="space-y-5 drop-shadow-md">
-            <label htmlFor="job_title" className="block text-blue-600 border-l-2 border-blue-400 font-semibold pl-2 w-min whitespace-nowrap">
+            <label
+              htmlFor="job_title"
+              className="block text-blue-600 border-l-2 border-blue-400 font-semibold pl-2 w-min whitespace-nowrap"
+            >
               Job Title
             </label>
             <input
@@ -80,7 +78,10 @@ const UpdateJob = () => {
           </div>
           {/* job type  */}
           <div className="space-y-5 drop-shadow-md">
-            <label htmlFor="job_type" className="block text-blue-600 border-l-2 border-blue-400 font-semibold pl-2 w-min whitespace-nowrap">
+            <label
+              htmlFor="job_type"
+              className="block text-blue-600 border-l-2 border-blue-400 font-semibold pl-2 w-min whitespace-nowrap"
+            >
               Job Type
             </label>
             <input
@@ -100,7 +101,10 @@ const UpdateJob = () => {
           </div>
           {/* job department  */}
           <div className="space-y-5 drop-shadow-md">
-            <label htmlFor="job_department" className="block text-blue-600 border-l-2 border-blue-400 font-semibold pl-2 w-min whitespace-nowrap">
+            <label
+              htmlFor="job_department"
+              className="block text-blue-600 border-l-2 border-blue-400 font-semibold pl-2 w-min whitespace-nowrap"
+            >
               Job Department
             </label>
             <input
@@ -120,7 +124,10 @@ const UpdateJob = () => {
           </div>
           {/* job vacancy  */}
           <div className="space-y-5 drop-shadow-md">
-            <label htmlFor="job_vacancy" className="block text-blue-600 border-l-2 border-blue-400 font-semibold pl-2 w-min whitespace-nowrap">
+            <label
+              htmlFor="job_vacancy"
+              className="block text-blue-600 border-l-2 border-blue-400 font-semibold pl-2 w-min whitespace-nowrap"
+            >
               Job vacancy
             </label>
             <input
@@ -166,7 +173,10 @@ const UpdateJob = () => {
           </div>
           {/* job salary  */}
           <div className="space-y-5 drop-shadow-md">
-            <label htmlFor="job_salary" className="block text-blue-600 border-l-2 border-blue-400 font-semibold pl-2 w-min whitespace-nowrap">
+            <label
+              htmlFor="job_salary"
+              className="block text-blue-600 border-l-2 border-blue-400 font-semibold pl-2 w-min whitespace-nowrap"
+            >
               Job Salary
             </label>
             <input
@@ -186,7 +196,10 @@ const UpdateJob = () => {
           </div>
           {/* job context  */}
           <div className="space-y-5 drop-shadow-md">
-            <label htmlFor="job_context" className="block text-blue-600 border-l-2 border-blue-400 font-semibold pl-2 w-min whitespace-nowrap">
+            <label
+              htmlFor="job_context"
+              className="block text-blue-600 border-l-2 border-blue-400 font-semibold pl-2 w-min whitespace-nowrap"
+            >
               Job Context
             </label>
             <input
@@ -298,7 +311,10 @@ const UpdateJob = () => {
           </div>
           {/* workplace  */}
           <div className="space-y-5 drop-shadow-md">
-            <label htmlFor="workplace" className="block text-blue-600 border-l-2 border-blue-400 font-semibold pl-2 w-min whitespace-nowrap">
+            <label
+              htmlFor="workplace"
+              className="block text-blue-600 border-l-2 border-blue-400 font-semibold pl-2 w-min whitespace-nowrap"
+            >
               Workplace
             </label>
             <input
@@ -318,7 +334,10 @@ const UpdateJob = () => {
           </div>
           {/* job Location  */}
           <div className="space-y-5 drop-shadow-md">
-            <label htmlFor="job_location" className="block text-blue-600 border-l-2 border-blue-400 font-semibold pl-2 w-min whitespace-nowrap">
+            <label
+              htmlFor="job_location"
+              className="block text-blue-600 border-l-2 border-blue-400 font-semibold pl-2 w-min whitespace-nowrap"
+            >
               Job Location
             </label>
             <input
@@ -338,7 +357,10 @@ const UpdateJob = () => {
           </div>
           {/* job address  */}
           <div className="space-y-5 drop-shadow-md">
-            <label htmlFor="address" className="block text-blue-600 border-l-2 border-blue-400 font-semibold pl-2 w-min whitespace-nowrap">
+            <label
+              htmlFor="address"
+              className="block text-blue-600 border-l-2 border-blue-400 font-semibold pl-2 w-min whitespace-nowrap"
+            >
               Job Address
             </label>
             <input

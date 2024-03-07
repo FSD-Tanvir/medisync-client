@@ -9,11 +9,10 @@ import useUsers from "../../../hooks/useUsers";
 const AllAdvices = () => {
   const [advices, , refetch] = useAdvices();
   const [users] = useUsers();
-  console.log("all users ", users);
   const [showModal, setShowModal] = useState(false);
   const [clickAbleId, setClickAbleId] = useState(" ");
   const axiosPublic = useAxiosPublic();
-  console.log(advices);
+
   const generalStyle =
     "text-left text-gray-700 text-center capitalize  px-2 py-2";
   const flexStyle = "flex justify-center items-center";
@@ -30,7 +29,6 @@ const AllAdvices = () => {
     }).then(async (result) => {
       if (result.isConfirmed) {
         await axiosPublic.delete(`/advices/deleteAdvice/${id}`).then((res) => {
-          console.log(res.data);
           if (res.data.deletedCount > 0) {
             Swal.fire({
               title: "Success!",
@@ -47,7 +45,6 @@ const AllAdvices = () => {
     setShowModal(!showModal);
     setClickAbleId(_id);
   };
-  console.log(clickAbleId);
   return (
     <div>
       <div id="app" className=" min-h-screen ">

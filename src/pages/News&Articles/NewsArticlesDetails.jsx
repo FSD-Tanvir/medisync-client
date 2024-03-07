@@ -3,15 +3,13 @@ import { useParams } from "react-router-dom";
 import useAxiosPublic from "../../hooks/useAxiosPublic";
 
 const NewsArticlesDetails = () => {
-  const axiosPublic = useAxiosPublic()
+  const axiosPublic = useAxiosPublic();
   useEffect(() => {
     window.scroll(0, 0);
   }, []);
 
   const [articles, setArticlies] = useState();
   const { id } = useParams();
-
-  console.log(id);
 
   //
 
@@ -21,9 +19,8 @@ const NewsArticlesDetails = () => {
       try {
         // Fetch data from an API endpoint (replace with your API URL)
 
-        const {data:article} = await axiosPublic.get(
+        const { data: article } = await axiosPublic.get(
           `/newAndArticles/single/${id}`
-
         );
 
         // Update the state with the fetched data
@@ -34,7 +31,7 @@ const NewsArticlesDetails = () => {
     };
     // Call the fetchData function
     fetchData();
-  }, [id,axiosPublic]);
+  }, [id, axiosPublic]);
 
   return (
     <>

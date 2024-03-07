@@ -14,7 +14,6 @@ const AllJobs = () => {
       return data?.data;
     },
   });
-  // console.log(allJobsData);
   return (
     <div className="overflow-x-auto ">
       <table className={`table w-full ml-4 ${isOpen && "mt-10"}`}>
@@ -27,9 +26,13 @@ const AllJobs = () => {
               <div className="flex items-center gap-2 relative">
                 Job Title
                 <span onClick={() => setIsOpen(!isOpen)}>
-                  <FaAngleDown className={`${isOpen && "rotate-180"}`}/>
+                  <FaAngleDown className={`${isOpen && "rotate-180"}`} />
                 </span>
-                <select className={`px-3 py-1 text-sm ${isOpen ? "block": "hidden"} absolute -top-8 z-[40000] rounded-md border outline-none `}>
+                <select
+                  className={`px-3 py-1 text-sm ${
+                    isOpen ? "block" : "hidden"
+                  } absolute -top-8 z-[40000] rounded-md border outline-none `}
+                >
                   <option>Filter By Title</option>
                   <option>option1</option>
                   <option>option2</option>
@@ -41,9 +44,7 @@ const AllJobs = () => {
             <th className="text-lg capitalize text-left px-3 xl:pl-3">
               Department
             </th>
-            <th className="text-lg capitalize text-left px-3 xl:pl-3">
-              Type
-            </th>
+            <th className="text-lg capitalize text-left px-3 xl:pl-3">Type</th>
             <th className="text-lg capitalize text-left px-3 xl:pl-3">
               Salary
             </th>

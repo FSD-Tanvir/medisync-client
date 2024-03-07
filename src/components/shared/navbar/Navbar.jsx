@@ -5,7 +5,7 @@ import { FiFilePlus } from "react-icons/fi";
 import { FaUserDoctor } from "react-icons/fa6";
 import { GrWorkshop } from "react-icons/gr";
 import { TiThMenu } from "react-icons/ti";
-import { IoCartOutline,  IoClose } from "react-icons/io5";
+import { IoCartOutline, IoClose } from "react-icons/io5";
 import { useContext, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import Modal from "../../../pages/home/LogInRegistration/Modal";
@@ -37,12 +37,11 @@ const Navbar = () => {
   const [productCart, ,] = useProductCart();
 
   let [openMenu, setOpenMenu] = useState(false);
-  // const [showModal, setShowModal] = useState(false);
-  const {setShowModal} = useContext(StateManager);
+  const { setShowModal } = useContext(StateManager);
 
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
   const userData = useUser();
-  const isAdmin = userData?.role === "admin" ? true : false;  
+  const isAdmin = userData?.role === "admin" ? true : false;
 
   const openDrawer = () => {
     setIsDrawerOpen(true);
@@ -56,7 +55,7 @@ const Navbar = () => {
     <>
       {/* navbar  for small device */}
 
-      <div className=" sticky top-0 lg:hidden flex items-center justify-between bg-navbar-bg-color shadow-xl p-2 z-50 ">
+      <div className=" sticky top-0 lg:hidden flex items-center justify-between bg-navbar-bg-color shadow p-2 z-50 ">
         {/* logo */}
 
         <div className="relative">
@@ -79,18 +78,21 @@ const Navbar = () => {
               {user?.email ? (
                 <div className="flex gap-2 items-center">
                   <div>
-                    {isAdmin ? <Link to="/dashboard/overview-admin">
-                      <img
-                        className="w-10 h-10 rounded-full"
-                        src={user?.photoURL}
-                      />
-                    </Link>
-                    :<Link to="/dashboard/overview-user">
-                      <img
-                        className="w-10 h-10 rounded-full"
-                        src={user?.photoURL}
-                      />
-                    </Link>}
+                    {isAdmin ? (
+                      <Link to="/dashboard/overview-admin">
+                        <img
+                          className="w-10 h-10 rounded-full"
+                          src={user?.photoURL}
+                        />
+                      </Link>
+                    ) : (
+                      <Link to="/dashboard/overview-user">
+                        <img
+                          className="w-10 h-10 rounded-full"
+                          src={user?.photoURL}
+                        />
+                      </Link>
+                    )}
                   </div>
                 </div>
               ) : (
@@ -113,7 +115,7 @@ const Navbar = () => {
       >
         {/* search bar */}
 
-        <SearchBar/>
+        <SearchBar />
 
         {/* menu icon */}
         <div className="flex items-center gap-2 text-text-color-blue">
@@ -125,7 +127,7 @@ const Navbar = () => {
 
       {/* navbar for desktop */}
 
-      <div className="hidden lg:block z-10 bg-navbar-bg-color shadow-xl ">
+      <div className="hidden lg:block z-10 bg-navbar-bg-color shadow ">
         <div className="flex justify-between items-center text-black p-2 max-w-7xl mx-auto">
           {/* logo */}
 
@@ -135,7 +137,7 @@ const Navbar = () => {
 
           {/* search bar */}
 
-          <SearchBar/>
+          <SearchBar />
 
           {/* cart , login and profile division  */}
 
@@ -152,18 +154,21 @@ const Navbar = () => {
                 {user?.email ? (
                   <div className="flex gap-2 items-center ml-2">
                     <div>
-                    {isAdmin ? <Link to="/dashboard/overview-admin">
-                      <img
-                        className="w-10 h-10 rounded-full"
-                        src={user?.photoURL}
-                      />
-                    </Link>
-                    :<Link to="/dashboard/overview-user">
-                      <img
-                        className="w-10 h-10 rounded-full"
-                        src={user?.photoURL}
-                      />
-                    </Link>}
+                      {isAdmin ? (
+                        <Link to="/dashboard/overview-admin">
+                          <img
+                            className="w-10 h-10 rounded-full"
+                            src={user?.photoURL}
+                          />
+                        </Link>
+                      ) : (
+                        <Link to="/dashboard/overview-user">
+                          <img
+                            className="w-10 h-10 rounded-full"
+                            src={user?.photoURL}
+                          />
+                        </Link>
+                      )}
                     </div>
                   </div>
                 ) : (
@@ -182,7 +187,7 @@ const Navbar = () => {
 
       {/* navbar with menu items */}
 
-      <div className="sticky lg:top-0 top-[50px] z-10 bg-navbar-bg-color  lg:rounded-b-xl  shadow-lg ">
+      <div className="sticky lg:top-0 top-[50px] z-10 bg-navbar-bg-color  lg:rounded-b-xl  shadow ">
         <div className="relative max-w-7xl mx-auto">
           <ul
             className={`flex flex-col lg:flex-row gap-5 absolute lg:static bg-navbar-bg-color  rounded-b-xl  p-5  transition-all duration-500 ease-in ${
@@ -212,7 +217,6 @@ const Navbar = () => {
       </div>
       {/* showModal={showModal} setShowModal={setShowModal} */}
       <Modal />
-    
     </>
   );
 };

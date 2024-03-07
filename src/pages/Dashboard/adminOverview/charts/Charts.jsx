@@ -13,19 +13,15 @@ const Charts = () => {
   const [appointmentStatisticsData, setAppointmentStatisticsData] = useState(
     []
   );
-  console.log(whichChart);
-
-  console.log(setAppointmentStatisticsData);
 
   useEffect(() => {
     // first checking is filterText != null
     if (filterTextUser) {
       const fetchData = async () => {
-          const { data } = await axiosSecure.get(
-            `/users/all?filter=${filterTextUser}`
-          );
-          setUserStatisticsData(data);
-          console.log(data)
+        const { data } = await axiosSecure.get(
+          `/users/all?filter=${filterTextUser}`
+        );
+        setUserStatisticsData(data);
       };
       // calling fetchData function
       fetchData();
@@ -34,10 +30,10 @@ const Charts = () => {
   useEffect(() => {
     if (filterTextAppointment) {
       const fetchData = async () => {
-          const { data } = await axiosSecure.get(
-            `/doctorAppointments/all?filter=${filterTextAppointment}`
-          );
-          setAppointmentStatisticsData(data);
+        const { data } = await axiosSecure.get(
+          `/doctorAppointments/all?filter=${filterTextAppointment}`
+        );
+        setAppointmentStatisticsData(data);
       };
       // calling fetchData function
       fetchData();

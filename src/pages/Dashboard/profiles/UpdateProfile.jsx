@@ -6,19 +6,18 @@ import { useState } from "react";
 import useAxiosSecure from "../../../hooks/useAxiosSecure";
 import useAuth from "../../../hooks/useAuth";
 
-const UpdateProfile = ({setIsUpdateProfileClicked}) => {
-    const { user, updateUserProfile } = useAuth();
-  const axiosSecure = useAxiosSecure()
+const UpdateProfile = ({ setIsUpdateProfileClicked }) => {
+  const { user, updateUserProfile } = useAuth();
+  const axiosSecure = useAxiosSecure();
   const [photoUrl, setPhotoUrl] = useState(undefined);
   const [activeUpdate, setActiveUpdate] = useState(false);
   const [isTooltip, setIsToolTip] = useState(false);
 
   const handleUploadImage = async (image) => {
-    // save image on imgbb and get image url 
+    // save image on imgbb and get image url
     if (image) {
       const { data } = await saveImage(image);
       setPhotoUrl(data?.display_url);
-      //   console.log(data);
     }
   };
 
@@ -32,13 +31,15 @@ const UpdateProfile = ({setIsUpdateProfileClicked}) => {
         name,
         image: photoUrl,
       };
-      const {data} =await axiosSecure.put(`/users/update-user/${user?.email}`,updatedProfileInfo)
-      if(data?.acknowledgement?.modifiedCount >0){
-          toast.success("Your profile updated successfully")
-          await updateUserProfile(name,photoUrl)
-          setActiveUpdate(false)
+      const { data } = await axiosSecure.put(
+        `/users/update-user/${user?.email}`,
+        updatedProfileInfo
+      );
+      if (data?.acknowledgement?.modifiedCount > 0) {
+        toast.success("Your profile updated successfully");
+        await updateUserProfile(name, photoUrl);
+        setActiveUpdate(false);
       }
-      console.log(data);
     } catch (err) {
       console.log(err);
     }
@@ -53,7 +54,7 @@ const UpdateProfile = ({setIsUpdateProfileClicked}) => {
             <div className="flex flex-col items-center">
               <div className="w-[100px] h-[100px] p-1 bg-blue-500 rounded-full mb-4">
                 <img
-                  className="rounded-full w-full h-full object-cover object-top" 
+                  className="rounded-full w-full h-full object-cover object-top"
                   src={photoUrl || user?.photoURL}
                   alt="user image"
                 />
@@ -104,7 +105,6 @@ const UpdateProfile = ({setIsUpdateProfileClicked}) => {
                   className="text-lg text-black-text font-semibold"
                 >
                   Email Address
-                  
                 </label>
                 <input
                   type="email"
@@ -119,14 +119,21 @@ const UpdateProfile = ({setIsUpdateProfileClicked}) => {
                 />
                 {/* here is the tooltip  */}
                 <span
-                    onClick={() => setIsToolTip(!isTooltip)}
-                    className="text-red-600 border rounded-full flex justify-center items-center w-4 h-4 cursor-pointer absolute right-[25%] top-[6px] p-2 select-none"
-                  >
-                    <em className="">i</em>
-                    
-                  </span>
-                  {/* tooltip message  */}
-                  <span className={`text-[13px] text-red-600 ml-1 w-min whitespace-nowrap absolute -right-[15%] -top-3 ${isTooltip ? "pointer-events-auto, opacity-100": "pointer-events-none, opacity-0"} transition duration-200 ease-linear`}>not changeable</span>
+                  onClick={() => setIsToolTip(!isTooltip)}
+                  className="text-red-600 border rounded-full flex justify-center items-center w-4 h-4 cursor-pointer absolute right-[25%] top-[6px] p-2 select-none"
+                >
+                  <em className="">i</em>
+                </span>
+                {/* tooltip message  */}
+                <span
+                  className={`text-[13px] text-red-600 ml-1 w-min whitespace-nowrap absolute -right-[15%] -top-3 ${
+                    isTooltip
+                      ? "pointer-events-auto, opacity-100"
+                      : "pointer-events-none, opacity-0"
+                  } transition duration-200 ease-linear`}
+                >
+                  not changeable
+                </span>
               </div>
             </div>
           </div>

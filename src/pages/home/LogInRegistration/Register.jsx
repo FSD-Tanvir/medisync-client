@@ -30,7 +30,8 @@ import { saveImage } from "../../../utils/utils";
 import { StateManager } from "../../../Porviders/StateProvider";
 
 const Register = ({ setShowRegister }) => {
-  const { createUser, setLoading, loading, updateUserProfile } = useContext(AuthContext);
+  const { createUser, setLoading, loading, updateUserProfile } =
+    useContext(AuthContext);
   const [whichPhotoSelected, setWhichPhotoSelected] = useState(null);
   const { setShowModal } = useContext(StateManager);
   const axiosPublic = useAxiosPublic();
@@ -44,8 +45,6 @@ const Register = ({ setShowRegister }) => {
     const password = form.password?.value;
     const image = form.photo?.files[0];
 
-    console.log(name, email, password, image);
-
     // save image on imgbb and get display_url
     const { data } = await saveImage(image);
     const imgUrl = data?.display_url;
@@ -57,12 +56,11 @@ const Register = ({ setShowRegister }) => {
 
     createUser(email, password)
       .then(async (res) => {
-        updateUserProfile(name, imgUrl)
+        updateUserProfile(name, imgUrl);
         const { data } = await axiosPublic.post(
           `/users/create-user/${res?.user?.email}`,
           userInfo
         );
-        console.log("Success ", data);
         if (data?.status === true) {
           Swal.fire({
             position: "center",
@@ -79,7 +77,7 @@ const Register = ({ setShowRegister }) => {
         }
       })
       .catch((err) => {
-        console.log(err)
+        console.log(err);
         Swal.fire({
           position: "center",
           icon: "error",
@@ -247,10 +245,10 @@ const Register = ({ setShowRegister }) => {
           <div>
             {loading ? (
               <button
-                className=" text-white px-4 py-3 rounded-lg bg-[#4D779F]"
+                className=" text-white px-4 py-3 rounded-lg bg-text-color-blue w-full"
                 disabled
               >
-                <VscLoading className="animate-spin text-2xl" />
+                <VscLoading className="animate-spin text-2xl w-full" />
               </button>
             ) : (
               <Button

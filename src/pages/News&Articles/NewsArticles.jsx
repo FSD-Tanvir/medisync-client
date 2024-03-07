@@ -14,7 +14,6 @@ const NewsArticles = () => {
   const [articles, setArticlies] = useState();
   const navigate = useNavigate();
   const [currentPage, setCurrentPage] = useState(1);
-  console.log(articles);
   const articlesPerPage = 10;
   const lastIndex = currentPage * articlesPerPage;
   const firstIndex = lastIndex - articlesPerPage;
@@ -42,7 +41,6 @@ const NewsArticles = () => {
   }, [axiosPublic]);
 
   const handleArticlePage = (id) => {
-    console.log(id);
     navigate(`/articles/${id}`);
   };
 

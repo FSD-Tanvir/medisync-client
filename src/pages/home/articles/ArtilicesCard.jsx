@@ -3,10 +3,6 @@ import Button from "../../../components/shared/button/Button";
 const ArtilicesCard = ({ articlie, handleArticlePage }) => {
   const { _id, title, image, description } = articlie || {};
 
-  // const toggleDescription = () => {
-  //     setShowFullDescription(!showFullDescription);
-  // };
-
   const truncatedDescription = `${description
     .split(" ")
     .slice(0, 15)

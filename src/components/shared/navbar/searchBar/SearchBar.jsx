@@ -6,11 +6,9 @@ import SearchModal from "../searchModal/SearchModal";
 const SearchBar = () => {
   const axiosPublic = useAxiosPublic();
   const [searchText, setSearchText] = useState("");
-  const searchFieldRef = useRef(null)
+  const searchFieldRef = useRef(null);
   const [selectedTab, setSelectedTab] = useState("Search_Products");
   const [filteredData, setFilteredData] = useState([]);
-
-  // console.log(searchFieldRef.current?.value);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -46,7 +44,14 @@ const SearchBar = () => {
         </div>
       </div>
       {/* search result will be appears down below - by modal */}
-      <SearchModal searchText={searchText} setSearchText={setSearchText} searchFieldRef={searchFieldRef} selectedTab={selectedTab} setSelectedTab={setSelectedTab} filteredData={filteredData}/>
+      <SearchModal
+        searchText={searchText}
+        setSearchText={setSearchText}
+        searchFieldRef={searchFieldRef}
+        selectedTab={selectedTab}
+        setSelectedTab={setSelectedTab}
+        filteredData={filteredData}
+      />
     </div>
   );
 };

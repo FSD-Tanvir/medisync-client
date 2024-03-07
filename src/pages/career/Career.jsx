@@ -13,8 +13,6 @@ const Career = () => {
   const [displayJobs, setDisplayJobs] = useState([]);
   const [departments, setDepartments] = useState([]);
 
-  // console.log(departments);
-
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -28,7 +26,6 @@ const Career = () => {
         data?.data.forEach((job) => {
           if (departmentsArr.includes(job.department.toLowerCase()) === false) {
             departmentsArr.push(job.department.toLowerCase());
-            // console.log(testArr);
           }
         });
       } catch (err) {
@@ -39,7 +36,7 @@ const Career = () => {
     fetchData();
     // set departments
     setDepartments(departmentsArr);
-  }, [axiosPublic,searchText]);
+  }, [axiosPublic, searchText]);
 
   const handleDepartment = (department) => {
     if (department !== "all_jobs") {
@@ -85,13 +82,20 @@ const Career = () => {
           </div>
         </div>
         <div>
-          <select onChange={(e)=>handleDepartment(e?.target?.value?.replace(/ /g,"_"))} name="job_department" className="w-[170px] rounded-full pl-3 capitalize outline-none py-[10px]">
-            <option value="all_jobs">all jobs</option>
-            {
-              departments && departments.map((department,idx)=>(
-                <option key={idx} value={department}>{department.replace(/_/g," ")}</option>
-              ))
+          <select
+            onChange={(e) =>
+              handleDepartment(e?.target?.value?.replace(/ /g, "_"))
             }
+            name="job_department"
+            className="w-[170px] rounded-full pl-3 capitalize outline-none py-[10px]"
+          >
+            <option value="all_jobs">all jobs</option>
+            {departments &&
+              departments.map((department, idx) => (
+                <option key={idx} value={department}>
+                  {department.replace(/_/g, " ")}
+                </option>
+              ))}
           </select>
         </div>
       </div>
@@ -103,40 +107,54 @@ const Career = () => {
           All Jobs
         </h2>
         {/* jobs  */}
-        {displayJobs.length >0 ? <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 mt-6">
-          {displayJobs?.map((job) => (
-            <div
-              onClick={() => handleJobClick(job._id)}
-              key={job._id}
-              className="bg-white rounded-lg shadow-lg border px-4 py-3"
-            >
-              <h3 className="text-lg sm:text-xl text-black font-bold cursor-pointer">
-                {job.title.split("_").join(" ")}
-              </h3>
-              <h5 className="text-black/70 font-medium cursor-pointer">
-                {job.department.replace(/_/g, " ")} | {job.jobType}
-              </h5>
-              <p className="text-black/70 font-medium cursor-pointer max-w-full">
-                {job.address}
-              </p>
+        {displayJobs.length > 0 ? (
+          <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 mt-6">
+            {displayJobs?.map((job) => (
+              <div
+                onClick={() => handleJobClick(job._id)}
+                key={job._id}
+                className="bg-white rounded-lg shadow-lg border px-4 py-3"
+              >
+                <h3 className="text-lg sm:text-xl text-black font-bold cursor-pointer">
+                  {job.title.split("_").join(" ")}
+                </h3>
+                <h5 className="text-black/70 font-medium cursor-pointer">
+                  {job.department.replace(/_/g, " ")} | {job.jobType}
+                </h5>
+                <p className="text-black/70 font-medium cursor-pointer max-w-full">
+                  {job.address}
+                </p>
+              </div>
+            ))}
+          </div>
+        ) : (
+          <div className="flex justify-center mt-6">
+            <div className="flex flex-col gap-0 justify-center items-center min-h-[60vh]">
+              <div className="w-[45%] sm:w-[25%] lg:w-[20%] xl:w-[16%] mx-auto border-none rounded-lg">
+                <img
+                  src="https://i.ibb.co/pwdt62g/9214814.jpg"
+                  className="opacity-90 rounded-lg"
+                  alt="Jobs not found image"
+                />
+              </div>
+              <div className="text-center mb-6 px-3 mt-2">
+                <p className="text-4xl font-bold text-gray-800">
+                  oOps<span className="text-red-600">!!!</span>
+                </p>
+                <p className="text-4xl font-bold text-gray-800">
+                  Jobs Not Found 😢
+                </p>
+              </div>
+              <div className="flex gap-3 items-center">
+                <IoIosRefresh
+                  onClick={() => window.location.reload()}
+                  size={24}
+                  className="cursor-pointer"
+                />
+              </div>
             </div>
-          ))}
-        </div>
-        :<div className="flex justify-center mt-6"><div className="flex flex-col gap-0 justify-center items-center min-h-[60vh]">
-            <div className="w-[45%] sm:w-[25%] lg:w-[20%] xl:w-[16%] mx-auto border-none rounded-lg">
-                <img src="https://i.ibb.co/pwdt62g/9214814.jpg" className="opacity-90 rounded-lg" alt="Jobs not found image"/>
-            </div>
-            <div className="text-center mb-6 px-3 mt-2">
-                <p className="text-4xl font-bold text-gray-800">oOps<span className="text-red-600">!!!</span></p>
-                <p className="text-4xl font-bold text-gray-800">Jobs Not Found 😢</p>
-            </div>
-            <div className="flex gap-3 items-center">
-            {/* <Link to="/">
-            <Button btnName="go home" classForButton="px-3"/>
-            </Link> */}
-            <IoIosRefresh onClick={() => window.location.reload()} size={24} className="cursor-pointer"/>
-            </div>
-        </div></div>}
+          </div>
+        )}
       </div>
     </div>
   );

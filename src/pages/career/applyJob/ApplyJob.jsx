@@ -9,10 +9,9 @@ const ApplyJob = () => {
   const axiosSecure = useAxiosSecure();
   const { titleAndId } = partialData;
 
-
-  const handleSubmit = async(e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    const form = e.target
+    const form = e.target;
     const applierData = {
       name: form?.user_name?.value,
       email: form?.user_email?.value,
@@ -22,24 +21,24 @@ const ApplyJob = () => {
       expectedSalary: form?.expected_salary?.value,
       cv: form?.cv?.value,
       jobName: titleAndId?.title,
-      jobId:titleAndId?._id,
+      jobId: titleAndId?._id,
     };
 
     try {
-      const {data} = await axiosSecure.post("/jobApplications/save-application",applierData)
-      if(data?.acknowledge){
-        toast.success("Your application succeeded")
+      const { data } = await axiosSecure.post(
+        "/jobApplications/save-application",
+        applierData
+      );
+      if (data?.acknowledge) {
+        toast.success("Your application succeeded");
       }
-      // console.log(data)
     } catch (err) {
-      if(err.response.status === 403){
-        toast.error(`You are already applied for ${titleAndId?.title.replace(/_/g," ")}`)
+      if (err.response.status === 403) {
+        toast.error(
+          `You are already applied for ${titleAndId?.title.replace(/_/g, " ")}`
+        );
       }
-      // console.log(err);
     }
-
-    // console.log(applierData);
-
   };
 
   return (

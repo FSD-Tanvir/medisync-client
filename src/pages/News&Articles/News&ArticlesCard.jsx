@@ -24,9 +24,8 @@ const NewsArticlesCard = ({ articleData, handleArticlePage }) => {
             </p>
           </div>
           <div className="my-2 w-full flex flex-col justify-center items-center absolute bottom-0 left-0 right-0 m-auto">
-            <div>
+            <div onClick={() => handleArticlePage(_id)}>
               <Button
-                onClick={() => handleArticlePage(_id)}
                 btnName="Read More"
                 classForButton="px-2 rounded-md text-xs sm:text-sm md:text-xs lg:text-sm xl:text-xs lg:w-full xl:w-fit"
               />

@@ -7,7 +7,6 @@ import { Link } from "react-router-dom";
 const Products = () => {
   const category = "all";
   const [products] = useAllProducts({ category });
-  // console.log(products)
 
   // filter product as a category
   const otcProducts = (
@@ -36,11 +35,11 @@ const Products = () => {
     <div className="text-black ">
       {/* otc */}
       <h2 className="mt-8 mb-8 text-2xl font-bold pl-2">OTC Medicine</h2>
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 mx-2 md:mx-8 lg:mx-2  md:gap-6 ">
-          {otcProducts.map((product) => (
-            <ProductsCard key={product._id} product={product} />
-          ))}
-        </div>
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 mx-2 md:mx-8 lg:mx-2  md:gap-6 ">
+        {otcProducts.map((product) => (
+          <ProductsCard key={product._id} product={product} />
+        ))}
+      </div>
       <div className=" text-center sm:text-right sm:pr-10 lg:pr-2 mt-5 ">
         <Link
           to={`/all-products/otc`}
@@ -56,7 +55,6 @@ const Products = () => {
         {womenProducts.map((product) => (
           <ProductsCard key={product.id} product={product} />
         ))}
-
       </div>
       <div className=" text-center sm:text-right sm:pr-10 lg:pr-2 mt-5 ">
         <Link
@@ -71,11 +69,9 @@ const Products = () => {
 
       <h2 className="mt-8 mb-8 text-2xl font-bold pl-2">Baby Care</h2>
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 mx-2 md:mx-8 lg:mx-2  md:gap-6">
-
         {babyProducts.map((product) => (
           <ProductsCard key={product.id} product={product} />
         ))}
-
       </div>
       <div className=" text-center sm:text-right sm:pr-10 lg:pr-2 mt-5 ">
         <Link
@@ -89,11 +85,9 @@ const Products = () => {
       {/* dental */}
       <h2 className="mt-8 mb-8 text-2xl font-bold pl-2">Dental Care</h2>
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 mx-2 md:mx-8 lg:mx-2  md:gap-6">
-
         {dentalProducts.map((product) => (
           <ProductsCard key={product.id} product={product} />
         ))}
-
       </div>
       <div className=" text-center sm:text-right sm:pr-10 lg:pr-2 mt-5 ">
         <Link
@@ -107,11 +101,9 @@ const Products = () => {
       {/* personal */}
       <h2 className="mt-8 mb-8 text-2xl font-bold pl-2">Personal Care</h2>
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 mx-2 md:mx-8 lg:mx-2  md:gap-6">
-
         {personalProducts.map((product) => (
           <ProductsCard key={product.id} product={product} />
         ))}
-
       </div>
       <div className=" text-center sm:text-right sm:pr-10 lg:pr-2 mt-5 ">
         <Link
@@ -125,11 +117,9 @@ const Products = () => {
       {/* diabetic */}
       <h2 className="mt-8 mb-8 text-2xl font-bold pl-2">Diabetic Products</h2>
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 mx-2 md:mx-8 lg:mx-2  md:gap-6">
-
         {diabeticProducts.map((product) => (
           <ProductsCard key={product.id} product={product} />
         ))}
-
       </div>
       <div className=" text-center sm:text-right sm:pr-10 lg:pr-2 mt-5 ">
         <Link
@@ -151,7 +141,6 @@ const Products = () => {
             <ProductsCard product={product} />
           </div>
         ))}
-
       </div>
       <div className=" text-center sm:text-right sm:pr-10 lg:pr-2 mt-5 ">
         <Link

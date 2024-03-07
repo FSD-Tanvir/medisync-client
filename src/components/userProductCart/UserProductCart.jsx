@@ -5,14 +5,11 @@ import Button from "../shared/button/Button";
 import useAxiosSecure from "../../hooks/useAxiosSecure";
 import { useState } from "react";
 const UserProductCart = ({ onClose }) => {
-
   const [productCart, isLoading, refetch] = useProductCart();
   const [initialQuantity, setInitialQuantity] = useState(1);
   const [isDisabled, setIsDisabled] = useState(false);
   const axiosSecure = useAxiosSecure();
   const location = useLocation();
-
-
 
   const handleDeleteProduct = async (productId) => {
     try {
@@ -38,22 +35,21 @@ const UserProductCart = ({ onClose }) => {
 
   // increment and decrement func here
   const handleUpdateProduct = async (id, quantity, price, action) => {
-    // setQuantity(quantity)
     let updatedQuantity;
     let updatedTotalPrice;
 
     // checking if action are increment or decrement
     if (action === "increment") {
-      setIsDisabled(false)
+      setIsDisabled(false);
       updatedQuantity = quantity + 1;
       updatedTotalPrice = price * updatedQuantity;
     } else {
       if (quantity === initialQuantity) {
         updatedQuantity = quantity;
         updatedTotalPrice = price * updatedQuantity;
-        return setIsDisabled(true)
+        return setIsDisabled(true);
       }
-      setIsDisabled(false)
+      setIsDisabled(false);
       updatedQuantity = quantity - 1;
       updatedTotalPrice = price * updatedQuantity;
     }
@@ -66,17 +62,14 @@ const UserProductCart = ({ onClose }) => {
     }
   };
 
-
-
   return (
     <div
-      className={`flex flex-col ${location.pathname === "/checkout" &&
+      className={`flex flex-col ${
+        location.pathname === "/checkout" &&
         "md:flex-row sm:justify-between gap-5"
-        }`}
+      }`}
     >
-      <div
-        className={`${location.pathname === "/checkout" && "md:w-3/4"}`}
-      >
+      <div className={`${location.pathname === "/checkout" && "md:w-3/4"}`}>
         {productCart.map((product, index) => (
           <div key={index} className="p-4 mb-4 shadow-md rounded-md">
             <div className="flex items-center relative">
@@ -149,8 +142,9 @@ const UserProductCart = ({ onClose }) => {
 
       {/* Sub-total and Checkout */}
       <div
-        className={`flex flex-col ${location.pathname === "/checkout" && "md:w-1/3"
-          } p-3 shadow-md rounded-md`}
+        className={`flex flex-col ${
+          location.pathname === "/checkout" && "md:w-1/3"
+        } p-3 shadow-md rounded-md`}
       >
         <p className="text-gray-700 mb-2">
           <span className="font-bold">Sub Total:</span> ${subTotal.toFixed(2)}

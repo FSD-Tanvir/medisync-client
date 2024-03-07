@@ -8,24 +8,21 @@ import { StateManager } from "../../Porviders/StateProvider";
 
 const SocialLogin = () => {
   const { googleLogin } = useAuth();
-  const {showModal,setShowModal} = useContext(StateManager);
+  const { showModal, setShowModal } = useContext(StateManager);
   const axiosPublic = useAxiosPublic();
 
   const handelGoogleLogin = (media) => {
     media()
       .then(async (result) => {
-        // console.log(result)
         const userInfo = {
           name: result.user?.displayName,
           email: result.user?.email,
           photoURL: result.user?.photoURL,
         };
-        // console.log(userInfo);
         const { data } = await axiosPublic.post(
           `/users/create-user/${result?.user?.email}`,
           userInfo
         );
-        // console.log(data?.message);
         if (data?.status === true) {
           Swal.fire({
             position: "center",
@@ -52,9 +49,6 @@ const SocialLogin = () => {
       })
       .catch((error) => {
         console.log(error.message);
-        // if(error === "Firebase: Error (auth/popup-closed-by-user)." || error === "Firebase: Error (auth/cancelled-popup-request)."){
-
-        // }
       });
   };
   return (

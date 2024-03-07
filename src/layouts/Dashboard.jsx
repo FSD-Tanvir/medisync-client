@@ -21,7 +21,6 @@ const Dashboard = () => {
   const [open, setOpen] = useState(false);
   const userData = useUser();
   const isAdmin = userData?.role === "admin" ? true : false;
-  // const isAdmin = "true"
   const { logOut } = useAuth();
   const location = useLocation();
 
@@ -441,7 +440,7 @@ const Dashboard = () => {
                           className="w-16 sm:w-6 text-[40px] ml-2 nav-icon transition-colors duration-[250] ease-linear"
                           // alt=""
                         ></BsCartCheck>
-                        My Cart
+                        My Orders
                       </span>
                     ) : (
                       <BsCartCheck

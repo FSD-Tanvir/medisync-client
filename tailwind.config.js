@@ -18,9 +18,6 @@ export default {
         "hover-text-color":"rgb(59 130 246)",
         "hover-border-color":"rgb(59 130 246)",
       },
-      // fontSize:{
-      //   "font-size-medium":
-      // }
     },
   },
   plugins: [],

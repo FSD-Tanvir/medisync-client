@@ -12,7 +12,6 @@ const Success = () => {
   useEffect(() => {
     const searchParams = new URLSearchParams(location.search);
     const startTimeParam = searchParams.get("startTime");
-    // console.log("startTime",startTimeParam)
     setStartTime(startTimeParam);
   }, [location.search]);
 

@@ -78,10 +78,6 @@ const Categories = () => {
           navigation={true}
           modules={[Grid, Pagination, Navigation]}
           className="mySwiper"
-          // style={{
-          //   paddingLeft: "10px",
-          //   paddingRight: "10px",
-          // }}
         >
           <SwiperSlide
             style={{

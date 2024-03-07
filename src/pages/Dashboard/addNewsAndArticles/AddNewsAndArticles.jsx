@@ -10,12 +10,10 @@ const AddNewsAndArticles = () => {
   const {
     register,
     handleSubmit,
-    reset,
     formState: { errors },
   } = useForm();
 
   const onSubmit = async (data) => {
-    console.log(data);
     await axiosPublic.post("/newAndArticles/addArticle", data).then((res) => {
       if (res.data) {
         Swal.fire({
@@ -27,7 +25,6 @@ const AddNewsAndArticles = () => {
         });
         navigate("/Dashboard/all-articles");
       }
-      console.log(res);
     });
 
     // reset();
@@ -78,7 +75,9 @@ const AddNewsAndArticles = () => {
               )}
             </div>
             <div className="space-y-5 drop-shadow-md">
-              <label className="block text-text-color-blue">Post description</label>
+              <label className="block text-text-color-blue">
+                Post description
+              </label>
               <input
                 type="text"
                 name="description"

@@ -5,13 +5,19 @@ import useAxiosPublic from "../../../hooks/useAxiosPublic";
 
 const DoctorRow = ({ doctor, idx, refetch }) => {
   const navigate = useNavigate();
-  const axiosPublic = useAxiosPublic()
+  const axiosPublic = useAxiosPublic();
   // destructuring job
-  const { _id, name, contact, experience_years, specialization,qualification } = doctor || {};
+  const {
+    _id,
+    name,
+    contact,
+    experience_years,
+    specialization,
+    qualification,
+  } = doctor || {};
 
   // handle update job
   const handleUpdateDoctor = () => {
-    console.log(_id);
     navigate(`/dashboard/doctors-panel/update-doctor/${_id}`);
   };
   const handleDeleteDoctor = () => {
@@ -26,12 +32,7 @@ const DoctorRow = ({ doctor, idx, refetch }) => {
     }).then((result) => {
       if (result.isConfirmed) {
         const deleteJob = async () => {
-
-
-          const res = await axiosPublic.delete(
-            `/doctors/${_id}`
-
-          );
+          const res = await axiosPublic.delete(`/doctors/${_id}`);
           if (res.data.status === true) {
             refetch();
             Swal.fire({
@@ -59,7 +60,7 @@ const DoctorRow = ({ doctor, idx, refetch }) => {
   return (
     <tr className="hover:bg-blue-100">
       <th className="text-left">
-      <div className="pl-2">{idx + 1}</div>
+        <div className="pl-2">{idx + 1}</div>
       </th>
       <td className="capitalize text-left w-min whitespace-nowrap">
         <div className="px-3 xl:pl-3">{name}</div>
@@ -73,7 +74,7 @@ const DoctorRow = ({ doctor, idx, refetch }) => {
       <td className="capitalize text-left w-min whitespace-nowrap">
         <div className="px-3 xl:pl-3 py-3">{experience_years} years</div>
       </td>
-      
+
       <td className="capitalize text-left w-min whitespace-nowrap">
         <div className="px-3 xl:pl-3">{qualification}</div>
       </td>

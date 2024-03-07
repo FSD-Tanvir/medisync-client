@@ -14,11 +14,15 @@ const JobDetails = () => {
   const [relatedJobsData, setRelatedJobsData] = useState([]);
 
   useEffect(() => {
-
     const fetchData = async () => {
       try {
         const { data } = await axiosPublic.get(`/jobs`);
-        const relatedJobs = data?.data.filter(job => job?.department.toLowerCase() === singleJob?.department.toLowerCase() && job?.title !== singleJob?.title)
+        const relatedJobs = data?.data.filter(
+          (job) =>
+            job?.department.toLowerCase() ===
+              singleJob?.department.toLowerCase() &&
+            job?.title !== singleJob?.title
+        );
         setRelatedJobsData(relatedJobs);
       } catch (err) {
         console.log(err);
@@ -26,9 +30,8 @@ const JobDetails = () => {
     };
     // calling the fetchData func
     fetchData();
-  }, [axiosPublic,singleJob]);
+  }, [axiosPublic, singleJob]);
 
-console.log(relatedJobsData)
   const handleApply = (id) => {
     navigate(`/career/job-details/apply-job/${id}`);
   };
@@ -44,59 +47,59 @@ console.log(relatedJobsData)
       />
       {/* job details main content  */}
 
-        <div className="my-14 relative w-full px-4 pb-8 md:w-10/12 lg:w-3/4 mx-auto shadow-lg rounded-lg">
-          {/* heading  */}
-          <h3 className="text-lg sm:text-3xl text-black/70 font-bold mb-1">
-            {singleJob?.title.replace(/_/g, " ")}
-          </h3>
-          <div className="flex gap-4">
-            <div className="flex items-center gap-2">
-              <span>
-                <IoBriefcaseSharp className="text-blue-500" />
-              </span>
+      <div className="my-14 relative w-full px-4 pb-8 md:w-10/12 lg:w-3/4 mx-auto shadow-lg rounded-lg">
+        {/* heading  */}
+        <h3 className="text-lg sm:text-3xl text-black/70 font-bold mb-1">
+          {singleJob?.title.replace(/_/g, " ")}
+        </h3>
+        <div className="flex gap-4">
+          <div className="flex items-center gap-2">
+            <span>
+              <IoBriefcaseSharp className="text-blue-500" />
+            </span>
 
-              <h4 className="text-black/70">{singleJob?.jobType}</h4>
-            </div>
-            <div className="flex items-center gap-2">
-              <span>
-                <IoWalletSharp className="text-blue-500" />
-              </span>
-              <h4 className="text-black/70">
-                {singleJob?.salary.replace(/_/gi, " ")}
-              </h4>
-            </div>
-            <div className="flex items-center gap-2">
-              <span>
-                <MdLocationPin className="text-blue-500" />
-              </span>
-              <h4 className="text-black/70">{singleJob?.jobLocation}</h4>
-            </div>
+            <h4 className="text-black/70">{singleJob?.jobType}</h4>
           </div>
-          <div className="flex gap-4 mt-3">
-            <div>
-              <h3 className="text-lg sm:text-xl text-black/70 font-bold  cursor-pointer">
-                Department
-              </h3>
-              <h3 className="text-black/70 font-medium  cursor-pointer">
-                {singleJob?.department.replace(/_/g, " ")}
-              </h3>
-            </div>
-            <div>
-              <h3 className="text-lg sm:text-xl text-black/70 font-bold  cursor-pointer">
-                Job vacancy
-              </h3>
-              <h4 className="text-black/70">{singleJob?.vacancy}</h4>
-            </div>
-            <div>
-              <h3 className="text-lg sm:text-xl text-black/70 font-bold  cursor-pointer">
-                Workplace
-              </h3>
-              <h4>{singleJob?.workplace}</h4>
-            </div>
+          <div className="flex items-center gap-2">
+            <span>
+              <IoWalletSharp className="text-blue-500" />
+            </span>
+            <h4 className="text-black/70">
+              {singleJob?.salary.replace(/_/gi, " ")}
+            </h4>
           </div>
+          <div className="flex items-center gap-2">
+            <span>
+              <MdLocationPin className="text-blue-500" />
+            </span>
+            <h4 className="text-black/70">{singleJob?.jobLocation}</h4>
+          </div>
+        </div>
+        <div className="flex gap-4 mt-3">
+          <div>
+            <h3 className="text-lg sm:text-xl text-black/70 font-bold  cursor-pointer">
+              Department
+            </h3>
+            <h3 className="text-black/70 font-medium  cursor-pointer">
+              {singleJob?.department.replace(/_/g, " ")}
+            </h3>
+          </div>
+          <div>
+            <h3 className="text-lg sm:text-xl text-black/70 font-bold  cursor-pointer">
+              Job vacancy
+            </h3>
+            <h4 className="text-black/70">{singleJob?.vacancy}</h4>
+          </div>
+          <div>
+            <h3 className="text-lg sm:text-xl text-black/70 font-bold  cursor-pointer">
+              Workplace
+            </h3>
+            <h4>{singleJob?.workplace}</h4>
+          </div>
+        </div>
 
-          <div className="">
-            <div className="space-y-3">
+        <div className="">
+          <div className="space-y-3">
             <div>
               <h3 className="text-lg sm:text-xl text-black/70 font-bold  cursor-pointer">
                 Job Context:
@@ -146,15 +149,18 @@ console.log(relatedJobsData)
                 {singleJob?.compensationAndBenefits}
               </h4>
             </div>
-            </div>
-            <RelatedJobs/>
           </div>
-          <div onClick={() => handleApply(singleJob?._id)} className="mt-2 static md:absolute top-0 md:right-0 lg:left-2/3 ">
-            <Button
-              btnName="apply now"
-              classForButton="px-5 text-sm md:text-md  xl:w-fit"
-            />
-          </div>
+          <RelatedJobs />
+        </div>
+        <div
+          onClick={() => handleApply(singleJob?._id)}
+          className="mt-2 static md:absolute top-0 md:right-0 lg:left-2/3 "
+        >
+          <Button
+            btnName="apply now"
+            classForButton="px-5 text-sm md:text-md  xl:w-fit"
+          />
+        </div>
       </div>
     </div>
   );

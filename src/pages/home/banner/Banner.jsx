@@ -18,7 +18,7 @@ import { bannerImagesArray } from "./bannerImagesArray";
 const Banner = () => {
   return (
     <div
-      className="shadow-[-5px_-5px_15px_4px_rgba(0,0,0,0.1),_5px_5px_15px_4px_rgba(0,0,0,0.1)]"
+      className="shadow-md"
       style={{
         borderRadius: "10px",
       }}

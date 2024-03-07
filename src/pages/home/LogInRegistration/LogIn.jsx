@@ -11,7 +11,6 @@ import { VscLoading } from "react-icons/vsc";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import SocialLogin from "../../../components/sociallogin/SocialLogin";
-// Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 
 // Import Swiper styles
@@ -19,8 +18,8 @@ import "swiper/css";
 import "swiper/css/scrollbar";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
-// custom css for swiper 
-import "./swiperCustomStyles.css"
+// custom css for swiper
+import "./swiperCustomStyles.css";
 // import required modules
 import { Autoplay, Pagination, Navigation, Scrollbar } from "swiper/modules";
 import Button from "../../../components/shared/button/Button";
@@ -51,11 +50,8 @@ const LogIn = ({ setShowRegister }) => {
           showConfirmButton: false,
           timer: 2500,
         });
-        const user = { email }
-        axiosPublic.post("/jwt",user)
-        .then(res =>{
-          console.log(res.data);
-        })
+        const user = { email };
+        axiosPublic.post("/jwt", user).then((res) => {});
         form.reset();
         setLoading(false);
         setShowModal(false);
@@ -185,10 +181,10 @@ const LogIn = ({ setShowRegister }) => {
           <div className="mt-2">
             {loading ? (
               <button
-                className="text-white px-4 py-3 rounded-lg bg-[#4D779F]"
+                className="text-white px-4 py-3 rounded-lg bg-text-color-blue w-full"
                 disabled
               >
-                <VscLoading className="animate-spin text-2xl" />
+                <VscLoading className="animate-spin text-2xl w-full" />
               </button>
             ) : (
               <Button

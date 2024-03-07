@@ -11,16 +11,14 @@ const AddAdvice = () => {
   } = useForm();
 
   const onSubmit = async (data) => {
-    console.log(data);
     await axiosPublic.post("/advices/addAdvice", data).then((res) => {
-      console.log(res.data);
       if (res.data) {
         Swal.fire({
           title: "Success!",
           text: "Advice Added Successfully.",
           icon: "success",
         });
-        // reset()
+        
       }
     });
   };

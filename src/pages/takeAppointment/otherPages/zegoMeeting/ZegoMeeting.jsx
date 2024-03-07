@@ -1,8 +1,7 @@
-import { useLocation, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { ZegoUIKitPrebuilt } from "@zegocloud/zego-uikit-prebuilt";
 import useUser from "../../../../hooks/useUser";
 import { useEffect, useRef, useState } from "react";
-import { IoFlashOffOutline } from "react-icons/io5";
 import useAxiosSecure from "../../../../hooks/useAxiosSecure";
 
 const ZegoMeeting = () => {
@@ -17,9 +16,9 @@ const ZegoMeeting = () => {
 
   // const location = useLocation();
 
-  // update booked appointment with meeting link 
+  // update booked appointment with meeting link
   useEffect(() => {
-    // get the meeting link 
+    // get the meeting link
     const link =
       window.location.protocol +
       "//" +
@@ -27,50 +26,16 @@ const ZegoMeeting = () => {
       window.location.pathname +
       "?roomId=" +
       roomId;
-      // update booked appointment
+    // update booked appointment
     const updateBookedAppointment = async () => {
-      console.log('front-end')
-      const { data } = await axiosSecure.put(
-        `/doctorAppointments/update-booked-appointment/${roomId}?meetLinkUpdated=${true}`,{meetingLinks:link}
+      await axiosSecure.put(
+        `/doctorAppointments/update-booked-appointment/${roomId}?meetLinkUpdated=${true}`,
+        { meetingLinks: link }
       );
-      console.log(data);
     };
     // calling the func
     updateBookedAppointment();
   }, [axiosSecure, roomId]);
-
-  // useEffect(() => {
-    //  if(!isMeetingLoading){
-      // const searchParams = new URLSearchParams(location.search);
-      // const startTimeParam = searchParams.get("startTime");
-      // console.log("startTime",startTimeParam)
-      // const startTime = new Date(startTimeParam);
-      // get the current time
-      // const currentTime = new Date();
-      // Calculate the difference in milliseconds between the current time and the start time
-      // const timeDifference = currentTime - startTime;
-      // Convert the time difference from milliseconds to minutes
-      // const timeDifferenceInMinutes = timeDifference / (1000 * 60);
-      // Check if the current time is less than 5 minutes from the start time
-      // const within5Minutes = timeDifferenceInMinutes >= -5 && timeDifferenceInMinutes < 0;
-      // Check if the current time is equal to the start time
-      // const isEqual = timeDifferenceInMinutes === 0;
-      // Check if the current time is less than 31 minutes from the start time
-  //     const lessThan31Minutes = timeDifferenceInMinutes > 0 && timeDifferenceInMinutes < 31;
-
-  //     setTimeout(() => {
-  //       const button = document.getElementsByClassName(
-  //         "VsTVUAD89KWleD0YRVsD"
-  //       )[0];
-  //       console.log(button);
-  //       if (within5Minutes || (isEqual && lessThan31Minutes)) {
-  //         button.style.cssText = "opacity:1; pointer-events: auto";
-  //       } else {
-  //         button.style.cssText = "opacity:0.3; pointer-events: none";
-  //       }
-  //     }, 1000);
-  //    }
-  // }, [isMeetingLoading, location.search]);
 
   useEffect(() => {
     let meeting = () => {
@@ -92,10 +57,12 @@ const ZegoMeeting = () => {
         container: meetingContainerRef.current,
         sharedLinks: [
           {
-            name: <span className="flex flex-col">
-            <span>You can find Your link on dashboard</span> 
-            <span>or Copy now</span>
-            </span>,
+            name: (
+              <span className="flex flex-col">
+                <span>You can find Your link on dashboard</span>
+                <span>or Copy now</span>
+              </span>
+            ),
             url:
               window.location.protocol +
               "//" +
@@ -122,7 +89,7 @@ const ZegoMeeting = () => {
       <div
         className="myCallContainer"
         ref={meetingContainerRef}
-        style={{width:'96vw',height:'85vh',overflow:'auto'}}
+        style={{ width: "96vw", height: "85vh", overflow: "auto" }}
       ></div>
       {/* {
         isPendingMessageShowing && <div className="absolute bg-red-700 top-0 right-0 z-[1000]">

@@ -1,16 +1,10 @@
-import { useParams, useNavigate, Link } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import Lottie from "lottie-react";
 import successPaymentAnimation from "../../../assets/Animations/success-payment-animation.json";
 import Button from "../../../components/shared/button/Button";
 
 const OrderSuccess = () => {
   const { tranId } = useParams();
-  const navigate = useNavigate()
-  
-  const handleGoToOrders = () =>{
-        console.log("ok");
-    navigate("/dashboard/myOrders")
-  }
 
   return (
     <div className="w-3/5 mx-auto rounded-lg shadow-lg p-4 min-h-[30vh] my-10 border-t">
@@ -27,9 +21,13 @@ const OrderSuccess = () => {
         <span className="text-base text-green-500">{tranId}</span>
       </p>
 
-        <Link to="/dashboard/myOrders" replace={true} className="text-center my-4 block">
-        <Button btnName="see orders" classForButton="px-2"/>
-        </Link>
+      <Link
+        to="/dashboard/myOrders"
+        replace={true}
+        className="text-center my-4 block"
+      >
+        <Button btnName="see orders" classForButton="px-2" />
+      </Link>
     </div>
   );
 };

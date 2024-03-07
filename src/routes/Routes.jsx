@@ -83,7 +83,7 @@ export const router = createBrowserRouter([
         path: "/product-details/:id",
         element: <ProductDetails />,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/allProducts/${params.id}`),
+          fetch(`https://medisync-server.vercel.app/allProducts/${params.id}`),
       },
       {
         path: "/advice",
@@ -110,7 +110,7 @@ export const router = createBrowserRouter([
         ),
       },
       {
-        path: "payment/success/:tranId",
+        path: "/payment/success/:tranId",
         element: (
           <PrivateRoute>
             <Success />
@@ -133,7 +133,7 @@ export const router = createBrowserRouter([
         path: "career/job-details/:id",
         element: <JobDetails />,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/jobs/single/${params.id}`),
+          fetch(`https://medisync-server.vercel.app/jobs/single/${params.id}`),
       },
       {
         path: "contact-us",
@@ -144,7 +144,7 @@ export const router = createBrowserRouter([
         element:<CheckOut></CheckOut>
       },
       {
-        path: "order/success/:tranId",
+        path: "/order/success/:tranId",
         element: <OrderSuccess/>,
       },
     ],
@@ -171,7 +171,7 @@ export const router = createBrowserRouter([
         element: <UpdateProduct></UpdateProduct>,
         loader: async ({ params }) => {
           return await axios.get(
-            `http://localhost:5000/allProducts/${params.id}`
+            `https://medisync-server.vercel.app/allProducts/${params.id}`
           )
 
         },
@@ -192,7 +192,7 @@ export const router = createBrowserRouter([
         path: "doctors-panel/update-doctor/:id",
         element: <UpdateDoctor />,
         loader: async ({ params }) => {
-          return await axios.get(`http://localhost:5000/doctors/${params.id}`);
+          return await axios.get(`https://medisync-server.vercel.app/doctors/${params.id}`);
         },
       },
       {
@@ -228,7 +228,7 @@ export const router = createBrowserRouter([
         element: <UpdateJob />,
         loader: async ({ params }) => {
           return await axios.get(
-            `http://localhost:5000/jobs/single/${params.id}`
+            `https://medisync-server.vercel.app/jobs/single/${params.id}`
           );
         },
       },
@@ -248,7 +248,7 @@ export const router = createBrowserRouter([
         path: "doctors/update-doctor/:id",
         element: <UpdateDoctor />,
         loader: async ({ params }) => {
-          return await axios.get(`http://localhost:5000/doctors/${params.id}`);
+          return await axios.get(`https://medisync-server.vercel.app/doctors/${params.id}`);
         },
       },
       {

@@ -4,7 +4,7 @@ import useAxiosPublic from "../../../hooks/useAxiosPublic";
 import Button from "../../../components/shared/button/Button";
 
 const AddDoctor = () => {
-  const axiosPublic = useAxiosPublic()
+  const axiosPublic = useAxiosPublic();
   const {
     register,
     handleSubmit,
@@ -26,13 +26,7 @@ const AddDoctor = () => {
     };
 
     try {
-
-
-      const result = await axiosPublic.post(
-        "/doctors",
-        doctorData
-      );
-      console.log(result.data);
+      const result = await axiosPublic.post("/doctors", doctorData);
       if (result.data?.status === true) {
         toast.success("Doctor added successfully");
       }
@@ -50,7 +44,10 @@ const AddDoctor = () => {
         <div className="space-y-5 grid gap-5 grid-cols-1 md:grid-cols-2 justify-center items-baseline">
           {/* Doctor Name */}
           <div className="space-y-5 drop-shadow-md">
-            <label htmlFor="name" className="block text-blue-600 border-l-2 border-blue-400 font-semibold pl-2 w-min whitespace-nowrap">
+            <label
+              htmlFor="name"
+              className="block text-blue-600 border-l-2 border-blue-400 font-semibold pl-2 w-min whitespace-nowrap"
+            >
               Doctor Name
             </label>
             <input
@@ -68,7 +65,10 @@ const AddDoctor = () => {
           </div>
           {/* Specialization */}
           <div className="space-y-5 drop-shadow-md">
-            <label htmlFor="specialization" className="block text-blue-600 border-l-2 border-blue-400 font-semibold pl-2 w-min whitespace-nowrap">
+            <label
+              htmlFor="specialization"
+              className="block text-blue-600 border-l-2 border-blue-400 font-semibold pl-2 w-min whitespace-nowrap"
+            >
               Specialization
             </label>
             <input
@@ -81,7 +81,10 @@ const AddDoctor = () => {
           </div>
           {/* Image URL */}
           <div className="space-y-5 drop-shadow-md">
-            <label htmlFor="image" className="block text-blue-600 border-l-2 border-blue-400 font-semibold pl-2 w-min whitespace-nowrap">
+            <label
+              htmlFor="image"
+              className="block text-blue-600 border-l-2 border-blue-400 font-semibold pl-2 w-min whitespace-nowrap"
+            >
               Image URL
             </label>
             <input
@@ -94,7 +97,10 @@ const AddDoctor = () => {
           </div>
           {/* Qualification */}
           <div className="space-y-5 drop-shadow-md">
-            <label htmlFor="qualification" className="block text-blue-600 border-l-2 border-blue-400 font-semibold pl-2 w-min whitespace-nowrap">
+            <label
+              htmlFor="qualification"
+              className="block text-blue-600 border-l-2 border-blue-400 font-semibold pl-2 w-min whitespace-nowrap"
+            >
               Qualification
             </label>
             <input
@@ -107,7 +113,10 @@ const AddDoctor = () => {
           </div>
           {/* Experience Years */}
           <div className="space-y-5 drop-shadow-md">
-            <label htmlFor="experience_years" className="block text-blue-600 border-l-2 border-blue-400 font-semibold pl-2 w-min whitespace-nowrap">
+            <label
+              htmlFor="experience_years"
+              className="block text-blue-600 border-l-2 border-blue-400 font-semibold pl-2 w-min whitespace-nowrap"
+            >
               Experience Years
             </label>
             <input
@@ -120,7 +129,10 @@ const AddDoctor = () => {
           </div>
           {/* Contact Email */}
           <div className="space-y-5 drop-shadow-md">
-            <label htmlFor="email" className="block text-blue-600 border-l-2 border-blue-400 font-semibold pl-2 w-min whitespace-nowrap">
+            <label
+              htmlFor="email"
+              className="block text-blue-600 border-l-2 border-blue-400 font-semibold pl-2 w-min whitespace-nowrap"
+            >
               Contact Email
             </label>
             <input
@@ -138,7 +150,10 @@ const AddDoctor = () => {
           </div>
           {/* Contact Phone */}
           <div className="space-y-5 drop-shadow-md">
-            <label htmlFor="phone" className="block text-blue-600 border-l-2 border-blue-400 font-semibold pl-2 w-min whitespace-nowrap">
+            <label
+              htmlFor="phone"
+              className="block text-blue-600 border-l-2 border-blue-400 font-semibold pl-2 w-min whitespace-nowrap"
+            >
               Contact Phone
             </label>
             <input
@@ -151,7 +166,10 @@ const AddDoctor = () => {
           </div>
           {/* University */}
           <div className="space-y-5 drop-shadow-md">
-            <label htmlFor="university" className="block text-blue-600 border-l-2 border-blue-400 font-semibold pl-2 w-min whitespace-nowrap">
+            <label
+              htmlFor="university"
+              className="block text-blue-600 border-l-2 border-blue-400 font-semibold pl-2 w-min whitespace-nowrap"
+            >
               University
             </label>
             <input
@@ -164,7 +182,11 @@ const AddDoctor = () => {
           </div>
         </div>
         {/* Add Doctor Button */}
-        <Button btnName="add doctor" classForButton="px-2 w-1/3" classForDiv="text-center mt-8"/>
+        <Button
+          btnName="add doctor"
+          classForButton="px-2 w-1/3"
+          classForDiv="text-center mt-8"
+        />
       </form>
     </div>
   );
