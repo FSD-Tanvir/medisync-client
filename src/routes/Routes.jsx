@@ -21,7 +21,7 @@ import UpdateJob from "../pages/dashboard/jobPanel/allJobs/UpdateJob";
 import axios from "axios";
 import UpdateDoctor from "../pages/Dashboard/doctors/UpdateDoctor";
 
-import MyCart from "../pages/Dashboard/MyCart/MyCart";
+import MyOrders from "../pages/Dashboard/myOrders/MyOrders";
 import MyReviews from "../pages/Dashboard/MyReviews/MyReviews";
 import MyDoctors from "../pages/Dashboard/MyDoctors/MyDoctors";
 import AdvicePanel from "../pages/Dashboard/Advices/advicePanel";
@@ -42,6 +42,7 @@ import ErrorPage from "../pages/errorPage/ErrorPage";
 import ProductDetails from "../pages/productDetails/ProductDetails";
 import Success from "../pages/takeAppointment/otherPages/Success";
 import ZegoMeeting from "../pages/takeAppointment/otherPages/zegoMeeting/ZegoMeeting";
+import OrderSuccess from "../pages/checkOut/otherPages/OrderSuccess";
 
 
 export const router = createBrowserRouter([
@@ -141,6 +142,10 @@ export const router = createBrowserRouter([
       {
         path: "checkout",
         element:<CheckOut></CheckOut>
+      },
+      {
+        path: "order/success/:tranId",
+        element: <OrderSuccess/>,
       },
     ],
   },
@@ -251,8 +256,8 @@ export const router = createBrowserRouter([
         element: <Profiles></Profiles>,
       },
       {
-        path: "myCart",
-        element: <MyCart></MyCart>,
+        path: "myOrders",
+        element: <MyOrders/>,
       },
       {
         path: "myReviews",
