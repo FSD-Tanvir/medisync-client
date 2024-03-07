@@ -452,11 +452,11 @@ const Dashboard = () => {
                     )}
                   </NavLink>
                 </li>
-                {/* myCart route */}
+                {/* my orders route */}
                 <li>
                   <NavLink
                     onClick={() => setOpen(false)}
-                    to="myCart"
+                    to="myOrders"
                     className={({ isActive, isPending }) =>
                       isActive
                         ? "font-semibold flex justify-start items-center gap-1 pl-2 bg-white text-blue-500 w-[96.2%] max-[639.5px]:mx-auto sm:ml-[4%] py-1 max-[639.5px]:rounded-[30px] sm:rounded-l-[30px] relative custom h-[45px] activated"

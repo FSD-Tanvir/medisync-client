@@ -118,11 +118,11 @@ const ZegoMeeting = () => {
   }, [roomId, userData?._id, userData?.name]);
 
   return (
-    <div className="max-[740px]:overflow-x-auto overflow-auto px-3">
+    <div className="">
       <div
         className="myCallContainer"
         ref={meetingContainerRef}
-        style={{width:'96vw',height:'85vh'}}
+        style={{width:'96vw',height:'85vh',overflow:'auto'}}
       ></div>
       {/* {
         isPendingMessageShowing && <div className="absolute bg-red-700 top-0 right-0 z-[1000]">

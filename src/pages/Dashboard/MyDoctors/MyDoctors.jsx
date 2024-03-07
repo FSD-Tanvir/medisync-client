@@ -12,7 +12,7 @@ console.log(userData)
       {/* heading  */}
       <h2 className="w-min whitespace-nowrap mx-auto font-bold text-3xl text-center mt-10 mb-10 lg:mt-0 border-b-4 border-b-blue-500">
         My
-        <span className="text-blue-600">Doctors</span>
+        <span className="text-blue-600"> Doctors</span>
       </h2>
         {/* all appointments here  */}
       <div className="w-full grid gap-6 grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 box-border">
