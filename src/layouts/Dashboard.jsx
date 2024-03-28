@@ -24,6 +24,18 @@ const Dashboard = () => {
   const { logOut } = useAuth();
   const location = useLocation();
 
+
+  useEffect(()=>{
+    if(open){
+      document.body.className = "overflow-hidden";
+      document.querySelector('.dashboardSideNavbar').classList.add("fixed", "z-[300]", "min-h-screen", "max-h-screen", "overflow-hidden", "overflow-y-auto")
+      // console.log(document.querySelector('.dashboardSideNavbar').classList)
+    }else{
+      document.body.className = "overflow-auto";
+      document.querySelector('.dashboardSideNavbar').classList.add("sm:fixed", "sm:z-[300]", "sm:min-h-screen", "sm:max-h-screen", "sm:overflow-hidden", "sm:overflow-y-auto")
+    }
+  },[open])
+
   useEffect(() => {
     if (location.pathname == "/") {
       document.title = "MediSync | Home";
@@ -56,7 +68,7 @@ const Dashboard = () => {
           open
             ? "max-[639.5px]:w-full sm:w-[35%] md:w-[40%] lg:w-[20%]"
             : "max-[639.5px]:w-0  sm:w-[10%] md:w-[10%] lg:w-[5%]"
-        }  duration-300 md:min-h-screen bg-blue-600 text-white mt-0  sm:fixed sm:z-[300] sm:min-h-screen sm:max-h-screen sm:overflow-hidden sm:overflow-y-auto custom-scrollbar-dashboard-nav`}
+        }  duration-300 md:min-h-screen bg-blue-600 text-white mt-0  sm:fixed sm:z-[300] sm:min-h-screen sm:max-h-screen sm:overflow-hidden sm:overflow-y-auto custom-scrollbar-dashboard-nav dashboardSideNavbar`}
       >
         <div className="sticky top-0 z-[900]">
           <div
@@ -135,7 +147,7 @@ const Dashboard = () => {
           >
             {/* admin panel */}
             {isAdmin ? (
-              <div className="flex justify-center flex-col space-y-3 ">
+              <div className="flex justify-center flex-col space-y-3">
                 {/* admin panel overview route */}
                 <li>
                   <NavLink

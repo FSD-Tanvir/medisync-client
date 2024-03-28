@@ -184,8 +184,8 @@ const AddDoctor = () => {
         {/* Add Doctor Button */}
         <Button
           btnName="add doctor"
-          classForButton="px-2 w-1/3"
-          classForDiv="text-center mt-8"
+          btnType="submit"
+          classForButton="px-2 w-1/3 mt-8"
         />
       </form>
     </div>

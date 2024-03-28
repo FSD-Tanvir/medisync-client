@@ -43,6 +43,7 @@ import ProductDetails from "../pages/productDetails/ProductDetails";
 import Success from "../pages/takeAppointment/otherPages/Success";
 import ZegoMeeting from "../pages/takeAppointment/otherPages/zegoMeeting/ZegoMeeting";
 import OrderSuccess from "../pages/checkOut/otherPages/OrderSuccess";
+import ApplyJob from "../pages/career/applyJob/ApplyJob";
 
 
 export const router = createBrowserRouter([
@@ -134,6 +135,12 @@ export const router = createBrowserRouter([
         element: <JobDetails />,
         loader: ({ params }) =>
           fetch(`https://medisync-server.vercel.app/jobs/single/${params.id}`),
+      },
+      {
+        path: "career/job-details/apply-job/:id",
+        element: <ApplyJob />,
+        loader: ({ params }) =>
+          fetch(`https://medisync-server.vercel.app/jobs/single/${params.id}?title_Id=${true}`),
       },
       {
         path: "contact-us",

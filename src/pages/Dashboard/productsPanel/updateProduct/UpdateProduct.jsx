@@ -217,7 +217,7 @@ const UpdateProduct = () => {
                     </div>
                 </div>
                 {/* add job button  */}
-                    <Button btnName="update job" classForButton="px-2 w-1/3" classForDiv="text-center mt-8"/>
+                    <Button btnName="update job" btnType="submit" classForButton="px-2 w-1/3 mt-8" />
             </form>
         </div>
     );
