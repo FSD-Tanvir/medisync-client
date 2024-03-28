@@ -202,9 +202,8 @@ const ApplyJob = () => {
         {/* apply job button  */}
         <Button
           btnName="Apply job"
-          classForButton="px-2 w-1/3"
+          classForButton="px-2 w-1/3 mt-8"
           btnType="submit"
-          classForDiv="text-center mt-8"
         />
       </form>
     </div>
